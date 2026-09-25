@@ -4,15 +4,16 @@
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
 "use client";
 
-import type { ReactElement, ReactNode, RefAttributes } from "react";
-import type { ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps } from "react-aria-components";
-import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
+import type { ComponentPropsWithRef, ReactElement, ReactNode } from "react";
+import { useRender } from "@base-ui/react/use-render";
 import { cx, sortCx } from "@/utils/cx";
 import { AppleLogo, DribbleLogo, FacebookLogo, FigmaLogo, FigmaLogoOutlined, GoogleLogo, TwitterLogo } from "./social-logos";
+import type { PressEvents } from "./button";
+import { usePressEvents } from "./button";
 
 export const styles = sortCx({
     common: {
-        root: "group disabled:stroke-fg-disabled disabled:text-fg-disabled disabled:*:text-fg-disabled relative inline-flex h-max cursor-pointer items-center justify-center font-semibold whitespace-nowrap outline-focus-ring transition duration-100 ease-linear before:absolute focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed",
+        root: "group disabled:stroke-fg-disabled disabled:text-fg-disabled disabled:*:text-fg-disabled disabled:cursor-not-allowed data-disabled:stroke-fg-disabled data-disabled:text-fg-disabled data-disabled:*:text-fg-disabled data-disabled:cursor-not-allowed relative inline-flex h-max cursor-pointer items-center justify-center font-semibold whitespace-nowrap outline-focus-ring transition duration-100 ease-linear before:absolute focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed",
         icon: "pointer-events-none shrink-0 transition-inherit-all",
     },
 
@@ -55,7 +56,7 @@ interface CommonProps {
     isDisabled?: boolean;
     /**
      * Disables the button and shows a disabled state.
-     * @deprecated Use `isDisabled` instead, for consistency with `Button` and React Aria.
+     * @deprecated Use `isDisabled` instead, for consistency with `Button`.
      */
     disabled?: boolean;
     theme?: "brand" | "color" | "gray";
@@ -65,11 +66,31 @@ interface CommonProps {
     className?: string;
 }
 
-interface ButtonProps extends CommonProps, Omit<AriaButtonProps, "children" | "className">, RefAttributes<HTMLButtonElement> {}
+/** The component state, mapped onto the `data-*` attributes consumer CSS keys off. */
+interface SocialButtonState {
+    /** Whether the button is disabled. (`data-disabled`) */
+    isDisabled: boolean;
+    /** Whether the button renders a logo without text. (`data-icon-only`) */
+    iconOnly: boolean;
+}
 
-interface LinkProps extends CommonProps, Omit<AriaLinkProps, "children" | "className">, RefAttributes<HTMLAnchorElement> {
+/** Props both variants spread onto the element they render. */
+interface ElementProps extends PressEvents {
+    /** The React Aria slot the rendered element fills. Renders no attribute when `null`. */
+    slot?: string | null;
+    /**
+     * Allows you to replace the component's HTML element with a different tag, or
+     * compose it with another component — the same contract as the React Aria
+     * `render` prop. Accepts a `ReactElement` or a function returning one.
+     */
+    render?: useRender.RenderProp<SocialButtonState>;
+}
+
+interface ButtonProps extends CommonProps, Omit<ComponentPropsWithRef<"button">, "children" | "className" | "color" | "disabled" | "slot">, ElementProps {}
+
+interface LinkProps extends CommonProps, Omit<ComponentPropsWithRef<"a">, "children" | "className" | "color" | "href" | "slot">, ElementProps {
     /** The link target. Required as a key to select the link variant, but may be `undefined` (e.g. a disabled nav button). */
-    href: AriaLinkProps["href"];
+    href: string | undefined;
 }
 
 export type SocialButtonProps = ButtonProps | LinkProps;
@@ -130,25 +151,38 @@ export const SocialButton: {
         </>
     );
 
-    const commonProps = {
-        "data-icon-only": isIconOnly ? true : undefined,
-        ...props,
-        isDisabled: isButtonDisabled,
-        className: cx(styles.common.root, styles.sizes[size].root, colorStyles.root, className),
-        children: commonChildren,
-    };
+    // An `href` key selects the link variant; a link that cannot be followed (no target, or
+    // disabled) renders a real `<button>` respectively a non-interactive `span[role=link]`.
+    const isLinkVariant = "href" in props;
+    const linkHref = isLinkVariant ? props.href : undefined;
 
-    if ("href" in commonProps) {
-        const { href: linkHref, ...rest } = commonProps;
+    const { ref, render, ...rest } = props;
 
-        // An explicitly `undefined` href renders a real <button> rather than React Aria's
-        // link fallback <span>.
-        return linkHref ? (
-            <AriaLink {...commonProps} href={isButtonDisabled ? undefined : linkHref} />
-        ) : (
-            <AriaButton {...(rest as AriaButtonProps)} type="button" />
-        );
-    }
+    const tagName = !isLinkVariant || !linkHref ? "button" : isButtonDisabled ? "span" : "a";
 
-    return <AriaButton {...commonProps} type={commonProps.type || "button"} />;
+    // React Aria's press props are consumed here and the consumer's own pointer/keyboard handlers are
+    // chained behind the press logic.
+    const elementProps = usePressEvents({ ...rest, isDisabled: isButtonDisabled });
+
+    return useRender({
+        defaultTagName: tagName,
+        render,
+        state: { isDisabled: Boolean(isButtonDisabled), iconOnly: isIconOnly },
+        stateAttributesMapping: {
+            isDisabled: (value) => (value ? { "data-disabled": "" } : null),
+            iconOnly: (value) => (value ? { "data-icon-only": "" } : null),
+        },
+        props: {
+            ...elementProps,
+            // The ref of the element actually rendered (button, anchor or fallback span).
+            ref,
+            ...(tagName === "button"
+                ? { type: elementProps.type ?? "button", disabled: isButtonDisabled }
+                : tagName === "a"
+                  ? { href: linkHref }
+                  : { href: undefined, role: "link", "aria-disabled": true }),
+            className: cx(styles.common.root, styles.sizes[size].root, colorStyles.root, className),
+            children: commonChildren,
+        },
+    }) as ReactElement<any>;
 };

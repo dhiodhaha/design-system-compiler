@@ -28,7 +28,14 @@
     "pro:compile": "node compiler/pro/compile.mjs",
     "pro:verify": "node compiler/pro/verify-content-item.mjs",
     "pro:all": "pnpm pro:compile && pnpm pro:verify",
-    "catalog:build": "node compiler/catalog/build.mjs"
+    "catalog:build": "node compiler/catalog/build.mjs",
+    "migration:inventory": "node compiler/migration/inventory.mjs",
+    "migration:matrix": "node compiler/migration/matrix.mjs",
+    "migration:capture": "node compiler/migration/capture.mjs --label migrated",
+    "migration:parity": "node compiler/migration/parity.mjs --label migrated",
+    "migration:hydration": "node compiler/migration/hydration.mjs",
+    "migration:report": "node compiler/migration/report.mjs",
+    "verify:base-ui-migration": "node compiler/migration/verify.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.8.0",

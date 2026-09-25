@@ -4,10 +4,9 @@
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
 "use client";
 
-import type { FC, ReactElement, ReactNode } from "react";
-import React, { isValidElement } from "react";
-import type { ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps } from "react-aria-components";
-import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
+import type { ComponentPropsWithRef, FC, ReactElement, ReactNode } from "react";
+import { isValidElement, useRef } from "react";
+import { useRender } from "@base-ui/react/use-render";
 import { cx, sortCx } from "@/utils/cx";
 import { isReactComponent } from "@/utils/is-react-component";
 
@@ -159,15 +158,242 @@ export interface CommonProps {
     className?: string;
 }
 
+/** The pointer type that triggered a press event. */
+export type PressPointerType = "mouse" | "pen" | "touch" | "keyboard" | "virtual";
+
+/**
+ * React Aria's press event payload, rebuilt from the native pointer and keyboard events so callers keep
+ * receiving the same object. `x`/`y`/`clientX`/`clientY` are viewport coordinates: React Aria measured `x`/`y`
+ * relative to the element, which no caller in this payload reads.
+ */
+export interface PressEvent {
+    /** The type of press event being fired. */
+    type: "pressstart" | "pressend" | "pressup" | "press";
+    /** The pointer type that triggered the press event. */
+    pointerType: PressPointerType;
+    /** The target element of the press event. */
+    target: Element;
+    /** Whether the shift keyboard modifier was held during the press event. */
+    shiftKey: boolean;
+    /** Whether the ctrl keyboard modifier was held during the press event. */
+    ctrlKey: boolean;
+    /** Whether the meta keyboard modifier was held during the press event. */
+    metaKey: boolean;
+    /** Whether the alt keyboard modifier was held during the press event. */
+    altKey: boolean;
+    /** X position relative to the viewport. */
+    x: number;
+    /** Y position relative to the viewport. */
+    y: number;
+    /** X position relative to the viewport. */
+    clientX: number;
+    /** Y position relative to the viewport. */
+    clientY: number;
+    /** The key that triggered the press event, if it was triggered by a keyboard interaction. */
+    key?: string;
+    /** Press events never stop propagation, so a parent handler always receives the event too. */
+    continuePropagation(): void;
+}
+
+/** React Aria's press handler props. */
+export interface PressEvents {
+    /** Handler that is called when the press is released over the target. */
+    onPress?: (event: PressEvent) => void;
+    /** Handler that is called when a press interaction starts. */
+    onPressStart?: (event: PressEvent) => void;
+    /** Handler that is called when a press interaction ends, either over the target or when the pointer leaves it. */
+    onPressEnd?: (event: PressEvent) => void;
+    /** Handler that is called when a press is released over the target, regardless of where it started. */
+    onPressUp?: (event: PressEvent) => void;
+    /** Handler that is called when the press state changes. */
+    onPressChange?: (isPressed: boolean) => void;
+}
+
+/** The native handlers the press layer wraps, so a consumer's own handlers keep firing. */
+interface PressNativeHandlers {
+    onClick?: React.MouseEventHandler<Element>;
+    onPointerDown?: React.PointerEventHandler<Element>;
+    onPointerUp?: React.PointerEventHandler<Element>;
+    onPointerLeave?: React.PointerEventHandler<Element>;
+    onKeyDown?: React.KeyboardEventHandler<Element>;
+    onKeyUp?: React.KeyboardEventHandler<Element>;
+}
+
+interface ActivePress {
+    pointerType: PressPointerType;
+    key?: string;
+}
+
+/**
+ * React Aria's press events, rebuilt on native pointer and keyboard events: a press starts on pointer down
+ * (or Enter/Space key down), activates through the native click, and ends when the pointer leaves the
+ * element. A disabled button starts no press at all, and a pending one is blocked exactly like React Aria's
+ * `isPending`. The press props are consumed here (never spread onto the DOM) and the consumer's own handlers
+ * for the same native events are chained after the press logic.
+ */
+export const usePressEvents = <Props extends PressEvents & PressNativeHandlers & Record<string, unknown>>(
+    props: Props & { isDisabled?: boolean; isLoading?: boolean },
+): Omit<Props, keyof PressEvents | "isDisabled" | "isLoading"> & PressNativeHandlers => {
+    const {
+        isDisabled,
+        isLoading,
+        onPress,
+        onPressStart,
+        onPressEnd,
+        onPressUp,
+        onPressChange,
+        onClick,
+        onPointerDown,
+        onPointerUp,
+        onPointerLeave,
+        onKeyDown,
+        onKeyUp,
+        ...rest
+    } = props;
+    const isBlocked = Boolean(isDisabled) || Boolean(isLoading);
+    // The press in flight, and a press released over the target that is waiting for its native click.
+    const active = useRef<ActivePress | null>(null);
+    const released = useRef<ActivePress | null>(null);
+
+    const createEvent = (
+        type: PressEvent["type"],
+        event: React.MouseEvent<Element> | React.PointerEvent<Element> | React.KeyboardEvent<Element>,
+        press: ActivePress,
+    ): PressEvent => {
+        const coordinates = "clientX" in event ? { clientX: event.clientX, clientY: event.clientY } : { clientX: 0, clientY: 0 };
+
+        return {
+            type,
+            pointerType: press.pointerType,
+            target: event.target as Element,
+            shiftKey: event.shiftKey,
+            ctrlKey: event.ctrlKey,
+            metaKey: event.metaKey,
+            altKey: event.altKey,
+            x: coordinates.clientX,
+            y: coordinates.clientY,
+            clientX: coordinates.clientX,
+            clientY: coordinates.clientY,
+            key: press.key,
+            continuePropagation() {},
+        };
+    };
+
+    // Press events fire before the consumer's own handler for the same native event, exactly as React Aria
+    // merged its press layer behind the consumer's props.
+    return {
+        ...rest,
+        onPointerDown(event: React.PointerEvent<Element>) {
+            if (!isBlocked && !active.current && !released.current && !(event.pointerType === "mouse" && event.button !== 0)) {
+                active.current = { pointerType: (event.pointerType || "virtual") as PressPointerType };
+                onPressChange?.(true);
+                onPressStart?.(createEvent("pressstart", event, active.current));
+            }
+
+            onPointerDown?.(event);
+        },
+        onPointerUp(event: React.PointerEvent<Element>) {
+            const press = active.current;
+            if (press) {
+                released.current = press;
+                active.current = null;
+                onPressUp?.(createEvent("pressup", event, press));
+            }
+
+            onPointerUp?.(event);
+        },
+        onPointerLeave(event: React.PointerEvent<Element>) {
+            released.current = null;
+            const press = active.current;
+            if (press) {
+                active.current = null;
+                onPressEnd?.(createEvent("pressend", event, press));
+                onPressChange?.(false);
+            }
+
+            onPointerLeave?.(event);
+        },
+        onKeyDown(event: React.KeyboardEvent<Element>) {
+            // Only the element itself presses: a key event bubbling out of a child is not its own activation.
+            if (!isBlocked && !active.current && !released.current && event.target === event.currentTarget && (event.key === "Enter" || event.key === " ")) {
+                active.current = { pointerType: "keyboard", key: event.key };
+                onPressChange?.(true);
+                onPressStart?.(createEvent("pressstart", event, active.current));
+            }
+
+            onKeyDown?.(event);
+        },
+        onKeyUp(event: React.KeyboardEvent<Element>) {
+            const press = active.current;
+            if (press && (event.key === "Enter" || event.key === " ")) {
+                active.current = null;
+                released.current = press;
+                onPressUp?.(createEvent("pressup", event, press));
+
+                // Native elements activate themselves (a <button> clicks on Enter/Space, a link on Enter); the
+                // link fallback <span> does not, so its activation is dispatched here.
+                const target = event.currentTarget;
+                const activatesNatively = target.tagName === "BUTTON" || (target instanceof HTMLAnchorElement && target.hasAttribute("href"));
+                if (!activatesNatively && !isBlocked) {
+                    released.current = null;
+                    onPress?.(createEvent("press", event, press));
+                    onPressEnd?.(createEvent("pressend", event, press));
+                    onPressChange?.(false);
+                }
+            }
+
+            onKeyUp?.(event);
+        },
+        onClick(event: React.MouseEvent<Element>) {
+            const press = released.current ?? active.current;
+            active.current = null;
+            released.current = null;
+            if (!isBlocked && press) {
+                onPress?.(createEvent("press", event, press));
+                onPressEnd?.(createEvent("pressend", event, press));
+                onPressChange?.(false);
+            }
+
+            onClick?.(event);
+        },
+    };
+};
+
+/** The component state, exposed to the `render` callback and mapped onto the `data-*`
+ * attributes consumer CSS keys off (`data-disabled`, `data-loading`, `data-icon-only`).
+ * Interaction states are native CSS (`:hover`, `:focus-visible`, `:active`, `:disabled`).
+ */
+export interface ButtonState {
+    /** Whether the button is disabled. (`data-disabled`) */
+    isDisabled: boolean;
+    /** Whether the button shows its loading spinner. (`data-loading`) */
+    isLoading: boolean;
+    /** Whether the button renders an icon without text. (`data-icon-only`) */
+    iconOnly: boolean;
+}
+
+/** Props shared by both variants, spread onto the element the button renders. */
+interface ElementProps {
+    /** The React Aria slot the rendered element fills. Renders no attribute when `null`. */
+    slot?: string | null;
+    /**
+     * Allows you to replace the component's HTML element with a different tag, or
+     * compose it with another component — the same contract as the React Aria
+     * `render` prop. Accepts a `ReactElement` or a function returning one.
+     */
+    render?: useRender.RenderProp<ButtonState>;
+}
+
 /**
  * Props for the button variant (non-link)
  */
-export interface ButtonProps extends CommonProps, Omit<AriaButtonProps, "children" | "className"> {}
+export interface ButtonProps extends CommonProps, Omit<ComponentPropsWithRef<"button">, "children" | "className" | "color" | "disabled" | "slot">, ElementProps {}
 /**
  * Props for the link variant (anchor tag)
  */
-interface LinkProps extends CommonProps, Omit<AriaLinkProps, "children" | "className"> {
-    href: NonNullable<AriaLinkProps["href"]>;
+interface LinkProps extends CommonProps, Omit<ComponentPropsWithRef<"a">, "children" | "className" | "color" | "href" | "slot">, ElementProps {
+    /** The link target. Required as a key to select the link variant; renders a non-interactive `span` when empty. */
+    href: string;
 }
 
 /** Union type of button and link props */
@@ -191,7 +417,7 @@ export const Button: {
 }) => {
     const href = "href" in props ? props.href : undefined;
 
-    const isIcon = (IconLeading || IconTrailing) && !children;
+    const isIcon = Boolean((IconLeading || IconTrailing) && !children);
     const isLinkType = ["link-gray", "link-color", "link-destructive"].includes(color);
 
     noTextPadding = isLinkType || noTextPadding;
@@ -237,27 +463,64 @@ export const Button: {
         </>
     );
 
-    const commonProps = {
-        "data-loading": loading ? true : undefined,
-        "data-icon-only": isIcon ? true : undefined,
-        ...props,
-        isDisabled: disabled,
-        className: cx(
-            styles.common.root,
-            styles.sizes[size].root,
-            styles.colors[color].root,
-            isLinkType && styles.sizes[size].linkRoot,
-            (loading || (href && (disabled || loading))) && "pointer-events-none",
-            // If in `loading` state, hide everything except the loading icon (and text if `showTextWhileLoading` is true).
-            loading && (showTextWhileLoading ? "[&>*:not([data-icon=loading]):not([data-text])]:hidden" : "[&>*:not([data-icon=loading])]:invisible"),
-            className,
-        ),
-        children: commonChildren,
-    };
+    const { ref, render, ...rest } = props;
 
-    if ("href" in commonProps) {
-        return <AriaLink {...commonProps} href={disabled ? undefined : href} />;
-    }
+    // A link without a usable target (empty `href`, or disabled) is not an anchor: it degrades to a
+    // `span[role=link]`, exactly as React Aria's link fallback rendered it.
+    const isAnchor = Boolean(href) && !disabled;
+    const tagName = "href" in props ? (isAnchor ? "a" : "span") : "button";
 
-    return <AriaButton {...commonProps} type={commonProps.type || "button"} isPending={loading} />;
+    // React Aria's press props are consumed here (never spread onto the DOM) and the consumer's own
+    // pointer/keyboard handlers are chained behind the press logic. A loading *link* keeps React Aria's
+    // link behaviour: its pending state only existed on the button variant.
+    const elementProps = usePressEvents({ ...rest, isDisabled: disabled, isLoading: loading && tagName === "button" });
+
+    // `useRender` is generic over the element it renders; the call signatures declared above are this
+    // component's public contract (the same element type JSX used to produce here).
+    return useRender({
+        defaultTagName: tagName,
+        render,
+        state: { isDisabled: Boolean(disabled), isLoading: Boolean(loading), iconOnly: isIcon },
+        stateAttributesMapping: {
+            isDisabled: (value) => (value ? { "data-disabled": "" } : null),
+            isLoading: (value) => (value ? { "data-loading": "" } : null),
+            iconOnly: (value) => (value ? { "data-icon-only": "" } : null),
+        },
+        props: {
+            ...elementProps,
+            // The ref of the element actually rendered (button, anchor or fallback span).
+            ref,
+            ...(tagName === "span"
+                ? {
+                      // A `span` has no native link semantics, so it carries them explicitly.
+                      href: undefined,
+                      role: "link",
+                      // A consumer tabIndex wins; the fallback is focusable only while it is not disabled.
+                      tabIndex: elementProps.tabIndex ?? (disabled ? undefined : 0),
+                      "aria-disabled": disabled || elementProps["aria-disabled"],
+                  }
+                : tagName === "a"
+                  ? { href, "aria-disabled": disabled || elementProps["aria-disabled"] }
+                  : {
+                        // A pending button keeps focus but must not activate or submit.
+                        type: loading && elementProps.type === "submit" ? "button" : (elementProps.type ?? "button"),
+                        disabled,
+                        onClick: loading ? undefined : elementProps.onClick,
+                        "aria-disabled": loading ? true : elementProps["aria-disabled"],
+                    }),
+            className: cx(
+                styles.common.root,
+                styles.sizes[size].root,
+                styles.colors[color].root,
+                isLinkType && styles.sizes[size].linkRoot,
+                (loading || (href && (disabled || loading))) && "pointer-events-none",
+                // If in `loading` state, hide everything except the loading icon (and text if `showTextWhileLoading` is true).
+                loading && (showTextWhileLoading ? "[&>*:not([data-icon=loading]):not([data-text])]:hidden" : "[&>*:not([data-icon=loading])]:invisible"),
+                // The non-anchor link fallback has no native `disabled`, so the disabled look comes from the state attribute.
+                !isAnchor && "href" in props && disabled && "data-disabled:cursor-not-allowed data-disabled:opacity-50",
+                className,
+            ),
+            children: commonChildren,
+        },
+    }) as ReactElement<any>;
 };

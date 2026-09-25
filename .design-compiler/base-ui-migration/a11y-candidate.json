@@ -1,0 +1,69 @@
+{
+  "$schema": "design-compiler/BaseUiA11yReport@p0",
+  "label": "candidate",
+  "standard": "axe-core wcag2a, wcag2aa, wcag21a, wcag21aa",
+  "cases": 43,
+  "violatingCases": 5,
+  "newViolations": {
+    "input-invalid": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input aria-invalid=\"true\" tabindex=\"0\" id=\"react-aria1756624514...\" class=\"m-0 w-full bg-transp...\" data-rac=\"\" data-invalid=\"true\" type=\"text\" value=\"\" title="
+        ]
+      }
+    ],
+    "textarea-invalid": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<textarea aria-invalid=\"true\" tabindex=\"0\" id=\"react-aria1756624514...\" class=\"w-full scroll-py-3 r...\" data-rac=\"\" data-invalid=\"true\" title=\"\" style=\"--resize"
+        ]
+      }
+    ]
+  },
+  "preExisting": {
+    "slider-default": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input tabindex=\"0\" id=\"react-aria1756624514-_r_3m_-0\" aria-labelledby=\"react-aria1756624514-_r_3n_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+        ]
+      }
+    ],
+    "slider-keyboard": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input tabindex=\"0\" id=\"react-aria1756624514-_r_3s_-0\" aria-labelledby=\"react-aria1756624514-_r_3t_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+        ]
+      }
+    ],
+    "nav-account-card": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button class=\"absolute top-2 right...\" data-rac=\"\" type=\"button\" tabindex=\"0\" aria-expanded=\"false\" id=\"react-aria1756624514...\" data-react-aria-pres...=\"true\""
+        ]
+      },
+      {
+        "rule": "image-alt",
+        "impact": "critical",
+        "description": "Images must have alternative text",
+        "nodes": [
+          "<img data-avatar-img=\"true\" class=\"size-full object-cover\" src=\"https://www.untitledui.com/images/avatars/caitlyn-king?fm=webp&amp;q=80\">"
+        ]
+      }
+    ]
+  }
+}

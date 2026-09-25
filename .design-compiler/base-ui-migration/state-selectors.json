@@ -3,9 +3,9 @@
   "baseUiAttributesKnown": 73,
   "totals": {
     "files": 41,
-    "variantsInUse": 75,
+    "variantsInUse": 76,
     "deadSelectors": 0,
-    "pendingMigration": 61
+    "pendingMigration": 49
   },
   "dead": [],
   "pending": [
@@ -200,114 +200,6 @@
     },
     {
       "file": "registry/untitledui/components/application/tabs/tabs.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
-      "variant": "disabled",
-      "count": 1,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
-      "variant": "focus-visible",
-      "count": 3,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
-      "variant": "disabled",
-      "count": 3,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
-      "variant": "selected",
-      "count": 2,
-      "attribute": "data-selected",
-      "nativeFallback": null,
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
-      "variant": "disabled",
-      "count": 3,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/button.tsx",
-      "variant": "disabled",
-      "count": 3,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/button.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/close-button.tsx",
-      "variant": "focus-visible",
-      "count": 4,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/social-button.tsx",
-      "variant": "disabled",
-      "count": 4,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/buttons/social-button.tsx",
       "variant": "focus-visible",
       "count": 2,
       "attribute": "data-focus-visible",
@@ -882,7 +774,7 @@
     },
     {
       "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -890,7 +782,7 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         },
         {
           "variant": "disabled",
@@ -898,7 +790,7 @@
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
@@ -918,7 +810,7 @@
     },
     {
       "file": "registry/untitledui/components/base/button-group/button-group.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -926,23 +818,23 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "disabled",
-          "count": 3,
-          "attribute": "data-disabled",
-          "nativeFallback": ":disabled",
-          "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         },
         {
           "variant": "selected",
-          "count": 2,
+          "count": 1,
           "attribute": "data-selected",
           "nativeFallback": null,
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         }
       ]
     },
@@ -976,15 +868,15 @@
     },
     {
       "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "disabled",
-          "count": 3,
+          "count": 4,
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "focus-visible",
@@ -992,13 +884,13 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/buttons/button.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "disabled",
@@ -1006,7 +898,7 @@
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "focus-visible",
@@ -1014,13 +906,13 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/buttons/close-button.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -1028,21 +920,29 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/buttons/social-button.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "disabled",
-          "count": 4,
+          "count": 6,
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "focus-visible",
@@ -1050,7 +950,7 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },

@@ -1,0 +1,1179 @@
+{
+  "$schema": "design-compiler/BaseUiMigrationMatrix@p0",
+  "baseUiVersion": "1.8.0",
+  "branch": "migration/base-ui-v1.8",
+  "terminalStates": [
+    "BASE_UI_VERIFIED",
+    "NATIVE_VERIFIED",
+    "SPECIALIZED_VERIFIED",
+    "NO_BASE_UI_EQUIVALENT",
+    "BLOCKED",
+    "STAGNATED"
+  ],
+  "totals": {
+    "units": 25,
+    "byStatus": {
+      "MIGRATED_PENDING_GATES": 5,
+      "MIGRATING": 20
+    },
+    "byWave": {
+      "1": 4,
+      "2": 8,
+      "3": 7,
+      "4": 4,
+      "5": 2
+    },
+    "reactAriaFiles": 61,
+    "affectedPublicItems": 123,
+    "unclaimedFiles": []
+  },
+  "units": [
+    {
+      "item": "forms-primitives",
+      "wave": 1,
+      "files": [
+        "components/base/checkbox/checkbox.tsx",
+        "components/base/toggle/toggle.tsx",
+        "components/base/radio-buttons/radio-buttons.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Checkbox",
+        "react-aria-components/CheckboxProps",
+        "react-aria-components/Radio",
+        "react-aria-components/RadioGroup",
+        "react-aria-components/RadioGroupProps",
+        "react-aria-components/RadioProps",
+        "react-aria-components/SwitchProps",
+        "react-aria-components/Switch"
+      ],
+      "target": [
+        "@base-ui/react/checkbox",
+        "@base-ui/react/switch",
+        "@base-ui/react/radio",
+        "@base-ui/react/radio-group",
+        "@base-ui/react/field"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 98,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/checkbox.json",
+        ".design-compiler/base-ui-migration/docs/switch.json",
+        ".design-compiler/base-ui-migration/docs/radio.json",
+        ".design-compiler/base-ui-migration/docs/radio-group.json",
+        ".design-compiler/base-ui-migration/docs/field.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/forms-primitives.json",
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 3,
+      "blockers": []
+    },
+    {
+      "item": "field-text",
+      "wave": 1,
+      "files": [
+        "components/base/input/label.tsx",
+        "components/base/input/hint-text.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/TextProps",
+        "react-aria-components/Text",
+        "react-aria-components/LabelProps",
+        "react-aria-components/Label"
+      ],
+      "target": [
+        "@base-ui/react/field"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "LOW",
+      "downstreamPublicItems": 86,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/field.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/field-text.json",
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 4,
+      "blockers": []
+    },
+    {
+      "item": "buttons-native",
+      "wave": 1,
+      "files": [
+        "components/base/buttons/button.tsx",
+        "components/base/buttons/button-utility.tsx",
+        "components/base/buttons/close-button.tsx",
+        "components/base/buttons/social-button.tsx",
+        "components/base/avatar/base-components/avatar-add-button.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/ButtonProps",
+        "react-aria/Placement",
+        "react-aria-components/LinkProps",
+        "react-aria-components/Button",
+        "react-aria-components/Link"
+      ],
+      "target": [
+        "@base-ui/react/use-render",
+        "@base-ui/react/merge-props"
+      ],
+      "strategy": "NATIVE_REPLACEMENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 98,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/use-render.json",
+        ".design-compiler/base-ui-migration/docs/merge-props.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/buttons-native.json",
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 12,
+      "blockers": []
+    },
+    {
+      "item": "tooltip-overlay",
+      "wave": 1,
+      "files": [
+        "components/base/tooltip/tooltip.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/ButtonProps",
+        "react-aria-components/TooltipProps",
+        "react-aria-components/TooltipTriggerComponentProps",
+        "react-aria-components/Button",
+        "react-aria-components/OverlayArrow",
+        "react-aria-components/Tooltip",
+        "react-aria-components/TooltipTrigger"
+      ],
+      "target": [
+        "@base-ui/react/tooltip"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 86,
+      "docsNotes": [],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/tooltip-overlay.json",
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 9,
+      "blockers": []
+    },
+    {
+      "item": "slider",
+      "wave": 2,
+      "files": [
+        "components/base/slider/slider.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/SliderProps",
+        "react-aria-components/Label",
+        "react-aria-components/Slider",
+        "react-aria-components/SliderOutput",
+        "react-aria-components/SliderThumb",
+        "react-aria-components/SliderTrack"
+      ],
+      "target": [
+        "@base-ui/react/slider"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/slider.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "input-field",
+      "wave": 2,
+      "files": [
+        "components/base/input/input.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/InputProps",
+        "react-aria-components/TextFieldProps",
+        "react-aria-components/Button",
+        "react-aria-components/Group",
+        "react-aria-components/Input",
+        "react-aria-components/TextField"
+      ],
+      "target": [
+        "@base-ui/react/field",
+        "@base-ui/react/input"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 19,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/field.json",
+        ".design-compiler/base-ui-migration/docs/input.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [
+        "field-text"
+      ],
+      "dependencyNote": "React Aria's Label reads the control id from React Aria's field context; a migrated Label cannot name an unmigrated React Aria input, so Label/HintText and the field family must migrate as one unit (observed as an axe `label` violation on input-invalid/textarea-invalid).",
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "textarea",
+      "wave": 2,
+      "files": [
+        "components/base/textarea/textarea.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/TextAreaProps",
+        "react-aria-components/TextFieldProps",
+        "react-aria-components/TextArea",
+        "react-aria-components/TextField"
+      ],
+      "target": [
+        "@base-ui/react/field"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/field.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [
+        "field-text"
+      ],
+      "dependencyNote": "same field-context wiring dependency as input-field",
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "input-number",
+      "wave": 2,
+      "files": [
+        "components/base/input/input-number.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Button",
+        "react-aria-components/DateFieldProps",
+        "react-aria-components/Group",
+        "react-aria-components/Input",
+        "react-aria-components/InputProps",
+        "react-aria-components/NumberField",
+        "react-aria-components/NumberFieldProps",
+        "react-aria-components/DateValue"
+      ],
+      "target": [
+        "@base-ui/react/number-field",
+        "@base-ui/react/field"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/number-field.json",
+        ".design-compiler/base-ui-migration/docs/field.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "input-payment",
+      "wave": 2,
+      "files": [
+        "components/base/input/input-payment.tsx"
+      ],
+      "currentEngine": [
+        "@react-stately/utils/useControlledState"
+      ],
+      "target": [
+        "@base-ui/react/field",
+        "@base-ui/react/input"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/field.json",
+        ".design-compiler/base-ui-migration/docs/input.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "input-tags",
+      "wave": 3,
+      "files": [
+        "components/base/input/input-tags.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Group",
+        "react-aria-components/Input"
+      ],
+      "target": [
+        "@base-ui/react/combobox"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/combobox.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "button-group",
+      "wave": 2,
+      "files": [
+        "components/base/button-group/button-group.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/ToggleButton",
+        "react-aria-components/ToggleButtonGroup",
+        "react-aria-components/ToggleButtonGroupProps",
+        "react-aria-components/ToggleButtonProps"
+      ],
+      "target": [
+        "@base-ui/react/toggle",
+        "@base-ui/react/toggle-group"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/toggle.json",
+        ".design-compiler/base-ui-migration/docs/toggle-group.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/button-group.json",
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 2,
+      "blockers": []
+    },
+    {
+      "item": "form",
+      "wave": 2,
+      "files": [
+        "components/base/form/form.tsx",
+        "components/base/form/hook-form.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Form"
+      ],
+      "target": [
+        "@base-ui/react/form",
+        "@base-ui/react/fieldset"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/form.json",
+        ".design-compiler/base-ui-migration/docs/fieldset.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "file-upload",
+      "wave": 2,
+      "files": [
+        "components/base/file-upload-trigger/file-upload-trigger.tsx"
+      ],
+      "currentEngine": [
+        "@react-aria/utils/filterDOMProps"
+      ],
+      "target": [
+        "@base-ui/react/input"
+      ],
+      "strategy": "NATIVE_REPLACEMENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "LOW",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/input.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "select",
+      "wave": 3,
+      "files": [
+        "components/base/select/select.tsx",
+        "components/base/select/select-item.tsx",
+        "components/base/select/popover.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/PopoverProps",
+        "react-aria-components/Popover",
+        "react-aria-components/ListBoxItemProps",
+        "react-aria-components/ListBoxItem",
+        "react-aria-components/Text",
+        "react-aria-components/SelectProps",
+        "react-aria-components/Button",
+        "react-aria-components/ListBox",
+        "react-aria-components/Select",
+        "react-aria-components/SelectValue"
+      ],
+      "target": [
+        "@base-ui/react/select",
+        "@base-ui/react/popover"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 13,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/select.json",
+        ".design-compiler/base-ui-migration/docs/popover.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "combobox",
+      "wave": 3,
+      "files": [
+        "components/base/select/combobox.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/ComboBoxProps",
+        "react-aria-components/GroupProps",
+        "react-aria-components/ListBoxProps",
+        "react-aria-components/ComboBox",
+        "react-aria-components/Group",
+        "react-aria-components/Input",
+        "react-aria-components/ListBox",
+        "react-aria-components/ComboBoxStateContext"
+      ],
+      "target": [
+        "@base-ui/react/combobox",
+        "@base-ui/react/autocomplete"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 9,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/combobox.json",
+        ".design-compiler/base-ui-migration/docs/autocomplete.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "multi-select",
+      "wave": 3,
+      "files": [
+        "components/base/select/multi-select.tsx"
+      ],
+      "currentEngine": [
+        "react-aria/useFilter",
+        "react-aria-components/Selection",
+        "react-aria-components/Autocomplete",
+        "react-aria-components/Button",
+        "react-aria-components/Dialog",
+        "react-aria-components/DialogTrigger",
+        "react-aria-components/Input",
+        "react-aria-components/ListBox",
+        "react-aria-components/Popover",
+        "react-aria-components/SearchField"
+      ],
+      "target": [
+        "@base-ui/react/select",
+        "@base-ui/react/combobox"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/select.json",
+        ".design-compiler/base-ui-migration/docs/combobox.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "tag-select",
+      "wave": 3,
+      "files": [
+        "components/base/select/tag-select.tsx"
+      ],
+      "currentEngine": [
+        "react-aria/FocusScope",
+        "react-aria/useFilter",
+        "react-aria/useFocusManager",
+        "react-aria-components/ComboBoxProps",
+        "react-aria-components/GroupProps",
+        "react-aria-components/ListBoxProps",
+        "react-aria-components/Key",
+        "react-aria-components/ComboBox",
+        "react-aria-components/Group",
+        "react-aria-components/Input",
+        "react-aria-components/ListBox",
+        "react-aria-components/ComboBoxStateContext",
+        "react-stately/ListData",
+        "react-stately/useListData"
+      ],
+      "target": [
+        "@base-ui/react/combobox"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/combobox.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "dropdown-menu",
+      "wave": 3,
+      "files": [
+        "components/base/dropdown/dropdown.tsx",
+        "components/base/dropdown/dropdown-account-breadcrumb.tsx",
+        "components/base/dropdown/dropdown-account-button.tsx",
+        "components/base/dropdown/dropdown-account-card-md.tsx",
+        "components/base/dropdown/dropdown-account-card-sm.tsx",
+        "components/base/dropdown/dropdown-account-card-xs.tsx",
+        "components/base/dropdown/dropdown-avatar.tsx",
+        "components/base/dropdown/dropdown-button-advanced.tsx",
+        "components/base/dropdown/dropdown-button-link.tsx",
+        "components/base/dropdown/dropdown-button-simple.tsx",
+        "components/base/dropdown/dropdown-context-menu-advanced.tsx",
+        "components/base/dropdown/dropdown-context-menu-simple.tsx",
+        "components/base/dropdown/dropdown-icon-advanced.tsx",
+        "components/base/dropdown/dropdown-icon-simple.tsx",
+        "components/base/dropdown/dropdown-search-advanced.tsx",
+        "components/base/dropdown/dropdown-search-simple.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Button",
+        "react-aria-components/MenuItem",
+        "react-aria-components/Selection",
+        "react-aria-components/SubmenuTrigger",
+        "react-aria-components/Autocomplete",
+        "react-aria-components/SearchField",
+        "react-aria-components/useFilter",
+        "react-aria-components/ButtonProps",
+        "react-aria-components/MenuItemProps",
+        "react-aria-components/MenuProps",
+        "react-aria-components/PopoverProps",
+        "react-aria-components/SeparatorProps",
+        "react-aria-components/MenuItemRenderProps",
+        "react-aria-components/Header",
+        "react-aria-components/Menu",
+        "react-aria-components/MenuSection",
+        "react-aria-components/MenuTrigger",
+        "react-aria-components/Popover",
+        "react-aria-components/Separator"
+      ],
+      "target": [
+        "@base-ui/react/menu",
+        "@base-ui/react/popover",
+        "@base-ui/react/autocomplete"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 21,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/menu.json",
+        ".design-compiler/base-ui-migration/docs/popover.json",
+        ".design-compiler/base-ui-migration/docs/autocomplete.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "tags",
+      "wave": 3,
+      "files": [
+        "components/base/tags/tags.tsx",
+        "components/base/tags/base-components/tag-close-x.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Button",
+        "react-aria-components/ButtonProps",
+        "react-aria-components/Tag",
+        "react-aria-components/TagGroup",
+        "react-aria-components/TagGroupProps",
+        "react-aria-components/TagList",
+        "react-aria-components/TagProps"
+      ],
+      "target": [
+        "@base-ui/react/combobox"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/combobox.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "modal-dialog",
+      "wave": 4,
+      "files": [
+        "components/application/modals/modal.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/DialogProps",
+        "react-aria-components/ModalOverlayProps",
+        "react-aria-components/Dialog",
+        "react-aria-components/DialogTrigger",
+        "react-aria-components/Modal",
+        "react-aria-components/ModalOverlay"
+      ],
+      "target": [
+        "@base-ui/react/dialog"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/dialog.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [
+        "buttons-native"
+      ],
+      "dependencyNote": "React Aria's DialogTrigger wires its child through React Aria press props; once the payload Button is a native element it no longer consumes them, so the trigger stops opening the dialog (observed in the migrated capture: aria-expanded never becomes true). These consumers must migrate in the same batch as, or after, the button family.",
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "slideout",
+      "wave": 4,
+      "files": [
+        "components/application/slideout-menus/slideout-menu.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/DialogProps",
+        "react-aria-components/ModalOverlayProps",
+        "react-aria-components/ModalRenderProps",
+        "react-aria-components/Dialog",
+        "react-aria-components/DialogTrigger",
+        "react-aria-components/Modal",
+        "react-aria-components/ModalOverlay"
+      ],
+      "target": [
+        "@base-ui/react/dialog",
+        "@base-ui/react/drawer"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/dialog.json",
+        ".design-compiler/base-ui-migration/docs/drawer.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [
+        "buttons-native"
+      ],
+      "dependencyNote": "same React Aria trigger/child press-wiring dependency as modal-dialog",
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "tabs",
+      "wave": 4,
+      "files": [
+        "components/application/tabs/tabs.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/TabListProps",
+        "react-aria-components/TabProps",
+        "react-aria-components/TabRenderProps",
+        "react-aria-components/Tab",
+        "react-aria-components/TabList",
+        "react-aria-components/TabPanel",
+        "react-aria-components/Tabs",
+        "react-aria-components/TabsContext",
+        "react-aria-components/useSlottedContext"
+      ],
+      "target": [
+        "@base-ui/react/tabs"
+      ],
+      "strategy": "DIRECT_BASE_UI_EQUIVALENT",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 0,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/tabs.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "nav-parts",
+      "wave": 4,
+      "files": [
+        "components/application/app-navigation/base-components/nav-account-card.tsx",
+        "components/application/app-navigation/base-components/nav-item.tsx",
+        "components/application/app-navigation/base-components/mobile-header.tsx",
+        "components/application/app-navigation/base-components/nav-button.tsx",
+        "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/Button",
+        "react-aria-components/Dialog",
+        "react-aria-components/DialogTrigger",
+        "react-aria-components/Modal",
+        "react-aria-components/ModalOverlay",
+        "react-aria/useFocusManager",
+        "react-aria-components/DialogProps",
+        "react-aria-components/Placement",
+        "react-aria-components/Popover",
+        "react-aria-components/Pressable",
+        "react-aria-components/LinkProps",
+        "react-aria-components/Link"
+      ],
+      "target": [
+        "@base-ui/react/dialog",
+        "@base-ui/react/popover",
+        "@base-ui/react/use-render"
+      ],
+      "strategy": "BASE_UI_COMPOSITION",
+      "blocker": null,
+      "publicApiPolicy": "PRESERVE",
+      "risk": "MEDIUM",
+      "downstreamPublicItems": 16,
+      "docsNotes": [
+        ".design-compiler/base-ui-migration/docs/dialog.json",
+        ".design-compiler/base-ui-migration/docs/popover.json",
+        ".design-compiler/base-ui-migration/docs/use-render.json"
+      ],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [
+        "buttons-native"
+      ],
+      "dependencyNote": "app-navigation parts render the payload Button inside React Aria DialogTrigger/Popover and use Card/Dialog contexts; same press-wiring dependency as modal-dialog",
+      "publicApiChanges": 0,
+      "blockers": []
+    },
+    {
+      "item": "date-picker",
+      "wave": 5,
+      "files": [
+        "components/application/date-picker/calendar.tsx",
+        "components/application/date-picker/cell.tsx",
+        "components/application/date-picker/date-picker.tsx",
+        "components/application/date-picker/date-range-picker.tsx",
+        "components/application/date-picker/range-calendar.tsx",
+        "components/base/input/input-date.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/CalendarProps",
+        "react-aria-components/DateValue",
+        "react-aria-components/Calendar",
+        "react-aria-components/CalendarContext",
+        "react-aria-components/CalendarGrid",
+        "react-aria-components/CalendarGridBody",
+        "react-aria-components/CalendarGridHeader",
+        "react-aria-components/CalendarHeaderCell",
+        "react-aria-components/Heading",
+        "react-aria-components/useSlottedContext",
+        "react-aria-components/CalendarCellProps",
+        "react-aria-components/CalendarCell",
+        "react-aria-components/RangeCalendarContext",
+        "react-aria-components/useLocale",
+        "@react-stately/utils/useControlledState",
+        "react-aria/useDateFormatter",
+        "react-aria-components/DatePickerProps",
+        "react-aria-components/DatePicker",
+        "react-aria-components/Dialog",
+        "react-aria-components/Group",
+        "react-aria-components/Popover",
+        "react-aria-components/DateRangePickerProps",
+        "react-aria-components/DateRangePicker",
+        "react-aria-components/RangeCalendarProps"
+      ],
+      "target": [],
+      "strategy": "NO_BASE_UI_EQUIVALENT",
+      "blocker": "Base UI 1.8.0 has no date primitives (proven absent from the 1.8.0 export surface and docs index); requires an owner-approved native/specialized replacement",
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 9,
+      "docsNotes": [],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": [
+        "Base UI 1.8.0 has no date primitives (proven absent from the 1.8.0 export surface and docs index); requires an owner-approved native/specialized replacement"
+      ]
+    },
+    {
+      "item": "table",
+      "wave": 5,
+      "files": [
+        "components/application/table/table.tsx"
+      ],
+      "currentEngine": [
+        "react-aria-components/CellProps",
+        "react-aria-components/ColumnProps",
+        "react-aria-components/RowProps",
+        "react-aria-components/TableHeaderProps",
+        "react-aria-components/TableProps",
+        "react-aria-components/Cell",
+        "react-aria-components/Collection",
+        "react-aria-components/Column",
+        "react-aria-components/Group",
+        "react-aria-components/Row",
+        "react-aria-components/Table",
+        "react-aria-components/TableBody",
+        "react-aria-components/TableHeader",
+        "react-aria-components/useTableOptions"
+      ],
+      "target": [],
+      "strategy": "NO_BASE_UI_EQUIVALENT",
+      "blocker": "Base UI 1.8.0 has no Table/Grid primitive; requires an owner-approved native/specialized replacement",
+      "publicApiPolicy": "PRESERVE",
+      "risk": "HIGH",
+      "downstreamPublicItems": 0,
+      "docsNotes": [],
+      "testsRequired": [
+        "typecheck",
+        "ssr",
+        "keyboard",
+        "controlled",
+        "uncontrolled",
+        "a11y",
+        "visual"
+      ],
+      "status": "MIGRATING",
+      "record": null,
+      "dependsOn": [],
+      "dependencyNote": null,
+      "publicApiChanges": 0,
+      "blockers": [
+        "Base UI 1.8.0 has no Table/Grid primitive; requires an owner-approved native/specialized replacement"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "unit": "button-group",
+  "files": ["registry/untitledui/components/base/button-group/button-group.tsx"],
+  "status": "MIGRATED_PENDING_GATES",
+  "baseUiPrimitives": [
+    {
+      "primitive": "radio-group",
+      "version": "1.8.0",
+      "docsConsulted": ["https://base-ui.com/react/components/radio-group.md", ".design-compiler/base-ui-migration/docs/radio-group.json"],
+      "semanticDifferences": [
+        "Selection state lives on the group (value/defaultValue/onValueChange(value, eventDetails)); Radio contributes only its value — React Aria also allowed a per-item isSelected, which the migration folds into the group value from the children",
+        "value is a single value, not an array"
+      ]
+    },
+    {
+      "primitive": "radio",
+      "version": "1.8.0",
+      "docsConsulted": ["https://base-ui.com/react/components/radio-group.md", ".design-compiler/base-ui-migration/docs/radio.json"],
+      "semanticDifferences": [
+        "Parts are Root/Indicator; state attributes are data-checked/data-unchecked, data-disabled",
+        "Renders role=radio (nativeButton default true), matching React Aria's single-select ToggleButtonGroup"
+      ]
+    },
+    {
+      "primitive": "toggle-group",
+      "version": "1.8.0",
+      "docsConsulted": ["https://base-ui.com/react/components/toggle-group.md", ".design-compiler/base-ui-migration/docs/toggle-group.json"],
+      "semanticDifferences": [
+        "Value is always an array, even when multiple is false, and selection switches behaviour with `multiple`",
+        "No data-selected on the group; each Toggle owns its state"
+      ]
+    },
+    {
+      "primitive": "toggle",
+      "version": "1.8.0",
+      "docsConsulted": ["https://base-ui.com/react/components/toggle.md", ".design-compiler/base-ui-migration/docs/toggle.json"],
+      "semanticDifferences": [
+        "`pressed`/`defaultPressed`/`onPressedChange` replace `isSelected`/`defaultSelected`/`onChange`",
+        "State attribute is data-pressed (React Aria emitted data-selected)"
+      ]
+    }
+  ],
+  "migrationRecord": {
+    "figmaComponentSet": null,
+    "publicComponent": "ButtonGroup, ButtonGroupItem",
+    "existingUntitledUiBehavior": "single-select mode renders radio semantics (role=radiogroup with role=radio children, aria-checked); multiple mode renders pressed toggles; items support controlled isSelected (pagination), uncontrolled defaultSelected, ids, disabled, leading/trailing icons and per-size class vocabulary",
+    "canonicalBehavioralContract": "single selection = radio group semantics and arrow-key navigation; multiple selection = pressed toggles; group-level controlled/uncontrolled selection in React Aria's Selection vocabulary plus per-item controlled state",
+    "baseUiCompositionChosen": "RadioGroup + Radio for single selection (explicit radio semantics, selection on the group), ToggleGroup + Toggle for multiple selection; a narrow child-derived adapter folds per-item isSelected into the group value",
+    "whyNotOneToOne": "React Aria's ToggleButtonGroup is one primitive that switches semantics by selectionMode; Base UI splits radio and toggle families, and its ToggleGroup in single mode does not emit aria-checked (verified in this harness), so the radio family is the faithful target rather than a renamed ToggleGroup"
+  },
+  "publicApiChanges": [
+    {
+      "prop": "ButtonGroupKey (selection key type)",
+      "before": "React Aria Key = string | number",
+      "after": "string",
+      "reason": "Base UI's Toggle/ToggleGroup type their value as string; the group identifies items by string",
+      "migrationNote": "Numeric ids now fail at compile time instead of being silently coerced at runtime. No payload consumer passes numeric ids (pagination passes none).",
+      "compatibility": "compile-time narrowing, no runtime behaviour change observed in the payload"
+    },
+    {
+      "prop": "selectedKeys: \"all\"",
+      "before": "React Aria Selection allowed \"all\"",
+      "after": "treated as an empty selection",
+      "reason": "Base UI has no \"all\" concept for a toggle/radio group",
+      "migrationNote": "A group cannot express select-all; pass explicit ids instead.",
+      "compatibility": "edge case; no payload consumer uses \"all\""
+    }
+  ],
+  "reactAriaImportsRemoved": ["ToggleButton", "ToggleButtonGroup", "ToggleButtonGroupProps", "ToggleButtonProps"],
+  "baseUiImportsAdded": ["@base-ui/react/radio", "@base-ui/react/radio-group", "@base-ui/react/toggle", "@base-ui/react/toggle-group"],
+  "stateSelectorChanges": [
+    { "from": "selected:bg-primary_hover selected:text-secondary_hover", "to": "data-pressed:bg-primary_hover data-pressed:text-secondary_hover", "reason": "Base UI's toggle emits data-pressed; the react-aria-components Tailwind plugin's `selected:` variant resolves to [data-selected], which Base UI never emits" },
+    { "from": "group-selected/button-group:text-fg-quaternary_hover", "to": "group-data-pressed/button-group:text-fg-quaternary_hover", "reason": "same attribute rename, scoped to the item as the group parent" }
+  ],
+  "evidence": {
+    "typecheck": "payload tsconfig: 0 errors in this file",
+    "baselineCapture": ".design-compiler/base-ui-migration/captures/baseline/capture.json#button-group (React Aria: roles radiogroup/radio/radio, aria-checked false->true on click, slot geometry 60.69x40)",
+    "parity": ".design-compiler/base-ui-migration/parity-migrated.json#button-group",
+    "defectFoundByGate": "First implementation used ToggleGroup for single selection: roles matched but aria-checked was never emitted, which the extended capture (aria pressed/checked/selected per step) caught before merge."
+  },
+  "blockers": []
+}

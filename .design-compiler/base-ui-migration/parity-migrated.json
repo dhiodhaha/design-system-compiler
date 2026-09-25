@@ -1,0 +1,190 @@
+{
+  "$schema": "design-compiler/BaseUiParityReport@p0",
+  "label": "migrated",
+  "unit": null,
+  "comparedCases": 43,
+  "tolerances": {
+    "geometry": 1,
+    "portalPlacement": 12
+  },
+  "failures": [
+    {
+      "case": "modal-open",
+      "class": "POPUP_STATE_FAILURE",
+      "detail": "step 0:click: aria-expanded baseline=true candidate="
+    },
+    {
+      "case": "modal-open",
+      "class": "PORTAL_FAILURE",
+      "detail": "step 0:click: visible overlays baseline=1 candidate=0"
+    },
+    {
+      "case": "modal-open",
+      "class": "POPUP_STATE_FAILURE",
+      "detail": "step 1:press Escape: aria-expanded baseline=false candidate="
+    }
+  ],
+  "notes": [
+    {
+      "case": "checkbox-unchecked",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[] candidate=[\"checkbox\"]"
+    },
+    {
+      "case": "checkbox-unchecked",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:false:false"
+    },
+    {
+      "case": "checkbox-unchecked",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:false candidate=label:null:false,input:checkbox:false"
+    },
+    {
+      "case": "checkbox-checked",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[] candidate=[\"checkbox\"]"
+    },
+    {
+      "case": "checkbox-checked",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:true:false"
+    },
+    {
+      "case": "checkbox-checked",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:false candidate=label:null:false,input:checkbox:false"
+    },
+    {
+      "case": "checkbox-keyboard",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[] candidate=[\"checkbox\"]"
+    },
+    {
+      "case": "checkbox-keyboard",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:false:false"
+    },
+    {
+      "case": "checkbox-keyboard",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:false candidate=label:null:false,input:checkbox:false"
+    },
+    {
+      "case": "checkbox-hint-invalid",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[] candidate=[\"checkbox\"]"
+    },
+    {
+      "case": "checkbox-hint-invalid",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:true:false"
+    },
+    {
+      "case": "checkbox-hint-invalid",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:false candidate=label:null:false,input:checkbox:false"
+    },
+    {
+      "case": "checkbox-disabled",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[] candidate=[\"checkbox\"]"
+    },
+    {
+      "case": "checkbox-disabled",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:false:true"
+    },
+    {
+      "case": "checkbox-disabled",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:true candidate=label:null:true,input:checkbox:true"
+    },
+    {
+      "case": "radio-group-default",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[\"radiogroup\"] candidate=[\"radiogroup\",\"radio\",\"radio\",\"radio\"]"
+    },
+    {
+      "case": "radio-group-default",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: radio:false:false|radio:false:false|radio:false:false"
+    },
+    {
+      "case": "radio-group-default",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:radio:false,input:radio:false,input:radio:false candidate=label:null:false,input:radio:false,label:null:false,input:radio:false,label:null:false,input:radio:false"
+    },
+    {
+      "case": "radio-group-keyboard",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[\"radiogroup\"] candidate=[\"radiogroup\",\"radio\",\"radio\",\"radio\"]"
+    },
+    {
+      "case": "radio-group-keyboard",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: radio:true:false|radio:false:false|radio:false:false"
+    },
+    {
+      "case": "radio-group-keyboard",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:radio:false,input:radio:false,input:radio:false candidate=label:null:false,input:radio:false,label:null:false,input:radio:false,label:null:false,input:radio:false"
+    },
+    {
+      "case": "radio-group-disabled",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[\"radiogroup\"] candidate=[\"radiogroup\",\"radio\",\"radio\"]"
+    },
+    {
+      "case": "radio-group-disabled",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: radio:true:true|radio:false:true"
+    },
+    {
+      "case": "radio-group-disabled",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:radio:true,input:radio:true candidate=label:null:true,input:radio:true,label:null:true,input:radio:true"
+    },
+    {
+      "case": "toggle-off",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:false:false"
+    },
+    {
+      "case": "toggle-off",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:false candidate=label:null:false,input:checkbox:false"
+    },
+    {
+      "case": "toggle-keyboard",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:false:false"
+    },
+    {
+      "case": "toggle-keyboard",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:false candidate=label:null:false,input:checkbox:false"
+    },
+    {
+      "case": "toggle-on-disabled",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: checkbox:true:true"
+    },
+    {
+      "case": "toggle-on-disabled",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:checkbox:true candidate=label:null:true,input:checkbox:true"
+    },
+    {
+      "case": "button-group",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: radio:false:false|radio:false:false"
+    },
+    {
+      "case": "button-group",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=button:button:false,button:button:false candidate=span:null:false,input:radio:false,span:null:false,input:radio:false"
+    }
+  ],
+  "status": "FAIL"
+}

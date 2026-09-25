@@ -1,0 +1,222 @@
+{
+  "unit": "buttons-native",
+  "files": [
+    "registry/untitledui/components/base/buttons/button.tsx",
+    "registry/untitledui/components/base/buttons/button-utility.tsx",
+    "registry/untitledui/components/base/buttons/close-button.tsx",
+    "registry/untitledui/components/base/buttons/social-button.tsx",
+    "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "strategy": "NATIVE_REPLACEMENT",
+  "baseUiPrimitives": [
+    {
+      "primitive": "use-render",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/use-render",
+      "usedIn": [
+        "registry/untitledui/components/base/buttons/button.tsx",
+        "registry/untitledui/components/base/buttons/button-utility.tsx",
+        "registry/untitledui/components/base/buttons/close-button.tsx",
+        "registry/untitledui/components/base/buttons/social-button.tsx"
+      ],
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/use-render.json",
+        ".design-compiler/base-ui-migration/docs/internals-stateAttributesMapping.json",
+        "node_modules/@base-ui/react/use-render/useRender.d.ts",
+        "node_modules/@base-ui/react/internals/useRenderElement.mjs",
+        "node_modules/@base-ui/react/internals/getStateAttributesProps.mjs",
+        "node_modules/@base-ui/react/button/Button.js"
+      ],
+      "semanticDifferences": [
+        "Base UI has no Button primitive that fits this component: @base-ui/react/button enforces button semantics (role/keyboard/disabled) and its documented loading pattern (disabled + focusableWhenDisabled) would both dim a loading button (disabled:opacity-50) and drop it from the tab order, so the payload renders native <button>/<a> elements itself and uses use-render only for polymorphism.",
+        "use-render converts `state` keys to lowercased data-* attributes (`data-isdisabled`), so the historical attribute names are restored with `stateAttributesMapping`: isDisabled -> data-disabled, isLoading -> data-loading, iconOnly -> data-icon-only.",
+        "`defaultTagName` is static per render, so the tag is chosen per variant: 'button' (no `href` key), 'a' (usable href), 'span' (React Aria's link fallback: empty href, or disabled link).",
+        "The `render` prop keeps React Aria's contract (ReactElement | (props, state) => element); for an element render, Base UI merges the element's own props last (className concatenated, handlers merged) exactly as React Aria's useRenderProps did.",
+        "`ref` is passed inside the rendered props object because the polymorphic ref is a Ref<HTMLButtonElement> | Ref<HTMLAnchorElement> union that use-render's RenderedElementType inference cannot unify; use-render still merges it with any ref on a consumer-supplied `render` element (client-side only: the merge is guarded by `typeof document !== 'undefined'`).",
+        "`renderTag('button')` implies type=\"button\"; the component sets `type` explicitly as well, because a pending button must fall back from type=\"submit\" to type=\"button\" (React Aria's isPending behaviour, preserved).",
+        "No press/hover/focus JS state is tracked: React Aria exposed data-pressed/data-hovered/data-focused/data-focus-visible, Base UI's native equivalent is CSS (:active, :hover, :focus-visible), and no class in this unit used those RAC variants."
+      ]
+    },
+    {
+      "primitive": "merge-props",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/merge-props",
+      "usedIn": [],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/merge-props.json"],
+      "semanticDifferences": [
+        "Not imported directly: use-render's `props` parameter already normalises prop sets through mergeProps/mergePropsN internally (handlers merged right-to-left, className concatenated, style merged), so an explicit mergeProps import would have been dead weight.",
+        "Unlike React Aria's mergeProps, Base UI's does not merge refs — the component's ref and a render element's ref are merged by use-render's `ref` handling instead."
+      ]
+    }
+  ],
+  "publicApiChanges": [
+    {
+      "prop": "ButtonProps / LinkProps / Props (button.tsx, social-button.tsx, button-utility.tsx)",
+      "before": "extends CommonProps, Omit<AriaButtonProps|AriaLinkProps, \"children\"|\"className\">",
+      "after": "extends CommonProps, Omit<ComponentPropsWithRef<\"button\">|\"a\">, \"children\"|\"className\"|\"color\"|\"disabled\"|\"slot\"> (+ ElementProps: slot, render)",
+      "reason": "React Aria's prop interfaces are gone; the native React DOM props are the equivalent surface and keep ref forwarding typed.",
+      "migrationNote": "Every prop the payload passes still typechecks and behaves identically: size, color, isDisabled, isLoading, showTextWhileLoading, noTextPadding, iconLeading, iconTrailing, children, className, onClick, type, href, slot, aria-*, data-*, ref. \"color\" is omitted from the native props because React's HTMLAttributes declares a non-standard `color?: string` that would clash with the variant union.",
+      "compatibility": "PRESERVED"
+    },
+    {
+      "prop": "onPress, onPressStart, onPressEnd, onPressUp, onPressChange (React Aria press events)",
+      "before": "Accepted and forwarded to React Aria's Button/Link (onPress ran through usePress).",
+      "after": "Removed.",
+      "reason": "Base UI has no press-event layer; a real <button>/<a> activates through the native click (pointer, Enter and Space), so `onClick` is the complete replacement.",
+      "migrationNote": "Replace `onPress={fn}` with `onClick={fn}`. Zero call sites in the payload (verified: no `onPress`/`onPress*` is passed to Button, ButtonUtility, CloseButton, SocialButton or AvatarAddButton anywhere under registry/ or src/ — the only onPress usages are on raw React Aria components owned by other units).",
+      "compatibility": "REMOVED_UNUSED"
+    },
+    {
+      "prop": "isPending (React Aria Button only)",
+      "before": "Accepted by the type, but already inert: the component always passed `isPending={loading}`, overriding any consumer value.",
+      "after": "Removed from the type; the loading state is `isLoading` (unchanged).",
+      "reason": "Base UI has no pending state; keeping a prop that never had an effect would be a false contract.",
+      "migrationNote": "Use `isLoading`. Zero call sites in the payload.",
+      "compatibility": "REMOVED_NO_OP"
+    },
+    {
+      "prop": "excludeFromTabOrder, preventFocusOnPress, elementType, routerOptions (React Aria only)",
+      "before": "Accepted by the inherited React Aria prop types.",
+      "after": "Removed.",
+      "reason": "No Base UI equivalent; removed so an inert prop cannot silently do nothing.",
+      "migrationNote": "Use `tabIndex={-1}` for excludeFromTabOrder; router integration belongs to the consumer's link component (this payload had no router integration). Zero call sites in the payload.",
+      "compatibility": "REMOVED_UNUSED"
+    },
+    {
+      "prop": "style (function form)",
+      "before": "React Aria typed `style` as CSSProperties | ((state: ButtonRenderProps) => CSSProperties).",
+      "after": "Native CSSProperties object form only (still resolved against the component state where a file typed it as a function).",
+      "reason": "The React Aria render-state keys (isHovered/isPressed/isFocused/isFocusVisible/isPending) no longer exist; interaction states are native CSS (:hover, :active, :focus-visible, :disabled).",
+      "migrationNote": "Zero call sites in the payload (no `style` is passed to any of the five components). Where a consumer needs per-state styling, use the CSS variants or the `render` callback, which receives the component state.",
+      "compatibility": "NARROWED_UNUSED"
+    },
+    {
+      "prop": "className (function form, close-button.tsx only)",
+      "before": "ClassNameOrFunction<ButtonRenderProps> — the function received { isHovered, isPressed, isFocused, isFocusVisible, isDisabled, isPending }.",
+      "after": "string | ((state: CloseButtonState) => string | undefined), where CloseButtonState = { isDisabled }.",
+      "reason": "The interaction-state keys were React Aria's render state; with a native button they are CSS (:hover, :active, :focus-visible, :disabled) and no JS tracking is needed. The function form itself is preserved and still resolved at render time.",
+      "migrationNote": "The one call site passes a string class name (slideout-menu.tsx). Functions that only read `isDisabled` keep working unchanged.",
+      "compatibility": "PRESERVED_SHAPE_STATE_REDUCED"
+    },
+    {
+      "prop": "slot (close-button.tsx)",
+      "before": "React Aria slot: slot=\"close\" registered the button with the parent React Aria Dialog/Modal so the dialog wired the close action via slot context.",
+      "after": "The prop (and its \"close\" default) is kept and renders the native HTML `slot` attribute; it no longer registers the button with a parent dialog.",
+      "reason": "React Aria's slot context is gone; Base UI dialogs close through their own close part (Dialog.Close / the migrated modal unit), which the parent owns, not this leaf button.",
+      "migrationNote": "The parent unit (modal-dialog / drawer / slideout) must wire its own close handling (e.g. Base UI's Dialog.Close or an onClick on the CloseButton). Markup parity is preserved: React Aria also rendered slot=\"close\" on the DOM element.",
+      "compatibility": "BEHAVIOUR_HANDED_TO_PARENT_UNIT"
+    },
+    {
+      "prop": "tooltipPlacement (button-utility.tsx)",
+      "before": "Placement from `react-aria` (the React Aria placement union).",
+      "after": "TooltipPlacement imported from @/components/base/tooltip/tooltip (same string-literal union, additive export landed by the tooltip unit).",
+      "reason": "No react-aria import may remain; the union is now owned by the tooltip component that consumes it.",
+      "migrationNote": "Same 22 literal values, so consumers pass identical strings; the type name in an import is the only difference. Verified: tooltip.tsx exports TooltipPlacement (tooltip.tsx:24) and my files typecheck against it.",
+      "compatibility": "PRESERVED_RENAMED_IMPORT"
+    },
+    {
+      "prop": "disabled (social-button.tsx, deprecated alias)",
+      "before": "`disabled?: boolean` documented as a deprecated alias of isDisabled (honoured as `isDisabled ?? disabled`).",
+      "after": "Unchanged — alias kept and honoured.",
+      "reason": "Pre-existing public registry API (upstream Untitled UI deprecation window); the migration mandate is API preservation, so the alias is retained and only its JSDoc reference to React Aria was dropped.",
+      "migrationNote": "No behaviour change: `disabled` still maps to isDisabled, and it is destructured out of the DOM props as before.",
+      "compatibility": "PRESERVED"
+    },
+    {
+      "prop": "styles exports (button.tsx, button-utility.tsx, social-button.tsx)",
+      "before": "styles.common.root / styles.sizes.* / styles.colors.* (button.tsx), styles.secondary|tertiary (button-utility.tsx), styles.common|sizes|colors (social-button.tsx).",
+      "after": "Identical shape and identical class strings for button.tsx; button-utility.tsx's `styles.secondary` and social-button.tsx's `styles.common.root` gained `data-disabled:` twins of their existing `disabled:` utilities.",
+      "reason": "A native <a>/fallback <span> never matches `:disabled`, so the disabled look those two files attached through React Aria's data-rac branch had to be re-expressed on the data attribute Base UI emits.",
+      "migrationNote": "Additive only (same declarations, extra selector); `disabled:` was kept so the class strings stay a superset. button.tsx deliberately did NOT get the twin in the shared root, because `in-data-input-wrapper:disabled:opacity-100` must keep winning for buttons inside an input group — there the disabled look is applied per-branch to the link fallback instead.",
+      "compatibility": "PRESERVED_SUPERSET"
+    },
+    {
+      "prop": "render (all five components except avatar-add-button)",
+      "before": "React Aria's render prop: ReactElement | (props, state) => ReactElement, with ButtonRenderProps as the state.",
+      "after": "Same prop, same two forms, now implemented by use-render; the state argument is the component state (ButtonState / CloseButtonState).",
+      "reason": "use-render is Base UI's equivalent of React Aria's render-prop mechanism.",
+      "migrationNote": "Element form merges props identically (className concatenated, handlers merged, the element's own props win). Function form now receives the reduced component state instead of the React Aria render state. Zero call sites in the payload.",
+      "compatibility": "PRESERVED"
+    },
+    {
+      "prop": "new additive exports",
+      "before": "—",
+      "after": "ButtonState (button.tsx), CloseButtonState (close-button.tsx) — the state passed to `render` callbacks and to className/style functions.",
+      "reason": "Documents the state contract that replaced React Aria's render state; additive, no existing export changed.",
+      "migrationNote": "Optional to consume; the payload does not use them.",
+      "compatibility": "ADDITIVE"
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "button.tsx: ButtonProps as AriaButtonProps (react-aria-components), LinkProps as AriaLinkProps (react-aria-components), Button as AriaButton, Link as AriaLink",
+    "button-utility.tsx: Placement (react-aria), ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps, Button as AriaButton, Link as AriaLink",
+    "close-button.tsx: Button as AriaButton, ButtonProps as AriaButtonProps",
+    "social-button.tsx: ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps, Button as AriaButton, Link as AriaLink",
+    "avatar-add-button.tsx: ButtonProps as AriaButtonProps (the tooltip import was already the payload's own module, not React Aria)"
+  ],
+  "baseUiImportsAdded": ["@base-ui/react/use-render (button.tsx, button-utility.tsx, close-button.tsx, social-button.tsx)"],
+  "stateSelectorChanges": [
+    {
+      "from": "disabled:opacity-50 / disabled:cursor-not-allowed (button.tsx, 2 classes; icon-only and input-group variants unchanged)",
+      "to": "unchanged for <button> (native `disabled` attribute is set, so the plugin's `:where(:not([data-rac])):disabled` branch still matches); the link fallback branches additionally emit `data-disabled:opacity-50 data-disabled:cursor-not-allowed`",
+      "reason": "React Aria matched `disabled:` on any element through its data-rac + data-disabled branch; after migration the unprefixed variant only keeps its native `:disabled` branch, which an <a>/<span> never matches. The twins restore the exact computed opacity/cursor the baseline had for disabled links, and are branch-local so `in-data-input-wrapper:disabled:opacity-100` keeps winning for buttons."
+    },
+    {
+      "from": "disabled:shadow-xs (button-utility.tsx styles.secondary), disabled:cursor-not-allowed disabled:opacity-50 (shared className)",
+      "to": "the same classes plus `data-disabled:shadow-xs`, `data-disabled:cursor-not-allowed`, `data-disabled:opacity-50`",
+      "reason": "Same reason: a disabled ButtonUtility link renders as a span, which has no :disabled. Declarations are identical, so buttons are unaffected."
+    },
+    {
+      "from": "disabled:stroke-fg-disabled, disabled:text-fg-disabled, disabled:*:text-fg-disabled, disabled:cursor-not-allowed (social-button.tsx styles.common.root)",
+      "to": "the same classes plus their `data-disabled:` twins",
+      "reason": "Same reason: a disabled SocialButton link renders as a span. Declarations are identical, so buttons are unaffected."
+    },
+    {
+      "from": "focus-visible: (12 usages across the five files: outline ring, plus themes in close-button.tsx)",
+      "to": "unchanged (native `:focus-visible`)",
+      "reason": "The plugin's unfixed branch is `:where(:not([data-rac])):focus-visible`; the migrated elements are real <button>/<a>/<span tabindex> so keyboard focus still matches natively and the ring classes fire exactly as before."
+    },
+    {
+      "from": "React Aria state attributes data-hovered / data-focused / data-pressed / data-focus-visible / data-pending (and data-rac itself)",
+      "to": "not emitted",
+      "reason": "No class in this unit used hovered:/focused:/pressed:/pending: variants (audited: the only state variants in the five files are `disabled:` x24 and `focus-visible:` x12), and interaction styling uses the native hover:/active: variants. Nothing in registry/untitledui/styles keys off these attributes (verified by grep).",
+      "equivalent": "CSS :hover / :active / :focus-visible / :disabled"
+    },
+    {
+      "from": "data-loading (previously data-loading=\"true\"), data-icon-only (previously \"true\")",
+      "to": "unchanged attribute names, now emitted as empty-string presence attributes by stateAttributesMapping",
+      "reason": "Tailwind's `data-*` variant compiles to a presence selector (`&[data-loading]`, `&[data-icon-only]`, `&[data-disabled]` — verified by compiling the utilities with the installed Tailwind 4.3.3), so value changes from \"true\" to \"\" are inert. Keeping the names preserves consumer CSS."
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "crossUnitDependencies": [
+    {
+      "unit": "tooltip",
+      "dependency": "tooltip.tsx must export TooltipPlacement (button-utility.tsx) and TooltipTrigger must accept native button props + isDisabled + slot?: string (button-utility.tsx, avatar-add-button.tsx).",
+      "status": "RESOLVED",
+      "evidence": "tooltip.tsx:24 exports TooltipPlacement; both payload and app typecheck pass with button-utility.tsx/avatar-add-button.tsx importing it. TooltipOverlay confirmed the API contract over hub."
+    },
+    {
+      "unit": "modal-dialog / drawer / slideout (whichever owns the dialog)",
+      "dependency": "CloseButton no longer auto-closes a parent React Aria Dialog via slot=\"close\"; the parent must wire the close action itself (Base UI Dialog.Close or onClick).",
+      "status": "OPEN_BY_DESIGN",
+      "evidence": "React Aria's CloseButton relied on slot context; Base UI has no such slot context. Markup parity is kept (slot=\"close\" is still rendered)."
+    }
+  ],
+  "evidence": {
+    "typecheck": "pass",
+    "notes": [
+      "Payload project: `node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` -> clean (0 errors, whole project).",
+      "App project (src/migration-harness.tsx, src/parity.tsx, src/adopted.tsx consume these components): `node node_modules/typescript5/bin/tsc --noEmit -p tsconfig.json` -> clean (0 errors).",
+      "Residue: `grep -nE \"react-aria|react-stately|@react-aria|@react-stately\"` over the five files -> 0 matches (the residue gate's CANONICAL_RUNTIME rule).",
+      "Runtime markup proof (throwaway bun + renderToStaticMarkup harness, since the project's capture gate is run centrally): <Button> -> <button type=\"button\" class=\"…\">; isDisabled -> <button data-disabled=\"\" disabled=\"\" …>; isLoading -> <button type=\"button\" data-loading=\"\" aria-disabled=\"true\" …> (no native disabled, so it stays focusable exactly like React Aria's pending button, whose aria-disabled the focusable probe reads); type=\"submit\" preserved, and type=\"submit\" + isLoading falls back to type=\"button\"; <Button href=\"/x\"> -> <a href=\"/x\" …>; <Button href=\"/x\" isDisabled> -> <span data-disabled=\"\" role=\"link\" aria-disabled=\"true\" …> (React Aria's link fallback, no tabindex, class twins applied, pointer-events-none); <Button href=\"\"> -> <span role=\"link\" tabindex=\"0\"> (React Aria parity); no data-rac/data-react-aria anywhere.",
+      "Prop-merge fidelity (React Aria's mergeProps keeps the left value when the right one is undefined — verified in react-aria/dist/private/utils/mergeProps.mjs: `result[key] = b !== undefined ? b : a`): consumer `role` and `aria-disabled` survive on anchors, a pending button forces aria-disabled=true without clobbering an idle consumer value, and a consumer tabIndex wins over the span fallback default. Inspecting the final element props through the `render` prop shows onClick as a function on the default/disabled button and undefined while loading (React Aria's pending state dropped non-focus handlers), `disabled: true` for isDisabled, `type`/`slot`/`data-testid` passthrough, and a consumer `render={<a className=\"theirs\" href=\"/y\"/>}` producing className \"theirs <migrated classes>\" with the element's own props winning.",
+      "Class-contract proof: the migrated class strings still contain disabled:cursor-not-allowed, disabled:opacity-50, in-data-input-wrapper:disabled:opacity-100, data-loading:bg-*, data-icon-only:p-*, focus-visible:outline-2, the loading `[&>*:not([data-icon=loading])]:invisible` / `:hidden` rules, and the icon-only/spinner/data-icon/data-text child contract; CloseButton's className function is still resolved (fn-true/fn-false).",
+      "CSS-variant proof: compiled the affected utilities with the project's Tailwind 4.3.3 — `data-loading:` -> `[data-loading]`, `data-icon-only:` -> `[data-icon-only]`, `data-disabled:` -> `[data-disabled]` (presence, value-agnostic), `disabled:` -> `:disabled`; reading tailwindcss-react-aria-components@2.2.0 shows the unprefixed variants compile to `:is(:where([data-rac])[data-X], :where(:not([data-rac])):disabled)` etc., i.e. the native branch for data-rac-free elements.",
+      "Not verified locally (owned by the lead's central gates): browser capture/parity, hydration, axe. Harness cases already covering this unit: button-default, button-secondary, button-disabled, button-loading, button-link (click on `a`), button-keyboard (Enter/Space), button-utility (real <button>).",
+      "Throwaway smoke scripts used for the proofs were deleted; only the five component files and this artifact were written by this unit."
+    ]
+  }
+}

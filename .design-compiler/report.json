@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/StateReport@p1",
-  "generatedAt": "2026-09-25T12:18:40.167Z",
+  "generatedAt": "2026-09-25T12:50:41.861Z",
   "derived": true,
   "derivedBy": "compiler/state/reconcile.mjs",
   "architecture": "Option D — official Untitled UI OSS React source is canonical; Base UI is optional for genuinely new PRO-only primitives",

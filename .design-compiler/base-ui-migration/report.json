@@ -1,0 +1,348 @@
+{
+  "$schema": "design-compiler/BaseUiMigrationReport@p0",
+  "branch": "migration/base-ui-v1.8",
+  "baseUiVersion": "1.8.0",
+  "reactAriaVersion": "1.20.0",
+  "totals": {
+    "canonicalComponentsInspected": 61,
+    "reactAriaUsagesFoundInitially": 277,
+    "reactAriaFilesFoundInitially": 61,
+    "affectedPublicItems": 123,
+    "baseUiPrimitivesDocumented": 60,
+    "units": 25,
+    "byStatus": {
+      "MIGRATING": 25
+    },
+    "parityReports": 2,
+    "parityPassing": 2
+  },
+  "residue": {
+    "$schema": "design-compiler/BaseUiResidueReport@p0",
+    "baseUiVersion": "1.8.0",
+    "totals": {
+      "occurrences": 112,
+      "byKind": {
+        "CANONICAL_RUNTIME": 112
+      },
+      "canonicalRuntimeFiles": 61
+    },
+    "canonicalRuntime": [
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "} from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { useFocusManager } from \"react-aria\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import type { DialogProps as AriaDialogProps, Placement as AriaPlacement } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from \"react-aria-component"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { Pressable } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import type { LinkProps as AriaLinkProps } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { Link as AriaLink } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { Button as AriaButton, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/calendar.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import type { CalendarProps as AriaCalendarProps, DateValue } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/calendar.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "} from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/cell.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import type { CalendarCellProps as AriaCalendarCellProps } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/cell.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { CalendarCell as AriaCalendarCell, RangeCalendarContext, useLocale, useSlottedContext } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { useControlledState } from \"@react-stately/utils\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { useDateFormatter } from \"react-aria\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import type { DatePickerProps as AriaDatePickerProps, DateValue } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { DatePicker as AriaDatePicker, Dialog as AriaDialog, Group as AriaGroup, Popover as AriaPopover } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { useControlledState } from \"@react-stately/utils\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { useDateFormatter } from \"react-aria\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import type { DateRangePickerProps as AriaDateRangePickerProps, DateValue } from \"react-aria-components\";"
+      },
+      {
+        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+        "kind": "CANONICAL_RUNTIME",
+        "line": "import { DateRangePicker as AriaDateRangePicker, Dialog as AriaDialog, Group as AriaGroup, Popover as AriaPopover, useLocale } from \"react-a"
+      }
+    ],
+    "declaredReactAriaPackages": [
+      "@react-aria/utils",
+      "@react-stately/utils",
+      "react-aria",
+      "react-aria-components",
+      "react-stately"
+    ],
+    "gate": {
+      "passed": false,
+      "rule": "no React Aria import may remain in canonical runtime code"
+    }
+  },
+  "units": [
+    {
+      "unit": "forms-primitives",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "field-text",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "buttons-native",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "tooltip-overlay",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "slider",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "input-field",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "textarea",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "input-number",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "input-payment",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "input-tags",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "button-group",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "form",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "file-upload",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "select",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "combobox",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "multi-select",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "tag-select",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "dropdown-menu",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "tags",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "modal-dialog",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "slideout",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "tabs",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "nav-parts",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "date-picker",
+      "status": "MIGRATING"
+    },
+    {
+      "unit": "table",
+      "status": "MIGRATING"
+    }
+  ],
+  "notTerminal": [
+    [
+      "forms-primitives",
+      "MIGRATING"
+    ],
+    [
+      "field-text",
+      "MIGRATING"
+    ],
+    [
+      "buttons-native",
+      "MIGRATING"
+    ],
+    [
+      "tooltip-overlay",
+      "MIGRATING"
+    ],
+    [
+      "slider",
+      "MIGRATING"
+    ],
+    [
+      "input-field",
+      "MIGRATING"
+    ],
+    [
+      "textarea",
+      "MIGRATING"
+    ],
+    [
+      "input-number",
+      "MIGRATING"
+    ],
+    [
+      "input-payment",
+      "MIGRATING"
+    ],
+    [
+      "input-tags",
+      "MIGRATING"
+    ],
+    [
+      "button-group",
+      "MIGRATING"
+    ],
+    [
+      "form",
+      "MIGRATING"
+    ],
+    [
+      "file-upload",
+      "MIGRATING"
+    ],
+    [
+      "select",
+      "MIGRATING"
+    ],
+    [
+      "combobox",
+      "MIGRATING"
+    ],
+    [
+      "multi-select",
+      "MIGRATING"
+    ],
+    [
+      "tag-select",
+      "MIGRATING"
+    ],
+    [
+      "dropdown-menu",
+      "MIGRATING"
+    ],
+    [
+      "tags",
+      "MIGRATING"
+    ],
+    [
+      "modal-dialog",
+      "MIGRATING"
+    ],
+    [
+      "slideout",
+      "MIGRATING"
+    ],
+    [
+      "tabs",
+      "MIGRATING"
+    ],
+    [
+      "nav-parts",
+      "MIGRATING"
+    ],
+    [
+      "date-picker",
+      "MIGRATING"
+    ],
+    [
+      "table",
+      "MIGRATING"
+    ]
+  ],
+  "completed": false
+}

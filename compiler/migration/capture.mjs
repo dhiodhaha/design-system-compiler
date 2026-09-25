@@ -42,11 +42,60 @@ await page.goto(`http://127.0.0.1:${PORT}/migration.html`, { waitUntil: "network
 await page.evaluate(() => document.fonts.ready);
 
 /** Everything observable about the case: roles/names/states, focus, and slot metrics. */
+/**
+ * A widget's role, normalised across implementations: React Aria renders native inputs (implicit roles),
+ * Base UI renders ARIA elements. Nested same-role elements (Base UI wraps its form input inside the ARIA
+ * element) describe ONE widget, so the outer one is kept.
+ */
+const WIDGET_STATE_JS = `
+  const normalizeRole = (el) => {
+    const type = el.getAttribute("type");
+    return (
+      el.getAttribute("role") ??
+      (el.tagName === "INPUT" && type === "checkbox" ? "checkbox" : null) ??
+      (el.tagName === "INPUT" && type === "radio" ? "radio" : null) ??
+      (el.tagName === "INPUT" && type === "range" ? "slider" : null) ??
+      (el.tagName === "INPUT" ? "textbox" : null) ??
+      (el.tagName === "TEXTAREA" ? "textbox" : null) ??
+      (el.tagName === "SELECT" ? "combobox" : null) ??
+      el.tagName.toLowerCase()
+    );
+  };
+  const widgetState = (root) => {
+    const candidates = [...(root?.querySelectorAll("input,select,textarea,[role=checkbox],[role=radio],[role=switch],[role=slider],[role=option],[role=tab],[aria-pressed],[aria-checked]") ?? [])]
+      .filter((el) => el.getAttribute("type") !== "hidden");
+    return candidates
+      .filter((el) => {
+        const role = normalizeRole(el);
+        for (let parent = el.parentElement; parent && parent !== root.parentElement; parent = parent.parentElement) {
+          if (normalizeRole(parent) === role) return false; // nested duplicate of the same widget
+        }
+        const box = el.getBoundingClientRect();
+        // a 1x1 fixed input is Base UI's form carrier, not a widget the user can see
+        const hidden = box.width <= 1 || box.height <= 1 || (el.offsetParent === null && getComputedStyle(el).position !== "fixed");
+        return !hidden;
+      })
+      .map((el) => {
+        const checked = el.getAttribute("aria-checked") ?? el.getAttribute("aria-pressed") ?? ("checked" in el && typeof el.checked === "boolean" ? String(el.checked) : null);
+        return {
+          role: normalizeRole(el),
+          name: (el.getAttribute("aria-label") ?? el.textContent ?? "").trim().slice(0, 30),
+          checked: checked === null ? null : String(checked),
+          disabled: el.hasAttribute("disabled") || el.getAttribute("aria-disabled") === "true",
+          focusable: el.tabIndex >= 0,
+        };
+      });
+  };
+`;
+
 const probe = (caseId, slots) =>
   page.evaluate(
-    (id, slotSelectors) => {
+    (id, slotSelectors, WIDGET_STATE_SRC) => {
+      const widgetState = new Function(`${WIDGET_STATE_SRC}; return widgetState;`)();
       const section = document.querySelector(`[data-case="${id}"]`);
       if (!section) return { missing: true };
+      const renderError = section.querySelector("[data-case-error]")?.getAttribute("data-case-error") ?? null;
+      if (renderError) return { renderError };
       const body = section.querySelector("[data-case-body]");
       const describe = (el) => {
         const cs = getComputedStyle(el);
@@ -96,6 +145,9 @@ const probe = (caseId, slots) =>
         disabled: el.disabled,
         required: el.required,
         name: el.getAttribute("name"),
+        // Base UI keeps state in a visually hidden input for form submission; those are additive, not a
+        // behavioural divergence, so the comparison must be able to tell them apart.
+        hidden: el.getAttribute("type") === "hidden" || el.offsetParent === null,
       }));
       // overlays render through portals, so they are observed on the document, and only when visible
       const portals = [...document.querySelectorAll("[role=listbox],[role=option],[role=dialog],[role=alertdialog],[role=menu],[role=menuitem],[role=tooltip],[role=grid],[role=tree]")]
@@ -115,10 +167,12 @@ const probe = (caseId, slots) =>
             rect: { x: Math.round(rect.x), y: Math.round(rect.y), w: Math.round(rect.width), h: Math.round(rect.height) },
           };
         });
+      const stateful = widgetState(body);
       const focusVisible = document.activeElement instanceof HTMLElement && document.activeElement.matches(":focus-visible");
       return {
         text: body?.innerText?.replace(/\s+/g, " ").trim().slice(0, 300) ?? "",
         controlState,
+        stateful,
         portals,
         focusVisible,
         pointerEvents: body ? getComputedStyle(body).pointerEvents : null,
@@ -129,6 +183,11 @@ const probe = (caseId, slots) =>
           tabIndex: el.getAttribute("tabindex"),
           disabled: el.hasAttribute("disabled") || el.getAttribute("aria-disabled") === "true",
           name: (el.getAttribute("aria-label") ?? el.textContent ?? "").trim().slice(0, 40),
+          pressed: el.getAttribute("aria-pressed"),
+          checked: el.getAttribute("aria-checked") ?? ("checked" in el ? String(el.checked) : null),
+          selected: el.getAttribute("aria-selected"),
+          expanded: el.getAttribute("aria-expanded"),
+          role: el.getAttribute("role") ?? el.tagName.toLowerCase(),
         })),
         interactiveCount: body?.querySelectorAll("a[href],button,input,select,textarea,[role=button],[role=checkbox],[role=radio],[role=switch],[role=tab],[role=option],[role=slider],[role=combobox]").length ?? 0,
         activeElement: document.activeElement ? `${document.activeElement.tagName.toLowerCase()}:${(document.activeElement.getAttribute("aria-label") ?? document.activeElement.textContent ?? "").trim().slice(0, 30)}` : null,
@@ -137,6 +196,7 @@ const probe = (caseId, slots) =>
     },
     caseId,
     slots,
+    WIDGET_STATE_JS,
   );
 
 // Cases and their interaction scripts come from the harness itself so this script never restates them.
@@ -168,32 +228,40 @@ for (const id of cases) {
   // Each step is traced: parity later has to know WHICH interaction changed state, not just the end state.
   const stepState = () =>
     page.evaluate(
-      (caseId) => {
+      (caseId, WIDGET_STATE_SRC) => {
+        const widgetState = new Function(`${WIDGET_STATE_SRC}; return widgetState;`)();
         const section = document.querySelector(`[data-case="${caseId}"]`);
         const controls = [...(section?.querySelectorAll("input,select,textarea") ?? [])].map((el) => ({
           type: el.getAttribute("type"),
           checked: "checked" in el ? el.checked : null,
           value: el.value?.slice(0, 30) ?? null,
           disabled: el.disabled,
+          hidden: el.getAttribute("type") === "hidden" || el.offsetParent === null,
         }));
         const expanded = [...(section?.querySelectorAll("[aria-expanded]") ?? [])].map((el) => el.getAttribute("aria-expanded"));
+        const ariaStates = widgetState(section).map((entry) => `${entry.role}:${entry.checked}:${entry.disabled}`);
         const overlays = [...document.querySelectorAll("[role=listbox],[role=option],[role=tooltip],[role=dialog],[role=menu],[role=menuitem]")].filter((el) => {
           const rect = el.getBoundingClientRect();
           const owner = el.closest("[data-case]");
           return rect.width > 0 && rect.height > 0 && (!owner || owner === section);
         }).length;
-        return { controls, expanded, overlays, active: document.activeElement?.tagName.toLowerCase() ?? null };
+        return { controls, expanded, ariaStates, overlays, active: document.activeElement?.tagName.toLowerCase() ?? null };
       },
       id,
+      WIDGET_STATE_JS,
     );
 
   const runActions = async (actions) => {
     const trace = [{ step: "start", state: await stepState() }];
     for (const [index, action] of actions.entries()) {
-      const section = await page.$(`[data-case="${id}"]`);
-      // NOTE: `section.$(sel)` prefixes the whole comma list correctly, unlike a document-level
-      // `[data-case="x"] a, b` which would resolve the later alternatives globally.
-      const target = action.target ? await section.$(action.target) : section;
+      // The section is re-queried per action: a hot reload between steps replaces the DOM node, and a stale
+      // handle would silently turn "element missing" into "no interaction happened".
+      const freshSection = await page.$(`[data-case="${id}"]`);
+      if (!freshSection) {
+        trace.push({ step: `${index}:${action.type}`, error: "case section disappeared (page reloaded)" });
+        continue;
+      }
+      const target = action.target ? await freshSection.$(action.target) : freshSection;
       if (!target) {
         trace.push({ step: `${index}:${action.type}`, error: "target not found", target: action.target });
         continue;

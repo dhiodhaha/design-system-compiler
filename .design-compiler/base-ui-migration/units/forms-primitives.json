@@ -1,0 +1,151 @@
+{
+  "unit": "forms-primitives",
+  "files": [
+    "registry/untitledui/components/base/checkbox/checkbox.tsx",
+    "registry/untitledui/components/base/toggle/toggle.tsx",
+    "registry/untitledui/components/base/radio-buttons/radio-buttons.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "baseUiPrimitives": [
+    {
+      "primitive": "checkbox",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/checkbox.json",
+        "node_modules/@base-ui/react/docs/react/components/checkbox.md",
+        "node_modules/@base-ui/react/checkbox/root/CheckboxRoot.d.ts",
+        "node_modules/@base-ui/react/checkbox/root/CheckboxRoot.js",
+        "node_modules/@base-ui/react/checkbox/root/CheckboxRootDataAttributes.d.ts",
+        "node_modules/@base-ui/react/internals/use-button/useButton.js",
+        "node_modules/@base-ui/react/internals/useRenderElement.js",
+        "node_modules/@base-ui/react/merge-props/mergeProps.js"
+      ],
+      "semanticDifferences": [
+        "Root renders a <span> (role=checkbox, aria-checked, tabIndex 0) and the hidden <input type=checkbox> is rendered beside it as a form-state/validation carrier (tabIndex=-1, aria-hidden). The migration passes render={<label/>} so the root stays the payload's <label>, but the role now lives on the root instead of being implicit on the native input — the harness role-set check sees [checkbox] where the React Aria baseline saw none.",
+        "isSelected/defaultSelected/onChange/isIndeterminate/isDisabled/isReadOnly/isRequired map to checked/defaultChecked/onCheckedChange(checked, eventDetails)/indeterminate/disabled/readOnly/required; onChange keeps React Aria's single-argument (isSelected) signature.",
+        "The hidden input owns name/value/form/required/submission (checked -> value, else the native \"on\", uncheckedValue when set); inputRef targets that input and id lands on the root element.",
+        "Base UI exposes no hover/focus-visible state (state = {checked, disabled, readOnly, required, indeterminate, valid/filled/focused}), so the migration tracks hover/focus/focus-visible in the wrapper and passes them to the existing CheckboxBase, which keeps the byte-identical visual shell.",
+        "data-invalid/data-dirty/data-touched are only emitted inside Field.Root; isInvalid is forwarded as aria-invalid on the root instead (the payload's checkbox styles invalid through props, not state attributes).",
+        "The Indicator part is not used: the payload's CheckboxBase already renders its own indicator markup and is a public, standalone component."
+      ]
+    },
+    {
+      "primitive": "switch",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/switch.json",
+        "node_modules/@base-ui/react/switch/root/SwitchRoot.d.ts",
+        "node_modules/@base-ui/react/switch/root/SwitchRoot.js",
+        "node_modules/@base-ui/react/switch/thumb/SwitchThumb.d.ts"
+      ],
+      "semanticDifferences": [
+        "Same Root/hidden-input shape as Checkbox, with role=switch on the root (React Aria put role=switch on the hidden input, so the harness role set is unchanged: exactly one [switch]).",
+        "isSelected/defaultSelected/onChange/isDisabled/isReadOnly map to checked/defaultChecked/onCheckedChange/disabled/readOnly; React Aria's SwitchProps deliberately omit isRequired/isInvalid and the migrated props keep that surface.",
+        "No hover/focus-visible state in Base UI, so hover/focus are tracked in the wrapper and passed to the existing ToggleBase (which keeps the track/thumb classes and the slim border_hover states byte-identical).",
+        "Thumb is not used as a part: ToggleBase renders the thumb div and is a public, standalone component."
+      ]
+    },
+    {
+      "primitive": "radio",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/radio.json",
+        "node_modules/@base-ui/react/docs/react/components/radio.md",
+        "node_modules/@base-ui/react/radio/root/RadioRoot.d.ts",
+        "node_modules/@base-ui/react/radio/root/RadioRoot.js",
+        "node_modules/@base-ui/react/radio/root/RadioRootDataAttributes.d.ts"
+      ],
+      "semanticDifferences": [
+        "Root renders a <span> with role=radio/aria-checked plus a hidden <input type=radio>; the migration renders the root as the payload's <label>. Radios now carry an explicit role where React Aria relied on the native input's implicit role (the harness role set gains [radio]).",
+        "value is mandatory (identity inside the group); selection lives on RadioGroup, so a radio has no selection of its own.",
+        "disabled/readOnly/required are inherited from the group when not set locally; inputRef targets the hidden input and its id is what a sibling <label htmlFor> would need.",
+        "Roving focus/tab index comes from the enclosing RadioGroup composite (first enabled item 0, the rest -1), matching React Aria's roving tab index.",
+        "React Aria's press callbacks (PressEvents) have no Base UI counterpart: they are still accepted by the props type but are no longer invoked."
+      ]
+    },
+    {
+      "primitive": "radio-group",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/radio-group.json",
+        "node_modules/@base-ui/react/radio-group/RadioGroup.d.ts",
+        "node_modules/@base-ui/react/radio-group/RadioGroup.js",
+        "node_modules/@base-ui/react/internals/composite/root/CompositeRoot.js"
+      ],
+      "semanticDifferences": [
+        "value/defaultValue/onChange map to value/defaultValue/onValueChange(value, eventDetails); value is generic (string | number).",
+        "isDisabled/isReadOnly/isRequired map to disabled/readOnly/required and propagate to the radios; isInvalid is forwarded as aria-invalid on the group.",
+        "Base UI's RadioGroup has no orientation prop, so `orientation` is still accepted and rendered as aria-orientation (default vertical, as React Aria emitted) but does not restrict the composite's arrow keys — Up/Down/Left/Right all move focus/selection.",
+        "The group renders role=radiogroup with aria-required/aria-disabled/aria-readonly, and its radios supply the hidden inputs carrying the group's name/value for form submission."
+      ]
+    }
+  ],
+  "publicApiChanges": [
+    {
+      "prop": "className (function form) — Checkbox, Toggle, RadioButton, RadioGroup",
+      "before": "string | ((state: ReactAriaRenderProps & { defaultClassName }) => string)",
+      "after": "string | ((state: <ReactAria-shaped state>) => string | undefined)",
+      "reason": "Base UI hands its own state object to className/style/render; the migration adapts it back to the React Aria flag names so the documented callback keeps its meaning",
+      "migrationNote": "Supplied flags — Checkbox: isSelected, isIndeterminate, isHovered, isFocused, isFocusVisible, isDisabled, isReadOnly, isInvalid, isRequired. Toggle: isSelected, isHovered, isFocused, isFocusVisible, isDisabled, isReadOnly. RadioButton: isSelected, isHovered, isFocused, isFocusVisible, isDisabled, isReadOnly, isRequired, isInvalid. RadioGroup: orientation, isDisabled, isReadOnly, isRequired, isInvalid. `isPressed` and `state` are no longer supplied (Base UI models no press state); hover/focus-visible are tracked by the wrapper. React Aria's `defaultClassName` was never passed at runtime by these components either, so nothing regresses there.",
+      "compatibility": "source-compatible for every flag the payload reads; callbacks reading `state.isPressed`/`state.state` must switch to data-* attributes or CSS"
+    },
+    {
+      "prop": "style (function form) — Checkbox, Toggle, RadioButton, RadioGroup",
+      "before": "CSSProperties | ((state: ReactAriaRenderProps) => CSSProperties)",
+      "after": "CSSProperties | ((state: <ReactAria-shaped state>) => CSSProperties | undefined)",
+      "reason": "same state adapter as className",
+      "migrationNote": "Static style objects pass through unchanged.",
+      "compatibility": "source-compatible"
+    },
+    {
+      "prop": "onPressStart / onPressEnd / onPressUp / onPress / onPressChange (RadioButton)",
+      "before": "invoked by React Aria's press system with a PressEvent",
+      "after": "accepted by the props type, not invoked",
+      "reason": "Base UI's radio activates through the root's click handler and the hidden input and exposes no press-event API; re-implementing React Aria's press layer would add a second, divergent activation path",
+      "migrationNote": "Radio activation (click, Space, arrow keys with selection) still works; only the React Aria callback plumbing is gone.",
+      "compatibility": "compile-compatible; runtime callbacks no longer fire (no payload consumer uses them)"
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "Checkbox",
+    "CheckboxProps",
+    "Switch",
+    "SwitchProps",
+    "Radio",
+    "RadioGroup",
+    "RadioGroupProps",
+    "RadioProps"
+  ],
+  "baseUiImportsAdded": [
+    "@base-ui/react/checkbox",
+    "@base-ui/react/switch",
+    "@base-ui/react/radio",
+    "@base-ui/react/radio-group"
+  ],
+  "stateSelectorChanges": [],
+  "testsAdded": [],
+  "blockers": [],
+  "evidence": {
+    "typecheck": "pass",
+    "notes": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` reports 0 errors in these files (last run: 0 errors for the three files; the payload-wide config is at 0 errors for this unit). No react-aria-components / react-stately / @react-aria/* / @react-stately/* import remains. No state-selector variants are used in the three files — every state-driven class is JS-conditional on the render/className state — so `stateSelectorChanges` is empty: `selected:`/`pressed:`/`focused:` etc. were never present. Exported symbols unchanged: CheckboxBase(+CheckboxBaseProps), Checkbox, ToggleBase, Toggle, RadioButtonBase(+RadioButtonBaseProps), RadioButton, RadioGroup, RadioGroupContextType, plus the non-exported RadioGroupContext. React Aria's `render` escape hatch is preserved: the consumer render receives the root props (children included) and the React-Aria-shaped state and replaces the root element.",
+    "liveBrowserChecks": [
+      "Harness page (127.0.0.1:5173/migration.html), 11 forms-primitives cases: no render errors; slot geometry matches the frozen baseline exactly (checkbox root 960x20, hint variant 960x40, toggle roots 105.19x20 / 114.44x20 / 103.13x20, radio groups 960x92 / 960x92 / 960x56; display flex, gap 8px/16px, no padding/margin/radius, transparent background, Inter 16px/400).",
+      "Control state matches the baseline per case (checkbox:false/true, value \"on\", disabled flag; radio values a/b/c with disabled propagation; required=false).",
+      "Interactions: checkbox-keyboard false -> true on Space (baseline identical); radio-group-keyboard a -> b -> c on ArrowDown x2 (baseline identical); click on the box or on the label text toggles; toggle click turns the switch on.",
+      "Focus ring: mouse focus produces no outline; keyboard focus applies the same classes as the baseline (outline-2 outline-offset-2 outline-focus-ring on CheckboxBase/RadioButtonBase, outline-2 outline-offset-2 on the toggle track) and the root is a tab stop (tabindex 0, only the first radio is 0).",
+      "State attributes emitted: data-checked/data-unchecked on roots, aria-checked, aria-disabled + data-disabled + tabindex -1 when disabled, aria-required, aria-invalid for isInvalid, aria-checked=\"mixed\" for isIndeterminate (input.indeterminate = true).",
+      "Form integration (rendered through the public API in a real <form>): the hidden input carries name/value/required/disabled; checked submits name=value, unchecked submits nothing (uncheckedValue submits when set), required blocks submission natively (validationMessage \"Please check this box if you want to proceed.\") and the form becomes valid once ticked. Radio groups submit the group name with the selected radio's value.",
+      "render escape hatch: a consumer render returning a custom <label> keeps role=checkbox/switch, receives the React-Aria-shaped state keys (isDisabled,isFocusVisible,isFocused,isHovered,isIndeterminate,isInvalid,isReadOnly,isRequired,isSelected) plus className/style functions, and still toggles on click; RadioGroup's render receives isDisabled,isInvalid,isReadOnly,isRequired,orientation."
+    ],
+    "baselineCapture": ".design-compiler/base-ui-migration/captures/baseline/capture.json#checkbox-*, #toggle-*, #radio-group-*",
+    "expectedGateDeltas": [
+      "A11Y_ROLE_CHANGE: Base UI puts the control role on the visible root (role=checkbox on the label; role=radio on every radio root) where the React Aria baseline relied on the native input's implicit role and therefore reported an empty role set for checkbox cases and [radiogroup] for radio cases. Semantics are preserved — the AT-visible control is still one checkbox/radio/switch with the same accessible name (name from contents) — only the DOM carrier of the role changed; the harness slot selectors already anticipate [role=checkbox]/[role=switch].",
+      "FOCUS_SURFACE_DELTA (note only): the tab stop moved from the hidden input (tabindex 0 in React Aria) to the root element; the input is now tabindex -1/aria-hidden as Base UI's form-state carrier.",
+      "STATE_ATTRIBUTE_REVIEW / CONTROLLED_STATE_FAILURE for toggle-keyboard: with React Aria the frozen baseline trace is checkbox:false -> false after focusing the hidden input and pressing Space (React Aria prevents the native Space default on the input without completing a press, so the switch does not toggle); the migrated switch focuses its root (role=switch) and toggles to true, which is the required switch behaviour. Everything else in the trace matches."
+    ],
+    "knownFollowUps": [
+      "Radio arrow keys respond on both axes (Base UI's RadioGroup exposes no orientation to the composite) while aria-orientation stays \"vertical\" as React Aria emitted.",
+      "React Aria press callbacks on RadioButton are accepted but not invoked (see publicApiChanges)."
+    ]
+  }
+}

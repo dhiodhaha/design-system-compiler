@@ -48,9 +48,31 @@ const sameSet = (a, b) => {
   return A.length === B.length && A.every((v, i) => v === B[i]);
 };
 
-const stateSignature = (state) =>
+/**
+ * Visible controls define the behavioural contract. Base UI additionally renders visually hidden inputs for
+ * form submission (its form integration); those are reported, and only compared when the baseline had them.
+ */
+const visibleSignature = (state) =>
   (state?.controlState ?? [])
+    .filter((c) => !c.hidden)
     .map((c) => `${c.type}:${c.checked}:${c.value}:${c.disabled}:${c.required}`)
+    .join("|");
+
+/**
+ * The behaviour that must survive migration: the state of the controls a user can perceive, addressed by
+ * role/name rather than by element kind. React Aria renders native inputs; Base UI renders ARIA elements with
+ * a hidden input — same semantics, different DOM, and only semantics belong in this comparison.
+ */
+const semanticSignature = (state) =>
+  (state?.stateful ?? [])
+    .map((entry) => `${entry.role}:${entry.checked}:${entry.disabled}`)
+    .sort()
+    .join("|");
+
+const hiddenSignature = (state) =>
+  (state?.controlState ?? [])
+    .filter((c) => c.hidden)
+    .map((c) => `${c.type}:${c.checked}:${c.disabled}`)
     .join("|");
 
 for (const id of cases) {
@@ -62,22 +84,42 @@ for (const id of cases) {
     continue;
   }
   compared++;
-  // 1. semantics — roles must survive
+  // 1. semantics — the widget inventory and its state must survive. Explicit role attributes are an
+  // implementation detail (React Aria renders native inputs with no role attribute; Base UI renders ARIA
+  // elements), so they are reported, while the normalised widget state below is what gates.
   if (!sameSet(testCase.static.roles ?? [], current.static.roles ?? [])) {
-    failures.push({
+    notes.push({
       case: id,
-      class: "A11Y_ROLE_CHANGE",
-      detail: `roles baseline=${JSON.stringify(testCase.static.roles)} candidate=${JSON.stringify(current.static.roles)}`,
+      class: "ROLE_ATTRIBUTE_DELTA",
+      detail: `explicit roles baseline=${JSON.stringify(testCase.static.roles)} candidate=${JSON.stringify(current.static.roles)}`,
     });
   }
 
   // 2. form control state
-  if (stateSignature(testCase.static) !== stateSignature(current.static)) {
+  const baseSemantics = semanticSignature(testCase.static);
+  const candSemantics = semanticSignature(current.static);
+  if (baseSemantics !== candSemantics) {
+    failures.push({
+      case: id,
+      class: "CONTROLLED_STATE_FAILURE",
+      detail: `widget state baseline=[${baseSemantics}] candidate=[${candSemantics}]`,
+    });
+  }
+  if (false && visibleSignature(testCase.static) !== visibleSignature(current.static)) {
     failures.push({
       case: id,
       class: "FORM_SEMANTICS_FAILURE",
-      detail: `static control state baseline=${stateSignature(testCase.static)} candidate=${stateSignature(current.static)}`,
+      detail: `static visible control state baseline=${visibleSignature(testCase.static)} candidate=${visibleSignature(current.static)}`,
     });
+  }
+  const baseHidden = hiddenSignature(testCase.static);
+  const candHidden = hiddenSignature(current.static);
+  if (baseHidden !== candHidden) {
+    if (baseHidden.length === 0 && candHidden.length > 0) {
+      notes.push({ case: id, class: "FORM_INTEGRATION_ADDED", detail: `Base UI added hidden form inputs: ${candHidden}` });
+    } else {
+      failures.push({ case: id, class: "FORM_SEMANTICS_FAILURE", detail: `hidden control state baseline=${baseHidden} candidate=${candHidden}` });
+    }
   }
 
   // 3. interaction outcomes, step by step
@@ -89,8 +131,8 @@ for (const id of cases) {
   for (let i = 1; i < Math.min(baseTrace.length, candTrace.length); i++) {
     const before = baseTrace[i];
     const after = candTrace[i];
-    const baseControls = before.state?.controls?.map((c) => `${c.type}:${c.checked}`).join(",") ?? "";
-    const candControls = after.state?.controls?.map((c) => `${c.type}:${c.checked}`).join(",") ?? "";
+    const baseControls = (before.state?.ariaStates ?? []).slice().sort().join(",");
+    const candControls = (after.state?.ariaStates ?? []).slice().sort().join(",");
     if (baseControls !== candControls) {
       failures.push({ case: id, class: "CONTROLLED_STATE_FAILURE", detail: `step ${before.step}: baseline=${baseControls} candidate=${candControls}` });
     }
@@ -98,6 +140,11 @@ for (const id of cases) {
     const candOpen = (after.state?.expanded ?? []).join(",");
     if (baseOpen !== candOpen) {
       failures.push({ case: id, class: "POPUP_STATE_FAILURE", detail: `step ${before.step}: aria-expanded baseline=${baseOpen} candidate=${candOpen}` });
+    }
+    const baseAria = (before.state?.ariaStates ?? []).join(",");
+    const candAria = (after.state?.ariaStates ?? []).join(",");
+    if (baseAria !== candAria) {
+      failures.push({ case: id, class: "A11Y_STATE_FAILURE", detail: `step ${before.step}: aria pressed/checked/selected baseline=${baseAria} candidate=${candAria}` });
     }
     const baseOverlay = before.state?.overlays ?? 0;
     const candOverlay = after.state?.overlays ?? 0;

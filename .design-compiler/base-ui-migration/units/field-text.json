@@ -1,0 +1,127 @@
+{
+  "unit": "field-text",
+  "files": [
+    "registry/untitledui/components/base/input/label.tsx",
+    "registry/untitledui/components/base/input/hint-text.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "baseUiPrimitives": [
+    {
+      "primitive": "field",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/field.json",
+        "node_modules/@base-ui/react/field/index.parts.d.ts",
+        "node_modules/@base-ui/react/field/label/FieldLabel.js",
+        "node_modules/@base-ui/react/field/description/FieldDescription.js",
+        "node_modules/@base-ui/react/field/control/FieldControl.js",
+        "node_modules/@base-ui/react/field/root/FieldRoot.js",
+        "node_modules/@base-ui/react/field/root/useFieldValidation.js",
+        "node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.js",
+        "node_modules/@base-ui/react/internals/labelable-provider/LabelableProvider.js",
+        "node_modules/@base-ui/react/internals/noop.d.ts"
+      ],
+      "semanticDifferences": [
+        "Field.Label is the part that registers the label id the control points at with aria-labelledby, and it derives htmlFor from the registered control (LabelableProvider.controlId). React Aria's Label got the same wiring from RAC's LabelContext, which TextField/NumberField/Select fed with react-aria's labelProps. Element, classes and text content are unchanged.",
+        "Field.Description publishes its id through LabelableProvider.setMessageIds; Field.Control merges those ids into aria-describedby (useFieldValidation.getValidationProps -> getDescriptionProps). React Aria's Text inherited descriptionProps/errorMessageProps from RAC's TextContext slots instead.",
+        "Field parts must be inside Field.Root: FieldLabel and FieldDescription both call useFieldRootContext(false), which throws 'Base UI: FieldRootContext is missing. Field parts must be placed within <Field.Root>' (error 28 in production). Both payload components therefore branch on the field context: Field.Label / Field.Description inside a Base UI field, an identical-class <label> / <span> outside it, which is how the 43 importers that render them standalone (select-native, pin-input, ...) keep working.",
+        "There is no public export for the default field context (internals/field-root-context exports FieldRootContext and useFieldRootContext only), so 'is there a Field.Root above?' is answered with Base UI's own missing-context sentinel: useFieldRootContext(true).setValidityData !== NOOP. Both subpaths are entries of the package's exports map (@base-ui/react/internals/field-root-context, @base-ui/react/internals/noop) and are pinned to 1.8.0 with the rest of @base-ui/react.",
+        "Field.Root (and Field.Item) are the only providers of the label/description context. NumberField/OTPField/Select/Combobox/Checkbox/Radio/Switch only consume it, so a payload Label inside one of those families associates with its control only when the owning component wraps it in Field.Root - the composition Base UI documents for those families.",
+        "Field.Description renders a <p> by default, which would change the hint's element and its inline/block participation. It is rendered through render={<span />} so the hint stays the <span> React Aria's Text rendered, while keeping the description id registration and the field data-* attributes.",
+        "Field.Error is deliberately not used for the isInvalid branch: it mounts only while the field reports invalid and swaps its children for the field's own validity message, which would hide the payload's always-rendered hint text (the payload decides when to render <HintText isInvalid>). HintText therefore uses Field.Description for both the description and the error message, exactly as RAC's Text carried both ids.",
+        "React Aria wired the control's aria-describedby only when the field was invalid; Field.Description registers the hint id in both states, so the hint is now programmatically associated in the valid state too - a superset of the previous association.",
+        "State is exposed as Base UI data-* attributes (data-invalid/data-disabled/data-filled/...) instead of React Aria's data-rac + data-* pairs; Label and HintText keep their own data-label/class vocabulary and the label/hint themselves now carry data-invalid/data-disabled/data-filled when they sit inside a Field.Root."
+      ]
+    }
+  ],
+  "migrationRecord": {
+    "figmaComponentSet": null,
+    "publicComponent": "Label, HintText",
+    "existingUntitledUiBehavior": "Label renders a <label> flex row (text-sm font-medium text-secondary) carrying data-label=\"true\" (used by the `label` custom variant and `**:data-label:` selectors), a conditional brand/error `*` asterisk, and an optional Tooltip + TooltipTrigger with an icon; it accepted htmlFor/id and inherited RAC's field label wiring. HintText renders a <span> (text-sm text-tertiary, size sm -> text-xs, in-data-[input-size=sm]:text-xs) that doubles as the field's description or error message through RAC's slot=\"description\"/\"errorMessage\" text context.",
+    "canonicalBehavioralContract": "label element associated with the field control (htmlFor + control aria-labelledby), required/invalid state driving the asterisk (explicit props first, field state as fallback), data-label preserved for conditional visibility CSS, hint rendered unconditionally with the same element/classes, and the hint identified to the control as its description; both components usable with no surrounding field component at all.",
+    "baseUiCompositionChosen": "Field.Label inside Field.Root; Field.Description (render={<span />}) inside Field.Root; the same <label>/<span> with identical classes when no Field.Root is above. Presence of the field context is detected with Base UI's own sentinel (useFieldRootContext(true).setValidityData !== NOOP).",
+    "whyNotOneToOne": "Base UI's Field parts have no standalone mode - they read (and require) Field.Root - while React Aria's Label/Text were plain elements that picked up a field context only if one existed. The dual rendering is the only faithful mapping of 'works inside a field, works alone' onto the Field split of Root/Label/Description; Field.Error is not the isInvalid counterpart because it is a validity-driven, conditionally mounted message rather than a caller-rendered hint."
+  },
+  "publicApiChanges": [
+    {
+      "prop": "className",
+      "before": "string | ((state: LabelRenderProps | TextRenderProps) => string) (React Aria DOMRenderProps)",
+      "after": "string (Label and HintText)",
+      "reason": "Base UI resolves className per part from its own state object (render props are (props, state) => element, not a className function); neither component used render-prop state, and Base UI's state object is a different shape from React Aria's.",
+      "migrationNote": "Pass a string; Base UI's own className function form remains available through the parts if a consumer ever needs state-based classes.",
+      "compatibility": "compile-time narrowing only: all 43 importers pass string literals or cx(...) results; payload typecheck passes."
+    },
+    {
+      "prop": "children",
+      "before": "ReactNode | ((state: LabelRenderProps | TextRenderProps) => ReactNode) (React Aria DOMRenderProps)",
+      "after": "ReactNode (Label and HintText)",
+      "reason": "Same render-prop removal as className; the payload renders element children only (Label additionally appends the asterisk and the tooltip trigger).",
+      "migrationNote": "Render-prop children were never used by the payload; no behaviour change at any call site.",
+      "compatibility": "compile-time narrowing only; payload typecheck passes."
+    },
+    {
+      "prop": "elementType",
+      "before": "string (inherited from React Aria's LabelProps/TextProps; e.g. elementType=\"span\")",
+      "after": "removed",
+      "reason": "Base UI parts render a fixed default element and swap it through the `render` prop, not an elementType prop.",
+      "migrationNote": "Label always renders <label> (required for Field.Label's native association), HintText always renders <span> (React Aria's default).",
+      "compatibility": "no payload consumer passes elementType; payload typecheck passes."
+    },
+    {
+      "prop": "slot (HintText)",
+      "before": "slot={isInvalid ? \"errorMessage\" : \"description\"} consumed by React Aria's TextContext and rendered as a DOM slot attribute",
+      "after": "no longer set internally; a consumer-passed slot would render as an inert DOM attribute",
+      "reason": "Base UI has no slot routing: the hint is associated with the control by Field.Description registering its id in the field's message ids, which Field.Control merges into aria-describedby.",
+      "migrationNote": "The description/error association now follows from being inside a Field.Root rather than from the slot name; isInvalid keeps its styling meaning (text-error-primary).",
+      "compatibility": "the only slot usage was HintText's own; no payload consumer and no stylesheet targets [slot=...] (checked in registry + styles)."
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "react-aria-components/Label (Label as AriaLabel)",
+    "react-aria-components/LabelProps (LabelProps as AriaLabelProps)",
+    "react-aria-components/Text (Text as AriaText)",
+    "react-aria-components/TextProps (TextProps as AriaTextProps)"
+  ],
+  "baseUiImportsAdded": [
+    "@base-ui/react/field (Field.Label, Field.Description)",
+    "@base-ui/react/internals/field-root-context (useFieldRootContext)",
+    "@base-ui/react/internals/noop (NOOP)"
+  ],
+  "stateSelectorChanges": [
+    {
+      "from": "group-invalid:text-error-primary (label.tsx, asterisk)",
+      "to": "group-data-invalid:text-error-primary",
+      "reason": "compiled to .group:is(:where([data-rac])[data-invalid], :where(:not([data-rac])):invalid) *: the data branch needed React Aria's data-rac on the group element and the native branch needs the group element itself to be natively :invalid, which a wrapper <div>/<span> never is. Base UI emits data-invalid on Field.Root and on its controls, so the attribute variant is the live one (verified in a browser: asterisk turns error-coloured from the wrapper's data-invalid alone)."
+    },
+    {
+      "from": "group-invalid:text-error-primary (hint-text.tsx)",
+      "to": "group-data-invalid:text-error-primary",
+      "reason": "same rewrite; the hint colour now follows data-invalid on the field wrapper, which Field.Root/NumberField.Root/Select.Trigger all emit."
+    },
+    {
+      "from": "group-required:block (label.tsx, asterisk fallback when isRequired is undefined)",
+      "to": "group-has-required:block",
+      "reason": "the old selector compiled to .group:is([data-rac][data-required], :not([data-rac]):required) *, i.e. the group element itself had to carry data-required (React Aria) or be natively required - impossible for a wrapper div, since Base UI puts required on the control and Field.Root/Field.Control emit no data-required. group-has-required compiles to .group:has(:is([data-rac][data-required], :not([data-rac]):required)) *, which matches the wrapper that contains a required control, covering both the native `required` attribute and Base UI's data-required families (verified in a browser: asterisk becomes visible with only the field's required state, no props)."
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "crossUnitNotes": [
+    "Label/HintText only associate inside a Base UI Field.Root (Field parts throw outside one, and Field.Root is the only provider of the label/description context in 1.8.0). Field components that migrate to NumberField.Root/OTPField.Root/Select.Root/Combobox.Root/Checkbox.Root/Radio.Root/Switch.Root should wrap them in Field.Root so the existing <Label>/<HintText> children keep their htmlFor/aria-labelledby/aria-describedby wiring; otherwise those components must switch to the family's own label part.",
+    "The `.group` element that the label/hint are inside is owned by the field components: for group-data-invalid to work it must be (or contain) a Base UI element that emits data-invalid - Field.Root, NumberField.Root, Select.Trigger, Combobox, Checkbox, Radio, Switch and OTPField all do; a plain <div> with only React Aria's isInvalid prop would not.",
+    "The migration harness has no Field.Root-based case for this unit; both of its cases (field-label-hint, field-invalid) render the standalone path. If the lead wants a permanent regression case for the association path, add a `Field.Root > Field.Label + Field.Control + Field.Description` case to src/migration-harness.tsx (not editable from this unit)."
+  ],
+  "evidence": {
+    "typecheck": "pass",
+    "notes": [
+      "node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json -> 0 errors (whole payload, so every one of the 43 importers of Label/HintText still typechecks against the preserved prop surface).",
+      "Throwaway SSR smoke (bun + react-dom/server, deleted after use): standalone Label renders <label data-label=\"true\" for=\"c1\" id=\"l1\" class=\"flex cursor-default items-center gap-0.5 text-sm font-medium text-secondary mb-1.5\">Email address<span class=\"block text-error-primary\">*</span></label>; standalone HintText renders <span id=\"h1\" role=\"description\" class=\"text-xs in-data-[input-size=sm]:text-xs text-error-primary group-data-invalid:text-error-primary mt-2\">; inside Field.Root the label gets id/for and the control gets aria-labelledby + aria-describedby.",
+      "Throwaway client page on the project dev server (vite, deleted after use), SSR (renderToString, 4330 bytes) then hydrateRoot: hydrated true, zero hydration mismatches/warnings, then in the live DOM - Field.Root case: label for=base-ui-_R_4_ + data-label=true, control aria-labelledby=<label id>, aria-describedby=<hint id>, required; invalid Field.Root: data-invalid on wrapper, label, control and hint span plus aria-invalid on the control; disabled Field.Root: data-disabled propagated to label/control/hint.",
+      "Group fallbacks proven live (no isRequired/isInvalid props at all, only field state): asterisk display block from group-has-required (control has native required) and asterisk + hint text in the error colour from the wrapper's data-invalid alone, i.e. group-data-invalid matches.",
+      "Throwaway Tailwind compile probe (tailwindcss 4.3.3 compile() with the project's plugin tailwindcss-react-aria-components 2.2.0, deleted after use) printed the selectors: group-required:block -> .group:is(:where([data-rac])[data-required], :where(:not([data-rac])):required) *; group-has-required:block -> .group:has(:is(:where([data-rac])[data-required], :where(:not([data-rac])):required)) *; group-data-invalid -> .group[data-invalid] *.",
+      "Visual parity for the unit's harness cases: the label slot computed styles measured in the client smoke match the React Aria baseline capture (field-label-hint: display flex, gap 2px, font-size 14px, font-weight 500, line-height 20px, margin 0px, padding 0px, color oklch(0.371 0 none), height 20px); the hint stays a <span> with text-sm/text-xs and the same colours, and the label text/accessible name stays \"Email address*\".",
+      "Tooltip usage untouched and verified against the migrated trigger: the trigger renders a <button type=\"button\" data-base-ui-tooltip-trigger> that carries this file's classes (cursor-pointer, text-fg-quaternary, hover/focus variants) with no edits to tooltip.tsx.",
+      "No React Aria import remains in either file (react-aria-components imports removed; the only remaining react-aria dependency in the two files is none)."
+    ]
+  }
+}

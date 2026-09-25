@@ -1,0 +1,128 @@
+{
+  "$schema": "design-compiler/BaseUiA11yReport@p0",
+  "label": "baseline",
+  "standard": "axe-core wcag2a, wcag2aa, wcag21a, wcag21aa",
+  "cases": 43,
+  "violatingCases": 5,
+  "newViolations": {
+    "button-loading": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button data-loading=\"true\" class=\"group relative inlin...\" data-rac=\"\" type=\"button\" tabindex=\"0\" data-react-aria-pres...=\"true\" aria-disabled=\"true\" id=\"react"
+        ]
+      }
+    ],
+    "button-utility": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button class=\"group relative inlin...\" data-rac=\"\" type=\"button\" tabindex=\"0\" data-react-aria-pres...=\"true\" id=\"react-aria1474909353...\">"
+        ]
+      }
+    ],
+    "slider-default": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input tabindex=\"0\" id=\"react-aria1474909353-_r_3m_-0\" aria-labelledby=\"react-aria1474909353-_r_3n_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+        ]
+      }
+    ],
+    "slider-keyboard": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input tabindex=\"0\" id=\"react-aria1474909353-_r_3s_-0\" aria-labelledby=\"react-aria1474909353-_r_3t_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+        ]
+      }
+    ],
+    "nav-account-card": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button class=\"absolute top-2 right...\" data-rac=\"\" type=\"button\" tabindex=\"0\" aria-expanded=\"false\" id=\"react-aria1474909353...\" data-react-aria-pres...=\"true\""
+        ]
+      },
+      {
+        "rule": "image-alt",
+        "impact": "critical",
+        "description": "Images must have alternative text",
+        "nodes": [
+          "<img data-avatar-img=\"true\" class=\"size-full object-cover\" src=\"https://www.untitledui.com/images/avatars/caitlyn-king?fm=webp&amp;q=80\">"
+        ]
+      }
+    ]
+  },
+  "preExisting": {},
+  "violations": {
+    "button-loading": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button data-loading=\"true\" class=\"group relative inlin...\" data-rac=\"\" type=\"button\" tabindex=\"0\" data-react-aria-pres...=\"true\" aria-disabled=\"true\" id=\"react"
+        ]
+      }
+    ],
+    "button-utility": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button class=\"group relative inlin...\" data-rac=\"\" type=\"button\" tabindex=\"0\" data-react-aria-pres...=\"true\" id=\"react-aria1474909353...\">"
+        ]
+      }
+    ],
+    "slider-default": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input tabindex=\"0\" id=\"react-aria1474909353-_r_3m_-0\" aria-labelledby=\"react-aria1474909353-_r_3n_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+        ]
+      }
+    ],
+    "slider-keyboard": [
+      {
+        "rule": "label",
+        "impact": "critical",
+        "description": "Form elements must have labels",
+        "nodes": [
+          "<input tabindex=\"0\" id=\"react-aria1474909353-_r_3s_-0\" aria-labelledby=\"react-aria1474909353-_r_3t_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+        ]
+      }
+    ],
+    "nav-account-card": [
+      {
+        "rule": "button-name",
+        "impact": "critical",
+        "description": "Buttons must have discernible text",
+        "nodes": [
+          "<button class=\"absolute top-2 right...\" data-rac=\"\" type=\"button\" tabindex=\"0\" aria-expanded=\"false\" id=\"react-aria1474909353...\" data-react-aria-pres...=\"true\""
+        ]
+      },
+      {
+        "rule": "image-alt",
+        "impact": "critical",
+        "description": "Images must have alternative text",
+        "nodes": [
+          "<img data-avatar-img=\"true\" class=\"size-full object-cover\" src=\"https://www.untitledui.com/images/avatars/caitlyn-king?fm=webp&amp;q=80\">"
+        ]
+      }
+    ]
+  }
+}

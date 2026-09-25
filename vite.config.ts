@@ -28,7 +28,7 @@ export default defineConfig({
   server: { host: "127.0.0.1", port: 5173, strictPort: true },
   build: {
     rollupOptions: {
-      input: { index: "index.html", specimen: "specimen.html", grid: "grid.html", behavior: "behavior.html", adopted: "adopted.html", parity: "parity.html", pro: "pro.html", catalog: "catalog.html", migration: "migration.html" },
+      input: { index: "index.html", specimen: "specimen.html", grid: "grid.html", behavior: "behavior.html", adopted: "adopted.html", parity: "parity.html", pro: "pro.html", catalog: "catalog.html", migration: "migration.html", hydration: "hydration.html" },
     },
   },
 });

@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import type { ReactNode } from "react";
+import { Component, type ReactNode } from "react";
 import "../registry/untitledui/styles/globals.css";
 import "./styles/fonts.css";
 
@@ -18,7 +18,7 @@ import { Tabs, TabList, Tab, TabPanel } from "../registry/untitledui/components/
 import { Slider } from "../registry/untitledui/components/base/slider/slider";
 import { Dropdown } from "../registry/untitledui/components/base/dropdown/dropdown";
 import { ComboBox } from "../registry/untitledui/components/base/select/combobox";
-import { Tag, TagGroup } from "../registry/untitledui/components/base/tags/tags";
+import { Tag, TagGroup, TagList } from "../registry/untitledui/components/base/tags/tags";
 import { InputNumber } from "../registry/untitledui/components/base/input/input-number";
 import { PaymentInput } from "../registry/untitledui/components/base/input/input-payment";
 import { InputTags } from "../registry/untitledui/components/base/input/input-tags";
@@ -70,7 +70,7 @@ export const CASES: MigrationCase[] = [
   },
   { id: "button-secondary", unit: "button", slots: ["[role=button],a,button"], node: <Button color="secondary" size="md">Button</Button> },
   { id: "button-disabled", unit: "button", slots: ["[role=button],a,button"], node: <Button color="primary" size="md" isDisabled>Button</Button> },
-  { id: "button-loading", unit: "button", slots: ["[role=button],a,button"], node: <Button color="primary" size="md" isLoading>Button</Button> },
+  { id: "button-loading", unit: "button", slots: ["[role=button],a,button"], node: <Button color="primary" size="md" isLoading showTextWhileLoading>Button</Button> },
   {
     id: "button-link",
     unit: "button",
@@ -85,7 +85,7 @@ export const CASES: MigrationCase[] = [
     actions: [{ type: "focus", target: "button" }, { type: "press", keys: ["Enter"] }, { type: "press", keys: ["Space"] }],
     node: <Button color="primary" size="md">Keyboard</Button>,
   },
-  { id: "button-utility", unit: "button", slots: ["button"], node: <ButtonUtility icon={Check} /> },
+  { id: "button-utility", unit: "button", slots: ["button"], node: <ButtonUtility icon={Check} tooltip="Copy to clipboard" aria-label="Copy to clipboard" /> },
 
   { id: "checkbox-unchecked", unit: "checkbox", slots: ["[role=checkbox],input,label"], node: <Checkbox label="Remember me" /> },
   { id: "checkbox-checked", unit: "checkbox", slots: ["[role=checkbox],input,label"], node: <Checkbox label="Checked" defaultSelected /> },
@@ -294,11 +294,13 @@ export const CASES: MigrationCase[] = [
     actions: [{ type: "click", target: "button" }],
     node: (
       <TagGroup label="Tags" selectionMode="none">
-        <Tag id="alpha">Alpha</Tag>
-        <Tag id="beta">Beta</Tag>
-        <Tag id="gamma" isDisabled>
-          Gamma
-        </Tag>
+        <TagList>
+          <Tag id="alpha">Alpha</Tag>
+          <Tag id="beta">Beta</Tag>
+          <Tag id="gamma" isDisabled>
+            Gamma
+          </Tag>
+        </TagList>
       </TagGroup>
     ),
   },
@@ -324,8 +326,8 @@ export const CASES: MigrationCase[] = [
   {
     id: "button-group",
     unit: "button-group",
-    slots: ["[role=group],button"],
-    actions: [{ type: "click", target: "button" }],
+    slots: ["[role=radiogroup],[role=group],[role=radio]"],
+    actions: [{ type: "click", target: "[role=radio]" }],
     node: (
       <ButtonGroup>
         <ButtonGroupItem id="one">One</ButtonGroupItem>
@@ -386,6 +388,18 @@ export const CASES: MigrationCase[] = [
   { id: "date-picker", unit: "date-picker", slots: ["button,input,label"], node: <DatePicker aria-label="Start date" /> },
 ];
 
+/** One broken case must not hide the others: each case renders inside its own boundary. */
+class CaseBoundary extends Component<{ children: ReactNode; id: string }, { failed: string | null }> {
+  state = { failed: null as string | null };
+  static getDerivedStateFromError(error: unknown) {
+    return { failed: error instanceof Error ? error.message : String(error) };
+  }
+  render() {
+    if (this.state.failed) return <p data-case-error={this.state.failed} className="text-xs text-utility-red-700">render error: {this.state.failed}</p>;
+    return this.props.children;
+  }
+}
+
 const root = document.getElementById("migration");
 if (root) {
   createRoot(root).render(
@@ -402,7 +416,9 @@ if (root) {
           <p data-case-label className="mb-2 font-mono text-xs text-tertiary">
             {testCase.id}
           </p>
-          <div data-case-body>{testCase.node}</div>
+          <div data-case-body>
+            <CaseBoundary id={testCase.id}>{testCase.node}</CaseBoundary>
+          </div>
         </section>
       ))}
     </div>,

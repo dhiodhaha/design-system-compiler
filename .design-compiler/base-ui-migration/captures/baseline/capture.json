@@ -1,12 +1,13 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "baseline",
-  "capturedAt": "2026-09-25T12:40:19.424Z",
+  "capturedAt": "2026-09-25T13:06:26.498Z",
   "cases": {
     "button-default": {
       "static": {
         "text": "Button",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -17,7 +18,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Button"
+            "name": "Button",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -32,7 +38,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_0_"
+              "id": "react-aria4438284205-_r_0_"
             },
             "styles": {
               "display": "inline-flex",
@@ -66,6 +72,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -77,6 +84,7 @@
       "static": {
         "text": "Button",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -87,7 +95,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Button"
+            "name": "Button",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -102,7 +115,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_2_"
+              "id": "react-aria4438284205-_r_2_"
             },
             "styles": {
               "display": "inline-flex",
@@ -136,6 +149,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -147,6 +161,7 @@
       "static": {
         "text": "Button",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -157,7 +172,12 @@
             "type": "button",
             "tabIndex": null,
             "disabled": true,
-            "name": "Button"
+            "name": "Button",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -173,7 +193,7 @@
               "type": "button",
               "disabled": "",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_4_",
+              "id": "react-aria4438284205-_r_4_",
               "data-disabled": "true"
             },
             "styles": {
@@ -208,6 +228,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -217,8 +238,9 @@
     },
     "button-loading": {
       "static": {
-        "text": "",
+        "text": "Button",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -229,7 +251,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": true,
-            "name": "Button"
+            "name": "Button",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -246,7 +273,7 @@
               "type": "button",
               "data-react-aria-pressable": "true",
               "aria-disabled": "true",
-              "id": "react-aria895162272-_r_6_",
+              "id": "react-aria4438284205-_r_6_",
               "data-pending": "true"
             },
             "styles": {
@@ -263,7 +290,7 @@
               "padding": "10px 14px 10px 14px",
               "margin": "0px 0px 0px 0px",
               "gap": "4px",
-              "width": 77.33,
+              "width": 101.33,
               "height": 40,
               "opacity": "1",
               "visibility": "visible"
@@ -281,6 +308,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -292,6 +320,7 @@
       "static": {
         "text": "Link button",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -302,7 +331,12 @@
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": "Link button"
+            "name": "Link button",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "a"
           }
         ],
         "interactiveCount": 1,
@@ -355,6 +389,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -364,6 +399,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "a"
           }
@@ -372,6 +408,7 @@
       "afterInteraction": {
         "text": "Link button",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -382,7 +419,12 @@
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": "Link button"
+            "name": "Link button",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "a"
           }
         ],
         "interactiveCount": 1,
@@ -427,6 +469,7 @@
       "static": {
         "text": "Keyboard",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -437,7 +480,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Keyboard"
+            "name": "Keyboard",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -452,7 +500,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_8_"
+              "id": "react-aria4438284205-_r_8_"
             },
             "styles": {
               "display": "inline-flex",
@@ -503,6 +551,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -512,6 +561,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "button"
           }
@@ -521,6 +571,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "button"
           }
@@ -530,6 +581,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "button"
           }
@@ -538,6 +590,7 @@
       "afterInteraction": {
         "text": "Keyboard",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": true,
         "pointerEvents": "auto",
@@ -548,7 +601,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Keyboard"
+            "name": "Keyboard",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -563,7 +621,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_8_",
+              "id": "react-aria4438284205-_r_8_",
               "data-focused": "true",
               "data-focus-visible": "true"
             },
@@ -594,6 +652,7 @@
       "static": {
         "text": "",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": true,
         "pointerEvents": "auto",
@@ -604,7 +663,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "Copy to clipboard",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -614,12 +678,13 @@
             "tag": "button",
             "role": null,
             "type": "button",
-            "name": "",
+            "name": "Copy to clipboard",
             "attrs": {
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_a_"
+              "aria-label": "Copy to clipboard",
+              "id": "react-aria4438284205-_r_b_"
             },
             "styles": {
               "display": "inline-flex",
@@ -653,6 +718,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -671,7 +737,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "checkbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -684,7 +760,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -734,10 +815,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -756,7 +841,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "checkbox",
+            "name": "",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -769,7 +864,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -820,10 +920,14 @@
                 "type": "checkbox",
                 "checked": true,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:true:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -842,7 +946,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "checkbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -855,7 +969,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -916,10 +1035,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -932,10 +1055,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -948,10 +1075,14 @@
                 "type": "checkbox",
                 "checked": true,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:true:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -967,7 +1098,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "checkbox",
+            "name": "",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -980,7 +1121,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -1032,7 +1178,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "checkbox",
+            "name": "",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1045,7 +1201,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -1097,10 +1258,14 @@
                 "type": "checkbox",
                 "checked": true,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:true:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1119,7 +1284,17 @@
             "value": "on",
             "disabled": true,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "checkbox",
+            "name": "",
+            "checked": "false",
+            "disabled": true,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1132,7 +1307,12 @@
             "type": "checkbox",
             "tabIndex": null,
             "disabled": true,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -1183,10 +1363,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": true
+                "disabled": true,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "checkbox:false:true"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1205,7 +1389,8 @@
             "value": "a",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_r_"
+            "name": "react-aria4438284205-_r_s_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1214,7 +1399,8 @@
             "value": "b",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_r_"
+            "name": "react-aria4438284205-_r_s_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1223,7 +1409,31 @@
             "value": "c",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_r_"
+            "name": "react-aria4438284205-_r_s_",
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1238,21 +1448,36 @@
             "type": "radio",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 3,
@@ -1268,7 +1493,7 @@
               "aria-label": "Plan",
               "role": "radiogroup",
               "aria-orientation": "vertical",
-              "id": "react-aria895162272-_r_m_",
+              "id": "react-aria4438284205-_r_n_",
               "data-orientation": "vertical"
             },
             "styles": {
@@ -1306,22 +1531,30 @@
                 "type": "radio",
                 "checked": false,
                 "value": "a",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "b",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "c",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "radio:false:false",
+              "radio:false:false",
+              "radio:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1340,7 +1573,8 @@
             "value": "a",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_14_"
+            "name": "react-aria4438284205-_r_15_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1349,7 +1583,8 @@
             "value": "b",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_14_"
+            "name": "react-aria4438284205-_r_15_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1358,7 +1593,31 @@
             "value": "c",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_14_"
+            "name": "react-aria4438284205-_r_15_",
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": false
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": false
           }
         ],
         "portals": [],
@@ -1373,21 +1632,36 @@
             "type": "radio",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": "-1",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": "-1",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 3,
@@ -1403,7 +1677,7 @@
               "aria-label": "Plan",
               "role": "radiogroup",
               "aria-orientation": "vertical",
-              "id": "react-aria895162272-_r_v_",
+              "id": "react-aria4438284205-_r_10_",
               "data-orientation": "vertical"
             },
             "styles": {
@@ -1458,22 +1732,30 @@
                 "type": "radio",
                 "checked": true,
                 "value": "a",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "b",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "c",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "radio:true:false",
+              "radio:false:false",
+              "radio:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1486,22 +1768,30 @@
                 "type": "radio",
                 "checked": true,
                 "value": "a",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "b",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "c",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "radio:true:false",
+              "radio:false:false",
+              "radio:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -1514,22 +1804,30 @@
                 "type": "radio",
                 "checked": false,
                 "value": "a",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": true,
                 "value": "b",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "c",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "radio:false:false",
+              "radio:true:false",
+              "radio:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -1542,22 +1840,30 @@
                 "type": "radio",
                 "checked": false,
                 "value": "a",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "b",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": true,
                 "value": "c",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "radio:false:false",
+              "radio:false:false",
+              "radio:true:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -1573,7 +1879,8 @@
             "value": "a",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_14_"
+            "name": "react-aria4438284205-_r_15_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1582,7 +1889,8 @@
             "value": "b",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_14_"
+            "name": "react-aria4438284205-_r_15_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1591,7 +1899,31 @@
             "value": "c",
             "disabled": false,
             "required": false,
-            "name": "react-aria895162272-_r_14_"
+            "name": "react-aria4438284205-_r_15_",
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": false
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": false
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1606,21 +1938,36 @@
             "type": "radio",
             "tabIndex": "-1",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": "-1",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 3,
@@ -1636,7 +1983,7 @@
               "aria-label": "Plan",
               "role": "radiogroup",
               "aria-orientation": "vertical",
-              "id": "react-aria895162272-_r_v_",
+              "id": "react-aria4438284205-_r_10_",
               "data-orientation": "vertical"
             },
             "styles": {
@@ -1673,7 +2020,8 @@
             "value": "a",
             "disabled": true,
             "required": false,
-            "name": "react-aria895162272-_r_1d_"
+            "name": "react-aria4438284205-_r_1e_",
+            "hidden": false
           },
           {
             "type": "radio",
@@ -1682,7 +2030,24 @@
             "value": "b",
             "disabled": true,
             "required": false,
-            "name": "react-aria895162272-_r_1d_"
+            "name": "react-aria4438284205-_r_1e_",
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "true",
+            "disabled": true,
+            "focusable": true
+          },
+          {
+            "role": "radio",
+            "name": "",
+            "checked": "false",
+            "disabled": true,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1697,14 +2062,24 @@
             "type": "radio",
             "tabIndex": null,
             "disabled": true,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           },
           {
             "tag": "input",
             "type": "radio",
             "tabIndex": null,
             "disabled": true,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 2,
@@ -1721,7 +2096,7 @@
               "role": "radiogroup",
               "aria-disabled": "true",
               "aria-orientation": "vertical",
-              "id": "react-aria895162272-_r_18_",
+              "id": "react-aria4438284205-_r_19_",
               "data-orientation": "vertical",
               "data-disabled": "true"
             },
@@ -1760,16 +2135,22 @@
                 "type": "radio",
                 "checked": true,
                 "value": "a",
-                "disabled": true
+                "disabled": true,
+                "hidden": false
               },
               {
                 "type": "radio",
                 "checked": false,
                 "value": "b",
-                "disabled": true
+                "disabled": true,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "radio:true:true",
+              "radio:false:true"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1788,7 +2169,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "switch",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1803,7 +2194,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "switch"
           }
         ],
         "interactiveCount": 1,
@@ -1853,10 +2249,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "switch:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1875,7 +2275,17 @@
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "switch",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -1890,7 +2300,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "switch"
           }
         ],
         "interactiveCount": 1,
@@ -1951,10 +2366,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "switch:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -1967,10 +2386,14 @@
                 "type": "checkbox",
                 "checked": false,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "switch:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -1981,12 +2404,16 @@
             "controls": [
               {
                 "type": "checkbox",
-                "checked": false,
+                "checked": true,
                 "value": "on",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "switch:true:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -1997,12 +2424,22 @@
         "controlState": [
           {
             "type": "checkbox",
-            "checked": false,
+            "checked": true,
             "indeterminate": false,
             "value": "on",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "switch",
+            "name": "",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2017,7 +2454,12 @@
             "type": "checkbox",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "switch"
           }
         ],
         "interactiveCount": 1,
@@ -2030,7 +2472,10 @@
             "name": "Toggle me",
             "attrs": {
               "data-react-aria-pressable": "true",
-              "data-rac": ""
+              "data-rac": "",
+              "data-focused": "true",
+              "data-focus-visible": "true",
+              "data-selected": "true"
             },
             "styles": {
               "display": "flex",
@@ -2066,7 +2511,17 @@
             "value": "on",
             "disabled": true,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "switch",
+            "name": "",
+            "checked": "true",
+            "disabled": true,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2081,7 +2536,12 @@
             "type": "checkbox",
             "tabIndex": null,
             "disabled": true,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "switch"
           }
         ],
         "interactiveCount": 1,
@@ -2133,10 +2593,14 @@
                 "type": "checkbox",
                 "checked": true,
                 "value": "on",
-                "disabled": true
+                "disabled": true,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "switch:true:true"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2155,7 +2619,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "you@company.com",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2170,14 +2644,24 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           },
           {
             "tag": "input",
             "type": "text",
             "tabIndex": "0",
             "disabled": false,
-            "name": "you@company.com"
+            "name": "you@company.com",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 2,
@@ -2226,10 +2710,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2248,7 +2736,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "you@company.com",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2263,7 +2761,12 @@
             "type": "text",
             "tabIndex": "0",
             "disabled": false,
-            "name": "you@company.com"
+            "name": "you@company.com",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -2312,10 +2815,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2334,7 +2841,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2349,7 +2866,12 @@
             "type": "text",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -2362,8 +2884,8 @@
             "name": "",
             "attrs": {
               "placeholder": "Your name",
-              "id": "react-aria895162272-_r_23_",
-              "aria-labelledby": "react-aria895162272-_r_24_",
+              "id": "react-aria4438284205-_r_24_",
+              "aria-labelledby": "react-aria4438284205-_r_25_",
               "data-rac": "",
               "type": "text",
               "value": ""
@@ -2413,10 +2935,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2429,10 +2955,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -2445,10 +2975,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "hello",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -2464,7 +2998,17 @@
             "value": "hello",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2479,7 +3023,12 @@
             "type": "text",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -2492,8 +3041,8 @@
             "name": "",
             "attrs": {
               "placeholder": "Your name",
-              "id": "react-aria895162272-_r_23_",
-              "aria-labelledby": "react-aria895162272-_r_24_",
+              "id": "react-aria4438284205-_r_24_",
+              "aria-labelledby": "react-aria4438284205-_r_25_",
               "data-rac": "",
               "type": "text",
               "value": "hello",
@@ -2534,7 +3083,17 @@
             "value": "",
             "disabled": true,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": true,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2549,7 +3108,12 @@
             "type": "text",
             "tabIndex": null,
             "disabled": true,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -2563,8 +3127,8 @@
             "attrs": {
               "disabled": "",
               "placeholder": "Your name",
-              "id": "react-aria895162272-_r_28_",
-              "aria-labelledby": "react-aria895162272-_r_29_",
+              "id": "react-aria4438284205-_r_29_",
+              "aria-labelledby": "react-aria4438284205-_r_2a_",
               "data-rac": "",
               "data-disabled": "true",
               "type": "text",
@@ -2605,10 +3169,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "",
-                "disabled": true
+                "disabled": true,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:true"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2627,7 +3195,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2642,7 +3220,12 @@
             "type": "text",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -2655,9 +3238,9 @@
             "name": "",
             "attrs": {
               "aria-invalid": "true",
-              "id": "react-aria895162272-_r_2d_",
-              "aria-labelledby": "react-aria895162272-_r_2e_",
-              "aria-describedby": "react-aria895162272-_r_2h_",
+              "id": "react-aria4438284205-_r_2e_",
+              "aria-labelledby": "react-aria4438284205-_r_2f_",
+              "aria-describedby": "react-aria4438284205-_r_2i_",
               "data-rac": "",
               "data-invalid": "true",
               "type": "text",
@@ -2698,10 +3281,14 @@
                 "type": "text",
                 "checked": false,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2720,7 +3307,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": null,
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2733,7 +3330,12 @@
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "textarea"
           }
         ],
         "interactiveCount": 1,
@@ -2745,8 +3347,8 @@
             "type": null,
             "name": "Notes*",
             "attrs": {
-              "id": "react-aria895162272-_r_2j_",
-              "for": "react-aria895162272-_r_2i_",
+              "id": "react-aria4438284205-_r_2k_",
+              "for": "react-aria4438284205-_r_2j_",
               "data-label": "true"
             },
             "styles": {
@@ -2784,10 +3386,14 @@
                 "type": null,
                 "checked": null,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:null:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2806,7 +3412,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": null,
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -2819,7 +3435,12 @@
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "textarea"
           }
         ],
         "interactiveCount": 1,
@@ -2831,8 +3452,8 @@
             "type": null,
             "name": "Notes*",
             "attrs": {
-              "id": "react-aria895162272-_r_2o_",
-              "for": "react-aria895162272-_r_2n_",
+              "id": "react-aria4438284205-_r_2p_",
+              "for": "react-aria4438284205-_r_2o_",
               "data-label": "true"
             },
             "styles": {
@@ -2870,10 +3491,14 @@
                 "type": null,
                 "checked": null,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "textbox:null:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -2892,7 +3517,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "Phoenix BakerOlivia RhyeLana S",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
           }
         ],
         "portals": [],
@@ -2905,14 +3540,24 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Select team member"
+            "name": "Select team member",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
           },
           {
             "tag": "select",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Phoenix BakerOlivia RhyeLana Steiner"
+            "name": "Phoenix BakerOlivia RhyeLana Steiner",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "select"
           }
         ],
         "interactiveCount": 2,
@@ -2924,11 +3569,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria895162272-_r_2u_",
+              "id": "react-aria4438284205-_r_2v_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria895162272-_r_33_ react-aria895162272-_r_2v_",
+              "aria-labelledby": "react-aria4438284205-_r_34_ react-aria4438284205-_r_30_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -2967,11 +3612,15 @@
                 "type": null,
                 "checked": null,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [
               "false"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
             ],
             "overlays": 0,
             "active": "body"
@@ -2991,7 +3640,17 @@
             "value": "",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "Phoenix BakerOlivia RhyeLana S",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
           }
         ],
         "portals": [],
@@ -3004,14 +3663,24 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Select team member"
+            "name": "Select team member",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
           },
           {
             "tag": "select",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Phoenix BakerOlivia RhyeLana Steiner"
+            "name": "Phoenix BakerOlivia RhyeLana Steiner",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "select"
           }
         ],
         "interactiveCount": 2,
@@ -3023,11 +3692,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria895162272-_r_38_",
+              "id": "react-aria4438284205-_r_39_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria895162272-_r_3d_ react-aria895162272-_r_39_",
+              "aria-labelledby": "react-aria4438284205-_r_3e_ react-aria4438284205-_r_3a_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -3083,11 +3752,15 @@
                 "type": null,
                 "checked": null,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [
               "false"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
             ],
             "overlays": 0,
             "active": "body"
@@ -3101,14 +3774,18 @@
                 "type": null,
                 "checked": null,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [
-              "false"
+              "true"
             ],
-            "overlays": 0,
-            "active": "button"
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "div"
           }
         },
         {
@@ -3119,14 +3796,18 @@
                 "type": null,
                 "checked": null,
                 "value": "",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [
-              "false"
+              "true"
             ],
-            "overlays": 0,
-            "active": "button"
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "div"
           }
         },
         {
@@ -3136,12 +3817,16 @@
               {
                 "type": null,
                 "checked": null,
-                "value": "",
-                "disabled": false
+                "value": "a",
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [
               "false"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
             ],
             "overlays": 0,
             "active": "button"
@@ -3149,16 +3834,26 @@
         }
       ],
       "afterInteraction": {
-        "text": "Team member Select team member Phoenix Baker Olivia Rhye Lana Steiner",
+        "text": "Team member Phoenix Baker phoenix@untitledui.com Phoenix Baker Olivia Rhye Lana Steiner",
         "controlState": [
           {
             "type": null,
             "checked": null,
             "indeterminate": null,
-            "value": "",
+            "value": "a",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "Phoenix BakerOlivia RhyeLana S",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
           }
         ],
         "portals": [],
@@ -3171,32 +3866,45 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Select team member"
+            "name": "Phoenix Bakerphoenix@untitledui.com",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
           },
           {
             "tag": "select",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Phoenix BakerOlivia RhyeLana Steiner"
+            "name": "Phoenix BakerOlivia RhyeLana Steiner",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "select"
           }
         ],
         "interactiveCount": 2,
-        "activeElement": "button:Button",
+        "activeElement": "button:Phoenix Bakerphoenix@untitledu",
         "slotMetrics": {
           "button,[role=combobox],[role=listbox]": {
             "tag": "button",
             "role": null,
             "type": "button",
-            "name": "Select team member",
+            "name": "Phoenix Bakerphoenix@untitledui.com",
             "attrs": {
-              "id": "react-aria895162272-_r_38_",
+              "id": "react-aria4438284205-_r_39_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria895162272-_r_3d_ react-aria895162272-_r_39_",
+              "aria-labelledby": "react-aria4438284205-_r_3e_ react-aria4438284205-_r_3a_",
               "aria-haspopup": "listbox",
-              "aria-expanded": "false"
+              "aria-expanded": "false",
+              "data-hovered": "true",
+              "data-focused": "true",
+              "data-focus-visible": "true"
             },
             "styles": {
               "display": "flex",
@@ -3225,6 +3933,7 @@
       "static": {
         "text": "Trigger",
         "controlState": [],
+        "stateful": [],
         "portals": [],
         "focusVisible": true,
         "pointerEvents": "auto",
@@ -3235,11 +3944,16 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Trigger"
+            "name": "Trigger",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
-        "activeElement": "button:Button",
+        "activeElement": "button:Phoenix Bakerphoenix@untitledu",
         "slotMetrics": {
           "button,[role=tooltip]": {
             "tag": "button",
@@ -3250,7 +3964,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_3h_"
+              "id": "react-aria4438284205-_r_3i_"
             },
             "styles": {
               "display": "inline-block",
@@ -3299,6 +4013,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "body"
           }
@@ -3308,6 +4023,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 1,
             "active": "button"
           }
@@ -3317,6 +4033,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
             "active": "button"
           }
@@ -3326,6 +4043,7 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [],
             "overlays": 1,
             "active": "button"
           }
@@ -3334,6 +4052,7 @@
       "afterInteraction": {
         "text": "Trigger",
         "controlState": [],
+        "stateful": [],
         "portals": [
           {
             "role": "tooltip",
@@ -3347,7 +4066,7 @@
             },
             "rect": {
               "x": 12,
-              "y": 892,
+              "y": 618,
               "w": 112,
               "h": 64
             }
@@ -3362,7 +4081,12 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Trigger"
+            "name": "Trigger",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
           }
         ],
         "interactiveCount": 1,
@@ -3377,10 +4101,10 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria895162272-_r_3h_",
+              "id": "react-aria4438284205-_r_3i_",
               "data-focused": "true",
               "data-focus-visible": "true",
-              "aria-describedby": "react-aria895162272-_r_3g_",
+              "aria-describedby": "react-aria4438284205-_r_3h_",
               "data-hovered": "true"
             },
             "styles": {
@@ -3410,6 +4134,29 @@
       "static": {
         "text": "One Two Three First panel",
         "controlState": [],
+        "stateful": [
+          {
+            "role": "tab",
+            "name": "One",
+            "checked": null,
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "tab",
+            "name": "Two",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
+          },
+          {
+            "role": "tab",
+            "name": "Three",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
+          }
+        ],
         "portals": [
           {
             "role": "tooltip",
@@ -3423,7 +4170,7 @@
             },
             "rect": {
               "x": 12,
-              "y": 892,
+              "y": 501,
               "w": 112,
               "h": 64
             }
@@ -3444,28 +4191,48 @@
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": "One"
+            "name": "One",
+            "pressed": null,
+            "checked": null,
+            "selected": "true",
+            "expanded": null,
+            "role": "tab"
           },
           {
             "tag": "div",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Two"
+            "name": "Two",
+            "pressed": null,
+            "checked": null,
+            "selected": "false",
+            "expanded": null,
+            "role": "tab"
           },
           {
             "tag": "div",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Three"
+            "name": "Three",
+            "pressed": null,
+            "checked": null,
+            "selected": "false",
+            "expanded": null,
+            "role": "tab"
           },
           {
             "tag": "div",
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": "First panel"
+            "name": "First panel",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "tabpanel"
           }
         ],
         "interactiveCount": 3,
@@ -3478,8 +4245,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria895162272-_r_3j_",
-              "id": "react-aria895162272-_r_3k_",
+              "data-collection": "react-aria4438284205-_r_3k_",
+              "id": "react-aria4438284205-_r_3l_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -3524,7 +4291,12 @@
           "state": {
             "controls": [],
             "expanded": [],
-            "overlays": 1,
+            "ariaStates": [
+              "tab:null:false",
+              "tab:null:false",
+              "tab:null:false"
+            ],
+            "overlays": 0,
             "active": "body"
           }
         },
@@ -3533,6 +4305,11 @@
           "state": {
             "controls": [],
             "expanded": [],
+            "ariaStates": [
+              "tab:null:false",
+              "tab:null:false",
+              "tab:null:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -3541,6 +4318,29 @@
       "afterInteraction": {
         "text": "One Two Three First panel",
         "controlState": [],
+        "stateful": [
+          {
+            "role": "tab",
+            "name": "One",
+            "checked": null,
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "tab",
+            "name": "Two",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
+          },
+          {
+            "role": "tab",
+            "name": "Three",
+            "checked": null,
+            "disabled": false,
+            "focusable": false
+          }
+        ],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
@@ -3557,28 +4357,48 @@
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": "One"
+            "name": "One",
+            "pressed": null,
+            "checked": null,
+            "selected": "true",
+            "expanded": null,
+            "role": "tab"
           },
           {
             "tag": "div",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Two"
+            "name": "Two",
+            "pressed": null,
+            "checked": null,
+            "selected": "false",
+            "expanded": null,
+            "role": "tab"
           },
           {
             "tag": "div",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Three"
+            "name": "Three",
+            "pressed": null,
+            "checked": null,
+            "selected": "false",
+            "expanded": null,
+            "role": "tab"
           },
           {
             "tag": "div",
             "type": null,
             "tabIndex": "0",
             "disabled": false,
-            "name": "First panel"
+            "name": "First panel",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "tabpanel"
           }
         ],
         "interactiveCount": 3,
@@ -3591,8 +4411,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria895162272-_r_3j_",
-              "id": "react-aria895162272-_r_3k_",
+              "data-collection": "react-aria4438284205-_r_3k_",
+              "id": "react-aria4438284205-_r_3l_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -3632,7 +4452,17 @@
             "value": "30",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "slider",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -3647,7 +4477,12 @@
             "type": "range",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -3659,8 +4494,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria895162272-_r_3m_-0",
-              "aria-labelledby": "react-aria895162272-_r_3n_",
+              "id": "react-aria4438284205-_r_3n_-0",
+              "aria-labelledby": "react-aria4438284205-_r_3o_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -3703,10 +4538,14 @@
                 "type": "range",
                 "checked": false,
                 "value": "30",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "slider:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -3725,7 +4564,17 @@
             "value": "30",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "slider",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -3740,7 +4589,12 @@
             "type": "range",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -3752,8 +4606,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria895162272-_r_3s_-0",
-              "aria-labelledby": "react-aria895162272-_r_3t_",
+              "id": "react-aria4438284205-_r_3t_-0",
+              "aria-labelledby": "react-aria4438284205-_r_3u_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -3807,10 +4661,14 @@
                 "type": "range",
                 "checked": false,
                 "value": "30",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "slider:false:false"
+            ],
             "overlays": 0,
             "active": "body"
           }
@@ -3823,10 +4681,14 @@
                 "type": "range",
                 "checked": false,
                 "value": "30",
-                "disabled": false
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "slider:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -3838,11 +4700,15 @@
               {
                 "type": "range",
                 "checked": false,
-                "value": "30",
-                "disabled": false
+                "value": "31",
+                "disabled": false,
+                "hidden": false
               }
             ],
             "expanded": [],
+            "ariaStates": [
+              "slider:false:false"
+            ],
             "overlays": 0,
             "active": "input"
           }
@@ -3855,10 +4721,20 @@
             "type": "range",
             "checked": false,
             "indeterminate": false,
-            "value": "30",
+            "value": "31",
             "disabled": false,
             "required": false,
-            "name": null
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "slider",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
           }
         ],
         "portals": [],
@@ -3873,7 +4749,12 @@
             "type": "range",
             "tabIndex": "0",
             "disabled": false,
-            "name": ""
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
         "interactiveCount": 1,
@@ -3885,14 +4766,14 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria895162272-_r_3s_-0",
-              "aria-labelledby": "react-aria895162272-_r_3t_",
+              "id": "react-aria4438284205-_r_3t_-0",
+              "aria-labelledby": "react-aria4438284205-_r_3u_",
               "aria-orientation": "horizontal",
-              "aria-valuetext": "3,000%",
+              "aria-valuetext": "3,100%",
               "aria-describedby": "",
               "aria-details": "",
               "type": "range",
-              "value": "30"
+              "value": "31"
             },
             "styles": {
               "display": "inline-block",
@@ -3916,6 +4797,2583 @@
           }
         }
       }
+    },
+    "dropdown-menu": {
+      "static": {
+        "text": "",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Open menu",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "button,[role=menu],[role=menuitem]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Open menu",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              "id": "react-aria4438284205-_r_43_",
+              "data-react-aria-pressable": "true",
+              "aria-label": "Open menu"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "oklch(0.708 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.708 0 none)",
+              "borderRadius": "6px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 20,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button,[role=menu],[role=menuitem]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "div"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "div"
+          }
+        },
+        {
+          "step": "2:press ArrowDown",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "div"
+          }
+        },
+        {
+          "step": "3:press Escape",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Open menu",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Open menu",
+        "slotMetrics": {
+          "button,[role=menu],[role=menuitem]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Open menu",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
+              "id": "react-aria4438284205-_r_43_",
+              "data-react-aria-pressable": "true",
+              "aria-label": "Open menu",
+              "data-hovered": "true",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "oklch(0.556 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.556 0 none)",
+              "borderRadius": "6px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 20,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "combobox": {
+      "static": {
+        "text": "Search members ⌘K",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Open menu",
+        "slotMetrics": {
+          "input,[role=combobox],[role=listbox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "aria-autocomplete": "list",
+              "placeholder": "Search by name",
+              "id": "react-aria4438284205-_r_4b_",
+              "aria-labelledby": "react-aria4438284205-_r_4c_",
+              "role": "combobox",
+              "aria-expanded": "false",
+              "data-rac": "",
+              "type": "text",
+              "value": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "rgba(0, 0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgba(0, 0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 908,
+              "height": 24,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,[role=combobox],[role=listbox]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "input"
+        },
+        {
+          "type": "type",
+          "target": "input",
+          "value": "Oli"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:type",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "Oli",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 2,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "Oli",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 2,
+            "active": "input"
+          }
+        },
+        {
+          "step": "3:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "Olivia Rhye",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Search members Olivia Rhye ⌘K",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "Olivia Rhye",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,[role=combobox],[role=listbox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "aria-autocomplete": "list",
+              "placeholder": "Search by name",
+              "id": "react-aria4438284205-_r_4b_",
+              "aria-labelledby": "react-aria4438284205-_r_4c_",
+              "role": "combobox",
+              "aria-expanded": "false",
+              "data-rac": "",
+              "type": "text",
+              "value": "Olivia Rhye",
+              "data-hovered": "true",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "rgba(0, 0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgba(0, 0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 908,
+              "height": 24,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "tags-render": {
+      "static": {
+        "text": "Alpha Beta Gamma",
+        "controlState": [],
+        "stateful": [],
+        "portals": [
+          {
+            "role": "grid",
+            "text": "AlphaBetaGamma",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 664,
+              "w": 960,
+              "h": 72
+            }
+          }
+        ],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "grid",
+          "row",
+          "gridcell",
+          "row",
+          "gridcell",
+          "row",
+          "gridcell"
+        ],
+        "focusable": [
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Tags",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "grid"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Alpha",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Beta",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": true,
+            "name": "Gamma",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          }
+        ],
+        "interactiveCount": 0,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=list],[role=listitem]": {
+            "missing": true
+          }
+        }
+      },
+      "slots": [
+        "[role=list],[role=listitem]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "button"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "error": "target not found",
+          "target": "button"
+        }
+      ],
+      "afterInteraction": {
+        "text": "Alpha Beta Gamma",
+        "controlState": [],
+        "stateful": [],
+        "portals": [
+          {
+            "role": "grid",
+            "text": "AlphaBetaGamma",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 664,
+              "w": 960,
+              "h": 72
+            }
+          }
+        ],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "grid",
+          "row",
+          "gridcell",
+          "row",
+          "gridcell",
+          "row",
+          "gridcell"
+        ],
+        "focusable": [
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Tags",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "grid"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Alpha",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Beta",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": true,
+            "name": "Gamma",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          }
+        ],
+        "interactiveCount": 0,
+        "activeElement": "body:3 options available.2 options ",
+        "slotMetrics": {
+          "[role=list],[role=listitem]": {
+            "missing": true
+          }
+        }
+      }
+    },
+    "input-number": {
+      "static": {
+        "text": "Quantity",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "1",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Increase",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Decrease",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "body:3 options available.2 options ",
+        "slotMetrics": {
+          "input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Quantity*",
+            "attrs": {
+              "id": "react-aria4438284205-_r_4r_",
+              "for": "react-aria4438284205-_r_4p_",
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 58.31,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,label"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "input"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowUp"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowUp"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "1",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "1",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowUp",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "2",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press ArrowUp",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "3",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Quantity",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "3",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Increase",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Decrease",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Quantity*",
+            "attrs": {
+              "id": "react-aria4438284205-_r_4r_",
+              "for": "react-aria4438284205-_r_4p_",
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 58.31,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "input-payment": {
+      "static": {
+        "text": "Card number",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Card number*",
+            "attrs": {
+              "id": "react-aria4438284205-_r_56_",
+              "for": "react-aria4438284205-_r_55_",
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 88.3,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,label"
+      ],
+      "actions": [
+        {
+          "type": "type",
+          "target": "input",
+          "value": "4242424242424242"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:type",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "4242 4242 4242 4242",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Card number",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "4242 4242 4242 4242",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Card number*",
+            "attrs": {
+              "id": "react-aria4438284205-_r_56_",
+              "for": "react-aria4438284205-_r_55_",
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 88.3,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "input-tags": {
+      "static": {
+        "text": "Tags",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": null,
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Tags*",
+            "attrs": {
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,label"
+      ],
+      "actions": [
+        {
+          "type": "type",
+          "target": "input",
+          "value": "alpha"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:type",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "alpha",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Tags alpha",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [
+          {
+            "role": "grid",
+            "text": "alpha",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 40,
+              "y": 701,
+              "w": 69,
+              "h": 24
+            }
+          }
+        ],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "grid",
+          "row",
+          "gridcell"
+        ],
+        "focusable": [
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Tags",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "grid"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "alpha",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "row"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Remove this tag",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": null,
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Tags*",
+            "attrs": {
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "button-group": {
+      "static": {
+        "text": "One Two",
+        "controlState": [],
+        "stateful": [
+          {
+            "role": "radio",
+            "name": "One",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "radio",
+            "name": "Two",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "radiogroup",
+          "radio",
+          "radio"
+        ],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "One",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "radio"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Two",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "radio"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=radiogroup],[role=group],[role=radio]": {
+            "tag": "div",
+            "role": "radiogroup",
+            "type": null,
+            "name": "OneTwo",
+            "attrs": {
+              "data-rac": "",
+              "role": "radiogroup",
+              "aria-orientation": "horizontal",
+              "data-orientation": "horizontal"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 120.08,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=radiogroup],[role=group],[role=radio]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "[role=radio]"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "ariaStates": [
+              "radio:false:false",
+              "radio:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "ariaStates": [
+              "radio:true:false",
+              "radio:false:false"
+            ],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "One Two",
+        "controlState": [],
+        "stateful": [
+          {
+            "role": "radio",
+            "name": "One",
+            "checked": "true",
+            "disabled": false,
+            "focusable": true
+          },
+          {
+            "role": "radio",
+            "name": "Two",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "radiogroup",
+          "radio",
+          "radio"
+        ],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "One",
+            "pressed": null,
+            "checked": "true",
+            "selected": null,
+            "expanded": null,
+            "role": "radio"
+          },
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Two",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "radio"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "button:One",
+        "slotMetrics": {
+          "[role=radiogroup],[role=group],[role=radio]": {
+            "tag": "div",
+            "role": "radiogroup",
+            "type": null,
+            "name": "OneTwo",
+            "attrs": {
+              "data-rac": "",
+              "role": "radiogroup",
+              "aria-orientation": "horizontal",
+              "data-orientation": "horizontal"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 120.08,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "form-submit": {
+      "static": {
+        "text": "Email Save",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": "email",
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          },
+          {
+            "tag": "button",
+            "type": "submit",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Save",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "button:One",
+        "slotMetrics": {
+          "form,button": {
+            "tag": "form",
+            "role": null,
+            "type": null,
+            "name": "Email*Save",
+            "attrs": {},
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 106,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "form,button"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "button"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Email Save",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": "email",
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          },
+          {
+            "tag": "button",
+            "type": "submit",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Save",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "form,button": {
+            "tag": "form",
+            "role": null,
+            "type": null,
+            "name": "Email*Save",
+            "attrs": {},
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 106,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "file-upload": {
+      "static": {
+        "text": "Upload",
+        "controlState": [
+          {
+            "type": "file",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
+          }
+        ],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Upload",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "button"
+          },
+          {
+            "tag": "input",
+            "type": "file",
+            "tabIndex": null,
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Upload",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria9033188202-_r_5h_"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 80.05,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "file",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "modal-open": {
+      "static": {
+        "text": "Open dialog",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Open dialog",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=dialog],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Open dialog",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-expanded": "false",
+              "id": "react-aria9033188202-_r_5k_",
+              "data-react-aria-pressable": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 113.34,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=dialog],button"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 1,
+            "active": "section"
+          }
+        },
+        {
+          "step": "1:press Escape",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Open dialog",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Open dialog",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Open dialog",
+        "slotMetrics": {
+          "[role=dialog],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Open dialog",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-expanded": "false",
+              "id": "react-aria9033188202-_r_5k_",
+              "data-react-aria-pressable": "true",
+              "data-hovered": "true",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 113.34,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "nav-account-card": {
+      "static": {
+        "text": "Caitlyn King caitlyn@untitledui.com",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Open dialog",
+        "slotMetrics": {
+          "button,[role=menu],[role=dialog]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-expanded": "false",
+              "id": "react-aria9033188202-_r_5o_",
+              "data-react-aria-pressable": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "absolute",
+              "color": "oklch(0.708 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.708 0 none)",
+              "borderRadius": "6px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "6px 6px 6px 6px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 28,
+              "height": 28,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button,[role=menu],[role=dialog]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 1,
+            "active": "section"
+          }
+        },
+        {
+          "step": "1:press Escape",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Caitlyn King caitlyn@untitledui.com",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:",
+        "slotMetrics": {
+          "button,[role=menu],[role=dialog]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-expanded": "false",
+              "id": "react-aria9033188202-_r_5o_",
+              "data-react-aria-pressable": "true",
+              "data-hovered": "true",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "absolute",
+              "color": "oklch(0.708 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.708 0 none)",
+              "borderRadius": "6px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "6px 6px 6px 6px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 28,
+              "height": 28,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "date-picker": {
+      "static": {
+        "text": "Select date",
+        "controlState": [
+          {
+            "type": "date",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "textbox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": false
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Calendar",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          },
+          {
+            "tag": "input",
+            "type": "date",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "button:",
+        "slotMetrics": {
+          "button,input,label": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Calendar",
+            "attrs": {
+              "id": "react-aria9033188202-_r_5r_",
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "aria-label": "Calendar",
+              "aria-labelledby": "react-aria9033188202-_r_5r_ react-aria9033188202-_r_5u_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "8px 12px 8px 12px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 128.63,
+              "height": 36,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button,input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "date",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "textbox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
     }
   }
 }

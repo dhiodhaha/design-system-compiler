@@ -1,0 +1,157 @@
+{
+  "unit": "tooltip-overlay",
+  "files": ["registry/untitledui/components/base/tooltip/tooltip.tsx"],
+  "status": "MIGRATED_PENDING_GATES",
+  "baseUiPrimitives": [
+    {
+      "primitive": "tooltip",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/tooltip.json (payload delivered inline by scout DocsOverlays; the file itself is still missing on disk — nothing was inferred from memory)",
+        "node_modules/@base-ui/react/docs/react/components/tooltip.md (parts table, data attributes, CSS vars, arrow/animation examples, accessibility notes)",
+        "node_modules/@base-ui/react/tooltip/{index.parts,root/TooltipRoot,trigger/TooltipTrigger,portal/TooltipPortal,positioner/TooltipPositioner,popup/TooltipPopup,arrow/TooltipArrow,provider/TooltipProvider}.d.ts",
+        "node_modules/@base-ui/react/tooltip/trigger/TooltipTrigger.mjs (delay resolution, data-trigger-disabled, hover/focus wiring)",
+        "node_modules/@base-ui/react/tooltip/root/TooltipRoot.mjs + store/TooltipStore.mjs (instantPhase, disabled, actions.close, isOpenedByTrigger)",
+        "node_modules/@base-ui/react/internals/{getStateAttributesProps,useTransitionStatus,useAnchorPositioning,useRenderElement}.mjs",
+        "node_modules/@base-ui/react/utils/popupStateMapping.mjs (data-open/data-closed/data-side/data-align/data-instant)",
+        "node_modules/@base-ui/react/utils/popups/store.mjs, utils/usePositioner.mjs, internals/useOpenChangeComplete.mjs + useAnimationsFinished.mjs",
+        ".design-compiler/base-ui-migration/docs/{popover,merge-props,use-render,internals-stateAttributesMapping}.json"
+      ],
+      "semanticDifferences": [
+        "Root.disabled replaces isDisabled and blocks opening, but Base UI never disables the trigger element itself (it only emits data-trigger-disabled) — the native disabled attribute is applied by our TooltipTrigger via an internal context that stands in for React Aria's ButtonContext propagation.",
+        "Trigger delay/closeDelay live on Trigger, not Root, so Tooltip forwards them to the trigger element it renders. Base UI's default delay is 600ms; the payload's 300ms default is passed explicitly, so the default is unchanged.",
+        "React Aria's tooltip warmup (module-global in react-stately: a recently shown tooltip makes the next hover open instantly for max(500ms, closeDelay) and opening one tooltip closes the others) has no Base UI equivalent outside Tooltip.Provider delay groups, so it is ported verbatim into module scope here.",
+        "Positioning is Portal > Positioner > Popup with side/align/sideOffset/alignOffset instead of placement/offset/crossOffset; React Aria's placement strings are mapped (start/end stay logical => inline-start/inline-end).",
+        "Animation is attribute driven: data-starting-style exists for a single frame and data-ending-style for the whole exit phase, so the enter classes hang off data-open (see stateSelectorChanges). Base UI also sets data-instant, which React Aria had no analogue for; no instant-specific classes were added because Tailwind orders data-open:* after data-instant:* at equal specificity (verified with a compiled probe), so an instant override would not win.",
+        "The Base UI Tooltip emits no ARIA role/description wiring at all (verified across tooltip/**/*.mjs): role=\"tooltip\", the popup id and the trigger's aria-describedby are restored here exactly as React Aria emitted them.",
+        "React Aria positioned the arrow on both axes inline (`top|bottom|left|right: 100%` plus a translate-centred cross axis); Base UI only sets the cross axis, so the side-facing edge is supplied as a class on Tooltip.Arrow (measured pixel-identical afterwards).",
+        "arrowBoundaryOffset defaults to 0 in React Aria and 5 in Base UI, so arrowPadding is passed as `arrowBoundaryOffset ?? 0` to keep the arrow's clamping identical."
+      ]
+    },
+    {
+      "primitive": "merge-props",
+      "version": "1.8.0",
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/merge-props.json", "node_modules/@base-ui/react/merge-props/mergeProps.mjs (ref is not merged; className concatenates; handlers merge right-to-left)"],
+      "semanticDifferences": [
+        "Used to merge Base UI's trigger props with the aria-describedby/aria-disabled this component adds, so the cloned trigger element keeps Base UI's ref and handlers."
+      ]
+    }
+  ],
+  "publicApiChanges": [
+    {
+      "prop": "TooltipProps (interface base)",
+      "before": "extends AriaTooltipTriggerComponentProps & Omit<AriaTooltipProps, 'children'>",
+      "after": "extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'title' | 'color'>",
+      "reason": "react-aria-components types are removed from the file.",
+      "migrationNote": "Every previously accepted prop name is declared explicitly (title, description, children, arrow, delay, closeDelay, trigger, isDisabled, isOpen, defaultOpen, onOpenChange, placement, offset, crossOffset, shouldFlip, containerPadding, arrowBoundaryOffset, triggerRef, isEntering, isExiting, UNSTABLE_portalContainer, className, style, role, aria-*, data-*). HTMLAttributes is a superset of React Aria's DOM surface (adds e.g. onClick/id), so no call site narrows.",
+      "compatibility": "source-compatible (additive DOM surface)"
+    },
+    {
+      "prop": "TooltipPlacement",
+      "before": "(no export; the prop's type came from react-aria's Placement)",
+      "after": "export type TooltipPlacement = 'top' | 'top left' | ... | 'end bottom'",
+      "reason": "Consumers imported Placement from react-aria (e.g. buttons/button-utility.tsx) and needed a local replacement.",
+      "migrationNote": "Additive export; agreed with the ButtonsNative unit, which now imports it instead of react-aria's Placement.",
+      "compatibility": "additive"
+    },
+    {
+      "prop": "Tooltip.className",
+      "before": "string | ((values: TooltipRenderProps) => string) — accepted but overridden by the component's own className, i.e. inert",
+      "after": "string — still inert (not forwarded to the popup)",
+      "reason": "The render-prop className of React Aria has no Base UI equivalent and the original implementation discarded it.",
+      "migrationNote": "Behaviour is unchanged (a consumer className never reached the DOM); only the accepted type narrows.",
+      "compatibility": "type-narrowing only"
+    },
+    {
+      "prop": "Tooltip.onOpenChange",
+      "before": "(isOpen: boolean) => void",
+      "after": "(isOpen: boolean) => void",
+      "reason": "Base UI's callback is (open, eventDetails).",
+      "migrationNote": "The public signature is unchanged; eventDetails is intentionally not forwarded so existing handlers keep their arity.",
+      "compatibility": "unchanged"
+    },
+    {
+      "prop": "Tooltip.trigger",
+      "before": "'hover' | 'focus' — trigger='focus' opened only on focus",
+      "after": "accepted, inert",
+      "reason": "Base UI's Tooltip.Trigger always opens on both hover and focus; there is no openOnHover switch (verified in tooltip/trigger/TooltipTrigger.mjs).",
+      "migrationNote": "Documented as a semantic gap, not a blocker: no registry consumer passes `trigger`.",
+      "compatibility": "behaviour change for trigger='focus' only"
+    },
+    {
+      "prop": "Tooltip.isEntering / Tooltip.isExiting",
+      "before": "escape hatches that forced the entering/exiting state (used to drive animation classes)",
+      "after": "accepted, inert",
+      "reason": "Base UI derives the phases from real CSS animation/transition state (transitionStatus) and exposes no override.",
+      "migrationNote": "The automatic behaviour they overrode is preserved; no consumer passes them.",
+      "compatibility": "behaviour change only for forced-state usage"
+    },
+    {
+      "prop": "Tooltip.public props -> Base UI mapping",
+      "before": "placement / offset / crossOffset / shouldFlip / containerPadding / arrowBoundaryOffset / triggerRef / UNSTABLE_portalContainer",
+      "after": "side+align / sideOffset / alignOffset / collisionAvoidance({side:'none'}) / collisionPadding / arrowPadding(?? 0) / Positioner anchor / Portal container",
+      "reason": "Base UI has no placement/crossOffset vocabulary.",
+      "migrationNote": "RAC placement strings map 1:1 including the ±12 auto cross-offset for 'top left'/'top end' vs 'top right'/'top start' (measured dx -12 / +12 identical to the React Aria build).",
+      "compatibility": "unchanged prop names and defaults"
+    },
+    {
+      "prop": "TooltipTriggerProps",
+      "before": "interface TooltipTriggerProps extends AriaButtonProps {}",
+      "after": "Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> & { isDisabled?: boolean; isPending?: boolean; ref?: Ref<HTMLButtonElement> }",
+      "reason": "Renders a native <button type=\"button\"> instead of React Aria's Button, which was the only consumer of ButtonContext.",
+      "migrationNote": "Native button props (className, children, type, aria-*, onClick, ...) are forwarded unchanged; React-Aria-only props (onPress/onPressChange/elementType/href/render/isPending's press blocking) are gone; className narrows from string|function to string (the function form needed React Aria render props and is unused in-repo). isPending now only sets data-pending.",
+      "compatibility": "source-compatible for in-repo call sites (className, isDisabled, aria-label, children, spread props)"
+    },
+    {
+      "prop": "TooltipTrigger DOM output",
+      "before": "<button type=\"button\"> + data-rac/data-react-aria-pressable/data-disabled/react-aria id",
+      "after": "<button type=\"button\"> + Base UI's data-base-ui-tooltip-trigger/data-popup-open/data-trigger-disabled/id",
+      "reason": "trigger registration moved to Base UI.",
+      "migrationNote": "type=\"button\" is preserved explicitly (Base UI's Trigger does not set it) so form submission behaviour is unchanged; disabled is still a real DOM attribute when the trigger or the parent Tooltip is disabled.",
+      "compatibility": "unchanged semantics, different data attributes"
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "react-aria-components (ButtonProps as AriaButtonProps, TooltipProps as AriaTooltipProps, TooltipTriggerComponentProps as AriaTooltipTriggerComponentProps)",
+    "react-aria-components (Button as AriaButton, OverlayArrow as AriaOverlayArrow, Tooltip as AriaTooltip, TooltipTrigger as AriaTooltipTrigger)"
+  ],
+  "baseUiImportsAdded": ["@base-ui/react/tooltip", "@base-ui/react/merge-props"],
+  "stateSelectorChanges": [
+    {
+      "from": "isEntering (React Aria render prop) -> 'ease-out animate-in' on the popup and 'ease-out animate-in fade-in zoom-in-95 in-placement-*:slide-in-from-*' on the box",
+      "to": "[data-open] (data-open:*) on the popup, [in-data-open] (in-data-open:*) on the box",
+      "reason": "React Aria kept data-entering (and the classes) until the enter animation finished (react-aria useEnterAnimation awaits element.getAnimations()). Base UI's data-starting-style exists for a single frame, which would cancel the one-shot animate-in keyframes; data-open is present for the whole open phase, so the enter animation plays exactly as before (verified: computed animation-name 'enter' and a full 150ms run)."
+    },
+    {
+      "from": "isExiting (React Aria render prop) -> 'ease-in animate-out' on the popup and 'ease-in animate-out fade-out zoom-out-95 in-placement-*:slide-out-to-*' on the box",
+      "to": "[data-ending-style] (data-ending-style:*) on the popup, [in-data-ending-style] (in-data-ending-style:*) on the box",
+      "reason": "Base UI's transitionStatus stays 'ending' until the popup unmounts (internals/useTransitionStatus.mjs), so data-ending-style covers the whole exit phase, matching data-exiting's lifetime."
+    },
+    {
+      "from": "in-placement-left|right|top|bottom:* (popup carries data-placement)",
+      "to": "in-data-[side=left|right|top|bottom]:*",
+      "reason": "Base UI emits data-side (not data-placement) on the Positioner, Popup and Arrow; the variant prefix was rewritten to the attribute Base UI actually renders (verified in the browser: data-side is present and the slide classes resolve)."
+    },
+    {
+      "from": "origin-(--trigger-anchor-point)",
+      "to": "origin-(--transform-origin)",
+      "reason": "React Aria set --trigger-anchor-point on the popup element; Base UI sets --transform-origin on the Positioner, whose box equals the popup's, so the custom property inherits to the box (verified: computed transform-origin resolves to the anchor point)."
+    },
+    {
+      "from": "OverlayArrow (React Aria set left/top inline on both axes) -> no class",
+      "to": "Tooltip.Arrow className 'data-[side=top]:top-full data-[side=bottom]:bottom-full data-[side=left]:left-full data-[side=right]:right-full'",
+      "reason": "Base UI's arrow styles only place the arrow on the cross axis (arrowStyles = {position:absolute, top: arrowY, left: arrowX}); the side-facing edge that React Aria set inline must come from a class. Verified pixel-identical against the pre-migration implementation for all six placements."
+    },
+    {
+      "from": "(no open:/entering:/exiting: variants existed in this file — state came from render props, not class variants)",
+      "to": "(none)",
+      "reason": "Recorded for the Phase 7 state-selector audit: this file declares no React-Aria variant that could go dead; the only attribute variants it now emits are Base UI's own (data-open, data-ending-style, data-side)."
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "evidence": {
+    "typecheck": "pass",
+    "notes": "node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json — clean for this file (sibling units still report their own in-flight errors, e.g. buttons/button.tsx useRef); node node_modules/typescript5/bin/tsc --noEmit -p tsconfig.json (app project, @types/node present) — clean for this file, which is why the warmup timer uses window.setTimeout/window.clearTimeout instead of a ReturnType-typed handle. Runtime verification (throwaway Vite harness in .smoke-tooltip, deleted afterwards; only this component imported): focus opens with role=\"tooltip\" + id, data-open/data-side/data-align, animation-name 'enter', trigger gets data-popup-open + aria-describedby matching the popup id; Escape closes; hover after a close opens within 200ms (React Aria warmup preserved) while a cold hover still waits the full 300ms; disabled Tooltip renders a disabled trigger and never opens; a raw child element (no TooltipTrigger wrapper) registers as the trigger; controlled isOpen toggles and unlinks aria-describedby on close; exit sets data-ending-style and runs animation-name 'exit' before unmounting. Geometry was compared against the pre-migration file from HEAD rendered side by side with identical props: box size/padding/radius/background/z-index identical for all six placements, align offsets identical (-12/+12), and the arrow rect identical to the pixel (e.g. side=top: arrow at the box's bottom edge, 41px from its left edge, rotate 0deg; side=bottom: rotate 180deg at the top edge; side=left/right: rotate -90/90deg). Two recorded compat gaps neither of which blocks the migration: `trigger=\"focus\"` can no longer suppress hover-open, and `isEntering`/`isExiting` are accepted but inert — both are unused across the registry. One environment-sensitive observation for the gates: Base UI waits for the exit animation to finish before unmounting (React Aria could bail out early and unmount immediately when its getAnimations() race saw no pending animation), so in a throttled/hidden tab the popup can linger a few hundred ms after close; in gate-like timing (single 260ms sleep, no DOM polling) both implementations unmount well inside the window. Also note .design-compiler/base-ui-migration/docs/tooltip.json is still absent from disk — the scout delivered it inline and only the lead may persist it."
+  }
+}

@@ -4,43 +4,44 @@
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
 "use client";
 
-import type { ReactNode, Ref } from "react";
+import type { ComponentPropsWithoutRef, ReactNode, Ref } from "react";
 import { HelpCircle } from "@untitledui/icons";
-import type { LabelProps as AriaLabelProps } from "react-aria-components";
-import { Label as AriaLabel } from "react-aria-components";
+import { Field } from "@base-ui/react/field";
+import { useFieldRootContext } from "@base-ui/react/internals/field-root-context";
+import { NOOP } from "@base-ui/react/internals/noop";
 import { Tooltip, TooltipTrigger } from "@/components/base/tooltip/tooltip";
 import { cx } from "@/utils/cx";
 
-interface LabelProps extends AriaLabelProps {
+interface LabelProps extends Omit<ComponentPropsWithoutRef<"label">, "className" | "children"> {
     children: ReactNode;
     isInvalid?: boolean;
     isRequired?: boolean;
     tooltip?: string;
     tooltipDescription?: string;
+    className?: string;
     ref?: Ref<HTMLLabelElement>;
 }
 
 export const Label = ({ isInvalid, isRequired, tooltip, tooltipDescription, className, ...props }: LabelProps) => {
-    return (
-        <AriaLabel
-            // Used for conditionally hiding/showing the label element via CSS:
-            // <Input label="Visible only on mobile" className="lg:**:data-label:hidden" />
-            // or
-            // <Input label="Visible only on mobile" className="lg:label:hidden" />
-            data-label="true"
-            {...props}
-            className={cx("flex cursor-default items-center gap-0.5 text-sm font-medium text-secondary", className)}
-        >
+    // `Field.Label` reads the field it labels from `Field.Root` and renders outside one without an owner:
+    // it is the part that hands the control its `aria-labelledby` (and the label its `htmlFor`). The
+    // payload also renders `Label` on its own (native selects, pin inputs, ...), where a `<label>` keeps
+    // the element, the `htmlFor`/`id` pass-through and the native label behaviour the call site already
+    // relies on. `NOOP` is Base UI's own "no field above" sentinel (the default context's setter).
+    const isFieldLabel = useFieldRootContext(true).setValidityData !== NOOP;
+
+    const content = (
+        <>
             {props.children}
 
             <span
                 className={cx(
                     "hidden text-brand-tertiary",
                     isRequired && "block",
-                    typeof isRequired === "undefined" && "group-required:block",
+                    typeof isRequired === "undefined" && "group-has-required:block",
 
                     isInvalid && "text-error-primary",
-                    typeof isInvalid === "undefined" && "group-invalid:text-error-primary",
+                    typeof isInvalid === "undefined" && "group-data-invalid:text-error-primary",
                 )}
             >
                 *
@@ -59,7 +60,28 @@ export const Label = ({ isInvalid, isRequired, tooltip, tooltipDescription, clas
                     </TooltipTrigger>
                 </Tooltip>
             )}
-        </AriaLabel>
+        </>
+    );
+
+    const labelClassName = cx("flex cursor-default items-center gap-0.5 text-sm font-medium text-secondary", className);
+
+    // `data-label="true"` is load-bearing: it drives the conditional hiding/showing of the label element
+    // via CSS, either with the `label` custom variant or a `data-label` ancestor selector:
+    // <Input label="Visible only on mobile" className="lg:**:data-label:hidden" />
+    // or
+    // <Input label="Visible only on mobile" className="lg:label:hidden" />
+    if (isFieldLabel) {
+        return (
+            <Field.Label data-label="true" {...props} className={labelClassName}>
+                {content}
+            </Field.Label>
+        );
+    }
+
+    return (
+        <label data-label="true" {...props} className={labelClassName}>
+            {content}
+        </label>
     );
 };
 
