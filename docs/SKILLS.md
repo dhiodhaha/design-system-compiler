@@ -1,231 +1,152 @@
-# Agent Skills and Skill Routing
+# Agent Skills and Routing
 
-Skills are optional accelerators for agents. They are not the compiler architecture and they should not be required for deterministic runtime behavior.
+Skills are optional accelerators, not compiler architecture.
 
-The main rule:
+## Main rule
 
-> Do not load every installed skill into every subagent.
+Do not load every skill into every agent.
 
-Load the smallest skill set that fits the current task.
+The reference-first pipeline reduces the amount of semantic guessing agents should perform.
 
-## Recommended skills
+## Reference Scout
 
-### Figma analysis
+Useful capabilities:
 
-Useful candidates from the Southleft Figma Console MCP skills repository:
+- GitHub/source inspection;
+- TypeScript/React API analysis;
+- dependency graph inspection.
 
-- `figma-analyze-component-set`
-- `figma-deep-component`
-- `figma-export-tokens`
-- later: `figma-check-design-parity`
-- later: `figma-annotations`
-- later: `figma-design-system-inventory`
+Responsibilities:
 
-Potential installation pattern:
+- inspect pinned upstream component;
+- extract compact capabilities;
+- identify material helpers/dependencies;
+- preserve revision/license provenance.
 
-```bash
-npx skills add https://github.com/southleft/figma-console-mcp-skills   --skill figma-analyze-component-set
+No Figma skill is necessary for this role.
 
-npx skills add https://github.com/southleft/figma-console-mcp-skills   --skill figma-deep-component
-
-npx skills add https://github.com/southleft/figma-console-mcp-skills   --skill figma-export-tokens
-```
-
-Add parity only when the base visual pipeline exists:
-
-```bash
-npx skills add https://github.com/southleft/figma-console-mcp-skills   --skill figma-check-design-parity
-```
-
-### React composition
-
-```bash
-npx skills add https://github.com/vercel-labs/agent-skills   --skill vercel-composition-patterns
-```
-
-Use this when deciding component boundaries, compound components, composition, and avoiding boolean-prop explosion.
-
-### shadcn architecture
-
-```bash
-npx skills add https://github.com/shadcn-ui/ui   --skill shadcn
-```
-
-Use shadcn as a reference for:
-
-- source-owned components;
-- registry/distribution;
-- editable source;
-- CLI UX.
-
-Do not use shadcn as the visual source of truth.
-
-### Browser testing
-
-After the visual test harness exists:
-
-```bash
-npx skills add https://github.com/anthropics/skills   --skill webapp-testing
-```
-
-Use it to support browser automation workflows, but keep project-local deterministic validation scripts authoritative.
-
-## Important compatibility caveat
-
-Some Figma skills expect a specific Figma console/plugin tool such as `use_figma`.
-
-Installing a SKILL.md does not magically provide the underlying runtime/tool integration.
-
-Before using a Figma skill:
-
-1. read its requirements;
-2. confirm the required Figma tool exists in the agent environment;
-3. if the required integration is unavailable, fall back to this project's Figma adapter and deterministic extractor.
-
-Never make the compiler depend on an optional skill.
-
-## Skill routing by worker
-
-### Figma Scout
+## Figma Scout
 
 Possible skills:
 
-- `figma-analyze-component-set`
-- `figma-deep-component`
-- `figma-export-tokens`
+- `figma-analyze-component-set`;
+- `figma-deep-component`;
+- `figma-export-tokens`;
+- later `figma-check-design-parity`.
 
-Use `figma-analyze-component-set` for:
+Use only when compatible with the available Figma runtime.
 
-- component-set axes;
-- state/size classification;
-- variant matrix reduction.
+The project's own adapter remains authoritative.
 
-Use `figma-deep-component` for:
+## Target Adapter / React Architecture
 
-- detailed anatomy;
-- nested instances;
-- token references;
-- prototype reactions;
-- annotations.
+Useful:
 
-Use `figma-export-tokens` only when:
+- Base UI documentation/source;
+- shadcn Base UI wrappers;
+- `vercel-composition-patterns`;
+- shadcn skill when useful for registry/source-owned patterns.
 
-- initializing tokens;
-- refreshing changed variables;
-- modes/aliases need re-export.
-
-Do not re-export all tokens for every component compile.
-
-### Variant/API Planner
-
-Possible skills:
-
-- `vercel-composition-patterns`
-- `shadcn`
-
-Use composition patterns when:
-
-- a Figma axis might create boolean-prop explosion;
-- a giant component should become compound components/recipes;
-- a public API needs semantic decomposition.
-
-Use shadcn when:
-
-- designing source distribution;
-- designing registry metadata;
-- designing installation UX.
-
-### Validator
-
-Possible skills:
-
-- `figma-check-design-parity`
-- `webapp-testing`
-
-Use deterministic project scripts before model reasoning.
-
-A skill should help explain or automate the check, not replace measurable truth.
-
-### Motion worker
-
-Do not load motion skills during static component work.
-
-Later, motion-oriented skills can be introduced after MotionIR exists.
-
-Motion must come from:
-
-1. explicit prototype/reaction;
-2. Figma annotation;
-3. existing verified motion token;
-4. established DS behavior;
-5. conservative fallback/no animation.
-
-## Context rule
-
-A skill can be useful but expensive if its instructions and tool output are unnecessarily injected everywhere.
-
-Each subagent should receive only:
-
-- its role;
-- its relevant skills;
-- relevant IR;
-- relevant code files;
-- relevant Figma node(s);
-- expected output contract.
-
-## Compiler vs skill responsibility
-
-The compiler must own:
-
-- slicing;
-- IR schemas;
-- cache;
-- resolver order;
-- supported combinations;
-- deterministic validation;
-- manifest;
-- registry data.
-
-Skills may assist:
-
-- extraction;
-- architecture reasoning;
-- implementation planning;
-- browser operations.
-
-If a skill disappears tomorrow, the compiler's core data model should remain valid.
-
-## Suggested installation phases
-
-### P0
-
-Install only if useful and compatible:
+Important:
 
 ```text
-figma-analyze-component-set
-figma-deep-component
-figma-export-tokens
-vercel-composition-patterns
+official Untitled UI
+→ semantic reference
+
+Base UI
+→ target primitive
+
 shadcn
+→ target wrapper ergonomics
+
+Figma
+→ visual truth
 ```
 
-### P1
+Do not let shadcn override the Untitled UI/Figma contract.
 
-After the golden component works:
+## Validator
+
+Useful:
+
+- browser testing;
+- visual parity tooling;
+- accessibility tooling.
+
+Deterministic repo scripts remain authoritative.
+
+## Agent topology
+
+Recommended:
 
 ```text
-figma-check-design-parity
-webapp-testing
+Lead
+├── Reference Scout
+├── Figma Scout
+├── Contract Reconciler
+├── Target Implementer
+└── Parity Validator
 ```
 
-### Later
-
-When the corresponding feature exists:
+For PRO composition:
 
 ```text
-figma-annotations
-figma-design-system-inventory
-motion-specific skills
+Lead
+├── Composition Scout
+├── Resolver
+├── Implementer
+└── Validator
 ```
 
-Do not install twenty skills just because they might be useful someday.
+## Context policy
+
+Pass compact artifacts:
+
+```text
+Reference Scout → reference.contract.json
+Figma Scout     → figma.family.json
+Reconciler      → canonical.contract.json
+Implementer     → patch
+Validator       → parity report
+```
+
+Do not forward full repository/Figma transcripts.
+
+## Model routing
+
+Cheap/fast model:
+
+- classification;
+- metadata;
+- simple contract diffs;
+- test-log classification.
+
+Strong coding model:
+
+- target adapter implementation;
+- cross-component refactor;
+- complex Base UI integration;
+- compiler core changes.
+
+Typed ambiguity resolver:
+
+- genuine contract conflict;
+- component vs recipe;
+- accepted behavior delta.
+
+## Motion
+
+Reference runtime behavior may be valid motion evidence.
+
+Figma static imagery alone is not.
+
+Priority:
+
+1. pinned official reference behavior;
+2. Figma prototype/annotation;
+3. verified project motion token;
+4. conservative fallback.
+
+## Failure rule
+
+If a skill disappears, the compiler's structured reference/contract/parity pipeline must still work.
