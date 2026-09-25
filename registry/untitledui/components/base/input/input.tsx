@@ -110,8 +110,10 @@ export const InputBase = ({
     const isRequiredResolved = isRequired ?? context?.isRequired;
     const isReadOnlyResolved = isReadOnly ?? context?.isReadOnly;
 
-    // Check if the input has a leading icon or tooltip
-    const hasTrailingIcon = tooltip || isInvalidResolved;
+    // Check if the input has a leading icon or tooltip. React Aria's field context never fed this
+    // expression (it only merged into the state props), so the resolved field state must not either:
+    // the invalid state adds the trailing icon, not the icon's reserved space.
+    const hasTrailingIcon = tooltip || isInvalid;
     const hasLeadingIcon = Icon;
 
     const inputSize = context?.size || size;

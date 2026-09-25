@@ -9,7 +9,7 @@
  * vocabulary of the migration; this script never invents a status — it derives the current one from the
  * live filesystem, so the matrix cannot claim progress that the code does not show.
  */
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 
 const ROOT = ".design-compiler/base-ui-migration";
 const inventory = JSON.parse(readFileSync(`${ROOT}/inventory.json`, "utf8"));
@@ -57,10 +57,21 @@ const unclaimed = inventory.entries
   .map((e) => e.file.replace("registry/untitledui/", "").replace("src/", ""))
   .filter((f) => !claimed.has(f) && !UNITS.some((u) => u.files.some((p) => p.includes("*") && f.startsWith(p.replace("/*", "/")))));
 
-/** A unit's status is derived from the files (React Aria gone?) and from its migration record if one exists. */
+/**
+ * A unit's status is derived from the files (React Aria gone?) and from its migration record if one exists.
+ * A record may cover several matrix units (the field family migrated label/hint/input/textarea together),
+ * so its `matrixItems` list is honoured before the file name.
+ */
 const unitRecord = (id) => {
-  const path = `${ROOT}/units/${id}.json`;
-  return existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : null;
+  const direct = `${ROOT}/units/${id}.json`;
+  if (existsSync(direct)) return JSON.parse(readFileSync(direct, "utf8"));
+  if (!existsSync(`${ROOT}/units`)) return null;
+  for (const file of readdirSync(`${ROOT}/units`)) {
+    if (!file.endsWith(".json")) continue;
+    const record = JSON.parse(readFileSync(`${ROOT}/units/${file}`, "utf8"));
+    if (record.matrixItems?.includes(id)) return record;
+  }
+  return null;
 };
 
 const statusOf = (unit) => {

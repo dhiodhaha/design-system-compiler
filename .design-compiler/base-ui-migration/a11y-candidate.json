@@ -3,29 +3,8 @@
   "label": "candidate",
   "standard": "axe-core wcag2a, wcag2aa, wcag21a, wcag21aa",
   "cases": 43,
-  "violatingCases": 5,
-  "newViolations": {
-    "input-invalid": [
-      {
-        "rule": "label",
-        "impact": "critical",
-        "description": "Form elements must have labels",
-        "nodes": [
-          "<input aria-invalid=\"true\" tabindex=\"0\" id=\"react-aria6344681046...\" class=\"m-0 w-full bg-transp...\" data-rac=\"\" data-invalid=\"true\" type=\"text\" value=\"\" title="
-        ]
-      }
-    ],
-    "textarea-invalid": [
-      {
-        "rule": "label",
-        "impact": "critical",
-        "description": "Form elements must have labels",
-        "nodes": [
-          "<textarea aria-invalid=\"true\" tabindex=\"0\" id=\"react-aria6344681046...\" class=\"w-full scroll-py-3 r...\" data-rac=\"\" data-invalid=\"true\" title=\"\" style=\"--resize"
-        ]
-      }
-    ]
-  },
+  "violatingCases": 3,
+  "newViolations": {},
   "preExisting": {
     "slider-default": [
       {
@@ -33,7 +12,7 @@
         "impact": "critical",
         "description": "Form elements must have labels",
         "nodes": [
-          "<input tabindex=\"0\" id=\"react-aria6344681046-_r_3m_-0\" aria-labelledby=\"react-aria6344681046-_r_3n_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+          "<input tabindex=\"0\" id=\"react-aria9222058451-_r_38_-0\" aria-labelledby=\"react-aria9222058451-_r_39_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
         ]
       }
     ],
@@ -43,7 +22,7 @@
         "impact": "critical",
         "description": "Form elements must have labels",
         "nodes": [
-          "<input tabindex=\"0\" id=\"react-aria6344681046-_r_3s_-0\" aria-labelledby=\"react-aria6344681046-_r_3t_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+          "<input tabindex=\"0\" id=\"react-aria9222058451-_r_3e_-0\" aria-labelledby=\"react-aria9222058451-_r_3f_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
         ]
       }
     ],
@@ -53,7 +32,7 @@
         "impact": "critical",
         "description": "Buttons must have discernible text",
         "nodes": [
-          "<button class=\"absolute top-2 right...\" data-rac=\"\" type=\"button\" tabindex=\"0\" aria-expanded=\"false\" id=\"react-aria6344681046...\" data-react-aria-pres...=\"true\""
+          "<button class=\"absolute top-2 right...\" data-rac=\"\" type=\"button\" tabindex=\"0\" aria-expanded=\"false\" id=\"react-aria9222058451...\" data-react-aria-pres...=\"true\""
         ]
       },
       {

@@ -1,7 +1,7 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "migrated",
-  "capturedAt": "2026-09-25T13:12:31.539Z",
+  "capturedAt": "2026-09-25T13:24:40.635Z",
   "cases": {
     "button-default": {
       "static": {
@@ -3131,10 +3131,10 @@
             "type": "text",
             "name": "",
             "attrs": {
-              "id": "base-ui-_r_65_",
+              "id": "base-ui-_r_1t_",
               "placeholder": "Your name",
               "type": "text",
-              "aria-labelledby": "base-ui-_r_66_"
+              "aria-labelledby": "base-ui-_r_1u_"
             },
             "styles": {
               "display": "block",
@@ -3286,10 +3286,10 @@
             "type": "text",
             "name": "",
             "attrs": {
-              "id": "base-ui-_r_65_",
+              "id": "base-ui-_r_1t_",
               "placeholder": "Your name",
               "type": "text",
-              "aria-labelledby": "base-ui-_r_66_",
+              "aria-labelledby": "base-ui-_r_1u_",
               "data-focused": "",
               "data-dirty": "",
               "data-filled": ""
@@ -3371,11 +3371,11 @@
             "name": "",
             "attrs": {
               "data-disabled": "",
-              "id": "base-ui-_r_68_",
+              "id": "base-ui-_r_20_",
               "disabled": "",
               "placeholder": "Your name",
               "type": "text",
-              "aria-labelledby": "base-ui-_r_69_"
+              "aria-labelledby": "base-ui-_r_21_"
             },
             "styles": {
               "display": "block",
@@ -3481,11 +3481,11 @@
             "name": "",
             "attrs": {
               "data-invalid": "",
-              "id": "base-ui-_r_6b_",
+              "id": "base-ui-_r_23_",
               "aria-invalid": "true",
               "type": "text",
-              "aria-labelledby": "base-ui-_r_6c_",
-              "aria-describedby": "base-ui-_r_6e_"
+              "aria-labelledby": "base-ui-_r_24_",
+              "aria-describedby": "base-ui-_r_26_"
             },
             "styles": {
               "display": "block",
@@ -3498,7 +3498,7 @@
               "fontSize": "16px",
               "fontWeight": "400",
               "lineHeight": "24px",
-              "padding": "8px 36px 8px 12px",
+              "padding": "8px 12px 8px 12px",
               "margin": "0px 0px 0px 0px",
               "gap": "normal",
               "width": 960,
@@ -3569,7 +3569,7 @@
           {
             "tag": "textarea",
             "type": null,
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -3588,6 +3588,8 @@
             "type": null,
             "name": "Notes*",
             "attrs": {
+              "id": "base-ui-_r_28_",
+              "for": "base-ui-_r_27_",
               "data-label": "true"
             },
             "styles": {
@@ -3672,7 +3674,7 @@
           {
             "tag": "textarea",
             "type": null,
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -3691,6 +3693,9 @@
             "type": null,
             "name": "Notes*",
             "attrs": {
+              "data-invalid": "",
+              "id": "base-ui-_r_2b_",
+              "for": "base-ui-_r_2a_",
               "data-label": "true"
             },
             "styles": {
@@ -3806,11 +3811,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria7832370205-_r_2j_",
+              "id": "react-aria8899783799-_r_2g_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria7832370205-_r_2o_",
+              "aria-labelledby": "react-aria8899783799-_r_2l_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -3929,11 +3934,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria7832370205-_r_2t_",
+              "id": "react-aria8899783799-_r_2q_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria7832370205-_r_32_",
+              "aria-labelledby": "react-aria8899783799-_r_2v_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -4132,11 +4137,11 @@
             "type": "button",
             "name": "Phoenix Bakerphoenix@untitledui.com",
             "attrs": {
-              "id": "react-aria7832370205-_r_2t_",
+              "id": "react-aria8899783799-_r_2q_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria7832370205-_r_32_",
+              "aria-labelledby": "react-aria8899783799-_r_2v_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false",
               "data-hovered": "true",
@@ -4198,7 +4203,7 @@
             "type": "button",
             "name": "Trigger",
             "attrs": {
-              "id": "base-ui-_r_37_",
+              "id": "base-ui-_r_34_",
               "data-base-ui-tooltip-trigger": "",
               "type": "button"
             },
@@ -4334,11 +4339,11 @@
             "type": "button",
             "name": "Trigger",
             "attrs": {
-              "id": "base-ui-_r_37_",
+              "id": "base-ui-_r_34_",
               "data-base-ui-tooltip-trigger": "",
               "type": "button",
               "data-popup-open": "",
-              "aria-describedby": "_r_35_"
+              "aria-describedby": "_r_32_"
             },
             "styles": {
               "display": "inline-block",
@@ -4478,8 +4483,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria7832370205-_r_38_",
-              "id": "react-aria7832370205-_r_39_",
+              "data-collection": "react-aria8899783799-_r_35_",
+              "id": "react-aria8899783799-_r_36_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -4644,8 +4649,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria7832370205-_r_38_",
-              "id": "react-aria7832370205-_r_39_",
+              "data-collection": "react-aria8899783799-_r_35_",
+              "id": "react-aria8899783799-_r_36_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -4727,8 +4732,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria7832370205-_r_3b_-0",
-              "aria-labelledby": "react-aria7832370205-_r_3c_",
+              "id": "react-aria8899783799-_r_38_-0",
+              "aria-labelledby": "react-aria8899783799-_r_39_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -4839,8 +4844,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria7832370205-_r_3h_-0",
-              "aria-labelledby": "react-aria7832370205-_r_3i_",
+              "id": "react-aria8899783799-_r_3e_-0",
+              "aria-labelledby": "react-aria8899783799-_r_3f_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -4999,8 +5004,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria7832370205-_r_3h_-0",
-              "aria-labelledby": "react-aria7832370205-_r_3i_",
+              "id": "react-aria8899783799-_r_3e_-0",
+              "aria-labelledby": "react-aria8899783799-_r_3f_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,100%",
               "aria-describedby": "",
@@ -5067,7 +5072,7 @@
               "type": "button",
               "aria-haspopup": "true",
               "aria-expanded": "false",
-              "id": "react-aria7832370205-_r_3n_",
+              "id": "react-aria8899783799-_r_3k_",
               "data-react-aria-pressable": "true",
               "aria-label": "Open menu"
             },
@@ -5217,7 +5222,7 @@
               "type": "button",
               "aria-haspopup": "true",
               "aria-expanded": "false",
-              "id": "react-aria7832370205-_r_3n_",
+              "id": "react-aria8899783799-_r_3k_",
               "data-react-aria-pressable": "true",
               "aria-label": "Open menu",
               "data-hovered": "true",
@@ -5303,7 +5308,7 @@
             "attrs": {
               "aria-autocomplete": "list",
               "placeholder": "Search by name",
-              "id": "react-aria7832370205-_r_3v_",
+              "id": "react-aria8899783799-_r_3s_",
               "role": "combobox",
               "aria-expanded": "false",
               "data-rac": "",
@@ -5525,7 +5530,7 @@
             "attrs": {
               "aria-autocomplete": "list",
               "placeholder": "Search by name",
-              "id": "react-aria7832370205-_r_3v_",
+              "id": "react-aria8899783799-_r_3s_",
               "role": "combobox",
               "aria-expanded": "false",
               "data-rac": "",
@@ -6128,8 +6133,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "id": "base-ui-_r_9s_",
-              "for": "base-ui-_r_9r_",
+              "id": "base-ui-_r_4n_",
+              "for": "base-ui-_r_4m_",
               "data-label": "true"
             },
             "styles": {
@@ -6258,8 +6263,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "id": "base-ui-_r_9s_",
-              "for": "base-ui-_r_9r_",
+              "id": "base-ui-_r_4n_",
+              "for": "base-ui-_r_4m_",
               "data-label": "true",
               "data-focused": "",
               "data-dirty": "",
@@ -6313,7 +6318,7 @@
           }
         ],
         "portals": [],
-        "focusVisible": false,
+        "focusVisible": true,
         "pointerEvents": "auto",
         "roles": [
           "group"
@@ -6333,7 +6338,7 @@
           }
         ],
         "interactiveCount": 1,
-        "activeElement": "body:3\n    button-defaultButtonbutt",
+        "activeElement": "input:",
         "slotMetrics": {
           "input,label": {
             "tag": "label",
@@ -7432,7 +7437,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria984133327-_r_59_",
+              "id": "react-aria9830409041-_r_56_",
               "data-react-aria-pressable": "true"
             },
             "styles": {
@@ -7544,7 +7549,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria984133327-_r_59_",
+              "id": "react-aria9830409041-_r_56_",
               "data-react-aria-pressable": "true",
               "data-hovered": "true",
               "data-focused": "true",

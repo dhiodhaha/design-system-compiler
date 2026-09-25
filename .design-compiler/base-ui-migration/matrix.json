@@ -13,8 +13,8 @@
   "totals": {
     "units": 25,
     "byStatus": {
-      "MIGRATED_PENDING_GATES": 5,
-      "MIGRATING": 20
+      "MIGRATED_PENDING_GATES": 7,
+      "MIGRATING": 18
     },
     "byWave": {
       "1": 4,
@@ -118,7 +118,7 @@
       "record": ".design-compiler/base-ui-migration/units/field-text.json",
       "dependsOn": [],
       "dependencyNote": null,
-      "publicApiChanges": 4,
+      "publicApiChanges": 10,
       "blockers": []
     },
     {
@@ -284,13 +284,13 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/input-field.json",
       "dependsOn": [
         "field-text"
       ],
       "dependencyNote": "React Aria's Label reads the control id from React Aria's field context; a migrated Label cannot name an unmigrated React Aria input, so Label/HintText and the field family must migrate as one unit (observed as an axe `label` violation on input-invalid/textarea-invalid).",
-      "publicApiChanges": 0,
+      "publicApiChanges": 10,
       "blockers": []
     },
     {
@@ -325,13 +325,13 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/textarea.json",
       "dependsOn": [
         "field-text"
       ],
       "dependencyNote": "same field-context wiring dependency as input-field",
-      "publicApiChanges": 0,
+      "publicApiChanges": 10,
       "blockers": []
     },
     {
