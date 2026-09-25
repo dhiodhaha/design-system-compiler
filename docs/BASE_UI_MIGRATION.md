@@ -52,11 +52,18 @@ dev server on port 5174, so the oracle cannot drift.
 | forms-primitives (checkbox, toggle, radio-buttons) | landed, gates run centrally | Base UI Root renders the ARIA element and keeps the hidden input as the form carrier |
 | buttons-native (button, button-utility, close-button, social-button, avatar-add-button) | landed, follow-up out | native `<button>`/`<a>` with Base UI `useRender`; `onPress*` compatibility required because `mobile-header.tsx` and `tag-select.tsx` call it |
 | tooltip-overlay | landed, gates run centrally | Base UI Tooltip with Portal/Positioner/Popup/Arrow; React Aria's tooltip warmup ported verbatim; `role=tooltip` + `aria-describedby` restored (Base UI emits neither) |
-| field-text → field family | migrating | extended scope: label, hint, input, textarea must move together (see hazard 3) |
+| field family (label, hint, input, textarea) | landed, gates run centrally | migrated as one unit because hazard 3 makes splitting impossible; Label/HintText branch on the presence of a Base UI field so the 43 standalone importers keep working |
 | 17 further units | `MIGRATING` | select/combobox/multi-select/tag-select, dropdown family, tags, modal, slideout, tabs, nav parts, form, file-upload, slider, input-number/payment/tags, date-picker*, table* |
 | date-picker*, table* | `NO_BASE_UI_EQUIVALENT` | needs an owner decision on a specialized dependency |
 
-Residue: 61 canonical files imported React Aria at the start of the migration; 49 still do.
+Residue: 61 canonical files imported React Aria at the start of the migration; **46** still do (dropdown 16, select 6,
+app-navigation 5, date-picker 5, input 4, form 2, tags 2, and one each for modal, slideout, table, tabs,
+file-upload, slider).
+
+**Date and table components need an owner decision**: Base UI 1.8.0 has no date or table primitive, so the
+seven files in those families cannot be expressed in Base UI at all. `OWNER_DECISION-date-and-table.md` states
+the evidence, three options (keep React Aria behind a documented allow-list / approve a specialized
+dependency / drop them from the Base UI-backed library), and what each option does to the acceptance gates.
 
 ## Continuing
 
