@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/registry-index@p1",
-  "generatedAt": "2026-09-25T13:13:09.304Z",
+  "generatedAt": "2026-09-25T14:19:22.696Z",
   "library": "untitledui",
   "canonical": true,
   "reference": {
@@ -48,7 +48,6 @@
   "cliDependencies": [
     "@base-ui/react",
     "@internationalized/date",
-    "@react-aria/utils",
     "@react-stately/utils",
     "embla-carousel-react",
     "input-otp",
@@ -58,7 +57,6 @@
     "react-aria",
     "react-aria-components",
     "react-hook-form",
-    "react-stately",
     "recharts",
     "tailwind-merge",
     "tailwindcss"

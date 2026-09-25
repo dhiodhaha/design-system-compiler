@@ -2,121 +2,13 @@
   "$schema": "design-compiler/BaseUiStateSelectorAudit@p0",
   "baseUiAttributesKnown": 73,
   "totals": {
-    "files": 41,
-    "variantsInUse": 76,
+    "files": 48,
+    "variantsInUse": 81,
     "deadSelectors": 0,
-    "pendingMigration": 47
+    "pendingMigration": 9
   },
   "dead": [],
   "pending": [
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
-      "variant": "focus-visible",
-      "count": 4,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-      "variant": "focus-visible",
-      "count": 4,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-      "variant": "pressed",
-      "count": 2,
-      "attribute": "data-pressed",
-      "nativeFallback": null,
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-      "variant": "placement-right",
-      "count": 2,
-      "attribute": "data-placement-right",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-      "variant": "placement-top",
-      "count": 2,
-      "attribute": "data-placement-top",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-      "variant": "placement-bottom",
-      "count": 2,
-      "attribute": "data-placement-bottom",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
-      "variant": "focus-visible",
-      "count": 3,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
-      "variant": "focus-visible",
-      "count": 3,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
-      "variant": "disabled",
-      "count": 3,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
-      "variant": "placement-right",
-      "count": 2,
-      "attribute": "data-placement-right",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
-      "variant": "placement-top",
-      "count": 2,
-      "attribute": "data-placement-top",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
-      "variant": "placement-bottom",
-      "count": 2,
-      "attribute": "data-placement-bottom",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
     {
       "file": "registry/untitledui/components/application/date-picker/date-picker.tsx",
       "variant": "placement-right",
@@ -197,246 +89,12 @@
       "nativeFallback": null,
       "emittedByBaseUi": true,
       "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/dropdown/dropdown-account-breadcrumb.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-advanced.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-simple.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
-      "variant": "placement-right",
-      "count": 2,
-      "attribute": "data-placement-right",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
-      "variant": "placement-top",
-      "count": 2,
-      "attribute": "data-placement-top",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
-      "variant": "placement-bottom",
-      "count": 2,
-      "attribute": "data-placement-bottom",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input-number.tsx",
-      "variant": "disabled",
-      "count": 5,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input-number.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input-tags.tsx",
-      "variant": "focus-visible",
-      "count": 4,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input-tags.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input-tags.tsx",
-      "variant": "disabled",
-      "count": 1,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/combobox.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/combobox.tsx",
-      "variant": "disabled",
-      "count": 1,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/multi-select.tsx",
-      "variant": "placement-top",
-      "count": 2,
-      "attribute": "data-placement-top",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/multi-select.tsx",
-      "variant": "placement-bottom",
-      "count": 2,
-      "attribute": "data-placement-bottom",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/multi-select.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/popover.tsx",
-      "variant": "placement-right",
-      "count": 2,
-      "attribute": "data-placement-right",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/popover.tsx",
-      "variant": "placement-top",
-      "count": 2,
-      "attribute": "data-placement-top",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/popover.tsx",
-      "variant": "placement-bottom",
-      "count": 2,
-      "attribute": "data-placement-bottom",
-      "nativeFallback": null,
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/tag-select.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/select/tag-select.tsx",
-      "variant": "disabled",
-      "count": 1,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
-      "variant": "focus-visible",
-      "count": 3,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
-      "variant": "disabled",
-      "count": 1,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/tags/tags.tsx",
-      "variant": "focus-visible",
-      "count": 2,
-      "attribute": "data-focus-visible",
-      "nativeFallback": ":focus-visible",
-      "emittedByBaseUi": false,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/textarea/textarea.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
     }
   ],
   "files": [
     {
       "file": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -444,13 +102,13 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -458,45 +116,21 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         },
         {
-          "variant": "pressed",
+          "variant": "active",
           "count": 2,
-          "attribute": "data-pressed",
-          "nativeFallback": null,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-right",
-          "count": 2,
-          "attribute": "data-placement-right",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-top",
-          "count": 2,
-          "attribute": "data-placement-top",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-bottom",
-          "count": 2,
-          "attribute": "data-placement-bottom",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -504,13 +138,13 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -518,15 +152,7 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "disabled",
-          "count": 3,
-          "attribute": "data-disabled",
-          "nativeFallback": ":disabled",
-          "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
@@ -546,31 +172,15 @@
     },
     {
       "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
-          "variant": "placement-right",
-          "count": 2,
-          "attribute": "data-placement-right",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-top",
-          "count": 2,
-          "attribute": "data-placement-top",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-bottom",
-          "count": 2,
-          "attribute": "data-placement-bottom",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "variant": "active",
+          "count": 3,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         }
       ]
     },
@@ -663,6 +273,20 @@
       ]
     },
     {
+      "file": "registry/untitledui/components/application/modals/modal.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "open",
+          "count": 5,
+          "attribute": "data-open",
+          "nativeFallback": "[open]",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
       "file": "registry/untitledui/components/application/pagination/pagination-base.tsx",
       "migrated": true,
       "variants": [
@@ -719,6 +343,20 @@
       ]
     },
     {
+      "file": "registry/untitledui/components/application/slideout-menus/slideout-menu.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "open",
+          "count": 5,
+          "attribute": "data-open",
+          "nativeFallback": "[open]",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
       "file": "registry/untitledui/components/application/table/table.tsx",
       "migrated": false,
       "variants": [
@@ -742,7 +380,7 @@
     },
     {
       "file": "registry/untitledui/components/application/tabs/tabs.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -750,7 +388,23 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
+        },
+        {
+          "variant": "selected",
+          "count": 1,
+          "attribute": "data-selected",
+          "nativeFallback": null,
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        },
+        {
+          "variant": "hovered",
+          "count": 1,
+          "attribute": "data-hovered",
+          "nativeFallback": ":hover",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
@@ -938,21 +592,123 @@
     },
     {
       "file": "registry/untitledui/components/base/dropdown/dropdown-account-breadcrumb.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
-          "count": 2,
+          "count": 3,
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
+        },
+        {
+          "variant": "active",
+          "count": 1,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-card-md.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "active",
+          "count": 1,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        },
+        {
+          "variant": "focus-visible",
+          "count": 1,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-card-sm.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "active",
+          "count": 1,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-card-xs.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "active",
+          "count": 1,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-avatar.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "active",
+          "count": 1,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        },
+        {
+          "variant": "focus-visible",
+          "count": 1,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-button-link.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "active",
+          "count": 1,
+          "attribute": "data-active",
+          "nativeFallback": ":active",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        },
+        {
+          "variant": "focus-visible",
+          "count": 1,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-advanced.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -960,13 +716,13 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-simple.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -974,51 +730,51 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
-          "variant": "placement-right",
-          "count": 2,
-          "attribute": "data-placement-right",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "variant": "disabled",
+          "count": 3,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         },
         {
-          "variant": "placement-top",
+          "variant": "selected",
           "count": 2,
-          "attribute": "data-placement-top",
+          "attribute": "data-selected",
           "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         },
         {
-          "variant": "placement-bottom",
-          "count": 2,
-          "attribute": "data-placement-bottom",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "variant": "open",
+          "count": 1,
+          "attribute": "data-open",
+          "nativeFallback": "[open]",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/input/input-number.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "disabled",
-          "count": 5,
+          "count": 6,
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "placeholder",
@@ -1026,13 +782,13 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/input/input-tags.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -1040,7 +796,7 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         },
         {
           "variant": "placeholder",
@@ -1048,7 +804,7 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "disabled",
@@ -1056,7 +812,7 @@
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
@@ -1106,7 +862,7 @@
     },
     {
       "file": "registry/untitledui/components/base/select/combobox.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "placeholder",
@@ -1114,7 +870,7 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "disabled",
@@ -1122,29 +878,21 @@
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/select/multi-select.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
-          "variant": "placement-top",
+          "variant": "focus-visible",
           "count": 2,
-          "attribute": "data-placement-top",
-          "nativeFallback": null,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-bottom",
-          "count": 2,
-          "attribute": "data-placement-bottom",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         },
         {
           "variant": "placeholder",
@@ -1152,37 +900,21 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
     {
-      "file": "registry/untitledui/components/base/select/popover.tsx",
-      "migrated": false,
+      "file": "registry/untitledui/components/base/select/select-item.tsx",
+      "migrated": true,
       "variants": [
         {
-          "variant": "placement-right",
-          "count": 2,
-          "attribute": "data-placement-right",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-top",
-          "count": 2,
-          "attribute": "data-placement-top",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
-        },
-        {
-          "variant": "placement-bottom",
-          "count": 2,
-          "attribute": "data-placement-bottom",
-          "nativeFallback": null,
-          "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         }
       ]
     },
@@ -1218,7 +950,7 @@
     },
     {
       "file": "registry/untitledui/components/base/select/tag-select.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "placeholder",
@@ -1226,7 +958,7 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "disabled",
@@ -1234,13 +966,13 @@
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -1248,21 +980,21 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
         },
         {
           "variant": "disabled",
-          "count": 1,
+          "count": 2,
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/tags/tags.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "focus-visible",
@@ -1270,13 +1002,21 @@
           "attribute": "data-focus-visible",
           "nativeFallback": ":focus-visible",
           "emittedByBaseUi": false,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "NATIVE_FALLBACK_OK"
+        },
+        {
+          "variant": "current",
+          "count": 1,
+          "attribute": "data-current",
+          "nativeFallback": null,
+          "emittedByBaseUi": true,
+          "verdict": "OK"
         }
       ]
     },
     {
       "file": "registry/untitledui/components/base/textarea/textarea.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "placeholder",
@@ -1284,7 +1024,7 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     }

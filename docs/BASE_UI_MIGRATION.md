@@ -44,7 +44,26 @@ Nothing here is "it compiles, ship it". Each migrated unit is measured against t
 Captures are recorded from a *pristine* React Aria checkout: `git worktree add /tmp/ds-baseline <commit>` and a
 dev server on port 5174, so the oracle cannot drift.
 
-## Current state
+## Final state
+
+Every migration unit reached a terminal state: **23 BASE_UI_VERIFIED**, **2 NO_BASE_UI_EQUIVALENT**
+(date-picker, table - see the owner decision below). No unit is MIGRATING, TODO or STAGNATED, and no
+canonical runtime file imports React Aria.
+
+| gate | result |
+| --- | --- |
+| parity (46 cases against the frozen React Aria baseline) | PASS - 0 failures, 77 explanatory notes |
+| residue | PASS - 0 accidental files; the 7 date/table files are `ALLOWED_NO_BASE_UI_EQUIVALENT` |
+| accessibility (axe WCAG A/AA, 46 cases) | PASS - 0 new violations; 3 pre-existing, inherited from the baseline |
+| hydration (SSR then hydrate, 46 cases) | PASS - 0 mismatches |
+| typecheck (app, payload, PRO) · invariants · SSR | PASS |
+
+Three defects were found by these gates and fixed with root causes, not symptom patches: the ComboBox popup
+never opening (Base UI's `Select.Item` threw inside a ComboBox, because React Aria's `ListBoxItem` served both
+collections), the TagSelect popup not closing on Escape, and MultiSelect closing on the first Escape where
+React Aria deliberately consumes it twice (clear the query, then clear the selection).
+
+## Per-unit state (earlier snapshot)
 
 | unit | status | notes |
 | --- | --- | --- |
@@ -55,10 +74,6 @@ dev server on port 5174, so the oracle cannot drift.
 | field family (label, hint, input, textarea) | landed, gates run centrally | migrated as one unit because hazard 3 makes splitting impossible; Label/HintText branch on the presence of a Base UI field so the 43 standalone importers keep working |
 | 17 further units | `MIGRATING` | select/combobox/multi-select/tag-select, dropdown family, tags, modal, slideout, tabs, nav parts, form, file-upload, slider, input-number/payment/tags, date-picker*, table* |
 | date-picker*, table* | `NO_BASE_UI_EQUIVALENT` | needs an owner decision on a specialized dependency |
-
-Residue: 61 canonical files imported React Aria at the start of the migration; **46** still do (dropdown 16, select 6,
-app-navigation 5, date-picker 5, input 4, form 2, tags 2, and one each for modal, slideout, table, tabs,
-file-upload, slider).
 
 **Date and table components need an owner decision**: Base UI 1.8.0 has no date or table primitive, so the
 seven files in those families cannot be expressed in Base UI at all. `OWNER_DECISION-date-and-table.md` states

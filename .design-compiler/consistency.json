@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/Consistency@p0",
-  "at": "2026-09-25T13:13:09.379Z",
+  "at": "2026-09-25T14:19:22.758Z",
   "checks": [
     {
       "check": "docs: Option D stated in docs/README.md",
