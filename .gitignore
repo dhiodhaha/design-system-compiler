@@ -19,3 +19,7 @@ pnpm-debug.log*
 # Kept locally so `pnpm compile` / `pnpm verify` stay offline-reproducible.
 .design-compiler/raw/
 .design-compiler/reference/
+
+# typescript incremental build info
+tsconfig.tsbuildinfo
+*.tsbuildinfo
