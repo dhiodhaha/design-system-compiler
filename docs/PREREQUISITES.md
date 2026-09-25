@@ -1,282 +1,133 @@
 # Prerequisites
 
-This document describes what is required to run or develop the Design System Compiler.
-
-The exact package names and CLI commands may change while the project is being built. The architectural prerequisites are more stable than the package surface.
-
-## 1. Local development environment
+## Local development
 
 Recommended:
 
-- Git
-- Node.js 20 or newer
-- a modern package manager such as pnpm
-- TypeScript
-- Chromium installed through Playwright
-- macOS, Linux, or WSL2
-- enough disk space for cached Figma JSON, screenshots, and visual baselines
+- Git;
+- Node.js 20+;
+- pnpm;
+- TypeScript;
+- Chromium/browser automation;
+- enough disk space for source caches and visual baselines.
 
-Windows is also viable. If the compiler runs in WSL while Figma Desktop runs on Windows, remember that localhost bridging can differ depending on WSL networking mode.
+Current repository uses React/TypeScript/Vite and deterministic Node/browser scripts.
 
-## 2. Target React environment
+## Reference source access
 
-The generated design-system core is intended for React applications.
+The first reference library is public:
 
-Supported target direction:
+```text
+https://github.com/untitleduico/react
+```
 
-- TanStack Start
-- Next.js
-- Vite React
-- React Router
+Reference indexing should pin an exact commit.
 
-The core generated components should stay framework-agnostic.
+For substantial copied MIT source, preserve required MIT notices.
 
-A target project should be able to support:
+## Target primitive engine
 
-- React
-- TypeScript
-- Tailwind CSS 4, if using the recommended styling target
-- CSS custom properties
-- CVA or an equivalent variant-rule system
+Install/use Base UI when implementing the Base UI target.
 
-## 3. Figma access
+The exact package/API should be validated against the pinned target dependency instead of guessed from stale documentation.
 
-You need access to the Figma source file.
+Shadcn Base UI wrappers may be inspected as implementation-shape reference.
 
-The compiler should support multiple transport options.
+## Figma access
 
-### Option A — direct Figma REST
+For visual/composition reconciliation, provide access to the source Figma file.
 
-Recommended for headless/compiler operation because it is deterministic and cacheable.
+Possible adapters:
 
-Provide a Figma token through an environment variable. The exact permission set depends on the Figma endpoints being used.
+- Figma REST;
+- native Figma MCP;
+- broker/integration.
 
-At minimum, the token must be able to read the target file/nodes.
+Keep tokens local and secret.
 
-If the workflow needs Figma variables/modes through endpoints that require a dedicated variables permission, the token must include that permission as well.
-
-Never commit the token.
-
-Example environment naming:
+Example:
 
 ```bash
 FIGMA_TOKEN=...
 ```
 
-The variable name is a project convention and may be changed by the implementation.
+## PRO input
 
-### Option B — native Figma MCP
+A user must have lawful access to any PRO Figma used as compiler input.
 
-Useful for interactive work when Figma/Dev Mode integration is available.
+PRO-derived output must retain appropriate provenance/distribution restrictions.
 
-Advantages can include:
+Do not assume OSS MIT terms apply to PRO assets.
 
-- direct node IDs;
-- design context;
-- variable definitions;
-- interactive source inspection.
+## Fonts
 
-It should be treated as one adapter, not as the compiler architecture itself.
+Visual parity requires the same font family/weights as Figma.
 
-### Option C — broker/integration provider
+Wait for `document.fonts.ready` before captures.
 
-A broker can simplify authentication, but may redact fields or expose a narrower API surface.
+## Browser verification
 
-The compiler should normalize it into the same internal IR.
-
-## 4. Figma source quality
-
-The compiler works best when the Figma file has:
-
-- real component sets;
-- named variant properties;
-- consistent auto layout;
-- variables/styles;
-- reusable nested instances;
-- explicit component boundaries;
-- consistent naming;
-- prototypes/annotations for motion when motion is intended.
-
-The compiler can still work with imperfect files, but semantic ambiguity and AI/human review will increase.
-
-## 5. Fonts
-
-Pixel comparison depends heavily on fonts.
-
-For reliable visual validation:
-
-- use the same font family as Figma;
-- ensure required weights are available;
-- ensure the browser can load the font;
-- wait for `document.fonts.ready`;
-- avoid fallback fonts in the visual test environment.
-
-Font rasterization can differ slightly across OS/browser environments, so the validator must distinguish layout errors from harmless glyph-edge rendering differences.
-
-## 6. Browser testing
-
-Install Playwright and its browser runtime in the future implementation.
-
-Typical setup direction:
-
-```bash
-pnpm exec playwright install chromium
-```
-
-Visual tests should standardize:
+Pin:
 
 - browser version;
 - viewport;
 - DPR;
 - fonts;
 - color scheme;
-- animations;
-- test data.
+- locale when relevant;
+- motion policy.
 
-## 7. Recommended implementation libraries
-
-The current recommended stack includes:
-
-- React
-- TypeScript
-- Base UI
-- Tailwind CSS 4
-- class-variance-authority (CVA)
-- Zod
-- Playwright
-- pixelmatch and/or SSIM tooling
-
-Not every generated component needs every dependency.
-
-Example: a native Button may not need Base UI at all.
-
-## 8. AI providers
-
-AI is optional for deterministic runs after enough compiler knowledge exists.
-
-During development, useful roles include:
-
-- implementation/refactoring;
-- semantic planning;
-- metadata classification;
-- difficult architecture changes.
-
-The harness should support provider abstraction rather than hard-coding one model.
-
-Possible environment variables depend on the provider.
-
-Never:
-
-- write API keys to logs;
-- commit keys;
-- copy keys into IR;
-- include keys in prompts.
-
-## 9. Jev
-
-Jev is optional.
-
-It is useful only for typed ambiguity decisions such as:
-
-- extend existing component vs create new component;
-- React prop vs composition;
-- component vs recipe;
-- borderline rendering noise classification.
-
-Example environment convention:
-
-```bash
-JEV_API_KEY=...
-```
-
-The compiler must remain useful without Jev.
-
-## 10. OMP / agent harness
-
-OMP or another multi-agent harness is optional but useful.
-
-The recommended worker roles are:
-
-- Lead
-- Figma Scout
-- Variant/API Planner
-- Implementer
-- Validator
-
-The important capability is scoped context and artifact passing, not the number of agents.
-
-The harness should allow workers to read compact files such as:
+## Recommended stack
 
 ```text
-.design-compiler/ir/button.component-set.json
-.design-compiler/ir/button.deltas.json
-.design-compiler/validation/button.json
+React
+TypeScript
+Base UI
+Tailwind CSS 4
+CVA where useful
+Zod
+Playwright/Puppeteer browser checks
+pixel/perceptual diff
+axe-core
 ```
 
-rather than forwarding giant transcripts.
+Not every component needs every dependency.
 
-## 11. Optional agent skills
+## AI
 
-Skills can accelerate specific tasks but must not become hard dependencies of the compiler.
+AI is optional.
 
-Recommended optional skills are documented in [SKILLS.md](./SKILLS.md).
+Use it only for unresolved ambiguity or implementation work that deterministic/reference logic cannot handle.
 
-The compiler should continue to work if a skill is unavailable.
+Do not store API keys in compiler state.
 
-## 12. Suggested environment file
+## Project-local state
 
-A future local-only `.env` might look like:
-
-```bash
-FIGMA_TOKEN=...
-JEV_API_KEY=...
-DEEPSEEK_API_KEY=...
-OPENAI_API_KEY=...
-```
-
-Only define providers actually used.
-
-Add `.env` and other secret files to `.gitignore`.
-
-## 13. Expected project-local state
-
-The compiler should use a project-local working directory:
+Recommended:
 
 ```text
 .design-compiler/
+├── references/
 ├── manifest.json
-├── tokens.json
 ├── mappings.json
-├── motion.json
+├── tokens.json
 ├── exceptions.json
 ├── hashes.json
-├── raw/
 ├── ir/
+├── parity/
 ├── visual/
 └── reports/
 ```
 
-This directory contains compiler memory and build artifacts, not secrets.
+## Minimum next-slice requirements
 
-Some subdirectories may be cache-only and can be gitignored; authoritative files may optionally be committed depending on project policy.
+For the reference-first Button milestone:
 
-## 14. Minimum prerequisite for the first vertical slice
+- repository checkout;
+- network/GitHub access for pinned Untitled UI source;
+- Base UI target dependency/docs/source;
+- existing Button Figma evidence;
+- deterministic browser tests;
+- reference/contract storage.
 
-For a Button P0, the minimum practical requirements are:
-
-- a Figma file and component-set URL;
-- access to fetch the relevant nodes;
-- a React/TypeScript test project;
-- the exact required font;
-- a browser/Playwright environment;
-- a place to store IR and screenshots.
-
-You do not need:
-
-- Jev;
-- an MCP server made by this project;
-- a registry CLI;
-- a full design-system inventory;
-- every optional skill.
-
-Start small and prove the deterministic loop first.
+Jev, MCP, and broad PRO compilation are not required yet.
