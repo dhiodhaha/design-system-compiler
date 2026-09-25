@@ -1,21 +1,29 @@
 {
   "unit": "button-group",
-  "files": ["registry/untitledui/components/base/button-group/button-group.tsx"],
-  "status": "MIGRATED_PENDING_GATES",
+  "files": [
+    "registry/untitledui/components/base/button-group/button-group.tsx"
+  ],
+  "status": "BASE_UI_VERIFIED",
   "baseUiPrimitives": [
     {
       "primitive": "radio-group",
       "version": "1.8.0",
-      "docsConsulted": ["https://base-ui.com/react/components/radio-group.md", ".design-compiler/base-ui-migration/docs/radio-group.json"],
+      "docsConsulted": [
+        "https://base-ui.com/react/components/radio-group.md",
+        ".design-compiler/base-ui-migration/docs/radio-group.json"
+      ],
       "semanticDifferences": [
-        "Selection state lives on the group (value/defaultValue/onValueChange(value, eventDetails)); Radio contributes only its value — React Aria also allowed a per-item isSelected, which the migration folds into the group value from the children",
+        "Selection state lives on the group (value/defaultValue/onValueChange(value, eventDetails)); Radio contributes only its value \u2014 React Aria also allowed a per-item isSelected, which the migration folds into the group value from the children",
         "value is a single value, not an array"
       ]
     },
     {
       "primitive": "radio",
       "version": "1.8.0",
-      "docsConsulted": ["https://base-ui.com/react/components/radio-group.md", ".design-compiler/base-ui-migration/docs/radio.json"],
+      "docsConsulted": [
+        "https://base-ui.com/react/components/radio-group.md",
+        ".design-compiler/base-ui-migration/docs/radio.json"
+      ],
       "semanticDifferences": [
         "Parts are Root/Indicator; state attributes are data-checked/data-unchecked, data-disabled",
         "Renders role=radio (nativeButton default true), matching React Aria's single-select ToggleButtonGroup"
@@ -24,7 +32,10 @@
     {
       "primitive": "toggle-group",
       "version": "1.8.0",
-      "docsConsulted": ["https://base-ui.com/react/components/toggle-group.md", ".design-compiler/base-ui-migration/docs/toggle-group.json"],
+      "docsConsulted": [
+        "https://base-ui.com/react/components/toggle-group.md",
+        ".design-compiler/base-ui-migration/docs/toggle-group.json"
+      ],
       "semanticDifferences": [
         "Value is always an array, even when multiple is false, and selection switches behaviour with `multiple`",
         "No data-selected on the group; each Toggle owns its state"
@@ -33,7 +44,10 @@
     {
       "primitive": "toggle",
       "version": "1.8.0",
-      "docsConsulted": ["https://base-ui.com/react/components/toggle.md", ".design-compiler/base-ui-migration/docs/toggle.json"],
+      "docsConsulted": [
+        "https://base-ui.com/react/components/toggle.md",
+        ".design-compiler/base-ui-migration/docs/toggle.json"
+      ],
       "semanticDifferences": [
         "`pressed`/`defaultPressed`/`onPressedChange` replace `isSelected`/`defaultSelected`/`onChange`",
         "State attribute is data-pressed (React Aria emitted data-selected)"
@@ -66,11 +80,29 @@
       "compatibility": "edge case; no payload consumer uses \"all\""
     }
   ],
-  "reactAriaImportsRemoved": ["ToggleButton", "ToggleButtonGroup", "ToggleButtonGroupProps", "ToggleButtonProps"],
-  "baseUiImportsAdded": ["@base-ui/react/radio", "@base-ui/react/radio-group", "@base-ui/react/toggle", "@base-ui/react/toggle-group"],
+  "reactAriaImportsRemoved": [
+    "ToggleButton",
+    "ToggleButtonGroup",
+    "ToggleButtonGroupProps",
+    "ToggleButtonProps"
+  ],
+  "baseUiImportsAdded": [
+    "@base-ui/react/radio",
+    "@base-ui/react/radio-group",
+    "@base-ui/react/toggle",
+    "@base-ui/react/toggle-group"
+  ],
   "stateSelectorChanges": [
-    { "from": "selected:bg-primary_hover selected:text-secondary_hover", "to": "data-pressed:bg-primary_hover data-pressed:text-secondary_hover", "reason": "Base UI's toggle emits data-pressed; the react-aria-components Tailwind plugin's `selected:` variant resolves to [data-selected], which Base UI never emits" },
-    { "from": "group-selected/button-group:text-fg-quaternary_hover", "to": "group-data-pressed/button-group:text-fg-quaternary_hover", "reason": "same attribute rename, scoped to the item as the group parent" }
+    {
+      "from": "selected:bg-primary_hover selected:text-secondary_hover",
+      "to": "data-pressed:bg-primary_hover data-pressed:text-secondary_hover",
+      "reason": "Base UI's toggle emits data-pressed; the react-aria-components Tailwind plugin's `selected:` variant resolves to [data-selected], which Base UI never emits"
+    },
+    {
+      "from": "group-selected/button-group:text-fg-quaternary_hover",
+      "to": "group-data-pressed/button-group:text-fg-quaternary_hover",
+      "reason": "same attribute rename, scoped to the item as the group parent"
+    }
   ],
   "evidence": {
     "typecheck": "payload tsconfig: 0 errors in this file",
@@ -78,5 +110,23 @@
     "parity": ".design-compiler/base-ui-migration/parity-migrated.json#button-group",
     "defectFoundByGate": "First implementation used ToggleGroup for single selection: roles matched but aria-checked was never emitted, which the extended capture (aria pressed/checked/selected per step) caught before merge."
   },
-  "blockers": []
+  "blockers": [],
+  "verification": {
+    "parity": {
+      "report": ".design-compiler/base-ui-migration/parity-migrated.json",
+      "result": "PASS for button-group (0 failures; notes: Base UI adds hidden form inputs, focus surface now span+hidden input)"
+    },
+    "measuredEquality": {
+      "groupBox": "120.08x40 -> 120.08x40",
+      "roles": "radiogroup/radio/radio unchanged",
+      "clickOutcome": "aria-checked false,false -> true,false unchanged"
+    },
+    "hydration": {
+      "report": ".design-compiler/base-ui-migration/a11y-candidate.json",
+      "result": "43 cases hydrate mismatch-free including this unit"
+    },
+    "accessibility": {
+      "result": "no new axe WCAG A/AA violations in the button-group case"
+    }
+  }
 }

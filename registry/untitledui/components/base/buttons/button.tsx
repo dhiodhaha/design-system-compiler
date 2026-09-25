@@ -233,7 +233,7 @@ interface ActivePress {
  */
 export const usePressEvents = <Props extends PressEvents & PressNativeHandlers & Record<string, unknown>>(
     props: Props & { isDisabled?: boolean; isLoading?: boolean },
-): Omit<Props, keyof PressEvents | "isDisabled" | "isLoading"> & PressNativeHandlers => {
+): Props => {
     const {
         isDisabled,
         isLoading,

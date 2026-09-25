@@ -11,20 +11,21 @@
     "baseUiPrimitivesDocumented": 60,
     "units": 25,
     "byStatus": {
-      "MIGRATING": 25
+      "MIGRATED_PENDING_GATES": 5,
+      "MIGRATING": 20
     },
     "parityReports": 2,
-    "parityPassing": 2
+    "parityPassing": 1
   },
   "residue": {
     "$schema": "design-compiler/BaseUiResidueReport@p0",
     "baseUiVersion": "1.8.0",
     "totals": {
-      "occurrences": 112,
+      "occurrences": 92,
       "byKind": {
-        "CANONICAL_RUNTIME": 112
+        "CANONICAL_RUNTIME": 92
       },
-      "canonicalRuntimeFiles": 61
+      "canonicalRuntimeFiles": 49
     },
     "canonicalRuntime": [
       {
@@ -143,19 +144,19 @@
   "units": [
     {
       "unit": "forms-primitives",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "field-text",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "buttons-native",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "tooltip-overlay",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "slider",
@@ -183,7 +184,7 @@
     },
     {
       "unit": "button-group",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "form",
@@ -245,19 +246,19 @@
   "notTerminal": [
     [
       "forms-primitives",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "field-text",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "buttons-native",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "tooltip-overlay",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "slider",
@@ -285,7 +286,7 @@
     ],
     [
       "button-group",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "form",
