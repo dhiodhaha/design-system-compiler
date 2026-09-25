@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/registry-index@p1",
-  "generatedAt": "2026-09-25T12:50:41.850Z",
+  "generatedAt": "2026-09-25T13:13:09.304Z",
   "library": "untitledui",
   "canonical": true,
   "reference": {
@@ -46,6 +46,7 @@
     }
   ],
   "cliDependencies": [
+    "@base-ui/react",
     "@internationalized/date",
     "@react-aria/utils",
     "@react-stately/utils",

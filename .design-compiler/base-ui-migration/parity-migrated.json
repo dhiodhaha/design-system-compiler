@@ -9,6 +9,11 @@
   },
   "failures": [
     {
+      "case": "input-invalid",
+      "class": "VISUAL_FAILURE",
+      "detail": "slot input,wrapper padding baseline=8px 12px 8px 12px candidate=8px 36px 8px 12px"
+    },
+    {
       "case": "modal-open",
       "class": "POPUP_STATE_FAILURE",
       "detail": "step 0:click: aria-expanded baseline=true candidate="

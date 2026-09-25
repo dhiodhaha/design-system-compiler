@@ -35,7 +35,8 @@
         "The `render` prop keeps React Aria's contract (ReactElement | (props, state) => element); for an element render, Base UI merges the element's own props last (className concatenated, handlers merged) exactly as React Aria's useRenderProps did.",
         "`ref` is passed inside the rendered props object because the polymorphic ref is a Ref<HTMLButtonElement> | Ref<HTMLAnchorElement> union that use-render's RenderedElementType inference cannot unify; use-render still merges it with any ref on a consumer-supplied `render` element (client-side only: the merge is guarded by `typeof document !== 'undefined'`).",
         "`renderTag('button')` implies type=\"button\"; the component sets `type` explicitly as well, because a pending button must fall back from type=\"submit\" to type=\"button\" (React Aria's isPending behaviour, preserved).",
-        "No press/hover/focus JS state is tracked: React Aria exposed data-pressed/data-hovered/data-focused/data-focus-visible, Base UI's native equivalent is CSS (:active, :hover, :focus-visible), and no class in this unit used those RAC variants."
+        "No press/hover/focus JS state is tracked: React Aria exposed data-pressed/data-hovered/data-focused/data-focus-visible, Base UI's native equivalent is CSS (:active, :hover, :focus-visible), and no class in this unit used those RAC variants.",
+        "React Aria's press events have no Base UI equivalent (Base UI's own Button emits only native click/keyboard handlers), so the press layer is hand-built over native pointer/keyboard events in button.tsx (`usePressEvents`) and shared by the whole family; the consumer's own handlers for the same native events are chained after the press logic inside that hook, which is why the merge-props import was still not needed."
       ]
     },
     {
@@ -43,10 +44,13 @@
       "version": "1.8.0",
       "importPath": "@base-ui/react/merge-props",
       "usedIn": [],
-      "docsConsulted": [".design-compiler/base-ui-migration/docs/merge-props.json"],
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/merge-props.json"
+      ],
       "semanticDifferences": [
         "Not imported directly: use-render's `props` parameter already normalises prop sets through mergeProps/mergePropsN internally (handlers merged right-to-left, className concatenated, style merged), so an explicit mergeProps import would have been dead weight.",
-        "Unlike React Aria's mergeProps, Base UI's does not merge refs — the component's ref and a render element's ref are merged by use-render's `ref` handling instead."
+        "Unlike React Aria's mergeProps, Base UI's does not merge refs — the component's ref and a render element's ref are merged by use-render's `ref` handling instead.",
+        "The only prop set that needed merging — the press layer's native handlers against the consumer's own — is chained explicitly inside `usePressEvents`, so no mergeProps call site was introduced in this unit."
       ]
     }
   ],
@@ -61,11 +65,11 @@
     },
     {
       "prop": "onPress, onPressStart, onPressEnd, onPressUp, onPressChange (React Aria press events)",
-      "before": "Accepted and forwarded to React Aria's Button/Link (onPress ran through usePress).",
-      "after": "Removed.",
-      "reason": "Base UI has no press-event layer; a real <button>/<a> activates through the native click (pointer, Enter and Space), so `onClick` is the complete replacement.",
-      "migrationNote": "Replace `onPress={fn}` with `onClick={fn}`. Zero call sites in the payload (verified: no `onPress`/`onPress*` is passed to Button, ButtonUtility, CloseButton, SocialButton or AvatarAddButton anywhere under registry/ or src/ — the only onPress usages are on raw React Aria components owned by other units).",
-      "compatibility": "REMOVED_UNUSED"
+      "before": "Accepted and forwarded to React Aria's Button/Link (usePress drove them).",
+      "after": "Preserved, rebuilt over native events by `usePressEvents` (exported from button.tsx and used by all five components): pointer down / Enter+Space key down fire onPressStart (+onPressChange(true)); the native click fires onPress then onPressEnd (+onPressChange(false)); pointer up fires onPressUp; leaving the element while pressing fires onPressEnd without onPress; the link fallback <span> (which produces no native click) dispatches its activation from key up. onPress fires before the consumer's own handler for the same native event, matching React Aria's merge order. The press event object carries type ('pressstart'|'pressend'|'pressup'|'press'), pointerType ('mouse'|'pen'|'touch'|'keyboard'|'virtual'), target, shiftKey/ctrlKey/metaKey/altKey, x/y/clientX/clientY and key (Enter vs Space), plus a no-op continuePropagation() — press events never stop propagation. x/y are viewport coordinates (React Aria measured them relative to the element; no caller reads them).",
+      "reason": "Base UI has no press-event layer; the payload calls onPress on button-family components inside dialog triggers (mobile-header.tsx navigation close, tag-select.tsx tag removal) and other units are migrating onto these components, so the public API had to keep working rather than become an inert DOM prop.",
+      "migrationNote": "No call-site change needed: `onPress={() => state.close()}` works as before. A disabled button starts no press, and a loading button is blocked exactly like React Aria's pending state (its onClick is also dropped, so activation and press events are both suppressed), while a loading link keeps React Aria's link behaviour because pending only existed on the button variant. Press props never reach the DOM.",
+      "compatibility": "PRESERVED"
     },
     {
       "prop": "isPending (React Aria Button only)",
@@ -142,9 +146,9 @@
     {
       "prop": "new additive exports",
       "before": "—",
-      "after": "ButtonState (button.tsx), CloseButtonState (close-button.tsx) — the state passed to `render` callbacks and to className/style functions.",
-      "reason": "Documents the state contract that replaced React Aria's render state; additive, no existing export changed.",
-      "migrationNote": "Optional to consume; the payload does not use them.",
+      "after": "ButtonState (button.tsx), CloseButtonState (close-button.tsx); PressPointerType, PressEvent, PressEvents and usePressEvents (button.tsx) — the native press-event layer the button family shares.",
+      "reason": "Documents the state contract that replaced React Aria's render state, and the press API that replaced React Aria's usePress; additive, no existing export changed.",
+      "migrationNote": "Optional to consume; the payload only passes onPress handlers. The other four components import usePressEvents/PressEvents from ./button, so the press mapping has a single implementation.",
       "compatibility": "ADDITIVE"
     }
   ],
@@ -155,7 +159,9 @@
     "social-button.tsx: ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps, Button as AriaButton, Link as AriaLink",
     "avatar-add-button.tsx: ButtonProps as AriaButtonProps (the tooltip import was already the payload's own module, not React Aria)"
   ],
-  "baseUiImportsAdded": ["@base-ui/react/use-render (button.tsx, button-utility.tsx, close-button.tsx, social-button.tsx)"],
+  "baseUiImportsAdded": [
+    "@base-ui/react/use-render (button.tsx, button-utility.tsx, close-button.tsx, social-button.tsx)"
+  ],
   "stateSelectorChanges": [
     {
       "from": "disabled:opacity-50 / disabled:cursor-not-allowed (button.tsx, 2 classes; icon-only and input-group variants unchanged)",
@@ -209,6 +215,7 @@
     "typecheck": "pass",
     "notes": [
       "Payload project: `node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` -> clean (0 errors, whole project).",
+      "Press API proof (throwaway bun + renderToStaticMarkup harness invoking the merged element handlers): mouse pressstart -> pressup -> press(clientX from the click) -> pressend with presschange true/false; pointer leave cancels without a press; Enter on a real <button> gives pressstart -> press -> pressend with no duplicate pressup from key up; Space on the link fallback span gives pressstart -> pressup -> press -> pressend; isDisabled and isLoading fire nothing (and a loading button has no onClick on the element); a secondary mouse button starts nothing; consumer handlers for the same native events still run, after the press logic (onPress -> consumerClick, matching React Aria's order); press props never appear on the DOM element.",
       "App project (src/migration-harness.tsx, src/parity.tsx, src/adopted.tsx consume these components): `node node_modules/typescript5/bin/tsc --noEmit -p tsconfig.json` -> clean (0 errors).",
       "Residue: `grep -nE \"react-aria|react-stately|@react-aria|@react-stately\"` over the five files -> 0 matches (the residue gate's CANONICAL_RUNTIME rule).",
       "Runtime markup proof (throwaway bun + renderToStaticMarkup harness, since the project's capture gate is run centrally): <Button> -> <button type=\"button\" class=\"…\">; isDisabled -> <button data-disabled=\"\" disabled=\"\" …>; isLoading -> <button type=\"button\" data-loading=\"\" aria-disabled=\"true\" …> (no native disabled, so it stays focusable exactly like React Aria's pending button, whose aria-disabled the focusable probe reads); type=\"submit\" preserved, and type=\"submit\" + isLoading falls back to type=\"button\"; <Button href=\"/x\"> -> <a href=\"/x\" …>; <Button href=\"/x\" isDisabled> -> <span data-disabled=\"\" role=\"link\" aria-disabled=\"true\" …> (React Aria's link fallback, no tabindex, class twins applied, pointer-events-none); <Button href=\"\"> -> <span role=\"link\" tabindex=\"0\"> (React Aria parity); no data-rac/data-react-aria anywhere.",
@@ -216,7 +223,8 @@
       "Class-contract proof: the migrated class strings still contain disabled:cursor-not-allowed, disabled:opacity-50, in-data-input-wrapper:disabled:opacity-100, data-loading:bg-*, data-icon-only:p-*, focus-visible:outline-2, the loading `[&>*:not([data-icon=loading])]:invisible` / `:hidden` rules, and the icon-only/spinner/data-icon/data-text child contract; CloseButton's className function is still resolved (fn-true/fn-false).",
       "CSS-variant proof: compiled the affected utilities with the project's Tailwind 4.3.3 — `data-loading:` -> `[data-loading]`, `data-icon-only:` -> `[data-icon-only]`, `data-disabled:` -> `[data-disabled]` (presence, value-agnostic), `disabled:` -> `:disabled`; reading tailwindcss-react-aria-components@2.2.0 shows the unprefixed variants compile to `:is(:where([data-rac])[data-X], :where(:not([data-rac])):disabled)` etc., i.e. the native branch for data-rac-free elements.",
       "Not verified locally (owned by the lead's central gates): browser capture/parity, hydration, axe. Harness cases already covering this unit: button-default, button-secondary, button-disabled, button-loading, button-link (click on `a`), button-keyboard (Enter/Space), button-utility (real <button>).",
-      "Throwaway smoke scripts used for the proofs were deleted; only the five component files and this artifact were written by this unit."
+      "Throwaway smoke scripts used for the proofs were deleted; only the five component files and this artifact were written by this unit.",
+      "AvatarAddButton forwards isDisabled to the tooltip unit's native trigger button (verified: the rendered <button disabled> keeps the disabled:opacity-50 contract) and passes its press handlers through the same hook."
     ]
   }
 }

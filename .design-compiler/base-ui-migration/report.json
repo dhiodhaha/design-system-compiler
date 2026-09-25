@@ -21,11 +21,11 @@
     "$schema": "design-compiler/BaseUiResidueReport@p0",
     "baseUiVersion": "1.8.0",
     "totals": {
-      "occurrences": 92,
+      "occurrences": 88,
       "byKind": {
-        "CANONICAL_RUNTIME": 92
+        "CANONICAL_RUNTIME": 88
       },
-      "canonicalRuntimeFiles": 49
+      "canonicalRuntimeFiles": 47
     },
     "canonicalRuntime": [
       {

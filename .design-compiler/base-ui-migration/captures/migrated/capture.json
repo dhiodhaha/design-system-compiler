@@ -1,7 +1,7 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "migrated",
-  "capturedAt": "2026-09-25T13:06:16.952Z",
+  "capturedAt": "2026-09-25T13:12:31.539Z",
   "cases": {
     "button-default": {
       "static": {
@@ -2902,7 +2902,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "you@company.com",
             "pressed": null,
@@ -3007,7 +3007,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "you@company.com",
             "pressed": null,
@@ -3112,7 +3112,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -3131,11 +3131,10 @@
             "type": "text",
             "name": "",
             "attrs": {
+              "id": "base-ui-_r_65_",
               "placeholder": "Your name",
-              "id": "react-aria3011637483-_r_23_",
-              "data-rac": "",
               "type": "text",
-              "value": ""
+              "aria-labelledby": "base-ui-_r_66_"
             },
             "styles": {
               "display": "block",
@@ -3268,7 +3267,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -3287,13 +3286,13 @@
             "type": "text",
             "name": "",
             "attrs": {
+              "id": "base-ui-_r_65_",
               "placeholder": "Your name",
-              "id": "react-aria3011637483-_r_23_",
-              "data-rac": "",
               "type": "text",
-              "value": "hello",
-              "data-focused": "true",
-              "data-focus-visible": "true"
+              "aria-labelledby": "base-ui-_r_66_",
+              "data-focused": "",
+              "data-dirty": "",
+              "data-filled": ""
             },
             "styles": {
               "display": "block",
@@ -3371,13 +3370,12 @@
             "type": "text",
             "name": "",
             "attrs": {
+              "data-disabled": "",
+              "id": "base-ui-_r_68_",
               "disabled": "",
               "placeholder": "Your name",
-              "id": "react-aria3011637483-_r_28_",
-              "data-rac": "",
-              "data-disabled": "true",
               "type": "text",
-              "value": ""
+              "aria-labelledby": "base-ui-_r_69_"
             },
             "styles": {
               "display": "block",
@@ -3463,7 +3461,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -3482,12 +3480,12 @@
             "type": "text",
             "name": "",
             "attrs": {
+              "data-invalid": "",
+              "id": "base-ui-_r_6b_",
               "aria-invalid": "true",
-              "id": "react-aria3011637483-_r_2d_",
-              "data-rac": "",
-              "data-invalid": "true",
               "type": "text",
-              "value": ""
+              "aria-labelledby": "base-ui-_r_6c_",
+              "aria-describedby": "base-ui-_r_6e_"
             },
             "styles": {
               "display": "block",
@@ -3500,7 +3498,7 @@
               "fontSize": "16px",
               "fontWeight": "400",
               "lineHeight": "24px",
-              "padding": "8px 12px 8px 12px",
+              "padding": "8px 36px 8px 12px",
               "margin": "0px 0px 0px 0px",
               "gap": "normal",
               "width": 960,
@@ -3808,11 +3806,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria3011637483-_r_2u_",
+              "id": "react-aria7832370205-_r_2j_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria3011637483-_r_33_",
+              "aria-labelledby": "react-aria7832370205-_r_2o_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -3931,11 +3929,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria3011637483-_r_38_",
+              "id": "react-aria7832370205-_r_2t_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria3011637483-_r_3d_",
+              "aria-labelledby": "react-aria7832370205-_r_32_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -4134,11 +4132,11 @@
             "type": "button",
             "name": "Phoenix Bakerphoenix@untitledui.com",
             "attrs": {
-              "id": "react-aria3011637483-_r_38_",
+              "id": "react-aria7832370205-_r_2t_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria3011637483-_r_3d_",
+              "aria-labelledby": "react-aria7832370205-_r_32_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false",
               "data-hovered": "true",
@@ -4200,7 +4198,7 @@
             "type": "button",
             "name": "Trigger",
             "attrs": {
-              "id": "base-ui-_r_3i_",
+              "id": "base-ui-_r_37_",
               "data-base-ui-tooltip-trigger": "",
               "type": "button"
             },
@@ -4336,11 +4334,11 @@
             "type": "button",
             "name": "Trigger",
             "attrs": {
-              "id": "base-ui-_r_3i_",
+              "id": "base-ui-_r_37_",
               "data-base-ui-tooltip-trigger": "",
               "type": "button",
               "data-popup-open": "",
-              "aria-describedby": "_r_3g_"
+              "aria-describedby": "_r_35_"
             },
             "styles": {
               "display": "inline-block",
@@ -4480,8 +4478,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria3011637483-_r_3j_",
-              "id": "react-aria3011637483-_r_3k_",
+              "data-collection": "react-aria7832370205-_r_38_",
+              "id": "react-aria7832370205-_r_39_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -4646,8 +4644,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria3011637483-_r_3j_",
-              "id": "react-aria3011637483-_r_3k_",
+              "data-collection": "react-aria7832370205-_r_38_",
+              "id": "react-aria7832370205-_r_39_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -4729,8 +4727,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria3011637483-_r_3m_-0",
-              "aria-labelledby": "react-aria3011637483-_r_3n_",
+              "id": "react-aria7832370205-_r_3b_-0",
+              "aria-labelledby": "react-aria7832370205-_r_3c_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -4841,8 +4839,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria3011637483-_r_3s_-0",
-              "aria-labelledby": "react-aria3011637483-_r_3t_",
+              "id": "react-aria7832370205-_r_3h_-0",
+              "aria-labelledby": "react-aria7832370205-_r_3i_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -5001,8 +4999,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria3011637483-_r_3s_-0",
-              "aria-labelledby": "react-aria3011637483-_r_3t_",
+              "id": "react-aria7832370205-_r_3h_-0",
+              "aria-labelledby": "react-aria7832370205-_r_3i_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,100%",
               "aria-describedby": "",
@@ -5069,7 +5067,7 @@
               "type": "button",
               "aria-haspopup": "true",
               "aria-expanded": "false",
-              "id": "react-aria3011637483-_r_42_",
+              "id": "react-aria7832370205-_r_3n_",
               "data-react-aria-pressable": "true",
               "aria-label": "Open menu"
             },
@@ -5219,7 +5217,7 @@
               "type": "button",
               "aria-haspopup": "true",
               "aria-expanded": "false",
-              "id": "react-aria3011637483-_r_42_",
+              "id": "react-aria7832370205-_r_3n_",
               "data-react-aria-pressable": "true",
               "aria-label": "Open menu",
               "data-hovered": "true",
@@ -5305,7 +5303,7 @@
             "attrs": {
               "aria-autocomplete": "list",
               "placeholder": "Search by name",
-              "id": "react-aria3011637483-_r_4a_",
+              "id": "react-aria7832370205-_r_3v_",
               "role": "combobox",
               "aria-expanded": "false",
               "data-rac": "",
@@ -5527,7 +5525,7 @@
             "attrs": {
               "aria-autocomplete": "list",
               "placeholder": "Search by name",
-              "id": "react-aria3011637483-_r_4a_",
+              "id": "react-aria7832370205-_r_3v_",
               "role": "combobox",
               "aria-expanded": "false",
               "data-rac": "",
@@ -6111,7 +6109,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -6130,6 +6128,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
+              "id": "base-ui-_r_9s_",
+              "for": "base-ui-_r_9r_",
               "data-label": "true"
             },
             "styles": {
@@ -6239,7 +6239,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -6258,7 +6258,12 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "data-label": "true"
+              "id": "base-ui-_r_9s_",
+              "for": "base-ui-_r_9r_",
+              "data-label": "true",
+              "data-focused": "",
+              "data-dirty": "",
+              "data-filled": ""
             },
             "styles": {
               "display": "flex",
@@ -6308,7 +6313,7 @@
           }
         ],
         "portals": [],
-        "focusVisible": true,
+        "focusVisible": false,
         "pointerEvents": "auto",
         "roles": [
           "group"
@@ -6328,7 +6333,7 @@
           }
         ],
         "interactiveCount": 1,
-        "activeElement": "input:",
+        "activeElement": "body:3\n    button-defaultButtonbutt",
         "slotMetrics": {
           "input,label": {
             "tag": "label",
@@ -6937,7 +6942,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -7074,7 +7079,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -7427,7 +7432,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria7133872491-_r_5o_",
+              "id": "react-aria984133327-_r_59_",
               "data-react-aria-pressable": "true"
             },
             "styles": {
@@ -7539,7 +7544,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria7133872491-_r_5o_",
+              "id": "react-aria984133327-_r_59_",
               "data-react-aria-pressable": "true",
               "data-hovered": "true",
               "data-focused": "true",

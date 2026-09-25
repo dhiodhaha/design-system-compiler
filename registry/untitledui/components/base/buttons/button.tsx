@@ -280,7 +280,8 @@ export const usePressEvents = <Props extends PressEvents & PressNativeHandlers &
     };
 
     // Press events fire before the consumer's own handler for the same native event, exactly as React Aria
-    // merged its press layer behind the consumer's props.
+    // merged its press layer behind the consumer's props. `Props` describes this props object at the call
+    // site; the press props it names have been consumed above instead of being returned.
     return {
         ...rest,
         onPointerDown(event: React.PointerEvent<Element>) {
@@ -356,7 +357,7 @@ export const usePressEvents = <Props extends PressEvents & PressNativeHandlers &
 
             onClick?.(event);
         },
-    };
+    } as Props;
 };
 
 /** The component state, exposed to the `render` callback and mapped onto the `data-*`

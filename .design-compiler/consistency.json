@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/Consistency@p0",
-  "at": "2026-09-25T12:50:41.918Z",
+  "at": "2026-09-25T13:13:09.379Z",
   "checks": [
     {
       "check": "docs: Option D stated in docs/README.md",
@@ -50,7 +50,7 @@
     {
       "check": "integration: app canary matches the registry payload byte-for-byte (modulo header)",
       "pass": true,
-      "evidence": "src 154021797336cb6e vs payload 154021797336cb6e"
+      "evidence": "src 80325dfeec4bcc5f vs payload 80325dfeec4bcc5f"
     },
     {
       "check": "status: every registry item has a terminal status",

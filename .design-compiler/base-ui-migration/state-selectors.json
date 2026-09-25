@@ -5,7 +5,7 @@
     "files": 41,
     "variantsInUse": 76,
     "deadSelectors": 0,
-    "pendingMigration": 49
+    "pendingMigration": 47
   },
   "dead": [],
   "pending": [
@@ -299,24 +299,6 @@
     },
     {
       "file": "registry/untitledui/components/base/input/input-tags.tsx",
-      "variant": "disabled",
-      "count": 1,
-      "attribute": "data-disabled",
-      "nativeFallback": ":disabled",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input.tsx",
-      "variant": "placeholder",
-      "count": 1,
-      "attribute": "data-placeholder",
-      "nativeFallback": ":placeholder-shown",
-      "emittedByBaseUi": true,
-      "verdict": "PENDING_MIGRATION"
-    },
-    {
-      "file": "registry/untitledui/components/base/input/input.tsx",
       "variant": "disabled",
       "count": 1,
       "attribute": "data-disabled",
@@ -1080,7 +1062,7 @@
     },
     {
       "file": "registry/untitledui/components/base/input/input.tsx",
-      "migrated": false,
+      "migrated": true,
       "variants": [
         {
           "variant": "placeholder",
@@ -1088,7 +1070,7 @@
           "attribute": "data-placeholder",
           "nativeFallback": ":placeholder-shown",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         },
         {
           "variant": "disabled",
@@ -1096,7 +1078,7 @@
           "attribute": "data-disabled",
           "nativeFallback": ":disabled",
           "emittedByBaseUi": true,
-          "verdict": "PENDING_MIGRATION"
+          "verdict": "OK"
         }
       ]
     },
