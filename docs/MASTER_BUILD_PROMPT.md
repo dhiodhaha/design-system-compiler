@@ -287,3 +287,43 @@ pin Untitled UI OSS
 → productionization pass
 → decide canonical Button
 ```
+
+
+## Whole-library coverage rule
+
+Button is a canary, not the product scope.
+
+The compiler must maintain an inventory of the entire pinned Untitled UI OSS repository and aim to port every eligible production component.
+
+Before starting a new manual component task, check the reference inventory and dependency graph.
+
+For a component present in OSS:
+
+```text
+use official source as semantic/behavior reference
+→ canonical contract
+→ target port
+```
+
+For a component absent from OSS but present in the user's licensed PRO Figma:
+
+```text
+use PRO Figma fallback
+→ slice component family
+→ reuse all known nested components
+→ infer/generate only the unresolved delta
+```
+
+Do not rebuild an OSS-backed component from PRO Figma.
+
+Do not flatten verified nested components inside a PRO-only component.
+
+Track coverage across:
+
+- eligible OSS candidates;
+- verified OSS ports;
+- PRO-only discovered families;
+- verified PRO-only components/recipes;
+- unresolved gaps.
+
+Read [COVERAGE_STRATEGY.md](./COVERAGE_STRATEGY.md).
