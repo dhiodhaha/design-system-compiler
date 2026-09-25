@@ -1,0 +1,1410 @@
+{
+  "$schema": "design-compiler/BaseUiStateSelectorAudit@p0",
+  "baseUiAttributesKnown": 73,
+  "totals": {
+    "files": 41,
+    "variantsInUse": 75,
+    "deadSelectors": 0,
+    "pendingMigration": 61
+  },
+  "dead": [],
+  "pending": [
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
+      "variant": "focus-visible",
+      "count": 4,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "variant": "focus-visible",
+      "count": 4,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "variant": "pressed",
+      "count": 2,
+      "attribute": "data-pressed",
+      "nativeFallback": null,
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "variant": "placement-right",
+      "count": 2,
+      "attribute": "data-placement-right",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
+      "variant": "focus-visible",
+      "count": 3,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+      "variant": "focus-visible",
+      "count": 3,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+      "variant": "disabled",
+      "count": 3,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "variant": "placement-right",
+      "count": 2,
+      "attribute": "data-placement-right",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "variant": "placement-right",
+      "count": 2,
+      "attribute": "data-placement-right",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+      "variant": "placement-right",
+      "count": 2,
+      "attribute": "data-placement-right",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/range-calendar.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/table/table.tsx",
+      "variant": "focus-visible",
+      "count": 11,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/table/table.tsx",
+      "variant": "selected",
+      "count": 1,
+      "attribute": "data-selected",
+      "nativeFallback": null,
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "variant": "disabled",
+      "count": 1,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "variant": "focus-visible",
+      "count": 3,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "variant": "disabled",
+      "count": 3,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "variant": "selected",
+      "count": 2,
+      "attribute": "data-selected",
+      "nativeFallback": null,
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
+      "variant": "disabled",
+      "count": 3,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button.tsx",
+      "variant": "disabled",
+      "count": 3,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/close-button.tsx",
+      "variant": "focus-visible",
+      "count": 4,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/social-button.tsx",
+      "variant": "disabled",
+      "count": 4,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/social-button.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-advanced.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-simple.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
+      "variant": "placement-right",
+      "count": 2,
+      "attribute": "data-placement-right",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "variant": "disabled",
+      "count": 5,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-tags.tsx",
+      "variant": "focus-visible",
+      "count": 4,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-tags.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-tags.tsx",
+      "variant": "disabled",
+      "count": 1,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input.tsx",
+      "variant": "disabled",
+      "count": 1,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/combobox.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/combobox.tsx",
+      "variant": "disabled",
+      "count": 1,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/multi-select.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/multi-select.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/multi-select.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/popover.tsx",
+      "variant": "placement-right",
+      "count": 2,
+      "attribute": "data-placement-right",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/popover.tsx",
+      "variant": "placement-top",
+      "count": 2,
+      "attribute": "data-placement-top",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/popover.tsx",
+      "variant": "placement-bottom",
+      "count": 2,
+      "attribute": "data-placement-bottom",
+      "nativeFallback": null,
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/tag-select.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/select/tag-select.tsx",
+      "variant": "disabled",
+      "count": 1,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "variant": "focus-visible",
+      "count": 3,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "variant": "disabled",
+      "count": 1,
+      "attribute": "data-disabled",
+      "nativeFallback": ":disabled",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/tags.tsx",
+      "variant": "focus-visible",
+      "count": 2,
+      "attribute": "data-focus-visible",
+      "nativeFallback": ":focus-visible",
+      "emittedByBaseUi": false,
+      "verdict": "PENDING_MIGRATION"
+    },
+    {
+      "file": "registry/untitledui/components/base/textarea/textarea.tsx",
+      "variant": "placeholder",
+      "count": 1,
+      "attribute": "data-placeholder",
+      "nativeFallback": ":placeholder-shown",
+      "emittedByBaseUi": true,
+      "verdict": "PENDING_MIGRATION"
+    }
+  ],
+  "files": [
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 4,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 4,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "pressed",
+          "count": 2,
+          "attribute": "data-pressed",
+          "nativeFallback": null,
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-right",
+          "count": 2,
+          "attribute": "data-placement-right",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 3,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 3,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 3,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/header-navigation.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placement-right",
+          "count": 2,
+          "attribute": "data-placement-right",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/carousel/carousel-base.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placement-right",
+          "count": 2,
+          "attribute": "data-placement-right",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placement-right",
+          "count": 2,
+          "attribute": "data-placement-right",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/range-calendar.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/pagination/pagination-base.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/pagination/pagination-dot.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/pagination/pagination-line.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/pagination/pagination.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 4,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/table/table.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 11,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "selected",
+          "count": 1,
+          "attribute": "data-selected",
+          "nativeFallback": null,
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/badges/badges.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 1,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 3,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 3,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "selected",
+          "count": 2,
+          "attribute": "data-selected",
+          "nativeFallback": null,
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/app-store-buttons-outline.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 8,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/app-store-buttons.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 10,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 3,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 3,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/close-button.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 4,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/social-button.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 4,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-advanced.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-simple.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placement-right",
+          "count": 2,
+          "attribute": "data-placement-right",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 5,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-tags.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 4,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/input/pin-input.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "disabled",
+          "count": 3,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        },
+        {
+          "variant": "invalid",
+          "count": 2,
+          "attribute": "data-invalid",
+          "nativeFallback": ":invalid",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/select/combobox.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/select/multi-select.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/select/popover.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placement-right",
+          "count": 2,
+          "attribute": "data-placement-right",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-top",
+          "count": 2,
+          "attribute": "data-placement-top",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "placement-bottom",
+          "count": 2,
+          "attribute": "data-placement-bottom",
+          "nativeFallback": null,
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/select/select-native.tsx",
+      "migrated": true,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "NATIVE_FALLBACK_OK"
+        },
+        {
+          "variant": "disabled",
+          "count": 2,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        },
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "OK"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/select/tag-select.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 3,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        },
+        {
+          "variant": "disabled",
+          "count": 1,
+          "attribute": "data-disabled",
+          "nativeFallback": ":disabled",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/tags.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "focus-visible",
+          "count": 2,
+          "attribute": "data-focus-visible",
+          "nativeFallback": ":focus-visible",
+          "emittedByBaseUi": false,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    },
+    {
+      "file": "registry/untitledui/components/base/textarea/textarea.tsx",
+      "migrated": false,
+      "variants": [
+        {
+          "variant": "placeholder",
+          "count": 1,
+          "attribute": "data-placeholder",
+          "nativeFallback": ":placeholder-shown",
+          "emittedByBaseUi": true,
+          "verdict": "PENDING_MIGRATION"
+        }
+      ]
+    }
+  ]
+}

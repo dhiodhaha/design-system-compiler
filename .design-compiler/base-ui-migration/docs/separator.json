@@ -1,0 +1,52 @@
+{
+  "primitive": "separator",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/separator.md",
+    "node_modules/@base-ui/react/separator/index.d.ts",
+    "node_modules/@base-ui/react/separator/Separator.d.ts",
+    "node_modules/@base-ui/react/separator/Separator.mjs"
+  ],
+  "parts": [
+    "Separator"
+  ],
+  "keyProps": {
+    "orientation": {
+      "type": "Orientation ('horizontal' | 'vertical')",
+      "default": "'horizontal'",
+      "notes": "Only own prop besides the shared className/style/render."
+    },
+    "className/style/render": {
+      "type": "string | fn / CSSProperties | fn / ReactElement | fn",
+      "notes": "State = { orientation } only."
+    }
+  },
+  "dataAttributes": [
+    "data-orientation — 'horizontal' | 'vertical'"
+  ],
+  "renderProp": {
+    "mechanism": "render on the single part",
+    "elementForm": "render={<hr />} or any element (default is a <div>)",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [],
+    "changeCallbacks": [],
+    "note": "Stateless."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false
+  },
+  "keyboard": {
+    "keys": "None — role=\"separator\" is not focusable by default.",
+    "focus": "None; add tabIndex on the rendered element if an interactive separator is ever needed."
+  },
+  "notableDifferences": [
+    "React Aria's Separator exposes orientation only as well, so this is a near 1:1 swap; the differences are the props name (identical) and the output (role=\"separator\" + aria-orientation emitted by Base UI).",
+    "Base UI renders a <div> by default (React Aria renders an <hr> by default), so existing CSS selectors/tag assumptions may need updating — pass render={<hr />} to keep the old markup.",
+    "State is a single data-orientation attribute; there is no data-disabled since Separator cannot be disabled.",
+    "OTPField re-exports this same Separator, so <OTPField.Separator> is the same component with the same behaviour."
+  ]
+}

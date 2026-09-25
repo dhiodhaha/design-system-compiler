@@ -1,0 +1,80 @@
+{
+  "primitive": "progress",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/progress.md",
+    "node_modules/@base-ui/react/progress/index.parts.d.ts",
+    "node_modules/@base-ui/react/progress/root/ProgressRoot.d.ts",
+    "node_modules/@base-ui/react/progress/root/ProgressRoot.mjs",
+    "node_modules/@base-ui/react/progress/value/ProgressValue.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Label",
+    "Track",
+    "Indicator",
+    "Value"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "number | null (REQUIRED)",
+      "notes": "null (or any non-finite value) makes the component indeterminate — there is no isIndeterminate prop."
+    },
+    "min/max": {
+      "type": "number",
+      "default": "0 / 100"
+    },
+    "aria-valuetext": {
+      "type": "string"
+    },
+    "getAriaValueText": {
+      "type": "(formattedValue: string, value: number | null) => string"
+    },
+    "format": {
+      "type": "Intl.NumberFormatOptions",
+      "notes": "Defaults to percent formatting of (value-min)/(max-min)."
+    },
+    "locale": {
+      "type": "Intl.LocalesArgument"
+    },
+    "Value.children": {
+      "type": "((formattedValue: string | null, value: number | null) => React.ReactNode) | null"
+    },
+    "Label/Track/Indicator": {
+      "type": "className/style/render only"
+    }
+  },
+  "dataAttributes": [
+    "data-complete — value has reached max (Root, Label, Track, Indicator, Value)",
+    "data-indeterminate — value is null/non-finite",
+    "data-progressing — value is between min and max"
+  ],
+  "renderProp": {
+    "mechanism": "render on every part",
+    "elementForm": "render={<div />}",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [
+      "value (required, so Progress is always fully controlled)"
+    ],
+    "changeCallbacks": [],
+    "note": "No defaultValue and no change callback at all — Progress is a display component; you own the value state."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false,
+    "note": "Not a form control: no name, no submission, no validation."
+  },
+  "keyboard": {
+    "keys": "None — role=\"progressbar\" is a non-interactive role.",
+    "focus": "Not focusable."
+  },
+  "notableDifferences": [
+    "React Aria's ProgressBar takes isIndeterminate; Base UI derives indeterminacy from value={null} and REQUIRES the value prop.",
+    "The label/value/track/indicator are separate parts that you place and lay out yourself; React Aria renders them from props with slots.",
+    "React Aria exposes formatOptions + a label; Base UI has format/locale, Progress.Label and a render-prop Progress.Value.",
+    "React Aria's data-indeterminate/data-complete equivalents exist, but Base UI adds data-progressing as the third state, driven by a status: 'indeterminate' | 'progressing' | 'complete' state string."
+  ]
+}

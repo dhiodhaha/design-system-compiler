@@ -1,0 +1,46 @@
+{
+  "primitive": "internals/temporal",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "scaffoldingOnly": true,
+  "verdict": "NO_PUBLIC_WIDGET — do not build on this",
+  "importPaths": [
+    "@base-ui/react/internals/temporal",
+    "@base-ui/react/internals/temporal-adapter-date-fns",
+    "@base-ui/react/internals/temporal-adapter-luxon"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt (no date component listed)",
+    "node_modules/@base-ui/react/internals/temporal/index.d.ts",
+    "node_modules/@base-ui/react/internals/temporal/temporal.d.ts",
+    "node_modules/@base-ui/react/internals/temporal-adapter-date-fns/index.d.ts",
+    "node_modules/@base-ui/react/package.json (exports + peerDependencies)"
+  ],
+  "parts": [
+    "TemporalSupportedObject (type)",
+    "TemporalSupportedObjectLookup (declaration-merge interface)",
+    "TemporalTimezone",
+    "TemporalValue",
+    "TemporalRangeValue",
+    "TemporalSupportedValue",
+    "TemporalNonNullableValue",
+    "TemporalNonNullableRangeValue",
+    "TemporalAdapterDateFns"
+  ],
+  "keyProps": {
+    "TemporalSupportedObjectLookup": "Empty interface intended for module augmentation by an adapter, e.g. `declare module '@base-ui/react/internals/temporal' { interface TemporalSupportedObjectLookup { 'date-fns': Date } }`; TemporalSupportedObject resolves to the registered date-object union (or `any` when nothing is registered).",
+    "TemporalTimezone": "'default' | 'system' | 'UTC' | string",
+    "TemporalValue / TemporalRangeValue / TemporalSupportedValue": "value/defaultValue type for non-range date-time components / range components ([start, end]) / either",
+    "TemporalAdapterDateFns": "The only adapter implementation actually exported in this version (index.d.ts re-exports TemporalAdapterDateFns); a Luxon subpath exists but the date-fns adapter is the shipped one."
+  },
+  "dataAttributes": [],
+  "renderProp": "n/a — no component exists.",
+  "controlled": "Types only: TemporalValue/TemporalRangeValue describe the value/defaultValue pair that the unshipped components were designed to accept.",
+  "formIntegration": "n/a.",
+  "keyboard": "n/a.",
+  "notableDifferences": [
+    "These subpaths are scaffolding for date/time components that are NOT exported in 1.8.0. The type comments reference 'date, time and date-time components' and 'date-range, time-range and date-time-range components' — none of which has a public component subpath. No file in the published bundle imports the adapters, so the types are inert.",
+    "`date-fns@^4.0.0` and `@date-fns/tz@^1.2.0` are optional peerDependencies (so the package installs without them) and neither is installed in this repo; a future migration to Base UI date components would additionally require adding date-fns (and possibly @date-fns/tz). The repo currently standardises on @internationalized/date 3.12.3, which this scaffolding does not accept.",
+    "Treat any date API here as unstable/undocumented: it is not in the docs index and not covered by the public API surface."
+  ]
+}

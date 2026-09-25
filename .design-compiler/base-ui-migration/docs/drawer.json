@@ -1,0 +1,144 @@
+{
+  "primitive": "drawer",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/drawer.md"
+  ],
+  "parts": [
+    "Provider",
+    "Root",
+    "Trigger",
+    "Portal",
+    "Backdrop",
+    "Viewport",
+    "Popup",
+    "Content",
+    "Title",
+    "Description",
+    "Close",
+    "SwipeArea",
+    "Indent",
+    "IndentBackground",
+    "VirtualKeyboardProvider",
+    "createHandle",
+    "Handle"
+  ],
+  "keyProps": {
+    "Root.defaultOpen": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "uncontrolled initial open"
+    },
+    "Root.open": {
+      "type": "boolean",
+      "default": "-",
+      "semantic": "controlled open"
+    },
+    "Root.modal": {
+      "type": "boolean | 'trap-focus'",
+      "default": "true",
+      "semantic": "same semantics as Dialog"
+    },
+    "Root.onOpenChange": {
+      "type": "(open: boolean, eventDetails: Drawer.Root.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "reason union adds 'swipe' and 'close-watcher' to the Dialog set: trigger-press|outside-press|escape-key|close-watcher|close-press|focus-out|imperative-action|swipe|none"
+    },
+    "Root.disablePointerDismissal": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "-"
+    },
+    "Root.swipeDirection": {
+      "type": "'up'|'down'|'left'|'right'",
+      "default": "'down'",
+      "semantic": "direction that dismisses the drawer"
+    },
+    "Root.snapPoints": {
+      "type": "DrawerSnapPoint[]  (number|string)",
+      "default": "-",
+      "semantic": "0..1 = fraction of viewport height, >1 = pixels, strings in px/rem"
+    },
+    "Root.snapPoint": {
+      "type": "DrawerSnapPoint | null",
+      "default": "-",
+      "semantic": "controlled active snap point"
+    },
+    "Root.defaultSnapPoint": {
+      "type": "DrawerSnapPoint | null",
+      "default": "-",
+      "semantic": "uncontrolled initial snap point"
+    },
+    "Root.onSnapPointChange": {
+      "type": "(snapPoint: DrawerSnapPoint | null, eventDetails: Drawer.Root.SnapPointChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "separate change callback from onOpenChange"
+    },
+    "Root.snapToSequentialPoints": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "disables velocity-based snap skipping"
+    },
+    "Root.actionsRef / handle / triggerId / defaultTriggerId / onOpenChangeComplete": {
+      "type": "same shape as Dialog",
+      "default": "-",
+      "semantic": "handle methods open(triggerId|null) / openWithPayload(payload) / close()"
+    },
+    "Popup.initialFocus / finalFocus": {
+      "type": "same as Dialog.Popup",
+      "default": "-",
+      "semantic": "-"
+    },
+    "Backdrop.forceRender": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "-"
+    },
+    "SwipeArea.swipeDirection": {
+      "type": "DrawerSwipeDirection",
+      "default": "-",
+      "semantic": "direction that OPENS the drawer; defaults to the opposite of Root.swipeDirection"
+    },
+    "SwipeArea.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "-"
+    },
+    "Viewport": {
+      "type": "(no extra props)",
+      "default": "-",
+      "semantic": "positioning container; exposes --drawer-keyboard-inset inside VirtualKeyboardProvider"
+    },
+    "Indent / IndentBackground": {
+      "type": "(no extra props)",
+      "default": "-",
+      "semantic": "state.active = any drawer inside the nearest Drawer.Provider is open (data-active)"
+    },
+    "VirtualKeyboardProvider": {
+      "type": "{ children }",
+      "default": "-",
+      "semantic": "1.8: keyboard-aware focus/scroll handling for bottom-sheet drawers with form fields"
+    }
+  },
+  "dataAttributes": [
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style; CSS var --drawer-swipe-progress",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-expanded, data-nested-drawer-open, data-nested-drawer-swiping, data-swipe-direction ('up'|'down'|'left'|'right'), data-swipe-dismiss, data-swiping; CSS vars --drawer-frontmost-height, --drawer-height, --drawer-snap-point-offset, --drawer-swipe-movement-x, --drawer-swipe-movement-y, --drawer-swipe-strength, --nested-drawers",
+    "SwipeArea: data-open, data-closed, data-disabled, data-swipe-direction, data-swiping",
+    "Viewport: data-open, data-closed, data-nested, data-starting-style, data-ending-style; CSS var --drawer-keyboard-inset",
+    "Indent / IndentBackground: data-active",
+    "Trigger / Close / Title / Description: same as Dialog counterparts (Trigger: data-popup-open, data-disabled)"
+  ],
+  "renderProp": "Per-part `render` (ReactElement | (props, state) => ReactElement) via useRender; state drives data-* attributes.",
+  "controlled": "open/defaultOpen + triggerId/defaultTriggerId + onOpenChange(open, eventDetails) [reasons include 'swipe' and 'close-watcher']; snap point is its own controlled pair snapPoint/defaultSnapPoint + onSnapPointChange; actionsRef { unmount, close }; Drawer.createHandle() (open/openWithPayload/close/isOpen).",
+  "formIntegration": "None from the primitive itself (no hidden inputs); the only form-adjacent feature is Drawer.VirtualKeyboardProvider, which adjusts focus/scroll for bottom sheets containing form fields and exposes --drawer-keyboard-inset on Viewport.",
+  "keyboard": "Escape closes (topmost only); on Android/Chromium the hardware back gesture is wired through a CloseWatcher (DrawerRoot.mjs explicitly keeps this Android-only to avoid interfering with Escape/nesting on desktop); focus trapped when modal; swipe is gesture-only. No arrow-key navigation.",
+  "notableDifferences": [
+    "Drawer extends Dialog (docs: 'Drawer extends Dialog') — it reuses Dialog's modal/focus/escape semantics and adds swipe, snap points and indent effects; a slide-in panel without gestures should just be Dialog.",
+    "onOpenChange reasons add 'swipe' and 'close-watcher' beyond the Dialog set.",
+    "Snap-point state is a second controlled axis (snapPoint/onSnapPointChange) with no React Aria analogue.",
+    "Gesture vocabulary is data-swiping / data-swipe-direction / data-swipe-dismiss plus --drawer-swipe-strength used to scale exit-transition duration.",
+    "Global indent effects require a Drawer.Provider ancestor and the IndentBackground + Indent parts (data-active).",
+    "Drawer.VirtualKeyboardProvider (new in 1.8) is required for keyboard-aware bottom sheets with form fields.",
+    "Dismissal is not disabled by a boolean prop; use onOpenChange eventDetails.cancel()."
+  ]
+}

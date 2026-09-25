@@ -1,0 +1,142 @@
+{
+  "primitive": "number-field",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/number-field.md",
+    "node_modules/@base-ui/react/number-field/index.parts.d.ts",
+    "node_modules/@base-ui/react/number-field/root/NumberFieldRoot.d.ts",
+    "node_modules/@base-ui/react/number-field/input/NumberFieldInput.d.ts",
+    "node_modules/@base-ui/react/number-field/input/NumberFieldInput.mjs"
+  ],
+  "parts": [
+    "Root",
+    "Group",
+    "Increment",
+    "Decrement",
+    "Input",
+    "ScrubArea",
+    "ScrubAreaCursor"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "number | null",
+      "notes": "Controlled raw numeric value (null = empty)."
+    },
+    "defaultValue": {
+      "type": "number",
+      "notes": "Uncontrolled initial value."
+    },
+    "onValueChange": {
+      "type": "(value: number | null, eventDetails: NumberField.Root.ChangeEventDetails) => void",
+      "notes": "reason: 'input-change' | 'input-clear' | 'input-blur' | 'input-paste' | 'keyboard' | 'increment-press' | 'decrement-press' | 'wheel' | 'scrub' | 'none'."
+    },
+    "onValueCommitted": {
+      "type": "(value: number | null, eventDetails: NumberField.Root.CommitEventDetails) => void",
+      "notes": "Fires after typing+blur, or on pointer release after scrub/button press; simultaneous with onValueChange for keyboard and wheel. It is a generic event, not a change event (no cancel())."
+    },
+    "min/max": {
+      "type": "number",
+      "notes": "Clamping boundaries; also used for Home/End keys."
+    },
+    "step": {
+      "type": "number | 'any'",
+      "default": 1,
+      "notes": "'any' disables step validation; interactive stepping then uses base amount 1 while alt/shift still use small/largeStep."
+    },
+    "smallStep": {
+      "type": "number",
+      "default": 0.1,
+      "notes": "Step while Alt is held."
+    },
+    "largeStep": {
+      "type": "number",
+      "default": 10,
+      "notes": "Step while Shift is held."
+    },
+    "allowOutOfRange": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Text entry may exceed min/max (native range underflow/overflow validation applies); step interactions still clamp."
+    },
+    "snapOnStep": {
+      "type": "boolean",
+      "default": false
+    },
+    "allowWheelScrub": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Wheel changes the value while focused+hovered."
+    },
+    "format": {
+      "type": "Intl.NumberFormatOptions"
+    },
+    "locale": {
+      "type": "Intl.LocalesArgument"
+    },
+    "name/form/disabled/readOnly/required/id/inputRef": {
+      "type": "string|boolean|Ref",
+      "notes": "Standard field wiring; inputRef targets the hidden input."
+    },
+    "ScrubArea.direction": {
+      "type": "'horizontal' | 'vertical'",
+      "default": "'horizontal'"
+    },
+    "ScrubArea.pixelSensitivity": {
+      "type": "number",
+      "default": 2
+    },
+    "ScrubArea.teleportDistance": {
+      "type": "number",
+      "notes": "Wraps the cursor back around after travelling this far from the scrub-area centre (Pointer Lock API)."
+    },
+    "Input.aria-roledescription": {
+      "type": "string",
+      "default": "'Number field'",
+      "notes": "Role description, not the accessible name."
+    },
+    "Increment/Decrement.nativeButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "dataAttributes": [
+    "data-disabled / data-readonly / data-required",
+    "data-scrubbing — present on Root, Group, Input, ScrubArea, ScrubAreaCursor and the steppers while scrubbing",
+    "data-valid / data-invalid, data-dirty / data-touched, data-filled, data-focused (inside Field.Root)"
+  ],
+  "renderProp": {
+    "mechanism": "render on every part",
+    "elementForm": "render={<div />} / render={<button />} (Increment/Decrement, with nativeButton when replaced)",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(value: number | null, eventDetails)",
+      "onValueCommitted(value: number | null, eventDetails)"
+    ],
+    "note": "Two distinct callbacks: change (every keystroke) vs commit (blur / pointer release). React Aria's NumberField only has onChange."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "Root renders a hidden input carrying name, value (or ''), min, max and form, which is what participates in submission and in native validation (inputRef points at it).",
+    "validation": "required + min/max/step participate in native constraint validation; step validation only applies when min is set explicitly."
+  },
+  "keyboard": {
+    "keys": "ArrowUp/ArrowDown step (Alt = smallStep, Shift = largeStep); Home -> min and End -> max when those props are set; PageUp/Insert/F-keys are left to the browser; typing digits produces 'input-change', clearing produces 'input-clear'.",
+    "focus": "Input keeps its own caret/selection handling (1.8.0 preserves native and consumer-controlled selection on focus).",
+    "typeahead": "n/a"
+  },
+  "notableDifferences": [
+    "React Aria's NumberField exposes isDisabled/isReadOnly/isRequired/isInvalid/formatOptions; Base UI uses disabled/readOnly/required + format/locale.",
+    "Scrubbing is a first-class part (ScrubArea + ScrubAreaCursor with Pointer Lock), rather than a prop.",
+    "Steppers are separate Increment/Decrement parts that you place inside Group — React Aria renders them via slots/props.",
+    "Two-phase value reporting: onValueChange (live) and onValueCommitted (settled), with a rich reason union that encodes how the value changed.",
+    "allowOutOfRange and snapOnStep are Base UI-specific behaviours with no React Aria counterpart."
+  ]
+}

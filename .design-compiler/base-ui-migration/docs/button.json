@@ -1,0 +1,72 @@
+{
+  "primitive": "button",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/button.md",
+    "node_modules/@base-ui/react/docs/react/components/button.md",
+    "node_modules/@base-ui/react/button/index.d.ts",
+    "node_modules/@base-ui/react/button/Button.d.ts"
+  ],
+  "parts": [
+    "Button"
+  ],
+  "keyProps": {
+    "focusableWhenDisabled": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Keeps the button focusable while disabled; the documented loading-state pattern (disabled + focusableWhenDisabled + aria-labelledby so the changing label is announced)."
+    },
+    "nativeButton": {
+      "type": "boolean",
+      "default": true,
+      "notes": "Set false when render swaps in a non-button tag (e.g. <div>); Base UI then supplies role=button + keyboard handlers."
+    },
+    "render": {
+      "type": "ReactElement | ((props: HTMLProps, state: Button.State) => ReactElement)",
+      "default": null
+    },
+    "className": {
+      "type": "string | ((state: Button.State) => string | undefined)",
+      "default": null
+    },
+    "style": {
+      "type": "React.CSSProperties | ((state: Button.State) => React.CSSProperties | undefined)",
+      "default": null
+    }
+  },
+  "dataAttributes": [
+    "data-disabled — present when the button is disabled"
+  ],
+  "renderProp": {
+    "mechanism": "render prop on Button (from BaseUIComponentProps)",
+    "elementForm": "render={<div />} — Base UI clones it and merges its own props",
+    "functionForm": "render={(props, state) => <div {...props} />} — props are NOT auto-merged; spread them yourself",
+    "merging": "mergeProps (@base-ui/react/merge-props); event.preventBaseUIHandler() cancels Base UI's own handler",
+    "newComponents": "useRender (@base-ui/react/use-render) with defaultTagName/render/props/state/ref"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [],
+    "changeCallbacks": [],
+    "note": "Button holds no value state and is neither controlled nor uncontrolled. Button.State = { disabled: boolean }. Interaction is native onClick."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false,
+    "submit": "type=\"submit\" must be set explicitly, otherwise the button will not submit.",
+    "disabled": "A disabled button does not submit; with focusableWhenDisabled it stays in the tab order."
+  },
+  "keyboard": {
+    "keys": "Native <button> semantics (Space/Enter activate; Enter submits when type=\"submit\").",
+    "focus": "Native tab order; focusableWhenDisabled keeps disabled buttons focusable.",
+    "typeahead": "none"
+  },
+  "notableDifferences": [
+    "React Aria's isDisabled becomes Base UI's native disabled.",
+    "No isPending equivalent — loading = disabled + focusableWhenDisabled (React Aria renders a spinner for isPending).",
+    "No onPress/press events — use the native onClick.",
+    "type=\"submit\" is not implied; it must be passed explicitly.",
+    "Docs state Button must not be used for links (<a>): it enforces button semantics (role=button, keyboard, disabled). Style the anchor instead. React Aria has no such restriction baked into its Button.",
+    "Only state attribute is data-disabled — there is no data-pressed/data-hovered/data-focused set as in React Aria's render props."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "primitive": "internals/types",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPaths": [
+    "@base-ui/react/internals/types",
+    "@base-ui/react/types"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/react/handbook/typescript.md",
+    "node_modules/@base-ui/react/internals/types.d.ts",
+    "node_modules/@base-ui/react/types/index.d.ts"
+  ],
+  "parts": [
+    "BaseUIComponentProps",
+    "NativeButtonProps",
+    "NonNativeButtonProps",
+    "Orientation",
+    "HTMLProps",
+    "BaseUIEvent",
+    "ComponentRenderFn",
+    "WithBaseUIEvent",
+    "MaybeBaseUIEvent",
+    "FloatingUIOpenChangeDetails",
+    "Simplify",
+    "RequiredExcept",
+    "BaseUIChangeEventDetails",
+    "BaseUIGenericEventDetails"
+  ],
+  "keyProps": {
+    "BaseUIComponentProps<ElementType, State, RenderFunctionProps?>": "Omit<WithBaseUIEvent<ComponentPropsWithRef<ElementType>>, 'className'|'color'|'defaultValue'|'defaultChecked'|'style'> & { className?: string | ((state: State) => string | undefined); style?: CSSProperties | ((state: State) => CSSProperties | undefined); render?: ReactElement | ComponentRenderFn<RenderFunctionProps, State> }. NOTE: native `color`, `defaultValue` and `defaultChecked` are REMOVED and re-declared by each component.",
+    "NativeButtonProps": "{ nativeButton?: boolean } @default true — 'whether the component renders a native <button> when replaced via render'.",
+    "NonNativeButtonProps": "{ nativeButton?: boolean } @default false — used by parts that are not buttons by default.",
+    "WithBaseUIEvent<T>": "Maps every event handler prop to receive a BaseUIEvent, adding preventBaseUIHandler.",
+    "BaseUIEvent<E>": "E & { preventBaseUIHandler(): void; readonly baseUIHandlerPrevented?: boolean }",
+    "ComponentRenderFn<Props, State>": "(props: Props, state: State) => ReactElement<unknown> — the render callback type.",
+    "Orientation": "'horizontal' | 'vertical'",
+    "HTMLProps<T>": "React.HTMLAttributes<T> & { ref?: Ref<T> }"
+  },
+  "dataAttributes": "Not applicable — this record defines the shared prop contract through which every part receives state and emits data-* attributes.",
+  "renderProp": "BaseUIComponentProps is the reason every part is uniform: className/style accept state-function form, render accepts element-or-function, and all event handlers are wrapped so consumers can call event.preventBaseUIHandler(). When migrating a React Aria component's props type, `Omit<AriaXProps, ...> & BaseUIComponentProps<'div', State>` is the idiomatic target.",
+  "controlled": "Not a component; the controlled convention (value/defaultValue/onValueChange + ChangeEventDetails) is defined in internals/createBaseUIEventDetails and restated per component.",
+  "formIntegration": "Native `name`/`value` submission is a per-component concern; Base UI removes the native `defaultValue`/`defaultChecked` from the shared props so each component can define its own controlled/uncontrolled pair.",
+  "keyboard": null,
+  "notableDifferences": [
+    "`is*` prop naming is gone: RAC's isDisabled/isSelected/isOpen/isReadOnly become disabled/selected/open/readOnly in Base UI (with a few documented exceptions such as Menu's `open`), so a mechanical rename is required and TypeScript will flag every site.",
+    "RAC passes hover/press/focus-visible state into className callbacks; Base UI state objects are deliberately minimal (see tabs record) — interaction states belong in CSS."
+  ]
+}

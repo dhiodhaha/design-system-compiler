@@ -1,0 +1,177 @@
+{
+  "primitive": "popover",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/popover.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Portal",
+    "Backdrop",
+    "Positioner",
+    "Popup",
+    "Arrow",
+    "Title",
+    "Description",
+    "Close",
+    "Viewport",
+    "createHandle",
+    "Handle"
+  ],
+  "keyProps": {
+    "Root.defaultOpen": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "uncontrolled initial open"
+    },
+    "Root.open": {
+      "type": "boolean",
+      "default": "-",
+      "semantic": "controlled open"
+    },
+    "Root.onOpenChange": {
+      "type": "(open: boolean, eventDetails: Popover.Root.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "reason union: trigger-hover|trigger-focus|trigger-press|outside-press|escape-key|close-press|focus-out|imperative-action|none"
+    },
+    "Root.modal": {
+      "type": "boolean | 'trap-focus'",
+      "default": "false",
+      "semantic": "true = scroll lock + outside pointer interactions blocked; 'trap-focus' = focus trapped only; focus trapping with modal=true requires <Popover.Close> inside <Popover.Popup>; on touch, modal=true blocks outside taps but keeps the page scrollable unless the popup spans nearly the full viewport width"
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{ unmount: () => void; close: () => void } | null>",
+      "default": "-",
+      "semantic": "unmount() is for externally controlled closing animations"
+    },
+    "Root.triggerId": {
+      "type": "string | null",
+      "default": "-",
+      "semantic": "active trigger in controlled mode"
+    },
+    "Root.defaultTriggerId": {
+      "type": "string | null",
+      "default": "-",
+      "semantic": "active trigger for defaultOpen"
+    },
+    "Root.handle": {
+      "type": "Popover.Handle<Payload>",
+      "default": "-",
+      "semantic": "detached triggers"
+    },
+    "Root.children": {
+      "type": "ReactNode | PayloadChildRenderFunction<Payload>",
+      "default": "-",
+      "semantic": "function form receives { payload }"
+    },
+    "Trigger.openOnHover": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "also open on hover (popover doubles as an infotip)"
+    },
+    "Trigger.delay": {
+      "type": "number",
+      "default": "300",
+      "semantic": "ms; requires openOnHover"
+    },
+    "Trigger.closeDelay": {
+      "type": "number",
+      "default": "0",
+      "semantic": "ms; requires openOnHover"
+    },
+    "Trigger.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "set false when render targets a non-button"
+    },
+    "Trigger.id": {
+      "type": "string",
+      "default": "-",
+      "semantic": "forwarded to the element AND used as the active trigger id in controlled mode"
+    },
+    "Trigger.payload": {
+      "type": "Payload",
+      "default": "-",
+      "semantic": "passed to Root children render function"
+    },
+    "Trigger.handle": {
+      "type": "Popover.Handle<Payload>",
+      "default": "-",
+      "semantic": "detached trigger association"
+    },
+    "Portal.container": {
+      "type": "HTMLElement | ShadowRoot | RefObject<HTMLElement|ShadowRoot|null> | null",
+      "default": "-",
+      "semantic": "defaults to body"
+    },
+    "Portal.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "-"
+    },
+    "Positioner.side": {
+      "type": "Side",
+      "default": "'bottom'",
+      "semantic": "note: 'bottom' for Popover, 'top' for Tooltip"
+    },
+    "Positioner.sideOffset / alignOffset": {
+      "type": "number | OffsetFunction",
+      "default": "0",
+      "semantic": "OffsetFunction gets { side, align, anchor, positioner }"
+    },
+    "Positioner.align": {
+      "type": "'start'|'center'|'end'",
+      "default": "'center'",
+      "semantic": "-"
+    },
+    "Positioner.anchor / collisionAvoidance / collisionBoundary / collisionPadding / sticky / positionMethod / disableAnchorTracking / arrowPadding": {
+      "type": "same as Tooltip.Positioner",
+      "default": "arrowPadding 5, collisionPadding 5, collisionBoundary 'clipping-ancestors', positionMethod 'absolute'",
+      "semantic": "shared anchoring API across all Base UI popups"
+    },
+    "Popup.initialFocus": {
+      "type": "boolean | RefObject<HTMLElement|null> | ((openType: InteractionType) => boolean | void | HTMLElement | null)",
+      "default": "-",
+      "semantic": "default: first tabbable element inside the popup, except touch-opened popovers which focus the popup itself to avoid the virtual keyboard; InteractionType = 'mouse'|'touch'|'pen'|'keyboard'|''"
+    },
+    "Popup.finalFocus": {
+      "type": "boolean | RefObject<HTMLElement|null> | ((closeType: InteractionType) => boolean | void | HTMLElement | null)",
+      "default": "-",
+      "semantic": "default: trigger or previously focused element"
+    },
+    "Close.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "required inside Popup when modal for touch screen-reader escape"
+    },
+    "Viewport.children": {
+      "type": "ReactNode",
+      "default": "-",
+      "semantic": "only for animated content switches between multiple triggers"
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open, data-pressed, data-disabled",
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-side, data-align, data-instant ('click'|'dismiss'|'focus'|'trigger-change')",
+    "Arrow: data-open, data-closed, data-side, data-align, data-uncentered  (NOTE: Popover Arrow has NO data-instant, unlike Tooltip Arrow)",
+    "Viewport: data-current, data-previous, data-activation-direction, data-transitioning, data-instant ('click'|'dismiss'|'focus'|'trigger-change')",
+    "Positioner CSS vars: --anchor-height, --anchor-width, --available-height, --available-width, --positioner-height, --positioner-width, --transform-origin",
+    "Popup CSS vars: --popup-height, --popup-width"
+  ],
+  "renderProp": "Identical mechanism to Tooltip: per-part `render` (ReactElement | (props, state) => ReactElement), internally useRender; merge user props with mergeProps; `state` drives automatic data-* attributes.",
+  "controlled": "Uncontrolled `defaultOpen`/`defaultTriggerId`; controlled `open`/`triggerId` + `onOpenChange(open, eventDetails)`; `actionsRef` { unmount, close }; detached triggers via Popover.createHandle() with handle/open(triggerId)/close()/isOpen; `onOpenChangeComplete(open)` after animations.",
+  "formIntegration": "None (verified: no hidden inputs or form context anywhere under popover/*.mjs). Trigger and Close render native <button>; set type explicitly when rendered inside a form.",
+  "keyboard": "Escape closes (reason 'escape-key'); focus-out closes (reason 'focus-out') when not modal or when focus truly leaves; Tab is not trapped unless modal (true or 'trap-focus'). No arrow-key navigation inside the popup content. Outside press closes (reason 'outside-press').",
+  "notableDifferences": [
+    "`modal` exists and accepts 'trap-focus' — React Aria popovers cannot trap focus; and with modal=true focus trapping is only enabled if <Popover.Close> is rendered inside the popup.",
+    "Dismissal is not disabled by a boolean prop; use onOpenChange eventDetails.cancel() (no isDismissable/isKeyboardDismissDisabled equivalent).",
+    "Trigger supports openOnHover + delay/closeDelay — hover-open is a first-class popover mode, whereas React Aria treats hoverable popovers separately.",
+    "Composition is Portal > Backdrop?/Positioner > Popup (+ optional Arrow/Title/Description/Close/Viewport) instead of a single Floating element with placement props.",
+    "Animation states are data-starting-style / data-ending-style (+ data-instant) instead of React Aria's data-entering/data-exiting.",
+    "data-instant value set differs from Tooltip ('click'|'dismiss'|'focus'|'trigger-change').",
+    "Backdrop has no forceRender prop (Dialog/AlertDialog Drawer Backdrops do)."
+  ]
+}

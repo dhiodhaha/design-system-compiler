@@ -1,0 +1,4625 @@
+{
+  "$schema": "design-compiler/BaseUiMigrationInventory@p0",
+  "baseUiVersion": "1.8.0",
+  "surface": {
+    "dirs": [
+      "registry/untitledui",
+      "src"
+    ],
+    "excluded": [
+      "/^visual\\//",
+      "/^tests\\//",
+      "/^benchmark\\//",
+      "/\\.test\\./",
+      "/\\.spec\\./",
+      "/^src\\/fixtures\\//",
+      "/^src\\/dev\\//"
+    ]
+  },
+  "totals": {
+    "files": 61,
+    "importStatements": 277,
+    "symbols": 277,
+    "distinctSymbols": 137,
+    "publicItemsAffected": 123,
+    "filesWithoutRegistryOwner": [
+      "src/components/base/buttons/button.tsx"
+    ]
+  },
+  "byClassification": {
+    "DIRECT_BASE_UI_EQUIVALENT": 89,
+    "INTERNAL_HELPER": 21,
+    "TYPE_ONLY": 78,
+    "BASE_UI_COMPOSITION": 29,
+    "NATIVE_REPLACEMENT": 6,
+    "NEEDS_RESEARCH": 54
+  },
+  "byPackage": {
+    "@react-aria/utils": 1,
+    "@react-stately/utils": 3,
+    "react-aria": 9,
+    "react-aria-components": 262,
+    "react-stately": 2
+  },
+  "bySymbol": {
+    "Button": 23,
+    "SubmenuTrigger": 12,
+    "Selection": 11,
+    "Group": 9,
+    "ButtonProps": 9,
+    "Dialog": 7,
+    "Popover": 7,
+    "DialogTrigger": 6,
+    "DateValue": 6,
+    "Input": 6,
+    "LinkProps": 5,
+    "Link": 5,
+    "useSlottedContext": 4,
+    "useFilter": 4,
+    "ListBox": 4,
+    "Modal": 3,
+    "ModalOverlay": 3,
+    "DialogProps": 3,
+    "useControlledState": 3,
+    "useDateFormatter": 3,
+    "Autocomplete": 3,
+    "SearchField": 3,
+    "useFocusManager": 2,
+    "Placement": 2,
+    "CalendarGrid": 2,
+    "CalendarGridBody": 2,
+    "CalendarGridHeader": 2,
+    "CalendarHeaderCell": 2,
+    "RangeCalendarContext": 2,
+    "useLocale": 2,
+    "ModalOverlayProps": 2,
+    "MenuItem": 2,
+    "PopoverProps": 2,
+    "Form": 2,
+    "Text": 2,
+    "DateFieldProps": 2,
+    "InputProps": 2,
+    "TextFieldProps": 2,
+    "TextField": 2,
+    "Label": 2,
+    "ComboBoxProps": 2,
+    "GroupProps": 2,
+    "ListBoxProps": 2,
+    "ComboBox": 2,
+    "ComboBoxStateContext": 2,
+    "Pressable": 1,
+    "CalendarProps": 1,
+    "Calendar": 1,
+    "CalendarContext": 1,
+    "Heading": 1,
+    "CalendarCellProps": 1,
+    "CalendarCell": 1,
+    "DatePickerProps": 1,
+    "DatePicker": 1,
+    "DateRangePickerProps": 1,
+    "DateRangePicker": 1,
+    "RangeCalendarProps": 1,
+    "RangeCalendar": 1,
+    "RangeCalendarStateContext": 1,
+    "ModalRenderProps": 1,
+    "CellProps": 1,
+    "ColumnProps": 1,
+    "RowProps": 1,
+    "TableHeaderProps": 1,
+    "TableProps": 1,
+    "Cell": 1,
+    "Collection": 1,
+    "Column": 1,
+    "Row": 1,
+    "Table": 1,
+    "TableBody": 1,
+    "TableHeader": 1,
+    "useTableOptions": 1,
+    "TabListProps": 1,
+    "TabProps": 1,
+    "TabRenderProps": 1,
+    "Tab": 1,
+    "TabList": 1,
+    "TabPanel": 1,
+    "Tabs": 1,
+    "TabsContext": 1,
+    "ToggleButton": 1,
+    "ToggleButtonGroup": 1,
+    "ToggleButtonGroupProps": 1,
+    "ToggleButtonProps": 1,
+    "Checkbox": 1,
+    "CheckboxProps": 1,
+    "MenuItemProps": 1,
+    "MenuProps": 1,
+    "SeparatorProps": 1,
+    "MenuItemRenderProps": 1,
+    "Header": 1,
+    "Menu": 1,
+    "MenuSection": 1,
+    "MenuTrigger": 1,
+    "Separator": 1,
+    "filterDOMProps": 1,
+    "TextProps": 1,
+    "DateInputProps": 1,
+    "DateField": 1,
+    "DateInput": 1,
+    "DateSegment": 1,
+    "NumberField": 1,
+    "NumberFieldProps": 1,
+    "LabelProps": 1,
+    "Radio": 1,
+    "RadioGroup": 1,
+    "RadioGroupProps": 1,
+    "RadioProps": 1,
+    "ListBoxItemProps": 1,
+    "ListBoxItem": 1,
+    "SelectProps": 1,
+    "Select": 1,
+    "SelectValue": 1,
+    "FocusScope": 1,
+    "Key": 1,
+    "ListData": 1,
+    "useListData": 1,
+    "SliderProps": 1,
+    "Slider": 1,
+    "SliderOutput": 1,
+    "SliderThumb": 1,
+    "SliderTrack": 1,
+    "Tag": 1,
+    "TagGroup": 1,
+    "TagGroupProps": 1,
+    "TagList": 1,
+    "TagProps": 1,
+    "TextAreaProps": 1,
+    "TextArea": 1,
+    "SwitchProps": 1,
+    "Switch": 1,
+    "TooltipProps": 1,
+    "TooltipTriggerComponentProps": 1,
+    "OverlayArrow": 1,
+    "Tooltip": 1,
+    "TooltipTrigger": 1
+  },
+  "baseUiPrimitives": [
+    "accordion",
+    "alert-dialog",
+    "autocomplete",
+    "avatar",
+    "button",
+    "checkbox",
+    "checkbox-group",
+    "collapsible",
+    "combobox",
+    "context-menu",
+    "csp-provider",
+    "dialog",
+    "direction-provider",
+    "drawer",
+    "field",
+    "fieldset",
+    "form",
+    "input",
+    "menu",
+    "menubar",
+    "merge-props",
+    "meter",
+    "navigation-menu",
+    "number-field",
+    "otp-field",
+    "popover",
+    "preview-card",
+    "progress",
+    "radio",
+    "radio-group",
+    "scroll-area",
+    "select",
+    "separator",
+    "slider",
+    "switch",
+    "tabs",
+    "toast",
+    "toggle",
+    "toggle-group",
+    "toolbar",
+    "tooltip",
+    "unstable-use-media-query",
+    "use-render"
+  ],
+  "entries": [
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "mobile-navigation-header--base-components",
+        "header-navigation-base",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DialogTrigger",
+          "local": "AriaDialogTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Modal",
+          "local": "AriaModal",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ModalOverlay",
+          "local": "AriaModalOverlay",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 5
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "nav-account-card--base-components",
+        "nav-account-menu",
+        "header-navigation-base",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria",
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "useFocusManager",
+          "local": "useFocusManager",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DialogProps",
+          "local": "AriaDialogProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Placement",
+          "local": "AriaPlacement",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DialogTrigger",
+          "local": "AriaDialogTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 7
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "nav-button--base-components",
+        "header-navigation-base",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Pressable",
+          "local": "Pressable",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/use-render"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "nav-item-base--base-components",
+        "nav-list--base-components",
+        "header-navigation-base",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "LinkProps",
+          "local": "AriaLinkProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Link",
+          "local": "AriaLink",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NATIVE_REPLACEMENT",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DialogTrigger",
+          "local": "AriaDialogTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/calendar.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "calendar",
+        "calendar-context-provider",
+        "date-picker"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "CalendarProps",
+          "local": "AriaCalendarProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateValue",
+          "local": "DateValue",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Calendar",
+          "local": "AriaCalendar",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarContext",
+          "local": "AriaCalendarContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarGrid",
+          "local": "AriaCalendarGrid",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarGridBody",
+          "local": "AriaCalendarGridBody",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarGridHeader",
+          "local": "AriaCalendarGridHeader",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarHeaderCell",
+          "local": "AriaCalendarHeaderCell",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Heading",
+          "local": "AriaHeading",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "useSlottedContext",
+          "local": "useSlottedContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 10
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/cell.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "calendar-cell",
+        "calendar",
+        "calendar-context-provider",
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "date-picker",
+        "date-range-picker"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "CalendarCellProps",
+          "local": "AriaCalendarCellProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "CalendarCell",
+          "local": "AriaCalendarCell",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "RangeCalendarContext",
+          "local": "RangeCalendarContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "useLocale",
+          "local": "useLocale",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [
+            "@base-ui/react/direction-provider"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "useSlottedContext",
+          "local": "useSlottedContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 5
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "date-picker"
+      ],
+      "packages": [
+        "@react-stately/utils",
+        "react-aria",
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "useControlledState",
+          "local": "useControlledState",
+          "package": "@react-stately/utils",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "useDateFormatter",
+          "local": "useDateFormatter",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DatePickerProps",
+          "local": "AriaDatePickerProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateValue",
+          "local": "DateValue",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DatePicker",
+          "local": "AriaDatePicker",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 8
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "date-range-picker"
+      ],
+      "packages": [
+        "@react-stately/utils",
+        "react-aria",
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "useControlledState",
+          "local": "useControlledState",
+          "package": "@react-stately/utils",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "useDateFormatter",
+          "local": "useDateFormatter",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateRangePickerProps",
+          "local": "AriaDateRangePickerProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateValue",
+          "local": "DateValue",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateRangePicker",
+          "local": "AriaDateRangePicker",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "useLocale",
+          "local": "useLocale",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [
+            "@base-ui/react/direction-provider"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 9
+    },
+    {
+      "file": "registry/untitledui/components/application/date-picker/range-calendar.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "date-range-picker"
+      ],
+      "packages": [
+        "react-aria",
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "useDateFormatter",
+          "local": "useDateFormatter",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "RangeCalendarProps",
+          "local": "AriaRangeCalendarProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateValue",
+          "local": "DateValue",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "CalendarGrid",
+          "local": "AriaCalendarGrid",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarGridBody",
+          "local": "AriaCalendarGridBody",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarGridHeader",
+          "local": "AriaCalendarGridHeader",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "CalendarHeaderCell",
+          "local": "AriaCalendarHeaderCell",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "RangeCalendar",
+          "local": "AriaRangeCalendar",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "RangeCalendarContext",
+          "local": "RangeCalendarContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "RangeCalendarStateContext",
+          "local": "RangeCalendarStateContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "useSlottedContext",
+          "local": "useSlottedContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 11
+    },
+    {
+      "file": "registry/untitledui/components/application/modals/modal.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dialog--modals",
+        "modal--modals",
+        "modal-overlay--modals"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "DialogProps",
+          "local": "AriaDialogProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ModalOverlayProps",
+          "local": "AriaModalOverlayProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DialogTrigger",
+          "local": "AriaDialogTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Modal",
+          "local": "AriaModal",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ModalOverlay",
+          "local": "AriaModalOverlay",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 6
+    },
+    {
+      "file": "registry/untitledui/components/application/slideout-menus/slideout-menu.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dialog--slideout-menus",
+        "modal--slideout-menus",
+        "modal-overlay--slideout-menus",
+        "slideout-menu"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "DialogProps",
+          "local": "AriaDialogProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ModalOverlayProps",
+          "local": "AriaModalOverlayProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ModalRenderProps",
+          "local": "AriaModalRenderProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DialogTrigger",
+          "local": "AriaDialogTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Modal",
+          "local": "AriaModal",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ModalOverlay",
+          "local": "AriaModalOverlay",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 7
+    },
+    {
+      "file": "registry/untitledui/components/application/table/table.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "table",
+        "table-card",
+        "table-row-actions-dropdown"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "CellProps",
+          "local": "AriaCellProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ColumnProps",
+          "local": "AriaColumnProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "RowProps",
+          "local": "AriaRowProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TableHeaderProps",
+          "local": "AriaTableHeaderProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TableProps",
+          "local": "AriaTableProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Cell",
+          "local": "AriaCell",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Collection",
+          "local": "AriaCollection",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Column",
+          "local": "AriaColumn",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Row",
+          "local": "AriaRow",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Table",
+          "local": "AriaTable",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "TableBody",
+          "local": "AriaTableBody",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "TableHeader",
+          "local": "AriaTableHeader",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "useTableOptions",
+          "local": "useTableOptions",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 14
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "tab",
+        "tab-list",
+        "tab-panel",
+        "tabs",
+        "header-navigation-base"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "TabListProps",
+          "local": "AriaTabListProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TabProps",
+          "local": "AriaTabProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TabRenderProps",
+          "local": "AriaTabRenderProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Tab",
+          "local": "AriaTab",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/tabs"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TabList",
+          "local": "AriaTabList",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/tabs"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TabPanel",
+          "local": "AriaTabPanel",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/tabs"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Tabs",
+          "local": "AriaTabs",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/tabs"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TabsContext",
+          "local": "TabsContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "useSlottedContext",
+          "local": "useSlottedContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 9
+    },
+    {
+      "file": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "avatar",
+        "avatar-add-button",
+        "avatar-label-group",
+        "avatar-profile-photo",
+        "dropdown",
+        "select-item",
+        "dropdown-account-breadcrumb",
+        "dropdown-account-button",
+        "dropdown-account-card-md",
+        "dropdown-account-card-sm",
+        "dropdown-account-card-xs",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-link",
+        "dropdown-button-simple",
+        "dropdown-context-menu-advanced",
+        "dropdown-context-menu-simple",
+        "dropdown-icon-advanced",
+        "dropdown-icon-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "multi-select",
+        "nav-account-card--base-components",
+        "nav-account-menu",
+        "select",
+        "select-context",
+        "table",
+        "table-card",
+        "table-row-actions-dropdown",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "header-navigation-base",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "button-group",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ToggleButton",
+          "local": "AriaToggleButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "ToggleButtonGroup",
+          "local": "AriaToggleButtonGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "ToggleButtonGroupProps",
+          "local": "ToggleButtonGroupProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "ToggleButtonProps",
+          "local": "ToggleButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 4
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button-utility.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "button-utility",
+        "file-list-item-progress-bar",
+        "file-list-item-progress-fill",
+        "file-upload",
+        "file-upload-drop-zone",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria",
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Placement",
+          "local": "Placement",
+          "package": "react-aria",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "LinkProps",
+          "local": "AriaLinkProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Link",
+          "local": "AriaLink",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NATIVE_REPLACEMENT",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 5
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/button.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "button",
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "file-list-item-progress-bar",
+        "file-list-item-progress-fill",
+        "file-upload",
+        "file-upload-drop-zone",
+        "input-number",
+        "input-number-base",
+        "calendar",
+        "calendar-context-provider",
+        "dropdown-account-button",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "multi-select",
+        "nav-account-card--base-components",
+        "nav-account-menu",
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "date-picker",
+        "date-range-picker",
+        "header-navigation-base",
+        "input-file",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "LinkProps",
+          "local": "AriaLinkProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Link",
+          "local": "AriaLink",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NATIVE_REPLACEMENT",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 4
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/close-button.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "close-button",
+        "dialog--slideout-menus",
+        "modal--slideout-menus",
+        "modal-overlay--slideout-menus",
+        "slideout-menu"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/buttons/social-button.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "social-button"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "LinkProps",
+          "local": "AriaLinkProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Link",
+          "local": "AriaLink",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NATIVE_REPLACEMENT",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 4
+    },
+    {
+      "file": "registry/untitledui/components/base/checkbox/checkbox.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "checkbox",
+        "checkbox-base",
+        "dropdown",
+        "select-item",
+        "dropdown-account-breadcrumb",
+        "dropdown-account-button",
+        "dropdown-account-card-md",
+        "dropdown-account-card-sm",
+        "dropdown-account-card-xs",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-link",
+        "dropdown-button-simple",
+        "dropdown-context-menu-advanced",
+        "dropdown-context-menu-simple",
+        "dropdown-icon-advanced",
+        "dropdown-icon-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "multi-select",
+        "select",
+        "select-context",
+        "table",
+        "table-card",
+        "table-row-actions-dropdown",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "header-navigation-base",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Checkbox",
+          "local": "AriaCheckbox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/checkbox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "CheckboxProps",
+          "local": "AriaCheckboxProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-account-breadcrumb"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "MenuItem",
+          "local": "AriaMenuItem",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-button.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-account-button",
+        "header-navigation-base"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-card-md.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-account-card-md"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-card-sm.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-account-card-sm"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-account-card-xs.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-account-card-xs"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-avatar.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-avatar"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-button-advanced.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-button-advanced"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-button-link.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-button-link"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-button-simple.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-button-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-advanced.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-context-menu-advanced"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-context-menu-simple.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-context-menu-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-icon-advanced.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-icon-advanced"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-icon-simple.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-icon-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-search-advanced.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-search-advanced"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Autocomplete",
+          "local": "Autocomplete",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/autocomplete"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SearchField",
+          "local": "SearchField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field",
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SubmenuTrigger",
+          "local": "SubmenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "useFilter",
+          "local": "useFilter",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 5
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown-search-simple.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown-search-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Autocomplete",
+          "local": "Autocomplete",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/autocomplete"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SearchField",
+          "local": "SearchField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field",
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "useFilter",
+          "local": "useFilter",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 4
+    },
+    {
+      "file": "registry/untitledui/components/base/dropdown/dropdown.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "dropdown",
+        "dropdown-account-breadcrumb",
+        "dropdown-account-button",
+        "dropdown-account-card-md",
+        "dropdown-account-card-sm",
+        "dropdown-account-card-xs",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-link",
+        "dropdown-button-simple",
+        "dropdown-context-menu-advanced",
+        "dropdown-context-menu-simple",
+        "dropdown-icon-advanced",
+        "dropdown-icon-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "table",
+        "table-card",
+        "table-row-actions-dropdown",
+        "header-navigation-base"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "MenuItemProps",
+          "local": "AriaMenuItemProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "MenuProps",
+          "local": "AriaMenuProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "PopoverProps",
+          "local": "AriaPopoverProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "SeparatorProps",
+          "local": "AriaSeparatorProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "MenuItemRenderProps",
+          "local": "MenuItemRenderProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Header",
+          "local": "AriaHeader",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Menu",
+          "local": "AriaMenu",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "MenuItem",
+          "local": "AriaMenuItem",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "MenuSection",
+          "local": "AriaMenuSection",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "MenuTrigger",
+          "local": "AriaMenuTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [
+            "@base-ui/react/menu"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Separator",
+          "local": "AriaSeparator",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NATIVE_REPLACEMENT",
+          "target": [
+            "@base-ui/react/separator"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 14
+    },
+    {
+      "file": "registry/untitledui/components/base/file-upload-trigger/file-upload-trigger.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "file-trigger"
+      ],
+      "packages": [
+        "@react-aria/utils"
+      ],
+      "symbols": [
+        {
+          "symbol": "filterDOMProps",
+          "local": "filterDOMProps",
+          "package": "@react-aria/utils",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [
+            "@base-ui/react/merge-props"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/form/form.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "form"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Form",
+          "local": "AriaForm",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/form"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/form/hook-form.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "form-field",
+        "hook-form"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Form",
+          "local": "AriaForm",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/form"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/input/hint-text.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "hint-text",
+        "combo-box",
+        "input",
+        "input-base",
+        "input-date",
+        "input-date-base",
+        "input-number",
+        "input-number-base",
+        "input-tags",
+        "native-select",
+        "pin-input",
+        "text-area",
+        "text-area-base",
+        "text-field",
+        "calendar",
+        "calendar-context-provider",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "input-group",
+        "input-tags-outer",
+        "multi-select",
+        "payment-input",
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "select",
+        "select-context",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "date-picker",
+        "date-range-picker",
+        "header-navigation-base",
+        "input-file",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "TextProps",
+          "local": "AriaTextProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Text",
+          "local": "AriaText",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-date.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "input-date",
+        "input-date-base",
+        "calendar",
+        "calendar-context-provider",
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "date-picker",
+        "date-range-picker"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "DateInputProps",
+          "local": "AriaDateInputProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "DateField",
+          "local": "AriaDateField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "DateFieldProps",
+          "local": "AriaDateFieldProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "DateInput",
+          "local": "AriaDateInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "DateSegment",
+          "local": "AriaDateSegment",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DateValue",
+          "local": "DateValue",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 7
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "input-number",
+        "input-number-base"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DateFieldProps",
+          "local": "AriaDateFieldProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Input",
+          "local": "AriaInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "InputProps",
+          "local": "AriaInputProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "NumberField",
+          "local": "AriaNumberField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/number-field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "NumberFieldProps",
+          "local": "AriaNumberFieldProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "DateValue",
+          "local": "DateValue",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 8
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-payment.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "payment-input"
+      ],
+      "packages": [
+        "@react-stately/utils"
+      ],
+      "symbols": [
+        {
+          "symbol": "useControlledState",
+          "local": "useControlledState",
+          "package": "@react-stately/utils",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 1
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-tags.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "input-tags"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Input",
+          "local": "AriaInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/input"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "input",
+        "input-base",
+        "text-field",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "input-group",
+        "input-tags-outer",
+        "payment-input",
+        "header-navigation-base",
+        "input-file",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "InputProps",
+          "local": "AriaInputProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TextFieldProps",
+          "local": "AriaTextFieldProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Input",
+          "local": "AriaInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TextField",
+          "local": "AriaTextField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field",
+            "@base-ui/react/input"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 6
+    },
+    {
+      "file": "registry/untitledui/components/base/input/label.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "label",
+        "combo-box",
+        "input",
+        "input-base",
+        "input-date",
+        "input-date-base",
+        "input-number",
+        "input-number-base",
+        "input-tags",
+        "native-select",
+        "pin-input",
+        "text-area",
+        "text-area-base",
+        "text-field",
+        "calendar",
+        "calendar-context-provider",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "input-group",
+        "input-tags-outer",
+        "multi-select",
+        "payment-input",
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "select",
+        "select-context",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "date-picker",
+        "date-range-picker",
+        "header-navigation-base",
+        "input-file",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-simple"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "LabelProps",
+          "local": "AriaLabelProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Label",
+          "local": "AriaLabel",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/radio-buttons/radio-buttons.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "radio-button",
+        "radio-button-base",
+        "radio-group",
+        "dropdown",
+        "dropdown-account-breadcrumb",
+        "dropdown-account-button",
+        "dropdown-account-card-md",
+        "dropdown-account-card-sm",
+        "dropdown-account-card-xs",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-link",
+        "dropdown-button-simple",
+        "dropdown-context-menu-advanced",
+        "dropdown-context-menu-simple",
+        "dropdown-icon-advanced",
+        "dropdown-icon-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "nav-account-card--base-components",
+        "nav-account-menu",
+        "table",
+        "table-card",
+        "table-row-actions-dropdown",
+        "header-navigation-base",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Radio",
+          "local": "AriaRadio",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/radio",
+            "@base-ui/react/radio-group"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "RadioGroup",
+          "local": "AriaRadioGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/radio-group"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "RadioGroupProps",
+          "local": "AriaRadioGroupProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "RadioProps",
+          "local": "AriaRadioProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 4
+    },
+    {
+      "file": "registry/untitledui/components/base/select/combobox.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "combo-box",
+        "select",
+        "select-context",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ComboBoxProps",
+          "local": "AriaComboBoxProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "GroupProps",
+          "local": "AriaGroupProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ListBoxProps",
+          "local": "AriaListBoxProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ComboBox",
+          "local": "AriaComboBox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/combobox",
+            "@base-ui/react/autocomplete"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Input",
+          "local": "AriaInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ListBox",
+          "local": "AriaListBox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/select",
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ComboBoxStateContext",
+          "local": "ComboBoxStateContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 8
+    },
+    {
+      "file": "registry/untitledui/components/base/select/multi-select.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "multi-select"
+      ],
+      "packages": [
+        "react-aria",
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "useFilter",
+          "local": "useFilter",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Selection",
+          "local": "Selection",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Autocomplete",
+          "local": "AriaAutocomplete",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/autocomplete"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Dialog",
+          "local": "AriaDialog",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "DialogTrigger",
+          "local": "AriaDialogTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/dialog"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Input",
+          "local": "AriaInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ListBox",
+          "local": "AriaListBox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/select",
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SearchField",
+          "local": "AriaSearchField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field",
+            "@base-ui/react/input"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 10
+    },
+    {
+      "file": "registry/untitledui/components/base/select/popover.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "popover",
+        "combo-box",
+        "select",
+        "select-context",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "PopoverProps",
+          "local": "AriaPopoverProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Popover",
+          "local": "AriaPopover",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/popover"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/select/select-item.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "select-item",
+        "multi-select",
+        "select",
+        "select-context",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ListBoxItemProps",
+          "local": "AriaListBoxItemProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ListBoxItem",
+          "local": "AriaListBoxItem",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/select",
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Text",
+          "local": "AriaText",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 3
+    },
+    {
+      "file": "registry/untitledui/components/base/select/select.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "select",
+        "select-context",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "SelectProps",
+          "local": "AriaSelectProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ListBox",
+          "local": "AriaListBox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/select",
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Select",
+          "local": "AriaSelect",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/select"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SelectValue",
+          "local": "AriaSelectValue",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/select"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 5
+    },
+    {
+      "file": "registry/untitledui/components/base/select/tag-select.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value"
+      ],
+      "packages": [
+        "react-aria",
+        "react-aria-components",
+        "react-stately"
+      ],
+      "symbols": [
+        {
+          "symbol": "FocusScope",
+          "local": "FocusScope",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "useFilter",
+          "local": "useFilter",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "useFocusManager",
+          "local": "useFocusManager",
+          "package": "react-aria",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ComboBoxProps",
+          "local": "AriaComboBoxProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "GroupProps",
+          "local": "AriaGroupProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ListBoxProps",
+          "local": "AriaListBoxProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Key",
+          "local": "Key",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": true,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "ComboBox",
+          "local": "AriaComboBox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/combobox",
+            "@base-ui/react/autocomplete"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Group",
+          "local": "AriaGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/input",
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Input",
+          "local": "AriaInput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/input"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ListBox",
+          "local": "AriaListBox",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/select",
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ComboBoxStateContext",
+          "local": "ComboBoxStateContext",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "ListData",
+          "local": "ListData",
+          "package": "react-stately",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "useListData",
+          "local": "useListData",
+          "package": "react-stately",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "INTERNAL_HELPER",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 14
+    },
+    {
+      "file": "registry/untitledui/components/base/slider/slider.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "slider"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "SliderProps",
+          "local": "AriaSliderProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Label",
+          "local": "AriaLabel",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Slider",
+          "local": "AriaSlider",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/slider"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "SliderOutput",
+          "local": "AriaSliderOutput",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "SliderThumb",
+          "local": "AriaSliderThumb",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "SliderTrack",
+          "local": "AriaSliderTrack",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 6
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "tag-close-x",
+        "tag",
+        "tag-avatar",
+        "tag-group",
+        "input-tags",
+        "input-tags-outer",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/tags.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "tag",
+        "tag-avatar",
+        "tag-group",
+        "input-tags",
+        "input-tags-outer"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "Tag",
+          "local": "AriaTag",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TagGroup",
+          "local": "AriaTagGroup",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/combobox"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TagGroupProps",
+          "local": "AriaTagGroupProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "TagList",
+          "local": "AriaTagList",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "TagProps",
+          "local": "AriaTagProps",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": false,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        }
+      ],
+      "importsRemoved": 5
+    },
+    {
+      "file": "registry/untitledui/components/base/textarea/textarea.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "text-area",
+        "text-area-base"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "TextAreaProps",
+          "local": "AriaTextAreaProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TextFieldProps",
+          "local": "AriaTextFieldProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TextArea",
+          "local": "AriaTextArea",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TextField",
+          "local": "AriaTextField",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "BASE_UI_COMPOSITION",
+          "target": [
+            "@base-ui/react/field",
+            "@base-ui/react/input"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 4
+    },
+    {
+      "file": "registry/untitledui/components/base/toggle/toggle.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "toggle",
+        "toggle-base",
+        "dropdown",
+        "dropdown-account-breadcrumb",
+        "dropdown-account-button",
+        "dropdown-account-card-md",
+        "dropdown-account-card-sm",
+        "dropdown-account-card-xs",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-link",
+        "dropdown-button-simple",
+        "dropdown-context-menu-advanced",
+        "dropdown-context-menu-simple",
+        "dropdown-icon-advanced",
+        "dropdown-icon-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "table",
+        "table-card",
+        "table-row-actions-dropdown",
+        "header-navigation-base"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "SwitchProps",
+          "local": "AriaSwitchProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Switch",
+          "local": "AriaSwitch",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/switch"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 2
+    },
+    {
+      "file": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "surface": "payload",
+      "publicItems": [
+        "mobile-navigation-header--app-navigation",
+        "nav-account-card--app-navigation",
+        "nav-button--app-navigation",
+        "nav-item-base--app-navigation",
+        "nav-item-base-props",
+        "nav-item-collapsible-props",
+        "nav-item-link-props",
+        "nav-list--app-navigation",
+        "tooltip",
+        "tooltip-trigger",
+        "avatar",
+        "avatar-add-button",
+        "button-utility",
+        "label",
+        "nav-button--base-components",
+        "avatar-label-group",
+        "avatar-profile-photo",
+        "combo-box",
+        "dropdown",
+        "file-list-item-progress-bar",
+        "file-list-item-progress-fill",
+        "file-upload",
+        "file-upload-drop-zone",
+        "input",
+        "input-base",
+        "input-date",
+        "input-date-base",
+        "input-number",
+        "input-number-base",
+        "input-tags",
+        "native-select",
+        "pin-input",
+        "select-item",
+        "text-area",
+        "text-area-base",
+        "text-field",
+        "calendar",
+        "calendar-context-provider",
+        "dropdown-account-breadcrumb",
+        "dropdown-account-button",
+        "dropdown-account-card-md",
+        "dropdown-account-card-sm",
+        "dropdown-account-card-xs",
+        "dropdown-avatar",
+        "dropdown-button-advanced",
+        "dropdown-button-link",
+        "dropdown-button-simple",
+        "dropdown-context-menu-advanced",
+        "dropdown-context-menu-simple",
+        "dropdown-icon-advanced",
+        "dropdown-icon-simple",
+        "dropdown-integration",
+        "dropdown-search-advanced",
+        "dropdown-search-simple",
+        "input-group",
+        "input-tags-outer",
+        "multi-select",
+        "nav-account-card--base-components",
+        "nav-account-menu",
+        "payment-input",
+        "range-calendar",
+        "range-calendar-context-provider",
+        "range-preset-button",
+        "select",
+        "select-context",
+        "table",
+        "table-card",
+        "table-row-actions-dropdown",
+        "tag-select",
+        "tag-select-base",
+        "tag-select-tags-value",
+        "date-picker",
+        "date-range-picker",
+        "header-navigation-base",
+        "input-file",
+        "pagination-button-group",
+        "pagination-card-advanced",
+        "pagination-card-default",
+        "pagination-card-minimal",
+        "pagination-page-default",
+        "pagination-page-minimal-center",
+        "sidebar-navigation-dual-tier",
+        "sidebar-navigation-section-dividers",
+        "sidebar-navigation-sections-subheadings",
+        "sidebar-navigation-simple",
+        "sidebar-navigation-slim"
+      ],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TooltipProps",
+          "local": "AriaTooltipProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "TooltipTriggerComponentProps",
+          "local": "AriaTooltipTriggerComponentProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "OverlayArrow",
+          "local": "AriaOverlayArrow",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NEEDS_RESEARCH",
+          "target": [],
+          "research": true
+        },
+        {
+          "symbol": "Tooltip",
+          "local": "AriaTooltip",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/tooltip"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "TooltipTrigger",
+          "local": "AriaTooltipTrigger",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/tooltip"
+          ],
+          "research": false
+        }
+      ],
+      "importsRemoved": 7
+    },
+    {
+      "file": "src/components/base/buttons/button.tsx",
+      "surface": "app",
+      "publicItems": [],
+      "packages": [
+        "react-aria-components"
+      ],
+      "symbols": [
+        {
+          "symbol": "ButtonProps",
+          "local": "AriaButtonProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "LinkProps",
+          "local": "AriaLinkProps",
+          "package": "react-aria-components",
+          "typeOnly": true,
+          "usedInJsx": false,
+          "classification": "TYPE_ONLY",
+          "target": [],
+          "research": false
+        },
+        {
+          "symbol": "Button",
+          "local": "AriaButton",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "DIRECT_BASE_UI_EQUIVALENT",
+          "target": [
+            "@base-ui/react/button"
+          ],
+          "research": false
+        },
+        {
+          "symbol": "Link",
+          "local": "AriaLink",
+          "package": "react-aria-components",
+          "typeOnly": false,
+          "usedInJsx": true,
+          "classification": "NATIVE_REPLACEMENT",
+          "target": [],
+          "research": false
+        }
+      ],
+      "importsRemoved": 4
+    }
+  ]
+}

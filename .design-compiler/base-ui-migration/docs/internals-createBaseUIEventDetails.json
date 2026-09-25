@@ -1,0 +1,35 @@
+{
+  "primitive": "internals/createBaseUIEventDetails",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/internals/createBaseUIEventDetails",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt (absent — internal)",
+    "node_modules/@base-ui/react/internals/createBaseUIEventDetails.d.ts",
+    "node_modules/@base-ui/react/internals/reasons.d.ts",
+    "node_modules/@base-ui/react/index.d.ts"
+  ],
+  "parts": [
+    "createChangeEventDetails",
+    "createGenericEventDetails",
+    "BaseUIChangeEventDetails",
+    "BaseUIGenericEventDetails",
+    "ReasonToEvent"
+  ],
+  "keyProps": {
+    "createChangeEventDetails(reason, event?, trigger?, customProperties?)": "Builds a cancellable change-event details object. `reason` keys the native event type (see reasons record); `customProperties` are merged into the returned object (Base UI uses this for extra fields such as Tabs' activationDirection).",
+    "createGenericEventDetails(reason, event?, customProperties?)": "Same shape without the cancellation/propagation utilities ({ reason, event } + customProperties).",
+    "BaseUIChangeEventDetails<Reason, CustomProperties>": "{ reason, event, cancel(), allowPropagation(), isCanceled, isPropagationAllowed, trigger } & CustomProperties",
+    "BaseUIGenericEventDetails<Reason, CustomProperties>": "{ reason, event } & CustomProperties"
+  },
+  "dataAttributes": [],
+  "renderProp": "null (utility).",
+  "controlled": "This is the object a controlled component hands to its change callback: onXChange(value, eventDetails). Consumers read eventDetails.reason to distinguish user input from automatic fallbacks, eventDetails.cancel() to veto Base UI's own handling, eventDetails.allowPropagation(), and eventDetails.trigger for the originating element.",
+  "formIntegration": "null (utility).",
+  "keyboard": "null (utility).",
+  "notableDifferences": [
+    "React Aria hands change callbacks a bare key/value (e.g. onSelectionChange(key)) or a PressEvent; Base UI wraps every change in an event-details object carrying reason + cancellation. RAC's event.continuePropagation() corresponds to allowPropagation(); canceling a change maps to cancel() (RAC has no equivalent for automatic-fallback reasons).",
+    "Public-importable but undocumented (only reachable via the ./internals/* subpaths): type import is idiomatic via `import type { BaseUIChangeEventDetails } from '@base-ui/react/types'`.",
+    "Automatic changes cannot be canceled — cancel() is a no-op for reasons 'initial', 'disabled', 'missing'."
+  ]
+}

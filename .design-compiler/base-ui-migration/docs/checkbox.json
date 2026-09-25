@@ -1,0 +1,132 @@
+{
+  "primitive": "checkbox",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/checkbox.md",
+    "node_modules/@base-ui/react/checkbox/index.d.ts",
+    "node_modules/@base-ui/react/checkbox/index.parts.d.ts",
+    "node_modules/@base-ui/react/checkbox/root/CheckboxRoot.d.ts",
+    "node_modules/@base-ui/react/checkbox/root/CheckboxRootDataAttributes.d.ts",
+    "node_modules/@base-ui/react/checkbox/indicator/CheckboxIndicatorDataAttributes.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Indicator"
+  ],
+  "keyProps": {
+    "checked": {
+      "type": "boolean",
+      "default": "undefined",
+      "notes": "Controlled. Uncontrolled counterpart is defaultChecked."
+    },
+    "defaultChecked": {
+      "type": "boolean",
+      "default": false
+    },
+    "onCheckedChange": {
+      "type": "(checked: boolean, eventDetails: Checkbox.Root.ChangeEventDetails) => void"
+    },
+    "indeterminate": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Mixed state. Reflected as aria-checked=\"mixed\"; not a tri-state value."
+    },
+    "value": {
+      "type": "string",
+      "notes": "Identity inside Checkbox.Group (falls back to name). Checked submits value, else the native \"on\"."
+    },
+    "uncheckedValue": {
+      "type": "string",
+      "notes": "Value submitted when unchecked; unchecked boxes submit nothing by default."
+    },
+    "name": {
+      "type": "string"
+    },
+    "form": {
+      "type": "string"
+    },
+    "nativeButton": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Root renders <span> by default so an enclosing <label> works; set nativeButton + render={<button />} for the sibling-label pattern."
+    },
+    "parent": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Marks the checkbox as controlling a child group; must be inside Checkbox Group."
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "readOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "inputRef": {
+      "type": "React.Ref<HTMLInputElement>"
+    },
+    "id": {
+      "type": "string"
+    },
+    "Indicator.keepMounted": {
+      "type": "boolean",
+      "default": false,
+      "notes": "On Checkbox.Indicator: keep the element mounted when unchecked."
+    }
+  },
+  "dataAttributes": [
+    "data-checked — checked",
+    "data-unchecked — not checked",
+    "data-indeterminate — mixed state (Root and Indicator)",
+    "data-disabled — disabled",
+    "data-readonly — readOnly",
+    "data-required — required",
+    "data-valid / data-invalid — valid / invalid inside Field.Root",
+    "data-dirty / data-touched — changed / touched inside Field.Root",
+    "data-filled — checked inside Field.Root",
+    "data-focused — focused inside Field.Root",
+    "data-parent — UNDOCUMENTED but real: Root emits it when parent={true} (exported as PARENT_CHECKBOX = 'data-parent')",
+    "data-starting-style / data-ending-style — Indicator only (enter/exit animation)"
+  ],
+  "renderProp": {
+    "mechanism": "render on Root and Indicator",
+    "elementForm": "render={<button />} (with nativeButton) or any element",
+    "functionForm": "render={(props, state) => <span {...props} />} — required for the native-button-with-wrapping-label pattern so the hidden input sits outside the label; state.indeterminate is available for swapping the icon in Indicator",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultChecked"
+    ],
+    "controlledProps": [
+      "checked"
+    ],
+    "changeCallbacks": [
+      "onCheckedChange(checked: boolean, eventDetails: Checkbox.Root.ChangeEventDetails)"
+    ],
+    "note": "ChangeEventDetails carries reason: 'none', event, cancel(), allowPropagation(), isCanceled, isPropagationAllowed, trigger."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "Renders a hidden <input type=\"checkbox\"> beside the visible span (tabIndex -1, aria-hidden); inputRef targets it. If unchecked, named, not parented and uncheckedValue is set, an EXTRA hidden input carries uncheckedValue.",
+    "validation": "required participates in native constraint validation; use Field.Root name for the field key."
+  },
+  "keyboard": {
+    "keys": "Native activation of the control (Space on the native button). No custom key map.",
+    "focus": "Single tab stop; focus ring driven by :focus-visible.",
+    "typeahead": "none"
+  },
+  "notableDifferences": [
+    "React Aria's isSelected/isDisabled/isReadOnly/isRequired/isInvalid become checked/disabled/readOnly/required (+ Field.Root invalid); the naming convention is uncontrolled/controlled prefixes, not is- prefixes.",
+    "Indeterminate is a separate boolean prop (indeterminate), not a tri-state value of 'indeterminate'.",
+    "Root renders <span> by default (not <input>), so an enclosing <label> is the primary labelling pattern; React Aria renders a real input you can point a sibling label at.",
+    "State is exposed as data-* attributes (data-checked/data-indeterminate/data-disabled/data-readonly) plus a state object to className/style/render functions.",
+    "Indicator is a separate part with its own animation attributes (data-starting-style/data-ending-style) and keepMounted, instead of React Aria's single-element render-prop approach.",
+    "Parent-checkbox behaviour (select-all) is expressed with parent on the checkbox plus allValues on Checkbox.Group; React Aria has no built-in parent-checkbox model — it composes via useCheckboxGroup state."
+  ]
+}

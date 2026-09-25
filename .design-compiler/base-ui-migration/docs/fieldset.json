@@ -1,0 +1,56 @@
+{
+  "primitive": "fieldset",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/fieldset.md",
+    "node_modules/@base-ui/react/fieldset/index.parts.d.ts",
+    "node_modules/@base-ui/react/fieldset/root/FieldsetRoot.mjs",
+    "node_modules/@base-ui/react/fieldset/legend/FieldsetLegend.mjs"
+  ],
+  "parts": [
+    "Root",
+    "Legend"
+  ],
+  "keyProps": {
+    "Root.render": {
+      "type": "ReactElement | ((props, state) => ReactElement)",
+      "notes": "The documented way to make a group label: <Fieldset.Root render={<RadioGroup />}> or render={<CheckboxGroup />}. When render is a RadioGroup/Slider the underlying <fieldset> is replaced, which is how Fieldset provides group labelling + form integration."
+    },
+    "Root.className/style": {
+      "type": "string | fn / CSSProperties | fn",
+      "notes": "State is only { disabled }."
+    },
+    "Legend.className/style/render": {
+      "type": "string | fn / CSSProperties | fn / ReactElement | fn",
+      "notes": "Legend renders a <div> (verified in FieldsetLegend.mjs -> useRenderElement('div', ...)), not a native <legend>, so it can be styled freely."
+    }
+  },
+  "dataAttributes": [
+    "No data-* attributes are documented for Fieldset.Root or Fieldset.Legend"
+  ],
+  "renderProp": {
+    "mechanism": "render on Root and Legend",
+    "elementForm": "<Fieldset.Root render={<RadioGroup defaultValue=\"ssd\" />}> — the canonical group-labelling composition",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [],
+    "changeCallbacks": [],
+    "note": "Purely structural; no state."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false,
+    "note": "Renders a real <fieldset> by default (verified: useRenderElement('fieldset', ...)), so it participates in native disabled-fieldset semantics. Legend renders a <div> and is wired as the accessible name for the grouped controls."
+  },
+  "keyboard": {
+    "keys": "None.",
+    "focus": "None."
+  },
+  "notableDifferences": [
+    "React Aria folds group labelling into each component (e.g. RadioGroup label prop / Fieldset-like wrappers); Base UI makes Fieldset.Root the single group-labelling primitive and composes it onto RadioGroup/CheckboxGroup through render.",
+    "Legend renders a <div>, not a native <legend>, so the native legend layout/behaviour differences disappear.",
+    "Fieldset.Root state is only { disabled } — there is no data-valid/data-invalid set here."
+  ]
+}

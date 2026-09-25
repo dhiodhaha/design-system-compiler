@@ -1,0 +1,35 @@
+{
+  "primitive": "table",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "coversAlso": [
+    "table-header",
+    "table-body",
+    "row",
+    "column",
+    "cell",
+    "collection",
+    "useTableOptions"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts",
+    "node_modules/@base-ui/react/docs/react/components/ (listing)"
+  ],
+  "evidence": {
+    "exportsMap": "Alphabetical exports map: a `./table` entry would sort between `./switch` (line 553) and `./tabs` (line 567); the map goes switch -> tabs with no gap.",
+    "shared": "see the shared evidence block: 37 documented components; no Table page in docs index or bundled docs; no Table entry in CHANGELOG for any 1.x release or in the v1.8.0 notes.",
+    "adjacentCapability": "internals/composite + gridNavigation provide index-based 2D arrow-key navigation (cols/dense/itemSizes, rtl, disabledIndices), and Base UI's Menu/Select/Combobox support grid layout via that mechanism — but there is no table/row/column/cell component, no column sorting, no row selection model."
+  },
+  "affectedRepoFiles": [
+    "registry/untitledui/components/application/table/table.tsx (AriaTable, AriaTableHeader, AriaTableBody, AriaRow, AriaColumn, AriaCell, AriaCollection, AriaGroup, useTableOptions, plus RAC props AriaCellProps/AriaColumnProps/AriaRowProps/AriaTableHeaderProps/AriaTableProps; file is 311 lines and also composes Base UI-shaped local components: Badge, Checkbox, Dropdown, Tooltip)"
+  ],
+  "consequence": "NO_BASE_UI_EQUIVALENT. Table.tsx must keep react-aria-components (or be reimplemented from scratch with a different table library). Note the mixed nature of this file: its chrome (dropdown, checkbox, tooltip, badges) may migrate, but the table skeleton (Table/TableHeader/TableBody/Row/Column/Cell/Collection/useTableOptions) has no target.",
+  "notableDifferences": [
+    "React Aria's table is a collection-based component: children are Columns and Rows (or `items` + render functions), header/body structure is derived, and selection/sorting come from the Collection API; nothing equivalent exists in Base UI 1.8.0.",
+    "Repo table styling uses RAC row state (`state.allowsSorting`) and the RAC Tailwind plugin variant `selected:bg-secondary` (table.tsx:238) — both RAC-specific; a future Base UI table would need data-attribute mapping via getStateAttributesProps.",
+    "Base UI's closest navigation primitive (internals/composite gridNavigation) is an internal hook with no selection, sorting, or header semantics — it is not a table."
+  ]
+}

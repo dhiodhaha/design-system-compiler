@@ -1,0 +1,108 @@
+{
+  "primitive": "context-menu",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/context-menu.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Portal (re-export of Menu.Portal)",
+    "Backdrop (Menu.Backdrop)",
+    "Positioner",
+    "Popup (Menu.Popup)",
+    "Arrow (Menu.Arrow)",
+    "Item (Menu.Item)",
+    "Group",
+    "GroupLabel",
+    "Separator",
+    "SubmenuRoot",
+    "SubmenuTrigger",
+    "RadioGroup",
+    "RadioItem",
+    "RadioItemIndicator",
+    "CheckboxItem",
+    "CheckboxItemIndicator",
+    "LinkItem"
+  ],
+  "keyProps": {
+    "Root": {
+      "type": "Omit<Menu.Root.Props, 'handle' | 'triggerId' | 'defaultTriggerId' | 'modal' | 'openOnHover' | 'delay' | 'closeDelay' | 'closeParentOnEsc' | 'onOpenChange' | 'children'>",
+      "default": "—",
+      "semantic": "inherits the Menu.Root surface MINUS handle/triggerId/defaultTriggerId/modal/openOnHover/delay/closeDelay and children; adds its own onOpenChange and a ReactNode children."
+    },
+    "Root.open / defaultOpen": {
+      "type": "boolean",
+      "default": "defaultOpen=false",
+      "semantic": "controlled/uncontrolled menu visibility."
+    },
+    "Root.onOpenChange": {
+      "type": "(open: boolean, eventDetails: ContextMenu.Root.ChangeEventDetails) => void",
+      "default": "—",
+      "semantic": "same ChangeEventReason union as Menu."
+    },
+    "Root.highlightItemOnHover / loopFocus / disabled / orientation / onOpenChangeComplete / actionsRef": {
+      "type": "boolean / boolean / boolean / 'horizontal'|'vertical' / (open)=>void / RefObject<{unmount, close}>",
+      "default": "true / true / false / 'vertical' / — / —",
+      "semantic": "unchanged from Menu.Root."
+    },
+    "Root.closeParentOnEsc": {
+      "type": "boolean",
+      "default": "—",
+      "semantic": "@deprecated — has no effect on Context Menu (kept for API compatibility)."
+    },
+    "Trigger": {
+      "type": "renders <div>",
+      "default": "—",
+      "semantic": "area that opens the menu on right click or long press; state {open}; no props beyond BaseUIComponentProps."
+    },
+    "Positioner.anchor": {
+      "type": "Element | VirtualElement | Ref | fn",
+      "default": "pointer position (root) / submenu trigger (submenus)",
+      "semantic": "root context menus are anchored at the pointer by default."
+    },
+    "Positioner.side / align": {
+      "type": "Side / Align",
+      "default": "'bottom' / 'start' (submenus: side 'inline-end')",
+      "semantic": "note align defaults to 'start' here, unlike Menu ('center')."
+    },
+    "Positioner.sideOffset / alignOffset": {
+      "type": "number | OffsetFunction",
+      "default": "root: -5 and 2 when `side` is not specified and `align` is not 'center'; otherwise 0",
+      "semantic": "keeps the popup near the pointer without covering it; submenus use the Menu defaults."
+    },
+    "Positioner.arrowPadding": {
+      "type": "number",
+      "default": "root always 0; submenus 5",
+      "semantic": "arrow inset from popup edges."
+    },
+    "Positioner.positionMethod": {
+      "type": "'absolute' | 'fixed'",
+      "default": "—",
+      "semantic": "@deprecated — has no effect on Context Menu."
+    },
+    "Item / CheckboxItem / RadioItem / LinkItem / Group / GroupLabel / Separator / Submenu*": {
+      "type": "identical to Menu parts",
+      "default": "Item.closeOnClick=true; CheckboxItem/RadioItem.closeOnClick=false; RadioItem.value required",
+      "semantic": "all Menu semantics apply (typeahead via `label`, radio/checkbox groups, links)."
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open, data-pressed",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align (+ ContextMenuPositionerCssVars)",
+    "Popup / Backdrop / Arrow / Item / CheckboxItem(+Indicator) / RadioItemIndicator / LinkItem / SubmenuTrigger: same attribute sets as Menu (data-highlighted, data-disabled, data-checked, data-unchecked, data-starting-style, data-ending-style, data-open, data-closed, data-side, data-align, data-instant, data-uncentered)",
+    "Root / Group / GroupLabel / Separator / RadioGroup: none"
+  ],
+  "renderProp": "Same shared `render` contract as Menu (every part accepts ReactElement | (props, state) => ReactElement, plus state-driven className/style); Menu.createHandle()/Menu.Handle are NOT exported from the ContextMenu namespace (no detached triggers). useRender for custom components; mergeProps/mergePropsN for merging.",
+  "controlled": "`open` / `defaultOpen` + `onOpenChange(open, eventDetails)`; `onOpenChangeComplete(open)`; imperative `actionsRef` -> { unmount, close }. Radio/checkbox item state uses the same controlled pairs as Menu (RadioGroup value/defaultValue/onValueChange; CheckboxItem checked/defaultChecked/onCheckedChange). No modal prop — context menus cannot be made modal.",
+  "formIntegration": "None (same as Menu).",
+  "keyboard": "Identical to Menu because it shares the Menu implementation: ArrowUp/ArrowDown (or Left/Right when orientation='horizontal') roving highlight, Home/End, typeahead against item text or `label` (500 ms reset), Enter/Space activate, Escape dismisses, submenu open/close with arrow keys and Shift+Tab closes the submenu. Opening is pointer-driven: right click / long press on ContextMenu.Trigger (docs advise always providing a visible alternative control). No PageUp/PageDown.",
+  "notableDifferences": [
+    "Root is a strict subset of Menu.Root: no `handle`, no `triggerId`/`defaultTriggerId`, no `modal`, no hover-open props, and `closeParentOnEsc`/`positionMethod` exist only as deprecated no-ops — a migration that passed those props will silently lose behaviour.",
+    "Positioner defaults differ from Menu: `align='start'`, pointer anchoring, sideOffset -5 / alignOffset 2 (root, when side unspecified and align != center), arrowPadding 0 for roots.",
+    "Trigger renders a plain <div> area (no button semantics) and only emits data-popup-open/data-pressed; React Aria's context menu trigger is a styled element with the same constraint, but Base UI has no `isDisabled` on the trigger and no data-disabled attribute on Trigger in 1.8.0.",
+    "No Menu.Viewport and no Handle exports; everything else (items, groups, submenus, radio/checkbox) is literally the Menu part implementations, so data-* attributes and keyboard behaviour are shared.",
+    "Only opens via right click / long press (docs recommend it be an enhancement, never the only path to an action)."
+  ]
+}

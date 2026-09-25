@@ -1,0 +1,127 @@
+{
+  "primitive": "field",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/field.md",
+    "https://base-ui.com/react/handbook/forms.md",
+    "node_modules/@base-ui/react/field/index.parts.d.ts",
+    "node_modules/@base-ui/react/field/root/FieldRoot.d.ts",
+    "node_modules/@base-ui/react/field/control/FieldControl.d.ts",
+    "node_modules/@base-ui/react/field/error/FieldError.d.ts",
+    "node_modules/@base-ui/react/field/validity/FieldValidity.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Label",
+    "Error",
+    "Description",
+    "Control",
+    "Validity",
+    "Item"
+  ],
+  "keyProps": {
+    "Root.name": {
+      "type": "string",
+      "notes": "Identifies the field on submit and is the key for the Form errors object. Takes precedence over <Field.Control name>."
+    },
+    "Root.disabled": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Takes precedence over Field.Control disabled."
+    },
+    "Root.validate": {
+      "type": "(value: unknown, formValues: Form.Values) => string | string[] | null | void | Promise<...>",
+      "notes": "Custom validation running after native constraint validation; async supported (but async does not block submission under validationMode='onSubmit')."
+    },
+    "Root.validationMode": {
+      "type": "'onSubmit' | 'onBlur' | 'onChange'",
+      "default": "'onSubmit'",
+      "notes": "Overrides the Form-level validationMode."
+    },
+    "Root.validationDebounceTime": {
+      "type": "number",
+      "default": 0,
+      "notes": "Debounce for validate under validationMode='onChange'."
+    },
+    "Root.invalid": {
+      "type": "boolean",
+      "notes": "Externally controlled invalid flag."
+    },
+    "Root.dirty": {
+      "type": "boolean",
+      "notes": "Externally controlled dirty flag."
+    },
+    "Root.touched": {
+      "type": "boolean",
+      "notes": "Externally controlled touched flag."
+    },
+    "Root.actionsRef": {
+      "type": "React.RefObject<Field.Root.Actions | null>",
+      "notes": "Field.Root.Actions = { validate: () => void }."
+    },
+    "Item.disabled": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Disables the wrapped control; Root disabled wins."
+    },
+    "Control.onValueChange": {
+      "type": "(value: string, eventDetails: Field.Control.ChangeEventDetails) => void"
+    },
+    "Control.defaultValue": {
+      "type": "string | number | string[]"
+    },
+    "Label.nativeLabel": {
+      "type": "boolean",
+      "default": true,
+      "notes": "Set false when the label is not a <label> (e.g. composing over a button trigger) to avoid label behaviour leaking onto buttons."
+    },
+    "Error.match": {
+      "type": "boolean | keyof ValidityState",
+      "notes": "true always shows the message (external control); otherwise matched against ValidityState, e.g. match=\"valueMissing\"."
+    },
+    "Validity.children": {
+      "type": "(state: Field.Validity.State) => React.ReactNode (required)",
+      "notes": "Render-prop-only part exposing validity, errors, value, initialValue, transitionStatus."
+    }
+  },
+  "dataAttributes": [
+    "Root/Label/Description/Control/Item/Error: data-disabled, data-valid, data-invalid, data-dirty, data-touched, data-filled, data-focused",
+    "Error adds data-starting-style / data-ending-style for its enter/exit animation"
+  ],
+  "renderProp": {
+    "mechanism": "render on every part (Root, Label, Description, Control, Item, Error)",
+    "elementForm": "render={<div />}; the documented group pattern composes Fieldset.Root render={<RadioGroup />} or render={<CheckboxGroup />}",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "Control.defaultValue"
+    ],
+    "controlledProps": [
+      "Root.invalid",
+      "Root.dirty",
+      "Root.touched",
+      "Control.value (via native input value)"
+    ],
+    "changeCallbacks": [
+      "Control.onValueChange(value: string, eventDetails: Field.Control.ChangeEventDetails)"
+    ],
+    "note": "Field.Root itself is uncontrolled: it derives valid/touched/dirty/filled/focused from the registered control unless you override them."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "No hidden input of its own — it registers whatever control is inside; controls that need one (Select, Slider, NumberField, Checkbox...) render it themselves.",
+    "validation": "Full native constraint-validation integration: required/minLength/maxLength/pattern/step are read from the wrapped control; errors from <Form errors> are merged in and cleared when the value changes; Field.Error with no children displays the native message."
+  },
+  "keyboard": {
+    "keys": "None of its own; behaviour comes from the wrapped control.",
+    "focus": "Label click focuses/activates the control; focus state surfaces as data-focused."
+  },
+  "notableDifferences": [
+    "React Aria wraps controls in a single component with props (label, description, errorMessage, isInvalid); Base UI splits them into parts (Root/Label/Description/Error/Control/Validity/Item) that must be composed.",
+    "React Aria's isInvalid/isDisabled/isRequired/isReadOnly on the field map to invalid/disabled (+ required on the control) and to data-invalid/data-disabled attributes.",
+    "Validation is native-first: Base UI reads the constraint-validation API from the control, whereas React Aria drives validity through isInvalid + validate return values. Async validate is supported here too.",
+    "Field.Validity is a render-prop-only part for reading raw validity state; React Aria exposes this through field state objects instead.",
+    "Errors can be pushed in from the server via <Form errors={{ fieldName: 'message' }}> and are cleared per-field on change."
+  ]
+}

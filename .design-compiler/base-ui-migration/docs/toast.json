@@ -1,0 +1,116 @@
+{
+  "primitive": "toast",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/toast.md"
+  ],
+  "parts": [
+    "Provider",
+    "Portal",
+    "Viewport",
+    "Root",
+    "Content",
+    "Title",
+    "Description",
+    "Close",
+    "Action",
+    "Positioner",
+    "Arrow",
+    "useToastManager",
+    "createToastManager"
+  ],
+  "keyProps": {
+    "Provider.limit": {
+      "type": "number",
+      "default": "3",
+      "semantic": "max simultaneous toasts; excess are marked limited (data-limited) instead of removed"
+    },
+    "Provider.timeout": {
+      "type": "number",
+      "default": "5000",
+      "semantic": "default auto-dismiss ms; 0 disables auto-dismiss"
+    },
+    "Provider.toastManager": {
+      "type": "ToastManager",
+      "default": "-",
+      "semantic": "global manager so toasts can be created outside React components"
+    },
+    "Root.toast": {
+      "type": "Toast.Root.ToastObject",
+      "default": "-",
+      "semantic": "REQUIRED — the toast object from useToastManager().toasts"
+    },
+    "Root.swipeDirection": {
+      "type": "'up'|'down'|'left'|'right' | array of those",
+      "default": "['down','right']",
+      "semantic": "directions in which the toast can be swiped away"
+    },
+    "Positioner.toast": {
+      "type": "ToastObject<any>",
+      "default": "-",
+      "semantic": "REQUIRED — toast object for anchored toasts"
+    },
+    "Positioner.side": {
+      "type": "Side",
+      "default": "'top'",
+      "semantic": "-"
+    },
+    "Positioner.anchor": {
+      "type": "Element | null",
+      "default": "-",
+      "semantic": "only Element|null here (no VirtualElement), unlike Tooltip/Popover"
+    },
+    "Positioner.align / alignOffset / sideOffset / arrowPadding / collisionAvoidance / collisionBoundary / collisionPadding / sticky / positionMethod / disableAnchorTracking": {
+      "type": "shared anchoring API",
+      "default": "align 'center', offsets 0, arrowPadding 5, collisionPadding 5",
+      "semantic": "anchored toasts are opt-in via Toast.Positioner + positionerProps"
+    },
+    "Viewport": {
+      "type": "(no props beyond className/style/render)",
+      "default": "-",
+      "semantic": "owns the stack layout; focusable region"
+    },
+    "ToastObject fields": {
+      "type": "{ id, ref, title, type, description, timeout=5000, priority='low'|'high', transitionStatus, updateKey, limited, height, onClose, onRemove, actionProps, positionerProps, data }",
+      "default": "-",
+      "semantic": "priority sets aria-live politeness; updateKey increments on upsert so renderers can replay animations"
+    },
+    "ToastManager methods": {
+      "type": "{ 'subscribe'(listener), add<T>(options) => string, close(id?), update(id, options), promise(...) }",
+      "default": "-",
+      "semantic": "upserting an existing id updates in place and refreshes the auto-dismiss timer"
+    },
+    "ToastManagerAddOptions": {
+      "type": "{ id?, title?, type?, description?, timeout?, priority?, transitionStatus?, onClose?, onRemove?, actionProps?, positionerProps?, data? }",
+      "default": "-",
+      "semantic": "actionProps drives <Toast.Action> content"
+    },
+    "ToastManagerPositionerProps": {
+      "type": "{ anchor?: Element | null, ...positioning props }",
+      "default": "-",
+      "semantic": "passed per-toast for anchored toasts"
+    }
+  },
+  "dataAttributes": [
+    "Root: data-expanded, data-limited, data-swipe-direction ('up'|'down'|'left'|'right'), data-swiping, data-type (string), data-starting-style, data-ending-style",
+    "Root CSS vars: --toast-height, --toast-index, --toast-offset-y, --toast-swipe-movement-x, --toast-swipe-movement-y",
+    "Content: data-behind, data-expanded",
+    "Viewport: data-expanded",
+    "Title / Description / Close / Action: data-type (string)",
+    "Positioner: data-anchor-hidden, data-side, data-align; CSS vars --anchor-height/width, --available-height/width, --transform-origin",
+    "Arrow: data-side, data-align, data-uncentered  (no data-open/data-closed on toast parts)"
+  ],
+  "renderProp": "Per-part `render` (ReactElement | (props, state) => ReactElement) via useRender, same as other Base UI parts. Toast content itself is data-driven (toast.title/description render inside Title/Description), so custom content is supplied through the manager options or by reading Toast.Root.ToastObject in the render callback.",
+  "controlled": "There is no open/defaultOpen pair. Toast state lives in a ToastManager: `Toast.useToastManager()` inside components, or `Toast.createToastManager()` for a module-level manager passed to <Toast.Provider toastManager>. Add/update/close/promise (+ subscribe for events: 'add'|'close'|'update'|'promise') are the control surface; `id` upserts. Per-toast auto-dismiss via `timeout` (0 = never), and Provider.limit sets the stack cap.",
+  "formIntegration": "None — no hidden inputs, no name/value submission or validation (verified across toast/*.mjs). Action/Close render native <button> elements.",
+  "keyboard": "Viewport: a global keydown listener focuses it on F6 (preventDefault, remembers prevFocusElement); it renders role='region', aria-live='polite', aria-atomic=false, aria-relevant='additions text', aria-label='Notifications', tabIndex=-1. Root: Escape closes the toast — but only when focus is inside that toast's root element. No arrow-key navigation between toasts; ordering/stacking is CSS + --toast-index.",
+  "notableDifferences": [
+    "No declarative state props: toasts are created imperatively through a ToastManager (useToastManager/createToastManager) and each is rendered by <Toast.Root toast={toast}>, so Toast.Root.toast is a REQUIRED prop.",
+    "No React Aria queue/region equivalents: the queue is an array from the manager plus Provider `limit`/`timeout`, and overflow is signalled with data-limited rather than removal.",
+    "Priority is a per-toast field ('low'|'high') controlling announcement urgency, not a region prop.",
+    "Anchored (positioned) toasts are a first-class mode: Toast.Positioner + Arrow with AnchorPositioning props and per-toast positionerProps — there is no React Aria analogue.",
+    "Keyboard affordance is F6-to-viewport (role=region, aria-live=polite with a hard-coded aria-label 'Notifications'), plus Escape when focus is inside the toast.",
+    "Stacking/expand visuals are pure CSS driven by --toast-index, --toast-offset-y, --toast-height, --toast-frontmost-height and data-expanded/data-behind — no built-in layout.",
+    "Promise toasts (`manager.promise`) with loading/success/error states are built in."
+  ]
+}

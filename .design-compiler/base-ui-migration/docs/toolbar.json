@@ -1,0 +1,76 @@
+{
+  "primitive": "toolbar",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/toolbar.md"
+  ],
+  "parts": [
+    "Root",
+    "Button",
+    "Link",
+    "Input",
+    "Group",
+    "Separator"
+  ],
+  "keyProps": {
+    "Root.loopFocus": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "keyboard navigation wraps to the other end of the toolbar once the end is reached."
+    },
+    "Root.orientation": {
+      "type": "'horizontal' | 'vertical'",
+      "default": "'horizontal'",
+      "semantic": "toolbar orientation; selects the roving-focus arrow axis."
+    },
+    "Root.disabled": {
+      "type": "boolean",
+      "default": "—",
+      "semantic": "no @default documented; disables the toolbar (data-disabled on Root/Group/Button/Input)."
+    },
+    "Button.disabled / focusableWhenDisabled": {
+      "type": "boolean / boolean",
+      "default": "false / true",
+      "semantic": "a disabled toolbar button stays focusable by default (APG toolbar pattern) and exposes data-focusable; keyboard events other than Tab are prevented while disabled."
+    },
+    "Input.disabled / focusableWhenDisabled / defaultValue": {
+      "type": "boolean / boolean / input defaultValue",
+      "default": "false / true / —",
+      "semantic": "native <input> that participates in toolbar keyboard navigation; disable focusableWhenDisabled to remove it from the roving order."
+    },
+    "Button composition": {
+      "type": "render={<PopupTrigger/>}",
+      "default": "—",
+      "semantic": "documented integration: pass any Base UI popup trigger to <Toolbar.Button render={<Menu.Trigger/>}> (the docs demo uses render={<Toggle/>} and render={<Select.Trigger/>}); for Tooltip the toolbar item goes into <Tooltip.Trigger render={<Toolbar.Button/>}>. NumberField integrates via <Toolbar.Input render={<NumberField.Input/>}>."
+    },
+    "Group / Separator / Link": {
+      "type": "Group renders <div>; Separator renders <div>; Link renders <a>",
+      "default": "—",
+      "semantic": "Group has no props beyond BaseUIComponentProps (use aria-label for its accessible name); Separator/Link are presentational; every part accepts render/className/style."
+    },
+    "Toolbar.Root.ItemMetadata": {
+      "type": "{ disabled: boolean; focusableWhenDisabled: boolean }",
+      "default": "—",
+      "semantic": "metadata the toolbar tracks per registered item (exposed as a type for consumers composing custom items)."
+    }
+  },
+  "dataAttributes": [
+    "Root: data-disabled, data-orientation ('horizontal' | 'vertical')",
+    "Button: data-disabled, data-orientation, data-focusable (remains focusable while disabled)",
+    "Input: data-disabled, data-orientation, data-focusable",
+    "Group: data-disabled, data-orientation",
+    "Link: data-orientation",
+    "Separator: data-orientation"
+  ],
+  "renderProp": "Toolbar is the canonical `render`-based composition surface: `<Toolbar.Button render={<Toggle/>}/>` (docs demo), `<Toolbar.Button render={<Select.Trigger/>}/>`, `<Toolbar.Input render={<NumberField.Input/>}/>`, and the reverse direction `<Tooltip.Trigger render={<Toolbar.Button/>}/>`. Standard contract: render?: ReactElement | (props, state) => ReactElement, plus state-driven className/style. Custom primitives: useRender; merging: mergeProps/mergePropsN (handlers merged right-to-left, className concatenated, style merged, ref NOT merged).",
+  "controlled": "None — Toolbar has no value/open state (no controlled props, no default props, no change callbacks). State belongs to the composed controls (ToggleGroup/Select/Menu/etc.) or to the consumer.",
+  "formIntegration": "None. `Toolbar.Input` is a plain native input for filtering/editing inside the toolbar; there is no name/value submission wrapper, hidden input or validation state (Field.Root data-* are not emitted by Toolbar parts).",
+  "keyboard": "Roving focus between toolbar items along the toolbar's orientation (ArrowLeft/ArrowRight when horizontal, ArrowUp/ArrowDown when vertical — handled by the shared composite internals that Toolbar consumes, with key constants ARROW_UP/DOWN/LEFT/RIGHT + Home/End in internals/composite/composite.mjs); `loopFocus` (default true) wraps focus at the ends. Disabled items stay in the tab/focus order when `focusableWhenDisabled` is true (default) and swallow keys other than Tab (useFocusableWhenDisabled.mjs), otherwise they are removed from navigation. Tab moves focus out of the toolbar. No typeahead, no PageUp/PageDown.",
+  "notableDifferences": [
+    "React Aria's toolbar lives in `react-aria-components`' Toolbar (with ToggleButtonGroup/Button/Link/Separator); Base UI's Toolbar adds `Toolbar.Input` (with NumberField integration) and a `focusableWhenDisabled` prop that defaults to TRUE — a straight prop rename from React Aria's Toolbar will change disabled-item focusability if you do not set it.",
+    "Item composition is explicit via `render` (Button renders Toggle/Select.Trigger/Menu.Trigger) rather than React Aria's context-based ToolbarItem composition; the Tooltip integration direction is inverted (item into Tooltip.Trigger's render).",
+    "State attributes are only data-orientation/data-disabled/data-focusable — there is no data-selected/data-pressed on toolbar parts (pressed state comes from the composed Toggle, e.g. data-pressed in the docs demo).",
+    "`Toolbar.Group` and `Toolbar.Separator` take their accessible names/orientation from context (aria-label on the Group)."
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "primitive": "menu",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/menu.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Portal",
+    "Backdrop",
+    "Positioner",
+    "Popup",
+    "Arrow",
+    "Item",
+    "Viewport",
+    "Group",
+    "GroupLabel",
+    "Separator",
+    "SubmenuRoot",
+    "SubmenuTrigger",
+    "RadioGroup",
+    "RadioItem",
+    "RadioItemIndicator",
+    "CheckboxItem",
+    "CheckboxItemIndicator",
+    "LinkItem",
+    "Handle",
+    "createHandle"
+  ],
+  "keyProps": {
+    "Root.open / defaultOpen / onOpenChange / onOpenChangeComplete": {
+      "type": "boolean / boolean / (open, details) => void / (open) => void",
+      "default": "defaultOpen=false",
+      "semantic": "controlled + uncontrolled popup state."
+    },
+    "Root.highlightItemOnHover": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "false lets :hover differ from data-highlighted."
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{unmount: () => void; close: () => void}>",
+      "default": "—",
+      "semantic": "imperative close/unmount."
+    },
+    "Root.closeParentOnEsc": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "in a submenu: Escape closes the whole menu tree vs only the child menu."
+    },
+    "Root.triggerId / defaultTriggerId": {
+      "type": "string | null",
+      "default": "—",
+      "semantic": "which trigger owns the controlled/uncontrolled open state (multi-trigger menus)."
+    },
+    "Root.handle": {
+      "type": "Menu.Handle<Payload>",
+      "default": "—",
+      "semantic": "detached triggers: createHandle() then pass to Root and to triggers rendered outside it; handle.open(triggerId)/close()/isOpen."
+    },
+    "Root.loopFocus": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "arrow keys wrap at the ends."
+    },
+    "Root.modal": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "true locks page scroll + outside pointer interaction; nested menus ignore it and hover-opened menus are never modal."
+    },
+    "Root.orientation": {
+      "type": "'horizontal' | 'vertical'",
+      "default": "'vertical'",
+      "semantic": "chooses the roving-focus axis (up/down vs left/right)."
+    },
+    "Root.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "whole menu disabled."
+    },
+    "Root.children": {
+      "type": "ReactNode | ((arg: {payload}) => ReactNode)",
+      "default": "—",
+      "semantic": "children may be a render function receiving the active trigger's payload."
+    },
+    "Trigger.disabled / handle / payload / delay / closeDelay / openOnHover / nativeButton": {
+      "type": "boolean / MenuHandle / Payload / number / number / boolean / boolean",
+      "default": "false / — / — / 100 / 0 / — / true",
+      "semantic": "openOnHover opens the menu on hover; delay/closeDelay tune it; nativeButton=false when rendering a non-button."
+    },
+    "Positioner.side / align": {
+      "type": "Side / Align",
+      "default": "'bottom' / 'center' (submenus and menubars default side 'inline-end', align 'start')",
+      "semantic": "plus the full anchor-positioning set: sideOffset, alignOffset, anchor, arrowPadding, collisionAvoidance, collisionBoundary, collisionPadding, sticky, positionMethod, disableAnchorTracking."
+    },
+    "Item.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "non-interactive, skipped by navigation."
+    },
+    "Item.label": {
+      "type": "string",
+      "default": "item text",
+      "semantic": "text used for keyboard typeahead matching."
+    },
+    "Item.closeOnClick": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "closes the menu when the item is clicked; CheckboxItem/RadioItem default to FALSE."
+    },
+    "Item.onClick": {
+      "type": "MouseEventHandler",
+      "default": "—",
+      "semantic": "menu items fire onClick; there is no onAction."
+    },
+    "CheckboxItem.checked / defaultChecked / onCheckedChange": {
+      "type": "boolean / boolean / (checked, eventDetails) => void",
+      "default": "— / false / —",
+      "semantic": "controlled/uncontrolled tick state; closeOnClick defaults false so the menu stays open."
+    },
+    "RadioGroup.value / defaultValue / onValueChange / disabled": {
+      "type": "any / any / (value, eventDetails) => void / boolean",
+      "default": "— / — / — / false",
+      "semantic": "group-level controlled radio value."
+    },
+    "RadioItem.value / label / disabled / closeOnClick": {
+      "type": "any / string / boolean / boolean",
+      "default": "— / item text / false / false",
+      "semantic": "value is required; closeOnClick defaults false."
+    },
+    "LinkItem": {
+      "type": "renders <a>",
+      "default": "—",
+      "semantic": "navigational item; state {disabled, highlighted}; use `render` to swap in a framework Link."
+    },
+    "SubmenuRoot": {
+      "type": "open/defaultOpen/onOpenChange/onOpenChangeComplete (Menu.Root subset)",
+      "default": "—",
+      "semantic": "groups a nested menu; doesn't render an element."
+    },
+    "SubmenuTrigger.openOnHover / delay / closeDelay / label / disabled": {
+      "type": "boolean / number / number / string / boolean",
+      "default": "true / 100 / 0 / item text / false",
+      "semantic": "opens the submenu on hover and on ArrowRight/ArrowDown."
+    },
+    "Viewport.children": {
+      "type": "ReactNode",
+      "default": "—",
+      "semantic": "transition container required only when one popup has multiple triggers, content changes per trigger, and switching is animated; state exposes activationDirection/transitioning/instant."
+    },
+    "Popup / Portal / Backdrop / Arrow / Group / GroupLabel / Separator": {
+      "type": "styling + render; Portal has container; Popup emits data-instant ('click'|'dismiss'|'group'|'trigger-change')",
+      "default": "—",
+      "semantic": "Popup is the menu container (data-instant disables animations for a given interaction)."
+    },
+    "Menu.createHandle() / Handle": {
+      "type": "() => MenuHandle<Payload>",
+      "default": "—",
+      "semantic": "imperative/detached trigger control: open(triggerId), close(), isOpen; calls before a root attaches are ignored."
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open, data-pressed, data-disabled",
+    "Item: data-highlighted, data-disabled",
+    "LinkItem: data-highlighted",
+    "CheckboxItem: data-checked, data-unchecked, data-disabled, data-highlighted",
+    "CheckboxItemIndicator: data-checked, data-unchecked, data-disabled, data-starting-style, data-ending-style",
+    "RadioItemIndicator: data-checked, data-unchecked, data-disabled, data-starting-style, data-ending-style",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-side, data-align, data-instant ('click'|'dismiss'|'group'|'trigger-change')",
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style",
+    "Arrow: data-open, data-closed, data-side, data-align, data-uncentered",
+    "SubmenuTrigger: data-popup-open + item highlight/disabled states",
+    "Root / Portal / Group / GroupLabel / Separator / RadioGroup / RadioItem / Viewport: no data-* of their own (Viewport exposes state, not attributes, in the typings)"
+  ],
+  "renderProp": "Shared `render` prop on every part (ReactElement | (props, state) => ReactElement). Detached/composed triggers are the documented pattern: pass a handle (Menu.createHandle()) to both <Menu.Root handle> and triggers outside it; `<Menu.Trigger render={<MyButton/>}>` composes with your own component. Custom primitives: useRender; merging: mergeProps/mergePropsN (handlers merged right-to-left, className concatenated, style merged, ref not merged).",
+  "controlled": "`open`/`defaultOpen` + `onOpenChange(open, eventDetails)` and `onOpenChangeComplete(open)`; multi-trigger controlled mode pairs `open` with `triggerId` (and `defaultTriggerId` for uncontrolled). CheckboxItem uses checked/defaultChecked/onCheckedChange; RadioGroup uses value/defaultValue/onValueChange; SubmenuRoot mirrors open/defaultOpen/onOpenChange. Imperative: actionsRef {unmount, close} and the Handle class.",
+  "formIntegration": "None — menus are not form controls. There is no name/value submission, hidden input, or validation state; item state is data-highlighted/data-disabled/data-checked only.",
+  "keyboard": "List navigation comes from floating-ui-react's useListNavigation/useTypeahead: ArrowUp/ArrowDown (or ArrowLeft/ArrowRight when `orientation='horizontal'`) move the roving highlight, Home/End jump to the first/last item, printable characters run typeahead against item text or the item's `label` prop (session reset after 500 ms; Space continues an in-progress session). Enter/Space activate the highlighted item. Escape closes the menu (closeParentOnEsc controls whether the whole submenu tree closes). Submenus open with ArrowRight (ArrowDown for horizontal menus, RTL-aware) and close with ArrowLeft/ArrowUp or Escape; Shift+Tab closes the submenu; a modal menu traps/returns focus (FloatingFocusManager + finalFocus-style handling). No PageUp/PageDown handling in 1.8.0.",
+  "notableDifferences": [
+    "Root is a non-rendering state container; composition is Root > Trigger + Portal > (Backdrop) > Positioner > Popup > (Arrow) — there is no React Aria `Popover`/`MenuTrigger`+`Popover` pairing and no `trigger` render prop (use `render` or a detached `handle`).",
+    "Item activation is a plain onClick; React Aria's onAction + shouldCloseOnSelect maps to onClick + `closeOnClick`.",
+    "Typeahead text override is `label` (React Aria: textValue); CheckboxItem/RadioItem default `closeOnClick=false`, plain Item defaults true.",
+    "Submenus are explicit parts (SubmenuRoot/SubmenuTrigger) rather than nested <Menu> elements; the submenu's Positioner side/align defaults change to 'inline-end'/'start'.",
+    "Multiple/detached triggers are first-class via Menu.createHandle() + Root.handle/triggerId + Trigger.handle/payload — React Aria has no equivalent (it uses multiple MenuTrigger inside one Menu).",
+    "Menus are modal by default (scroll lock + outside pointer blocking), and open-on-hover is opt-in per trigger via `openOnHover`/`delay`/`closeDelay` on the Trigger (React Aria puts these on the trigger too, but with different defaults and no data-instant animation switches).",
+    "State vocabulary: data-highlighted / data-disabled / data-checked / data-popup-open / data-instant; no data-focused, no data-placement (it is data-side/data-align)."
+  ]
+}

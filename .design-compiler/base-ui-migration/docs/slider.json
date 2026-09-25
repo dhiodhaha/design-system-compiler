@@ -1,0 +1,146 @@
+{
+  "primitive": "slider",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/slider.md",
+    "node_modules/@base-ui/react/slider/index.parts.d.ts",
+    "node_modules/@base-ui/react/slider/root/SliderRoot.d.ts",
+    "node_modules/@base-ui/react/slider/thumb/SliderThumb.mjs",
+    "node_modules/@base-ui/react/slider/value/SliderValue.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Label",
+    "Value",
+    "Control",
+    "Track",
+    "Thumb",
+    "Indicator"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "Value extends number | readonly number[]",
+      "notes": "Controlled; an array gives a range slider with one Thumb per entry."
+    },
+    "defaultValue": {
+      "type": "Value",
+      "notes": "Uncontrolled; defaults to min when omitted."
+    },
+    "onValueChange": {
+      "type": "(value: number | Value, eventDetails: Slider.Root.ChangeEventDetails) => void",
+      "notes": "reason: 'input-change' | 'track-press' | 'drag' | 'keyboard' | 'none'; details include activeThumbIndex and a cloned event whose target.value/target.name are set for form libraries."
+    },
+    "onValueCommitted": {
+      "type": "(value, eventDetails: Slider.Root.CommitEventDetails) => void",
+      "notes": "Generic (non-change) event; does not fire if the value did not change or the change was cancelled."
+    },
+    "name/form": {
+      "type": "string",
+      "notes": "name identifies the field for submission; the hidden range inputs inherit it."
+    },
+    "min/max": {
+      "type": "number",
+      "default": "0 / 100"
+    },
+    "step": {
+      "type": "number",
+      "default": 1
+    },
+    "largeStep": {
+      "type": "number",
+      "default": 10,
+      "notes": "Used by Page Up/Page Down and Shift+Arrow."
+    },
+    "minStepsBetweenValues": {
+      "type": "number",
+      "default": 0,
+      "notes": "Range sliders: minimum gap between adjacent thumbs."
+    },
+    "thumbAlignment": {
+      "type": "'center' | 'edge' | 'edge-client-only'",
+      "default": "'center'"
+    },
+    "thumbCollisionBehavior": {
+      "type": "'push' | 'swap' | 'none'",
+      "default": "'push'"
+    },
+    "orientation": {
+      "type": "Orientation",
+      "default": "'horizontal'"
+    },
+    "format/locale": {
+      "type": "Intl.NumberFormatOptions / Intl.LocalesArgument"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "Thumb.index": {
+      "type": "number",
+      "notes": "Required for SSR of multi-thumb sliders; must match the value array index. Emits data-index."
+    },
+    "Thumb.aria-valuetext": {
+      "type": "string",
+      "notes": "Forwarded to the nested input; ignored when getAriaValueText is given."
+    },
+    "Thumb.getAriaLabel": {
+      "type": "(index: number) => string | null"
+    },
+    "Thumb.getAriaValueText": {
+      "type": "(formattedValue: string, value: number, index: number) => string | null"
+    },
+    "Thumb.tabIndex/onKeyDown/onFocus/onBlur/inputRef/disabled": {
+      "type": "native input props",
+      "notes": "Forwarded to the nested <input type=\"range\">."
+    },
+    "Value.children": {
+      "type": "(formattedValues: readonly string[], values: readonly number[]) => React.ReactNode"
+    },
+    "Label/Control/Track/Indicator": {
+      "type": "className/style/render only",
+      "notes": "Value renders <output>, Indicator/Track/Control <div>, Label <div>."
+    }
+  },
+  "dataAttributes": [
+    "data-dragging — while the user is dragging (Root, Thumb, Control, Value, Indicator, Track, Label)",
+    "data-orientation — 'horizontal' | 'vertical'",
+    "data-disabled",
+    "data-index — Thumb only, the thumb's index in range sliders",
+    "data-valid / data-invalid, data-dirty / data-touched, data-focused (inside Field.Root)"
+  ],
+  "renderProp": {
+    "mechanism": "render on every part",
+    "elementForm": "render={<div />}; the forms handbook composes <Fieldset.Root render={<Slider.Root .../>}> for a labelled range",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(value, eventDetails)",
+      "onValueCommitted(value, eventDetails)"
+    ],
+    "note": "Generic over Value so number[] ranges and single numbers are both type-safe."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "Each Thumb renders a real <input type=\"range\"> nested in the thumb div, with name/form/disabled/value and aria-valuenow/aria-valuetext/aria-orientation — these are the submitting, validatable controls. Root registers a field control so Field.Root sees the value; the emitted change event has target.value/target.name rewritten for form-library compatibility.",
+    "validation": "Native range validation (min/max/step) applies through the nested inputs; Field.Root provides the field key."
+  },
+  "keyboard": {
+    "keys": "Provided by the nested native <input type=\"range\"> — arrows adjust by step, Page Up/Page Down and Shift+Arrow adjust by largeStep, Home/End jump to the ends. The component reports these as reason 'keyboard'.",
+    "focus": "Each thumb's input is focusable; focus styling is normally written as &:has(:focus-visible) on the thumb wrapper (as the docs' CSS does).",
+    "typeahead": "n/a"
+  },
+  "notableDifferences": [
+    "React Aria's Slider takes a single thumb plus optional SliderThumb list and renders a thumb per value; Base UI requires you to place one Thumb per value and to pass index for SSR of ranges.",
+    "React Aria uses isDisabled/isReadOnly (no readOnly here) and value/defaultValue with onChange/onChangeEnd; Base UI uses disabled + onValueChange/onValueCommitted and also has no readOnly.",
+    "Keyboard semantics come from a real native range input rather than a custom key map, so Page Up/Page Down/Shift+Arrow behaviour is native.",
+    "Rich collision/alignment controls (thumbCollisionBehavior, thumbAlignment, minStepsBetweenValues) have no React Aria counterpart.",
+    "State attributes are data-dragging/data-orientation/data-index/data-disabled (React Aria exposes data-dragging/data-orientation too, but the thumb index attribute is Base UI-specific)."
+  ]
+}

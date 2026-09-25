@@ -1,0 +1,164 @@
+{
+  "primitive": "autocomplete",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/autocomplete.md"
+  ],
+  "parts": [
+    "Root",
+    "Value",
+    "Trigger",
+    "Input",
+    "InputGroup",
+    "Icon",
+    "Clear",
+    "List",
+    "Status",
+    "Portal",
+    "Backdrop",
+    "Positioner",
+    "Popup",
+    "Arrow",
+    "Group",
+    "GroupLabel",
+    "Item",
+    "Row",
+    "Collection",
+    "Empty",
+    "Separator",
+    "useFilter",
+    "useFilteredItems"
+  ],
+  "keyProps": {
+    "Root.value / defaultValue": {
+      "type": "string | string[] | number",
+      "default": "—",
+      "semantic": "this is the INPUT value (free-form text allowed); there is no selection value. Omitted/renamed equivalents: selectionMode, selectedValue, itemToStringValue, isItemEqualToValue, fillInputOnItemPress."
+    },
+    "Root.onValueChange": {
+      "type": "(value: string, eventDetails: Autocomplete.Root.ChangeEventDetails) => void",
+      "default": "—",
+      "semantic": "input text changes."
+    },
+    "Root.mode": {
+      "type": "'list' | 'both' | 'inline' | 'none'",
+      "default": "'list'",
+      "semantic": "'list' filters items without touching the input; 'both' filters and inline-completes the input from the active item; 'inline' keeps items static but inline-completes; 'none' keeps items static and never changes the input."
+    },
+    "Root.autoHighlight": {
+      "type": "boolean | 'always'",
+      "default": "false",
+      "semantic": "true highlights the first match after typing; 'always' always highlights the first item (e.g. list rendered inside a dialog)."
+    },
+    "Root.keepHighlight": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "keeps the highlight when the pointer leaves the list."
+    },
+    "Root.highlightItemOnHover": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "pointer highlighting vs data-highlighted focus."
+    },
+    "Root.open / defaultOpen / onOpenChange / onOpenChangeComplete": {
+      "type": "boolean / boolean / (open, details)=>void / (open)=>void",
+      "default": "defaultOpen=false",
+      "semantic": "popup state."
+    },
+    "Root.openOnInputClick": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "differs from Combobox (true)."
+    },
+    "Root.submitOnItemClick": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "clicking an item (pointer or Enter) submits the owning form — for single-field search forms."
+    },
+    "Root.filter": {
+      "type": "((item, query, itemToString?) => boolean) | null",
+      "default": "—",
+      "semantic": "autocomplete filter function."
+    },
+    "Root.filteredItems": {
+      "type": "any[] | Group<any>[]",
+      "default": "—",
+      "semantic": "external filtering; pair with useFilter()."
+    },
+    "Root.items": {
+      "type": "({items: any[]})[] | ItemValue[]",
+      "default": "—",
+      "semantic": "flat or grouped items; nullish entries unsupported."
+    },
+    "Root.limit / locale / loopFocus": {
+      "type": "number / Intl.LocalesArgument / boolean",
+      "default": "-1 / runtime locale / true",
+      "semantic": "same semantics as Combobox."
+    },
+    "Root.grid / inline / virtualized / modal": {
+      "type": "boolean",
+      "default": "false / false / false / false",
+      "semantic": "grid rows via <Row>; `inline` renders the list without the popup (pass `open` unconditionally); `virtualized` declares external virtualization."
+    },
+    "Root.disabled / readOnly / required": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "interaction/form state."
+    },
+    "Root.name / form / inputRef / id": {
+      "type": "string / string / Ref<HTMLInputElement> / string",
+      "default": "—",
+      "semantic": "hidden input naming (inputRef is typed against the hidden input element)."
+    },
+    "Root.onItemHighlighted": {
+      "type": "(highlightedValue | undefined, {reason: 'keyboard'|'pointer'|'none'}) => void",
+      "default": "—",
+      "semantic": "highlight tracking."
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{unmount}>",
+      "default": "—",
+      "semantic": "imperative unmount."
+    },
+    "Item.value / index / disabled / onClick": {
+      "type": "any (default null) / number / boolean / handler",
+      "default": "null / — / false / —",
+      "semantic": "value carries the item object so itemToStringValue receives it; onClick fires on pointer click and Enter."
+    },
+    "Collection.children": {
+      "type": "(item, index) => ReactNode",
+      "default": "—",
+      "semantic": "renders filtered items."
+    },
+    "Empty / Status / Clear / Separator / Group / GroupLabel / Row": {
+      "type": "as Combobox",
+      "default": "—",
+      "semantic": "Empty requires `items`; Status is a polite live region and must remain mounted."
+    },
+    "useFilter / useFilteredItems": {
+      "type": "hook",
+      "default": "—",
+      "semantic": "external filtering helpers (the autocomplete entry re-exports the core filter, not the combobox variant)."
+    }
+  },
+  "dataAttributes": [
+    "Item: data-highlighted, data-disabled (note: NO data-selected — autocomplete has no selection state)",
+    "Trigger: data-popup-open, data-pressed, data-disabled, data-readonly, data-popup-side, data-required, data-valid, data-invalid, data-touched, data-dirty, data-filled, data-focused, data-list-empty",
+    "InputGroup: data-popup-open, data-pressed, data-disabled, data-readonly, data-popup-side, data-valid, data-invalid, data-touched, data-dirty, data-filled, data-focused, data-list-empty",
+    "Input/List/Popup/Positioner/Arrow/Backdrop: shared with Combobox (data-popup-open/data-pressed/data-* field flags on Input; data-open/data-closed/data-starting-style/data-ending-style/data-side/data-align/data-anchor-hidden on Popup; data-empty on Popup/Positioner/List)",
+    "Root / Value / Label / Group / GroupLabel / Separator / Row / Empty / Status: none"
+  ],
+  "renderProp": "Identical shared `render` prop contract (ReactElement | (props, state) => ReactElement) on every part; useRender for custom components; mergeProps/mergePropsN for prop merging (rightmost wins, handlers merged right-to-left, className concatenated, style merged, ref not merged).",
+  "controlled": "`value`/`defaultValue` (input text) + `onValueChange(value, eventDetails)`; `open`/`defaultOpen` + `onOpenChange` and `onOpenChangeComplete`. `actionsRef` -> { unmount }. There is no selected-value control at all (the component intentionally has no selection state).",
+  "formIntegration": "Autocomplete reuses Combobox's AriaCombobox root (verified: autocomplete/root/AutocompleteRoot.mjs imports ../../combobox/root/AriaCombobox.mjs and spreads props into it), so the hidden `<input type=hidden form name value>` submission path and Field.Root data-* flags are the same as Combobox. `submitOnItemClick` opts into submitting the owning form when an item is clicked (pointer or Enter) — default is no submit.",
+  "keyboard": "ArrowUp/ArrowDown move the highlight (input included in the loop, `loopFocus` default true); Home/End move the text caret inside the input; Escape closes/clears through the shared combobox handlers; Enter activates the highlighted item and does not submit unless `submitOnItemClick` is set; typed characters filter items (Intl.Collator) rather than triggering typeahead. In `mode='inline'|'both'` navigating with arrow keys temporarily rewrites the input value from the active item (docs' 'Inline autocomplete'). No PageUp/PageDown handling in 1.8.0.",
+  "notableDifferences": [
+    "React Aria has no dedicated free-form autocomplete primitive: Autocomplete is 'Combobox without selection' here — its `value` is the input text, there is no selected key/value, and no data-selected on items.",
+    "`mode` ('list'|'both'|'inline'|'none') is unique to Base UI and controls both filtering and inline completion; React Aria expresses this only through inputValue control.",
+    "`openOnInputClick` defaults to false (Combobox defaults true) — a migration that relied on click-to-open must set it.",
+    "Enter does not submit the form by default; use `submitOnItemClick` for search-style single-field forms.",
+    "Autocomplete deliberately omits Combobox's selection-only props (selectionMode/selectedValue/isItemEqualToValue/itemToStringValue/fillInputOnItemPress) and omits the Chips/Chip/ChipRemove/createItems exports.",
+    "Same Portal > Positioner > Popup composition and the same data-* state vocabulary as Combobox."
+  ]
+}

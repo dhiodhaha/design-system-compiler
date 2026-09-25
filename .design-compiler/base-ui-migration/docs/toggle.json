@@ -1,0 +1,75 @@
+{
+  "primitive": "toggle",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/toggle.md",
+    "node_modules/@base-ui/react/toggle/index.d.ts",
+    "node_modules/@base-ui/react/toggle/Toggle.d.ts"
+  ],
+  "parts": [
+    "Toggle"
+  ],
+  "keyProps": {
+    "pressed": {
+      "type": "boolean",
+      "notes": "Controlled pressed state; counterpart of defaultPressed."
+    },
+    "defaultPressed": {
+      "type": "boolean",
+      "default": false
+    },
+    "onPressedChange": {
+      "type": "(pressed: boolean, eventDetails: Toggle.ChangeEventDetails) => void"
+    },
+    "value": {
+      "type": "Value extends string",
+      "notes": "Identifies the toggle when it is used inside a ToggleGroup."
+    },
+    "nativeButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "dataAttributes": [
+    "data-pressed — toggle is pressed",
+    "data-disabled — toggle is disabled"
+  ],
+  "renderProp": {
+    "mechanism": "render on Toggle (single part)",
+    "elementForm": "render={<button />} or any element (nativeButton false then)",
+    "functionForm": "render={(props, state) => state.pressed ? <button {...props}><FilledIcon/></button> : <button {...props}><OutlineIcon/></button>} — the documented pattern for state-dependent content",
+    "merging": "mergeProps; merge-props.md uses Toggle + event.preventBaseUIHandler() as its worked example"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultPressed"
+    ],
+    "controlledProps": [
+      "pressed"
+    ],
+    "changeCallbacks": [
+      "onPressedChange(pressed: boolean, eventDetails: Toggle.ChangeEventDetails)"
+    ],
+    "note": "Generic over Value extends string. reason is always 'none'."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false,
+    "note": "Toggle is not a form control: it has no name/value and does not participate in submission."
+  },
+  "keyboard": {
+    "keys": "Native <button> activation; aria-pressed is maintained by the component.",
+    "focus": "Native tab order.",
+    "typeahead": "none"
+  },
+  "notableDifferences": [
+    "React Aria's ToggleButton uses isSelected/onChange; Base UI uses pressed/defaultPressed/onPressedChange — 'pressed', never 'selected'.",
+    "aria-pressed is emitted (React Aria's ToggleButton also sets aria-pressed when not inside a group).",
+    "There is no isDisabled/isPending — plain disabled.",
+    "Styling hooks are data-pressed / data-disabled only."
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "primitive": "accordion",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/accordion.md"
+  ],
+  "parts": [
+    "Root",
+    "Item",
+    "Header",
+    "Trigger",
+    "Panel"
+  ],
+  "keyProps": {
+    "Root.value": {
+      "type": "Value[]",
+      "default": "-",
+      "semantic": "controlled open item values (always an array, even when multiple is false)"
+    },
+    "Root.defaultValue": {
+      "type": "Value[]",
+      "default": "-",
+      "semantic": "uncontrolled initial open values"
+    },
+    "Root.onValueChange": {
+      "type": "(value: Value[], eventDetails: Accordion.Root.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "reason union: 'trigger-press' | 'none'"
+    },
+    "Root.multiple": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "allow several items open at once"
+    },
+    "Root.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "ignores user interaction"
+    },
+    "Root.hiddenUntilFound": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "hidden='until-found'; overrides keepMounted; keeps closed panel mounted and searchable"
+    },
+    "Root.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "ignored when hiddenUntilFound is set"
+    },
+    "Root.loopFocus": {
+      "type": "boolean",
+      "default": "-",
+      "semantic": "DEPRECATED no-op following the APG roving-focus removal; does not affect keyboard focus"
+    },
+    "Root.orientation": {
+      "type": "Orientation ('horizontal'|'vertical')",
+      "default": "'vertical'",
+      "semantic": "DEPRECATED no-op for focus behavior; still reflected as data-orientation"
+    },
+    "Item.value": {
+      "type": "any",
+      "default": "auto-generated id",
+      "semantic": "identifies the item for controlled value/defaultValue"
+    },
+    "Item.onOpenChange": {
+      "type": "(open: boolean, eventDetails: Accordion.Item.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "per-item change callback in addition to Root.onValueChange"
+    },
+    "Item.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "-"
+    },
+    "Trigger.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "-"
+    },
+    "Panel.hiddenUntilFound / Panel.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "- (Panel also inherits Root-level defaults)"
+    }
+  },
+  "dataAttributes": [
+    "Root: data-disabled, data-orientation",
+    "Item: data-open, data-disabled, data-index (number)",
+    "Header: data-open, data-disabled, data-index (number)",
+    "Trigger: data-panel-open, data-disabled",
+    "Panel: data-open, data-orientation, data-disabled, data-index (number), data-starting-style, data-ending-style",
+    "Panel CSS vars: --accordion-panel-height, --accordion-panel-width"
+  ],
+  "renderProp": "Per-part `render` (ReactElement | (props, state) => ReactElement) via useRender; state props become data-* attributes.",
+  "controlled": "Root is controlled via `value: Value[]` / `defaultValue: Value[]` with `onValueChange(value, eventDetails)`; per-item `onOpenChange(open, eventDetails)` also exists. Trigger state exposes hidden/index/open/value/disabled/orientation. No handle/actionsRef.",
+  "formIntegration": "None — no hidden inputs or form validation. Trigger renders a native <button> inside <Accordion.Header> (an <h3> by default).",
+  "keyboard": "NO roving focus and NO Arrow-key navigation between headers: docs and types both deprecate `loopFocus` and `orientation` following the w3c/aria-practices#3434 update ('This prop no longer affects keyboard focus behavior'). Navigation is plain DOM tab order; Enter/Space on the native button toggles the panel. Header renders <h3> so heading semantics come from the part, not from your markup.",
+  "notableDifferences": [
+    "Roving tabindex / Arrow navigation was explicitly removed — do not port React Aria arrow-key behaviour onto Base UI Accordion. loopFocus and orientation are deprecated no-ops (orientation still drives data-orientation styling).",
+    "Value model is always an array (`Value[]`) even when `multiple` is false.",
+    "Two change callbacks: Root.onValueChange(value, details) and per-Item onOpenChange(open, details).",
+    "hiddenUntilFound / keepMounted for find-in-page and DOM retention (no React Aria analogue).",
+    "Panel animation via data-starting-style/data-ending-style + --accordion-panel-height instead of render-prop styles.",
+    "Structure is Root > Item > Header + Panel, where Header renders a real heading element and wraps the Trigger."
+  ]
+}

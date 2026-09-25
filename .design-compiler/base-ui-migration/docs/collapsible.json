@@ -1,0 +1,65 @@
+{
+  "primitive": "collapsible",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/collapsible.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Panel"
+  ],
+  "keyProps": {
+    "Root.defaultOpen": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "uncontrolled initial open"
+    },
+    "Root.open": {
+      "type": "boolean",
+      "default": "-",
+      "semantic": "controlled open"
+    },
+    "Root.onOpenChange": {
+      "type": "(open: boolean, eventDetails: Collapsible.Root.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "reason union: 'trigger-press' | 'none'; eventDetails supports cancel()/allowPropagation()"
+    },
+    "Root.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "ignores user interaction"
+    },
+    "Trigger.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "false for non-button render targets"
+    },
+    "Panel.hiddenUntilFound": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "uses hidden='until-found' so find-in-page can reveal and expand the panel; overrides keepMounted; panel stays mounted and indexable"
+    },
+    "Panel.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "ignored when hiddenUntilFound is set"
+    }
+  },
+  "dataAttributes": [
+    "Root: data-open, data-closed, data-starting-style, data-ending-style",
+    "Trigger: data-panel-open",
+    "Panel: data-open, data-closed, data-starting-style, data-ending-style",
+    "Panel CSS vars: --collapsible-panel-height, --collapsible-panel-width"
+  ],
+  "renderProp": "Per-part `render` (ReactElement | (props, state) => ReactElement) via useRender; mergeProps for combining.",
+  "controlled": "Uncontrolled `defaultOpen`; controlled `open` + `onOpenChange(open, eventDetails)` (reason 'trigger-press' or 'none'). No handle/detached-trigger mechanism, no actionsRef.",
+  "formIntegration": "None — no hidden inputs, name/value or validation. Trigger renders a native <button>.",
+  "keyboard": "Trigger is a native <button>: Enter/Space toggle the panel. No arrow-key navigation, no roving focus, no focus trapping; the panel is not focus-managed. `disabled` suppresses interaction.",
+  "notableDifferences": [
+    "Props are open/defaultOpen/onOpenChange and disabled — not isExpanded/isDisabled.",
+    "Panel animation is attribute + variable driven: style height: var(--collapsible-panel-height) with transitions on [data-starting-style]/[data-ending-style], instead of React Aria's render-prop style functions.",
+    "hiddenUntilFound gives real find-in-page support via the HTML hidden='until-found' attribute (React Aria has no equivalent).",
+    "Panel must not be sized with height:100% when animating; the CSS var is authoritative."
+  ]
+}

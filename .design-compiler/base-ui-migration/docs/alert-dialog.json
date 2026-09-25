@@ -1,0 +1,102 @@
+{
+  "primitive": "alert-dialog",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/alert-dialog.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Portal",
+    "Backdrop",
+    "Viewport",
+    "Popup",
+    "Title",
+    "Description",
+    "Close",
+    "createHandle",
+    "Handle"
+  ],
+  "keyProps": {
+    "Root.defaultOpen": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "uncontrolled initial open"
+    },
+    "Root.open": {
+      "type": "boolean",
+      "default": "-",
+      "semantic": "controlled open"
+    },
+    "Root.onOpenChange": {
+      "type": "(open: boolean, eventDetails: AlertDialog.Root.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "reason union: trigger-press|outside-press|escape-key|close-press|focus-out|imperative-action|none"
+    },
+    "Root.onOpenChangeComplete": {
+      "type": "(open: boolean) => void",
+      "default": "-",
+      "semantic": "after animations"
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{ unmount: () => void; close: () => void } | null>",
+      "default": "-",
+      "semantic": "-"
+    },
+    "Root.handle": {
+      "type": "AlertDialog.Handle<Payload>",
+      "default": "-",
+      "semantic": "AlertDialog.createHandle()"
+    },
+    "Root.triggerId / defaultTriggerId": {
+      "type": "string | null",
+      "default": "-",
+      "semantic": "-"
+    },
+    "Root.children": {
+      "type": "ReactNode | PayloadChildRenderFunction<Payload>",
+      "default": "-",
+      "semantic": "-"
+    },
+    "Trigger.handle / payload / id / nativeButton": {
+      "type": "AlertDialog.Handle<Payload> / Payload / string / boolean(true)",
+      "default": "nativeButton true",
+      "semantic": "same shape as Dialog.Trigger"
+    },
+    "Backdrop.forceRender": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "from the shared Dialog.Backdrop part"
+    },
+    "Popup.initialFocus / finalFocus": {
+      "type": "same as Dialog.Popup",
+      "default": "-",
+      "semantic": "shared Dialog.Popup implementation"
+    },
+    "Close.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "-"
+    },
+    "NO modal": {
+      "type": "-",
+      "default": "-",
+      "semantic": "props = Omit<DialogRoot.Props, 'modal'|'disablePointerDismissal'|'onOpenChange'|'actionsRef'|'handle'> — AlertDialog is ALWAYS modal and outside-press dismissal cannot be disabled"
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open, data-disabled  (alert-dialog/trigger/AlertDialogTriggerDataAttributes.d.ts)",
+    "Backdrop / Popup / Viewport / Close: identical to Dialog — data-open, data-closed, data-starting-style, data-ending-style, data-nested, data-nested-dialog-open (Popup+Viewport), data-disabled (Close), CSS var --nested-dialogs",
+    "Backdrop/Popup/Viewport/Close/Description/Title are literally the Dialog parts re-exported from ../dialog/*"
+  ],
+  "renderProp": "Same per-part `render` prop as Dialog (ReactElement | (props, state) => ReactElement) via useRender.",
+  "controlled": "Identical to Dialog: defaultOpen/open + triggerId/defaultTriggerId, onOpenChange(open, eventDetails), actionsRef, AlertDialog.createHandle() handle (open/openWithPayload/close/isOpen).",
+  "formIntegration": "None — no hidden inputs, no name/value or validation wiring. Close renders a native <button>.",
+  "keyboard": "Always modal: focus is trapped, page scroll locked, outside pointer interactions disabled, and Escape closes (topmost only). No arrow-key navigation. Focus restore through Popup finalFocus.",
+  "notableDifferences": [
+    "AlertDialog is always modal — `modal` and `disablePointerDismissal` are explicitly omitted from its props type, so an alert dialog can never be made dismissable-by-outside-press. React Aria's AlertDialog is likewise non-dismissable but expresses it differently.",
+    "Most parts are the Dialog parts themselves (Backdrop/Close/Description/Popup/Portal/Title/Viewport are re-exported from ../dialog/*) — style classes written for Dialog apply verbatim to AlertDialog, and only the Root (alertdialog semantics) and Trigger differ.",
+    "Naming: open/defaultOpen/onOpenChange instead of isOpen/onOpenChange(isOpen); role='alertdialog' is built in rather than passed.",
+    "Same data-starting-style/data-ending-style animation contract as Dialog; no render-prop style functions."
+  ]
+}

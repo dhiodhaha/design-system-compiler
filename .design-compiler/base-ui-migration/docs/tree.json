@@ -1,0 +1,27 @@
+{
+  "primitive": "tree",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "coversAlso": [
+    "tree-view",
+    "tree-item",
+    "tree-grid"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "Alphabetical exports map: entries sorting near 'tree' (after ./tooltip line 637) go ./tooltip -> ./types -> ./unstable-use-media-query -> ./use-render; there is no ./tree or ./tree-view.",
+    "shared": "see the shared evidence block: no Tree in the 37 documented components, no bundled doc, no CHANGELOG/release-note entry in any 1.x release.",
+    "changelogScanNote": "A case-insensitive CHANGELOG scan for 'tree' matches only prose ('accessibility tree', 'popup trees'), never a component."
+  },
+  "affectedRepoFiles": [],
+  "consequence": "NO_BASE_UI_EQUIVALENT. Nothing in the repo currently uses a RAC Tree, so this verdict is forward-looking: nested navigation in this design system is built from Collapsible/Accordion-style primitives (Base UI Accordion/Collapsible already cover the disclosure part), but a true tree widget (roving focus across nested levels, aria-treeitem, expand/collapse keyboard model) has no Base UI equivalent.",
+  "notableDifferences": [
+    "Base UI does offer the composition pieces of a tree (Collapsible for disclosure, internals/composite for flat roving focus) but no nested-level navigation model, no aria-treeitem/aria-expanded wiring, and no typeahead.",
+    "React Aria's tree (TreeItem/useTreeState) covers multi-level focus and selection semantics that would have to be hand-built on Base UI internals, which are not public API."
+  ]
+}

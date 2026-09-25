@@ -1,0 +1,139 @@
+{
+  "primitive": "dialog",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/dialog.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Portal",
+    "Backdrop",
+    "Viewport",
+    "Popup",
+    "Title",
+    "Description",
+    "Close",
+    "createHandle",
+    "Handle"
+  ],
+  "keyProps": {
+    "Root.defaultOpen": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "uncontrolled initial open"
+    },
+    "Root.open": {
+      "type": "boolean",
+      "default": "-",
+      "semantic": "controlled open"
+    },
+    "Root.modal": {
+      "type": "boolean | 'trap-focus'",
+      "default": "true",
+      "semantic": "true = focus trap + scroll lock + outside pointer interactions disabled; false = page interaction allowed; 'trap-focus' = focus trapped, no scroll lock, outside pointer allowed"
+    },
+    "Root.onOpenChange": {
+      "type": "(open: boolean, eventDetails: Dialog.Root.ChangeEventDetails) => void",
+      "default": "-",
+      "semantic": "reason union: trigger-press|outside-press|escape-key|close-press|focus-out|imperative-action|none"
+    },
+    "Root.onOpenChangeComplete": {
+      "type": "(open: boolean) => void",
+      "default": "-",
+      "semantic": "fires after enter/exit animations complete"
+    },
+    "Root.disablePointerDismissal": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "blocks outside-press dismissal; for non-modal dialogs it also blocks focus-out dismissal"
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{ unmount: () => void; close: () => void } | null>",
+      "default": "-",
+      "semantic": "unmount after externally controlled closing animation"
+    },
+    "Root.handle": {
+      "type": "Dialog.Handle<Payload>",
+      "default": "-",
+      "semantic": "detached triggers; Handle methods open(triggerId|null), openWithPayload(payload), close(); readonly isOpen"
+    },
+    "Root.triggerId / defaultTriggerId": {
+      "type": "string | null",
+      "default": "-",
+      "semantic": "active trigger for controlled / defaultOpen"
+    },
+    "Root.children": {
+      "type": "ReactNode | PayloadChildRenderFunction<Payload>",
+      "default": "-",
+      "semantic": "function form receives { payload }"
+    },
+    "Trigger.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "false for non-button render targets"
+    },
+    "Trigger.id": {
+      "type": "string",
+      "default": "-",
+      "semantic": "forwarded + used as active trigger id in controlled mode"
+    },
+    "Trigger.handle / payload": {
+      "type": "Dialog.Handle<Payload> / Payload",
+      "default": "-",
+      "semantic": "detached trigger + payload to Root render function"
+    },
+    "Portal.container / keepMounted": {
+      "type": "HTMLElement|ShadowRoot|RefObject<...>|null / boolean",
+      "default": "- / false",
+      "semantic": "-"
+    },
+    "Backdrop.forceRender": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "force the backdrop to render even when nested"
+    },
+    "Popup.initialFocus": {
+      "type": "boolean | RefObject<HTMLElement|null> | ((openType: InteractionType) => boolean | void | HTMLElement | null)",
+      "default": "-",
+      "semantic": "default: first tabbable element, except touch where the popup itself is focused to avoid the virtual keyboard"
+    },
+    "Popup.finalFocus": {
+      "type": "boolean | RefObject<HTMLElement|null> | ((closeType: InteractionType) => boolean | void | HTMLElement | null)",
+      "default": "-",
+      "semantic": "default: trigger or previously focused element"
+    },
+    "Close.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "render <Dialog.Close> inside Popup when modal so touch screen readers can escape"
+    },
+    "Viewport": {
+      "type": "(no extra props beyond className/style/render)",
+      "default": "-",
+      "semantic": "positioning container that can be made scrollable; mirrors Popup's open/nested state attributes"
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open, data-disabled",
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-nested, data-nested-dialog-open",
+    "Viewport: data-open, data-closed, data-starting-style, data-ending-style, data-nested, data-nested-dialog-open",
+    "Close: data-disabled",
+    "Popup CSS var: --nested-dialogs (number of dialogs nested inside)"
+  ],
+  "renderProp": "Per-part `render` (ReactElement | (props, state) => ReactElement) via useRender; state props auto-map to data-* attributes; merge with mergeProps.",
+  "controlled": "Uncontrolled `defaultOpen`/`defaultTriggerId` + `onOpenChangeComplete`; controlled `open`/`triggerId` with `onOpenChange(open, eventDetails)`; imperative via `actionsRef` ({ unmount, close }) and `Dialog.createHandle()` → open(triggerId|null) / openWithPayload(payload) / close() / isOpen.",
+  "formIntegration": "None: Dialog renders no hidden inputs and has no name/value or form-validation integration (verified across dialog/*.mjs). Docs example uses a plain <form> inside the popup and closes it from the form's submit handler; Trigger/Close render native <button> so type must be set explicitly inside forms.",
+  "keyboard": "Focus trap when modal (true or 'trap-focus'); Escape dismissal is applied only when the dialog is topmost (`escapeKey: isTopmost` in useDialogRoot) so nested dialogs close innermost-first; page scroll is locked only when modal === true; composite keys are stopped inside the popup; focus returns via finalFocus (trigger or previously focused element). No arrow-key navigation inside dialog content.",
+  "notableDifferences": [
+    "`modal` defaults to TRUE here (React Aria's Dialog is non-modal by default) and additionally accepts 'trap-focus'.",
+    "No isKeyboardDismissDisabled: veto Escape via eventDetails.cancel() in onOpenChange.",
+    "No isDismissable prop: use disablePointerDismissal (which also blocks focus-out dismissal for non-modal dialogs).",
+    "Nested dialogs are first-class: data-nested / data-nested-dialog-open / --nested-dialogs (React Aria has no nested-dialog state).",
+    "Focus control lives on Popup (initialFocus/finalFocus with InteractionType) instead of Dialog-level autoFocus/restoreFocus.",
+    "Viewport is a new separate positioning/scroll container part in 1.8.",
+    "Animation uses data-starting-style / data-ending-style; `unmount` imperative action exists for externally controlled closing animations.",
+    "Detached triggers + payload plumbing (createHandle/openWithPayload) replace React Aria's triggerRef/isOpen imperative-only control."
+  ]
+}

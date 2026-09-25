@@ -1,0 +1,3921 @@
+{
+  "$schema": "design-compiler/BaseUiMigrationCapture@p0",
+  "label": "baseline",
+  "capturedAt": "2026-09-25T12:40:19.424Z",
+  "cases": {
+    "button-default": {
+      "static": {
+        "text": "Button",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=button],a,button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Button",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_0_"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 77.33,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=button],a,button"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "button-secondary": {
+      "static": {
+        "text": "Button",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=button],a,button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Button",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_2_"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 77.33,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=button],a,button"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "button-disabled": {
+      "static": {
+        "text": "Button",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": null,
+            "disabled": true,
+            "name": "Button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=button],a,button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Button",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "disabled": "",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_4_",
+              "data-disabled": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 77.33,
+              "height": 40,
+              "opacity": "0.5",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=button],a,button"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "button-loading": {
+      "static": {
+        "text": "",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": true,
+            "name": "Button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=button],a,button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Button",
+            "attrs": {
+              "data-loading": "true",
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "aria-disabled": "true",
+              "id": "react-aria895162272-_r_6_",
+              "data-pending": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(105, 65, 198)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 77.33,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=button],a,button"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "button-link": {
+      "static": {
+        "text": "Link button",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "a",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Link button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "a": {
+            "tag": "a",
+            "role": null,
+            "type": null,
+            "name": "Link button",
+            "attrs": {
+              "data-rac": "",
+              "href": "#",
+              "data-react-aria-pressable": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "oklch(0.439 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.439 0 none)",
+              "borderRadius": "4px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 76.5,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "a"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "a"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "a"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Link button",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "a",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Link button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "a:Link button",
+        "slotMetrics": {
+          "a": {
+            "tag": "a",
+            "role": null,
+            "type": null,
+            "name": "Link button",
+            "attrs": {
+              "data-rac": "",
+              "href": "#",
+              "data-react-aria-pressable": "true",
+              "data-hovered": "true",
+              "data-focused": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "oklch(0.439 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.439 0 none)",
+              "borderRadius": "4px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 76.5,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "button-keyboard": {
+      "static": {
+        "text": "Keyboard",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Keyboard"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "a:Link button",
+        "slotMetrics": {
+          "[role=button],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Keyboard",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_8_"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 96.5,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=button],button"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Space"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        },
+        {
+          "step": "1:press Enter",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        },
+        {
+          "step": "2:press Space",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Keyboard",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Keyboard"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Keyboard",
+        "slotMetrics": {
+          "[role=button],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Keyboard",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_8_",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 96.5,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "button-utility": {
+      "static": {
+        "text": "",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Keyboard",
+        "slotMetrics": {
+          "button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_a_"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "oklch(0.708 0 none)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "oklch(0.708 0 none)",
+              "borderRadius": "6px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "6px 6px 6px 6px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 32,
+              "height": 32,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "checkbox-unchecked": {
+      "static": {
+        "text": "Remember me",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": false,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=checkbox],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Remember me",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": ""
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=checkbox],input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "checkbox-checked": {
+      "static": {
+        "text": "Checked",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": true,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=checkbox],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Checked",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": "",
+              "data-selected": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=checkbox],input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": true,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "checkbox-keyboard": {
+      "static": {
+        "text": "Toggle me",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": false,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=checkbox],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Toggle me",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": ""
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=checkbox],input,label"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "input,[role=checkbox]"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Space"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press Space",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": true,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Toggle me",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": true,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=checkbox],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Toggle me",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": "",
+              "data-focused": "true",
+              "data-focus-visible": "true",
+              "data-selected": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "checkbox-hint-invalid": {
+      "static": {
+        "text": "Invalid This is a hint",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": true,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=checkbox],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "InvalidThis is a hint",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": "",
+              "data-selected": "true",
+              "data-invalid": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=checkbox],input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": true,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "checkbox-disabled": {
+      "static": {
+        "text": "Disabled",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": false,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": true,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": null,
+            "disabled": true,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=checkbox],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Disabled",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": "",
+              "data-disabled": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=checkbox],input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": true
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "radio-group-default": {
+      "static": {
+        "text": "Starter Growth Scale",
+        "controlState": [
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "a",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_r_"
+          },
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "b",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_r_"
+          },
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "c",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_r_"
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "radiogroup"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=radiogroup],input": {
+            "tag": "div",
+            "role": "radiogroup",
+            "type": null,
+            "name": "Plan",
+            "attrs": {
+              "data-rac": "",
+              "aria-label": "Plan",
+              "role": "radiogroup",
+              "aria-orientation": "vertical",
+              "id": "react-aria895162272-_r_m_",
+              "data-orientation": "vertical"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "16px",
+              "width": 960,
+              "height": 92,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=radiogroup],input"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "a",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "b",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "c",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "radio-group-keyboard": {
+      "static": {
+        "text": "Starter Growth Scale",
+        "controlState": [
+          {
+            "type": "radio",
+            "checked": true,
+            "indeterminate": false,
+            "value": "a",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_14_"
+          },
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "b",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_14_"
+          },
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "c",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_14_"
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "radiogroup"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=radiogroup],input": {
+            "tag": "div",
+            "role": "radiogroup",
+            "type": null,
+            "name": "Plan",
+            "attrs": {
+              "data-rac": "",
+              "aria-label": "Plan",
+              "role": "radiogroup",
+              "aria-orientation": "vertical",
+              "id": "react-aria895162272-_r_v_",
+              "data-orientation": "vertical"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "16px",
+              "width": 960,
+              "height": 92,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=radiogroup],input"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "input"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "radio",
+                "checked": true,
+                "value": "a",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "b",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "c",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [
+              {
+                "type": "radio",
+                "checked": true,
+                "value": "a",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "b",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "c",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "a",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": true,
+                "value": "b",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "c",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "a",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "b",
+                "disabled": false
+              },
+              {
+                "type": "radio",
+                "checked": true,
+                "value": "c",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Starter Growth Scale",
+        "controlState": [
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "a",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_14_"
+          },
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "b",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_14_"
+          },
+          {
+            "type": "radio",
+            "checked": true,
+            "indeterminate": false,
+            "value": "c",
+            "disabled": false,
+            "required": false,
+            "name": "react-aria895162272-_r_14_"
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "radiogroup"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=radiogroup],input": {
+            "tag": "div",
+            "role": "radiogroup",
+            "type": null,
+            "name": "Plan",
+            "attrs": {
+              "data-rac": "",
+              "aria-label": "Plan",
+              "role": "radiogroup",
+              "aria-orientation": "vertical",
+              "id": "react-aria895162272-_r_v_",
+              "data-orientation": "vertical"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "16px",
+              "width": 960,
+              "height": 92,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "radio-group-disabled": {
+      "static": {
+        "text": "Starter Growth",
+        "controlState": [
+          {
+            "type": "radio",
+            "checked": true,
+            "indeterminate": false,
+            "value": "a",
+            "disabled": true,
+            "required": false,
+            "name": "react-aria895162272-_r_1d_"
+          },
+          {
+            "type": "radio",
+            "checked": false,
+            "indeterminate": false,
+            "value": "b",
+            "disabled": true,
+            "required": false,
+            "name": "react-aria895162272-_r_1d_"
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "radiogroup"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": null,
+            "disabled": true,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "radio",
+            "tabIndex": null,
+            "disabled": true,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=radiogroup],input": {
+            "tag": "div",
+            "role": "radiogroup",
+            "type": null,
+            "name": "Plan",
+            "attrs": {
+              "data-rac": "",
+              "aria-label": "Plan",
+              "role": "radiogroup",
+              "aria-disabled": "true",
+              "aria-orientation": "vertical",
+              "id": "react-aria895162272-_r_18_",
+              "data-orientation": "vertical",
+              "data-disabled": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "16px",
+              "width": 960,
+              "height": 56,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=radiogroup],input"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "radio",
+                "checked": true,
+                "value": "a",
+                "disabled": true
+              },
+              {
+                "type": "radio",
+                "checked": false,
+                "value": "b",
+                "disabled": true
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "toggle-off": {
+      "static": {
+        "text": "Available",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": false,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "switch"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=switch],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Available",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": ""
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 105.19,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=switch],input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "toggle-keyboard": {
+      "static": {
+        "text": "Toggle me",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": false,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "switch"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=switch],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Toggle me",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": ""
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 114.44,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=switch],input,label"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "input,[role=switch]"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Space"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press Space",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": false,
+                "value": "on",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Toggle me",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": false,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "switch"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=switch],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Toggle me",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": ""
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 114.44,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "toggle-on-disabled": {
+      "static": {
+        "text": "Disabled",
+        "controlState": [
+          {
+            "type": "checkbox",
+            "checked": true,
+            "indeterminate": false,
+            "value": "on",
+            "disabled": true,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "switch"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "tabIndex": null,
+            "disabled": true,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "[role=switch],input,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Disabled",
+            "attrs": {
+              "data-react-aria-pressable": "true",
+              "data-rac": "",
+              "data-selected": "true",
+              "data-disabled": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "8px",
+              "width": 103.13,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=switch],input,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "checkbox",
+                "checked": true,
+                "value": "on",
+                "disabled": true
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "field-label-hint": {
+      "static": {
+        "text": "Email address * Use a work email.",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "you@company.com"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "label,span": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Email address*",
+            "attrs": {
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "label,span"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "field-invalid": {
+      "static": {
+        "text": "Email address * Please enter a valid email.",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "you@company.com"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "label,span": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Email address*",
+            "attrs": {
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 960,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "label,span"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "input-default": {
+      "static": {
+        "text": "Name",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "input,wrapper": {
+            "tag": "input",
+            "role": null,
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "placeholder": "Your name",
+              "id": "react-aria895162272-_r_23_",
+              "aria-labelledby": "react-aria895162272-_r_24_",
+              "data-rac": "",
+              "type": "text",
+              "value": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "8px 12px 8px 12px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,wrapper"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "input"
+        },
+        {
+          "type": "type",
+          "target": "input",
+          "value": "hello"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:type",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "hello",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Name",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "hello",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,wrapper": {
+            "tag": "input",
+            "role": null,
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "placeholder": "Your name",
+              "id": "react-aria895162272-_r_23_",
+              "aria-labelledby": "react-aria895162272-_r_24_",
+              "data-rac": "",
+              "type": "text",
+              "value": "hello",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "8px 12px 8px 12px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "input-disabled": {
+      "static": {
+        "text": "Name",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": true,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": null,
+            "disabled": true,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,wrapper": {
+            "tag": "input",
+            "role": null,
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "disabled": "",
+              "placeholder": "Your name",
+              "id": "react-aria895162272-_r_28_",
+              "aria-labelledby": "react-aria895162272-_r_29_",
+              "data-rac": "",
+              "data-disabled": "true",
+              "type": "text",
+              "value": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "8px 12px 8px 12px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,wrapper"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "input-invalid": {
+      "static": {
+        "text": "Email Enter a valid email.",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "presentation"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "input,wrapper": {
+            "tag": "input",
+            "role": null,
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "aria-invalid": "true",
+              "id": "react-aria895162272-_r_2d_",
+              "aria-labelledby": "react-aria895162272-_r_2e_",
+              "aria-describedby": "react-aria895162272-_r_2h_",
+              "data-rac": "",
+              "data-invalid": "true",
+              "type": "text",
+              "value": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "8px 12px 8px 12px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,wrapper"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "textarea-default": {
+      "static": {
+        "text": "Notes",
+        "controlState": [
+          {
+            "type": null,
+            "checked": null,
+            "indeterminate": null,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "textarea",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "textarea,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Notes*",
+            "attrs": {
+              "id": "react-aria895162272-_r_2j_",
+              "for": "react-aria895162272-_r_2i_",
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 40.11,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "textarea,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "textarea-invalid": {
+      "static": {
+        "text": "Notes Required field",
+        "controlState": [
+          {
+            "type": null,
+            "checked": null,
+            "indeterminate": null,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "textarea",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "textarea,label": {
+            "tag": "label",
+            "role": null,
+            "type": null,
+            "name": "Notes*",
+            "attrs": {
+              "id": "react-aria895162272-_r_2o_",
+              "for": "react-aria895162272-_r_2n_",
+              "data-label": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "oklch(0.371 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.371 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "500",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "2px",
+              "width": 40.11,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "textarea,label"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "select-closed": {
+      "static": {
+        "text": "Team member Select team member Phoenix Baker Olivia Rhye Lana Steiner",
+        "controlState": [
+          {
+            "type": null,
+            "checked": null,
+            "indeterminate": null,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Select team member"
+          },
+          {
+            "tag": "select",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Phoenix BakerOlivia RhyeLana Steiner"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "button,[role=combobox]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Select team member",
+            "attrs": {
+              "id": "react-aria895162272-_r_2u_",
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "aria-labelledby": "react-aria895162272-_r_33_ react-aria895162272-_r_2v_",
+              "aria-haspopup": "listbox",
+              "aria-expanded": "false"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button,[role=combobox]"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "select-open": {
+      "static": {
+        "text": "Team member Select team member Phoenix Baker Olivia Rhye Lana Steiner",
+        "controlState": [
+          {
+            "type": null,
+            "checked": null,
+            "indeterminate": null,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Select team member"
+          },
+          {
+            "tag": "select",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Phoenix BakerOlivia RhyeLana Steiner"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "button,[role=combobox],[role=listbox]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Select team member",
+            "attrs": {
+              "id": "react-aria895162272-_r_38_",
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "aria-labelledby": "react-aria895162272-_r_3d_ react-aria895162272-_r_39_",
+              "aria-haspopup": "listbox",
+              "aria-expanded": "false"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button,[role=combobox],[role=listbox]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "[role=combobox],button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "overlays": 0,
+            "active": "button"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "overlays": 0,
+            "active": "button"
+          }
+        },
+        {
+          "step": "2:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": null,
+                "value": "",
+                "disabled": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Team member Select team member Phoenix Baker Olivia Rhye Lana Steiner",
+        "controlState": [
+          {
+            "type": null,
+            "checked": null,
+            "indeterminate": null,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Select team member"
+          },
+          {
+            "tag": "select",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Phoenix BakerOlivia RhyeLana Steiner"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "button:Button",
+        "slotMetrics": {
+          "button,[role=combobox],[role=listbox]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Select team member",
+            "attrs": {
+              "id": "react-aria895162272-_r_38_",
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "aria-labelledby": "react-aria895162272-_r_3d_ react-aria895162272-_r_39_",
+              "aria-haspopup": "listbox",
+              "aria-expanded": "false"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "tooltip": {
+      "static": {
+        "text": "Trigger",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Trigger"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Button",
+        "slotMetrics": {
+          "button,[role=tooltip]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Trigger",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_3h_"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 56.02,
+              "height": 24,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "button,[role=tooltip]"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        },
+        {
+          "type": "hover",
+          "target": "button"
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 1,
+            "active": "button"
+          }
+        },
+        {
+          "step": "1:press Escape",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        },
+        {
+          "step": "2:hover",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 1,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Trigger",
+        "controlState": [],
+        "portals": [
+          {
+            "role": "tooltip",
+            "text": "TooltipThis is a tooltip",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "100000"
+            },
+            "rect": {
+              "x": 12,
+              "y": 892,
+              "w": 112,
+              "h": 64
+            }
+          }
+        ],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Trigger"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Trigger",
+        "slotMetrics": {
+          "button,[role=tooltip]": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Trigger",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "data-react-aria-pressable": "true",
+              "id": "react-aria895162272-_r_3h_",
+              "data-focused": "true",
+              "data-focus-visible": "true",
+              "aria-describedby": "react-aria895162272-_r_3g_",
+              "data-hovered": "true"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 56.02,
+              "height": 24,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "tabs-default": {
+      "static": {
+        "text": "One Two Three First panel",
+        "controlState": [],
+        "portals": [
+          {
+            "role": "tooltip",
+            "text": "TooltipThis is a tooltip",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "100000"
+            },
+            "rect": {
+              "x": 12,
+              "y": 892,
+              "w": 112,
+              "h": 64
+            }
+          }
+        ],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "tablist",
+          "tab",
+          "tab",
+          "tab",
+          "tabpanel"
+        ],
+        "focusable": [
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "One"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Two"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Three"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "First panel"
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "button:Trigger",
+        "slotMetrics": {
+          "[role=tablist],[role=tab],[role=tabpanel]": {
+            "tag": "div",
+            "role": "tablist",
+            "type": null,
+            "name": "Tabs",
+            "attrs": {
+              "data-rac": "",
+              "data-collection": "react-aria895162272-_r_3j_",
+              "id": "react-aria895162272-_r_3k_",
+              "aria-label": "Tabs",
+              "role": "tablist",
+              "aria-orientation": "horizontal",
+              "data-orientation": "horizontal"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 960,
+              "height": 36,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=tablist],[role=tab],[role=tabpanel]"
+      ],
+      "actions": [
+        {
+          "type": "press",
+          "keys": [
+            "ArrowRight"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 1,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:press ArrowRight",
+          "state": {
+            "controls": [],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "One Two Three First panel",
+        "controlState": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "tablist",
+          "tab",
+          "tab",
+          "tab",
+          "tabpanel"
+        ],
+        "focusable": [
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "One"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Two"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "Three"
+          },
+          {
+            "tag": "div",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "First panel"
+          }
+        ],
+        "interactiveCount": 3,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=tablist],[role=tab],[role=tabpanel]": {
+            "tag": "div",
+            "role": "tablist",
+            "type": null,
+            "name": "Tabs",
+            "attrs": {
+              "data-rac": "",
+              "data-collection": "react-aria895162272-_r_3j_",
+              "id": "react-aria895162272-_r_3k_",
+              "aria-label": "Tabs",
+              "role": "tablist",
+              "aria-orientation": "horizontal",
+              "data-orientation": "horizontal"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 960,
+              "height": 36,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "slider-default": {
+      "static": {
+        "text": "",
+        "controlState": [
+          {
+            "type": "range",
+            "checked": false,
+            "indeterminate": false,
+            "value": "30",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "range",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "input,[role=slider]": {
+            "tag": "input",
+            "role": null,
+            "type": "range",
+            "name": "",
+            "attrs": {
+              "id": "react-aria895162272-_r_3m_-0",
+              "aria-labelledby": "react-aria895162272-_r_3n_",
+              "aria-orientation": "horizontal",
+              "aria-valuetext": "3,000%",
+              "aria-describedby": "",
+              "aria-details": "",
+              "type": "range",
+              "value": "30"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 129,
+              "height": 16,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,[role=slider]"
+      ],
+      "actions": [],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "range",
+                "checked": false,
+                "value": "30",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        }
+      ],
+      "afterInteraction": null
+    },
+    "slider-keyboard": {
+      "static": {
+        "text": "",
+        "controlState": [
+          {
+            "type": "range",
+            "checked": false,
+            "indeterminate": false,
+            "value": "30",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "range",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "input,[role=slider]": {
+            "tag": "input",
+            "role": null,
+            "type": "range",
+            "name": "",
+            "attrs": {
+              "id": "react-aria895162272-_r_3s_-0",
+              "aria-labelledby": "react-aria895162272-_r_3t_",
+              "aria-orientation": "horizontal",
+              "aria-valuetext": "3,000%",
+              "aria-describedby": "",
+              "aria-details": "",
+              "type": "range",
+              "value": "30"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 129,
+              "height": 16,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,[role=slider]"
+      ],
+      "actions": [
+        {
+          "type": "focus",
+          "target": "[role=slider],input"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowRight"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "range",
+                "checked": false,
+                "value": "30",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:focus",
+          "state": {
+            "controls": [
+              {
+                "type": "range",
+                "checked": false,
+                "value": "30",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowRight",
+          "state": {
+            "controls": [
+              {
+                "type": "range",
+                "checked": false,
+                "value": "30",
+                "disabled": false
+              }
+            ],
+            "expanded": [],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "",
+        "controlState": [
+          {
+            "type": "range",
+            "checked": false,
+            "indeterminate": false,
+            "value": "30",
+            "disabled": false,
+            "required": false,
+            "name": null
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "range",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": ""
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,[role=slider]": {
+            "tag": "input",
+            "role": null,
+            "type": "range",
+            "name": "",
+            "attrs": {
+              "id": "react-aria895162272-_r_3s_-0",
+              "aria-labelledby": "react-aria895162272-_r_3t_",
+              "aria-orientation": "horizontal",
+              "aria-valuetext": "3,000%",
+              "aria-describedby": "",
+              "aria-details": "",
+              "type": "range",
+              "value": "30"
+            },
+            "styles": {
+              "display": "inline-block",
+              "position": "static",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 129,
+              "height": 16,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    }
+  }
+}

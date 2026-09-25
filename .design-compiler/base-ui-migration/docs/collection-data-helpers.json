@@ -1,0 +1,50 @@
+{
+  "primitive": "collection-data-helpers",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "coversAlso": [
+    "ListData",
+    "useListData",
+    "Selection",
+    "Key",
+    "Item",
+    "Section",
+    "Collection",
+    "useFilter (react-aria variant)",
+    "useDateFormatter",
+    "DateValue",
+    "CalendarDate",
+    "useLocale"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts",
+    "node_modules/@base-ui/react/internals/filter.d.ts",
+    "node_modules/@base-ui/react/combobox/index.parts.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "The exports map contains no collection/store/typeahead/selection helpers: no ./internals/useListData, no ./internals/useTypeahead, no Selection/Key type export. The complete helper surface is the 34 ./internals/* subpaths listed in _base-ui-1.8.0-export-surface.json.",
+    "shared": "see the shared evidence block: docs index lists only four utilities (CSP Provider, Direction Provider, mergeProps, useRender) — no collection or data-store utility.",
+    "partialReplacements": {
+      "Selection/Key types": "No equivalent; Base UI values are plain (`any`/generic `Value`), and selection is expressed per component (e.g. Combobox `value` + `isItemEqualToValue`, Select `value`).",
+      "useListData/ListData": "No equivalent. The closest shipped capability is component-level: Combobox 1.8.0 exports createItems/createComboboxItems, useFilter, useFilteredItems and the ComboboxItemCollection type (combobox/index.parts.d.ts, items/createItems.d.ts) for deriving value+label from source items, plus internals/filter's getFilter({locale, ...Intl.CollatorOptions}) containing/startingWith/endingWith — but these are filter/derivation helpers, not a mutable list store.",
+      "useDateFormatter/DateValue/CalendarDate/useLocale": "No equivalent (see the date records): Base UI ships no date formatting or locale hook; use Intl.DateTimeFormat and the repo's existing @internationalized/date utilities directly."
+    }
+  },
+  "affectedRepoFiles": [
+    "registry/untitledui/components/base/select/tag-select.tsx (imports useListData + type ListData from react-stately, plus AriaComboBox/AriaGroup/AriaInput/AriaListBox/ComboBoxStateContext)",
+    "registry/untitledui/components/base/input/input-tags.tsx and input-tags-outer.tsx (tag inputs)",
+    "registry/untitledui/components/base/tags/tags.tsx (AriaTagGroup/AriaTagList/AriaTag — collection-based)",
+    "registry/untitledui/components/base/input/input-payment.tsx and application/date-picker/date-picker.tsx + date-range-picker.tsx (useControlledState from @react-stately/utils)",
+    "registry/untitledui/components/base/file-upload-trigger/file-upload-trigger.tsx (filterDOMProps from @react-aria/utils)",
+    "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx (useFocusManager from react-aria), nav-button.tsx (Pressable)"
+  ],
+  "consequence": "NO_BASE_UI_EQUIVALENT for the store/collection helpers. Widgets that depend on them (tag-select, tags, tag inputs) cannot be migrated mechanically: Base UI has no list store, so the data layer must be rewritten on React state (or kept on react-stately) even where a visual component (e.g. Base UI Combobox/Select with chips) exists. useControlledState has no Base UI export either — but it is trivially replaceable by a local useState/useMemo shim, and Base UI's own controlled convention (value/defaultValue/onValueChange) should be used instead.",
+  "notableDifferences": [
+    "react-stately's useListData gives an immutable list store (items/getItem/insert/remove/move/filter + selection); Base UI deliberately keeps state in the consumer's hands. Any Base UI migration of tag/collection widgets must port that state management to the app or to component-level APIs.",
+    "React Aria's Selection/Key (Set<Key> | 'all') has no Base UI analogue; Base UI components express single/multiple selection through their own value types and item-equality props (isItemEqualToValue), with data-attribute state on items.",
+    "react-aria's useFocusManager (used in nav-account-card.tsx) has no equivalent; focus movement in Base UI is internal to composite/popup components."
+  ]
+}

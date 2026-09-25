@@ -1,0 +1,77 @@
+{
+  "primitive": "radio",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "node_modules/@base-ui/react/docs/react/components/radio.md (shipped with the installed 1.8.0 package; https://base-ui.com/react/components/radio.md returns HTTP 404 and `radio` is absent from llms.txt)",
+    "https://base-ui.com/react/components/radio-group.md (documents Radio.Root / Radio.Indicator in full)",
+    "node_modules/@base-ui/react/radio/index.d.ts",
+    "node_modules/@base-ui/react/radio/index.parts.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Indicator"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "Value (required)",
+      "notes": "The unique identifying value of the radio inside its RadioGroup. Documented as a required prop (value*)."
+    },
+    "nativeButton": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Root renders <span> by default to support enclosing labels."
+    },
+    "disabled": {
+      "type": "boolean",
+      "notes": "Inherits from RadioGroup when not set locally."
+    },
+    "readOnly": {
+      "type": "boolean",
+      "notes": "Inherits from RadioGroup when not set locally."
+    },
+    "required": {
+      "type": "boolean",
+      "notes": "Inherits from RadioGroup when not set locally."
+    },
+    "inputRef": {
+      "type": "React.Ref<HTMLInputElement>"
+    },
+    "Indicator.keepMounted": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "dataAttributes": [
+    "data-checked / data-unchecked",
+    "data-disabled / data-readonly / data-required",
+    "data-valid / data-invalid, data-dirty / data-touched, data-filled, data-focused (inside Field.Root)",
+    "Indicator adds data-starting-style / data-ending-style"
+  ],
+  "renderProp": {
+    "mechanism": "render on Root and Indicator",
+    "elementForm": "render={<button />} with nativeButton + id, paired with <label htmlFor>; or the documented render callback that wraps a <button> in a <label> so the hidden input lands outside the label",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [],
+    "changeCallbacks": [],
+    "note": "Radio has NO value state of its own — selection lives on RadioGroup (value/defaultValue/onValueChange). Radio contributes only its value prop."
+  },
+  "formIntegration": {
+    "nameValue": "Radio.Root renders a hidden <input type=\"radio\"> carrying form/id; the submitted name comes from RadioGroup's name prop.",
+    "hiddenInput": true,
+    "validation": "required on RadioGroup (or inherited from Field.Root) participates in native constraint validation."
+  },
+  "keyboard": {
+    "keys": "Roving focus is provided by the enclosing RadioGroup (internals/composite: ArrowUp/Down/Left/Right, Home, End, loopFocus defaults true). Radio itself adds no key handlers.",
+    "focus": "One tab stop for the group; arrows move selection/focus.",
+    "typeahead": "none documented"
+  },
+  "notableDifferences": [
+    "React Aria has a single Radio component whose selection state lives in RadioGroup; same split here, but Base UI requires the radio's value prop as a mandatory identity.",
+    "isSelected/isDisabled/isReadOnly/isRequired map to data-checked / disabled / readOnly / required.",
+    "Indicator is a separate part that can be kept mounted for animation; React Aria renders a single element with render props.",
+    "This is the ONE primitive of the 18 with no page on the public docs site (404) and no llms.txt entry — the authoritative page ships inside the package."
+  ]
+}

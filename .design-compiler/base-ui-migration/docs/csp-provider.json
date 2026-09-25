@@ -1,0 +1,38 @@
+{
+  "primitive": "csp-provider",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/utils/csp-provider.md"
+  ],
+  "parts": [
+    "CSPProvider"
+  ],
+  "keyProps": {
+    "nonce": {
+      "type": "string",
+      "default": "-",
+      "semantic": "nonce applied to inline <style> and <script> tags rendered by Base UI components; must match the CSP header nonce"
+    },
+    "disableStyleElements": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "stop rendering inline <style> elements; you must then supply the CSS yourself (e.g. .base-ui-disable-scrollbar { scrollbar-width: none } + ::-webkit-scrollbar { display: none })"
+    },
+    "children": {
+      "type": "React.ReactNode",
+      "default": "-",
+      "semantic": "wrap the app or a subtree"
+    }
+  },
+  "dataAttributes": [],
+  "renderProp": "Not applicable — CSPProvider takes children only and renders no element of its own; it is a context provider. Export shape is a plain named export (`import { CSPProvider } from '@base-ui/react/csp-provider'`), NOT a namespace object.",
+  "controlled": "Not applicable — no state, no open/close, no callbacks.",
+  "formIntegration": "Not applicable.",
+  "keyboard": "Not applicable.",
+  "notableDifferences": [
+    "No React Aria counterpart: this exists purely to satisfy strict CSPs by nonce-ing Base UI's inline <style>/<script> tags.",
+    "Affects only inline <style>/<script> ELEMENTS, never inline style attributes (style-src-attr is out of scope) — components that rely on inline styles (e.g. ScrollArea.Viewport, Select.Popup/List when alignItemWithTrigger is on) may need 'unsafe-inline', client-only rendering, or manually unset inline styles.",
+    "`<script>` tags are opt-in and have no disable flag, so a nonce is still required when any component uses inline scripts.",
+    "Exact export surface (verified in csp-provider/index.d.ts): `export { CSPProvider } from './index.parts.js'; export type * from './CSPProvider.js'` — there is no `CSPProvider.Provider` alias."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "primitive": "input",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/input.md",
+    "node_modules/@base-ui/react/input/index.d.ts",
+    "node_modules/@base-ui/react/input/Input.d.ts"
+  ],
+  "parts": [
+    "Input"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "React.ComponentProps<'input'>['value']",
+      "notes": "Controlled; use with onValueChange."
+    },
+    "defaultValue": {
+      "type": "Field.Control.Props['defaultValue'] (string | number | string[])",
+      "notes": "Uncontrolled."
+    },
+    "onValueChange": {
+      "type": "(value: string, eventDetails: Input.ChangeEventDetails) => void",
+      "notes": "Fires in addition to native onChange; reason is always 'none'."
+    },
+    "className/style/render": {
+      "type": "fn | plain",
+      "notes": "State = FieldControlState { disabled, touched, dirty, valid, filled, focused }."
+    }
+  },
+  "dataAttributes": [
+    "data-disabled",
+    "data-valid / data-invalid (inside Field.Root)",
+    "data-dirty / data-touched / data-filled / data-focused (inside Field.Root)"
+  ],
+  "renderProp": {
+    "mechanism": "render on Input",
+    "elementForm": "render={<input />} or a custom component that forwards ref and spreads props",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(value: string, eventDetails: Input.ChangeEventDetails)"
+    ],
+    "note": "Native onChange still works and is merged (mergeProps runs handlers right-to-left)."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": false,
+    "note": "A real <input>, so it is the form control itself: name/id/value submit natively and participate in constraint validation. Automatically reads Field.Root context (docs state Input is the canonical Field.Control replacement)."
+  },
+  "keyboard": {
+    "keys": "Native input behaviour, untouched.",
+    "focus": "Native; focus state surfaces as data-focused inside Field.Root."
+  },
+  "notableDifferences": [
+    "React Aria's Input is a styled wrapper around the native input with isDisabled/isReadOnly/isInvalid props; Base UI's Input is a thin native <input> that inherits disabled/required/readOnly from Field.Root context (and has no is- props).",
+    "Controlled usage is value + onValueChange (not React Aria's value + onChange).",
+    "Validation state is not passed in — it is observed from the DOM constraint-validation API and mirrored as data-valid/data-invalid."
+  ]
+}

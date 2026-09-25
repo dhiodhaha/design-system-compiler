@@ -1,0 +1,82 @@
+{
+  "primitive": "toggle-group",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/toggle-group.md",
+    "node_modules/@base-ui/react/toggle-group/index.d.ts",
+    "node_modules/@base-ui/react/toggle-group/ToggleGroup.d.ts",
+    "node_modules/@base-ui/react/toggle-group/ToggleGroup.js"
+  ],
+  "parts": [
+    "ToggleGroup"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "readonly Value[] (generic Value extends string)",
+      "notes": "Controlled set of pressed toggle values."
+    },
+    "defaultValue": {
+      "type": "readonly Value[]",
+      "notes": "Uncontrolled initial set."
+    },
+    "onValueChange": {
+      "type": "(groupValue: Value[], eventDetails: ToggleGroup.ChangeEventDetails) => void"
+    },
+    "multiple": {
+      "type": "boolean",
+      "default": false,
+      "notes": "false = single-press accordion behaviour (pressing one unpressed the others); true = any number pressed."
+    },
+    "loopFocus": {
+      "type": "boolean",
+      "default": true,
+      "notes": "Wrap arrow-key focus from the last item back to the first."
+    },
+    "orientation": {
+      "type": "Orientation ('horizontal' | 'vertical')",
+      "default": "'horizontal'"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "dataAttributes": [
+    "data-orientation — 'horizontal' | 'vertical'",
+    "data-disabled — group disabled",
+    "data-multiple — present when multiple={true}"
+  ],
+  "renderProp": {
+    "mechanism": "render on ToggleGroup; children are Toggle parts carrying value",
+    "elementForm": "render={<div />} or a Toolbar part (source: the render element is enabled when a toolbar context exists)",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(groupValue: Value[], eventDetails: ToggleGroup.ChangeEventDetails)"
+    ],
+    "note": "Value is always an ARRAY, even when multiple is false — React Aria's single-select ToggleButtonGroup hands back one value, so call sites need a rewrite here."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false,
+    "note": "No form participation. Renders role=\"group\" (no aria-orientation on the group; orientation is exposed as data-orientation)."
+  },
+  "keyboard": {
+    "keys": "Roving focus via internals/composite: ArrowUp/ArrowDown/ArrowLeft/ArrowRight, Home, End; loopFocus (default true) wraps at the ends; orientation is inferred from the orientation prop / data-orientation.",
+    "focus": "One tab stop for the group, arrows move within it.",
+    "typeahead": "none"
+  },
+  "notableDifferences": [
+    "React Aria's ToggleButtonGroup takes value: string[] too, but selectionType=\"single\" narrows to one value; Base UI always speaks arrays and switches behaviour with multiple.",
+    "React Aria exposes selectionMode/selectionBehavior; Base UI exposes multiple + loopFocus + orientation only.",
+    "State attributes are data-multiple / data-orientation / data-disabled — there is no data-selected.",
+    "The group is a plain div with role=group; it does not own aria-pressed — each Toggle does."
+  ]
+}

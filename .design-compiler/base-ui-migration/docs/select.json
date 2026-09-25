@@ -1,0 +1,187 @@
+{
+  "primitive": "select",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/select.md"
+  ],
+  "parts": [
+    "Root",
+    "Label",
+    "Trigger",
+    "Value",
+    "Icon",
+    "Portal",
+    "Backdrop",
+    "Positioner",
+    "Popup",
+    "List",
+    "Item",
+    "ItemIndicator",
+    "ItemText",
+    "Arrow",
+    "ScrollUpArrow",
+    "ScrollDownArrow",
+    "Group",
+    "GroupLabel",
+    "Separator"
+  ],
+  "keyProps": {
+    "Root.value": {
+      "type": "Value | Value[] | null",
+      "default": "—",
+      "semantic": "controlled value; with `multiple` it is an array. No `selectedKey`/`selectedKeys` equivalent."
+    },
+    "Root.defaultValue": {
+      "type": "Value | Value[] | null",
+      "default": "—",
+      "semantic": "uncontrolled initial value."
+    },
+    "Root.onValueChange": {
+      "type": "(value, eventDetails: Select.Root.ChangeEventDetails) => void",
+      "default": "—",
+      "semantic": "details include reason: 'trigger-press' | 'item-press' | 'escape-key' | 'outside-press' | 'window-resize' | 'focus-out' | 'list-navigation' | 'cancel-open' | 'none', plus cancel()/allowPropagation()/trigger."
+    },
+    "Root.multiple": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "multi-select; replaces React Aria `selectionMode`."
+    },
+    "Root.items": {
+      "type": "Record<string, React.ReactNode> | {label, value}[] | Group[]",
+      "default": "—",
+      "semantic": "optional item registry; when set, <Value> renders the selected label instead of the raw value."
+    },
+    "Root.itemToStringLabel / itemToStringValue": {
+      "type": "(itemValue: Value) => string",
+      "default": "—",
+      "semantic": "object values -> display label / form-submission string. `{value,label}` shapes auto-resolve."
+    },
+    "Root.isItemEqualToValue": {
+      "type": "(itemValue, value) => boolean",
+      "default": "Object.is",
+      "semantic": "custom value equality for object values."
+    },
+    "Root.disabled / readOnly / required": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "React Aria isDisabled/isReadOnly/isRequired equivalents."
+    },
+    "Root.name / form / inputRef / autoComplete / id": {
+      "type": "string / string / Ref<HTMLInputElement> / string / string",
+      "default": "—",
+      "semantic": "form submission + hidden input access."
+    },
+    "Root.open / defaultOpen / onOpenChange / onOpenChangeComplete": {
+      "type": "boolean / boolean / (open, details) => void / (open) => void",
+      "default": "defaultOpen=false",
+      "semantic": "controlled + uncontrolled popup state; onOpenChangeComplete fires after animations."
+    },
+    "Root.modal": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "true locks page scroll and blocks outside pointer interaction (touch: blocks taps, keeps scroll unless popup spans nearly full viewport)."
+    },
+    "Root.highlightItemOnHover": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "false lets CSS :hover be distinguished from data-highlighted focus."
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{unmount: () => void}>",
+      "default": "—",
+      "semantic": "imperative unmount after externally controlled close animations."
+    },
+    "Trigger.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "set false when `render` swaps the button for a non-button element."
+    },
+    "Trigger.disabled": {
+      "type": "boolean",
+      "default": "—",
+      "semantic": "overrides root disabled."
+    },
+    "Value.placeholder": {
+      "type": "React.ReactNode",
+      "default": "—",
+      "semantic": "renders and marks the value with data-placeholder. children may be a formatting function."
+    },
+    "Item.value": {
+      "type": "any",
+      "default": "null",
+      "semantic": "identifies the option."
+    },
+    "Item.label": {
+      "type": "string",
+      "default": "—",
+      "semantic": "text used for keyboard typeahead matching; defaults to item text content."
+    },
+    "Item.nativeButton": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "Item renders a div by default."
+    },
+    "Item.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "skipped by keyboard navigation."
+    },
+    "Positioner.alignItemWithTrigger": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "DEFAULT TRUE: overlaps the popup with the trigger so the selected item's text aligns with the value text; mouse input only, auto-disabled when space is short. Popup then reports data-side='none'. Set false for a normal React-Aria-like dropdown."
+    },
+    "Positioner.side / align / sideOffset / alignOffset": {
+      "type": "Side ('top'|'bottom'|'left'|'right'|'inline-end'|'inline-start') / Align ('start'|'center'|'end') / number|OffsetFunction / number|OffsetFunction",
+      "default": "'bottom' / 'center' / 0 / 0",
+      "semantic": "same anchoring contract as every other Base UI Positioner."
+    },
+    "Positioner.anchor / arrowPadding / collisionAvoidance / collisionBoundary / collisionPadding / sticky / positionMethod / disableAnchorTracking": {
+      "type": "Element|VirtualElement|Ref|fn / number / object / Boundary / Padding / boolean / 'absolute'|'fixed' / boolean",
+      "default": "— / 5 / — / 'clipping-ancestors' / 5 / false / 'absolute' / false",
+      "semantic": "shared UseAnchorPositioningSharedParameters."
+    },
+    "Popup.finalFocus": {
+      "type": "boolean | RefObject<HTMLElement|null> | ((closeType: InteractionType) => boolean|void|HTMLElement|null)",
+      "default": "—",
+      "semantic": "where focus goes on close (default: trigger / previously focused element)."
+    },
+    "Portal.container": {
+      "type": "HTMLElement | ShadowRoot | RefObject<...> | null",
+      "default": "body",
+      "semantic": "portal target."
+    },
+    "ScrollUpArrow / ScrollDownArrow": {
+      "type": "—",
+      "default": "—",
+      "semantic": "hover-scroll affordances; not rendered for touch input; state data-visible."
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open (popup open), data-pressed, data-disabled, data-readonly, data-required, data-popup-side ('top'|'bottom'|'left'|'right'|'inline-end'|'inline-start'|null), data-valid, data-invalid, data-dirty, data-touched, data-filled, data-focused (Field.Root), data-placeholder (no value)",
+    "Value: data-placeholder",
+    "Icon: data-popup-open",
+    "Item: data-selected, data-highlighted, data-disabled",
+    "ItemIndicator: data-starting-style, data-ending-style",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-side, data-align",
+    "Arrow: data-open, data-closed, data-side, data-align, data-uncentered",
+    "ScrollUpArrow/ScrollDownArrow: data-starting-style, data-ending-style, data-direction ('up'|'down'), data-visible, data-side",
+    "List / Group / GroupLabel / Separator / Label / ItemText: none"
+  ],
+  "renderProp": "Every part extends BaseUIComponentProps: { render?: ReactElement | ((props: HTMLProps, state: <Part>.State) => ReactElement); className?: string | ((state) => string|undefined); style?: CSSProperties | ((state) => CSSProperties|undefined) }. `render` replaces the rendered element (e.g. render={<Button/>}) and receives merged props. Authoring your own primitive: useRender(params) from '@base-ui/react/use-render' (params: render, ref, state, stateAttributesMapping, props, enabled, defaultTagName; state props are converted to data-* automatically). Merging external props into a Base UI part: mergeProps(a,b,...) / mergePropsN([...]) from '@base-ui/react/merge-props' — rightmost wins except event handlers (merged, invoked right-to-left; a right handler can stop earlier ones via event.preventBaseUIHandler()), className concatenates right-to-left, style objects merge rightmost-wins; `ref` is NOT merged.",
+  "controlled": "Value: `value` (controlled) vs `defaultValue` (uncontrolled), change callback `onValueChange(value, eventDetails)`. Popup: `open` vs `defaultOpen` (default false), callbacks `onOpenChange(open, eventDetails)` and `onOpenChangeComplete(open)`. Imperative: `actionsRef` -> { unmount }. No `isOpen`/`onOpenChange`-style React Aria names.",
+  "formIntegration": "Root renders a hidden `<input type=hidden form name value>` (verified in select/root/SelectRoot.mjs) carrying the serialized value; `name` identifies the field, `form` associates it with an external form, `inputRef` exposes the input element, `itemToStringValue` controls the submitted string. `required` participates in constraint validation; `readOnly`/`disabled` propagate to the control state. Field.Root adds data-valid/data-invalid/data-dirty/data-touched/data-filled/data-focused.",
+  "keyboard": "List navigation (internal useListNavigation): ArrowUp/ArrowDown move the highlight, Home/End jump to first/last (they do NOT move the text caret for a typeable combobox, but Select is not typeable so no caret conflict); no PageUp/PageDown handling anywhere in the package. Typeahead: printable characters match item `label` or item text, session reset after TYPEAHEAD_RESET_MS = 500 ms, space continues an in-progress session (floating-ui-react useTypeahead). Enter/Space select the highlighted item; Escape closes and returns focus (useDismiss); Tab moves focus out; modal=true traps focus via FloatingFocusManager. Docs explicitly state Select is not filterable aside from 'basic keyboard typeahead functionality to find items by focusing and highlighting them'.",
+  "notableDifferences": [
+    "Prop naming: `disabled`/`readOnly`/`required` instead of isDisabled/isReadOnly/isRequired; `multiple` instead of selectionMode='multiple'.",
+    "No `<Select>` single element: composition is Root > Label + Trigger(Value, Icon) + Portal > Positioner > Popup > List > (ScrollUpArrow, Item(ItemIndicator, ItemText), ScrollDownArrow). React Aria's `SelectValue` maps to `Select.Value` with a `placeholder` prop (and data-placeholder), not a render-prop `children`.",
+    "Positioner default `alignItemWithTrigger=true` deliberately overlaps popup and trigger (data-side='none' on the popup); a migration that expects a normal detached dropdown MUST set `alignItemWithTrigger={false}`.",
+    "State is exposed only as data-* attributes (data-selected / data-highlighted / data-disabled / data-placeholder ...), not as render-prop state objects; React Aria's data-selected/data-focused naming partially overlaps but data-highlighted replaces 'focused' for roving highlight, and there is no data-focus-visible/data-hovered.",
+    "Item registration: options are registered by rendering `Select.Item` (value + optional label); the optional `items` prop on Root only powers label lookup for <Value> and typed generics — there is no `<Item key>`-less API and no `Item textValue` (it is `label`).",
+    "Object values are first-class: `isItemEqualToValue`, `itemToStringLabel`, `itemToStringValue` replace React Aria's `getKey`/`textValue` conventions.",
+    "Popup is portal+positioner+popup with `data-starting-style`/`data-ending-style` for enter/exit animation, instead of React Aria's transition state props.",
+    "Multi-select value is `Value[]` (empty array semantics differ from React Aria's Key[]); no `onSelectionChange`."
+  ]
+}

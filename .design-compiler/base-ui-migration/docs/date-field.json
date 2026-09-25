@@ -1,0 +1,29 @@
+{
+  "primitive": "date-field",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "coversAlso": [
+    "date-input",
+    "date-segment"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "Alphabetical exports map: a `./date-*` entry would sort between `./context-menu` (line 217) and `./dialog` (line 231); the map goes context-menu -> dialog with no gap. No ./date-field, ./date-input or ./date-segment subpath exists.",
+    "shared": "see the shared evidence block: docs index has 37 components (no Date Field), bundled docs has no date page, CHANGELOG/release notes contain no date component.",
+    "nearMiss": "Base UI 1.8.0 does ship segmented/field-style inputs — Input, Number Field (with scrub area), OTP Field — so a plain styled <input type=\"date\"> or a native date input is the only in-library option for now. The repo's InputDateBase wraps RAC DateField/DateInput/DateSegment for the segmented UI."
+  },
+  "affectedRepoFiles": [
+    "registry/untitledui/components/base/input/input-date.tsx (AriaDateField, AriaDateFieldProps, AriaDateInput, AriaDateSegment, AriaGroup, DateValue)",
+    "registry/untitledui/components/application/date-picker/date-picker.tsx and date-range-picker.tsx (both render InputDateBase)"
+  ],
+  "consequence": "No migration path in 1.8.0 for a segmented date input with locale-aware segments. Keep React Aria, or replace with a native <input type=\"date\"> if the segmented UX is acceptable to lose (it is not, for this design system).",
+  "notableDifferences": [
+    "React Aria's DateSegment exposes per-segment state and keyboard editing (increment/decrement per segment, literal separators, locale ordering) — Base UI has nothing comparable; its closest primitive (Number Field) has a single input plus increment/decrement buttons and a scrub area.",
+    "RAC DateField integrates with Form/validation and @internationalized/date values; Base UI's form integration (Form/Field) targets native inputs and its own components only."
+  ]
+}

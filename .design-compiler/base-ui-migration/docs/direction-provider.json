@@ -1,0 +1,34 @@
+{
+  "primitive": "direction-provider",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/utils/direction-provider.md"
+  ],
+  "parts": [
+    "DirectionProvider",
+    "useDirection",
+    "TextDirection"
+  ],
+  "keyProps": {
+    "direction": {
+      "type": "TextDirection ('ltr' | 'rtl')",
+      "default": "'ltr'",
+      "semantic": "reading direction consumed by Base UI components for behavior (keyboard, positioning, slider direction)"
+    },
+    "children": {
+      "type": "React.ReactNode",
+      "default": "-",
+      "semantic": "wrap the app or a subtree"
+    }
+  },
+  "dataAttributes": [],
+  "renderProp": "Not applicable — context provider, renders no element. Additional export: `useDirection()` returns the current TextDirection, which is the recommended way to read direction inside portaled content that escapes a `dir` attribute set deeper in the tree.",
+  "controlled": "Not applicable — `direction` is a simple value prop (no default/open state, no callbacks).",
+  "formIntegration": "Not applicable.",
+  "keyboard": "Not applicable.",
+  "notableDifferences": [
+    "React Aria uses <I18nProvider locale> plus `dir`; Base UI splits the concern: <DirectionProvider direction> only changes component BEHAVIOR. You must still set dir='rtl' (or direction: rtl CSS) in your own code — the docs state this explicitly.",
+    "Exact export surface (verified in direction-provider/index.d.ts): `export { Provider as DirectionProvider, useDirection, type TextDirection } from './index.parts.js'` — the namespace alias inside index.parts is `Provider`, but the public name is DirectionProvider.",
+    "No locale/i18n concerns (no number, date or message formatting) — direction only."
+  ]
+}

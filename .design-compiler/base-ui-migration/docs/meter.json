@@ -1,0 +1,78 @@
+{
+  "primitive": "meter",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/meter.md",
+    "node_modules/@base-ui/react/meter/index.parts.d.ts",
+    "node_modules/@base-ui/react/meter/root/MeterRoot.d.ts",
+    "node_modules/@base-ui/react/meter/root/MeterRoot.mjs",
+    "node_modules/@base-ui/react/meter/value/MeterValue.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Label",
+    "Track",
+    "Indicator",
+    "Value"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "number (REQUIRED)",
+      "notes": "The current value; there is no null/indeterminate mode."
+    },
+    "min/max": {
+      "type": "number",
+      "default": "0 / 100"
+    },
+    "aria-valuetext": {
+      "type": "string"
+    },
+    "getAriaValueText": {
+      "type": "(formattedValue: string, value: number) => string"
+    },
+    "format": {
+      "type": "Intl.NumberFormatOptions"
+    },
+    "locale": {
+      "type": "Intl.LocalesArgument"
+    },
+    "Value.children": {
+      "type": "((formattedValue: string, value: number) => React.ReactNode) | null"
+    },
+    "Label/Track/Indicator": {
+      "type": "className/style/render only",
+      "notes": "Every Meter state type is an EMPTY object ({}) — unlike Progress there is no status state."
+    }
+  },
+  "dataAttributes": [
+    "None emitted by any Meter part (Progress has data-complete/data-indeterminate/data-progressing; Meter has no equivalent)"
+  ],
+  "renderProp": {
+    "mechanism": "render on every part",
+    "elementForm": "render={<div />}",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [
+      "value (required)"
+    ],
+    "changeCallbacks": [],
+    "note": "Display-only component; the surrounding app owns the value."
+  },
+  "formIntegration": {
+    "nameValue": false,
+    "hiddenInput": false,
+    "note": "Not a form control."
+  },
+  "keyboard": {
+    "keys": "None — role=\"meter\" is non-interactive.",
+    "focus": "Not focusable."
+  },
+  "notableDifferences": [
+    "React Aria has no Meter component, so this is a new primitive rather than a migration; the closest React Aria pattern is a ProgressBar with a static value (wrong role: progressbar vs meter).",
+    "Renders role=\"meter\" with aria-valuemin/valuemax/valuenow/valuetext, so screen readers treat it as a gauge rather than a task progress indicator.",
+    "Zero data-attributes and empty state objects: no CSS state hooks are available (any dynamic styling must come from your own classes or the Value render prop).",
+    "Label renders role=\"presentation\" and is wired through aria-labelledby."
+  ]
+}

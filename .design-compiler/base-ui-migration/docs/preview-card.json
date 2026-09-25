@@ -1,0 +1,106 @@
+{
+  "primitive": "preview-card",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/preview-card.md"
+  ],
+  "parts": [
+    "Root",
+    "Trigger",
+    "Portal",
+    "Backdrop",
+    "Positioner",
+    "Popup",
+    "Arrow",
+    "Viewport",
+    "Handle",
+    "createHandle"
+  ],
+  "keyProps": {
+    "Root.open / defaultOpen / onOpenChange / onOpenChangeComplete": {
+      "type": "boolean / boolean / (open, details) => void / (open) => void",
+      "default": "defaultOpen=false",
+      "semantic": "controlled + uncontrolled visibility."
+    },
+    "Root.triggerId / defaultTriggerId": {
+      "type": "string | null",
+      "default": "—",
+      "semantic": "which trigger owns the state when several triggers share one card."
+    },
+    "Root.handle": {
+      "type": "PreviewCard.Handle<Payload>",
+      "default": "—",
+      "semantic": "detached triggers via PreviewCard.createHandle(); required for triggers rendered outside Root."
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{unmount: () => void; close: () => void}>",
+      "default": "—",
+      "semantic": "imperative close/unmount."
+    },
+    "Root.children": {
+      "type": "ReactNode | ((arg: {payload}) => ReactNode)",
+      "default": "—",
+      "semantic": "render function receives the active trigger's payload."
+    },
+    "Trigger.delay / closeDelay": {
+      "type": "number (ms)",
+      "default": "600 / 300",
+      "semantic": "hover/focus open and close delays on the trigger itself (NOT on Root)."
+    },
+    "Trigger.handle / payload": {
+      "type": "PreviewCardHandle<Payload> / Payload",
+      "default": "—",
+      "semantic": "associate a detached trigger and pass data into the popup render function."
+    },
+    "Trigger element": {
+      "type": "renders <a>",
+      "default": "—",
+      "semantic": "the trigger is a link; use `render` for framework links."
+    },
+    "Positioner": {
+      "type": "UseAnchorPositioningSharedParameters (side default 'bottom', align default 'center', sideOffset, alignOffset, anchor, arrowPadding, collisionAvoidance, collisionBoundary, collisionPadding, sticky, positionMethod, disableAnchorTracking)",
+      "default": "see each",
+      "semantic": "standard popup positioning; also exposes --positioner-width/--positioner-height and --transform-origin."
+    },
+    "Popup": {
+      "type": "renders <div>",
+      "default": "—",
+      "semantic": "content container; docs size it with --popup-width/--popup-height and animate with data-starting-style/data-ending-style."
+    },
+    "Viewport.children": {
+      "type": "ReactNode",
+      "default": "—",
+      "semantic": "transition container required only when one card has multiple triggers, content changes per trigger and switching is animated; state exposes activationDirection/transitioning/instant ('dismiss'|'focus')."
+    },
+    "Portal.keepMounted / container": {
+      "type": "boolean / HTMLElement|ShadowRoot|Ref|null",
+      "default": "false / body",
+      "semantic": "Portal keeps the popup mounted while hidden when requested."
+    },
+    "Arrow / Backdrop": {
+      "type": "styling + render",
+      "default": "—",
+      "semantic": "Backdrop is presentational only (this popup is not interactive)."
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-side, data-align",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align",
+    "Arrow: data-open, data-closed, data-side, data-align, data-uncentered",
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style",
+    "Viewport: data-current, data-previous, data-activation-direction, data-transitioning, data-instant ('dismiss'|'focus')",
+    "Root / Portal / Handle: none"
+  ],
+  "renderProp": "Shared `render` contract on every part (ReactElement | (props, state) => ReactElement, plus state-driven className/style); the docs use render={<a/>}-style swapping for framework links on Trigger. Detached triggers use PreviewCard.createHandle() passed to Root.handle and Trigger.handle. Custom primitives: useRender; merging: mergeProps/mergePropsN.",
+  "controlled": "`open` / `defaultOpen` + `onOpenChange(open, eventDetails)` and `onOpenChangeComplete(open)`; multi-trigger controlled mode pairs `open` with `triggerId` / `defaultTriggerId`; `actionsRef` -> { unmount, close }; Handle exposes imperative control for detached triggers.",
+  "formIntegration": "None.",
+  "keyboard": "The popup is deliberately NOT keyboard- or screen-reader-navigable: the docs' usage guidelines require keeping the link as the only accessible interface and putting all previewed information at the destination (content is a visual progressive enhancement for sighted pointer/keyboard users). Opening: hover or focus of the trigger after `delay` (600 ms default); closing after `closeDelay` (300 ms default), on dismiss (Escape/outside press) or when focus leaves — the Viewport's data-instant is 'dismiss' | 'focus', i.e. instant transitions for those two interactions. No typeahead, no arrow-key navigation inside the card.",
+  "notableDifferences": [
+    "React Aria's HoverCard equivalent maps to Root+Trigger+Positioner+Popup, but here the delays live on the Trigger (`delay` 600 / `closeDelay` 300) and the Trigger must be an <a> (link), matching the 'preview of a link destination' semantics.",
+    "Content is intentionally non-interactive/non-announced (docs: 'preview card content is not touch, keyboard or screen reader navigable') — do not port interactive controls into it.",
+    "Multiple/detached triggers are first-class (createHandle + Root.handle/triggerId + Trigger.payload with a payload-render-function child), and animated switching between triggers requires the dedicated `Viewport` part (data-current/data-previous/data-activation-direction/data-transitioning).",
+    "State is data-* based: data-popup-open on the trigger, data-open/data-closed/data-starting-style/data-ending-style/data-side/data-align on popup/positioner, data-uncentered on the arrow; there is no data-focus-visible/data-hovered."
+  ]
+}

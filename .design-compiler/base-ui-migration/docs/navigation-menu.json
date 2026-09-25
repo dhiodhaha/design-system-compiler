@@ -1,0 +1,122 @@
+{
+  "primitive": "navigation-menu",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/navigation-menu.md"
+  ],
+  "parts": [
+    "Root",
+    "List",
+    "Item",
+    "Content",
+    "Trigger",
+    "Portal",
+    "Positioner",
+    "Viewport",
+    "Backdrop",
+    "Popup",
+    "Arrow",
+    "Link",
+    "Icon"
+  ],
+  "keyProps": {
+    "Root.value / defaultValue": {
+      "type": "Value | null",
+      "default": "null",
+      "semantic": "identifies WHICH ITEM is open (item value, not a boolean). Non-nullish = open, nullish = closed."
+    },
+    "Root.onValueChange": {
+      "type": "(value: Value | null, eventDetails: NavigationMenu.Root.ChangeEventDetails) => void",
+      "default": "—",
+      "semantic": "details.reason: 'trigger-press' | 'trigger-hover' | 'outside-press' | 'list-navigation' | 'focus-out' | 'escape-key' | 'link-press' | 'none'."
+    },
+    "Root.delay / closeDelay": {
+      "type": "number (ms)",
+      "default": "50 / 50",
+      "semantic": "hover-open and hover-close delays."
+    },
+    "Root.orientation": {
+      "type": "'horizontal' | 'vertical'",
+      "default": "'horizontal'",
+      "semantic": "drives which arrow keys move between items and which keys open the popup."
+    },
+    "Root.onOpenChangeComplete": {
+      "type": "(open: boolean) => void",
+      "default": "—",
+      "semantic": "fires after the closing animation (the only open-state callback on Root)."
+    },
+    "Root.actionsRef": {
+      "type": "RefObject<{unmount: () => void}>",
+      "default": "—",
+      "semantic": "imperative unmount."
+    },
+    "Root element/nesting": {
+      "type": "renders <nav> at the root, <div> when nested",
+      "default": "—",
+      "semantic": "nest a second Root inside a higher-level Content for multi-level menus."
+    },
+    "List / Item / Trigger / Icon": {
+      "type": "List renders <ul>; Item renders <li>; Trigger renders <button> (disabled prop, default false); Icon renders a span",
+      "default": "—",
+      "semantic": "Trigger opens on hover or click; Icon carries data-popup-open for rotation."
+    },
+    "Content.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "keeps content in the DOM while closed (helps SSR/crawlers)."
+    },
+    "Positioner": {
+      "type": "UseAnchorPositioningSharedParameters (side, align, sideOffset, alignOffset, anchor, collisionAvoidance, collisionBoundary, collisionPadding, sticky, positionMethod, arrowPadding) + data-instant",
+      "default": "same anchor-positioning defaults as other Positioners",
+      "semantic": "positions the popup against the currently active trigger; also exposes --positioner-width/--positioner-height CSS vars and a --duration/--easing animation pattern in the docs example."
+    },
+    "Popup": {
+      "type": "renders <nav>; children include Arrow and Viewport",
+      "default": "—",
+      "semantic": "the popup is the animated container; docs pattern: <Popup><Arrow/><Viewport/></Popup>."
+    },
+    "Viewport": {
+      "type": "renders <div>",
+      "default": "—",
+      "semantic": "clipping viewport of the current content; animate it for size/opacity transitions."
+    },
+    "Link": {
+      "type": "renders <a>",
+      "default": "—",
+      "semantic": "emits data-active; use `render` for framework links."
+    },
+    "Portal": {
+      "type": "Portal.Props (container)",
+      "default": "body",
+      "semantic": "optional; omit to render inline in the DOM."
+    },
+    "Backdrop / Arrow": {
+      "type": "styling + render",
+      "default": "—",
+      "semantic": "Backdrop is the overlay; Arrow points at the active trigger."
+    }
+  },
+  "dataAttributes": [
+    "Trigger: data-popup-open, data-pressed, data-disabled",
+    "Icon: data-popup-open",
+    "Link: data-active",
+    "Content: data-open, data-closed, data-starting-style, data-ending-style, data-activation-direction ('left' | 'right' | 'up' | 'down')",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-anchor-hidden, data-side, data-align",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align, data-instant",
+    "Arrow: data-open, data-closed, data-side, data-align, data-uncentered",
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style",
+    "Root / List / Item / Portal / Viewport: none"
+  ],
+  "renderProp": "Shared `render` contract on every part (ReactElement | (props, state) => ReactElement, plus state-driven className/style). The docs' custom-link example renders `<NavigationMenu.Link render={<NextLink/>}/>` for client-side routing. Custom primitives: useRender; merging: mergeProps/mergePropsN.",
+  "controlled": "`value` / `defaultValue` (default null) + `onValueChange(value, eventDetails)`. There is NO `open`/`onOpenChange` on the Root — open-ness is derived from whether `value` is non-null, and `onOpenChangeComplete(open)` is the only open-state notification. `actionsRef` -> { unmount }.",
+  "formIntegration": "None (pure navigation).",
+  "keyboard": "List stops propagation of the main-orientation arrow keys (horizontal: ArrowLeft/ArrowRight; vertical: ArrowUp/ArrowDown) so focus moves between top-level items (NavigationMenuList.mjs). Trigger opens the popup with ArrowDown when horizontal, or with ArrowRight/ArrowLeft (RTL-aware) when vertical (NavigationMenuTrigger.mjs, reason 'list-navigation'). Hover opens after `delay` (50 ms default) and closes after `closeDelay`; Escape/outside press/focus-out close it (reasons in the ChangeEvent union). Once open, focus is managed by the popup; there is no typeahead for top-level items and no PageUp/PageDown handling.",
+  "notableDifferences": [
+    "React Aria ships no equivalent navigation-menu primitive (you compose `Disclosure`/`Popover` or a Menu), so there is no 1:1 source API: Base UI models the open item as a `value` (+`defaultValue`/`onValueChange`) instead of `open`/`onOpenChange` booleans, and hovering is first-class with `delay`/`closeDelay` (default 50/50).",
+    "Composition is mandatory and verbose: Root > List > Item > Trigger + Portal > Positioner > Popup > (Arrow, Viewport) — the content only animates correctly when it lives inside `<Viewport>` inside `<Popup>` inside `<Positioner>`; the docs' 'Large menus' section also describes dropping Portal/Positioner for inline nested submenus (use `defaultValue` so a nested menu can start open).",
+    "Nesting a Root inside a Content switches the rendered element from <nav> to <div> and creates a second-level menu with the same value semantics ('Nested inline submenus' example omits the nested Portal and renders List + Viewport with a defaultValue).",
+    "Animated content switching is exposed through data-activation-direction ('left'|'right'|'up'|'down') on Content plus --positioner-width/--positioner-height and --transform-origin CSS variables, with a data-instant escape hatch on the Positioner — React Aria uses different transition-state APIs.",
+    "Link is the only element with data-active; there is no data-selected/data-current vocabulary."
+  ]
+}

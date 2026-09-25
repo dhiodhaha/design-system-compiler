@@ -1,0 +1,75 @@
+{
+  "primitive": "use-render",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/use-render",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/utils/use-render.md",
+    "https://base-ui.com/react/handbook/composition.md",
+    "node_modules/@base-ui/react/docs/react/utils/use-render.md",
+    "node_modules/@base-ui/react/use-render/useRender.d.ts",
+    "node_modules/@base-ui/react/types/index.d.ts"
+  ],
+  "parts": [
+    "useRender",
+    "useRender.State",
+    "useRender.RenderProp",
+    "useRender.Parameters",
+    "useRender.ReturnValue",
+    "useRender.ComponentProps",
+    "useRender.ElementProps",
+    "UseRenderRenderProp",
+    "UseRenderComponentProps",
+    "UseRenderElementProps",
+    "UseRenderParameters",
+    "UseRenderReturnValue",
+    "UseRenderState",
+    "ComponentRenderFn",
+    "HTMLProps"
+  ],
+  "keyProps": {
+    "parameters.render": {
+      "type": "ReactElement | ComponentRenderFn<HTMLAttributes, State>",
+      "semantic": "consumer element/function; absent -> default tag"
+    },
+    "parameters.ref": {
+      "type": "Ref<Element> | Ref<Element>[]",
+      "semantic": "an ARRAY is merged — how a custom component merges its internal ref with props.ref (no forwardRef needed in React 19)"
+    },
+    "parameters.state": {
+      "type": "State extends Record<string, unknown>",
+      "semantic": "passed as 2nd arg to the render callback AND auto-converted to data-* attributes"
+    },
+    "parameters.stateAttributesMapping": {
+      "type": "StateAttributesMapping<State>",
+      "semantic": "custom state->data-* mapping, e.g. { isActive: (v) => v ? { 'data-is-active': '' } : null }"
+    },
+    "parameters.props": {
+      "type": "Record<string, unknown>",
+      "semantic": "merged with internal props: handlers merged, className/style joined, other external props overwrite internal ones"
+    },
+    "parameters.enabled": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "false short-circuits and returns null"
+    },
+    "parameters.defaultTagName": {
+      "type": "keyof JSX.IntrinsicElements",
+      "default": "'div'"
+    },
+    "return": {
+      "type": "ReactElement | null",
+      "semantic": "null only when enabled === false"
+    }
+  },
+  "dataAttributes": "None of its own — it converts component `state` keys into data-* attributes on the rendered element; this is the mechanism behind every Base UI data-* attribute.",
+  "renderProp": "This hook IS the render-prop implementation for author components: `const element = useRender({ defaultTagName: 'p', ref: internalRef, state, stateAttributesMapping, props, render })`. Pair with mergeProps; nesting guidance in the composition handbook.",
+  "controlled": null,
+  "formIntegration": null,
+  "keyboard": null,
+  "notableDifferences": [
+    "React Aria components expose className/style render-state objects; useRender is how a custom component accepts the same `render` contract as Base UI parts. Migrating a RAC wrapper that forwards className/style is done with useRender, not cloneElement.",
+    "mergeProps + useRender replaces the repo's cloneElement/asChild patterns (pagination-base.tsx, carousel-base.tsx, buttons/button.tsx)."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "primitive": "scroll-area",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/scroll-area.md"
+  ],
+  "parts": [
+    "Root",
+    "Viewport",
+    "Scrollbar",
+    "Content",
+    "Thumb",
+    "Corner"
+  ],
+  "keyProps": {
+    "Root.overflowEdgeThreshold": {
+      "type": "number | Partial<{xStart, xEnd, yStart, yEnd}>",
+      "default": "0",
+      "semantic": "pixels that must be passed before the overflow edge data attributes (data-overflow-x-start etc.) are applied; a single number applies to all edges — used to avoid flicker on tiny overflows and to drive scroll fade masks."
+    },
+    "Root CSS variables": {
+      "type": "--scroll-area-corner-height, --scroll-area-corner-width",
+      "default": "—",
+      "semantic": "measured corner size, for sizing/positioning a custom corner."
+    },
+    "Viewport": {
+      "type": "no additional props (BaseUIComponentProps only)",
+      "default": "—",
+      "semantic": "the actual native scroll container (overflow:auto element); must wrap Content; focusable by default because it is keyboard-scrollable."
+    },
+    "Scrollbar.orientation": {
+      "type": "'vertical' | 'horizontal'",
+      "default": "'vertical'",
+      "semantic": "which axis this scrollbar controls; render two for both axes and add Corner."
+    },
+    "Scrollbar.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "keep the scrollbar element in the DOM when the viewport is not scrollable (otherwise it unmounts)."
+    },
+    "Content": {
+      "type": "BaseUIComponentProps only",
+      "default": "—",
+      "semantic": "content wrapper inside the Viewport; carries the same overflow/scroll data attributes."
+    },
+    "Thumb": {
+      "type": "BaseUIComponentProps only",
+      "default": "—",
+      "semantic": "the draggable indicator; sized/positioned by the component, style width/height to taste."
+    },
+    "Corner": {
+      "type": "BaseUIComponentProps only",
+      "default": "—",
+      "semantic": "rectangular filler at the intersection of two scrollbars; required when both axes are present."
+    }
+  },
+  "dataAttributes": [
+    "Root / Viewport / Content: data-scrolling, data-has-overflow-x, data-has-overflow-y, data-overflow-x-start, data-overflow-x-end, data-overflow-y-start, data-overflow-y-end",
+    "Scrollbar: data-orientation, data-hovering (pointer over the scroll area), data-scrolling, data-has-overflow-x, data-has-overflow-y, data-overflow-x-start, data-overflow-x-end, data-overflow-y-start, data-overflow-y-end",
+    "Thumb: data-orientation, data-scrolling",
+    "Corner: none"
+  ],
+  "renderProp": "Shared `render` contract (ReactElement | (props, state) => ReactElement) on all six parts plus state-driven className/style; documented advanced usage composes ScrollArea.Viewport into another component's render prop: <Tabs.List render={<ScrollArea.Viewport/>}/>. Custom primitives: useRender; merging: mergeProps/mergePropsN.",
+  "controlled": "None — the scroll area is uncontrolled by design (scroll position lives in the DOM). There are no value/defaultValue/open props and no change callbacks; consumers observe state through data-* attributes and can drive the viewport imperatively via its DOM element.",
+  "formIntegration": "None.",
+  "keyboard": "No keyboard handling of its own: Base UI ScrollArea keeps a NATIVE scroll container (the Viewport), so keyboard scrolling (arrows/Page/Home/End when the viewport is focused), wheel, touch and scrollbar drag all come from the browser. There is no ARIA scrollbar widget, no arrow-key stepping and no PageUp/PageDown code anywhere in the package (verified by searching the compiled sources). Visibility of custom scrollbars is CSS-driven: the docs style them with data-hovering / data-scrolling (scrollbars are opacity 0 + pointer-events:none until hovering/scrolling).",
+  "notableDifferences": [
+    "React Aria has no ScrollArea primitive; the closest migration target is a plain overflow container. Base UI adds: custom Scrollbar/Thumb/Corner parts, cross-axis overflow data attributes for fade masks, and a `data-hovering`/`data-scrolling` visibility contract — but scrolling itself stays native, so no `type='scroll'|'hover'` behaviour modes and no programmatic scroll API are provided.",
+    "All show/hide logic is delegated to CSS via data attributes (no shadow DOM, no JS opacity), and `keepMounted` on the Scrollbar is the only mounting control.",
+    "Two scrollbars require two explicit <ScrollArea.Scrollbar> elements (one with orientation='horizontal') plus <ScrollArea.Corner/> to keep them from intersecting.",
+    "Overflow detection is configurable through `overflowEdgeThreshold` (default 0) so small overflow deltas do not toggle the edge attributes/fades."
+  ]
+}

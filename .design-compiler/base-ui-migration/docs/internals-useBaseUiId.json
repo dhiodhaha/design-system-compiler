@@ -1,0 +1,29 @@
+{
+  "primitive": "internals/useBaseUiId",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/internals/useBaseUiId",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt (absent — internal)",
+    "node_modules/@base-ui/react/internals/useBaseUiId.d.ts",
+    "node_modules/@base-ui/react/package.json (exports)"
+  ],
+  "parts": [
+    "useBaseUiId"
+  ],
+  "keyProps": {
+    "useBaseUiId(idOverride?)": {
+      "type": "(idOverride?: string) => string | undefined",
+      "semantic": "Wraps useId and prefixes generated ids with 'base-ui-'; an explicit override is returned as-is. Returns undefined if the override is undefined and no generated id is available in that render pass."
+    }
+  },
+  "dataAttributes": [],
+  "renderProp": null,
+  "controlled": null,
+  "formIntegration": "Ids generated here are what Base UI wires for label/control association (Field <-> control) and for aria-labelledby/aria-controls pairs (e.g. Tab -> Panel). Migrated custom components should use this hook rather than raw useId so SSR/client id prefixes stay consistent with the rest of the library.",
+  "keyboard": null,
+  "notableDifferences": [
+    "React Aria's useId (from @react-aria/utils) uses a different prefix/scheme. Because Base UI parts internally generate ids for aria wiring, a wrapper that hard-codes or re-derives ids from RAC will desynchronise; use useBaseUiId for any id a migrated component must generate itself.",
+    "Repo imports @react-aria/utils in exactly one place (file-upload-trigger.tsx:9, filterDOMProps — not useId), so the id-migration surface is small."
+  ]
+}

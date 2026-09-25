@@ -1,0 +1,43 @@
+{
+  "primitive": "merge-props",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/merge-props",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/utils/merge-props.md",
+    "node_modules/@base-ui/react/docs/react/utils/merge-props.md",
+    "node_modules/@base-ui/react/merge-props/mergeProps.d.ts"
+  ],
+  "parts": [
+    "mergeProps",
+    "mergePropsN",
+    "makeEventPreventable",
+    "mergeClassNames"
+  ],
+  "keyProps": {
+    "mergeProps(a,b,c?,d?,e?)": "Up to 5 prop sets. Each argument is a props object OR a function (otherProps) => otherProps that receives the props merged so far (left-to-right); with a function YOU chain handlers yourself.",
+    "mergePropsN(props[])": "Array form of the same merge; slightly slower — prefer mergeProps for <=5 sets.",
+    "makeEventPreventable(event)": "Adds the preventBaseUIHandler method to a React synthetic event.",
+    "mergeClassNames(our, their)": "Concatenates two class names (undefined if both empty)."
+  },
+  "mergeSemantics": {
+    "mostKeys": "rightmost object wins (Object.assign-like)",
+    "className": "concatenated right-to-left, rightmost first: mergeProps({className:'a'},{className:'b'}) -> 'b a'",
+    "style": "keys merged, rightmost overwrites earlier keys",
+    "handlers": "merged and executed right-to-left (rightmost runs first)",
+    "ref": "NOT merged — only the rightmost ref is kept",
+    "prevention": "For React synthetic events Base UI adds event.preventBaseUIHandler(); calling it stops Base UI's internal logic (it does NOT call preventDefault/stopPropagation). Handlers returned from function-form arguments must check event.baseUIHandlerPrevented themselves.",
+    "nonSynthetic": "For custom (non-synthetic) events all handlers always run; prevention unavailable."
+  },
+  "dataAttributes": [],
+  "renderProp": "The merge helper for `render` callbacks and for custom components that accept a render prop: `render={(props, state) => <button {...mergeProps<'button'>(props, { className: styles.Button })} />}`. For ref merging use useRender's `ref` array parameter, never mergeProps.",
+  "controlled": null,
+  "formIntegration": null,
+  "keyboard": null,
+  "notableDifferences": [
+    "Repo imports mergeProps + filterDOMProps from @react-aria/utils — 1 usage: registry/untitledui/components/base/file-upload-trigger/file-upload-trigger.tsx:9. Swap keeps className/style/handler behaviour but adds preventBaseUIHandler/baseUIHandlerPrevented semantics RAC lacks.",
+    "No ref merging (RAC's mergeProps merges refs). Call sites relying on that must use useRender's `ref` array or merge manually.",
+    "Function-form prop sets (compute-from-previous) have no RAC equivalent."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "primitive": "time-field",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "coversAlso": [
+    "time-range",
+    "date-time",
+    "date-time-range"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "No ./time-field or ./time-* subpath; between ./switch (line 553) and ./tabs (line 567) the map contains only ./switch -> ./tabs, and a `./time-*` entry would sort after ./tabs anyway — neither position is occupied by a time primitive.",
+    "shared": "see the shared evidence block: no Time Field in the 37 documented components, no bundled doc page, no CHANGELOG/release-note entry.",
+    "internalTypesOnly": "internals/temporal types name 'date, time and date-time components' and 'date-range, time-range and date-time-range components'; none is exported."
+  },
+  "affectedRepoFiles": [],
+  "consequence": "NO_BASE_UI_EQUIVALENT. No repo file currently imports a React Aria TimeField, so this is a forward-looking verdict only: if a time input is added before Base UI ships date/time components, it must be built on react-aria-components or on native <input type=\"time\"/>, not on Base UI.",
+  "notableDifferences": [
+    "Base UI's nearest primitives are Input (text) and Number Field (numeric with increment/decrement + scrub) — neither models time segments, 12/24-hour locales, or timezone offsets.",
+    "The unshipped Base UI design (per internals/temporal) expects a date-library object (date-fns/luxon adapter) and a TemporalTimezone ('default'|'system'|'UTC'|string) — a different data model from @internationalized/date/Time."
+  ]
+}

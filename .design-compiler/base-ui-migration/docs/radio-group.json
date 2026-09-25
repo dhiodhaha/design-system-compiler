@@ -1,0 +1,84 @@
+{
+  "primitive": "radio-group",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/radio-group.md",
+    "node_modules/@base-ui/react/radio-group/index.d.ts",
+    "node_modules/@base-ui/react/radio-group/RadioGroup.d.ts"
+  ],
+  "parts": [
+    "RadioGroup"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "Value (generic, default any)",
+      "notes": "Controlled selection. RadioGroup is generic: <RadioGroup<'ssd' | 'hdd'> value=... /> is documented usage."
+    },
+    "defaultValue": {
+      "type": "Value",
+      "notes": "Uncontrolled initial selection."
+    },
+    "onValueChange": {
+      "type": "(value: Value, eventDetails: RadioGroup.ChangeEventDetails) => void"
+    },
+    "name": {
+      "type": "string",
+      "notes": "Identifies the field for form submission."
+    },
+    "form": {
+      "type": "string"
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "readOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "inputRef": {
+      "type": "React.Ref<HTMLInputElement>"
+    }
+  },
+  "dataAttributes": [
+    "data-disabled — present when the group is disabled",
+    "data-valid/data-invalid, data-dirty/data-touched, data-filled, data-focused — Field.Root state"
+  ],
+  "renderProp": {
+    "mechanism": "render on RadioGroup",
+    "elementForm": "<Fieldset.Root render={<RadioGroup<'ssd'|'hdd'> defaultValue=\"ssd\" />}> is the documented composition for a labelled group",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(value: Value, eventDetails: RadioGroup.ChangeEventDetails)"
+    ],
+    "note": "reason is always 'none'."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "Renders the hidden radio inputs for the group members; name on RadioGroup is what the form sees.",
+    "validation": "required is enforced; renders role=\"radiogroup\" with aria-required/aria-disabled/aria-readonly."
+  },
+  "keyboard": {
+    "keys": "Roving focus over the radios via internals/composite: ArrowUp/ArrowDown/ArrowLeft/ArrowRight, Home, End; loopFocus defaults to true (wrap-around at the ends).",
+    "focus": "Single tab stop for the whole group.",
+    "typeahead": "none"
+  },
+  "notableDifferences": [
+    "React Aria's RadioGroup exposes orientation + isReadOnly/isRequired/isInvalid; Base UI exposes disabled/readOnly/required and no orientation prop.",
+    "The group's value is generic over Value, so a typed union migrates cleanly (React Aria is string-based Key).",
+    "Labelling the group requires aria-labelledby or composing with Fieldset.Root — there is no Label part on RadioGroup itself.",
+    "Disabled/readOnly/required propagate from the group down to the radios; in React Aria these are per-Radio too."
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "primitive": "tabs",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/tabs",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/tabs.md",
+    "https://base-ui.com/react/handbook/composition.md",
+    "node_modules/@base-ui/react/docs/react/components/tabs.md",
+    "node_modules/@base-ui/react/tabs/index.d.ts",
+    "node_modules/@base-ui/react/tabs/index.parts.d.ts",
+    "node_modules/@base-ui/react/tabs/root/TabsRoot.d.ts",
+    "node_modules/@base-ui/react/tabs/tab/TabsTab.d.ts",
+    "node_modules/@base-ui/react/tabs/list/TabsList.d.ts",
+    "node_modules/@base-ui/react/tabs/panel/TabsPanel.d.ts",
+    "node_modules/@base-ui/react/tabs/indicator/TabsIndicator.d.ts",
+    "node_modules/@base-ui/react/internals/types.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "List",
+    "Tab",
+    "Panel",
+    "Indicator"
+  ],
+  "partsNote": "index.d.ts: `export * as Tabs from './index.parts.js'`. index.parts exports exactly Root|Tab|Indicator|Panel|List. Default elements: Root=div, List=div, Tab=button, Panel=div, Indicator=span.",
+  "keyProps": {
+    "Root.value": {
+      "type": "Tabs.Tab.Value (= any | null)",
+      "default": "-",
+      "semantic": "controlled active value; null = no tab active"
+    },
+    "Root.defaultValue": {
+      "type": "Tabs.Tab.Value",
+      "default": "0",
+      "semantic": "uncontrolled initial value; default is the NUMBER 0, not undefined"
+    },
+    "Root.onValueChange": {
+      "type": "(value: Tabs.Tab.Value, eventDetails: Tabs.Root.ChangeEventDetails) => void",
+      "default": "-"
+    },
+    "Root.orientation": {
+      "type": "'horizontal' | 'vertical'",
+      "default": "'horizontal'",
+      "semantic": "arrow-key axis + data-orientation; aria-orientation='vertical' is set on List only when vertical"
+    },
+    "List.activateOnFocus": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "false = manual activation (Enter/Space); equivalent to React Aria keyboardActivation='manual'"
+    },
+    "List.loopFocus": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "arrow-key focus wraps"
+    },
+    "Tab.value": {
+      "type": "Tabs.Tab.Value",
+      "default": "-",
+      "semantic": "required"
+    },
+    "Tab.disabled": {
+      "type": "boolean",
+      "default": "undefined (falsy)",
+      "semantic": "disabled tabs are skipped by initial selection: if the first Tab is disabled the next enabled one is selected initially — NOT during SSR, so set Root value/defaultValue to an enabled value to avoid mismatch"
+    },
+    "Tab.nativeButton": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "set false when render produces a non-<button> (e.g. <a>)"
+    },
+    "Panel.value": {
+      "type": "Tabs.Tab.Value",
+      "default": "-",
+      "semantic": "required; matches the Tab value"
+    },
+    "Panel.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "keep the closed panel in the DOM (stays hidden + inert)"
+    },
+    "Indicator.renderBeforeHydration": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "emits a prehydration script (package imports '#prehydration/tabs/indicator') so the indicator is positioned before hydration"
+    },
+    "allParts": {
+      "type": "BaseUIComponentProps<Element, State>",
+      "semantic": "className: string | (state)=>string|undefined; style: CSSProperties | (state)=>CSSProperties|undefined; render: ReactElement | (props,state)=>ReactElement; plus all native props of the default element"
+    }
+  },
+  "indicatorCssVariables": [
+    "--active-tab-left",
+    "--active-tab-right",
+    "--active-tab-top",
+    "--active-tab-bottom",
+    "--active-tab-width",
+    "--active-tab-height"
+  ],
+  "dataAttributes": [
+    {
+      "attr": "data-orientation",
+      "parts": [
+        "Root",
+        "List",
+        "Tab",
+        "Panel",
+        "Indicator"
+      ],
+      "values": "'horizontal' | 'vertical'"
+    },
+    {
+      "attr": "data-activation-direction",
+      "parts": [
+        "Root",
+        "List",
+        "Tab",
+        "Panel",
+        "Indicator"
+      ],
+      "values": "'left' | 'right' | 'up' | 'down' | 'none'",
+      "meaning": "direction of the new tab relative to the previous one (for animation)"
+    },
+    {
+      "attr": "data-active",
+      "parts": [
+        "Tab"
+      ],
+      "meaning": "present when the tab is active (aria-selected is also set)"
+    },
+    {
+      "attr": "data-disabled",
+      "parts": [
+        "Tab"
+      ],
+      "meaning": "present when the tab is disabled"
+    },
+    {
+      "attr": "data-hidden",
+      "parts": [
+        "Panel"
+      ],
+      "meaning": "present when the panel is hidden"
+    },
+    {
+      "attr": "data-index",
+      "parts": [
+        "Panel"
+      ],
+      "meaning": "index of the tab panel"
+    },
+    {
+      "attr": "data-starting-style",
+      "parts": [
+        "Panel"
+      ],
+      "meaning": "panel animating in"
+    },
+    {
+      "attr": "data-ending-style",
+      "parts": [
+        "Panel"
+      ],
+      "meaning": "panel animating out"
+    }
+  ],
+  "renderProp": "Every part takes `render`: a React element (`<Tabs.Tab render={<a href=\"/x\" />} nativeButton={false}>`) or `(props, state) => ReactElement` where state is that part's State type (Tab {disabled, active, orientation, tabActivationDirection}; Panel {hidden, transitionStatus, orientation, tabActivationDirection}; Indicator {activeTabPosition, activeTabSize, orientation, tabActivationDirection}; Root/List {orientation, tabActivationDirection}). In function form merge with mergeProps: `render={(props, state) => <button {...mergeProps<'button'>(props, { className: styles.Tab })} />}`. For your own render-prop components use the public `useRender` hook ('@base-ui/react/use-render'). Render props nest arbitrarily. Caveat: render is for composing behaviour/props, not polymorphism; tag-specific defaults (e.g. type=\"button\") need an explicit signal — that is what nativeButton is for.",
+  "controlled": {
+    "uncontrolled": "defaultValue (default 0)",
+    "controlled": "value",
+    "callback": "onValueChange(value: Tabs.Tab.Value, eventDetails: Tabs.Root.ChangeEventDetails)",
+    "eventDetails": "{ reason: 'none'|'disabled'|'missing'|'initial', event, cancel(), allowPropagation(), isCanceled, isPropagationAllowed, trigger, activationDirection }",
+    "reasonSemantics": "'none' = user-initiated (click/keyboard). 'initial' = first automatic selection/fallback when defaultValue omitted or undefined, including when the implicit initial value is disabled/missing. 'disabled' = fallback when the selected tab became disabled. 'missing' = fallback when the selected tab was removed, or an explicit defaultValue never matched a mounted tab. Automatic changes cannot be canceled (cancel() is a no-op for initial/disabled/missing).",
+    "types": "Tabs.Root.State/.Props/.Orientation/.ChangeEventReason/.ChangeEventDetails; Tabs.Tab.Value/.ActivationDirection/.Position/.Size/.Metadata/.State/.Props; Tabs.Panel.State/.Metadata; Tabs.List.State; Tabs.Indicator.State"
+  },
+  "formIntegration": "None. No name/value submission, no hidden input, no Form/Field validation wiring; Root renders a plain <div>. (React Aria Tabs is not a form control either — no regression.)",
+  "keyboard": {
+    "model": "Roving tabindex via internals/composite: TabsList renders CompositeRoot with enableHomeAndEndKeys:true, loopFocus (prop, default true), orientation-driven axis, index-based highlight.",
+    "keys": "Arrow keys move focus along the orientation axis (Left/Right horizontal, Up/Down vertical), wrapping when loopFocus; Home/End move to first/last enabled tab (TabsList hard-enables Home/End); Enter/Space activate in manual mode. activateOnFocus={true} activates on focus, except that a secondary (non-main-button) press focuses without activating.",
+    "typeahead": "n/a (no public typeahead helper exists in the package).",
+    "aria": "List role=tablist (+aria-orientation only when vertical); Tab role=tab, aria-selected, aria-controls -> panel id, id; Panel role=tabpanel, aria-labelledby -> tab id, tabIndex 0 when open else -1, inert when closed (also when keepMounted). Only the focused tab is in the tab order."
+  },
+  "notableDifferences": [
+    "isDisabled -> disabled (on Tab).",
+    "selectedKey/defaultSelectedKey/onSelectionChange (key-based) -> value/defaultValue/onValueChange; value type `any | null`, null = no active tab. Repo hit: header-navigation.tsx:204 `<Tabs selectedKey={activeTabKey}>`.",
+    "keyboardActivation='manual'|'automatic' on the root -> `activateOnFocus` boolean on Tabs.List (default false = manual). Repo uses manual (tabs/tabs.tsx:224) = default.",
+    "No `items`/collection prop on Tabs.List: React Aria takes `items` + a render child, Base UI requires explicit <Tabs.Tab> children. Repo does `<TabList items={tabItems} />` (tabs/tabs.tsx:143/205) — must expand to explicit tabs.",
+    "Render-prop state is much smaller: RAC gives {isSelected,isDisabled,isHovered,isPressed,isFocusVisible}; Base UI Tab gives only {disabled, active, orientation, tabActivationDirection}. Hover/press/focus-visible must move to CSS pseudo-classes — there is no data-hovered/data-pressed/data-focus-visible/data-selected.",
+    "Data attributes: RAC data-selected/data-hovered/data-pressed/data-focus-visible/data-disabled/data-orientation vs Base UI data-active (NOT data-selected), data-disabled, data-orientation, data-activation-direction (+ Panel data-hidden/data-index/data-starting-style/data-ending-style). REPO HAZARD: globals.css loads `@plugin \"tailwindcss-react-aria-components\"`, whose `selected:`/`pressed:`/`hovered:` variants key off RAC data attributes. Existing usages — table.tsx:238 `selected:bg-secondary`, button-group.tsx:26/28 `selected:`/`group-selected/`, nav-account-card.tsx:193 `pressed:` — will silently stop matching after migration. Audit these per widget (`disabled:` is native and safe).",
+    "Indicator is a first-class Base UI part (CSS vars + data-activation-direction + optional prehydration script); React Aria has none (repo hand-rolls it).",
+    "shouldForceMount -> keepMounted; Base UI closed panels are hidden + inert and keep focus out.",
+    "No public context hooks: RAC exposes TabsContext/TabsStateContext + useSlottedContext (repo uses it at tabs/tabs.tsx:115); Base UI exposes only typed Metadata/State types — prop plumbing required.",
+    "No multi-select tabs (RAC widened onChange for selectionMode='multiple'; repo already collapses arrays).",
+    "Root default active value is 0, so a Tab with value={0} is initially active if no value/defaultValue is given."
+  ]
+}

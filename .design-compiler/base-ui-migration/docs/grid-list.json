@@ -1,0 +1,27 @@
+{
+  "primitive": "grid-list",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT (partial capability available internally)",
+  "coversAlso": [
+    "data-grid",
+    "datagrid",
+    "table-with-grid-navigation"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/internals/composite/root/gridNavigation.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "No ./grid, ./grid-list or ./data-grid subpath anywhere in the 80-entry exports map (a `./grid*` entry would sort between ./form line 301 and ./input line 315; the map goes form -> input).",
+    "shared": "see the shared evidence block: no Grid/DataGrid page in the docs index or bundled docs; no CHANGELOG/release-note entry.",
+    "partialCapability": "internals/composite/root/gridNavigation.d.ts exports gridNavigation({ cols, dense?, itemSizes? }) -> CompositeGridNavigator with 2D arrow navigation keyed by rows/cols, rtl-aware, disabledIndices-aware, and loopFocus-aware. It is an internal hook used by Base UI's own popups in grid mode (see the v1.8.0 note 'Render groups with the rowgroup role in grid mode' for Autocomplete/Combobox). It provides navigation only — no selection, no virtualization, no column/header semantics — so it is not a migration target for a DataGrid."
+  },
+  "affectedRepoFiles": [],
+  "consequence": "NO_BASE_UI_EQUIVALENT. Any grid/table widget must remain on react-aria-components or another library. Do not build a DataGrid on internals/composite: it is undocumented, unversioned-by-contract, and lacks selection/sorting/virtualization.",
+  "notableDifferences": [
+    "React Aria's GridList/Table provides a collection with selection, keyboard navigation across cells/rows, and (via @internationalized/date and react-stately) virtualized/scrolling data; Base UI exposes only gridNavigation for popup item navigation.",
+    "Base UI's listbox/popup components (Select, Combobox, Autocomplete) do support grid mode internally, so a *menu-like* 2D layout is achievable inside those components only — not as a standalone grid."
+  ]
+}

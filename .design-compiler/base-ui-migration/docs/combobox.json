@@ -1,0 +1,229 @@
+{
+  "primitive": "combobox",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/combobox.md"
+  ],
+  "parts": [
+    "Root",
+    "Label",
+    "Value",
+    "Input",
+    "InputGroup",
+    "Trigger",
+    "List",
+    "Status",
+    "Portal",
+    "Backdrop",
+    "Positioner",
+    "Popup",
+    "Arrow",
+    "Icon",
+    "Group",
+    "GroupLabel",
+    "Item",
+    "ItemIndicator",
+    "Chips",
+    "Chip",
+    "ChipRemove",
+    "Row",
+    "Collection",
+    "Empty",
+    "Clear",
+    "Separator",
+    "useFilter",
+    "useFilteredItems",
+    "createItems"
+  ],
+  "keyProps": {
+    "Root.value / defaultValue": {
+      "type": "Value | Value[] | null",
+      "default": "—",
+      "semantic": "selected value (array in `multiple` mode); separate from the typed text."
+    },
+    "Root.onValueChange": {
+      "type": "(value, eventDetails: Combobox.Root.ChangeEventDetails) => void",
+      "default": "—",
+      "semantic": "selection changes only."
+    },
+    "Root.inputValue / defaultInputValue": {
+      "type": "string | string[] | number",
+      "default": "—",
+      "semantic": "the typed text, controlled separately from value."
+    },
+    "Root.onInputValueChange": {
+      "type": "(inputValue: string, eventDetails) => void",
+      "default": "—",
+      "semantic": "fires on every keystroke/filter change."
+    },
+    "Root.open / defaultOpen / onOpenChange / onOpenChangeComplete": {
+      "type": "boolean / boolean / (open, details)=>void / (open)=>void",
+      "default": "defaultOpen=false",
+      "semantic": "popup state."
+    },
+    "Root.multiple": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "multi-select with Chips/Chip/ChipRemove inside InputGroup."
+    },
+    "Root.items": {
+      "type": "any[] | Group[] | ComboboxItemCollection<Item, Value>",
+      "default": "—",
+      "semantic": "flat items, groups with items, or a collection from createItems(); nullish entries are unsupported."
+    },
+    "Root.filteredItems": {
+      "type": "Item[] | Group<Item>[]",
+      "default": "—",
+      "semantic": "externally filtered list; must preserve flat/grouped structure; with a createItems() collection pass source items; use with useFilter()."
+    },
+    "Root.filter": {
+      "type": "((item, query, itemToString?) => boolean) | null",
+      "default": "—",
+      "semantic": "replaces built-in matching."
+    },
+    "Root.limit / locale": {
+      "type": "number / Intl.LocalesArgument",
+      "default": "-1 / runtime locale",
+      "semantic": "max visible items; string-comparison locale."
+    },
+    "Root.grid": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "grid layout: arrow keys navigate rows/columns inferred from DOM; use combobox/row."
+    },
+    "Root.inline": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "renders the list inline (no popup); pass `open` unconditionally; when composed inside Dialog.Root bind open/onOpenChange to the dialog so transient state resets."
+    },
+    "Root.autoHighlight": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "highlight first match while filtering."
+    },
+    "Root.highlightItemOnHover": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "false allows :hover to differ from data-highlighted."
+    },
+    "Root.loopFocus": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "arrow-key focus loop includes the input (APG combobox)."
+    },
+    "Root.modal": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "unlike Select (true)."
+    },
+    "Root.openOnInputClick": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "opens popup when the input is clicked."
+    },
+    "Root.virtualized": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "declare externally virtualized items."
+    },
+    "Root.isItemEqualToValue / itemToStringLabel / itemToStringValue": {
+      "type": "(a,b)=>boolean / (v)=>string / (v)=>string",
+      "default": "Object.is / auto from {value,label} / auto",
+      "semantic": "object-value support; with createItems() both args are derived values and getLabel wins for labels."
+    },
+    "Root.onItemHighlighted": {
+      "type": "(highlightedValue: Value | undefined, eventDetails: {reason: 'keyboard'|'pointer'|'none'}) => void",
+      "default": "—",
+      "semantic": "highlight tracking."
+    },
+    "Root.disabled / readOnly / required": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "form/interaction state."
+    },
+    "Root.name / form / inputRef / autoComplete / id": {
+      "type": "string / string / Ref<HTMLInputElement> / string / string",
+      "default": "—",
+      "semantic": "hidden input name (inputRef points at the hidden input, not the visible one)."
+    },
+    "Input.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "renders <input>."
+    },
+    "Clear.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "keep the clear button in the DOM when not visible (data-visible)."
+    },
+    "Item.value / index / disabled / onClick": {
+      "type": "any (default null) / number / boolean (false) / MouseEventHandler",
+      "default": "see each",
+      "semantic": "index improves perf; onClick fires on pointer click and on Enter when the item is highlighted and Input/List has focus."
+    },
+    "ItemIndicator.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "indicator rendered only when selected unless kept mounted."
+    },
+    "Value.placeholder + children": {
+      "type": "ReactNode | (selectedValue) => ReactNode",
+      "default": "—",
+      "semantic": "value formatting; array is read-only/frozen in multiple mode."
+    },
+    "Status": {
+      "type": "div live region",
+      "default": "—",
+      "semantic": "announces async list status politely; root element must stay mounted (never display:none/hidden/conditional)."
+    },
+    "Empty": {
+      "type": "—",
+      "default": "—",
+      "semantic": "renders children only when the list is empty; requires Root `items`."
+    },
+    "Collection.children": {
+      "type": "(item: any, index: number) => ReactNode",
+      "default": "—",
+      "semantic": "renders filtered list items; List also accepts a function child which implicitly wraps it."
+    },
+    "createItems(data, {getValue, getLabel})": {
+      "type": "(items|groups|undefined, options) => ComboboxItemCollection",
+      "default": "—",
+      "semantic": "derives selection value + label from arbitrary data (e.g. IDs); create at module scope or useMemo; items must not contain an `items` array property."
+    },
+    "useFilter(options)": {
+      "type": "(options?: {multiple?, value?}) => Filter",
+      "default": "—",
+      "semantic": "Intl.Collator-based matcher for externally filtered lists; useFilteredItems() returns the internally filtered items (treat as read-only)."
+    }
+  },
+  "dataAttributes": [
+    "Item: data-selected, data-highlighted, data-disabled",
+    "ItemIndicator: data-starting-style, data-ending-style",
+    "Input: data-popup-open, data-pressed, data-disabled, data-readonly, data-popup-side, data-required, data-valid, data-invalid, data-touched, data-dirty, data-filled, data-focused, data-list-empty",
+    "InputGroup: same as Input minus data-required, plus data-placeholder",
+    "Trigger: data-popup-open, data-pressed, data-disabled, data-readonly, data-popup-side, data-required, data-valid, data-invalid, data-touched, data-dirty, data-filled, data-focused, data-list-empty, data-placeholder",
+    "Clear: data-popup-open, data-disabled, data-visible, data-starting-style, data-ending-style",
+    "Popup: data-open, data-closed, data-starting-style, data-ending-style, data-side, data-align, data-anchor-hidden, data-empty",
+    "Positioner: data-open, data-closed, data-anchor-hidden, data-side, data-align, data-empty",
+    "List: data-empty (documented usage `data-empty:p-0`)",
+    "Backdrop: data-open, data-closed, data-starting-style, data-ending-style",
+    "Arrow: data-open, data-closed, data-side, data-align, data-uncentered",
+    "Root / Label / Group / GroupLabel / Separator / Row / Chips / Chip / Status / Empty: none",
+    "Chip/ChipRemove: no dedicated data-* in 1.8.0 (Chip state is `disabled`; ChipRemove is a button)"
+  ],
+  "renderProp": "Same shared contract as every Base UI part: `render?: ReactElement | ((props: HTMLProps, state) => ReactElement)` plus state-driven `className`/`style`. Item is memoized (React.NamedExoticComponent) and receives `value`/`index` so memoization can skip re-renders; the docs' 'Memoizing items' section notes memoization helps typing but not mount cost. Custom components: useRender; merging: mergeProps/mergePropsN (see select.json for the full semantics).",
+  "controlled": "Three independent state pairs: `value`/`defaultValue` + `onValueChange` (selection), `inputValue`/`defaultInputValue` + `onInputValueChange(inputValue, details)` (typed text), `open`/`defaultOpen` + `onOpenChange` (+ `onOpenChangeComplete`). Imperative `actionsRef` is { unmount }. In `multiple` mode the docs' 'Keeping the filter after selection' pattern cancels the change request to keep the query.",
+  "formIntegration": "Root renders a hidden `<input type=hidden form name value>` (verified in combobox/root/AriaCombobox.mjs, the shared root also used by Autocomplete); `inputRef` is a ref to that hidden input, `form` associates it with an external form, `required` participates in validation, `itemToStringValue` controls the serialized value. Field.Root drives data-valid/invalid/dirty/touched/filled/focused on Input/InputGroup/Trigger.",
+  "keyboard": "ArrowUp/ArrowDown move the highlight through items with the input in the loop; ArrowUp/Down from the input wrap according to `loopFocus` (default true). Home/End move the text caret inside the input (not the list). Enter selects the highlighted item; in readOnly it is stopped so it cannot submit. Escape with the popup closed clears the value (multiple -> []) via reason 'escape-key'; otherwise it closes the popup. Backspace/Delete removes the highlighted chip, and with an empty input removes the last chip in multiple mode (ComboboxInput.mjs). ChipRemove activates on Enter or Space. Typing filters using Intl.Collator (useFilter) — this replaces React Aria typeahead. No PageUp/PageDown handling exists in 1.8.0.",
+  "notableDifferences": [
+    "Two controlled pairs (value + inputValue) instead of React Aria's single value/inputValue ComboBox API: Base UI never merges typed text into the selected value, and `itemToStringLabel`/`itemToStringValue` replace React Aria's `textValue`/`getKey` style helpers.",
+    "Multi-select UI is Combobox.Chips > Chip > ChipRemove rendered inside InputGroup — React Aria uses TagGroup/TagList patterns that do not exist here.",
+    "Item registration requires a real `<Combobox.Item value>` per option; `items` powers filtering/label lookup and `createItems()` builds the ID->value/label collection (a React-Aria `items`+render-function shape is only supported through Combobox.Collection's function child).",
+    "Filtering is prop-driven: `filter`, `filteredItems`, `limit`, `locale`, `useFilter`, `virtualized` — there is no `defaultFilter`/`allowsCustomValue`; free-form text is not a value (docs: 'Combobox does not allow free-form text input').",
+    "`openOnInputClick` defaults to true here but false on Autocomplete; `modal` defaults to false (Select defaults true).",
+    "Positioning/popup composition is Portal > Positioner > Popup (+Backdrop/Arrow) with data-open/data-closed/data-starting-style/data-ending-style/data-side/data-align/data-anchor-hidden/data-empty — no React Aria overlay/placement props.",
+    "Item state is data-selected/data-highlighted/data-disabled; there is no data-focused/data-focus-visible/data-hovered equivalent."
+  ]
+}

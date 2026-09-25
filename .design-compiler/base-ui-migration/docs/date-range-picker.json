@@ -1,0 +1,24 @@
+{
+  "primitive": "date-range-picker",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "No ./date-range-picker (nor ./range-calendar) subpath between ./context-menu and ./dialog in the exports map (lines 217-231).",
+    "shared": "see the shared evidence block: docs index lists 37 components, none for ranges; CHANGELOG/release notes have no date-range entry.",
+    "internalTypesOnly": "internals/temporal defines TemporalRangeValue/[start,end] types for unshipped 'date-range, time-range, date-time-range components' — types without a component."
+  },
+  "affectedRepoFiles": [
+    "registry/untitledui/components/application/date-picker/date-range-picker.tsx (AriaDateRangePicker, AriaDialog, AriaGroup, AriaPopover, useLocale, useDateFormatter, useControlledState, endOfMonth/endOfWeek/startOfMonth/startOfWeek/today/getLocalTimeZone from @internationalized/date, DateValue)"
+  ],
+  "consequence": "NO_BASE_UI_EQUIVALENT — the hardest blocker in this file group, since range selection has no partial workaround (no two-calendar primitive, no range-aware field).",
+  "notableDifferences": [
+    "Range selection state in React Aria is {start, end} of DateValue with range-aware cell styling (isSelectionStart/isSelectionEnd/in-range); Base UI exposes nothing range-shaped.",
+    "`useLocale` (react-aria-components) for locale/direction and RAC's range-aware formatting have no Base UI counterpart in this area."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "primitive": "internals/useRenderElement",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/internals/useRenderElement",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt (absent — internal)",
+    "node_modules/@base-ui/react/internals/useRenderElement.d.ts",
+    "node_modules/@base-ui/react/use-render/useRender.d.ts (public sibling)"
+  ],
+  "parts": [
+    "useRenderElement",
+    "UseRenderElementParameters",
+    "UseRenderElementComponentProps",
+    "UseRenderElementState"
+  ],
+  "keyProps": {
+    "useRenderElement(element, componentProps, params?)": {
+      "type": "<State, RenderedElementType, TagName, Enabled>(element: TagName, componentProps: {className?, render?, style?}, params?: UseRenderElementParameters) => ReactElement | null",
+      "semantic": "The internal renderer every Base UI part uses. `element` is the default tag; `params.props` accepts a single prop set OR an ARRAY of prop sets / functions (props) => props; returns null when enabled === false."
+    },
+    "params.props": {
+      "type": "RenderFunctionProps<TagName> | Array<props | undefined | ((props) => props)>",
+      "semantic": "This array-of-prop-sets form is the internal equivalent of mergeProps and is why Base UI parts can layer internal + consumer props without extra allocations."
+    },
+    "params.enabled": {
+      "type": "boolean",
+      "default": "true"
+    },
+    "params.state / params.stateAttributesMapping": "state object and its data-* mapping",
+    "params.ref": "Ref | (Ref | undefined)[]",
+    "params.propGetter": "@deprecated ((externalProps: HTMLProps) => HTMLProps) — do not use in new code"
+  },
+  "dataAttributes": "Inherits whatever stateAttributesMapping yields (e.g. TransitionStatusDataAttributes: data-starting-style, data-ending-style).",
+  "renderProp": "Consumes the same `render` prop contract as the public useRender, but couples it to a default tag plus internal prop sets. For author components prefer the public `useRender` ('@base-ui/react/use-render'); useRenderElement is what the library's own parts call.",
+  "controlled": null,
+  "formIntegration": null,
+  "keyboard": null,
+  "notableDifferences": [
+    "No React Aria counterpart — RAC renders through its own internal machinery (useRenderProps/@react-aria/utils) and does not publish an element renderer.",
+    "Importing internals couples the repo to unversioned-by-contract APIs (they can change in a minor); a migration should prefer useRender + plain JSX unless it is deliberately re-implementing a Base UI part."
+  ]
+}

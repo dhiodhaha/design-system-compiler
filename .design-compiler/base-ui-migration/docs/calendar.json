@@ -1,0 +1,38 @@
+{
+  "primitive": "calendar",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "coversAlso": [
+    "range-calendar",
+    "CalendarGrid",
+    "CalendarGridHeader",
+    "CalendarGridBody",
+    "CalendarCell",
+    "CalendarHeaderCell",
+    "CalendarContext",
+    "RangeCalendarContext",
+    "RangeCalendarStateContext"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/overview/releases/v1-8-0.md",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts",
+    "node_modules/@base-ui/react/docs/react/components/ (listing)"
+  ],
+  "evidence": {
+    "exportsMap": "Alphabetical exports map: a `./calendar` entry would sort between `./button` (line 133) and `./checkbox` (line 147); the map goes button -> checkbox with no gap.",
+    "shared": "see the shared evidence block in the group report: docs index (37 components), bundled docs (37 md files), CHANGELOG + v1.8.0 release notes (no date entries)"
+  },
+  "affectedRepoFiles": [
+    "registry/untitledui/components/application/date-picker/calendar.tsx (AriaCalendar, AriaCalendarContext, AriaCalendarGrid, AriaCalendarGridBody, AriaCalendarGridHeader, AriaCalendarHeaderCell, AriaHeading, useSlottedContext, getLocalTimeZone/today from @internationalized/date, DateValue)",
+    "registry/untitledui/components/application/date-picker/range-calendar.tsx (AriaRangeCalendar, RangeCalendarContext, RangeCalendarStateContext, AriaCalendarGrid*, useDateFormatter, CalendarDate)",
+    "registry/untitledui/components/application/date-picker/cell.tsx (AriaCalendarCell, RangeCalendarContext, useLocale, useSlottedContext, RAC cell state {isDisabled,isFocusVisible,isSelectionStart,isSelectionEnd,isSelected,isOutsideMonth,formattedDate})"
+  ],
+  "consequence": "This widget cannot be migrated in this cycle. It must keep react-aria-components, or the feature must be deferred until a Base UI release exports date components. Do not attempt to rebuild a calendar on internals/temporal — no public widget, no docs, no consumers in the shipped bundle.",
+  "notableDifferences": [
+    "React Aria's calendar stack is keyed on DateValue objects from @internationalized/date (CalendarDate, CalendarDateTime, ZonedDateTime) via react-stately; Base UI 1.8.0 has no equivalent and its internal temporal scaffolding expects a registered adapter object (date-fns/luxon), not an @internationalized/date value — so a future port is a data-model migration, not just a component swap.",
+    "Repo styling relies on RAC render-prop cell state (isSelected/isSelectionStart/isFocusVisible/isOutsideMonth) and on Tailwind's `selected:`-family variants; neither has a Base UI counterpart for a calendar."
+  ]
+}

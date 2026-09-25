@@ -1,0 +1,106 @@
+{
+  "primitive": "switch",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/switch.md",
+    "node_modules/@base-ui/react/switch/index.d.ts",
+    "node_modules/@base-ui/react/switch/index.parts.d.ts",
+    "node_modules/@base-ui/react/switch/root/SwitchRoot.d.ts",
+    "node_modules/@base-ui/react/switch/thumb/SwitchThumb.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Thumb"
+  ],
+  "keyProps": {
+    "checked": {
+      "type": "boolean",
+      "notes": "Controlled; paired with defaultChecked."
+    },
+    "defaultChecked": {
+      "type": "boolean",
+      "default": false
+    },
+    "onCheckedChange": {
+      "type": "(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails) => void"
+    },
+    "value": {
+      "type": "string",
+      "notes": "Submitted when on; defaults to the native \"on\"."
+    },
+    "uncheckedValue": {
+      "type": "string",
+      "notes": "Submitted when off; nothing is submitted by default."
+    },
+    "name": {
+      "type": "string"
+    },
+    "form": {
+      "type": "string"
+    },
+    "nativeButton": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Root renders <span> so an enclosing <label> works; use nativeButton + render={<button />} for sibling labels."
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "readOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "inputRef": {
+      "type": "React.Ref<HTMLInputElement>"
+    },
+    "id": {
+      "type": "string",
+      "notes": "Applies to the hidden input; with nativeButton it applies to the root element instead."
+    }
+  },
+  "dataAttributes": [
+    "data-checked / data-unchecked",
+    "data-disabled / data-readonly / data-required",
+    "data-valid / data-invalid, data-dirty / data-touched, data-filled, data-focused (inside Field.Root)",
+    "Thumb emits the same set, which is how the translate-x animation is driven"
+  ],
+  "renderProp": {
+    "mechanism": "render on Root and Thumb",
+    "elementForm": "render={<button />} + nativeButton, or any element",
+    "functionForm": "render={(props, state) => <span {...props}>{state.checked ? <OnIcon/> : <OffIcon/>}</span>} — the composition handbook's canonical Switch.Thumb example",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultChecked"
+    ],
+    "controlledProps": [
+      "checked"
+    ],
+    "changeCallbacks": [
+      "onCheckedChange(checked: boolean, eventDetails: Switch.Root.ChangeEventDetails)"
+    ],
+    "note": "reason is always 'none'."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "Renders a hidden <input> beside the visible span; value is submitted when on, uncheckedValue when off (nothing by default).",
+    "validation": "required is enforced natively; Field.Root name is the field key."
+  },
+  "keyboard": {
+    "keys": "Native activation only (Space/Enter on the native button). No custom key map.",
+    "focus": "Single tab stop, focus ring via :focus-visible.",
+    "typeahead": "none"
+  },
+  "notableDifferences": [
+    "React Aria's Switch uses isSelected/onChange; Base UI uses checked/defaultChecked/onCheckedChange, and role=\"switch\" + aria-checked is applied by the component (React Aria's Switch does the same).",
+    "The moving part is an explicit Thumb part with its own data-checked attribute, instead of styling ::before/::after or the root.",
+    "React Aria has isPending/isDisabled; Base UI has disabled only.",
+    "State is data-attribute driven (data-checked on both Root and Thumb) rather than render-prop driven."
+  ]
+}

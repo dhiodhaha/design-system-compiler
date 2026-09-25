@@ -1,0 +1,69 @@
+{
+  "primitive": "form",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/form.md",
+    "https://base-ui.com/react/handbook/forms.md",
+    "node_modules/@base-ui/react/form/index.d.ts",
+    "node_modules/@base-ui/react/form/Form.d.ts"
+  ],
+  "parts": [
+    "Form"
+  ],
+  "keyProps": {
+    "errors": {
+      "type": "FormContext['errors'] (Record<fieldName, string | string[]>)",
+      "notes": "Server/external validation errors keyed by Field.Root name; merged into field state and cleared per-field once that field's value changes."
+    },
+    "onFormSubmit": {
+      "type": "(formValues: FormValues, eventDetails: Form.SubmitEventDetails) => void",
+      "notes": "Receives a plain object of values; preventDefault() is called on the native submit event automatically. Generic over FormValues."
+    },
+    "validationMode": {
+      "type": "'onSubmit' | 'onBlur' | 'onChange'",
+      "default": "'onSubmit'",
+      "notes": "A Field.Root validationMode overrides it."
+    },
+    "actionsRef": {
+      "type": "React.RefObject<Form.Actions | null>",
+      "notes": "Form.Actions = { validate: (fieldName?: string) => void } — validates all fields, or one by name."
+    },
+    "action": {
+      "type": "native form attributes via BaseUIComponentProps<'form', ...> + React.ComponentPropsWithRef<'form'>",
+      "notes": "React server-form actions are supported: <Form action={formAction} errors={state.errors}> with useActionState."
+    }
+  },
+  "dataAttributes": [
+    "None documented; FormState is an empty object"
+  ],
+  "renderProp": {
+    "mechanism": "render on Form (props are the full React form props + state)",
+    "elementForm": "render={<form />}",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [],
+    "controlledProps": [
+      "errors"
+    ],
+    "changeCallbacks": [
+      "onFormSubmit(formValues, eventDetails) — SubmitEventDetails = { reason: 'none', event }"
+    ],
+    "note": "Form holds no value state; values come from the DOM at submit time."
+  },
+  "formIntegration": {
+    "nameValue": "Delegated to the fields inside; each Field.Root name becomes a key in the submitted values and in the errors object.",
+    "hiddenInput": false,
+    "validation": "Native constraint validation first, then Field.validate. Documented modes: onSubmit (default; re-validates invalid fields on change), onBlur, onChange. Async validate + validationDebounceTime supported. Third-party libraries (React Hook Form, TanStack Form) integrate by forwarding name/field/fieldState into Field parts. Hidden inputs are how non-native controls join submission, and the docs advise wrapping them in a relatively positioned container so the native validation bubble points at the right spot."
+  },
+  "keyboard": {
+    "keys": "Native: Enter submits the form (docs note validation runs once on Enter inside a Form in 1.8.0 changes).",
+    "focus": "None custom."
+  },
+  "notableDifferences": [
+    "React Aria's Form is a thin native form with validation behaviour; Base UI's Form adds consolidated error handling: errors prop keyed by field name, onFormSubmit with a values object, and actionsRef.current.validate([fieldName]).",
+    "Submission via onFormSubmit auto-calls preventDefault on the native event, so migrating from React Aria's onSubmit/action needs care — the event object is available in eventDetails.event.",
+    "Field-level validationMode overrides the form-level one (opposite precedence direction from React Aria's per-field validationBehaviour being separate).",
+    "Server errors are cleared automatically when the corresponding field changes."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "primitive": "date-picker",
+  "baseUiVersion": "1.8.0",
+  "exists": false,
+  "verdict": "NO_BASE_UI_EQUIVALENT",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "node_modules/@base-ui/react/package.json",
+    "node_modules/@base-ui/react/index.d.ts"
+  ],
+  "evidence": {
+    "exportsMap": "No ./date-picker subpath between ./context-menu and ./dialog in the alphabetically sorted exports map (lines 217-231).",
+    "shared": "see the shared evidence block: 37 documented components, no Date Picker page; no date entry in CHANGELOG or v1.8.0 release notes.",
+    "compositionGap": "The compound parts Base UI would need are partly present and reusable in principle — Dialog + Popover + Button + Field/Input — but there is no date field to put inside, which is the blocking gap."
+  },
+  "affectedRepoFiles": [
+    "registry/untitledui/components/application/date-picker/date-picker.tsx (AriaDatePicker, AriaDialog, AriaGroup, AriaPopover, useDateFormatter, useControlledState from @react-stately/utils, getLocalTimeZone/today, DateValue)"
+  ],
+  "consequence": "NO_BASE_UI_EQUIVALENT. The wrapper (popover + dialog + trigger) could be rebuilt on Base UI Dialog/Popover/Button today, but the field and calendar it hosts cannot — so the component as a whole stays on React Aria.",
+  "notableDifferences": [
+    "React Aria's DatePicker is a single component that bundles field + trigger + popover + calendar; Base UI has no such composition because the field/calendar layers are missing. A partial migration (popover/dialog only) would leave two competing interaction systems in one component — not recommended.",
+    "`useDateFormatter` (react-aria) for locale-aware display strings has no Base UI equivalent; Intl.DateTimeFormat must be used directly if any migration happens later."
+  ]
+}

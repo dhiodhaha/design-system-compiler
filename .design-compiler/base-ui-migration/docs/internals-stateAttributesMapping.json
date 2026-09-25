@@ -1,0 +1,48 @@
+{
+  "primitive": "internals/stateAttributesMapping",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPaths": [
+    "@base-ui/react/internals/stateAttributesMapping",
+    "@base-ui/react/internals/getStateAttributesProps"
+  ],
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt (absent — internal)",
+    "node_modules/@base-ui/react/internals/stateAttributesMapping.d.ts",
+    "node_modules/@base-ui/react/internals/getStateAttributesProps.d.ts",
+    "node_modules/@base-ui/react/use-render/useRender.d.ts (consumer)",
+    "node_modules/@base-ui/react/internals/useRenderElement.d.ts (consumer)"
+  ],
+  "parts": [
+    "getStateAttributesProps",
+    "StateAttributesMapping (type)",
+    "transitionStatusMapping",
+    "TransitionStatusDataAttributes"
+  ],
+  "keyProps": {
+    "getStateAttributesProps(state, customMapping?)": {
+      "type": "<State extends Record<string, any>>(state: State, customMapping?: StateAttributesMapping<State>) => Record<string, string>",
+      "semantic": "Turns a component state object into the data-* attribute map; keys present with falsy/false values are dropped, truthy booleans become empty-string attributes."
+    },
+    "StateAttributesMapping<State>": {
+      "type": "{ [K in keyof State]?: (value: State[K]) => Record<string, string> | null }",
+      "semantic": "Per-key override returning an attribute map (or null to emit nothing)."
+    },
+    "transitionStatusMapping": {
+      "type": "{ transitionStatus(value: TransitionStatus): Record<string,string> | null }",
+      "semantic": "Ships the data-starting-style / data-ending-style mapping used by animating parts (Tabs.Panel among them)."
+    }
+  },
+  "dataAttributes": [
+    "data-starting-style (element begins animating in)",
+    "data-ending-style (element animating out)"
+  ],
+  "renderProp": "Both `useRender` and the internal `useRenderElement` accept a `stateAttributesMapping` parameter, so author components can emit custom data-* attributes from their state without hand-writing attribute JSX. This is the sanctioned way to give a migrated component stable data-* hooks that replaced React Aria's data-selected/data-hovered etc.",
+  "controlled": null,
+  "formIntegration": null,
+  "keyboard": null,
+  "notableDifferences": [
+    "React Aria generates data-* attributes internally with no public mapping API; Base UI exposes one, which is the migration lever for preserving consumer CSS that keyed off RAC attributes — map your own state onto the historical attribute names (e.g. emit data-selected yourself) instead of rewriting downstream styles.",
+    "Transition attributes are the one animation contract that differs in name only from React Aria's entering/exiting conventions: Base UI uses data-starting-style/data-ending-style."
+  ]
+}

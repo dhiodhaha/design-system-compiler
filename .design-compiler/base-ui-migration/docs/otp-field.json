@@ -1,0 +1,121 @@
+{
+  "primitive": "otp-field",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/otp-field.md",
+    "node_modules/@base-ui/react/otp-field/index.parts.d.ts",
+    "node_modules/@base-ui/react/otp-field/root/OTPFieldRoot.d.ts",
+    "node_modules/@base-ui/react/otp-field/root/OTPFieldRoot.mjs",
+    "node_modules/@base-ui/react/otp-field/input/OTPFieldInput.mjs",
+    "node_modules/@base-ui/react/otp-field/utils/otp.d.ts"
+  ],
+  "parts": [
+    "Root",
+    "Input",
+    "Separator"
+  ],
+  "keyProps": {
+    "length": {
+      "type": "number (required)",
+      "notes": "Number of slots; required so the root can clamp values, detect completion and emit consistent validation markup before hydration."
+    },
+    "value": {
+      "type": "string",
+      "notes": "Controlled OTP value."
+    },
+    "defaultValue": {
+      "type": "string",
+      "notes": "Uncontrolled initial value."
+    },
+    "onValueChange": {
+      "type": "(value: string, eventDetails: OTPField.Root.ChangeEventDetails) => void",
+      "notes": "reason: 'input-change' | 'input-clear' | 'input-paste' | 'keyboard'."
+    },
+    "onValueComplete": {
+      "type": "(value: string, eventDetails: OTPField.Root.CompleteEventDetails) => void",
+      "notes": "Fires when the code becomes complete (or a complete value is pasted again); runs after onValueChange and immediately before auto-submit. reason: 'input-change' | 'input-paste'."
+    },
+    "onValueInvalid": {
+      "type": "(value: string, eventDetails: OTPField.Root.InvalidEventDetails) => void",
+      "notes": "Fires with the attempted raw string when entered text is rejected by validation/normalization."
+    },
+    "validationType": {
+      "type": "'numeric' | 'alpha' | 'alphanumeric' | 'none'",
+      "default": "'numeric'",
+      "notes": "Configures the per-slot regexp/pattern/inputMode and the hidden validation input pattern."
+    },
+    "normalizeValue": {
+      "type": "(value: string) => string",
+      "notes": "Runs after whitespace + validationType filtering; must be idempotent (it can run multiple times per edit). Result is re-filtered and clamped to length."
+    },
+    "mask": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Renders slots as type=password; pass type directly to an Input to customize."
+    },
+    "autoSubmit": {
+      "type": "boolean",
+      "default": false,
+      "notes": "Submits the owning form when the code becomes complete."
+    },
+    "autoComplete": {
+      "type": "string",
+      "default": "'one-time-code'",
+      "notes": "Applied to the first slot and the hidden validation input; later slots use 'off'."
+    },
+    "inputMode": {
+      "type": "React.HTMLAttributes<HTMLInputElement>['inputMode']",
+      "notes": "Overrides the default derived from validationType ('numeric' for numeric, 'text' otherwise)."
+    },
+    "name/form/disabled/readOnly/required/id": {
+      "type": "string | boolean",
+      "notes": "id applies to the first input; later inputs derive ids as {id}-2, {id}-3, ..."
+    },
+    "Separator.orientation": {
+      "type": "Orientation",
+      "default": "'horizontal'"
+    }
+  },
+  "dataAttributes": [
+    "data-disabled / data-readonly / data-required",
+    "data-complete — all slots filled (Root and Input)",
+    "data-filled — value present (Root) / this slot filled (Input)",
+    "data-focused — any slot focused (Root) / any input focused (Input)",
+    "data-valid / data-invalid, data-dirty / data-touched (inside Field.Root)"
+  ],
+  "renderProp": {
+    "mechanism": "render on Root, Input and Separator",
+    "elementForm": "render={<div />} / render={<input />}",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(value, details)",
+      "onValueComplete(value, details)",
+      "onValueInvalid(value, details)"
+    ],
+    "note": "Three callbacks: change, complete, invalid — React Aria has no OTP primitive to map onto."
+  },
+  "formIntegration": {
+    "nameValue": true,
+    "hiddenInput": "Root renders a hidden validation input with name, autoComplete, inputMode, minLength=length, maxLength=length and a validationType-derived pattern, plus form wiring.",
+    "validation": "required is supported; the hidden input carries the pattern so native validation matches the whole code."
+  },
+  "keyboard": {
+    "keys": "ArrowLeft/ArrowRight move between slots (swapped in RTL), Home/ArrowUp -> first slot, End/ArrowDown -> last (or last-filled) slot, Backspace deletes/clears and moves back, Delete removes the character at the slot; with a boundary modifier Backspace clears from the first slot. All movement calls stopEvent.",
+    "focus": "Focus moves slot-to-slot automatically as characters are entered; slots queue focus while re-rendering.",
+    "typeahead": "n/a"
+  },
+  "notableDifferences": [
+    "No React Aria equivalent (React Aria has no OTP field); migration means replacing a hand-rolled multi-input OTP or a third-party component.",
+    "One root + N Input parts pattern: you map over length to render the slots, and optionally wrap subsets in your own layout divs with <OTPField.Separator> between them.",
+    "Completion, invalidity and normalization are modelled as separate callbacks/props rather than being inferred from a change handler.",
+    "Numeric/alpha/alphanumeric filtering plus an idempotent normalizeValue hook run on every state update."
+  ]
+}

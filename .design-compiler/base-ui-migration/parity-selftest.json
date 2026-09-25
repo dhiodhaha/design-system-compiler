@@ -1,0 +1,13 @@
+{
+  "$schema": "design-compiler/BaseUiParityReport@p0",
+  "label": "selftest",
+  "unit": null,
+  "comparedCases": 31,
+  "tolerances": {
+    "geometry": 1,
+    "portalPlacement": 12
+  },
+  "failures": [],
+  "notes": [],
+  "status": "PASS"
+}

@@ -1,0 +1,53 @@
+{
+  "primitive": "menubar",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt",
+    "https://base-ui.com/react/components/menubar.md"
+  ],
+  "parts": [
+    "Menubar"
+  ],
+  "keyProps": {
+    "Menubar.modal": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "whether the menubar is modal (children menus inherit the modal behaviour)."
+    },
+    "Menubar.disabled": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "disables the whole menubar (cascades to the menus inside)."
+    },
+    "Menubar.orientation": {
+      "type": "'horizontal' | 'vertical' (Menu.Root.Orientation)",
+      "default": "'horizontal'",
+      "semantic": "menu bar orientation; drives which arrow keys move between top-level menus (vertical menubars behave like the docs' example where submenu Positioners use side 'inline-end')."
+    },
+    "Menubar.loopFocus": {
+      "type": "boolean",
+      "default": "true",
+      "semantic": "arrow-key focus wraps to the first item when the end of the bar is reached."
+    },
+    "className / style / render": {
+      "type": "string | ((state: Menubar.State) => ...) / CSSProperties | fn / ReactElement | fn",
+      "default": "—",
+      "semantic": "standard BaseUIComponentProps surface."
+    }
+  },
+  "dataAttributes": [
+    "data-orientation ('horizontal' | 'vertical') — orientation of the menubar",
+    "data-has-submenu-open — present when any submenu within the menubar is open",
+    "data-modal — present when the menubar is modal"
+  ],
+  "renderProp": "Menubar accepts the standard `render` prop (ReactElement | (props: HTMLProps, state: Menubar.State) => ReactElement) plus state-driven className/style; it renders a <div> by default. Custom components: useRender; merging: mergeProps/mergePropsN.",
+  "controlled": "None — Menubar owns no open/value state. Every child `<Menu.Root>` keeps its own `open`/`defaultOpen`/`onOpenChange` (and its own disabled prop); the menubar only coordinates focus. There is no value/onValueChange on Menubar.",
+  "formIntegration": "None.",
+  "keyboard": "Roving focus across the top-level `<Menu.Trigger>` elements: horizontal menubars use ArrowLeft/ArrowRight, vertical menubars use ArrowUp/ArrowDown; `loopFocus` (default true) wraps at the ends. Each contained Menu.Root supplies the rest of the behaviour (ArrowUp/Down inside the popup, Home/End, typeahead via item `label`, Escape to dismiss, submenu arrow keys). Disabled menus inside the bar are skipped by focus.",
+  "notableDifferences": [
+    "Menubar is a single component with no sub-parts; you nest ordinary `<Menu.Root>` children (each with its own Trigger/Portal/Positioner/Popup). React Aria builds a menubar from a Toolbar-like composite of MenuTriggers with `useMenuTrigger` — there is no per-menubar MenuTrigger part here.",
+    "Menubar is modal by default (`modal=true`), which is unusual for a menu bar and affects scroll locking/outside pointer behaviour.",
+    "State vocabulary is container-level only: data-orientation, data-modal, data-has-submenu-open. There is no data-disabled on the menubar itself even though `disabled` exists.",
+    "No value/selection state and no imperative handle — open state stays with the individual menus (a disabled `<Menu.Root disabled>` shows in the docs example)."
+  ]
+}

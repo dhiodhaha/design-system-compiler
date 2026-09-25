@@ -1,0 +1,65 @@
+{
+  "primitive": "avatar",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/avatar.md"
+  ],
+  "parts": [
+    "Root",
+    "Image",
+    "Fallback"
+  ],
+  "keyProps": {
+    "Root": {
+      "type": "only className/style/render (no domain props)",
+      "default": "-",
+      "semantic": "Renders a <span>; wraps Image + Fallback"
+    },
+    "Image.onLoadingStatusChange": {
+      "type": "(status: ImageLoadingStatus) => void",
+      "default": "-",
+      "semantic": "ImageLoadingStatus = 'idle'|'loading'|'loaded'|'error'"
+    },
+    "Image.keepMounted": {
+      "type": "boolean",
+      "default": "false",
+      "semantic": "default behaviour preloads src and renders the <img> only after it loads; true renders immediately and loads in place, enabling loading='lazy' and optimized image components such as next/image"
+    },
+    "Image (native img props)": {
+      "type": "React.ComponentPropsWithRef<'img'> (src, alt, width, height, loading, ...)",
+      "default": "-",
+      "semantic": "Image accepts all native <img> attributes"
+    },
+    "Image.render": {
+      "type": "ReactElement | ((props: ImgHTMLAttributes<HTMLImageElement>, state: Avatar.Image.State) => ReactElement)",
+      "default": "-",
+      "semantic": "used to delegate to next/image etc."
+    },
+    "Fallback.delay": {
+      "type": "number",
+      "default": "0",
+      "semantic": "ms to wait before showing the fallback (avoids flashing initials before the image resolves)"
+    },
+    "Image/Root/Fallback state": {
+      "type": "{ imageLoadingStatus: ImageLoadingStatus } (+ transitionStatus on Image)",
+      "default": "-",
+      "semantic": "exposed to className/style/render functions"
+    }
+  },
+  "dataAttributes": [
+    "Image: data-loading (while loading), data-error (failed to load), data-starting-style, data-ending-style",
+    "Root: none. Fallback: none."
+  ],
+  "renderProp": "Per-part `render` (ReactElement | (props, state) => ReactElement) via useRender — Image.render is the documented way to plug in next/image. Image's render-function props type is ImgHTMLAttributes<HTMLImageElement> rather than the generic HTMLProps.",
+  "controlled": "Uncontrolled only — the component owns image loading status. The closest thing to control is Image.onLoadingStatusChange(status) plus the derived data-loading/data-error attributes. There is no open/close or value model.",
+  "formIntegration": "None — no hidden inputs, name/value or validation. The rendered <img> is decorative/identity only; pass alt text yourself.",
+  "keyboard": "None — Avatar is non-interactive; it renders a <span>, an <img> and a fallback <span>, with no focus management or key handling.",
+  "notableDifferences": [
+    "No isDisabled/isLoading props: loading state is surfaced through data-loading / data-error attributes and the onLoadingStatusChange callback.",
+    "Default behaviour deliberately does NOT render the <img> until the source has loaded (preload-then-mount), which is incompatible with loading='lazy' and with image optimizers that rewrite the URL unless you pass keepMounted.",
+    "With keepMounted you get SSR-visible markup and are expected to stack Image after Fallback in the DOM, hiding states via visibility (NOT display:none, which would break lazy loading) — a very different contract from a simple <img> with an onError fallback.",
+    "Fallback.delay (ms) exists so initials do not flash while the image loads; React Aria has no such primitive.",
+    "No Avatar.Group / badge parts — only Root, Image, Fallback.",
+    "Root is a <span>, not a <div>, which matters when porting layout CSS."
+  ]
+}

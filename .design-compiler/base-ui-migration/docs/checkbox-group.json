@@ -1,0 +1,72 @@
+{
+  "primitive": "checkbox-group",
+  "baseUiVersion": "1.8.0",
+  "docsConsulted": [
+    "https://base-ui.com/react/components/checkbox-group.md",
+    "node_modules/@base-ui/react/checkbox-group/index.d.ts",
+    "node_modules/@base-ui/react/checkbox-group/CheckboxGroup.d.ts",
+    "node_modules/@base-ui/react/checkbox-group/useCheckboxGroupParent.js"
+  ],
+  "parts": [
+    "CheckboxGroup"
+  ],
+  "keyProps": {
+    "value": {
+      "type": "string[]",
+      "notes": "Controlled list of ticked checkbox values."
+    },
+    "defaultValue": {
+      "type": "string[]",
+      "notes": "Uncontrolled initial list."
+    },
+    "onValueChange": {
+      "type": "(value: string[], eventDetails: CheckboxGroup.ChangeEventDetails) => void"
+    },
+    "allValues": {
+      "type": "string[]",
+      "notes": "Every value in the group; required for the parent/select-all checkbox to compute its state."
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "render": {
+      "type": "ReactElement | ((props: HTMLProps, state: CheckboxGroup.State) => ReactElement)"
+    }
+  },
+  "dataAttributes": [
+    "data-disabled — present when the group is disabled",
+    "data-valid/data-invalid, data-dirty/data-touched, data-filled, data-focused — inherited Field state when wrapped in Field.Root"
+  ],
+  "renderProp": {
+    "mechanism": "render on CheckboxGroup (single part)",
+    "elementForm": "render={<div />} or compose into Fieldset: <Fieldset.Root render={<CheckboxGroup defaultValue={[]} />}> (documented in the forms handbook)",
+    "merging": "mergeProps"
+  },
+  "controlled": {
+    "uncontrolledDefaults": [
+      "defaultValue"
+    ],
+    "controlledProps": [
+      "value"
+    ],
+    "changeCallbacks": [
+      "onValueChange(value: string[], eventDetails: CheckboxGroup.ChangeEventDetails)"
+    ],
+    "note": "reason is always 'none'."
+  },
+  "formIntegration": {
+    "nameValue": "The individual Checkbox.Root children carry name (and value) and submit; the group itself has no name prop.",
+    "hiddenInput": "Delegated to each Checkbox.Root hidden input; the group renders role=\"group\" with aria-labelledby wired from the labelable context.",
+    "validation": "Use Field.Root name + Field.Error around the group; group state is exposed to Field as an array."
+  },
+  "keyboard": {
+    "keys": "None added by the group — arrow-key movement is not implemented (unlike RadioGroup); each checkbox keeps its own native activation and its own tab stop.",
+    "focus": "No roving tabindex: every checkbox is separately tabbable."
+  },
+  "notableDifferences": [
+    "React Aria's CheckboxGroup offers orientation + roving arrow-key navigation between options; Base UI's CheckboxGroup adds none of that — Tab visits each checkbox.",
+    "The group is only a shared-state container: value/defaultValue are string[] of checkbox values (React Aria accepts arbitrary string[] too, so this maps cleanly).",
+    "Select-all is a first-class modelled concept (parent on the child + allValues on the group) rather than something you assemble from useCheckboxGroup()."
+  ]
+}

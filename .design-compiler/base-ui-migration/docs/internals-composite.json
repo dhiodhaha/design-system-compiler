@@ -1,0 +1,63 @@
+{
+  "primitive": "internals/composite",
+  "baseUiVersion": "1.8.0",
+  "exists": true,
+  "importPath": "@base-ui/react/internals/composite",
+  "docsConsulted": [
+    "https://base-ui.com/llms.txt (absent — internal, not a documented component)",
+    "node_modules/@base-ui/react/package.json (exports)",
+    "node_modules/@base-ui/react/internals/composite/index.d.ts",
+    "node_modules/@base-ui/react/internals/composite/root/CompositeRoot.d.ts",
+    "node_modules/@base-ui/react/internals/composite/root/useCompositeRoot.d.ts",
+    "node_modules/@base-ui/react/internals/composite/root/gridNavigation.d.ts",
+    "node_modules/@base-ui/react/internals/composite/item/CompositeItem.d.ts",
+    "node_modules/@base-ui/react/internals/composite/list/CompositeList.d.ts",
+    "node_modules/@base-ui/react/internals/composite/list/useCompositeListItem.d.ts",
+    "node_modules/@base-ui/react/tabs/list/TabsList.d.ts (reference consumer)"
+  ],
+  "parts": [
+    "CompositeRoot",
+    "CompositeItem",
+    "CompositeList",
+    "CompositeListContext",
+    "useCompositeListContext",
+    "useCompositeListItem",
+    "useCompositeRoot",
+    "gridNavigation",
+    "scrollIntoViewIfNeeded",
+    "findNonDisabledListIndex",
+    "isListIndexDisabled"
+  ],
+  "keyProps": {
+    "CompositeRoot.props": "Array<Record | (() => Record)> — extra prop sets spread on the element",
+    "CompositeRoot.state / stateAttributesMapping": "state -> data-* mapping (passed to useRenderElement)",
+    "CompositeRoot.tag / refs": "default tag (div); refs: Ref<HTMLElement|null>[] to merge",
+    "CompositeRoot.orientation": "'horizontal' | 'vertical' | 'both' (default horizontal) — arrow-key axis",
+    "CompositeRoot.grid": "CompositeGridNavigator from gridNavigation(config) — opt-in 2D navigation",
+    "CompositeRoot.loopFocus / onLoop": "wrap at the ends / custom wrap target (event, prevIndex, nextIndex, elementsRef) => number",
+    "CompositeRoot.highlightedIndex / onHighlightedIndexChange": "controlled highlight index (the controlled pair for composites)",
+    "CompositeRoot.enableHomeAndEndKeys": "boolean, @default false — Home/End jump to first/last (Tabs.List hard-enables it)",
+    "CompositeRoot.stopEventPropagation": "boolean, @default false — swallow navigation keys",
+    "CompositeRoot.disabledIndices / modifierKeys": "number[] of indices treated disabled while still focusable; ModifierKey[] (@default []) that allow normal actions",
+    "CompositeRoot.highlightItemOnHover / onMapChange / onKeyDown / rootRef": "misc: hover highlight, element-map callback, key handler, root ref",
+    "CompositeItem.metadata / refs / props / state / stateAttributesMapping / tag": "per-item equivalents",
+    "CompositeList.children / elementsRef / labelsRef / onMapChange": "elementsRef = DOM-ordered element list (explicit indexes may leave holes); labelsRef = parallel label list intended for typeahead; onMapChange publishes index metadata",
+    "useCompositeListItem": "params { guess?: boolean (@default false, guesses initial index from render order to avoid a post-mount re-render for flat lists), index?, label?, metadata?, textRef? } -> { ref, index }",
+    "useCompositeRoot": "params { orientation, grid, loopFocus, onLoop, highlightedIndex, onHighlightedIndexChange, direction (required), rootRef, enableHomeAndEndKeys, stopEventPropagation, disabledIndices, modifierKeys } -> { props, highlightedIndex, onHighlightedIndexChange(index, shouldScrollIntoView?), elementsRef, onMapChange, relayKeyboardEvent }"
+  },
+  "dataAttributes": "None intrinsic — composites emit whatever state/stateAttributesMapping produces; consumers (Tabs, Menu, Select, Combobox) layer their own data-* on top.",
+  "gridNavigation": "gridNavigation(config: { cols: number, dense?: boolean, itemSizes?: {width,height}[] }) => CompositeGridNavigator(state: { event, elementsRef, highlightedIndex, minIndex, maxIndex, orientation, loopFocus, onLoop, disabledIndices, rtl }) => number. Opt-in (composites that omit `grid` never reference it, so bundlers tree-shake it). Closest thing in 1.8.0 to grid/data-grid navigation — an internal hook, not a component.",
+  "renderProp": "CompositeRoot/CompositeItem accept render/className/style via BaseUIComponentProps; useCompositeRoot returns raw props to spread yourself.",
+  "controlled": {
+    "uncontrolled": "none — composites are index-registration based; the consumer owns the index",
+    "controlled": "highlightedIndex + onHighlightedIndexChange (index-based, not key-based)",
+    "callback": "onHighlightedIndexChange(index) / onHighlightedIndexChange(index, shouldScrollIntoView?) from useCompositeRoot"
+  },
+  "formIntegration": "None (navigation only).",
+  "keyboard": "Arrow keys move highlight/focus along the orientation axis (2D when `grid` is passed), wrapping if loopFocus; Home/End only when enableHomeAndEndKeys; disabledIndices skipped; modifierKeys preserve native behaviour; stopEventPropagation optionally swallows navigation keys. Typeahead is NOT provided: CompositeList exposes labelsRef; the only typeahead reference in the package is a doc comment in CompositeList.d.ts naming React Aria's `useTypeahead`. Consumers must implement typeahead.",
+  "notableDifferences": [
+    "React Aria models collections declaratively (react-stately Collection/CollectionBuilder/ListState + <Item>/<Section> or `items`); Base UI composites register DOM order at runtime (CompositeList + useCompositeListItem) with an index-based highlight model. No public Collection/Item/Section and no useListData-style store.",
+    "React Aria exposes useListNavigation/useTypeahead/useSelectableCollection publicly; Base UI exports only the internals above, and typeahead is absent.",
+    "Migration consequence for repo widgets built on RAC collections (table.tsx uses Collection/useTableOptions; tag-select.tsx uses ListData/useListData; tags.tsx uses TagGroup/TagList): keep React Aria, or re-express on a component that already owns its collection — Base UI 1.8.0 Combobox added component-level `createItems`, `useFilter`, `useFilteredItems` (combobox/index.parts.d.ts) rather than internals/composite."
+  ]
+}
