@@ -540,3 +540,36 @@ Read in this order:
 8. `MASTER_BUILD_PROMPT.md`
 
 Older Figma-first documents are preserved under `docs/legacy/` and are historical only.
+
+
+## 17. Library coverage model
+
+The production goal is broader than any single component.
+
+```text
+Pinned Untitled UI OSS repository
+→ exhaustive candidate inventory
+→ port all eligible production components
+
+Licensed PRO Figma
+→ discover GitHub-missing families/compositions
+→ slice only missing surface
+→ reuse OSS-derived target library
+→ compile only the delta
+```
+
+This creates a progressively more complete local library.
+
+Button is only the first parity canary used to prove the adapter and validation pipeline.
+
+The compiler should optimize for:
+
+```text
+OSS coverage ↑
+known component reuse ↑
+PRO gap coverage ↑
+new primitive generation ↓
+semantic inference ↓
+```
+
+See [COVERAGE_STRATEGY.md](./COVERAGE_STRATEGY.md).
