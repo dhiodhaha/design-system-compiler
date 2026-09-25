@@ -1,6 +1,11 @@
 {
   "unit": "select-family",
-  "matrixItems": ["select", "combobox", "multi-select", "tag-select"],
+  "matrixItems": [
+    "select",
+    "combobox",
+    "multi-select",
+    "tag-select"
+  ],
   "files": [
     "registry/untitledui/components/base/select/select.tsx",
     "registry/untitledui/components/base/select/select-item.tsx",
@@ -34,7 +39,8 @@
         "Root `modal` defaults to true in Base UI (scroll lock + blocked outside pointer interaction); React Aria's select popover was non-modal, so the unit passes modal={false} by default.",
         "The React Aria render-prop state handed to the root `className` ({isFocused,isFocusVisible,isDisabled,isOpen,isInvalid,isRequired}) is rebuilt from the props plus locally tracked trigger focus, because Base UI's Root has no state (its state lives on the parts).",
         "React Aria's `disabledKeys` was a collection-level prop; Base UI disables per item, so the root publishes the key set through `SelectDisabledKeysContext` (exported from select-item.tsx) and SelectItem ORs it with its own `isDisabled`.",
-        "`selectionMode`/`value`+`onChange` were not carried over: the payload's Select is single-selection (multi-value selection is MultiSelect), so only selectedKey/defaultSelectedKey/onSelectionChange (and Base UI's value/defaultValue/onValueChange shape for items) are wired."
+        "`selectionMode`/`value`+`onChange` were not carried over: the payload's Select is single-selection (multi-value selection is MultiSelect), so only selectedKey/defaultSelectedKey/onSelectionChange (and Base UI's value/defaultValue/onValueChange shape for items) are wired.",
+        "React Aria's ListBoxItem served both the Select and the ComboBox collections (the payload's combo box documents `Select.Item` as its option component), while Base UI's Select.Item and Combobox.Item are separate parts that throw when the wrong root is above them. SelectItem therefore renders the part matching its root: the combobox family (combobox.tsx, multi-select.tsx, tag-select.tsx) marks its subtree with the new `SelectItemOwnerContext` (exported from select-item.tsx) and the item renders Combobox.Item inside it."
       ]
     },
     {
@@ -55,7 +61,8 @@
         "`allowsCustomValue` has no Base UI equivalent in 1.8.0 (the docs state the Combobox does not allow free-form text as a value). The prop is kept on the type for source compatibility and does nothing; `allowsEmptyCollection` is likewise unnecessary (Base UI renders the popup/list-empty state itself).",
         "Form submission follows Base UI: `formValue='key'` is itemToStringValue = String(id) and `formValue='text'` is the item's textValue; Base UI submits through its hidden input (React Aria used the input's own name/value).",
         "The trigger width workaround (ResizeObserver measuring the styled group and passing an explicit popup width) is gone: Base UI anchors the Positioner to the InputGroup and the popup uses `w-(--anchor-width)`.",
-        "`shouldFocusWrap` maps to Base UI's `loopFocus`."
+        "`shouldFocusWrap` maps to Base UI's `loopFocus`.",
+        "The mirrored value behind the transparent input keeps React Aria's split on the selected item's supporting text, but only when there is one: an item without supporting text mirrors the whole input value (React Aria split on `undefined`, which returned the whole string)."
       ]
     },
     {
@@ -77,7 +84,10 @@
     {
       "primitive": "field",
       "version": "1.8.0",
-      "docsConsulted": [".design-compiler/base-ui-migration/docs/field.json", ".design-compiler/base-ui-migration/units/field-text.json (sibling unit's Field.Root usage)"],
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/field.json",
+        ".design-compiler/base-ui-migration/units/field-text.json (sibling unit's Field.Root usage)"
+      ],
       "semanticDifferences": [
         "Select/ComboBox only consume Field context, so every select-family root wraps its parts in Field.Root to keep the payload's Label/HintText associated with the control: Field.Label publishes the label id the trigger/input points at with aria-labelledby (React Aria's label context did this inside its own field), Field.Description does the same for the hint, and Field.Root supplies data-focused/data-invalid/data-disabled to the parts.",
         "Field.Root renders a <div>: the payload's own wrapper (className, style, ref) is merged into it with `render`, so the DOM keeps one root element. Field.Root has no `required` prop (required lives on the control), so `isRequired` goes to the root component only and the Label keeps its explicit isRequired asterisk."
@@ -194,11 +204,13 @@
     "SelectItem (Select.Item / MultiSelect.Item / TagSelect.Item) is shared with the dropdown family in upstream Untitled UI; the dropdown unit keeps its own item component, so nothing outside this unit consumes SelectItem's new SelectDisabledKeysContext.",
     "popover.tsx no longer wraps the overlay for the select family (Base UI's own popup parts do), and no other registry file imports it — the exported Popover keeps the popup classes/props for consumers of that module.",
     "multi-select.tsx uses the payload's own Button/TagCloseX (owned by other units) unchanged, with `onClick`/`onPress` as before.",
-    "The lead's capture/parity harness renders the select and combobox cases from src/migration-harness.tsx; both call sites only use props preserved here (label, placeholder, items, render-function children, Select.Item id/children, ComboBox label/placeholder/items)."
+    "The lead's capture/parity harness renders the select and combobox cases from src/migration-harness.tsx; both call sites only use props preserved here (label, placeholder, items, render-function children, Select.Item id/children, ComboBox label/placeholder/items).",
+    "Round-trip fix after the lead's gate run: the combobox case threw `Base UI: SelectRootContext is missing` as soon as the popup mounted, because the payload renders `Select.Item` inside `ComboBox`. Fixed by the SelectItemOwnerContext described above; no multiple-selection or tag behaviour changed."
   ],
   "evidence": {
-    "typecheck": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` reports 0 errors in the six files of this unit (the only remaining errors are in components/application/tabs/tabs.tsx, owned by the in-flight tabs unit). A scoped config covering registry/untitledui/components/base/select/*.tsx passes clean: 0 errors.",
+    "typecheck": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` reports 0 errors in the six files of this unit (remaining errors are in components/application/tabs/tabs.tsx, owned by the in-flight tabs unit). A scoped config over registry/untitledui/components/base/select/*.tsx passes clean.",
     "reactAriaImports": "grep for react-aria/react-stately/@react-types in the six files: no imports remain (tag-select.tsx mentions react-stately only in a comment documenting the structural ListData type).",
-    "runtime": "Not run by this unit (the lead runs capture/parity/a11y/hydration centrally). Known runtime-sensitive points to watch in the harness: the Select popup is non-modal bottom-start with alignItemWithTrigger={false}; the combobox opens on input focus (menuTrigger='focus') and filters through Base UI's collator; the multi-select popup keeps the search input inside the dialog-role popup."
+    "runtime": "Not run by this unit (the lead runs capture/parity/a11y/hydration centrally). Known runtime-sensitive points to watch in the harness: the Select popup is non-modal bottom-start with alignItemWithTrigger={false}; the combobox opens on input focus (menuTrigger='focus') and filters through Base UI's collator; the multi-select popup keeps the search input inside the dialog-role popup.",
+    "gates": "Lead gate commands rerun by this unit: `node compiler/migration/capture.mjs --label migrated --port 5173` (43 cases, 20 with interaction) then `node compiler/migration/parity.mjs --label migrated` -> status PASS, comparedCases 43, failures 0 (the previously failing `combobox` case now reports only the accepted FORM_INTEGRATION_ADDED / FOCUS_SURFACE_DELTA notes). Verified by hand on http://127.0.0.1:5173/migration.html: a real click on the role=combobox input yields aria-expanded=true, aria-controls pointing at a mounted listbox and its 3 options; typing `Oli` filters to `Olivia Rhye`; ArrowDown + Enter selects it, closes the popup and mirrors the label."
   }
 }

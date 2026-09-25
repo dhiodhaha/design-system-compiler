@@ -1,7 +1,7 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "migrated",
-  "capturedAt": "2026-09-25T14:00:17.825Z",
+  "capturedAt": "2026-09-25T14:13:20.603Z",
   "cases": {
     "button-default": {
       "static": {
@@ -5404,41 +5404,228 @@
         {
           "step": "0:click",
           "state": {
-            "controls": [],
-            "expanded": [],
-            "ariaStates": [],
-            "overlays": 0,
-            "active": "body"
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
           }
         },
         {
           "step": "1:type",
-          "error": "target not found",
-          "target": "input"
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "Oli",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 2,
+            "active": "input"
+          }
         },
         {
           "step": "2:press ArrowDown",
           "state": {
-            "controls": [],
-            "expanded": [],
-            "ariaStates": [],
-            "overlays": 0,
-            "active": "body"
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "Oli",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 2,
+            "active": "input"
           }
         },
         {
           "step": "3:press Enter",
           "state": {
-            "controls": [],
-            "expanded": [],
-            "ariaStates": [],
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "Olivia Rhye",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "b",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
             "overlays": 0,
-            "active": "body"
+            "active": "input"
           }
         }
       ],
       "afterInteraction": {
-        "renderError": "Base UI: SelectRootContext is missing. Select parts must be placed within <Select.Root>."
+        "text": "Search members Olivia Rhye ⌘K",
+        "controlState": [
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "Olivia Rhye",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          },
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "b",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": null,
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          },
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,[role=combobox],[role=listbox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": null,
+            "name": "",
+            "attrs": {
+              "role": "combobox",
+              "aria-expanded": "false",
+              "aria-haspopup": "listbox",
+              "aria-autocomplete": "list",
+              "id": "base-ui-_r_3f_",
+              "placeholder": "Search by name",
+              "value": "Olivia Rhye",
+              "aria-labelledby": "base-ui-_r_3i_",
+              "data-focused": "",
+              "data-dirty": "",
+              "data-filled": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "rgba(0, 0, 0, 0)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgba(0, 0, 0, 0)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 908,
+              "height": 24,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
       }
     },
     "tags-render": {
@@ -5465,7 +5652,7 @@
             }
           }
         ],
-        "focusVisible": false,
+        "focusVisible": true,
         "pointerEvents": "auto",
         "roles": [
           "grid",
@@ -5527,7 +5714,7 @@
           }
         ],
         "interactiveCount": 0,
-        "activeElement": "body:button-defaultButtonbutton-sec",
+        "activeElement": "input:",
         "slotMetrics": {
           "[role=list],[role=listitem]": {
             "missing": true
@@ -7670,6 +7857,782 @@
         }
       ],
       "afterInteraction": null
+    },
+    "multi-select": {
+      "static": {
+        "text": "Team members Select members",
+        "controlState": [
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "Select members",
+            "checked": null,
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Select members",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          },
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=combobox],button": {
+            "tag": "button",
+            "role": "combobox",
+            "type": "button",
+            "name": "Select members",
+            "attrs": {
+              "type": "button",
+              "data-placeholder": "",
+              "id": "base-ui-_r_4m_",
+              "role": "combobox",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "aria-labelledby": "base-ui-_r_4p_"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=combobox],button"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "[role=combobox],button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "3:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "4:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "5:press Escape",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:null:false"
+            ],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Team members 2 selected",
+        "controlState": [
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "2 selected",
+            "checked": null,
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "2 selected",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          },
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "button:2 selected",
+        "slotMetrics": {
+          "[role=combobox],button": {
+            "tag": "button",
+            "role": "combobox",
+            "type": "button",
+            "name": "2 selected",
+            "attrs": {
+              "type": "button",
+              "id": "base-ui-_r_4m_",
+              "role": "combobox",
+              "aria-expanded": "false",
+              "aria-haspopup": "dialog",
+              "aria-labelledby": "base-ui-_r_4p_",
+              "data-focused": "",
+              "data-dirty": "",
+              "data-filled": ""
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "tag-select": {
+      "static": {
+        "text": "Labels",
+        "controlState": [
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          },
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": null,
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          },
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "button:2 selected",
+        "slotMetrics": {
+          "input,[role=combobox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": null,
+            "name": "",
+            "attrs": {
+              "role": "combobox",
+              "aria-expanded": "false",
+              "aria-haspopup": "listbox",
+              "aria-autocomplete": "list",
+              "id": "base-ui-_r_4r_",
+              "placeholder": "Add labels",
+              "value": "",
+              "aria-labelledby": "base-ui-_r_4u_"
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 914,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,[role=combobox]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "input"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "3:press Escape",
+          "state": {
+            "controls": [
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Labels",
+        "controlState": [
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          },
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": null,
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          },
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
+          }
+        ],
+        "interactiveCount": 2,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,[role=combobox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": null,
+            "name": "",
+            "attrs": {
+              "role": "combobox",
+              "aria-expanded": "false",
+              "aria-haspopup": "listbox",
+              "aria-autocomplete": "list",
+              "id": "base-ui-_r_4r_",
+              "placeholder": "Add labels",
+              "value": "",
+              "aria-labelledby": "base-ui-_r_4u_",
+              "data-focused": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 914,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
     }
   }
 }

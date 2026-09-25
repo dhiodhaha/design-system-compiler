@@ -26,7 +26,7 @@ import { popoverPopupClassName, popoverPositionerProps } from "@/components/base
 import { SelectContext, type SelectItemType, sizes } from "@/components/base/select/select-shared";
 import { TagCloseX } from "@/components/base/tags/base-components/tag-close-x";
 import { cx } from "@/utils/cx";
-import { SelectItem } from "./select-item";
+import { SelectItem, SelectItemOwnerContext } from "./select-item";
 
 /** React Aria's `Key`: the identity of an item. */
 type Key = string | number;
@@ -155,10 +155,6 @@ export const TagSelectBase = ({
     const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen ?? false);
     const open = isOpen ?? uncontrolledOpen;
 
-    // React Aria's tag select closed the listbox when an item was picked; the popup staying open is what makes
-    // picking several tags in a row possible, so the close request that follows a selection is swallowed once.
-    const keepOpenRef = useRef(false);
-
     const tagSelectState = {
         isOpen: open,
         isDisabled: Boolean(isDisabled),
@@ -200,12 +196,13 @@ export const TagSelectBase = ({
 
         // React Aria cleared the filter text after a selection and left the popup open for the next tag.
         setFilterText("");
-        keepOpenRef.current = true;
     };
 
-    const handleOpenChange = (nextOpen: boolean) => {
-        if (!nextOpen && keepOpenRef.current) {
-            keepOpenRef.current = false;
+    const handleOpenChange = (nextOpen: boolean, details?: ComboboxRootChangeEventDetails) => {
+        // React Aria's tag select kept the listbox open when an item was picked (so several tags can be picked in a
+        // row) but closed it on Escape and outside presses. Base UI asks for the post-selection close with reason
+        // 'item-press', which is the only close request that is skipped here.
+        if (!nextOpen && details?.reason === "item-press") {
             return;
         }
         if (isOpen === undefined) {
@@ -227,6 +224,7 @@ export const TagSelectBase = ({
             }}
         >
             <SelectContext.Provider value={{ size }}>
+                <SelectItemOwnerContext.Provider value="combobox">
                 <Field.Root
                     disabled={isDisabled}
                     invalid={isInvalid}
@@ -275,6 +273,7 @@ export const TagSelectBase = ({
                         )}
                     </BaseCombobox.Root>
                 </Field.Root>
+                </SelectItemOwnerContext.Provider>
             </SelectContext.Provider>
         </TagSelectContext.Provider>
     );

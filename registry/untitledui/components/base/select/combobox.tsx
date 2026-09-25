@@ -21,7 +21,7 @@ import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
 import { type CommonProps, SelectContext, type SelectItemType, sizes } from "@/components/base/select/select-shared";
 import { popoverPopupClassName, popoverPositionerProps } from "@/components/base/select/popover";
-import { SelectItem } from "@/components/base/select/select-item";
+import { SelectItem, SelectItemOwnerContext } from "@/components/base/select/select-item";
 import { cx } from "@/utils/cx";
 import { isReactComponent } from "@/utils/is-react-component";
 
@@ -123,7 +123,10 @@ interface ComboBoxValueProps {
 }
 
 const ComboBoxValue = ({ size, shortcut, placeholder, shortcutClassName, icon: IconProp, inputValue, selectedItem, autoFocus, onFocus }: ComboBoxValueProps) => {
-    const first = inputValue?.split(selectedItem?.supportingText ?? "")?.[0] || "";
+    // React Aria split the mirrored text on the selected item's supporting text; with no selection (or an item
+    // without one) the whole input value is the label part.
+    const splitAt = selectedItem?.supportingText;
+    const first = (splitAt ? inputValue?.split(splitAt) : [inputValue])?.[0] || "";
     const last = inputValue?.split(first)[1];
 
     return (
@@ -293,6 +296,7 @@ export const ComboBox = ({
             className={cx("flex flex-col gap-1.5", typeof className === "function" ? className(comboBoxState) : className)}
         >
             <SelectContext.Provider value={{ size }}>
+                <SelectItemOwnerContext.Provider value="combobox">
                 <BaseCombobox.Root
                     items={items}
                     value={selectedItem}
@@ -356,6 +360,7 @@ export const ComboBox = ({
                         </HintText>
                     )}
                 </BaseCombobox.Root>
+                </SelectItemOwnerContext.Provider>
             </SelectContext.Provider>
         </Field.Root>
     );

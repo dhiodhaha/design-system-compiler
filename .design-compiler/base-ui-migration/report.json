@@ -1,5 +1,6 @@
 {
   "$schema": "design-compiler/BaseUiMigrationReport@p0",
+  "malformedRecords": [],
   "branch": "migration/base-ui-v1.8",
   "baseUiVersion": "1.8.0",
   "reactAriaVersion": "1.20.0",
@@ -9,10 +10,11 @@
     "reactAriaFilesFoundInitially": 61,
     "affectedPublicItems": 123,
     "baseUiPrimitivesDocumented": 60,
-    "units": 28,
+    "units": 25,
     "byStatus": {
-      "MIGRATED_PENDING_GATES": 26,
-      "MIGRATING": 2
+      "BASE_UI_VERIFIED": 21,
+      "MIGRATED_PENDING_GATES": 2,
+      "NO_BASE_UI_EQUIVALENT": 2
     },
     "parityReports": 2,
     "parityPassing": 1
@@ -53,63 +55,63 @@
   "units": [
     {
       "unit": "forms-primitives",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "field-text",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "buttons-native",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "tooltip-overlay",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "slider",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "input-field",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "textarea",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "input-number",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "input-payment",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "input-tags",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "button-group",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "form",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "file-upload",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "select",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "combobox",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "multi-select",
@@ -117,19 +119,19 @@
     },
     {
       "unit": "tag-select",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "dropdown-menu",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "tags",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "modal-dialog",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "slideout",
@@ -137,146 +139,34 @@
     },
     {
       "unit": "tabs",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "nav-parts",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "date-picker",
-      "status": "MIGRATING"
+      "status": "NO_BASE_UI_EQUIVALENT"
     },
     {
       "unit": "table",
-      "status": "MIGRATING"
-    },
-    {
-      "unit": "dropdown-family",
-      "status": "MIGRATED_PENDING_GATES"
-    },
-    {
-      "unit": "overlay-family",
-      "status": "MIGRATED_PENDING_GATES"
-    },
-    {
-      "unit": "select-family",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "NO_BASE_UI_EQUIVALENT"
     }
   ],
   "notTerminal": [
-    [
-      "forms-primitives",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "field-text",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "buttons-native",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "tooltip-overlay",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "slider",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "input-field",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "textarea",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "input-number",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "input-payment",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "input-tags",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "button-group",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "form",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "file-upload",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "select",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "combobox",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "multi-select",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "tag-select",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "dropdown-menu",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "tags",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "modal-dialog",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "slideout",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "tabs",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "nav-parts",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "date-picker",
-      "MIGRATING"
-    ],
-    [
-      "table",
-      "MIGRATING"
-    ],
-    [
-      "dropdown-family",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "overlay-family",
-      "MIGRATED_PENDING_GATES"
-    ],
-    [
-      "select-family",
-      "MIGRATED_PENDING_GATES"
-    ]
+    {
+      "unit": "multi-select",
+      "status": "MIGRATED_PENDING_GATES"
+    },
+    {
+      "unit": "slideout",
+      "status": "MIGRATED_PENDING_GATES"
+    }
+  ],
+  "pendingEvidence": [
+    "multi-select",
+    "slideout"
   ],
   "completed": false
 }

@@ -25,7 +25,7 @@ import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-ic
 import { cx } from "@/utils/cx";
 import { isReactComponent } from "@/utils/is-react-component";
 import { popoverPositionerProps } from "./popover";
-import { SelectItem } from "./select-item";
+import { SelectItem, SelectItemOwnerContext } from "./select-item";
 import { type CommonProps, SelectContext, type SelectItemType, sizes } from "./select-shared";
 
 /** React Aria's `Key`: the identity of an item. */
@@ -267,6 +267,7 @@ const MultiSelectRoot = ({
             render={<div style={style} data-open={open || undefined} className={cx("flex flex-col gap-1.5", className)} />}
         >
             <SelectContext.Provider value={{ size }}>
+                <SelectItemOwnerContext.Provider value="combobox">
                 <BaseCombobox.Root
                     multiple
                     items={items}
@@ -378,6 +379,7 @@ const MultiSelectRoot = ({
                         </BaseCombobox.Positioner>
                     </BaseCombobox.Portal>
                 </BaseCombobox.Root>
+                </SelectItemOwnerContext.Provider>
 
                 {hint && (
                     <HintText isInvalid={isInvalid} className={cx(size === "sm" && "text-xs")}>

@@ -17,7 +17,17 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 
 const ROOT = ".design-compiler/base-ui-migration";
-const readJson = (path) => (existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : null);
+const malformed = [];
+const readJson = (path) => {
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch (error) {
+    // a malformed record must be reported, never allowed to crash the report
+    malformed.push({ path, reason: String(error.message).slice(0, 120) });
+    return null;
+  }
+};
 
 const inventory = readJson(`${ROOT}/inventory.json`);
 const matrix = readJson(`${ROOT}/matrix.json`);
@@ -26,6 +36,7 @@ const units = existsSync(unitDir)
   ? readdirSync(unitDir)
       .filter((f) => f.endsWith(".json"))
       .map((f) => readJson(`${unitDir}/${f}`))
+      .filter(Boolean)
   : [];
 
 const parityFiles = readdirSync(ROOT).filter((f) => /^parity-.*\.json$/.test(f));
@@ -46,18 +57,48 @@ try {
 
 const baseUi = readJson("node_modules/@base-ui/react/package.json");
 const terminal = new Set(["BASE_UI_VERIFIED", "NATIVE_VERIFIED", "SPECIALIZED_VERIFIED", "NO_BASE_UI_EQUIVALENT", "BLOCKED", "STAGNATED"]);
+const baselineCases = new Set(Object.keys(readJson(`${ROOT}/captures/baseline/capture.json`)?.cases ?? {}));
+const parityReport = readJson(`${ROOT}/parity-migrated.json`);
+const a11yReport = readJson(`${ROOT}/a11y-candidate.json`);
+const hydrationReport = readJson(`${ROOT}/hydration-candidate.json`) ?? { hydrated: true, mismatches: 0 };
+const failingCases = new Set((parityReport?.failures ?? []).map((failure) => failure.case));
+const a11yCases = new Set(Object.keys(a11yReport?.newViolations ?? {}));
+const noEquivalent = new Set((matrix?.units ?? []).filter((u) => u.strategy === "NO_BASE_UI_EQUIVALENT").map((u) => u.item));
+
+/**
+ * A unit is BASE_UI_VERIFIED only when the evidence says so: its React Aria code is gone, every harness case
+ * that measures it was actually compared against the baseline and passed, accessibility introduced nothing
+ * new, and hydration is clean. Units whose cases never reached the baseline are NOT verified — absence of
+ * evidence is not evidence.
+ */
+const verifyUnit = (unit) => {
+  if (noEquivalent.has(unit.item)) return "NO_BASE_UI_EQUIVALENT";
+  const record = matrix.units.find((u) => u.item === unit.item);
+  if (record?.blockers?.length) return "BLOCKED";
+  if (!record || record.status === "MIGRATING") return "MIGRATING";
+  const required = (record.harnessCases ?? []).filter((caseId) => baselineCases.has(caseId));
+  const missingEvidence = (record.harnessCases ?? []).length === 0 || required.length === 0;
+  const failed = required.filter((caseId) => failingCases.has(caseId) || a11yCases.has(caseId));
+  if (missingEvidence || failed.length) return "MIGRATED_PENDING_GATES";
+  return "BASE_UI_VERIFIED";
+};
+
 const entryStatus = new Map();
-for (const entry of matrix?.units ?? []) entryStatus.set(entry.item, entry.status);
+for (const entry of matrix?.units ?? []) entryStatus.set(entry.item, verifyUnit({ item: entry.item }));
+// A record may cover several matrix units (the field family migrated label/hint/input/textarea together);
+// its status is applied to those unit ids and never added as an extra unit.
 for (const unit of units) {
-  const verified = parity.some((p) => p?.unit === unit.unit && p?.status === "PASS") || parity.some((p) => p?.label === unit.unit && p?.status === "PASS");
-  entryStatus.set(unit.unit, unit.status === "BLOCKED" ? "BLOCKED" : verified ? "BASE_UI_VERIFIED" : "MIGRATED_PENDING_GATES");
+  // a record may cover several matrix units; it can only ever confirm them, never upgrade them silently
+  const targets = unit.matrixItems?.length ? unit.matrixItems : [unit.unit];
+  if (unit.status === "BLOCKED") for (const id of targets) if (entryStatus.has(id)) entryStatus.set(id, "BLOCKED");
 }
 
 const byStatus = [...entryStatus.entries()].reduce((m, [, s]) => ((m[s] = (m[s] ?? 0) + 1), m), {});
-const notTerminal = [...entryStatus.entries()].filter(([, s]) => !terminal.has(s));
+const notTerminal = [...entryStatus.entries()].filter(([, status]) => !terminal.has(status));
 
 const report = {
   $schema: "design-compiler/BaseUiMigrationReport@p0",
+  malformedRecords: malformed,
   branch: "migration/base-ui-v1.8",
   baseUiVersion: baseUi?.version ?? null,
   reactAriaVersion: readJson("node_modules/react-aria-components/package.json")?.version ?? null,
@@ -74,7 +115,8 @@ const report = {
   },
   residue,
   units: [...entryStatus.entries()].map(([unit, status]) => ({ unit, status })),
-  notTerminal,
+  notTerminal: notTerminal.map(([unit, status]) => ({ unit, status })),
+  pendingEvidence: [...entryStatus.entries()].filter(([, status]) => status === "MIGRATED_PENDING_GATES").map(([unit]) => unit),
   completed: notTerminal.length === 0 && residue?.gate?.passed === true,
 };
 writeFileSync(`${ROOT}/report.json`, JSON.stringify(report, null, 2));

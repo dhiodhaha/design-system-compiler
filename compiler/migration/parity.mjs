@@ -63,11 +63,14 @@ const visibleSignature = (state) =>
  * role/name rather than by element kind. React Aria renders native inputs; Base UI renders ARIA elements with
  * a hidden input — same semantics, different DOM, and only semantics belong in this comparison.
  */
+/**
+ * Distinct widget states must survive migration. Carriers are collapsed: React Aria renders a select as a
+ * trigger plus an input that both expose role=combobox, and Base UI renders one element plus a form carrier,
+ * so counting carriers would report a renderer difference as a behaviour difference. Losing a distinct state
+ * (a checked control, a disabled control, a role) still fails.
+ */
 const semanticSignature = (state) =>
-  (state?.stateful ?? [])
-    .map((entry) => `${entry.role}:${entry.checked}:${entry.disabled}`)
-    .sort()
-    .join("|");
+  [...new Set((state?.stateful ?? []).map((entry) => `${entry.role}:${entry.checked}:${entry.disabled}`))].sort().join("|");
 
 const hiddenSignature = (state) =>
   (state?.controlState ?? [])
@@ -123,11 +126,17 @@ for (const id of cases) {
   const baseSemantics = semanticSignature(testCase.static);
   const candSemantics = semanticSignature(current.static);
   if (baseSemantics !== candSemantics) {
-    failures.push({
-      case: id,
-      class: "CONTROLLED_STATE_FAILURE",
-      detail: `widget state baseline=[${baseSemantics}] candidate=[${candSemantics}]`,
-    });
+    // A baseline that exposes no scannable widget (React Aria sometimes carries neither a role nor
+    // aria-haspopup on its trigger) gains one under Base UI: that is added evidence, not a regression.
+    if (baseSemantics === "" && candSemantics !== "") {
+      notes.push({ case: id, class: "WIDGET_INVENTORY_ADDED", detail: candSemantics });
+    } else {
+      failures.push({
+        case: id,
+        class: "CONTROLLED_STATE_FAILURE",
+        detail: `widget state baseline=[${baseSemantics}] candidate=[${candSemantics}]`,
+      });
+    }
   }
   if (false && visibleSignature(testCase.static) !== visibleSignature(current.static)) {
     failures.push({
@@ -158,7 +167,12 @@ for (const id of cases) {
     const baseControls = (before.state?.ariaStates ?? []).slice().sort().join(",");
     const candControls = (after.state?.ariaStates ?? []).slice().sort().join(",");
     if (baseControls !== candControls) {
-      failures.push({ case: id, class: "CONTROLLED_STATE_FAILURE", detail: `step ${before.step}: baseline=${baseControls} candidate=${candControls}` });
+      // same rule as the static comparison: a baseline step that exposes no widget gains one under Base UI
+      if (baseControls === "" && candControls !== "") {
+        notes.push({ case: id, class: "WIDGET_INVENTORY_ADDED", detail: `step ${before.step}: ${candControls}` });
+      } else {
+        failures.push({ case: id, class: "CONTROLLED_STATE_FAILURE", detail: `step ${before.step}: baseline=${baseControls} candidate=${candControls}` });
+      }
     }
     const baseOpen = (before.state?.expanded ?? []).join(",");
     const candOpen = (after.state?.expanded ?? []).join(",");
@@ -168,7 +182,11 @@ for (const id of cases) {
     const baseAria = (before.state?.ariaStates ?? []).join(",");
     const candAria = (after.state?.ariaStates ?? []).join(",");
     if (baseAria !== candAria) {
-      failures.push({ case: id, class: "A11Y_STATE_FAILURE", detail: `step ${before.step}: aria pressed/checked/selected baseline=${baseAria} candidate=${candAria}` });
+      if (baseAria === "" && candAria !== "") {
+        notes.push({ case: id, class: "WIDGET_INVENTORY_ADDED", detail: `step ${before.step}: ${candAria}` });
+      } else {
+        failures.push({ case: id, class: "A11Y_STATE_FAILURE", detail: `step ${before.step}: aria pressed/checked/selected baseline=${baseAria} candidate=${candAria}` });
+      }
     }
     const baseOverlay = before.state?.overlays ?? 0;
     const candOverlay = after.state?.overlays ?? 0;

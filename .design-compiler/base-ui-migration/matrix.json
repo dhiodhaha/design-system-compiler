@@ -74,6 +74,19 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "checkbox-unchecked",
+        "checkbox-checked",
+        "checkbox-keyboard",
+        "checkbox-hint-invalid",
+        "checkbox-disabled",
+        "radio-group-default",
+        "radio-group-keyboard",
+        "radio-group-disabled",
+        "toggle-off",
+        "toggle-keyboard",
+        "toggle-on-disabled"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/forms-primitives.json",
       "dependsOn": [],
@@ -113,6 +126,10 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "field-label-hint",
+        "field-invalid"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/field-text.json",
@@ -160,6 +177,15 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "button-default",
+        "button-secondary",
+        "button-disabled",
+        "button-loading",
+        "button-link",
+        "button-keyboard",
+        "button-utility"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/buttons-native.json",
       "dependsOn": [],
@@ -199,6 +225,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "tooltip"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/tooltip-overlay.json",
@@ -240,6 +269,10 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "slider-default",
+        "slider-keyboard"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
@@ -284,6 +317,11 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "input-default",
+        "input-disabled",
+        "input-invalid"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/input-field.json",
       "dependsOn": [
@@ -324,6 +362,10 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "textarea-default",
+        "textarea-invalid"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/textarea.json",
@@ -372,6 +414,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "input-number"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
@@ -410,6 +455,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "input-payment"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
@@ -446,6 +494,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "input-tags"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
@@ -488,6 +539,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "button-group"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/button-group.json",
       "dependsOn": [],
@@ -527,6 +581,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "form-submit"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
@@ -562,6 +619,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "file-upload"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
@@ -612,6 +672,10 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "select-closed",
+        "select-open"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/select.json",
       "dependsOn": [],
@@ -656,6 +720,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "combobox"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/combobox.json",
@@ -703,6 +770,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "multi-select"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/multi-select.json",
@@ -752,6 +822,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "tag-select"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/tag-select.json",
@@ -826,6 +899,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "dropdown-menu"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/dropdown-menu.json",
       "dependsOn": [],
@@ -869,6 +945,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "tags-render"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
@@ -909,6 +988,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "modal-open"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/modal-dialog.json",
@@ -956,6 +1038,9 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [
+        "slideout"
+      ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/slideout.json",
       "dependsOn": [
@@ -1001,6 +1086,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "tabs-default"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": null,
@@ -1056,6 +1144,9 @@
         "uncontrolled",
         "a11y",
         "visual"
+      ],
+      "harnessCases": [
+        "nav-account-card"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/nav-parts.json",
@@ -1119,6 +1210,7 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [],
       "status": "MIGRATING",
       "record": null,
       "dependsOn": [],
@@ -1166,6 +1258,7 @@
         "a11y",
         "visual"
       ],
+      "harnessCases": [],
       "status": "MIGRATING",
       "record": null,
       "dependsOn": [],

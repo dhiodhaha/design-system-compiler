@@ -2,86 +2,26 @@
   "$schema": "design-compiler/BaseUiParityReport@p0",
   "label": "migrated",
   "unit": null,
-  "comparedCases": 43,
+  "comparedCases": 45,
   "tolerances": {
     "geometry": 1,
     "portalPlacement": 12
   },
   "failures": [
     {
-      "case": "combobox",
-      "class": "CONTROLLED_STATE_FAILURE",
-      "detail": "step 0:click: baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
+      "case": "multi-select",
       "class": "POPUP_STATE_FAILURE",
-      "detail": "step 0:click: aria-expanded baseline=true candidate="
+      "detail": "step 5:press Escape: aria-expanded baseline=true candidate=false"
     },
     {
-      "case": "combobox",
-      "class": "A11Y_STATE_FAILURE",
-      "detail": "step 0:click: aria pressed/checked/selected baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
+      "case": "multi-select",
       "class": "PORTAL_FAILURE",
-      "detail": "step 0:click: visible overlays baseline=4 candidate=0"
+      "detail": "step 5:press Escape: visible overlays baseline=5 candidate=0"
     },
     {
-      "case": "combobox",
-      "class": "CONTROLLED_STATE_FAILURE",
-      "detail": "step 1:type: baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "POPUP_STATE_FAILURE",
-      "detail": "step 1:type: aria-expanded baseline=true candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "A11Y_STATE_FAILURE",
-      "detail": "step 1:type: aria pressed/checked/selected baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "PORTAL_FAILURE",
-      "detail": "step 1:type: visible overlays baseline=2 candidate=0"
-    },
-    {
-      "case": "combobox",
-      "class": "CONTROLLED_STATE_FAILURE",
-      "detail": "step 2:press ArrowDown: baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "POPUP_STATE_FAILURE",
-      "detail": "step 2:press ArrowDown: aria-expanded baseline=true candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "A11Y_STATE_FAILURE",
-      "detail": "step 2:press ArrowDown: aria pressed/checked/selected baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "PORTAL_FAILURE",
-      "detail": "step 2:press ArrowDown: visible overlays baseline=2 candidate=0"
-    },
-    {
-      "case": "combobox",
-      "class": "CONTROLLED_STATE_FAILURE",
-      "detail": "step 3:press Enter: baseline=combobox:false:false candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "POPUP_STATE_FAILURE",
-      "detail": "step 3:press Enter: aria-expanded baseline=false candidate="
-    },
-    {
-      "case": "combobox",
-      "class": "A11Y_STATE_FAILURE",
-      "detail": "step 3:press Enter: aria pressed/checked/selected baseline=combobox:false:false candidate="
+      "case": "multi-select",
+      "class": "PORTAL_CONTENT_CHANGE",
+      "detail": "baseline=[\"dialog:Phoenix BakerOlivia RhyeLana SteinerResetSelect all\",\"listbox:Phoenix BakerOlivia RhyeLana Steiner\",\"option:Phoenix Baker\",\"option:Olivia Rhye\",\"option:Lana Steiner\"] candidate=[]"
     }
   ],
   "notes": [
@@ -374,6 +314,101 @@
       "case": "button-group",
       "class": "FOCUS_SURFACE_DELTA",
       "detail": "baseline=button:button:false,button:button:false candidate=span:null:false,input:radio:false,span:null:false,input:radio:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "ROLE_ATTRIBUTE_DELTA",
+      "detail": "explicit roles baseline=[] candidate=[\"combobox[expanded=false]\"]"
+    },
+    {
+      "case": "multi-select",
+      "class": "ACCESSIBLE_NAME_ADDED",
+      "detail": "[\"combobox:Select members\"]"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: null:false:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 0:click: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 0:click: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 1:press ArrowDown: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 1:press ArrowDown: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 2:press Enter: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 2:press Enter: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 3:press ArrowDown: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 3:press ArrowDown: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 4:press Enter: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 4:press Enter: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 5:press Escape: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "WIDGET_INVENTORY_ADDED",
+      "detail": "step 5:press Escape: combobox:null:false"
+    },
+    {
+      "case": "multi-select",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=button:button:false candidate=button:button:false,input:null:false"
+    },
+    {
+      "case": "tag-select",
+      "class": "FORM_INTEGRATION_ADDED",
+      "detail": "Base UI added hidden form inputs: null:false:false"
+    },
+    {
+      "case": "tag-select",
+      "class": "FOCUS_SURFACE_DELTA",
+      "detail": "baseline=input:text:false candidate=input:null:false,input:null:false"
     }
   ],
   "status": "FAIL"

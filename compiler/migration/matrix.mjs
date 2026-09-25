@@ -94,6 +94,35 @@ const statusOf = (unit) => {
 };
 
 
+/** Which harness cases measure each unit — a unit's verification status is derived from these, never asserted. */
+const HARNESS_CASES = {
+  "forms-primitives": ["checkbox-unchecked", "checkbox-checked", "checkbox-keyboard", "checkbox-hint-invalid", "checkbox-disabled", "radio-group-default", "radio-group-keyboard", "radio-group-disabled", "toggle-off", "toggle-keyboard", "toggle-on-disabled"],
+  "field-text": ["field-label-hint", "field-invalid"],
+  "buttons-native": ["button-default", "button-secondary", "button-disabled", "button-loading", "button-link", "button-keyboard", "button-utility"],
+  "tooltip-overlay": ["tooltip"],
+  slider: ["slider-default", "slider-keyboard"],
+  "input-field": ["input-default", "input-disabled", "input-invalid"],
+  textarea: ["textarea-default", "textarea-invalid"],
+  "input-number": ["input-number"],
+  "input-payment": ["input-payment"],
+  "input-tags": ["input-tags"],
+  "button-group": ["button-group"],
+  form: ["form-submit"],
+  "file-upload": ["file-upload"],
+  select: ["select-closed", "select-open"],
+  combobox: ["combobox"],
+  "multi-select": ["multi-select"],
+  "tag-select": ["tag-select"],
+  "dropdown-menu": ["dropdown-menu"],
+  tags: ["tags-render"],
+  "modal-dialog": ["modal-open"],
+  slideout: ["slideout"],
+  tabs: ["tabs-default"],
+  "nav-parts": ["nav-account-card"],
+  "date-picker": [],
+  table: [],
+};
+
 const units = UNITS.map((unit) => ({
   item: unit.id,
   wave: unit.wave,
@@ -107,6 +136,7 @@ const units = UNITS.map((unit) => ({
   downstreamPublicItems: unit.publicItems,
   docsNotes: unit.primitives.map((p) => (docs[p] ? `${ROOT}/docs/${p}.json` : null)).filter(Boolean),
   testsRequired: ["typecheck", "ssr", "keyboard", "controlled", "uncontrolled", "a11y", "visual"],
+  harnessCases: HARNESS_CASES[unit.id] ?? [],
   status: statusOf(unit),
   record: unitRecord(unit.id) ? `${ROOT}/units/${unit.id}.json` : null,
   dependsOn: unit.dependsOn ?? [],

@@ -1,0 +1,351 @@
+{
+  "unit": "remaining-primitives",
+  "files": [
+    "registry/untitledui/components/base/tags/tags.tsx",
+    "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+    "registry/untitledui/components/base/form/form.tsx",
+    "registry/untitledui/components/base/form/hook-form.tsx",
+    "registry/untitledui/components/base/file-upload-trigger/file-upload-trigger.tsx",
+    "registry/untitledui/components/base/slider/slider.tsx",
+    "registry/untitledui/components/application/tabs/tabs.tsx",
+    "registry/untitledui/components/base/input/input-number.tsx",
+    "registry/untitledui/components/base/input/input-payment.tsx",
+    "registry/untitledui/components/base/input/input-tags.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "baseUiPrimitives": [
+    {
+      "primitive": "combobox",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/combobox",
+      "usedIn": [],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/combobox.json"],
+      "semanticDifferences": [
+        "Consulted for both tag surfaces and deliberately NOT used. Combobox renders a role=combobox input (its own hidden form input, popup, chips) whereas the payload's tag list is a React Aria tag *grid* (role=grid > row > gridcell) and the tag input is a plain textbox; adopting Combobox would change the widget roles the parity gate compares (tags-render portals carry `grid:<text>`, input-tags stateful carries `textbox:false:false`) and the a11y baseline.",
+        "Combobox.Chips/Chip/ChipRemove only exist inside a Combobox input group (chips are the selected values of the combobox itself, `multiple` mode) — there is no standalone chip/tag part, and the payload's tags are not the values of a text input; they are a removable collection driven by `onRemove(keys)`.",
+        "The payload's tag input has no popup, no option list and no filtering, so Combobox's filter/items/filteredItems machinery would be dead weight."
+      ]
+    },
+    {
+      "primitive": "use-render",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/use-render",
+      "usedIn": ["registry/untitledui/components/base/tags/tags.tsx", "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/use-render.json", ".design-compiler/base-ui-migration/docs/internals-stateAttributesMapping.json"],
+      "semanticDifferences": [
+        "Base UI has no Tag/TagGroup/TagList primitive, so the tag family is rendered natively and use-render supplies the Base UI half of the contract: the `render` prop (element or `(props, state) => element`) and state-driven `data-*` attributes.",
+        "`state` keys map to lowercased data attributes, so the React Aria attribute names the payload's own CSS and consumers may use are restored through `stateAttributesMapping` (isSelected -> data-selected, isHovered -> data-hovered, isPressed -> data-pressed, isFocused -> data-focused, isFocusVisible -> data-focus-visible, isDisabled -> data-disabled, allowsRemoving -> data-allows-removing, selectionMode -> data-selection-mode).",
+        "`useRender` merges only a single `ref` (`ref` is not merged by mergeProps), so TagList merges its own grid ref with the consumer's ref by hand instead of passing a ref array.",
+        "React Aria's `mergeProps`/`filterDOMProps` are gone from this unit; use-render merges className/style/handlers internally (handlers right-to-left), which is what the tag close button's press layer and the tag row's own handlers rely on."
+      ]
+    },
+    {
+      "primitive": "field",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/field",
+      "usedIn": ["registry/untitledui/components/base/input/input-tags.tsx", "registry/untitledui/components/base/input/input-number.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/field.json", ".design-compiler/base-ui-migration/docs/input.json"],
+      "semanticDifferences": [
+        "`Field.Root` is the field wrapper the payload's `Label`/`HintText` already expect (they render `Field.Label`/field-aware text inside it and drive their invalid styling from the field's data attributes); it replaces React Aria's `Group`+`TextField` field context.",
+        "`Field.Root` has no `required` prop — `required` belongs to the control (`Input`/`NumberField.Input`), which is where the payload sets it.",
+        "Field state (`focused`, `valid`, `disabled`) is observed from the DOM/constraint validation and surfaced as `data-focused`/`data-valid`/`data-invalid`/`data-disabled`, so the payload's `group-invalid:`/`group-disabled:` variants were rewritten to `group-data-invalid:`/`group-data-disabled:` (the React Aria spellings only worked while `data-rac` was present and were already inert without it).",
+        "`Field.Root.invalid` forces the invalid state the payload passes as `isInvalid`; React Aria took that prop on the field itself."
+      ]
+    },
+    {
+      "primitive": "form",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/form",
+      "usedIn": ["registry/untitledui/components/base/form/form.tsx", "registry/untitledui/components/base/form/hook-form.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/form.json", ".design-compiler/base-ui-migration/docs/fieldset.json"],
+      "semanticDifferences": [
+        "React Aria's Form is a native form plus a validation context; Base UI's Form additionally validates the fields it contains, focuses the first invalid field and offers `onFormSubmit(values, details)` + `errors`.",
+        "Base UI sets `noValidate` on the form, so the payload keeps React Aria's `validationBehavior` ('native' by default) by passing `noValidate={validationBehavior !== 'native'}` — the default keeps native constraint validation in front of the submit, exactly as before.",
+        "React Aria's `validationErrors` (a map keyed by field name) is Base UI's `errors`; the prop is kept and forwarded.",
+        "HookForm's `FormField` still hands the render-prop control React Aria's `validationBehavior: 'aria'` key: call sites spread `control.field` into their inputs and it describes the behaviour Base UI fields actually have (ARIA validation), so removing it would be a breaking change for no gain."
+      ]
+    },
+    {
+      "primitive": "input",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/input",
+      "usedIn": ["registry/untitledui/components/base/input/input-tags.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/input.json", ".design-compiler/base-ui-migration/docs/field.json"],
+      "semanticDifferences": [
+        "`Input` IS `Field.Control` in 1.8.0, so it registers the control with the field wrapper: `Label`'s `htmlFor` and the input's `aria-labelledby` are wired from Field context instead of React Aria's slot wiring.",
+        "React Aria's `Input` inside a `Group` inherited `isDisabled`/`isInvalid` from the group; here `disabled` comes from `Field.Root` (and is passed explicitly) and `aria-invalid` from the field's validity.",
+        "`value` + `onChange` stay controlled (Base UI merges the native handler in addition to `onValueChange`), which is what the payload's free-text tag entry needs."
+      ]
+    },
+    {
+      "primitive": "number-field",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/number-field",
+      "usedIn": ["registry/untitledui/components/base/input/input-number.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/number-field.json", ".design-compiler/base-ui-migration/docs/merge-props.json"],
+      "semanticDifferences": [
+        "Props renamed to Base UI's vocabulary: minValue->min, maxValue->max, formatOptions->format, locale stays, isDisabled->disabled, isReadOnly->readOnly, isRequired->required; `isInvalid` has no Root prop and is expressed through `Field.Root.invalid` (plus `aria-invalid` on the input for the standalone `InputNumberBase`).",
+        "Two value callbacks instead of React Aria's `onChange`: `onValueChange` (live) and `onValueCommitted` (settled) — the payload exposes both (`onChange`, `onChangeEnd`) and passes `null` through for a cleared field, where React Aria reported `NaN`.",
+        "The steppers are real parts (`NumberField.Increment`/`Decrement`) instead of React Aria's slot-based increment/decrement buttons: they are focusable (`tabIndex -1`, as React Aria's were), labelled 'Increase'/'Decrease' by Base UI and merged onto the payload's own `Button` (horizontal layout) or onto Base UI's default `<button>` (vertical layout).",
+        "Root renders a hidden `<input type=number>` for form submission (the parity gate reports it as FORM_INTEGRATION_ADDED).",
+        "`isWheelDisabled` maps to `allowWheelScrub={!isWheelDisabled}` because Base UI's default (`allowWheelScrub: false`) would have silently disabled the wheel behaviour React Aria had on by default."
+      ]
+    },
+    {
+      "primitive": "slider",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/slider",
+      "usedIn": ["registry/untitledui/components/base/slider/slider.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/slider.json"],
+      "semanticDifferences": [
+        "One `Slider.Thumb` must be placed per value (React Aria rendered them from the track's state); the payload derives the count from the value shape and mirrors the live values so the fill, the thumb count and the value label keep working.",
+        "The keyboard-a11y control is a real `<input type=range>` nested in each thumb; Base UI sizes it to the thumb for VoiceOver, so the thumb resets it to the browser's intrinsic size (`[&>input]:m-0! w-auto! h-auto!`) — that is the box React Aria's clipped input had (129x16, margin 0) and what a control-level measurement sees.",
+        "Focus and drag are native here: the thumb's React Aria `isFocusVisible`/`isDragging` states became `has-[:focus-visible]:` and `data-dragging:` classes (Base UI emits data-dragging on the thumb).",
+        "The fill is the payload's own absolutely positioned pill (React Aria's `left`/`width` math, valueToPercent): `Slider.Indicator` places itself with `position: relative` + `height: inherit` inline styles that fight the payload's 8px pill, and its math is identical, so the payload's markup was kept instead.",
+        "React Aria's empty `<AriaLabel />` is gone; `label` renders `Slider.Label` when given, and the root's `aria-label`/`aria-labelledby` are forwarded to the thumb inputs, which removes the pre-existing axe `label` violation on the slider cases."
+      ]
+    },
+    {
+      "primitive": "tabs",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/tabs",
+      "usedIn": ["registry/untitledui/components/application/tabs/tabs.tsx"],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/tabs.json"],
+      "semanticDifferences": [
+        "React Aria's `selectedKey`/`defaultSelectedKey`/`onSelectionChange` are kept and aliased onto Base UI's `value`/`defaultValue`/`onValueChange` (both spellings are accepted).",
+        "`Tab id` (React Aria's item key) is the tab's value; the DOM id is Base UI's own, as it was React Aria's collection id before.",
+        "Tabs render a real `<button role=tab>` instead of React Aria's `<div role=tab>` (the parity gate reports the focus-surface delta; the widget signature `tab:null:false` is unchanged).",
+        "`keyboardActivation` is kept ('manual' default, React Aria's Tabs prop) and drives Base UI's `activateOnFocus`; `loopFocus` defaults to `false` because React Aria's tab list did not wrap focus (`shouldFocusWrap` false).",
+        "The React Aria render states are rebuilt: `className`/children functions for Tab receive `{isHovered,isPressed,isSelected,isFocused,isFocusVisible,isDisabled}`, the tab list `{orientation}`, the panel `{isFocused,isFocusVisible,isInert,isEntering,isExiting}`; the React Aria `state` (TabListState) key has no Base UI equivalent and is gone.",
+        "`data-selected`/`data-hovered`/`data-pressed`/`data-focused`/`data-focus-visible` are emitted alongside Base UI's own attributes so Tailwind's `selected:`/`pressed:` variants (which compile to attribute selectors) keep matching; the panel's `shouldForceMount` maps onto Base UI's `keepMounted`.",
+        "`group-orientation-vertical:` was rewritten to `group-data-[orientation=vertical]:` — Base UI emits `data-orientation=\"vertical\"`, never the `data-orientation-vertical` attribute the React Aria variant compiled to."
+      ]
+    },
+    {
+      "primitive": "merge-props",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/merge-props",
+      "usedIn": [],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/merge-props.json"],
+      "semanticDifferences": [
+        "Not imported: every merge this unit needs (tag row/close button, tab, slider thumb, number field) is done by use-render's own prop merge or by Base UI's parts, so a direct import would be dead weight.",
+        "The one call site React Aria's `@react-aria/utils` mergeProps had (file-upload-trigger) disappeared with `filterDOMProps`; the trigger's extra props are spread onto the native file input as before.",
+        "Unlike React Aria's mergeProps, Base UI's does not merge refs — hence the manual ref merge in TagList."
+      ]
+    },
+    {
+      "primitive": "fieldset",
+      "version": "1.8.0",
+      "importPath": "@base-ui/react/fieldset",
+      "usedIn": [],
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/fieldset.json"],
+      "semanticDifferences": [
+        "Read as the documented group-labelling primitive for the form unit and not needed: the payload's `Form` and `HookForm` expose no group labelling, and React Aria's `Form` was a plain `<form>` (no fieldset semantics to preserve)."
+      ]
+    }
+  ],
+  "migrationRecord": {
+    "publicComponent": {
+      "tags.tsx": "TagGroup, TagList, Tag, TagAvatar (+ TagItem and the TagGroupProps/TagListProps/TagProps types)",
+      "tag-close-x.tsx": "TagCloseX",
+      "form.tsx": "Form (+ FormProps/FormValidationErrors)",
+      "hook-form.tsx": "HookForm, FormField, useFormFieldContext",
+      "file-upload-trigger.tsx": "FileTrigger",
+      "slider.tsx": "Slider (+ SliderRenderProps)",
+      "tabs.tsx": "Tabs, TabList, Tab, TabPanel (+ Tabs.Panel/.List/.Item)",
+      "input-number.tsx": "InputNumber, InputNumberBase (+ InputNumberBaseProps)",
+      "input-payment.tsx": "PaymentInput, formatCardNumber",
+      "input-tags.tsx": "InputTags"
+    },
+    "existingUntitledUiBehavior": {
+      "tags.tsx": "A React Aria tag *grid*: TagGroup provides the selection collection, TagList renders role=grid (aria-label from `label`, aria-live polite while focus is inside, aria-atomic=false, aria-relevant=additions, tabIndex 0), each Tag renders role=row > role=gridcell(display:contents) with a roving tabIndex (0 for every enabled row until one is focused), roving arrow-key focus, Delete/Backspace removal through the group's `onRemove(Set<Key>)`, space/enter selection, a checkbox when selectionMode is not 'none', a close button when `onClose`/`onRemove` exist, and React Aria state attributes (data-selected/hovered/pressed/focused/focus-visible/disabled/allows-removing/selection-mode).",
+      "tag-close-x.tsx": "A React Aria Button with slot=\"remove\", aria-label='Remove this tag', `excludeFromTabOrder`, `onPress` and size-dependent icon/box styles.",
+      "form.tsx": "A native <form> that is otherwise a pass-through (React Aria's Form only adds its validation context).",
+      "hook-form.tsx": "react-hook-form wiring: HookForm provides the form context inside the React Aria form, FormField builds a `useController` and hands the control (with React Aria's validationBehaviour key) to the render prop, `useFormFieldContext` merges the controller context with the field state.",
+      "file-upload-trigger.tsx": "One child element cloned with an onClick that clears and clicks a hidden native <input type=file>; the extra props are filtered and spread onto that input.",
+      "slider.tsx": "React Aria Slider with a single hidden <input type=range> per value, a percent-formatted output inside each thumb (labelFormatter override), and a filled pill computed from the thumb percents.",
+      "tabs.tsx": "React Aria Tabs (manual activation) whose TabList/Tab/TabPanel restyle through React Aria render props, an `items` shortcut on TabList, a badge/icon on Tab, and a size/type context shared from the list to the tabs.",
+      "input-number.tsx": "A React Aria NumberField group with the payload's box styling, a text input, vertical chevron steppers (or the payload's Buttons in horizontal orientation), and React Aria's field state driving the label/hint.",
+      "input-payment.tsx": "A TextField-based card input that keeps the digits in `useControlledState`, displays `formatCardNumber(digits)`, reports the sanitised digits to `onChange`, and swaps a card-type icon.",
+      "input-tags.tsx": "A free-text tag entry: a textbox that adds a trimmed tag on Enter, removes tags through the tag grid's `onRemove`, moves focus to the last tag on Backspace at the caret start / ArrowLeft and back to the input on ArrowRight, with controlled/uncontrolled string arrays and label/hint/tooltip/invalid/required/disabled props."
+    },
+    "canonicalBehavioralContract": {
+      "tags.tsx": "A tag group is a labelled grid of removable rows: role=grid whose accessible name is the group's `label`; each tag a focusable row (roving tab index, arrows move focus, wrap at both ends, skip disabled tags); Delete/Backspace remove the focused tag (or all selected ones); space/enter select when selectionMode is not 'none' with single/multiple semantics and `disallowEmptySelection`; removing the last tag moves focus to the list",
+      "tag-close-x.tsx": "A pressable close control that removes its tag and is excluded from the tab order (the tag row owns the keyboard).",
+      "form.tsx": "A native form that submits natively, blocks submission while a field is invalid, and accepts externally supplied validation errors keyed by field name.",
+      "hook-form.tsx": "react-hook-form is the source of truth for values and errors; the form submits through the payload's Form and fields receive `name`/`field`/`fieldState`.",
+      "file-upload-trigger.tsx": "Pressing the single child opens the file dialog of a hidden native file input configured by acceptedFileTypes/allowsMultiple/acceptDirectory/defaultCamera, and a selection is reported through `onSelect(files)`; re-selecting the same file works (the value is cleared before opening).",
+      "slider.tsx": "A labelled range control: native range inputs are the focusable controls (one per value), arrows/Home/End change the value, the track paints an 8px pill filled to the value(s), and the value label is `labelFormatter(value)` or the value formatted as a percentage (value/100 with `formatOptions`, default percent with 0 fraction digits).",
+      "tabs.tsx": "A tab list with roving focus and manual activation by default (Enter/Space activates), one panel per tab that is mounted only while selected, and size/type styling driven by the list and applied by the tabs.",
+      "input-number.tsx": "A numeric text input with increment/decrement steppers (arrows, Home/End, wheel, steppers), a formatted display value, and optional label/hint/invalid/required/disabled states; the field submits a number under `name`.",
+      "input-payment.tsx": "A numeric card field that displays the number grouped in fours, reports the digits, detects the card type and shows its icon, and is limited to `maxLength`.",
+      "input-tags.tsx": "A tag entry: Enter adds a trimmed tag (respecting allowDuplicates/maxTags/validate), each tag is removable (close button, Delete), Backspace at the caret start / ArrowLeft focuses the last tag, ArrowRight from the last tag returns to the input, and the value is a string[] (controlled or uncontrolled) with label/hint/tooltip semantics."
+    },
+    "baseUiCompositionChosen": {
+      "tags.tsx": "NATIVE + use-render: Field-less native row/gridcell elements with use-render providing the render prop and the data-* state mapping; React Aria's exact ARIA structure (grid > row > gridcell, display:contents cell) and state-attribute names are preserved because Base UI has no Tag primitive and the tag grid's roles are observable (they are what the harness's tags portal and the a11y baseline carry). Combobox chips were rejected: they only exist inside a combobox and would change the widget roles.",
+      "tag-close-x.tsx": "use-render over a native <button> + the payload's shared press layer (`usePressEvents` from buttons/button.tsx), with `slot`, `aria-label`, `disabled` and `tabIndex=-1` kept.",
+      "form.tsx": "Base UI Form (errors/onFormSubmit/validationMode/actionsRef + native form props), with React Aria's `validationErrors` mapped onto `errors` and `validationBehavior` mapped onto `noValidate`.",
+      "hook-form.tsx": "The payload's Form inside react-hook-form's FormProvider; FormField keeps its controller/render-prop contract and drops nothing but the React Aria import.",
+      "file-upload-trigger.tsx": "NATIVE: the same cloned child + hidden native <input type=file>, with `filterDOMProps` removed (the props are spread onto the input directly).",
+      "slider.tsx": "Base UI Slider: Root > Label(optional) > Control > Track > [track spans, Thumb(index=0..n) > Value]. The Value part renders each thumb's <output> and the fill uses the payload's own pill markup (valueToPercent math) instead of Indicator.",
+      "tabs.tsx": "Base UI Tabs: Root > List > Tab, with Panel(s) inside Root; two internal contexts carry the list's size/type to the tabs and the root's orientation/keyboard activation to the list that Base UI's own context also provides.",
+      "input-number.tsx": "Base UI Field.Root (label/hint/invalid wiring for InputNumber) + NumberField.Root > Group > Input + Increment/Decrement, with the payload's Buttons composed onto the steppers through `render`.",
+      "input-payment.tsx": "The already-migrated TextField/InputBase (Field.Root + Input) with local controlled state replacing `useControlledState` from @react-stately/utils.",
+      "input-tags.tsx": "Base UI Field.Root (field state, label association) + Input (Field.Control) inside the payload's own group box, with the native tag grid for the tags. Combobox was rejected: the payload's tag input has no popup and must stay a textbox."
+    },
+    "whyNotOneToOne": {
+      "tags.tsx": "There is no Base UI Tag/TagGroup/TagList part, and both remaining Base UI candidates change the observable contract: Combobox renders a combobox input plus chips (roles, filtering and a hidden value input appear out of nowhere) and Toolbar renders a toolbar of buttons (role=toolbar/button instead of the tag grid's grid/row/gridcell). The tag grid is therefore a native re-implementation with use-render as its Base UI-facing half, keeping the roles, state attributes, roving tab index and onRemove/selection semantics the current DOM exposes.",
+      "tag-close-x.tsx": "Base UI has no Button part that keeps a press-event API; the payload's own press layer (already the wave-1 convention) is reused instead of React Aria's press hooks.",
+      "form.tsx": "Base UI Form is a superset of React Aria's Form, but the two disagree on `noValidate` (Base UI always sets it) and on how server errors and submission results are surfaced, so the props are mapped rather than passed through.",
+      "hook-form.tsx": "Only the form element changes; react-hook-form's controller API is untouched, and Base UI's own RHF integration guidance (forward name/field/fieldState into Field parts) is what the retained control object already provides.",
+      "file-upload-trigger.tsx": "React Aria's FileTrigger has no Base UI counterpart; the hidden native input was already the mechanism, so only the React Aria util import had to go.",
+      "slider.tsx": "React Aria's slider state (thumb values, percents, formatted values) has no Base UI equivalent — Base UI hands values to parts through context — so the payload mirrors the value to keep its own fill/label markup, and the thumb sizes the nested range input itself because Base UI stretches it to the thumb.",
+      "tabs.tsx": "React Aria's render-prop state objects and its `selectedKey`/`keyboardActivation` vocabulary have no Base UI equivalents; the payload keeps the React Aria prop names and rebuilds the state objects it exposes to consumers, while Base UI owns the DOM state.",
+      "input-number.tsx": "React Aria's NumberField folds label/description/validation and the steppers into one component with slot-based buttons; Base UI separates the field (Field.Root), the number field (Root/Group/Input) and the steppers, and reports values as null instead of NaN.",
+      "input-payment.tsx": "@react-stately/utils' useControlledState has no public Base UI equivalent; the same controlled/uncontrolled semantics are four lines of local state.",
+      "input-tags.tsx": "React Aria's Group/Input with slots has no Base UI counterpart; a Field.Root + Input pair reproduces the group box, the label association and the invalid/disabled states while the tags stay the native tag grid."
+    }
+  },
+  "publicApiChanges": [
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "component": "InputNumber / InputNumberBase",
+      "change": "`onChange`/`onChangeEnd` are typed `(value: number | null) => void` and receive `null` for a cleared field; React Aria reported `NaN`.",
+      "reason": "Base UI's number value is `number | null`; NaN was an implementation detail of React Aria's number state and is not reproducible, so the callback reports Base UI's canonical empty value."
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "component": "InputNumberBaseProps",
+      "change": "The props no longer extend React Aria's `AriaNumberFieldProps`; the React Aria names are declared explicitly (value, defaultValue, onChange, minValue, maxValue, step, formatOptions, locale, isDisabled, isReadOnly, isRequired, isInvalid, isWheelDisabled, incrementAriaLabel, decrementAriaLabel, name, id, autoFocus, autoComplete, enterKeyHint, slot) and the React-Aria-only ones (label, hint, validationBehavior, commitBehavior, description, errorMessage, validationState, keyboardDelegate…) are gone.",
+      "reason": "The RAC types cannot be imported any more; the declared set is exactly the surfaced/preserved subset, and dropping RAC-only props that were never used in the payload is recorded rather than simulated."
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "component": "InputNumber",
+      "change": "`granularity` is still accepted (typed `'day' | 'hour' | 'minute' | 'second'`) but is destructured and ignored instead of being spread onto the DOM element.",
+      "reason": "It is a copy-paste leftover from a date field in the adopted source; keeping the prop preserves the surface, and destructuring stops it leaking a stray DOM attribute."
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/tags.tsx",
+      "component": "TagGroupProps / TagProps / TagListProps",
+      "change": "The props no longer extend React Aria's AriaTagGroupProps/TagProps/TagListProps: `errorMessage`, `escapeKeyBehavior`, `selectionBehavior`, `shouldSelectOnPressUp`, `onAction`-on-the-group, `items`-on-the-group and Tag's `href` are not declared; `Tag` gained `onPress` (called with the native event) and `render`, TagList gained `renderEmptyState`+`render`, TagGroup gained `render`.",
+      "reason": "No Base UI equivalent exists for the RAC-only props, and silently accepting them would either leak DOM attributes or promise behaviour that is not implemented; the added props are the Base UI render contract."
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/tags.tsx",
+      "component": "TagListRenderProps / TagRenderProps",
+      "change": "The render state no longer carries React Aria's `state` (ListState) key; TagList's state is `{isEmpty, isFocused, isFocusVisible}` and Tag's is `{isSelected, isFocused, isFocusVisible, isHovered, isPressed, isDisabled, allowsRemoving, selectionMode}`.",
+      "reason": "There is no collection object to expose; the collection is the DOM, and consumers used the state predicates, not the state object."
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "component": "Tabs",
+      "change": "`selectedKey`/`defaultSelectedKey`/`onSelectionChange` are kept AND `value`/`defaultValue`/`onValueChange` are accepted (Base UI's spelling); `onValueChange` receives `(value, eventDetails)`.",
+      "reason": "Both call sites (header-navigation's `selectedKey`, the harness's plain Tabs) keep working, and Base UI's vocabulary is available without a wrapper of its own."
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "component": "TabList / Tab / TabPanel render states",
+      "change": "The React Aria `state` key (TabListState) is gone from the render states, and `TabPanel`'s state adds `isInert`/`isEntering`/`isExiting` derived from Base UI's `hidden`/`transitionStatus`; `Tab`'s `render` callback receives Base UI's own tab state while `className`/children receive the rebuilt React Aria-shaped state.",
+      "reason": "The state object cannot be reproduced; the predicates consumers style with can."
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "component": "TabList",
+      "change": "New `activateOnFocus` and `loopFocus` props (the latter defaulting to `false`).",
+      "reason": "`activateOnFocus` is the knob Base UI puts on the list for what React Aria called `keyboardActivation` on the tabs; `loopFocus` defaults to React Aria's non-wrapping behaviour."
+    },
+    {
+      "file": "registry/untitledui/components/base/slider/slider.tsx",
+      "component": "Slider",
+      "change": "The props no longer extend React Aria's `AriaSliderProps`: `isDisabled`, `minValue`, `maxValue`, `step`, `value`, `defaultValue`, `onChange`, `onChangeEnd`, `formatOptions`, `locale`, `orientation`, `label`, `name`, `id`, the render-prop className/style and the `aria-*` labelling props are declared; React Aria's `description`, `errorMessage`, `details`, `slot` and thumb-value render state are gone.",
+      "reason": "The declared set is what the payload surfaced; the dropped props had no Base UI counterpart in this component."
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "component": "TagCloseX",
+      "change": "The props no longer extend React Aria's `ButtonProps`: the native button props plus `PressEvents`, `isDisabled`, `excludeFromTabOrder`, `slot`, `size` and `render` are declared.",
+      "reason": "React Aria's Button prop object is the only thing removed; every prop the payload passes (`size`, `className`, `aria-label`, `onPress`, `isDisabled`, `excludeFromTabOrder`) still works."
+    },
+    {
+      "file": "registry/untitledui/components/base/form/form.tsx",
+      "component": "Form",
+      "change": "A `FormProps` type is exported and `errors`/`onFormSubmit`/`validationMode`/`actionsRef` (Base UI) are accepted alongside the kept `validationErrors`/`validationBehavior`.",
+      "reason": "The wrapper's inferred prop type had to be restated once it stopped being `ComponentPropsWithRef<typeof AriaForm>`; exporting it makes the surface explicit."
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "react-aria-components: Tag, TagGroup, TagGroupProps, TagList, TagProps (tags.tsx)",
+    "react-aria-components: Button, ButtonProps (tag-close-x.tsx)",
+    "react-aria-components: Form (form.tsx, hook-form.tsx)",
+    "@react-aria/utils: filterDOMProps (file-upload-trigger.tsx)",
+    "react-aria-components: Label, Slider, SliderOutput, SliderProps, SliderThumb, SliderTrack (slider.tsx)",
+    "react-aria-components: Tab, TabList, TabPanel, Tabs, TabsContext, useSlottedContext, TabListProps, TabProps, TabRenderProps (tabs.tsx)",
+    "react-aria-components: Button, Group, Input, InputProps, NumberField, NumberFieldProps, DateFieldProps, DateValue (input-number.tsx)",
+    "@react-stately/utils: useControlledState (input-payment.tsx)",
+    "react-aria-components: Group, Input (input-tags.tsx)"
+  ],
+  "baseUiImportsAdded": [
+    "@base-ui/react/use-render (tags.tsx, tag-close-x.tsx, tabs.tsx)",
+    "@base-ui/react/form (form.tsx)",
+    "@base-ui/react/field (input-tags.tsx, input-number.tsx)",
+    "@base-ui/react/input (input-tags.tsx)",
+    "@base-ui/react/number-field (input-number.tsx)",
+    "@base-ui/react/slider (slider.tsx)",
+    "@base-ui/react/tabs (tabs.tsx)"
+  ],
+  "stateSelectorChanges": [
+    {
+      "file": "registry/untitledui/components/base/input/input-tags.tsx",
+      "variant": "group-invalid/input:hidden, group-invalid/input:block",
+      "was": "React Aria group variant, compiled to a `:invalid`/`[data-invalid]` selector that only matched while `data-rac` was present",
+      "now": "group-data-invalid/input:hidden, group-data-invalid/input:block",
+      "why": "the group box carries `data-invalid` (set from `isInvalid`) and Base UI emits `data-invalid` from field validity"
+    },
+    {
+      "file": "registry/untitledui/components/base/input/input-number.tsx",
+      "variant": "group-disabled:, group-invalid: (+ in-data-input-wrapper:group-disabled:)",
+      "was": "React Aria group variants expecting data-rac + data-disabled/data-invalid on the ancestor",
+      "now": "group-data-disabled:, group-data-invalid: (+ in-data-input-wrapper:group-data-disabled:)",
+      "why": "the ancestor (`InputNumber`'s Field.Root, which still carries the `group` class) is a Base UI field and emits data-disabled/data-invalid"
+    },
+    {
+      "file": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "variant": "group-orientation-vertical:justify-start",
+      "was": "React Aria enum variant expecting `[data-orientation-vertical]`",
+      "now": "group-data-[orientation=vertical]:justify-start",
+      "why": "Base UI's List emits `data-orientation=\"vertical\"`"
+    },
+    {
+      "file": "registry/untitledui/components/base/slider/slider.tsx",
+      "variant": "thumb isFocusVisible / isDragging JS state",
+      "was": "React Aria render-state conditions inside the thumb's className function",
+      "now": "has-[:focus-visible]:outline-* and data-dragging:cursor-grabbing",
+      "why": "the focusable element is the nested range input and Base UI marks dragging with `data-dragging`"
+    },
+    {
+      "file": "registry/untitledui/components/base/tags/tags.tsx, registry/untitledui/components/application/tabs/tabs.tsx, registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "variant": "focus-visible:, disabled:, placeholder:",
+      "was": "React Aria native-backed variants",
+      "now": "unchanged (native `:focus-visible`, `:disabled`, `:placeholder-shown`)",
+      "why": "they compile to the native selectors and now match the native focusable elements (row divs, buttons, inputs) the components render"
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "evidence": {
+    "typecheck": "pass",
+    "typecheckDetail": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` reports 0 errors for all ten files (the only remaining payload errors are in components/base/select/select-item.tsx, owned by the select unit). Full run re-executed after the last edit of every file.",
+    "reactAriaImports": "grep for react-aria-components|react-aria|react-stately|@react-aria|@react-stately returns nothing in the ten files.",
+    "scopedParityRun": "A temporary, deleted harness page rendered exactly the nine harness cases this unit owns (tags-render, tabs-default, slider-default/keyboard, input-number, input-payment, input-tags, form-submit, file-upload) and its DOM was probed with the same functions compiler/migration/capture.mjs uses, then compared against .design-compiler/base-ui-migration/captures/baseline/capture.json. Result: 0 failures apart from one scoped-page artefact (the tabs case's baseline portal list contains the *tooltip* portal that only exists on the full harness page). Matched for every case: stateful widget signature (tag rows, tabs, slider, textboxes), controlState/hidden signature, action traces step by step (ariaStates, expanded, portals), portal roles+text, and every declared slot's width/height/colour/borderRadius/font/padding/margin.",
+    "scopedVisualDiff": "Case screenshots from that run are pixel-identical to the React Aria baseline for tags-render, tabs-default, slider-default, slider-keyboard, input-payment, input-tags, input-number and file-upload (0 differing pixels; the input-number delta found on the first run was a real width regression — the number field's group collapsed because the new Root div was a shrunken flex item — and was fixed before this measurement).",
+    "a11y": "axe-core (wcag2a/2aa/21a/21aa) over the nine cases in the scoped run reported no rule that is not already in a11y-baseline.json; the two pre-existing `label` violations on the slider cases are gone (the root's aria-label now names the thumb inputs), which the gate treats as an improvement rather than a regression.",
+    "behaviourChecks": "Verified in the browser: slider slot input 129x16 (baseline 129x16, margin 0) and ArrowRight 30->31; number field ArrowUp 1->2->3, label htmlFor === input id, steppers aria-label Increase/Decrease with tabIndex -1, hidden number input tabIndex -1/aria-hidden; payment input reports digits and displays '4242 4242 4242 4242' (inputMode numeric, maxLength 19); input-tags adds a tag on Enter, renders the tag grid (role=grid with rows, close button, tab index 0 on the first row), focuses the last tag on Backspace and removes it on Delete; file trigger's hidden input is display:none and the child's click calls input.click(); Form renders a native form with no novalidate by default and the label/for wiring intact.",
+    "knownFollowUps": [
+      "tags: pressing Delete on a tag while the group has no `onRemove` appears to move focus off the row in the probe (React Aria did nothing); not reproduced with a remove handler present, where Delete/Backspace removal and focus behaviour are correct.",
+      "tags: React Aria's `escapeKeyBehavior: 'clearSelection'` on the group is not implemented (selection can still be cleared by clicking the selected tag).",
+      "tabs: Base UI keeps an exiting panel mounted for the transition frame, so immediately after a tab change two role=tabpanel elements can be present for a frame (the static case still renders exactly one).",
+      "slider: `orientation=\"vertical\"` is forwarded to Base UI but the payload's track/fill markup stays horizontal, as it was before the migration."
+    ]
+  }
+}

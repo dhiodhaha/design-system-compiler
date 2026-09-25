@@ -13,9 +13,9 @@
 "use client";
 
 import { Combobox as BaseCombobox, type ComboboxItemState } from "@base-ui/react/combobox";
-import { ComboboxRootContext } from "@base-ui/react/combobox/root/ComboboxRootContext";
 import { Select as BaseSelect, type SelectItemState } from "@base-ui/react/select";
-import type { ComponentPropsWithoutRef, CSSProperties, ReactElement, ReactNode, Ref } from "react";
+import type { BaseUIEvent } from "@base-ui/react/internals/types";
+import type { ComponentPropsWithoutRef, CSSProperties, FocusEvent, PointerEvent, ReactElement, ReactNode, Ref } from "react";
 import { createContext, isValidElement, useContext, useId, useState } from "react";
 import { Check } from "@untitledui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
@@ -97,6 +97,14 @@ interface SelectItemProps extends BaseSelectItemProps, SelectItemType {
  */
 export const SelectDisabledKeysContext = createContext<ReadonlySet<string | number> | undefined>(undefined);
 
+/**
+ * React Aria's `ListBoxItem` served both collections — the payload's combo box documents `Select.Item` as the way
+ * to render its options — while Base UI's `Select.Item` and `Combobox.Item` are separate parts that each read
+ * their own root context (rendering the wrong one throws). The combobox family marks its subtree with this
+ * context, so the item renders the part whose root is above it.
+ */
+export const SelectItemOwnerContext = createContext<"select" | "combobox">("select");
+
 export const SelectItem = ({
     label,
     id,
@@ -131,7 +139,11 @@ export const SelectItem = ({
 
     const isLeft = selectionIndicatorAlign === "left";
 
-    const toState = (state: SelectItemState): SelectItemRenderState => ({
+    // The combobox family marks its subtree through `SelectItemOwnerContext` so the item renders the part that
+    // matches the root above it (see the context's declaration).
+    const itemOwner = useContext(SelectItemOwnerContext);
+
+    const toState = (state: SelectItemState | ComboboxItemState): SelectItemRenderState => ({
         isSelected: state.selected,
         isFocused: state.highlighted,
         isFocusVisible: interaction.isFocusVisible,
@@ -140,121 +152,131 @@ export const SelectItem = ({
         isDisabled: state.disabled,
     });
 
-    return (
-        <BaseSelect.Item
-            // The option's accessible name and description keep the React Aria wiring: the option is labelled by
-            // the label element and described by the supporting text, not by the option's whole text content.
-            aria-labelledby={labelId}
-            {...(supportingText ? { "aria-describedby": descriptionId } : {})}
-            value={value ?? { id, label: labelOrChildren, avatarUrl, supportingText, isDisabled, icon: Icon }}
-            // Base UI matches keyboard typeahead against `label`; React Aria's `textValue` was the same string.
-            label={textValue}
-            disabled={isItemDisabled}
-            {...props}
-            onFocus={(event) => {
-                props.onFocus?.(event);
-                // Read the event synchronously: React nulls `currentTarget` before the state updater runs.
-                const isFocusVisible = event.currentTarget.matches(":focus-visible");
-                setInteraction((current) => ({ ...current, isFocusVisible }));
-            }}
-            onBlur={(event) => {
-                props.onBlur?.(event);
-                setInteraction((current) => (current.isFocusVisible ? { ...current, isFocusVisible: false } : current));
-            }}
-            onPointerEnter={(event) => {
-                props.onPointerEnter?.(event);
-                if (event.pointerType === "touch") return;
-                setInteraction((current) => (current.isHovered ? current : { ...current, isHovered: true }));
-            }}
-            onPointerLeave={(event) => {
-                props.onPointerLeave?.(event);
-                setInteraction((current) =>
-                    current.isHovered || current.isPressed ? { ...current, isHovered: false, isPressed: false } : current,
-                );
-            }}
-            onPointerDown={(event) => {
-                props.onPointerDown?.(event);
-                setInteraction((current) => (current.isPressed ? current : { ...current, isPressed: true }));
-            }}
-            onPointerUp={(event) => {
-                props.onPointerUp?.(event);
-                setInteraction((current) => (current.isPressed ? { ...current, isPressed: false } : current));
-            }}
-            onPointerCancel={(event) => {
-                props.onPointerCancel?.(event);
-                setInteraction((current) => (current.isPressed ? { ...current, isPressed: false } : current));
-            }}
-            className={(state) =>
-                cx(
-                    "w-full py-px outline-hidden",
-                    size === "sm" ? "px-1" : "px-1.5",
-                    typeof className === "function" ? className(toState(state)) : className,
-                )
-            }
-            style={typeof style === "function" ? (state) => style(toState(state)) : style}
-            render={(itemProps, state) => {
-                const itemState = toState(state);
+    const onFocus = (event: BaseUIEvent<FocusEvent<HTMLDivElement>>) => {
+        props.onFocus?.(event);
+        // Read the event synchronously: React nulls `currentTarget` before the state updater runs.
+        const isFocusVisible = event.currentTarget.matches(":focus-visible");
+        setInteraction((current) => ({ ...current, isFocusVisible }));
+    };
 
-                const content = (
-                    <div
-                        className={cx(
-                            "flex cursor-pointer items-center rounded-md outline-hidden select-none",
-                            (itemState.isFocused || itemState.isHovered || (itemState.isSelected && selectionIndicator !== "checkbox")) &&
-                                "bg-primary_hover",
-                            itemState.isDisabled && "cursor-not-allowed opacity-50",
-                            itemState.isFocusVisible && "ring-2 ring-focus-ring ring-inset",
+    const onBlur = (event: BaseUIEvent<FocusEvent<HTMLDivElement>>) => {
+        props.onBlur?.(event);
+        setInteraction((current) => (current.isFocusVisible ? { ...current, isFocusVisible: false } : current));
+    };
 
-                            // Icon styles
-                            "*:data-icon:shrink-0 *:data-icon:text-fg-quaternary",
+    const onPointerEnter = (event: BaseUIEvent<PointerEvent<HTMLDivElement>>) => {
+        props.onPointerEnter?.(event);
+        if (event.pointerType === "touch") return;
+        setInteraction((current) => (current.isHovered ? current : { ...current, isHovered: true }));
+    };
 
-                            sizes[size].root,
-                        )}
-                    >
-                        {isLeft && selectionIndicator === "checkbox" && (
-                            <CheckboxBase size={sizes[size].checkbox} isSelected={itemState.isSelected} isDisabled={itemState.isDisabled} />
-                        )}
+    const onPointerLeave = (event: BaseUIEvent<PointerEvent<HTMLDivElement>>) => {
+        props.onPointerLeave?.(event);
+        setInteraction((current) => (current.isHovered || current.isPressed ? { ...current, isHovered: false, isPressed: false } : current));
+    };
 
-                        {avatarUrl ? (
-                            <Avatar aria-hidden="true" size="xs" src={avatarUrl} alt={label} className={cx(size === "sm" && "size-5")} />
-                        ) : isReactComponent(Icon) ? (
-                            <Icon data-icon aria-hidden="true" />
-                        ) : isValidElement(Icon) ? (
-                            Icon
-                        ) : null}
+    const onPointerDown = (event: BaseUIEvent<PointerEvent<HTMLDivElement>>) => {
+        props.onPointerDown?.(event);
+        setInteraction((current) => (current.isPressed ? current : { ...current, isPressed: true }));
+    };
 
-                        <div className={cx("flex w-full min-w-0 flex-1 flex-wrap", sizes[size].textContainer)}>
-                            <span id={labelId} className={cx("truncate font-medium whitespace-nowrap text-primary", sizes[size].text)}>
-                                {label || (typeof children === "function" ? children(itemState) : children)}
-                            </span>
+    const onPointerUp = (event: BaseUIEvent<PointerEvent<HTMLDivElement>>) => {
+        props.onPointerUp?.(event);
+        setInteraction((current) => (current.isPressed ? { ...current, isPressed: false } : current));
+    };
 
-                            {supportingText && (
-                                <span id={descriptionId} className={cx("whitespace-nowrap text-tertiary", sizes[size].text)}>
-                                    {supportingText}
-                                </span>
-                            )}
-                        </div>
+    const onPointerCancel = (event: BaseUIEvent<PointerEvent<HTMLDivElement>>) => {
+        props.onPointerCancel?.(event);
+        setInteraction((current) => (current.isPressed ? { ...current, isPressed: false } : current));
+    };
 
-                        {itemState.isSelected && selectionIndicator === "checkmark" && (
-                            <Check aria-hidden="true" className={cx("ml-auto text-fg-brand-primary", sizes[size].check)} />
-                        )}
+    const itemClassName = (state: SelectItemState | ComboboxItemState) =>
+        cx("w-full py-px outline-hidden", size === "sm" ? "px-1" : "px-1.5", typeof className === "function" ? className(toState(state)) : className);
 
-                        {!isLeft && selectionIndicator === "checkbox" && (
-                            <CheckboxBase
-                                size={sizes[size].checkbox}
-                                isSelected={itemState.isSelected}
-                                isDisabled={itemState.isDisabled}
-                                className="ml-auto"
-                            />
-                        )}
-                    </div>
-                );
+    const itemStyle = (state: SelectItemState | ComboboxItemState) => (typeof style === "function" ? style(toState(state)) : style);
 
-                // React Aria's `render` escape hatch, given the option props (children included) and the state.
-                if (render) {
-                    return render({ ...itemProps, children: content }, itemState);
-                }
-                return <div {...itemProps}>{content}</div>;
-            }}
-        />
-    );
+    const itemRender = (itemProps: ComponentPropsWithoutRef<"div">, state: SelectItemState | ComboboxItemState): ReactElement => {
+        const itemState = toState(state);
+
+        const content = (
+            <div
+                className={cx(
+                    "flex cursor-pointer items-center rounded-md outline-hidden select-none",
+                    (itemState.isFocused || itemState.isHovered || (itemState.isSelected && selectionIndicator !== "checkbox")) && "bg-primary_hover",
+                    itemState.isDisabled && "cursor-not-allowed opacity-50",
+                    itemState.isFocusVisible && "ring-2 ring-focus-ring ring-inset",
+
+                    // Icon styles
+                    "*:data-icon:shrink-0 *:data-icon:text-fg-quaternary",
+
+                    sizes[size].root,
+                )}
+            >
+                {isLeft && selectionIndicator === "checkbox" && (
+                    <CheckboxBase size={sizes[size].checkbox} isSelected={itemState.isSelected} isDisabled={itemState.isDisabled} />
+                )}
+
+                {avatarUrl ? (
+                    <Avatar aria-hidden="true" size="xs" src={avatarUrl} alt={label} className={cx(size === "sm" && "size-5")} />
+                ) : isReactComponent(Icon) ? (
+                    <Icon data-icon aria-hidden="true" />
+                ) : isValidElement(Icon) ? (
+                    Icon
+                ) : null}
+
+                <div className={cx("flex w-full min-w-0 flex-1 flex-wrap", sizes[size].textContainer)}>
+                    <span id={labelId} className={cx("truncate font-medium whitespace-nowrap text-primary", sizes[size].text)}>
+                        {label || (typeof children === "function" ? children(itemState) : children)}
+                    </span>
+
+                    {supportingText && (
+                        <span id={descriptionId} className={cx("whitespace-nowrap text-tertiary", sizes[size].text)}>
+                            {supportingText}
+                        </span>
+                    )}
+                </div>
+
+                {itemState.isSelected && selectionIndicator === "checkmark" && (
+                    <Check aria-hidden="true" className={cx("ml-auto text-fg-brand-primary", sizes[size].check)} />
+                )}
+
+                {!isLeft && selectionIndicator === "checkbox" && (
+                    <CheckboxBase size={sizes[size].checkbox} isSelected={itemState.isSelected} isDisabled={itemState.isDisabled} className="ml-auto" />
+                )}
+            </div>
+        );
+
+        // React Aria's `render` escape hatch, given the option props (children included) and the state.
+        if (render) {
+            return render({ ...itemProps, children: content }, itemState);
+        }
+        return <div {...itemProps}>{content}</div>;
+    };
+
+    const sharedProps = {
+        // The option's accessible name and description keep the React Aria wiring: the option is labelled by the
+        // label element and described by the supporting text, not by the option's whole text content.
+        "aria-labelledby": labelId,
+        ...(supportingText ? { "aria-describedby": descriptionId } : {}),
+        value: value ?? { id, label: labelOrChildren, avatarUrl, supportingText, isDisabled, icon: Icon },
+        // Base UI matches keyboard typeahead against `label`; React Aria's `textValue` was the same string.
+        label: textValue,
+        disabled: isItemDisabled,
+        ...props,
+        onFocus,
+        onBlur,
+        onPointerEnter,
+        onPointerLeave,
+        onPointerDown,
+        onPointerUp,
+        onPointerCancel,
+        className: itemClassName,
+        style: itemStyle,
+        render: itemRender,
+    };
+
+    if (itemOwner === "combobox") {
+        return <BaseCombobox.Item {...(sharedProps as ComponentPropsWithoutRef<typeof BaseCombobox.Item>)} />;
+    }
+    return <BaseSelect.Item {...sharedProps} />;
 };

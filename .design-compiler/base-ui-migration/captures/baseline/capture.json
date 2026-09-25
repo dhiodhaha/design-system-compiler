@@ -1,7 +1,7 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "baseline",
-  "capturedAt": "2026-09-25T13:59:50.315Z",
+  "capturedAt": "2026-09-25T14:12:23.697Z",
   "cases": {
     "button-default": {
       "static": {
@@ -38,7 +38,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_0_"
+              "id": "react-aria4037628390-_r_0_"
             },
             "styles": {
               "display": "inline-flex",
@@ -115,7 +115,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_2_"
+              "id": "react-aria4037628390-_r_2_"
             },
             "styles": {
               "display": "inline-flex",
@@ -193,7 +193,7 @@
               "type": "button",
               "disabled": "",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_4_",
+              "id": "react-aria4037628390-_r_4_",
               "data-disabled": "true"
             },
             "styles": {
@@ -273,7 +273,7 @@
               "type": "button",
               "data-react-aria-pressable": "true",
               "aria-disabled": "true",
-              "id": "react-aria7579827846-_r_6_",
+              "id": "react-aria4037628390-_r_6_",
               "data-pending": "true"
             },
             "styles": {
@@ -500,7 +500,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_8_"
+              "id": "react-aria4037628390-_r_8_"
             },
             "styles": {
               "display": "inline-flex",
@@ -621,7 +621,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_8_",
+              "id": "react-aria4037628390-_r_8_",
               "data-focused": "true",
               "data-focus-visible": "true"
             },
@@ -684,7 +684,7 @@
               "type": "button",
               "data-react-aria-pressable": "true",
               "aria-label": "Copy to clipboard",
-              "id": "react-aria7579827846-_r_b_"
+              "id": "react-aria4037628390-_r_b_"
             },
             "styles": {
               "display": "inline-flex",
@@ -1389,7 +1389,7 @@
             "value": "a",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_s_",
+            "name": "react-aria4037628390-_r_s_",
             "hidden": false
           },
           {
@@ -1399,7 +1399,7 @@
             "value": "b",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_s_",
+            "name": "react-aria4037628390-_r_s_",
             "hidden": false
           },
           {
@@ -1409,7 +1409,7 @@
             "value": "c",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_s_",
+            "name": "react-aria4037628390-_r_s_",
             "hidden": false
           }
         ],
@@ -1493,7 +1493,7 @@
               "aria-label": "Plan",
               "role": "radiogroup",
               "aria-orientation": "vertical",
-              "id": "react-aria7579827846-_r_n_",
+              "id": "react-aria4037628390-_r_n_",
               "data-orientation": "vertical"
             },
             "styles": {
@@ -1573,7 +1573,7 @@
             "value": "a",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_15_",
+            "name": "react-aria4037628390-_r_15_",
             "hidden": false
           },
           {
@@ -1583,7 +1583,7 @@
             "value": "b",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_15_",
+            "name": "react-aria4037628390-_r_15_",
             "hidden": false
           },
           {
@@ -1593,7 +1593,7 @@
             "value": "c",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_15_",
+            "name": "react-aria4037628390-_r_15_",
             "hidden": false
           }
         ],
@@ -1677,7 +1677,7 @@
               "aria-label": "Plan",
               "role": "radiogroup",
               "aria-orientation": "vertical",
-              "id": "react-aria7579827846-_r_10_",
+              "id": "react-aria4037628390-_r_10_",
               "data-orientation": "vertical"
             },
             "styles": {
@@ -1879,7 +1879,7 @@
             "value": "a",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_15_",
+            "name": "react-aria4037628390-_r_15_",
             "hidden": false
           },
           {
@@ -1889,7 +1889,7 @@
             "value": "b",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_15_",
+            "name": "react-aria4037628390-_r_15_",
             "hidden": false
           },
           {
@@ -1899,7 +1899,7 @@
             "value": "c",
             "disabled": false,
             "required": false,
-            "name": "react-aria7579827846-_r_15_",
+            "name": "react-aria4037628390-_r_15_",
             "hidden": false
           }
         ],
@@ -1983,7 +1983,7 @@
               "aria-label": "Plan",
               "role": "radiogroup",
               "aria-orientation": "vertical",
-              "id": "react-aria7579827846-_r_10_",
+              "id": "react-aria4037628390-_r_10_",
               "data-orientation": "vertical"
             },
             "styles": {
@@ -2020,7 +2020,7 @@
             "value": "a",
             "disabled": true,
             "required": false,
-            "name": "react-aria7579827846-_r_1e_",
+            "name": "react-aria4037628390-_r_1e_",
             "hidden": false
           },
           {
@@ -2030,7 +2030,7 @@
             "value": "b",
             "disabled": true,
             "required": false,
-            "name": "react-aria7579827846-_r_1e_",
+            "name": "react-aria4037628390-_r_1e_",
             "hidden": false
           }
         ],
@@ -2096,7 +2096,7 @@
               "role": "radiogroup",
               "aria-disabled": "true",
               "aria-orientation": "vertical",
-              "id": "react-aria7579827846-_r_19_",
+              "id": "react-aria4037628390-_r_19_",
               "data-orientation": "vertical",
               "data-disabled": "true"
             },
@@ -2884,8 +2884,8 @@
             "name": "",
             "attrs": {
               "placeholder": "Your name",
-              "id": "react-aria7579827846-_r_24_",
-              "aria-labelledby": "react-aria7579827846-_r_25_",
+              "id": "react-aria4037628390-_r_24_",
+              "aria-labelledby": "react-aria4037628390-_r_25_",
               "data-rac": "",
               "type": "text",
               "value": ""
@@ -3041,8 +3041,8 @@
             "name": "",
             "attrs": {
               "placeholder": "Your name",
-              "id": "react-aria7579827846-_r_24_",
-              "aria-labelledby": "react-aria7579827846-_r_25_",
+              "id": "react-aria4037628390-_r_24_",
+              "aria-labelledby": "react-aria4037628390-_r_25_",
               "data-rac": "",
               "type": "text",
               "value": "hello",
@@ -3127,8 +3127,8 @@
             "attrs": {
               "disabled": "",
               "placeholder": "Your name",
-              "id": "react-aria7579827846-_r_29_",
-              "aria-labelledby": "react-aria7579827846-_r_2a_",
+              "id": "react-aria4037628390-_r_29_",
+              "aria-labelledby": "react-aria4037628390-_r_2a_",
               "data-rac": "",
               "data-disabled": "true",
               "type": "text",
@@ -3238,9 +3238,9 @@
             "name": "",
             "attrs": {
               "aria-invalid": "true",
-              "id": "react-aria7579827846-_r_2e_",
-              "aria-labelledby": "react-aria7579827846-_r_2f_",
-              "aria-describedby": "react-aria7579827846-_r_2i_",
+              "id": "react-aria4037628390-_r_2e_",
+              "aria-labelledby": "react-aria4037628390-_r_2f_",
+              "aria-describedby": "react-aria4037628390-_r_2i_",
               "data-rac": "",
               "data-invalid": "true",
               "type": "text",
@@ -3347,8 +3347,8 @@
             "type": null,
             "name": "Notes*",
             "attrs": {
-              "id": "react-aria7579827846-_r_2k_",
-              "for": "react-aria7579827846-_r_2j_",
+              "id": "react-aria4037628390-_r_2k_",
+              "for": "react-aria4037628390-_r_2j_",
               "data-label": "true"
             },
             "styles": {
@@ -3452,8 +3452,8 @@
             "type": null,
             "name": "Notes*",
             "attrs": {
-              "id": "react-aria7579827846-_r_2p_",
-              "for": "react-aria7579827846-_r_2o_",
+              "id": "react-aria4037628390-_r_2p_",
+              "for": "react-aria4037628390-_r_2o_",
               "data-label": "true"
             },
             "styles": {
@@ -3569,11 +3569,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria7579827846-_r_2v_",
+              "id": "react-aria4037628390-_r_2v_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria7579827846-_r_34_ react-aria7579827846-_r_30_",
+              "aria-labelledby": "react-aria4037628390-_r_34_ react-aria4037628390-_r_30_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -3692,11 +3692,11 @@
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria7579827846-_r_39_",
+              "id": "react-aria4037628390-_r_39_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria7579827846-_r_3e_ react-aria7579827846-_r_3a_",
+              "aria-labelledby": "react-aria4037628390-_r_3e_ react-aria4037628390-_r_3a_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false"
             },
@@ -3895,11 +3895,11 @@
             "type": "button",
             "name": "Phoenix Bakerphoenix@untitledui.com",
             "attrs": {
-              "id": "react-aria7579827846-_r_39_",
+              "id": "react-aria4037628390-_r_39_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria7579827846-_r_3e_ react-aria7579827846-_r_3a_",
+              "aria-labelledby": "react-aria4037628390-_r_3e_ react-aria4037628390-_r_3a_",
               "aria-haspopup": "listbox",
               "aria-expanded": "false",
               "data-hovered": "true",
@@ -3964,7 +3964,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_3i_"
+              "id": "react-aria4037628390-_r_3i_"
             },
             "styles": {
               "display": "inline-block",
@@ -4101,10 +4101,10 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria7579827846-_r_3i_",
+              "id": "react-aria4037628390-_r_3i_",
               "data-focused": "true",
               "data-focus-visible": "true",
-              "aria-describedby": "react-aria7579827846-_r_3h_",
+              "aria-describedby": "react-aria4037628390-_r_3h_",
               "data-hovered": "true"
             },
             "styles": {
@@ -4245,8 +4245,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria7579827846-_r_3k_",
-              "id": "react-aria7579827846-_r_3l_",
+              "data-collection": "react-aria4037628390-_r_3k_",
+              "id": "react-aria4037628390-_r_3l_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -4411,8 +4411,8 @@
             "name": "Tabs",
             "attrs": {
               "data-rac": "",
-              "data-collection": "react-aria7579827846-_r_3k_",
-              "id": "react-aria7579827846-_r_3l_",
+              "data-collection": "react-aria4037628390-_r_3k_",
+              "id": "react-aria4037628390-_r_3l_",
               "aria-label": "Tabs",
               "role": "tablist",
               "aria-orientation": "horizontal",
@@ -4494,8 +4494,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria7579827846-_r_3n_-0",
-              "aria-labelledby": "react-aria7579827846-_r_3o_",
+              "id": "react-aria4037628390-_r_3n_-0",
+              "aria-labelledby": "react-aria4037628390-_r_3o_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -4606,8 +4606,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria7579827846-_r_3t_-0",
-              "aria-labelledby": "react-aria7579827846-_r_3u_",
+              "id": "react-aria4037628390-_r_3t_-0",
+              "aria-labelledby": "react-aria4037628390-_r_3u_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,000%",
               "aria-describedby": "",
@@ -4766,8 +4766,8 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria7579827846-_r_3t_-0",
-              "aria-labelledby": "react-aria7579827846-_r_3u_",
+              "id": "react-aria4037628390-_r_3t_-0",
+              "aria-labelledby": "react-aria4037628390-_r_3u_",
               "aria-orientation": "horizontal",
               "aria-valuetext": "3,100%",
               "aria-describedby": "",
@@ -4834,7 +4834,7 @@
               "type": "button",
               "aria-haspopup": "true",
               "aria-expanded": "false",
-              "id": "react-aria7579827846-_r_43_",
+              "id": "react-aria4037628390-_r_43_",
               "data-react-aria-pressable": "true",
               "aria-label": "Open menu"
             },
@@ -4984,7 +4984,7 @@
               "type": "button",
               "aria-haspopup": "true",
               "aria-expanded": "false",
-              "id": "react-aria7579827846-_r_43_",
+              "id": "react-aria4037628390-_r_43_",
               "data-react-aria-pressable": "true",
               "aria-label": "Open menu",
               "data-hovered": "true",
@@ -5070,8 +5070,8 @@
             "attrs": {
               "aria-autocomplete": "list",
               "placeholder": "Search by name",
-              "id": "react-aria7579827846-_r_4b_",
-              "aria-labelledby": "react-aria7579827846-_r_4c_",
+              "id": "react-aria4037628390-_r_4b_",
+              "aria-labelledby": "react-aria4037628390-_r_4c_",
               "role": "combobox",
               "aria-expanded": "false",
               "data-rac": "",
@@ -5293,8 +5293,8 @@
             "attrs": {
               "aria-autocomplete": "list",
               "placeholder": "Search by name",
-              "id": "react-aria7579827846-_r_4b_",
-              "aria-labelledby": "react-aria7579827846-_r_4c_",
+              "id": "react-aria4037628390-_r_4b_",
+              "aria-labelledby": "react-aria4037628390-_r_4c_",
               "role": "combobox",
               "aria-expanded": "false",
               "data-rac": "",
@@ -5616,8 +5616,8 @@
             "type": null,
             "name": "Quantity*",
             "attrs": {
-              "id": "react-aria7579827846-_r_4r_",
-              "for": "react-aria7579827846-_r_4p_",
+              "id": "react-aria4037628390-_r_4r_",
+              "for": "react-aria4037628390-_r_4p_",
               "data-label": "true"
             },
             "styles": {
@@ -5821,8 +5821,8 @@
             "type": null,
             "name": "Quantity*",
             "attrs": {
-              "id": "react-aria7579827846-_r_4r_",
-              "for": "react-aria7579827846-_r_4p_",
+              "id": "react-aria4037628390-_r_4r_",
+              "for": "react-aria4037628390-_r_4p_",
               "data-label": "true"
             },
             "styles": {
@@ -5901,8 +5901,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "id": "react-aria7579827846-_r_56_",
-              "for": "react-aria7579827846-_r_55_",
+              "id": "react-aria4037628390-_r_56_",
+              "for": "react-aria4037628390-_r_55_",
               "data-label": "true"
             },
             "styles": {
@@ -6031,8 +6031,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "id": "react-aria7579827846-_r_56_",
-              "for": "react-aria7579827846-_r_55_",
+              "id": "react-aria4037628390-_r_56_",
+              "for": "react-aria4037628390-_r_55_",
               "data-label": "true"
             },
             "styles": {
@@ -6847,7 +6847,7 @@
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
-              "id": "react-aria200548071-_r_5h_"
+              "id": "react-aria5052876865-_r_5h_"
             },
             "styles": {
               "display": "inline-flex",
@@ -6932,7 +6932,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria200548071-_r_5k_",
+              "id": "react-aria5052876865-_r_5k_",
               "data-react-aria-pressable": "true"
             },
             "styles": {
@@ -7044,7 +7044,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria200548071-_r_5k_",
+              "id": "react-aria5052876865-_r_5k_",
               "data-react-aria-pressable": "true",
               "data-hovered": "true",
               "data-focused": "true",
@@ -7108,7 +7108,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria200548071-_r_5o_",
+              "id": "react-aria5052876865-_r_5o_",
               "data-react-aria-pressable": "true"
             },
             "styles": {
@@ -7220,7 +7220,7 @@
               "data-rac": "",
               "type": "button",
               "aria-expanded": "false",
-              "id": "react-aria200548071-_r_5o_",
+              "id": "react-aria5052876865-_r_5o_",
               "data-react-aria-pressable": "true",
               "data-hovered": "true",
               "data-focused": "true",
@@ -7314,12 +7314,12 @@
             "type": "button",
             "name": "Calendar",
             "attrs": {
-              "id": "react-aria200548071-_r_5r_",
+              "id": "react-aria5052876865-_r_5r_",
               "data-rac": "",
               "type": "button",
               "data-react-aria-pressable": "true",
               "aria-label": "Calendar",
-              "aria-labelledby": "react-aria200548071-_r_5r_ react-aria200548071-_r_5u_",
+              "aria-labelledby": "react-aria5052876865-_r_5r_ react-aria5052876865-_r_5u_",
               "aria-haspopup": "dialog",
               "aria-expanded": "false"
             },
@@ -7374,6 +7374,739 @@
         }
       ],
       "afterInteraction": null
+    },
+    "multi-select": {
+      "static": {
+        "text": "Team members Select members",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Select members",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=combobox],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Select members",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-expanded": "false",
+              "id": "react-aria5052876865-_r_66_",
+              "data-react-aria-pressable": "true"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=combobox],button"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "[role=combobox],button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press Enter",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "3:press ArrowDown",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "4:press Enter",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "input"
+          }
+        },
+        {
+          "step": "5:press Escape",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 5,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Team members Select members",
+        "controlState": [],
+        "stateful": [],
+        "portals": [
+          {
+            "role": "dialog",
+            "text": "Phoenix BakerOlivia RhyeLana SteinerResetSelect all",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 898,
+              "w": 960,
+              "h": 240
+            }
+          },
+          {
+            "role": "listbox",
+            "text": "Phoenix BakerOlivia RhyeLana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 943,
+              "w": 960,
+              "h": 134
+            }
+          },
+          {
+            "role": "option",
+            "text": "Phoenix Baker",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 947,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Olivia Rhye",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 989,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Lana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 1031,
+              "w": 960,
+              "h": 42
+            }
+          }
+        ],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Select members",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "true",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:Search",
+        "slotMetrics": {
+          "[role=combobox],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Select members",
+            "attrs": {
+              "data-rac": "",
+              "type": "button",
+              "aria-expanded": "true",
+              "id": "react-aria5052876865-_r_66_",
+              "data-react-aria-pressable": "true",
+              "data-pressed": "true",
+              "aria-controls": "react-aria5052876865-_r_65_"
+            },
+            "styles": {
+              "display": "flex",
+              "position": "relative",
+              "color": "rgb(0, 0, 0)",
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "24px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 960,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
+    "tag-select": {
+      "static": {
+        "text": "Labels",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [
+          {
+            "role": "dialog",
+            "text": "Phoenix BakerOlivia RhyeLana SteinerResetSelect all",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 898,
+              "w": 960,
+              "h": 240
+            }
+          },
+          {
+            "role": "listbox",
+            "text": "Phoenix BakerOlivia RhyeLana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 943,
+              "w": 960,
+              "h": 134
+            }
+          },
+          {
+            "role": "option",
+            "text": "Phoenix Baker",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 947,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Olivia Rhye",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 989,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Lana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 1031,
+              "w": 960,
+              "h": 42
+            }
+          }
+        ],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:Search",
+        "slotMetrics": {
+          "input,[role=combobox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "aria-autocomplete": "list",
+              "placeholder": "Add labels",
+              "id": "react-aria5052876865-_r_6d_",
+              "aria-labelledby": "react-aria5052876865-_r_6e_",
+              "role": "combobox",
+              "aria-expanded": "false",
+              "data-rac": "",
+              "type": "text",
+              "value": ""
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 914,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "input,[role=combobox]"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "input"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "ArrowDown"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Enter"
+          ]
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 0,
+            "active": "button"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "1:press ArrowDown",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "2:press Enter",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 4,
+            "active": "input"
+          }
+        },
+        {
+          "step": "3:press Escape",
+          "state": {
+            "controls": [
+              {
+                "type": "text",
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": false
+              }
+            ],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [
+              "combobox:false:false"
+            ],
+            "overlays": 0,
+            "active": "input"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Labels",
+        "controlState": [
+          {
+            "type": "text",
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": false
+          }
+        ],
+        "stateful": [
+          {
+            "role": "combobox",
+            "name": "",
+            "checked": "false",
+            "disabled": false,
+            "focusable": true
+          }
+        ],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [
+          "group",
+          "combobox[expanded=false]"
+        ],
+        "focusable": [
+          {
+            "tag": "input",
+            "type": "text",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": "false",
+            "role": "combobox"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "input:",
+        "slotMetrics": {
+          "input,[role=combobox]": {
+            "tag": "input",
+            "role": "combobox",
+            "type": "text",
+            "name": "",
+            "attrs": {
+              "aria-autocomplete": "list",
+              "placeholder": "Add labels",
+              "id": "react-aria5052876865-_r_6d_",
+              "aria-labelledby": "react-aria5052876865-_r_6e_",
+              "role": "combobox",
+              "aria-expanded": "false",
+              "data-rac": "",
+              "type": "text",
+              "value": "",
+              "data-hovered": "true",
+              "data-focused": "true",
+              "data-focus-visible": "true"
+            },
+            "styles": {
+              "display": "block",
+              "position": "static",
+              "color": "oklch(0.205 0 none)",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "oklch(0.205 0 none)",
+              "borderRadius": "0px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "lineHeight": "20px",
+              "padding": "0px 0px 0px 0px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "normal",
+              "width": 914,
+              "height": 20,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
     }
   }
 }

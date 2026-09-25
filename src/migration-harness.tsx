@@ -388,6 +388,57 @@ export const CASES: MigrationCase[] = [
     ),
   },
   { id: "date-picker", unit: "date-picker", slots: ["button,input,label"], node: <DatePicker aria-label="Start date" /> },
+  {
+    id: "multi-select",
+    unit: "multi-select",
+    slots: ["[role=combobox],button"],
+    actions: [
+      { type: "click", target: "[role=combobox],button" },
+      { type: "press", keys: ["ArrowDown"] },
+      { type: "press", keys: ["Enter"] },
+      { type: "press", keys: ["ArrowDown"] },
+      { type: "press", keys: ["Enter"] },
+      { type: "press", keys: ["Escape"] },
+    ],
+    node: (
+      <MultiSelect
+        label="Team members"
+        placeholder="Select members"
+        items={[
+          { id: "a", label: "Phoenix Baker" },
+          { id: "b", label: "Olivia Rhye" },
+          { id: "c", label: "Lana Steiner" },
+        ]}
+      >
+        {(item: SelectItemType) => <MultiSelect.Item id={item.id}>{item.label}</MultiSelect.Item>}
+      </MultiSelect>
+    ),
+  },
+  {
+    id: "tag-select",
+    unit: "tag-select",
+    slots: ["input,[role=combobox]"],
+    actions: [
+      { type: "click", target: "input" },
+      { type: "press", keys: ["ArrowDown"] },
+      { type: "press", keys: ["Enter"] },
+      { type: "press", keys: ["Escape"] },
+    ],
+    node: (
+      <TagSelect
+        label="Labels"
+        placeholder="Add labels"
+        items={[
+          { id: "a", label: "Design" },
+          { id: "b", label: "Engineering" },
+          { id: "c", label: "Research" },
+        ]}
+        selectedItems={{ items: [], append: () => {}, remove: () => {}, getItem: () => undefined, setFilterText: () => {}, filterText: "" }}
+      >
+        {(item: SelectItemType) => <TagSelect.Item id={item.id}>{item.label}</TagSelect.Item>}
+      </TagSelect>
+    ),
+  },
 ];
 
 /** One broken case must not hide the others: each case renders inside its own boundary. */
