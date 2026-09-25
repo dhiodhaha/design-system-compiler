@@ -1,0 +1,43 @@
+{
+  "$schema": "design-compiler/ExternalPackages@p0",
+  "library": "untitledui",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "packages": [
+    {
+      "name": "@untitledui/file-icons",
+      "declaredRange": "^0.0.9",
+      "resolvedVersion": "0.0.9",
+      "role": "file type icons",
+      "license": "see package",
+      "redistribute": true,
+      "usedByFiles": 4,
+      "usedBySample": [
+        "components/application/empty-state/empty-state.tsx",
+        "components/application/file-upload/draggable.tsx",
+        "components/application/file-upload/file-upload-base.tsx",
+        "components/application/table/table.demo.tsx"
+      ]
+    },
+    {
+      "name": "@untitledui/icons",
+      "declaredRange": "^0.0.22",
+      "resolvedVersion": "0.0.22",
+      "role": "line/solid icon set",
+      "license": "see package",
+      "redistribute": true,
+      "usedByFiles": 70,
+      "usedBySample": [
+        "components/application/app-navigation/base-components/mobile-header.tsx",
+        "components/application/app-navigation/base-components/nav-account-card.tsx",
+        "components/application/app-navigation/base-components/nav-item.tsx",
+        "components/application/app-navigation/header-navigation.demo.tsx",
+        "components/application/app-navigation/header-navigation.tsx"
+      ]
+    }
+  ],
+  "frameworkPeers": [
+    "react",
+    "react-dom",
+    "next"
+  ]
+}

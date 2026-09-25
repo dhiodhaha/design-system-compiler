@@ -8,6 +8,9 @@
   "copyright": "Copyright (c) 2025 Untitled UI",
   "scope": "files included in the OSS repository",
   "retrievedAt": "2026-09-25",
-  "contentDigestSha256": "6c355b5183d550ed4dd26d501dfafdccd185c51b6a9a055287c7e10f66250af0",
-  "filesIndexed": 315
+  "sourceFilesIndexed": 315,
+  "sourceContentDigestSha256": "6c355b5183d550ed4dd26d501dfafdccd185c51b6a9a055287c7e10f66250af0",
+  "repositoryFilesWalked": 342,
+  "repositoryTreeDigestSha256": "accd8ca1f357c6e4e41583f2ec29cc0e9711e9e67b3b1fdab32e835eed4a0402",
+  "digestScope": "sourceContent* covers .ts/.tsx/.css; repositoryTree* covers every walked file's name plus text-file bytes; neither replaces the revision SHA as identity"
 }

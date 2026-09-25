@@ -1,0 +1,585 @@
+{
+ "fileKey": null,
+ "fileName": "❖ Untitled UI Figma – PRO STYLES (v8.0) KTWJ8mYFqVpN (Copy)",
+ "pages": [
+  {
+   "pageId": "1:1183",
+   "pageName": "      ↳ Buttons",
+   "pageType": "CANVAS",
+   "families": [
+    {
+     "name": "Buttons/Button",
+     "type": "COMPONENT_SET",
+     "variantCount": 200,
+     "axes": {
+      "Hierarchy": {
+       "type": "VARIANT",
+       "default": "Primary",
+       "values": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Link color",
+        "Link gray"
+       ]
+      },
+      "Icon only": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "True"
+       ]
+      },
+      "Loading text#8468:0": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "Size": {
+       "type": "VARIANT",
+       "default": "xs",
+       "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover",
+        "Focused",
+        "Disabled",
+        "Loading"
+       ]
+      },
+      "➡️ Icon trailing#3287:2338": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "⬅️ Icon leading#3287:1577": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "🔀 Icon leading swap#3466:91": {
+       "type": "INSTANCE_SWAP",
+       "default": "3465:410042",
+       "values": null
+      },
+      "🔀 Icon trailing swap#3466:852": {
+       "type": "INSTANCE_SWAP",
+       "default": "3465:410042",
+       "values": null
+      }
+     },
+     "nonVariantAxes": [
+      "Loading text#8468:0 [BOOLEAN] default=true",
+      "➡️ Icon trailing#3287:2338 [BOOLEAN] default=true",
+      "⬅️ Icon leading#3287:1577 [BOOLEAN] default=true",
+      "🔀 Icon leading swap#3466:91 [INSTANCE_SWAP] default=\"3465:410042\"",
+      "🔀 Icon trailing swap#3466:852 [INSTANCE_SWAP] default=\"3465:410042\""
+     ],
+     "key": "2666d226e329b1bbcff1ba1828d91097c736b2c8",
+     "description": "",
+     "childNames": [
+      "Size=md, Hierarchy=Primary, State=Default, Icon only=False",
+      "Size=md, Hierarchy=Primary, State=Loading, Icon only=False",
+      "Size=md, Hierarchy=Link color, State=Default, Icon only=False",
+      "Size=md, Hierarchy=Link color, State=Loading, Icon only=False"
+     ]
+    },
+    {
+     "name": "Buttons/Social button",
+     "type": "COMPONENT_SET",
+     "variantCount": 216,
+     "axes": {
+      "Size": {
+       "type": "VARIANT",
+       "default": "md",
+       "values": [
+        "md",
+        "lg"
+       ]
+      },
+      "Social": {
+       "type": "VARIANT",
+       "default": "Google",
+       "values": [
+        "Google",
+        "Facebook",
+        "Apple",
+        "Twitter",
+        "Figma",
+        "Dribbble"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover",
+        "Focused"
+       ]
+      },
+      "Supporting text": {
+       "type": "VARIANT",
+       "default": "True",
+       "values": [
+        "True",
+        "False"
+       ]
+      },
+      "Theme": {
+       "type": "VARIANT",
+       "default": "Brand",
+       "values": [
+        "Brand",
+        "Color",
+        "Gray"
+       ]
+      }
+     },
+     "nonVariantAxes": [],
+     "key": "22e9fe12e972c099bd54e8c2f8bbea4eaa0a10c8",
+     "description": "",
+     "childNames": [
+      "Size=lg, Social=Facebook, Supporting text=True, Theme=Brand, State=Default",
+      "Size=md, Social=Facebook, Supporting text=True, Theme=Brand, State=Default",
+      "Size=lg, Social=Facebook, Supporting text=True, Theme=Brand, State=Hover",
+      "Size=md, Social=Facebook, Supporting text=True, Theme=Brand, State=Hover"
+     ]
+    },
+    {
+     "name": "Buttons/Social button group",
+     "type": "COMPONENT_SET",
+     "variantCount": 12,
+     "axes": {
+      "Size": {
+       "type": "VARIANT",
+       "default": "md",
+       "values": [
+        "md",
+        "lg"
+       ]
+      },
+      "Style": {
+       "type": "VARIANT",
+       "default": "Buttons",
+       "values": [
+        "Buttons",
+        "Icons"
+       ]
+      },
+      "Theme": {
+       "type": "VARIANT",
+       "default": "Brand",
+       "values": [
+        "Brand",
+        "Color",
+        "Gray"
+       ]
+      }
+     },
+     "nonVariantAxes": [],
+     "key": "62ba6d375ad27aae4154d8f175a36b4616e51a68",
+     "description": "",
+     "childNames": [
+      "Size=lg, Style=Buttons, Theme=Color",
+      "Size=md, Style=Buttons, Theme=Color",
+      "Size=lg, Style=Buttons, Theme=Gray",
+      "Size=md, Style=Buttons, Theme=Gray"
+     ]
+    },
+    {
+     "name": "Mobile app store badge",
+     "type": "COMPONENT_SET",
+     "variantCount": 30,
+     "axes": {
+      "Size": {
+       "type": "VARIANT",
+       "default": "md",
+       "values": [
+        "md",
+        "lg"
+       ]
+      },
+      "Store": {
+       "type": "VARIANT",
+       "default": "Google Play",
+       "values": [
+        "Google Play",
+        "App Store",
+        "Galaxy Store",
+        "AppGallery",
+        "Mac App Store"
+       ]
+      },
+      "Style": {
+       "type": "VARIANT",
+       "default": "Brand",
+       "values": [
+        "Brand",
+        "Black outline",
+        "White outline"
+       ]
+      }
+     },
+     "nonVariantAxes": [],
+     "key": "afb0c03b67979d41c5761e6b750200a0a47af77b",
+     "description": "",
+     "childNames": [
+      "Size=md, Store=Google Play, Style=Black outline",
+      "Size=lg, Store=Google Play, Style=Black outline",
+      "Size=md, Store=Google Play, Style=White outline",
+      "Size=lg, Store=Google Play, Style=White outline"
+     ]
+    },
+    {
+     "name": "Button close X",
+     "type": "COMPONENT_SET",
+     "variantCount": 18,
+     "axes": {
+      "Dark background": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "True"
+       ]
+      },
+      "Size": {
+       "type": "VARIANT",
+       "default": "sm",
+       "values": [
+        "sm",
+        "md",
+        "lg"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover",
+        "Focused"
+       ]
+      }
+     },
+     "nonVariantAxes": [],
+     "key": "6cdd1277b65040ebf337b4fa76a0fa9a7e5ada76",
+     "description": "",
+     "childNames": [
+      "Size=lg, Dark background=False, State=Default",
+      "Size=md, Dark background=False, State=Default",
+      "Size=sm, Dark background=False, State=Default",
+      "Size=lg, Dark background=True, State=Default"
+     ]
+    },
+    {
+     "name": "Buttons/Button destructive",
+     "type": "COMPONENT_SET",
+     "variantCount": 175,
+     "axes": {
+      "Hierarchy": {
+       "type": "VARIANT",
+       "default": "Primary",
+       "values": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Link"
+       ]
+      },
+      "Icon only": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "True"
+       ]
+      },
+      "Loading text#8468:201": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "Size": {
+       "type": "VARIANT",
+       "default": "xs",
+       "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover",
+        "Focused",
+        "Disabled",
+        "Loading"
+       ]
+      },
+      "➡️ Icon trailing#5969:2": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "⬅️ Icon leading#5969:0": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "🔀 Icon leading swap#5969:1": {
+       "type": "INSTANCE_SWAP",
+       "default": "3465:410042",
+       "values": null
+      },
+      "🔀 Icon trailing swap#5969:3": {
+       "type": "INSTANCE_SWAP",
+       "default": "3465:410042",
+       "values": null
+      }
+     },
+     "nonVariantAxes": [
+      "Loading text#8468:201 [BOOLEAN] default=true",
+      "➡️ Icon trailing#5969:2 [BOOLEAN] default=true",
+      "⬅️ Icon leading#5969:0 [BOOLEAN] default=true",
+      "🔀 Icon leading swap#5969:1 [INSTANCE_SWAP] default=\"3465:410042\"",
+      "🔀 Icon trailing swap#5969:3 [INSTANCE_SWAP] default=\"3465:410042\""
+     ],
+     "key": "7eaf0e6c460119597bfa0669affef0a6714f6096",
+     "description": "",
+     "childNames": [
+      "Size=md, Hierarchy=Primary, State=Default, Icon only=False",
+      "Size=md, Hierarchy=Primary, State=Loading, Icon only=False",
+      "Size=md, Hierarchy=Link, State=Default, Icon only=False",
+      "Size=md, Hierarchy=Link, State=Loading, Icon only=False"
+     ]
+    },
+    {
+     "name": "Buttons/Button utility",
+     "type": "COMPONENT_SET",
+     "variantCount": 16,
+     "axes": {
+      "Hierarchy": {
+       "type": "VARIANT",
+       "default": "Secondary",
+       "values": [
+        "Secondary",
+        "Tertiary"
+       ]
+      },
+      "Size": {
+       "type": "VARIANT",
+       "default": "xs",
+       "values": [
+        "xs",
+        "sm"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover",
+        "Focused",
+        "Disabled"
+       ]
+      },
+      "🔀 Icon swap#7710:0": {
+       "type": "INSTANCE_SWAP",
+       "default": "3465:410042",
+       "values": null
+      }
+     },
+     "nonVariantAxes": [
+      "🔀 Icon swap#7710:0 [INSTANCE_SWAP] default=\"3465:410042\""
+     ],
+     "key": "ee4306951a3e36e4ec92871106cf7e936ae79d34",
+     "description": "",
+     "childNames": [
+      "Size=sm, Hierarchy=Tertiary, State=Default",
+      "Size=sm, Hierarchy=Tertiary, State=Disabled",
+      "Size=sm, Hierarchy=Secondary, State=Default",
+      "Size=xs, Hierarchy=Secondary, State=Default"
+     ]
+    },
+    {
+     "name": "Buttons/Button loading icon",
+     "type": "COMPONENT_SET",
+     "variantCount": 2,
+     "axes": {
+      "Size": {
+       "type": "VARIANT",
+       "default": "sm",
+       "values": [
+        "sm",
+        "md"
+       ]
+      }
+     },
+     "nonVariantAxes": [],
+     "key": "06bda7ae8fda2fe13afff570dfe39e521e083e97",
+     "description": "",
+     "childNames": [
+      "Size=sm",
+      "Size=md"
+     ]
+    }
+   ],
+   "components": [],
+   "otherChildren": [
+    {
+     "name": "Buttons/Button",
+     "type": "INSTANCE",
+     "kids": 3
+    },
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Notes and documentation (you can delete this)",
+     "type": "FRAME",
+     "kids": 3
+    },
+    {
+     "name": "placeholder",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Text padding",
+     "type": "FRAME",
+     "kids": 1
+    },
+    {
+     "name": "placeholder",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 2
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 2
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 2
+    },
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Section",
+     "type": "FRAME",
+     "kids": 1
+    },
+    {
+     "name": "Design system footer",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Icon",
+     "type": "VECTOR",
+     "kids": 0
+    },
+    {
+     "name": "Text",
+     "type": "TEXT",
+     "kids": 0
+    },
+    {
+     "name": "Icon",
+     "type": "VECTOR",
+     "kids": 0
+    },
+    {
+     "name": "Header",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Heading and resources",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Header",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Heading and resources",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Header",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Heading and resources",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Rich text",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 0
+    }
+   ],
+   "counts": {
+    "componentSets": 8,
+    "standaloneComponents": 0
+   }
+  }
+ ]
+}

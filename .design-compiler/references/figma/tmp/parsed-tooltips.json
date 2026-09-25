@@ -1,0 +1,144 @@
+{
+ "fileKey": null,
+ "fileName": "❖ Untitled UI Figma – PRO STYLES (v8.0) KTWJ8mYFqVpN (Copy)",
+ "pages": [
+  {
+   "pageId": "1052:485",
+   "pageName": "      ↳ Tooltips",
+   "pageType": "CANVAS",
+   "families": [
+    {
+     "name": "Tooltip",
+     "type": "COMPONENT_SET",
+     "variantCount": 28,
+     "axes": {
+      "Arrow": {
+       "type": "VARIANT",
+       "default": "None",
+       "values": [
+        "None",
+        "Bottom left",
+        "Bottom right",
+        "Left",
+        "Right",
+        "Bottom center",
+        "Top center"
+       ]
+      },
+      "Supporting text": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "True"
+       ]
+      },
+      "Text#7252:0": {
+       "type": "TEXT",
+       "default": "This is a tooltip",
+       "values": null
+      },
+      "Theme": {
+       "type": "VARIANT",
+       "default": "Light",
+       "values": [
+        "Dark",
+        "Light"
+       ]
+      }
+     },
+     "nonVariantAxes": [
+      "Text#7252:0 [TEXT] default=\"This is a tooltip\""
+     ],
+     "key": "424fc38f99ff3ffbc314527f108eb027085d9549",
+     "description": "",
+     "childNames": [
+      "Supporting text=True, Theme=Light, Arrow=Bottom center",
+      "Supporting text=True, Theme=Light, Arrow=None",
+      "Supporting text=False, Theme=Light, Arrow=Bottom center",
+      "Supporting text=False, Theme=Light, Arrow=None"
+     ]
+    },
+    {
+     "name": "Help icon",
+     "type": "COMPONENT_SET",
+     "variantCount": 28,
+     "axes": {
+      "Cursor#3313:5115": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "Open": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "True"
+       ]
+      },
+      "Supporting text": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "True"
+       ]
+      },
+      "Tooltip": {
+       "type": "VARIANT",
+       "default": "Top no arrow",
+       "values": [
+        "Top no arrow",
+        "Top arrow",
+        "Left",
+        "Top left",
+        "Bottom",
+        "Right",
+        "Top right"
+       ]
+      }
+     },
+     "nonVariantAxes": [
+      "Cursor#3313:5115 [BOOLEAN] default=true"
+     ],
+     "key": "607d5b4a9a1308c2736449a9ba949055c97d7d5e",
+     "description": "",
+     "childNames": [
+      "Open=False, Supporting text=False, Tooltip=Top no arrow",
+      "Open=False, Supporting text=True, Tooltip=Top no arrow",
+      "Open=False, Supporting text=False, Tooltip=Top arrow",
+      "Open=False, Supporting text=True, Tooltip=Top arrow"
+     ]
+    }
+   ],
+   "components": [],
+   "otherChildren": [
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 2
+    },
+    {
+     "name": "Header",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Heading and resources",
+     "type": "FRAME",
+     "kids": 0
+    }
+   ],
+   "counts": {
+    "componentSets": 2,
+    "standaloneComponents": 0
+   }
+  }
+ ]
+}

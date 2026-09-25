@@ -1,0 +1,262 @@
+{
+ "fileKey": null,
+ "fileName": "❖ Untitled UI Figma – PRO STYLES (v8.0) KTWJ8mYFqVpN (Copy)",
+ "pages": [
+  {
+   "pageId": "12:539",
+   "pageName": "      ↳ Badges",
+   "pageType": "CANVAS",
+   "families": [
+    {
+     "name": "Badge",
+     "type": "COMPONENT_SET",
+     "variantCount": 666,
+     "axes": {
+      "Color": {
+       "type": "VARIANT",
+       "default": "Gray",
+       "values": [
+        "Gray",
+        "Brand",
+        "Error",
+        "Warning",
+        "Success",
+        "Slate",
+        "Sky",
+        "Blue",
+        "Indigo",
+        "Purple",
+        "Pink",
+        "Orange"
+       ]
+      },
+      "Icon": {
+       "type": "VARIANT",
+       "default": "False",
+       "values": [
+        "False",
+        "Dot",
+        "Country",
+        "X close",
+        "Avatar",
+        "Icon trailing",
+        "Icon leading",
+        "Only"
+       ]
+      },
+      "Size": {
+       "type": "VARIANT",
+       "default": "sm",
+       "values": [
+        "sm",
+        "md",
+        "lg"
+       ]
+      },
+      "Type": {
+       "type": "VARIANT",
+       "default": "Pill color",
+       "values": [
+        "Pill color",
+        "Badge color",
+        "Badge modern"
+       ]
+      },
+      "🔀 Flag swap#3918:0": {
+       "type": "INSTANCE_SWAP",
+       "default": "9617:7023",
+       "values": null
+      },
+      "🔀 Icon leading swap#3920:433": {
+       "type": "INSTANCE_SWAP",
+       "default": "3463:404509",
+       "values": null
+      },
+      "🔀 Icon trailing swap#3920:0": {
+       "type": "INSTANCE_SWAP",
+       "default": "3463:404482",
+       "values": null
+      }
+     },
+     "nonVariantAxes": [
+      "🔀 Flag swap#3918:0 [INSTANCE_SWAP] default=\"9617:7023\"",
+      "🔀 Icon leading swap#3920:433 [INSTANCE_SWAP] default=\"3463:404509\"",
+      "🔀 Icon trailing swap#3920:0 [INSTANCE_SWAP] default=\"3463:404482\""
+     ],
+     "key": "938b6c4117def0141c3885377e64b48d9de49d13",
+     "description": "",
+     "childNames": [
+      "Size=sm, Type=Pill color, Icon=False, Color=Brand",
+      "Size=sm, Type=Badge color, Icon=False, Color=Brand",
+      "Size=sm, Type=Pill color, Icon=False, Color=Warning",
+      "Size=sm, Type=Badge color, Icon=False, Color=Warning"
+     ]
+    },
+    {
+     "name": "Badge group",
+     "type": "COMPONENT_SET",
+     "variantCount": 120,
+     "axes": {
+      "Badge": {
+       "type": "VARIANT",
+       "default": "Leading",
+       "values": [
+        "Leading",
+        "Trailing"
+       ]
+      },
+      "Color": {
+       "type": "VARIANT",
+       "default": "Gray",
+       "values": [
+        "Gray",
+        "Brand",
+        "Error",
+        "Warning",
+        "Success"
+       ]
+      },
+      "Icon#3285:1119": {
+       "type": "BOOLEAN",
+       "default": true,
+       "values": null
+      },
+      "Size": {
+       "type": "VARIANT",
+       "default": "md",
+       "values": [
+        "md",
+        "lg"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover"
+       ]
+      },
+      "Type": {
+       "type": "VARIANT",
+       "default": "Pill color",
+       "values": [
+        "Pill color",
+        "Pill color dark",
+        "Badge modern"
+       ]
+      }
+     },
+     "nonVariantAxes": [
+      "Icon#3285:1119 [BOOLEAN] default=true"
+     ],
+     "key": "f8c1cc38f8a1901b648aa8635e3c388721fee268",
+     "description": "",
+     "childNames": [
+      "Badge=Leading, Size=md, Type=Pill color, Color=Brand, State=Default",
+      "Badge=Leading, Size=md, Type=Pill color, Color=Brand, State=Hover",
+      "Badge=Leading, Size=md, Type=Pill color, Color=Error, State=Default",
+      "Badge=Leading, Size=md, Type=Pill color, Color=Error, State=Hover"
+     ]
+    },
+    {
+     "name": "_Badge close X",
+     "type": "COMPONENT_SET",
+     "variantCount": 48,
+     "axes": {
+      "Color": {
+       "type": "VARIANT",
+       "default": "Gray",
+       "values": [
+        "Gray",
+        "Brand",
+        "Error",
+        "Warning",
+        "Success",
+        "Slate",
+        "Sky",
+        "Blue",
+        "Indigo",
+        "Purple",
+        "Pink",
+        "Orange"
+       ]
+      },
+      "State": {
+       "type": "VARIANT",
+       "default": "Default",
+       "values": [
+        "Default",
+        "Hover"
+       ]
+      },
+      "Type": {
+       "type": "VARIANT",
+       "default": "Square",
+       "values": [
+        "Square",
+        "Rounded"
+       ]
+      }
+     },
+     "nonVariantAxes": [],
+     "key": "6a9f33668d77e911942654e512ebefe9ba5d5f05",
+     "description": "",
+     "childNames": [
+      "Type=Square, Color=Gray, State=Default",
+      "Type=Square, Color=Brand, State=Default",
+      "Type=Square, Color=Error, State=Default",
+      "Type=Square, Color=Warning, State=Default"
+     ]
+    }
+   ],
+   "components": [],
+   "otherChildren": [
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Design system header",
+     "type": "INSTANCE",
+     "kids": 1
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 2
+    },
+    {
+     "name": "Content",
+     "type": "FRAME",
+     "kids": 2
+    },
+    {
+     "name": "Header",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Heading and resources",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Header",
+     "type": "FRAME",
+     "kids": 0
+    },
+    {
+     "name": "Heading and resources",
+     "type": "FRAME",
+     "kids": 0
+    }
+   ],
+   "counts": {
+    "componentSets": 3,
+    "standaloneComponents": 0
+   }
+  }
+ ]
+}

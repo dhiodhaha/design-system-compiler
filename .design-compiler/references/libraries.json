@@ -7,7 +7,7 @@
       "repository": "untitleduico/react",
       "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
       "license": "MIT",
-      "role": "primary semantic/behavior reference (REFERENCE_LIBRARY.md)",
+      "role": "canonical implementation source (official OSS is adopted, not rewritten)",
       "indexed": true
     },
     {
@@ -17,7 +17,8 @@
       "revision": null,
       "license": "commercial (PRO)",
       "role": "visual/composition truth + fallback for components absent from OSS",
-      "indexed": "partial (Button component set 3287:427074)"
+      "indexed": "see .design-compiler/references/figma/figma-surface.json"
     }
-  ]
+  ],
+  "externalPackages": ".design-compiler/references/untitledui/external-packages.json"
 }

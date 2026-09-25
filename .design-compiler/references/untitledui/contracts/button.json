@@ -29,10 +29,6 @@
   ],
   "primitiveEngine": "react-aria-components",
   "variantVocabulary": {
-    "common": [
-      "root",
-      "icon"
-    ],
     "sizes": [
       "xs",
       "sm",
@@ -43,10 +39,22 @@
     "colors": [
       "primary",
       "secondary",
-      "tertiary"
+      "tertiary",
+      "link-color",
+      "link-gray",
+      "primary-destructive",
+      "secondary-destructive",
+      "tertiary-destructive",
+      "link-destructive"
+    ],
+    "groups": [
+      "common",
+      "sizes",
+      "colors"
     ]
   },
   "capabilities": [
+    "animated-spinner",
     "color-variants",
     "destructive",
     "disabled",
@@ -56,62 +64,205 @@
     "loading",
     "sizes"
   ],
-  "propEvidence": [
-    "as",
-    "children",
-    "className",
-    "color",
-    "href",
-    "iconLeading",
-    "iconTrailing",
-    "isDisabled",
-    "isLoading",
-    "showTextWhileLoading",
-    "size"
-  ],
+  "component": {
+    "name": "Button",
+    "overloads": [
+      {
+        "params": [
+          {
+            "name": "props",
+            "type": "LinkProps"
+          }
+        ],
+        "returns": "ReactElement<LinkProps>"
+      },
+      {
+        "params": [
+          {
+            "name": "props",
+            "type": "ButtonProps"
+          }
+        ],
+        "returns": "ReactElement<ButtonProps>"
+      }
+    ],
+    "propsTypeNames": [
+      "LinkProps",
+      "ButtonProps"
+    ],
+    "propCount": 11,
+    "props": {
+      "href": {
+        "type": "NonNullable<AriaLinkProps[\"href\"]>",
+        "optional": false,
+        "source": "type:LinkProps",
+        "resolvedFrom": null
+      },
+      "isDisabled": {
+        "type": "boolean",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "isLoading": {
+        "type": "boolean",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "size": {
+        "type": "\"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": "variant-table"
+      },
+      "color": {
+        "type": "\"primary\" | \"secondary\" | \"tertiary\" | \"link-color\" | \"link-gray\" | \"primary-destructive\" | \"secondary-destructive\" | \"tertiary-destructive\" | \"link-destructive\"",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": "variant-table"
+      },
+      "iconLeading": {
+        "type": "FC<{ className?: string }> | ReactNode",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "iconTrailing": {
+        "type": "FC<{ className?: string }> | ReactNode",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "noTextPadding": {
+        "type": "boolean",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "showTextWhileLoading": {
+        "type": "boolean",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "children": {
+        "type": "ReactNode",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "className": {
+        "type": "string",
+        "optional": true,
+        "source": "extends:CommonProps",
+        "resolvedFrom": null
+      },
+      "(inherited)": {
+        "type": "CommonProps",
+        "optional": true,
+        "source": "heritage"
+      }
+    },
+    "destructuring": {
+      "size": {
+        "local": "size",
+        "default": "\"sm\""
+      },
+      "color": {
+        "local": "color",
+        "default": "\"primary\""
+      },
+      "children": {
+        "local": "children",
+        "default": null
+      },
+      "className": {
+        "local": "className",
+        "default": null
+      },
+      "noTextPadding": {
+        "local": "noTextPadding",
+        "default": null
+      },
+      "iconLeading": {
+        "local": "IconLeading",
+        "default": null
+      },
+      "iconTrailing": {
+        "local": "IconTrailing",
+        "default": null
+      },
+      "isDisabled": {
+        "local": "disabled",
+        "default": null
+      },
+      "isLoading": {
+        "local": "loading",
+        "default": null
+      },
+      "showTextWhileLoading": {
+        "local": "showTextWhileLoading",
+        "default": null
+      },
+      "props": {
+        "local": "props",
+        "default": null
+      }
+    }
+  },
   "anatomy": [
     {
       "role": "root",
-      "evidence": "Button from react-aria-components (renders native button)"
+      "evidence": "AriaButton from react-aria-components (native button semantics); isPending carries loading"
     },
     {
       "role": "linkRoot",
-      "evidence": "AriaLink used when href is present — navigation capability"
+      "evidence": "AriaLink when an href is present (`href in props`) — navigation capability is intrinsic"
     },
     {
       "role": "leadingVisual",
-      "evidence": "iconLeading | element children detected via isValidElement"
+      "evidence": "iconLeading (component or element) | element child; marked data-icon=\"leading\""
     },
     {
       "role": "label",
-      "evidence": "children / data-text marker"
+      "evidence": "children or the element carrying data-text"
     },
     {
       "role": "trailingVisual",
-      "evidence": "iconTrailing | element children detected via isValidElement"
+      "evidence": "iconTrailing | element child; marked data-icon=\"trailing\" | data-icon=\"loading\" for the spinner"
     },
     {
       "role": "loadingIndicator",
-      "evidence": "Spinner when loading/isPending"
+      "evidence": "internal spinner element marked data-icon=\"loading\" with animate-spin"
     },
     {
       "role": "iconOnly",
-      "evidence": "derived from children shape (isIconOnly) + data-icon-only styling hook"
+      "evidence": "isIcon = (IconLeading || IconTrailing) && !children -> data-icon-only attribute"
     }
   ],
-  "states": [
-    "default",
-    "hover",
-    "focus-visible",
-    "disabled",
-    "loading",
-    "pending",
-    "icon-only"
+  "states": {
+    "public": [
+      "disabled (isDisabled)",
+      "loading (isLoading)",
+      "icon-only (derived)"
+    ],
+    "internal": [
+      "isPending (React Aria pending passed to the primitive)",
+      "hover",
+      "focus-visible"
+    ]
+  },
+  "motion": {
+    "source": "official-source",
+    "evidence": "the upstream spinner animates via Tailwind's animate-spin; no Figma motion node exists for this component set",
+    "figmaMotionNodes": 0,
+    "note": "previously recorded 'Figma prototype DISSOLVE 100ms LINEAR' evidence was removed: a direct read of 3287:427299 / 3287:427074 returned zero motion nodes"
+  },
+  "openParityQuestions": [
+    "Figma exposes size/hierarchy/state/icon-only axes plus destructive and utility sets; upstream merges destructive colors into one Button and ships ButtonUtility separately — mapping must be OSS_COMPONENT_SET_MERGE / OSS_COMPONENT_SPLIT, not one-set-one-component",
+    "Figma link hierarchies (Link color / Link gray) map to color values link-color / link-gray on the same Button, not to separate components",
+    "which upstream props are capability-required vs implementation-specific naming (e.g. noTextPadding, showTextWhileLoading)"
   ],
-  "openQuestionsForParity": [
-    "exact loading motion contract (duration/easing) — Figma prototype says DISSOLVE 100ms LINEAR for hover; loading animation must come from the reference, not guessed",
-    "link capability must be preserved by the target adapter (href -> anchor semantics)",
-    "which upstream props are capability-required vs implementation-specific naming"
-  ],
-  "parsedPropsBlockFound": false
+  "unresolved": []
 }

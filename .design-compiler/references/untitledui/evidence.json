@@ -1,0 +1,1559 @@
+{
+  "$schema": "design-compiler/ReferenceEvidence@p0",
+  "library": "untitledui",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "note": "demo/story sources: usage and behaviour evidence only, never public registry entries",
+  "total": 75,
+  "byKind": {
+    "DEMO": 36,
+    "STORY": 39
+  },
+  "evidence": [
+    {
+      "path": "components/application/app-navigation/base-components/featured-cards.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BaseComponents",
+        "FeaturedCardProgressBar",
+        "FeaturedCardProgressCircle",
+        "FeaturedCards.demo"
+      ],
+      "internalDependencies": [
+        "@/components/base/buttons/button",
+        "@/components/base/buttons/close-button",
+        "@/components/base/progress-indicators/progress-circles",
+        "@/components/base/progress-indicators/progress-indicators",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/application/app-navigation/base-components/featured-cards.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "BaseComponents",
+        "FeaturedCardProgressBar",
+        "FeaturedCardProgressCircle",
+        "FeaturedCards.story"
+      ],
+      "internalDependencies": [
+        "./featured-cards.demo",
+        "@/components/internal/decorators"
+      ]
+    },
+    {
+      "path": "components/application/app-navigation/header-navigation.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "AppNavigation",
+        "HeaderNavigation.demo",
+        "HeaderNavigationCenteredDemo",
+        "HeaderNavigationDualTierDemo",
+        "HeaderNavigationSimpleDemo",
+        "HeaderNavigationTabsDemo"
+      ],
+      "internalDependencies": [
+        "@/components/application/app-navigation/base-components/nav-button",
+        "@/components/application/app-navigation/header-navigation",
+        "@/components/base/buttons/button",
+        "@/components/base/dropdown/dropdown-account-card-sm",
+        "@/components/base/dropdown/dropdown-avatar"
+      ]
+    },
+    {
+      "path": "components/application/app-navigation/header-navigation.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "AppNavigation",
+        "HeaderNavigation.story",
+        "HeaderNavigationCenteredDemo",
+        "HeaderNavigationDualTierDemo",
+        "HeaderNavigationSimpleDemo",
+        "HeaderNavigationTabsDemo"
+      ],
+      "internalDependencies": [
+        "./header-navigation.demo",
+        "@/components/internal/decorators"
+      ]
+    },
+    {
+      "path": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "AppNavigation",
+        "SidebarNavigation.demo",
+        "SidebarNavigationDualTierDemo",
+        "SidebarNavigationSectionsSubheadingsDemo",
+        "SidebarNavigationSimpleDemo",
+        "SidebarNavigationSlimDemo",
+        "SidebarSectionDividersDemo"
+      ],
+      "internalDependencies": [
+        "@/components/application/app-navigation/base-components/featured-cards.demo",
+        "@/components/application/app-navigation/config",
+        "@/components/application/app-navigation/sidebar-navigation/sidebar-dual-tier",
+        "@/components/application/app-navigation/sidebar-navigation/sidebar-section-dividers",
+        "@/components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings",
+        "@/components/application/app-navigation/sidebar-navigation/sidebar-simple",
+        "@/components/application/app-navigation/sidebar-navigation/sidebar-slim",
+        "@/components/base/avatar/avatar",
+        "@/components/base/badges/badges"
+      ]
+    },
+    {
+      "path": "components/application/app-navigation/sidebar-navigation.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "AppNavigation",
+        "SidebarNavigation.story",
+        "SidebarNavigationDualTierDemo",
+        "SidebarNavigationSectionsSubheadingsDemo",
+        "SidebarNavigationSimpleDemo",
+        "SidebarNavigationSlimDemo",
+        "SidebarSectionDividersDemo"
+      ],
+      "internalDependencies": [
+        "./sidebar-navigation.demo",
+        "@/components/internal/decorators"
+      ]
+    },
+    {
+      "path": "components/application/carousel/carousel.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Carousel",
+        "Carousel.demo",
+        "CarouselIndicator",
+        "CarouselLg",
+        "CarouselMd"
+      ],
+      "internalDependencies": [
+        "@/components/application/carousel/carousel-base",
+        "@/components/application/pagination/pagination-dot"
+      ]
+    },
+    {
+      "path": "components/application/carousel/carousel.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Carousel",
+        "Carousel.story",
+        "CarouselLg",
+        "CarouselMd"
+      ],
+      "internalDependencies": [
+        "./carousel.demo"
+      ]
+    },
+    {
+      "path": "components/application/charts/activity-gauges.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "ActivityGaugeLg",
+        "ActivityGaugeMd",
+        "ActivityGaugeSm",
+        "ActivityGaugeXs",
+        "ActivityGauges.demo",
+        "Charts"
+      ],
+      "internalDependencies": [
+        "@/components/application/charts/charts-base",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/application/charts/activity-gauges.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "ActivityGaugeLg",
+        "ActivityGaugeMd",
+        "ActivityGaugeSm",
+        "ActivityGaugeXs",
+        "ActivityGauges.story",
+        "Charts"
+      ],
+      "internalDependencies": [
+        "./activity-gauges.demo"
+      ]
+    },
+    {
+      "path": "components/application/charts/bar-charts.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BarChart",
+        "BarChart02",
+        "BarChart03",
+        "BarCharts.demo",
+        "Charts"
+      ],
+      "internalDependencies": [
+        "@/components/application/charts/charts-base",
+        "@/hooks/use-breakpoint"
+      ]
+    },
+    {
+      "path": "components/application/charts/bar-charts.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "BarChart",
+        "BarChart02",
+        "BarChart03",
+        "BarCharts.story",
+        "Charts"
+      ],
+      "internalDependencies": [
+        "./bar-charts.demo"
+      ]
+    },
+    {
+      "path": "components/application/charts/line-charts.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Charts",
+        "LineChart01",
+        "LineChart02",
+        "LineChart03",
+        "LineChart04",
+        "LineCharts.demo"
+      ],
+      "internalDependencies": [
+        "@/components/application/charts/charts-base",
+        "@/hooks/use-breakpoint",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/application/charts/line-charts.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Charts",
+        "LineChart01",
+        "LineChart02",
+        "LineChart03",
+        "LineChart04",
+        "LineCharts.story"
+      ],
+      "internalDependencies": [
+        "./line-charts.demo"
+      ]
+    },
+    {
+      "path": "components/application/charts/pie-charts.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Charts",
+        "PieChartLg",
+        "PieChartMd",
+        "PieChartSm",
+        "PieChartXs",
+        "PieChartXxs",
+        "PieCharts.demo"
+      ],
+      "internalDependencies": [
+        "@/components/application/charts/charts-base"
+      ]
+    },
+    {
+      "path": "components/application/charts/pie-charts.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Charts",
+        "PieChartLg",
+        "PieChartMd",
+        "PieChartSm",
+        "PieChartXs",
+        "PieChartXxs",
+        "PieCharts.story"
+      ],
+      "internalDependencies": [
+        "./pie-charts.demo"
+      ]
+    },
+    {
+      "path": "components/application/charts/progress-circles.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Charts",
+        "ProgressCircle",
+        "ProgressCircleLg",
+        "ProgressCircleLgOnlyTitle",
+        "ProgressCircleMd",
+        "ProgressCircleMdOnlyTitle",
+        "ProgressCircleSm",
+        "ProgressCircleSmOnlyTitle",
+        "ProgressCircleXs",
+        "ProgressCircleXsOnlyTitle",
+        "ProgressCircles.demo"
+      ],
+      "internalDependencies": [
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/application/charts/progress-circles.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Charts",
+        "ProgressCircleLg",
+        "ProgressCircleLgOnlyTitle",
+        "ProgressCircleMd",
+        "ProgressCircleMdOnlyTitle",
+        "ProgressCircleSm",
+        "ProgressCircleSmOnlyTitle",
+        "ProgressCircleXs",
+        "ProgressCircleXsOnlyTitle",
+        "ProgressCircles.story"
+      ],
+      "internalDependencies": [
+        "./progress-circles.demo"
+      ]
+    },
+    {
+      "path": "components/application/charts/radar-charts.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Charts",
+        "CustomRadarChartTick",
+        "RadarChart",
+        "RadarCharts.demo"
+      ],
+      "internalDependencies": [
+        "@/components/application/charts/charts-base",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/application/charts/radar-charts.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Charts",
+        "RadarChart",
+        "RadarCharts.story"
+      ],
+      "internalDependencies": [
+        "./radar-charts.demo"
+      ]
+    },
+    {
+      "path": "components/application/date-picker/date-picker.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "CalendarCardDemo",
+        "CalendarDemo",
+        "DarkModeDemo",
+        "DatePicker",
+        "DatePicker.demo",
+        "DatePickerControlledDemo",
+        "DatePickerDemo",
+        "DateRangePickerControlledDemo",
+        "DateRangePickerDemo",
+        "DateTimePickerDemo",
+        "RangeCalendarCardDemo",
+        "RangeCalendarDemo"
+      ],
+      "internalDependencies": [
+        "./calendar",
+        "./date-picker",
+        "./date-range-picker",
+        "./range-calendar",
+        "@/components/base/buttons/button",
+        "@/components/base/input/input-date",
+        "@/components/base/select/select",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/application/date-picker/date-picker.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "CalendarCardDemo",
+        "CalendarDemo",
+        "DarkModeDemo",
+        "DatePicker",
+        "DatePicker.story",
+        "DatePickerControlledDemo",
+        "DatePickerDemo",
+        "DateRangePickerControlledDemo",
+        "DateRangePickerDemo",
+        "DateTimePickerDemo",
+        "RangeCalendarCardDemo",
+        "RangeCalendarDemo"
+      ],
+      "internalDependencies": [
+        "./date-picker.demo"
+      ]
+    },
+    {
+      "path": "components/application/file-upload/file-upload.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DisabledDemo",
+        "FileUpload",
+        "FileUpload.demo",
+        "FileUploadProgressBar",
+        "FileUploadProgressFill",
+        "ImagesOnlyDemo",
+        "MaxSizeLimitDemo"
+      ],
+      "internalDependencies": [
+        "@/components/application/file-upload/file-upload-base"
+      ]
+    },
+    {
+      "path": "components/application/file-upload/file-upload.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "FileUpload",
+        "FileUpload.story",
+        "FileUploadProgressBar",
+        "FileUploadProgressBarDisabled",
+        "FileUploadProgressFill",
+        "FileUploadProgressFillDisabled"
+      ],
+      "internalDependencies": [
+        "./draggable",
+        "./file-upload.demo"
+      ]
+    },
+    {
+      "path": "components/application/loading-indicator/loading-indicator.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DefaultDemo",
+        "DotCircleDemo",
+        "DotCircleWithLabelDemo",
+        "LineSimpleDemo",
+        "LineSimpleWithLabelDemo",
+        "LineSpinnerDemo",
+        "LineSpinnerWithLabelDemo",
+        "LoadingIndicator",
+        "LoadingIndicator.demo",
+        "LoadingIndicatorDotCircle",
+        "LoadingIndicatorLineSimple",
+        "LoadingIndicatorLineSpinner",
+        "SizesDemo"
+      ],
+      "internalDependencies": [
+        "@/components/application/loading-indicator/loading-indicator"
+      ]
+    },
+    {
+      "path": "components/application/loading-indicator/loading-indicator.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "LoadingIndicator",
+        "LoadingIndicator.story",
+        "LoadingIndicatorDotCircle",
+        "LoadingIndicatorLineSimple",
+        "LoadingIndicatorLineSpinner"
+      ],
+      "internalDependencies": [
+        "./loading-indicator.demo"
+      ]
+    },
+    {
+      "path": "components/application/pagination/pagination.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Pagination",
+        "Pagination.demo",
+        "PaginationButtonGroupCenterAligned",
+        "PaginationButtonGroupLeftAligned",
+        "PaginationButtonGroupRightAligned",
+        "PaginationCardAdvanced",
+        "PaginationCardAdvancedCenter",
+        "PaginationCardDefault",
+        "PaginationCardMinimalCenterAligned",
+        "PaginationCardMinimalLeftAligned",
+        "PaginationCardMinimalRightAligned",
+        "PaginationDotLg",
+        "PaginationDotMd",
+        "PaginationLineLg",
+        "PaginationLineMd",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "internalDependencies": [
+        "@/components/application/pagination/pagination",
+        "@/components/application/pagination/pagination-dot",
+        "@/components/application/pagination/pagination-line"
+      ]
+    },
+    {
+      "path": "components/application/pagination/pagination.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Pagination",
+        "Pagination.story",
+        "PaginationButtonGroupCenterAligned",
+        "PaginationButtonGroupLeftAligned",
+        "PaginationButtonGroupRightAligned",
+        "PaginationCardAdvanced",
+        "PaginationCardAdvancedCenter",
+        "PaginationCardDefault",
+        "PaginationCardMinimalCenterAligned",
+        "PaginationCardMinimalLeftAligned",
+        "PaginationCardMinimalRightAligned",
+        "PaginationDotLg",
+        "PaginationDotMd",
+        "PaginationLineLg",
+        "PaginationLineMd",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "internalDependencies": [
+        "./pagination.demo"
+      ]
+    },
+    {
+      "path": "components/application/table/table.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Table",
+        "Table.demo",
+        "Table01AlternatingFills",
+        "Table01DividerLine",
+        "Table01DividerLineSm",
+        "Table02AlternatingFills",
+        "Table02DividerLine",
+        "Table03AlternatingFills",
+        "Table03DividerLine",
+        "Table04AlternatingFills",
+        "Table04DividerLine",
+        "TableAddFirstIntegration",
+        "TableInviteFirstUser",
+        "TableNoUsersFound",
+        "TableNoVendorsFound",
+        "TableOffline",
+        "TableSomethingWentWrong"
+      ],
+      "internalDependencies": [
+        "../date-picker/date-range-picker",
+        "../tabs/tabs",
+        "@/components/application/empty-state/empty-state",
+        "@/components/application/pagination/pagination",
+        "@/components/application/table/customers.json",
+        "@/components/application/table/invoices.json",
+        "@/components/application/table/table",
+        "@/components/application/table/team-members.json",
+        "@/components/application/table/uploaded-files.json",
+        "@/components/base/avatar/avatar",
+        "@/components/base/badges/badge-types",
+        "@/components/base/badges/badges",
+        "@/components/base/buttons/button",
+        "@/components/base/buttons/button-utility",
+        "@/components/base/dropdown/dropdown-icon-simple",
+        "@/components/base/input/input",
+        "@/components/base/progress-indicators/progress-indicators"
+      ]
+    },
+    {
+      "path": "components/application/table/table.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Table",
+        "Table.story",
+        "Table01AlternatingFills",
+        "Table01DividerLine",
+        "Table01DividerLineSm",
+        "Table02AlternatingFills",
+        "Table02DividerLine",
+        "Table03AlternatingFills",
+        "Table03DividerLine",
+        "Table04AlternatingFills",
+        "Table04DividerLine",
+        "TableAddFirstIntegration",
+        "TableInviteFirstUser",
+        "TableNoUsersFound",
+        "TableNoVendorsFound",
+        "TableOffline",
+        "TableSomethingWentWrong"
+      ],
+      "internalDependencies": [
+        "./table.demo",
+        "@/components/internal/decorators"
+      ]
+    },
+    {
+      "path": "components/application/tabs/tabs.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "ButtonBorderHorizontal",
+        "ButtonBorderHorizontalDemo",
+        "ButtonBorderHorizontalFullWidth",
+        "ButtonBorderVertical",
+        "ButtonBorderVerticalDemo",
+        "ButtonBrandHorizontal",
+        "ButtonBrandHorizontalDemo",
+        "ButtonBrandHorizontalFullWidth",
+        "ButtonBrandVertical",
+        "ButtonBrandVerticalDemo",
+        "ButtonGrayHorizontal",
+        "ButtonGrayHorizontalDemo",
+        "ButtonGrayHorizontalFullWidth",
+        "ButtonGrayVertical",
+        "ButtonGrayVerticalDemo",
+        "ButtonMinimalHorizontal",
+        "ButtonMinimalHorizontalDemo",
+        "ButtonMinimalHorizontalFullWidth",
+        "ButtonMinimalVertical",
+        "ButtonMinimalVerticalDemo",
+        "LineDemo",
+        "Tabs",
+        "Tabs.demo",
+        "UnderlineDemo",
+        "UnderlineHorizontal",
+        "UnderlineHorizontalFullWidth",
+        "UnderlineVertical"
+      ],
+      "internalDependencies": [
+        "@/components/application/tabs/tabs",
+        "@/components/base/select/select-native"
+      ]
+    },
+    {
+      "path": "components/application/tabs/tabs.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "ButtonBorderHorizontal",
+        "ButtonBorderHorizontalFullWidth",
+        "ButtonBorderVertical",
+        "ButtonBrandHorizontal",
+        "ButtonBrandHorizontalFullWidth",
+        "ButtonBrandVertical",
+        "ButtonGrayHorizontal",
+        "ButtonGrayHorizontalFullWidth",
+        "ButtonGrayVertical",
+        "ButtonMinimalHorizontal",
+        "ButtonMinimalHorizontalFullWidth",
+        "ButtonMinimalVertical",
+        "Tabs",
+        "Tabs.story",
+        "UnderlineHorizontal",
+        "UnderlineHorizontalFullWidth",
+        "UnderlineVertical"
+      ],
+      "internalDependencies": [
+        "./tabs.demo"
+      ]
+    },
+    {
+      "path": "components/base/avatar/avatar.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Avatar",
+        "Avatar.demo",
+        "BaseDemo",
+        "BorderDemo",
+        "CompanyLogoDemo",
+        "Default",
+        "DefaultDemo",
+        "Group",
+        "GroupDemo",
+        "Initials",
+        "InitialsDemo",
+        "LabelGroup",
+        "LabelGroupDemo",
+        "Placeholder",
+        "PlaceholderDemo",
+        "ProfilePhoto",
+        "ProfilePhotoDemo",
+        "StatusIndicatorDemo",
+        "VerifiedDemo",
+        "WithBorder"
+      ],
+      "internalDependencies": [
+        "./base-components/avatar-count",
+        "@/components/base/avatar/avatar",
+        "@/components/base/avatar/avatar-label-group",
+        "@/components/base/avatar/avatar-profile-photo",
+        "@/components/base/avatar/base-components"
+      ]
+    },
+    {
+      "path": "components/base/avatar/avatar.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Avatar",
+        "Avatar.story",
+        "Default",
+        "Group",
+        "Initials",
+        "LabelGroup",
+        "Placeholder",
+        "ProfilePhoto",
+        "WithBorder"
+      ],
+      "internalDependencies": [
+        "@/components/base/avatar/avatar.demo"
+      ]
+    },
+    {
+      "path": "components/base/badges/badge-groups.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BadgeGroups.demo",
+        "BadgeModernLeading",
+        "BadgeModernLeadingBrand",
+        "BadgeModernLeadingError",
+        "BadgeModernLeadingGray",
+        "BadgeModernLeadingSuccess",
+        "BadgeModernLeadingWarning",
+        "BadgeModernTrailing",
+        "BadgeModernTrailingBrand",
+        "BadgeModernTrailingError",
+        "BadgeModernTrailingGray",
+        "BadgeModernTrailingSuccess",
+        "BadgeModernTrailingWarning",
+        "Badges",
+        "PillColorLeading",
+        "PillColorLeadingBrand",
+        "PillColorLeadingError",
+        "PillColorLeadingGray",
+        "PillColorLeadingSuccess",
+        "PillColorLeadingWarning",
+        "PillColorTrailing",
+        "PillColorTrailingBrand",
+        "PillColorTrailingError",
+        "PillColorTrailingGray",
+        "PillColorTrailingSuccess",
+        "PillColorTrailingWarning"
+      ],
+      "internalDependencies": [
+        "@/components/base/badges/badge-groups"
+      ]
+    },
+    {
+      "path": "components/base/badges/badge-groups.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "BadgeGroups.story",
+        "BadgeModernLeading",
+        "BadgeModernTrailing",
+        "Badges",
+        "PillColorLeading",
+        "PillColorTrailing"
+      ],
+      "internalDependencies": [
+        "@/components/base/badges/badge-groups.demo"
+      ]
+    },
+    {
+      "path": "components/base/badges/badges.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BadgeColor",
+        "BadgeModern",
+        "Badges",
+        "Badges.demo",
+        "Default",
+        "PillColor",
+        "WithAvatar",
+        "WithAvatarBadgeColor",
+        "WithAvatarBadgeModern",
+        "WithCloseX",
+        "WithCloseXBadgeColor",
+        "WithCloseXBadgeModern",
+        "WithDot",
+        "WithDotBadgeColor",
+        "WithDotBadgeModern",
+        "WithFlag",
+        "WithFlagBadgeColor",
+        "WithFlagBadgeModern",
+        "WithIconLeading",
+        "WithIconLeadingBadgeColor",
+        "WithIconLeadingBadgeModern",
+        "WithIconOnly",
+        "WithIconOnlyBadgeColor",
+        "WithIconOnlyBadgeModern",
+        "WithIconTrailing",
+        "WithIconTrailingBadgeColor",
+        "WithIconTrailingBadgeModern"
+      ],
+      "internalDependencies": [
+        "@/components/base/badges/badge-types",
+        "@/components/base/badges/badges"
+      ]
+    },
+    {
+      "path": "components/base/badges/badges.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "BadgeColor",
+        "BadgeModern",
+        "Badges",
+        "Badges.story",
+        "PillColor",
+        "WithAvatar",
+        "WithAvatarBadgeColor",
+        "WithAvatarBadgeModern",
+        "WithCloseX",
+        "WithCloseXBadgeColor",
+        "WithCloseXBadgeModern",
+        "WithDot",
+        "WithDotBadgeColor",
+        "WithDotBadgeModern",
+        "WithFlag",
+        "WithFlagBadgeColor",
+        "WithFlagBadgeModern",
+        "WithIconLeading",
+        "WithIconLeadingBadgeColor",
+        "WithIconLeadingBadgeModern",
+        "WithIconOnly",
+        "WithIconOnlyBadgeColor",
+        "WithIconOnlyBadgeModern",
+        "WithIconTrailing",
+        "WithIconTrailingBadgeColor",
+        "WithIconTrailingBadgeModern"
+      ],
+      "internalDependencies": [
+        "@/components/base/badges/badges.demo"
+      ]
+    },
+    {
+      "path": "components/base/button-group/button-group.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "All",
+        "AllSmall",
+        "ButtonGroup",
+        "ButtonGroup.demo",
+        "ButtonGroupDot",
+        "Default",
+        "DisabledAll",
+        "DisabledIndividualButton",
+        "LeadingIcon",
+        "MultipleSelectedItems",
+        "SelectedItem"
+      ],
+      "internalDependencies": [
+        "@/components/base/button-group/button-group",
+        "@/components/foundations/dot-icon"
+      ]
+    },
+    {
+      "path": "components/base/button-group/button-group.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "ButtonGroup",
+        "ButtonGroup.story",
+        "ButtonGroupMedium",
+        "ButtonGroupSmall"
+      ],
+      "internalDependencies": [
+        "@/components/base/button-group/button-group.demo"
+      ]
+    },
+    {
+      "path": "components/base/buttons/app-store-buttons.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "AppStoreButtonAppGalleryDemo",
+        "AppStoreButtonAppGalleryOutlineDemo",
+        "AppStoreButtonAppStoreDemo",
+        "AppStoreButtonAppStoreOutlineDemo",
+        "AppStoreButtonDefaultDemo",
+        "AppStoreButtonGalaxyStoreDemo",
+        "AppStoreButtonGalaxyStoreOutlineDemo",
+        "AppStoreButtonGooglePlayDemo",
+        "AppStoreButtonGooglePlayOutlineDemo",
+        "AppStoreButtons.demo",
+        "Buttons",
+        "Lg",
+        "Md"
+      ],
+      "internalDependencies": [
+        "@/components/base/buttons/app-store-buttons",
+        "@/components/base/buttons/app-store-buttons-outline"
+      ]
+    },
+    {
+      "path": "components/base/buttons/app-store-buttons.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "AppStoreButtons.story",
+        "Buttons",
+        "MobileAppStoreButtons"
+      ],
+      "internalDependencies": [
+        "@/components/base/buttons/app-store-buttons.demo"
+      ]
+    },
+    {
+      "path": "components/base/buttons/buttons.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Buttons",
+        "Buttons.demo",
+        "CloseX",
+        "CloseXDarkDemo",
+        "CloseXLightDemo",
+        "LeadingIcon",
+        "LinkColor",
+        "LinkDestructive",
+        "LinkGray",
+        "Primary",
+        "PrimaryDestructive",
+        "Secondary",
+        "SecondaryDestructive",
+        "Tertiary",
+        "TertiaryDestructive",
+        "TrailingIcon",
+        "UtilityButton",
+        "UtilityButtonDefaultDemo",
+        "UtilityButtonDisabledDemo",
+        "UtilityButtonSecondaryDemo",
+        "UtilityButtonSizesDemo",
+        "UtilityButtonTertiaryDemo"
+      ],
+      "internalDependencies": [
+        "@/components/base/buttons/button",
+        "@/components/base/buttons/button-utility",
+        "@/components/base/buttons/close-button",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/base/buttons/buttons.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Buttons",
+        "Buttons.story",
+        "CloseX",
+        "DestructiveLink",
+        "DestructivePrimary",
+        "DestructiveSecondary",
+        "DestructiveTertiary",
+        "LinkColor",
+        "LinkGray",
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "UtilityButton"
+      ],
+      "internalDependencies": [
+        "@/components/base/buttons/buttons.demo"
+      ]
+    },
+    {
+      "path": "components/base/buttons/social-buttons.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "Buttons",
+        "SocialButtonAppleDemo",
+        "SocialButtonDribbleDemo",
+        "SocialButtonFacebookDemo",
+        "SocialButtonFigmaDemo",
+        "SocialButtonGoogleDemo",
+        "SocialButtonGroupBrandDemo",
+        "SocialButtonGroupColorDemo",
+        "SocialButtonGroupGrayDemo",
+        "SocialButtonGroupIconsBrandDemo",
+        "SocialButtonGroupIconsColorDemo",
+        "SocialButtonGroupIconsGrayDemo",
+        "SocialButtonGroupsLG",
+        "SocialButtonGroupsMD",
+        "SocialButtonTwitterDemo",
+        "SocialButtons",
+        "SocialButtons.demo"
+      ],
+      "internalDependencies": [
+        "@/components/base/buttons/social-button"
+      ]
+    },
+    {
+      "path": "components/base/buttons/social-buttons.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Buttons",
+        "SocialButtonGroups",
+        "SocialButtonGroupsLG",
+        "SocialButtons",
+        "SocialButtons.story"
+      ],
+      "internalDependencies": [
+        "./social-buttons.demo"
+      ]
+    },
+    {
+      "path": "components/base/checkbox/checkbox.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BaseDemo",
+        "Checkbox",
+        "Checkbox.demo",
+        "CheckboxBase",
+        "Checkboxes",
+        "DefaultDemo",
+        "DisabledDemo",
+        "SizesDemo",
+        "WithLabelAndHintDemo",
+        "WithLabelDemo"
+      ],
+      "internalDependencies": [
+        "@/components/base/checkbox/checkbox"
+      ]
+    },
+    {
+      "path": "components/base/checkbox/checkbox.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Checkbox",
+        "Checkbox.story",
+        "CheckboxBase",
+        "Checkboxes"
+      ],
+      "internalDependencies": [
+        "@/components/base/checkbox/checkbox.demo"
+      ]
+    },
+    {
+      "path": "components/base/dropdown/dropdown.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Dropdown",
+        "Dropdown.story",
+        "DropdownAccountBreadcrumbStory",
+        "DropdownAccountButtonStory",
+        "DropdownAccountCardMDStory",
+        "DropdownAccountCardSMStory",
+        "DropdownAccountCardXSStory",
+        "DropdownAvatarStory",
+        "DropdownButtonAdvancedStory",
+        "DropdownButtonLinkStory",
+        "DropdownButtonSimpleStory",
+        "DropdownContextMenuAdvancedStory",
+        "DropdownContextMenuSimpleStory",
+        "DropdownIconAdvancedStory",
+        "DropdownIconSimpleStory",
+        "DropdownIntegrationStory",
+        "DropdownSearchAdvancedStory",
+        "DropdownSearchSimpleStory"
+      ],
+      "internalDependencies": [
+        "@/components/base/dropdown/dropdown-account-breadcrumb",
+        "@/components/base/dropdown/dropdown-account-button",
+        "@/components/base/dropdown/dropdown-account-card-md",
+        "@/components/base/dropdown/dropdown-account-card-sm",
+        "@/components/base/dropdown/dropdown-account-card-xs",
+        "@/components/base/dropdown/dropdown-avatar",
+        "@/components/base/dropdown/dropdown-button-advanced",
+        "@/components/base/dropdown/dropdown-button-link",
+        "@/components/base/dropdown/dropdown-button-simple",
+        "@/components/base/dropdown/dropdown-context-menu-advanced",
+        "@/components/base/dropdown/dropdown-context-menu-simple",
+        "@/components/base/dropdown/dropdown-icon-advanced",
+        "@/components/base/dropdown/dropdown-icon-simple",
+        "@/components/base/dropdown/dropdown-integration",
+        "@/components/base/dropdown/dropdown-search-advanced",
+        "@/components/base/dropdown/dropdown-search-simple"
+      ]
+    },
+    {
+      "path": "components/base/input/inputs.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DateInputDemo",
+        "DateInputs",
+        "Default",
+        "DefaultDemo",
+        "DisabledDemo",
+        "FileUploadInputDemo",
+        "FileUploadInputs",
+        "Input",
+        "Inputs.demo",
+        "InvalidDemo",
+        "LeadingDropdown",
+        "LeadingDropdownDemo",
+        "LeadingIcon",
+        "LeadingIconDemo",
+        "LeadingText",
+        "LeadingTextDemo",
+        "NumberInputHorizontalDemo",
+        "NumberInputVerticalDemo",
+        "NumberInputsHorizontal",
+        "NumberInputsVertical",
+        "PasswordInputDemo",
+        "PasswordInputs",
+        "PaymentInputDemo",
+        "PaymentInputs",
+        "SizesDemo",
+        "TagInputDemo",
+        "TagInputOuterDemo",
+        "TagInputs",
+        "TagInputsOuter",
+        "TrailingButton",
+        "TrailingButtonDemo",
+        "TrailingDropdown",
+        "TrailingDropdownDemo"
+      ],
+      "internalDependencies": [
+        "./hint-text",
+        "./input-date",
+        "./input-number",
+        "./label",
+        "@/components/base/buttons/button",
+        "@/components/base/input/input",
+        "@/components/base/input/input-file",
+        "@/components/base/input/input-group",
+        "@/components/base/input/input-payment",
+        "@/components/base/input/input-tags",
+        "@/components/base/input/input-tags-outer",
+        "@/components/base/select/select-native",
+        "@/hooks/use-clipboard",
+        "@/utils/cx"
+      ]
+    },
+    {
+      "path": "components/base/input/inputs.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "DateInputs",
+        "Default",
+        "FileUploadInput",
+        "Input",
+        "Inputs.story",
+        "LeadingDropdown",
+        "LeadingIcon",
+        "LeadingText",
+        "NumberInputsHorizontal",
+        "NumberInputsVertical",
+        "PasswordInputs",
+        "PaymentInputs",
+        "Tags",
+        "TagsOuter",
+        "TrailingButton",
+        "TrailingDropdown"
+      ],
+      "internalDependencies": [
+        "@/components/base/input/inputs.demo"
+      ]
+    },
+    {
+      "path": "components/base/input/pin-input.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DisabledDemo",
+        "FourDigitsDemo",
+        "Input",
+        "InputOTPLG",
+        "InputOTPMD",
+        "InputOTPSM",
+        "InputOTPSizesDemo",
+        "PinInput.demo",
+        "SizesDemo",
+        "VerificationCodeInputLG",
+        "VerificationCodeInputMD",
+        "VerificationCodeInputSM"
+      ],
+      "internalDependencies": [
+        "@/components/base/input/pin-input"
+      ]
+    },
+    {
+      "path": "components/base/input/pin-input.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Input",
+        "InputOTPLG",
+        "InputOTPMD",
+        "InputOTPSM",
+        "PinInput.story",
+        "VerificationCodeInputLg",
+        "VerificationCodeInputMd",
+        "VerificationCodeInputSm"
+      ],
+      "internalDependencies": [
+        "@/components/base/input/pin-input.demo"
+      ]
+    },
+    {
+      "path": "components/base/progress-indicators/progress-indicators.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "CircleProgressBar",
+        "CircleProgressBarLabel",
+        "HalfCircleProgressBar",
+        "HalfCircleProgressBarLabel",
+        "ProgressBarDefault",
+        "ProgressBarTextBottom",
+        "ProgressBarTextBottomFloating",
+        "ProgressBarTextRight",
+        "ProgressBarTextTopFloating",
+        "ProgressIndicators",
+        "ProgressIndicators.demo"
+      ],
+      "internalDependencies": [
+        "@/components/base/progress-indicators/progress-circles",
+        "@/components/base/progress-indicators/progress-indicators"
+      ]
+    },
+    {
+      "path": "components/base/progress-indicators/progress-indicators.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "CircleProgressBar",
+        "CircleProgressBarLabel",
+        "Default",
+        "HalfCircleProgressBar",
+        "HalfCircleProgressBarLabel",
+        "ProgressIndicators",
+        "ProgressIndicators.story",
+        "TextBottom",
+        "TextBottomFloating",
+        "TextRight",
+        "TextTopFloating"
+      ],
+      "internalDependencies": [
+        "./progress-indicators.demo"
+      ]
+    },
+    {
+      "path": "components/base/radio-buttons/radio-buttons.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DisabledDemo",
+        "DisabledIndividualItemDemo",
+        "RadioButtons",
+        "RadioButtons.demo",
+        "RadioButtonsBase",
+        "WithLabelAndHintDemo",
+        "WithLabelDemo"
+      ],
+      "internalDependencies": [
+        "@/components/base/radio-buttons/radio-buttons"
+      ]
+    },
+    {
+      "path": "components/base/radio-buttons/radio-buttons.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "RadioButtons",
+        "RadioButtons.story",
+        "RadioButtonsBase"
+      ],
+      "internalDependencies": [
+        "@/components/base/radio-buttons/radio-buttons.demo"
+      ]
+    },
+    {
+      "path": "components/base/select/select.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "AvatarLeading",
+        "AvatarLeadingDemo",
+        "Default",
+        "DefaultDemo",
+        "DisabledDemo",
+        "DotLeading",
+        "DotLeadingDemo",
+        "IconLeading",
+        "IconLeadingDemo",
+        "MultiSelectDisabledDemo",
+        "MultiSelectLgDemo",
+        "MultiSelectMdDemo",
+        "MultiSelectSizesDemo",
+        "MultiSelectSmDemo",
+        "MultiSelectWithIconDemo",
+        "Native",
+        "Search",
+        "SearchDemo",
+        "Select",
+        "Select.demo",
+        "SizesDemo",
+        "Tags",
+        "TagsDemo"
+      ],
+      "internalDependencies": [
+        "@/components/base/select/multi-select",
+        "@/components/base/select/select",
+        "@/components/base/select/select-native",
+        "@/components/base/select/tag-select",
+        "@/components/foundations/dot-icon"
+      ]
+    },
+    {
+      "path": "components/base/select/select.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "AvatarLeading",
+        "Default",
+        "DotLeading",
+        "IconLeading",
+        "MultiSelectDisabled",
+        "MultiSelectLg",
+        "MultiSelectMd",
+        "MultiSelectSm",
+        "MultiSelectWithIcon",
+        "Search",
+        "Select",
+        "Select.story",
+        "Tags"
+      ],
+      "internalDependencies": [
+        "@/components/base/select/select.demo"
+      ]
+    },
+    {
+      "path": "components/base/slider/slider.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BottomLabel",
+        "Default",
+        "SingleThumb",
+        "Slider",
+        "Slider.demo",
+        "TopFloating"
+      ],
+      "internalDependencies": [
+        "@/components/base/slider/slider"
+      ]
+    },
+    {
+      "path": "components/base/slider/slider.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "BottomLabel",
+        "Default",
+        "SingleThumb",
+        "Slider",
+        "Slider.story",
+        "TopFloating"
+      ],
+      "internalDependencies": [
+        "@/components/base/slider/slider.demo"
+      ]
+    },
+    {
+      "path": "components/base/tags/tags.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "CheckboxCloseX",
+        "CheckboxCloseXDemo",
+        "CheckboxCount",
+        "CheckboxCountDemo",
+        "CheckboxDefault",
+        "CheckboxDemo",
+        "CloseX",
+        "CloseXDemo",
+        "Count",
+        "CountDemo",
+        "Default",
+        "DefaultDemo",
+        "SizesDemo",
+        "Tags",
+        "Tags.demo"
+      ],
+      "internalDependencies": [
+        "@/components/base/tags/tags"
+      ]
+    },
+    {
+      "path": "components/base/tags/tags.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "CheckboxCloseX",
+        "CheckboxCount",
+        "CheckboxDefault",
+        "CloseX",
+        "Count",
+        "Default",
+        "Tags",
+        "Tags.story"
+      ],
+      "internalDependencies": [
+        "@/components/base/tags/tags.demo"
+      ]
+    },
+    {
+      "path": "components/base/textarea/textarea.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DefaultDemo",
+        "DisabledDemo",
+        "InvalidDemo",
+        "Textarea",
+        "Textarea.demo"
+      ],
+      "internalDependencies": [
+        "@/components/base/textarea/textarea"
+      ]
+    },
+    {
+      "path": "components/base/textarea/textarea.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Textarea",
+        "Textarea.story"
+      ],
+      "internalDependencies": [
+        "@/components/base/textarea/textarea.demo"
+      ]
+    },
+    {
+      "path": "components/base/toggle/toggle.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "BaseDemo",
+        "DefaultDemo",
+        "DisabledDemo",
+        "SizesDemo",
+        "SlimBaseDemo",
+        "SlimWithLabelAndHintDemo",
+        "Toggle",
+        "Toggle.demo",
+        "ToggleBase",
+        "ToggleSlimBase",
+        "Toggles",
+        "TogglesSlim",
+        "WithLabelAndHintDemo",
+        "WithLabelDemo"
+      ],
+      "internalDependencies": [
+        "@/components/base/toggle/toggle"
+      ]
+    },
+    {
+      "path": "components/base/toggle/toggle.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Toggle",
+        "Toggle.story",
+        "ToggleBase",
+        "ToggleSlimBase",
+        "Toggles",
+        "TogglesSlim"
+      ],
+      "internalDependencies": [
+        "@/components/base/toggle/toggle.demo"
+      ]
+    },
+    {
+      "path": "components/base/tooltip/tooltip.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DefaultDemo",
+        "Tooltip",
+        "Tooltip.demo",
+        "TooltipDemo",
+        "TooltipWithArrow",
+        "TooltipWithArrowSupportingText",
+        "WithArrowDemo",
+        "WithSupportingTextDemo"
+      ],
+      "internalDependencies": [
+        "@/components/base/tooltip/tooltip"
+      ]
+    },
+    {
+      "path": "components/base/tooltip/tooltip.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Tooltip",
+        "Tooltip.story",
+        "TooltipWithArrow",
+        "TooltipWithArrowSupportingText"
+      ],
+      "internalDependencies": [
+        "@/components/base/tooltip/tooltip.demo"
+      ]
+    },
+    {
+      "path": "components/foundations/featured-icon/featured-icon.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "DarkDemo",
+        "DefaultDemo",
+        "FeaturedIcon",
+        "FeaturedIcon.demo",
+        "FeaturedIcons",
+        "FeaturedIconsOutline",
+        "GradientDemo",
+        "LightDemo",
+        "ModernDemo",
+        "ModernNeueDemo",
+        "OutlineDemo"
+      ],
+      "internalDependencies": [
+        "@/components/foundations/featured-icon/featured-icon"
+      ]
+    },
+    {
+      "path": "components/foundations/featured-icon/featured-icon.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "Dark",
+        "FeaturedIcon",
+        "FeaturedIcon.story",
+        "Gradient",
+        "Light",
+        "Modern",
+        "ModernNeue",
+        "Outline"
+      ],
+      "internalDependencies": [
+        "./featured-icon.demo"
+      ]
+    },
+    {
+      "path": "components/foundations/integration-icons/integration-icons.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "IntegrationIcons",
+        "IntegrationIcons.story"
+      ],
+      "internalDependencies": [
+        "@/components/foundations/integration-icons"
+      ]
+    },
+    {
+      "path": "components/foundations/payment-icons/payment-icons.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "PaymentIcons",
+        "PaymentIcons.story"
+      ],
+      "internalDependencies": [
+        "@/components/foundations/payment-icons"
+      ]
+    },
+    {
+      "path": "components/shared-assets/credit-card/credit-card.demo.tsx",
+      "kind": "DEMO",
+      "documents": [
+        "CreditCard",
+        "CreditCard.demo",
+        "CreditCardBrandDark",
+        "CreditCardBrandLight",
+        "CreditCardCustomization",
+        "CreditCardExample",
+        "CreditCardGradientStrip",
+        "CreditCardGradientStripVertical",
+        "CreditCardGrayDark",
+        "CreditCardGrayLight",
+        "CreditCardGrayStrip",
+        "CreditCardGrayStripVertical",
+        "CreditCardSalmonStrip",
+        "CreditCardSalmonStripVertical",
+        "CreditCardSizes",
+        "CreditCardTransparent",
+        "CreditCardTransparentGradient",
+        "CreditCardTransparentStrip"
+      ],
+      "internalDependencies": [
+        "./credit-card"
+      ]
+    },
+    {
+      "path": "components/shared-assets/credit-card/credit-card.story.tsx",
+      "kind": "STORY",
+      "documents": [
+        "CreditCard",
+        "CreditCard.story",
+        "CreditCardStory"
+      ],
+      "internalDependencies": [
+        "./credit-card"
+      ]
+    }
+  ]
+}
