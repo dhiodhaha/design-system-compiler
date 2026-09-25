@@ -37,6 +37,31 @@ The repository already contains a Figma-first Button experiment with a 200-varia
 
 That implementation remains a benchmark while the new reference-first Button becomes the canonical target.
 
+## Browsing what exists
+
+`pnpm dev`, then:
+
+| page | shows |
+| --- | --- |
+| `/catalog.html` | **every component** — all registry items with live previews, search, layer/tier filters and group navigation, plus the PRO compositions and Figma-verified canaries |
+| `/adopted.html` | the adopted official Button specimen (source-owned) |
+| `/parity.html` | rendered output against the recorded Figma reference |
+| `/pro.html` | PRO compositions (Content item, Check item text, Help icon) |
+| `/behavior.html` | behaviour states (hover/focus/disabled) |
+| `/specimen.html`, `/grid.html` | geometry specimen and the Figma-first benchmark matrix |
+
+Machines read the same facts from:
+
+| file | contents |
+| --- | --- |
+| `.design-compiler/catalog.json` | the catalog page's index: 293 items with module, export, tier, status, group, install command (`pnpm catalog:build`) |
+| `.design-compiler/registry/index.json` | authoritative registry index — membership, tier, layer, installability |
+| `.design-compiler/references/untitledui/index.json` | source inventory: exports, kinds, dependencies, Figma name candidates |
+| `.design-compiler/references/untitledui/pro-gap-compile.json` | PRO gap status board |
+| `.design-compiler/report.json` | reconciliation and consistency report |
+
+`pnpm verify:library` reconciles state, runs consistency, rebuilds the catalog (failing if it drifts from the registry index) and runs the full verification chain.
+
 ## Documentation
 
 Start at [docs/README.md](docs/README.md).

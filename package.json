@@ -20,14 +20,15 @@
     "verify:adopted": "pnpm adopt:parity && pnpm adopt:validate && pnpm registry:build",
     "adopt:all": "node compiler/adopt/adopt.mjs --all",
     "state:reconcile": "node compiler/state/reconcile.mjs",
-    "verify:library": "pnpm state:reconcile && node compiler/state/consistency.mjs && pnpm verify",
+    "verify:library": "pnpm state:reconcile && node compiler/state/consistency.mjs && pnpm catalog:build && pnpm verify",
     "report": "node compiler/state/reconcile.mjs",
     "typecheck:app": "tsc --noEmit",
     "typecheck:payload": "node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json",
     "typecheck:pro": "node node_modules/typescript5/bin/tsc -p registry/pro/tsconfig.json",
     "pro:compile": "node compiler/pro/compile.mjs",
     "pro:verify": "node compiler/pro/verify-content-item.mjs",
-    "pro:all": "pnpm pro:compile && pnpm pro:verify"
+    "pro:all": "pnpm pro:compile && pnpm pro:verify",
+    "catalog:build": "node compiler/catalog/build.mjs"
   },
   "dependencies": {
     "@internationalized/date": "3.12.3",

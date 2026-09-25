@@ -1,5 +1,5 @@
 import { fileURLToPath } from "node:url";
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -17,8 +17,9 @@ export default defineConfig({
       resolveId(source) {
         if (!source.startsWith("@/")) return null;
         const payload = fileURLToPath(new URL(`./registry/untitledui/${source.slice(2)}`, import.meta.url));
-        for (const candidate of [payload, `${payload}.tsx`, `${payload}.ts`, `${payload}/index.tsx`, `${payload}/index.ts`]) {
-          if (existsSync(candidate)) return candidate;
+        // files only: returning a directory resolved in dev but broke the production build
+        for (const candidate of [`${payload}.tsx`, `${payload}.ts`, `${payload}/index.tsx`, `${payload}/index.ts`]) {
+          if (existsSync(candidate) && statSync(candidate).isFile()) return candidate;
         }
         return null; // fall through to the `@` -> src alias below
       },
@@ -27,7 +28,7 @@ export default defineConfig({
   server: { host: "127.0.0.1", port: 5173, strictPort: true },
   build: {
     rollupOptions: {
-      input: { index: "index.html", specimen: "specimen.html", grid: "grid.html", behavior: "behavior.html", adopted: "adopted.html", parity: "parity.html", pro: "pro.html" },
+      input: { index: "index.html", specimen: "specimen.html", grid: "grid.html", behavior: "behavior.html", adopted: "adopted.html", parity: "parity.html", pro: "pro.html", catalog: "catalog.html" },
     },
   },
 });
