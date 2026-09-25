@@ -1,541 +1,163 @@
 # Figma Slicing and Variant Compilation
 
-## Why this exists
+## Role after the reference-first pivot
 
-Large Figma component sets can produce enormous metadata responses.
+Figma slicing is still essential, but it is no longer the first semantic strategy when an official reference implementation exists.
 
-The wrong pipeline is:
+Use it for:
+
+- component family discovery;
+- visual rule extraction;
+- supported variant matrix;
+- nested component references;
+- token/layout evidence;
+- Figma-only deltas;
+- components with no usable reference.
+
+Do **not** deep-read a giant component set merely to rediscover behavior already present in a pinned reference contract.
+
+## Reference-backed flow
 
 ```text
-whole component set
-↓
-deep read every descendant
-↓
-65k+ tokens
-↓
-LLM decides what mattered
+reference contract
+        +
+shallow Figma component-set index
+        ↓
+reconcile axes/capabilities
+        ↓
+representative visual reads
+        ↓
+VariantDelta / token rules
+        ↓
+Figma parity
 ```
 
-The correct pipeline is:
+## Fallback flow
+
+When no reference exists:
 
 ```text
 whole component-set URL
 ↓
-cheap structural scan
+shallow discovery
 ↓
-compact ComponentSetIndex
+ComponentSetIndex
 ↓
-deterministic Slice Planner
+family normalization
 ↓
-representative nodes
+axis classification
 ↓
-deep reads only for those nodes
+representative selection
 ↓
-VariantDelta rules
+deep reads only for selected nodes
+↓
+semantic inference + VariantDelta
 ```
 
-The user should be able to copy the whole component set. The project is responsible for slicing it.
+## Shallow index
 
-## 1. Input
-
-A component-set URL is the normal unit of user input.
-
-Example shape:
-
-```text
-https://www.figma.com/design/<file>/<name>?node-id=<component-set-node>
-```
-
-Do not require the user to manually copy:
-
-- default;
-- hover;
-- focus;
-- disabled;
-- loading;
-- every size;
-- every hierarchy;
-- every icon configuration.
-
-## 2. Phase A — shallow discovery
-
-The first fetch should retrieve only enough information to build:
+Capture only what is needed:
 
 - component-set ID/key;
 - variant node IDs;
-- variant property values;
-- shallow dimensions;
-- shallow style signatures when cheap;
-- child count/component references when cheap.
+- variant properties;
+- supported combinations;
+- shallow dimensions/signatures;
+- nested component references;
+- component property definitions;
+- token/style references when cheap.
 
-Output:
+## Family invariant
 
-```json
-{
-  "component": "Button",
-  "axes": {
-    "size": ["xs", "sm", "md", "lg", "xl"],
-    "hierarchy": [
-      "Primary",
-      "Secondary",
-      "Tertiary",
-      "Link color",
-      "Link gray"
-    ],
-    "state": [
-      "Default",
-      "Hover",
-      "Focused",
-      "Disabled",
-      "Loading"
-    ],
-    "iconOnly": [false, true]
-  }
-}
-```
+All variants from one component set remain one `ComponentFamily` by default.
 
-The exact matrix may contain missing combinations. Preserve that fact.
+Slicing selects evidence **inside** a family; it does not create new component identities.
 
-## 3. Phase B — classify axes
+## Representative strategy
 
-Before selecting nodes, classify axes.
-
-Typical classes:
-
-```text
-size
-→ public visual variant
-
-hierarchy
-→ public visual/semantic variant
-
-state=hover
-→ browser/CSS state
-
-state=focused
-→ browser focus-visible state
-
-state=disabled
-→ native runtime state
-
-state=loading
-→ runtime prop/state
-
-icon-only
-→ composition/API decision
-
-destructive
-→ semantic decision such as intent; inspect evidence
-```
-
-If an axis is ambiguous, first use structural evidence and memory. Only use Jev after deterministic evidence is insufficient.
-
-## 4. Phase C — choose a base
-
-Prefer a verified golden specimen when one exists.
+Use one-axis-at-a-time comparisons where possible.
 
 Example:
 
 ```text
-md / Primary / Default / iconOnly=false
+md / Primary / Default
+→ anchor
+
+lg / Primary / Default
+→ size delta
+
+md / Secondary / Default
+→ hierarchy delta
+
+md / Primary / Hover
+→ state visual delta
 ```
 
-If no specimen exists, choose a common/default combination with minimal special behavior.
+If the reference already proves Hover is an interaction state, Figma only needs to supply the visual delta.
 
-The base becomes the comparison anchor.
-
-## 5. Phase D — one-axis-at-a-time representatives
-
-Change one dimension while holding the rest constant.
-
-### Size
-
-```text
-md / Primary / Default / false
-lg / Primary / Default / false
-```
-
-This isolates size delta.
-
-### Hierarchy
-
-```text
-md / Primary / Default / false
-md / Secondary / Default / false
-```
-
-This isolates hierarchy delta.
-
-### State
-
-```text
-md / Primary / Default / false
-md / Primary / Hover / false
-```
-
-This isolates state delta.
-
-### Icon-only
-
-```text
-md / Primary / Default / false
-md / Primary / Default / true
-```
-
-This isolates icon/composition delta.
-
-## 6. Phase E — deep-read representatives
-
-Only representative nodes need full anatomy unless an outlier is found.
-
-A deep read can collect:
-
-- nested children;
-- text styles;
-- icon size;
-- fill/stroke;
-- effects;
-- variable references;
-- component instances;
-- vector geometry when needed;
-- prototype reactions.
-
-Store the result in the raw cache and normalized IR.
-
-## 7. VariantDelta extraction
-
-Compare each representative against the anchor.
-
-Example:
-
-```json
-{
-  "from": "md.primary.default",
-  "to": "lg.primary.default",
-  "changes": [
-    {"property":"height","before":40,"after":44},
-    {"property":"paddingInline","before":14,"after":16},
-    {"property":"fontSize","before":14,"after":16},
-    {"property":"lineHeight","before":20,"after":24}
-  ]
-}
-```
-
-A simple hover might be:
-
-```json
-{
-  "from": "md.primary.default",
-  "to": "md.primary.hover",
-  "changes": [
-    {
-      "property": "background",
-      "before": "Brand/600",
-      "after": "Brand/700"
-    }
-  ]
-}
-```
-
-The compiler can translate many deltas into rules without an LLM.
-
-## 8. Rule compilation
-
-Conceptual output:
-
-```ts
-const buttonVariants = cva(base, {
-  variants: {
-    variant: {
-      primary: "...",
-      secondary: "...",
-      tertiary: "..."
-    },
-    size: {
-      xs: "...",
-      sm: "...",
-      md: "...",
-      lg: "...",
-      xl: "..."
-    }
-  },
-  compoundVariants: [
-    // only when axes interact
-  ]
-})
-```
-
-Figma state becomes CSS/runtime semantics where appropriate rather than a `state` string prop.
-
-## 9. Outlier detection
-
-One-axis deltas may not explain every combination.
+## Outliers
 
 After rules are learned:
 
-1. predict the expected signature of every supported combination;
-2. compare prediction with shallow actual Figma signature;
-3. mark mismatches as outliers;
-4. deep-read only the outliers.
+1. predict signatures for supported variants;
+2. compare against shallow actual signatures;
+3. mark outliers;
+4. deep-read only outliers.
 
-Example:
+## Unsupported combinations
 
-```text
-200 variants
-↓
-188 explained by learned rules
-12 outliers
-↓
-deep-read only 12
-```
+Never fill a missing Cartesian product automatically.
 
-This is preferable to deep-reading all 200.
+Store unsupported combinations explicitly.
 
-## 10. Representative visual tests
+## PRO composition slicing
 
-Use representatives that cover every unique rule.
-
-Example Button coverage:
+For a licensed PRO component/page, prioritize the nested instance graph:
 
 ```text
-primary default base
-small primary
-large primary
-secondary default
-tertiary default
-link color default
-link gray default
-primary hover
-primary focus
-primary disabled
-primary loading
-primary icon-only
+shallow tree
+→ component keys
+→ known mapping lookup
+→ only deep-read unresolved or layout-critical regions
 ```
 
-If a destructive family is separate, validate it as a separate semantic-extension slice.
+Do not deep-read known Button/Input internals again when the nested instance already maps to a verified component.
 
-## 11. Full matrix verification
+## Token/context budget
 
-Once representative cases pass, render every supported combination.
+A large Figma payload is a planning failure if a smaller structural query could answer the question.
 
-This step should use:
+Subagents must receive compact IR, not giant raw trees.
 
-- code generation from the rule matrix;
-- Playwright;
-- screenshots;
-- geometry checks;
-- pixel diff.
+## DeepReadPlan
 
-It should not invoke an LLM for each combination.
+Every expensive read should include:
 
-## 12. Unsupported combinations
-
-A Figma file may omit some permutations.
-
-Do not "complete" the Cartesian product automatically.
-
-Example:
-
-```text
-Link color × Icon only=True
-does not exist
-```
-
-Store:
-
-```text
-unsupported
-```
-
-Possible enforcement:
-
-- TypeScript API narrowing;
-- runtime validation;
-- dev warning;
-- manifest validation.
-
-## 13. Cache strategy
-
-Recommended keys:
-
-```text
-fileKey
-nodeId
-source version/hash
-depth/profile
-geometry mode
-image scale/format
-```
-
-Cache:
-
-- raw shallow set reads;
-- deep representative reads;
-- exported references;
-- normalized IR;
-- token maps.
-
-Do not refetch unchanged data.
-
-## 14. DeepReadPlan
-
-Before expensive retrieval, emit a plan.
+- family/composition identity;
+- node ID;
+- reason;
+- expected new information;
+- whether reference evidence already exists.
 
 Example:
 
 ```json
 {
-  "component": "Button",
-  "deepRead": [
-    {"nodeId":"A","reason":"verified base"},
-    {"nodeId":"B","reason":"size-xl delta"},
-    {"nodeId":"C","reason":"secondary hierarchy delta"},
-    {"nodeId":"D","reason":"hover-state delta"}
-  ],
-  "skipped": 196
-}
-```
-
-The plan is an observability tool and a guard against accidental context explosion.
-
-## 15. Token budget guard
-
-The harness should support a policy such as:
-
-```text
-if estimated Figma response > configured threshold:
-  stop
-  create/refine SlicePlan
-  do not send raw response to model
-```
-
-A giant response should be treated as a planning failure, not as normal operation.
-
-## 16. Relationship to subagents
-
-Subagents do not automatically save total tokens.
-
-Bad:
-
-```text
-Lead avoids 65k
-but Figma Scout consumes 65k
-→ aggregate cost still high
-```
-
-Good:
-
-```text
-Figma extractor/slicer consumes raw machine data
-→ Scout sees 1–3k compact tokens
-→ Planner sees a few hundred lines of IR
-→ Implementer sees only relevant source/deltas
-```
-
-The slice must happen before verbose model context.
-
-## 17. User UX principle
-
-The user should think in design-system units:
-
-```text
-"Process Buttons/Button"
-```
-
-not low-level retrieval units:
-
-```text
-"Here are 97 individual variant URLs"
-```
-
-Manual variant-link copying is a compiler failure.
-
-
-## 18. Family-first slicing invariant
-
-Slicing never means splitting a component set into separate component identities.
-
-Before representative selection:
-
-```text
-all child nodes
-→ attach to one ComponentFamily
-→ then slice variants for evidence
-```
-
-For example:
-
-```text
-Button Default
-Button Hover
-Button Focused
-Button Disabled
-Button Loading
-```
-
-inside the same Figma component set are five specimens/states of one Button family, not five public component candidates.
-
-The Slice Planner operates on:
-
-```text
-ComponentFamily
-  ├── variant specimen A
-  ├── variant specimen B
-  ├── variant specimen C
-  └── ...
-```
-
-and selects the minimum specimens needed to learn reusable rules.
-
-It must preserve the family ID/component-set ID on every slice so downstream workers cannot accidentally reinterpret slices as independent components.
-
-Recommended `DeepReadPlan` field:
-
-```json
-{
-  "family": {
-    "name": "Button",
-    "componentSetId": "3287:427074"
-  },
+  "family": "Button",
+  "referenceContract": "untitledui/button@<sha>",
   "deepRead": [
     {
       "nodeId": "A",
-      "reason": "hover-state delta"
+      "reason": "verify Figma-only focus ring delta"
     }
   ]
 }
 ```
 
-A slice without family provenance must be rejected.
+## Test fixtures
 
+A deep-read placeholder icon may remain a visual fixture.
 
-## 19. Semantic pass after slicing
+It must not become production API automatically.
 
-Slicing finds the minimum visual evidence. It does not define the production component API.
-
-After representative reads and delta extraction, run the semantic component pass:
-
-~~~text
-representative Figma nodes
-↓
-visual deltas
-↓
-anatomy + slots
-↓
-fixture classification
-↓
-behavior/accessibility
-↓
-PublicApiPlan
-~~~
-
-A raw placeholder node can remain in a golden specimen while being represented as a generic production slot.
-
-Therefore:
-
-~~~text
-visual specimen content
-≠ automatically production API
-~~~
-
-See [COMPONENT_SEMANTICS.md](./COMPONENT_SEMANTICS.md).
+See `COMPONENT_SEMANTICS.md`.
