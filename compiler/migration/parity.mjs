@@ -100,11 +100,21 @@ for (const id of cases) {
   const namesOf = (state) => (state?.stateful ?? []).filter((entry) => entry.name).map((entry) => `${entry.role}:${entry.name}`);
   const baseNames = namesOf(testCase.static);
   const candNames = namesOf(current.static);
-  const lostNames = baseNames.filter((name) => !candNames.includes(name));
-  if (lostNames.length) {
-    failures.push({ case: id, class: "ACCESSIBILITY_FAILURE", detail: `accessible names lost: ${JSON.stringify(lostNames)}` });
+  // The regression is a control that HAD a name and now has none. Different non-empty names are a note:
+  // React Aria and Base UI legitimately compute names from different subtrees (React Aria's select
+  // combobox name includes the rendered options, for instance).
+  const namedRoleValue = (entry) => `${entry.role}:${entry.name ? "named" : "unnamed"}`;
+  const baseNamed = new Set((testCase.static?.stateful ?? []).map(namedRoleValue));
+  const candNamed = new Set((current.static?.stateful ?? []).map(namedRoleValue));
+  const unnamedNow = [...baseNamed].filter((key) => key.endsWith(":named") && candNamed.has(key.replace(":named", ":unnamed")));
+  if (unnamedNow.length) {
+    failures.push({ case: id, class: "ACCESSIBILITY_FAILURE", detail: `controls lost their accessible name: ${JSON.stringify(unnamedNow)}` });
   }
-  const addedNames = candNames.filter((name) => !baseNames.includes(name));
+  const differingNames = baseNames.filter((name) => !candNames.includes(name) && candNames.some((other) => other.split(":")[0] === name.split(":")[0]));
+  if (differingNames.length) {
+    notes.push({ case: id, class: "ACCESSIBLE_NAME_DIFFERS", detail: JSON.stringify(differingNames) });
+  }
+  const addedNames = candNames.filter((name) => !baseNames.includes(name) && !differingNames.includes(name));
   if (addedNames.length) {
     notes.push({ case: id, class: "ACCESSIBLE_NAME_ADDED", detail: JSON.stringify(addedNames) });
   }

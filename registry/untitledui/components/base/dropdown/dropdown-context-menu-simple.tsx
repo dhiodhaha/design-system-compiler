@@ -4,17 +4,17 @@
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
 "use client";
 
-import { Button as AriaButton, SubmenuTrigger } from "react-aria-components";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 
 export const DropdownContextMenuSimple = () => (
     <Dropdown.Root trigger="contextMenu">
-        <AriaButton
+        <button
+            type="button"
             aria-label="Open context menu"
             className="flex h-40 w-full max-w-xs cursor-default items-center justify-center rounded-xl border border-dashed border-secondary bg-primary px-6 text-center text-sm text-tertiary outline-focus-ring select-none focus-visible:outline-2 focus-visible:outline-offset-2"
         >
             Right-click anywhere in this area
-        </AriaButton>
+        </button>
 
         <Dropdown.Popover placement="bottom left" className="w-54">
             <Dropdown.Menu>
@@ -31,7 +31,7 @@ export const DropdownContextMenuSimple = () => (
                 </Dropdown.Section>
                 <Dropdown.Separator />
                 <Dropdown.Section>
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item>View details</Dropdown.Item>
                         <Dropdown.Popover placement="right top" offset={-6} className="w-50">
                             <Dropdown.Menu>
@@ -40,7 +40,7 @@ export const DropdownContextMenuSimple = () => (
                                 <Dropdown.Item>Archive</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
                 </Dropdown.Section>
             </Dropdown.Menu>
         </Dropdown.Popover>

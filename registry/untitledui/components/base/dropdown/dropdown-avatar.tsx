@@ -6,8 +6,7 @@
 
 import { useState } from "react";
 import { Container, HelpCircle, LayersTwo01, LogOut01, Moon01, Settings01, User01 } from "@untitledui/icons";
-import type { Selection } from "react-aria-components";
-import { Button as AriaButton, SubmenuTrigger } from "react-aria-components";
+import type { Selection } from "@/components/base/dropdown/dropdown";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
@@ -19,16 +18,15 @@ export const DropdownAvatar = () => {
 
     return (
         <Dropdown.Root>
-            <AriaButton
-                className={({ isPressed, isFocusVisible }) =>
-                    cx(
-                        "group relative inline-flex cursor-pointer rounded-full outline-offset-2 outline-focus-ring",
-                        (isPressed || isFocusVisible) && "outline-2",
-                    )
-                }
+            <button
+                type="button"
+                className={cx(
+                    "group relative inline-flex cursor-pointer rounded-full outline-offset-2 outline-focus-ring",
+                    "active:outline-2 focus-visible:outline-2",
+                )}
             >
                 <Avatar alt="Olivia Rhye" src="https://www.untitledui.com/images/avatars/olivia-rhye?fm=webp&q=80" size="sm" />
-            </AriaButton>
+            </button>
 
             <Dropdown.Popover className="w-60">
                 <div className="flex gap-3 border-b border-secondary p-3">
@@ -59,7 +57,7 @@ export const DropdownAvatar = () => {
                         Changelog
                     </Dropdown.Item>
 
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item icon={HelpCircle}>Support</Dropdown.Item>
 
                         <Dropdown.Popover placement="right top" offset={-6}>
@@ -69,7 +67,7 @@ export const DropdownAvatar = () => {
                                 <Dropdown.Item>Send feedback</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
 
                     <Dropdown.Item icon={Container}>API</Dropdown.Item>
                 </Dropdown.Menu>

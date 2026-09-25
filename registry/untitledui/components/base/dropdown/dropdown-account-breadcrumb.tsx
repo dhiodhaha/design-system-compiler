@@ -6,7 +6,6 @@
 
 import { useState } from "react";
 import { ChevronSelectorVertical } from "@untitledui/icons";
-import { Button as AriaButton, MenuItem as AriaMenuItem } from "react-aria-components";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
@@ -36,13 +35,14 @@ export const DropdownAccountBreadcrumb = () => {
 
     return (
         <Dropdown.Root>
-            <AriaButton
-                className={({ isPressed, isFocusVisible }) =>
-                    cx(
-                        "flex cursor-pointer items-center gap-1.5 rounded-lg outline-0 outline-offset-2 outline-focus-ring",
-                        (isPressed || isFocusVisible) && "outline-2",
-                    )
-                }
+            {/* The trigger is a plain button: Base UI composes the trigger element itself (React Aria's `Button`
+                render props for isPressed/isFocusVisible are the browser's :active/:focus-visible states). */}
+            <button
+                type="button"
+                className={cx(
+                    "flex cursor-pointer items-center gap-1.5 rounded-lg outline-0 outline-offset-2 outline-focus-ring",
+                    "active:outline-2 focus-visible:outline-2",
+                )}
             >
                 <div className="flex rounded-lg bg-primary p-0.5 ring-[0.5px] ring-secondary ring-inset">
                     <Avatar size="xs" src={selectedAccount?.avatar} className="shadow-md" contentClassName="rounded-md before:hidden" />
@@ -50,7 +50,7 @@ export const DropdownAccountBreadcrumb = () => {
                 <span className="text-sm font-semibold text-primary">{selectedAccount?.name}</span>
 
                 <ChevronSelectorVertical className="size-3 shrink-0 stroke-3 text-fg-quaternary" />
-            </AriaButton>
+            </button>
 
             <Dropdown.Popover className="w-62" placement="bottom left">
                 <Dropdown.Menu
@@ -61,7 +61,7 @@ export const DropdownAccountBreadcrumb = () => {
                     className="flex flex-col gap-1 px-1.5 py-1.5"
                 >
                     {accounts.map((account) => (
-                        <AriaMenuItem
+                        <Dropdown.Item unstyled
                             id={account.id}
                             key={account.name}
                             textValue={account.name}
@@ -86,7 +86,7 @@ export const DropdownAccountBreadcrumb = () => {
                                     <RadioButtonBase isSelected={isSelected} className="absolute top-2 right-2" />
                                 </>
                             )}
-                        </AriaMenuItem>
+                        </Dropdown.Item>
                     ))}
                 </Dropdown.Menu>
             </Dropdown.Popover>

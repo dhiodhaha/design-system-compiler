@@ -6,7 +6,6 @@
 
 import type { DetailedReactHTMLElement, HTMLAttributes, ReactNode } from "react";
 import React, { cloneElement, useRef } from "react";
-import { filterDOMProps } from "@react-aria/utils";
 
 interface FileTriggerProps {
     /**
@@ -36,13 +35,17 @@ interface FileTriggerProps {
 }
 
 /**
- * A FileTrigger allows a user to access the file system with any pressable React Aria or React Spectrum component, or custom components built with usePress.
+ * A FileTrigger allows a user to access the file system with any pressable component, or custom components
+ * built with a press layer.
+ *
+ * The trigger is a native `<input type="file">` kept out of the layout; the single child element is cloned
+ * with a click handler that opens the file dialog, which is what gives any pressable element file-picker
+ * behaviour without the element having to know about it.
  */
 export const FileTrigger = (props: FileTriggerProps) => {
     const { children, onSelect, acceptedFileTypes, allowsMultiple, defaultCamera, acceptDirectory, ...rest } = props;
 
     const inputRef = useRef<HTMLInputElement | null>(null);
-    const domProps = filterDOMProps(rest);
 
     // Make sure that only one child is passed to the component.
     const clonableElement = React.Children.only(children);
@@ -61,7 +64,7 @@ export const FileTrigger = (props: FileTriggerProps) => {
         <>
             {mainElement}
             <input
-                {...domProps}
+                {...rest}
                 type="file"
                 ref={inputRef}
                 style={{ display: "none" }}

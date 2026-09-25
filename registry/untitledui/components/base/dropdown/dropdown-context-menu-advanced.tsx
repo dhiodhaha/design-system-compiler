@@ -6,8 +6,7 @@
 
 import { useState } from "react";
 import { ArrowNarrowLeft, ArrowNarrowRight, Code02, Copy01, Cube01, Download01, Edit04, RefreshCcw02, Scissors01, Star01 } from "@untitledui/icons";
-import type { Selection } from "react-aria-components";
-import { Button as AriaButton, SubmenuTrigger } from "react-aria-components";
+import type { Selection } from "@/components/base/dropdown/dropdown";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
 
@@ -22,12 +21,13 @@ export const DropdownContextMenuAdvanced = () => {
 
     return (
         <Dropdown.Root trigger="contextMenu">
-            <AriaButton
+            <button
+                type="button"
                 aria-label="Open context menu"
                 className="flex h-40 w-full max-w-xs cursor-default items-center justify-center rounded-xl border border-dashed border-secondary bg-primary px-6 text-center text-sm text-tertiary outline-focus-ring select-none focus-visible:outline-2 focus-visible:outline-offset-2"
             >
                 Right-click anywhere in this area
-            </AriaButton>
+            </button>
 
             <Dropdown.Popover placement="bottom left" className="w-60">
                 <Dropdown.Menu selectionMode="none">
@@ -62,11 +62,11 @@ export const DropdownContextMenuAdvanced = () => {
                     <Dropdown.Separator />
 
                     <Dropdown.Section>
-                        <SubmenuTrigger>
+                        <Dropdown.Submenu>
                             <Dropdown.Item icon={Cube01}>More tools</Dropdown.Item>
                             <Dropdown.Popover placement="right top" offset={-6} className="w-50">
                                 <Dropdown.Menu selectionMode="none">
-                                    <SubmenuTrigger>
+                                    <Dropdown.Submenu>
                                         <Dropdown.Item icon={Download01}>Save as</Dropdown.Item>
                                         <Dropdown.Popover placement="right top" offset={-6} className="w-50">
                                             <Dropdown.Menu selectionMode="none">
@@ -75,7 +75,7 @@ export const DropdownContextMenuAdvanced = () => {
                                                 <Dropdown.Item>Markdown</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown.Popover>
-                                    </SubmenuTrigger>
+                                    </Dropdown.Submenu>
                                     <Dropdown.Item addon="⌘X" icon={Scissors01}>
                                         Cut
                                     </Dropdown.Item>
@@ -85,7 +85,7 @@ export const DropdownContextMenuAdvanced = () => {
 
                                     <Dropdown.Separator />
 
-                                    <SubmenuTrigger>
+                                    <Dropdown.Submenu>
                                         <Dropdown.Item icon={Code02}>Developer</Dropdown.Item>
                                         <Dropdown.Popover placement="right top" offset={-6} className="w-50">
                                             <Dropdown.Menu selectionMode="none">
@@ -94,10 +94,10 @@ export const DropdownContextMenuAdvanced = () => {
                                                 <Dropdown.Item>Inspect elements</Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown.Popover>
-                                    </SubmenuTrigger>
+                                    </Dropdown.Submenu>
                                 </Dropdown.Menu>
                             </Dropdown.Popover>
-                        </SubmenuTrigger>
+                        </Dropdown.Submenu>
                     </Dropdown.Section>
                 </Dropdown.Menu>
             </Dropdown.Popover>

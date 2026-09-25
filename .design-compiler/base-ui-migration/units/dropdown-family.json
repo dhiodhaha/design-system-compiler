@@ -1,0 +1,228 @@
+{
+  "unit": "dropdown-family",
+  "matrixItems": ["dropdown-menu"],
+  "files": [
+    "registry/untitledui/components/base/dropdown/dropdown.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-account-breadcrumb.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-account-button.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-account-card-md.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-account-card-sm.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-account-card-xs.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-avatar.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-button-advanced.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-button-link.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-button-simple.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-context-menu-advanced.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-context-menu-simple.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-icon-advanced.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-icon-simple.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-integration.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-search-advanced.tsx",
+    "registry/untitledui/components/base/dropdown/dropdown-search-simple.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "scopeNote": "The 16 files named by the unit plus dropdown-integration.tsx (same directory, same public API). The namespace has 21 downstream registry items; the two consumers outside the directory (application/table table.tsx TableRowActionsDropdown, application/app-navigation header-navigation.tsx which imports DropdownAccountButton) compile against the unchanged namespace and were verified against it by typecheck.",
+  "baseUiPrimitives": [
+    {
+      "primitive": "menu",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/menu.json",
+        ".design-compiler/base-ui-migration/docs/use-render.json",
+        "node_modules/@base-ui/react/docs/react/components/menu.md",
+        "node_modules/@base-ui/react/menu/{root,trigger,portal,positioner,popup,item,link-item,checkbox-item,radio-group,radio-item,group,group-label,separator,submenu-root,submenu-trigger}/**.d.ts",
+        "node_modules/@base-ui/react/menu/{root/MenuRoot,trigger/MenuTrigger,popup/MenuPopup,positioner/MenuPositioner,item/MenuItem,item/useMenuItemCommonProps,radio-group/MenuRadioGroup,radio-item/MenuRadioItem,submenu-root/MenuSubmenuRoot}/**.mjs",
+        "node_modules/@base-ui/react/internals/{useRenderElement,useTransitionStatus,getStateAttributesProps}.mjs + utils/popupStateMapping.mjs (data-open/data-ending-style/data-side/data-highlighted/data-checked/data-disabled)"
+      ],
+      "semanticDifferences": [
+        "Base UI splits React Aria's single `MenuItem` into one part per behaviour (Item/RadioItem/CheckboxItem/LinkItem/SubmenuTrigger). `Dropdown.Item` picks the part from the consumer props: a submenu trigger context, `href`, then the collection's resolved selection mode.",
+        "React Aria kept selection on the collection (`selectedKeys`/`onSelectionChange` at Menu and Section level); Base UI has a `RadioGroup`+`RadioItem` pair for single selection and independent `CheckboxItem`s for multiple. A selection-owner context in dropdown.tsx keeps the React Aria props as the public API and derives the per-item part from them; sections that declare `selectionMode` own their state exactly as React Aria's `GroupSelectionManager` did, sections that do not share the menu's selection.",
+        "`CheckboxItem`/`RadioItem` default `closeOnClick` to false, React Aria closes a single-select menu on selection, so `closeOnClick` is passed explicitly (true for single, false for multiple, true for plain items) to keep the close behaviour identical.",
+        "Base UI has no `onAction`; item activation is `onClick`. `onAction`/`onPress`/`onClick` are all accepted and invoked from one handler.",
+        "`isDisabled` maps to Base UI's `disabled`; Base UI emits only `data-disabled`, so `aria-disabled=\"true\"` is added explicitly to keep React Aria's a11y surface. Base UI's roving focus still lands on a disabled item (it cannot be activated: Enter/click are ignored), whereas React Aria skipped it — the highlight styling is suppressed for disabled items so the visual result matches the baseline.",
+        "React Aria's typeahead text override is `textValue`, Base UI's is `label`: `textValue ?? label` is passed so typeahead matches the same strings (verified: `Dropdown.Menu`/items in every demo keep their text overrides).",
+        "The menu role lives on the menu box inside Base UI's popup, not on the popup: Base UI's popup also contains the content a consumer renders beside the menu (search fields, footers) and axe flags non-menu children of `role=\"menu\"`. `Dropdown.Popover` therefore clears the popup's own role/aria-labelledby and `Dropdown.Menu` renders `role=\"menu\"` + `aria-label`/`aria-labelledby` (defaulting to the trigger id, which `Dropdown.Root` generates and passes to the trigger) — the DOM React Aria produced.",
+        "Base UI's popup keeps `data-open`/`data-ending-style` for the whole enter/exit phase (`data-starting-style` lasts a frame), which is what React Aria's `data-entering`/`data-exiting` meant; the popover's animation classes are driven from the popup state instead of render props.",
+        "Submenus are explicit parts: `Dropdown.Submenu` = `Menu.SubmenuRoot` and the `Dropdown.Item` it wraps renders `Menu.SubmenuTrigger` (delay/closeDelay forwarded, React Aria's 200 ms hover delay is the default). A submenu trigger cannot also be a checkbox/radio item in Base UI: such an item keeps its selection *state* (indicator shows React Aria's `isSelected && hasSubmenu` = indeterminate) but only opens the submenu, and it carries `role=\"menuitem\"` without `aria-checked` (React Aria announced it as a checked menuitemcheckbox)."
+      ]
+    },
+    {
+      "primitive": "context-menu",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/context-menu.json",
+        "node_modules/@base-ui/react/docs/react/components/context-menu.md",
+        "node_modules/@base-ui/react/context-menu/**/*.d.ts + root/ContextMenuRoot.mjs + trigger/ContextMenuTrigger.mjs"
+      ],
+      "semanticDifferences": [
+        "React Aria's `MenuTrigger trigger=\"contextMenu\"` opens on right click and anchors the popover at the pointer position (react-aria stores the press point as a virtual element). Base UI's `ContextMenu.Root` also anchors at the pointer by default, so the recorded geometry is unchanged; `placement` still maps to side/align and the context-menu default `align: 'start'` matches React Aria's removed aria-haspopup/aria-expanded behaviour.",
+        "Base UI's context menu Trigger renders an area and emits data-popup-open/data-pressed, and — like React Aria's context-menu trigger — adds no aria-haspopup/aria-expanded (verified on the migrated trigger)."
+      ]
+    },
+    {
+      "primitive": "autocomplete",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/autocomplete.json",
+        "node_modules/@base-ui/react/docs/react/components/autocomplete.md",
+        "node_modules/@base-ui/react/autocomplete/index.parts.d.ts + internals/filter.js (getFilter, exposed as Autocomplete.useFilter)"
+      ],
+      "semanticDifferences": [
+        "Only the filter matcher is reused: Base UI's `Autocomplete` is a full combobox with its own Portal/Positioner/Popup, no selection state and `Autocomplete.Item` rows, so it cannot replace a checkbox menu that already lives inside the dropdown's popup. The two search demos therefore keep `Dropdown.Menu` and filter their items locally with Base UI's filter (`Autocomplete.useFilter()` = the same `Intl.Collator` matcher React Aria's `useFilter` used, `contains` with the same base sensitivity).",
+        "Matching runs against each item's `textValue` (as React Aria's collection filter did) so typed queries select the same rows — including dropdown-search-advanced's upstream textValue/label mismatch, which is preserved.",
+        "React Aria's Autocomplete also moved focus from the search field into the filtered list with ArrowDown and cleared the query on Escape before closing; both are reproduced in the two files (verified in a browser)."
+      ]
+    }
+  ],
+  "migrationRecord": {
+    "publicComponent": "Dropdown (Root, Popover, Menu, Section, SectionHeader, Item, Separator, DotsButton) + Dropdown.Submenu",
+    "existingUntitledUiBehavior": "Dropdown.Root was React Aria's MenuTrigger: the first child is the trigger element (a Button, a DotsButton or a raw AriaButton) and the second is the overlay; `trigger=\"contextMenu\"` opened it on right click. Dropdown.Popover was an AriaPopover defaulting to `placement=\"bottom right\"` with the popover box styling and the enter/exit animations. Dropdown.Menu was an AriaMenu wrapping a role=menu box inside that popover, owning selectionMode/selectedKeys/onSelectionChange; Dropdown.Section was an AriaMenuSection with the same selection props plus a Header; Dropdown.Item was an AriaMenuItem with label/addon/icon/avatarUrl/unstyled/selectionIndicator props and render-prop className/children; Dropdown.Separator was an AriaSeparator; Dropdown.DotsButton was an AriaButton with an aria-label and state-driven hover/pressed/focus classes. Submenus used React Aria's SubmenuTrigger around an Item + Popover.",
+    "canonicalBehavioralContract": "A trigger element that opens a portaled menu on press (or on right click for the context-menu flavour); the menu carries role=menu, is named by the trigger (or its own aria-label) and holds items with role menuitem/menuitemradio/menuitemcheckbox; keyboard: first item focused on open, ArrowUp/ArrowDown roving highlight, Home/End, typeahead, Escape closes and returns focus to the trigger; submenus open on hover/ArrowRight with their own menu, and Escape closes only the child menu; selection is controlled either by the menu or by a section (single => radio semantics + close on select, multiple => checkbox semantics + stay open); the popover is placement-driven, portaled, animated on enter and exit, and content rendered beside the menu (search fields, footers) stays inside the popover.",
+    "baseUiCompositionChosen": "Dropdown.Root = Menu.Root (or ContextMenu.Root for trigger=\"contextMenu\") with the first child rendered through Trigger's `render` prop; Dropdown.Popover = Menu.Portal > Menu.Positioner (side/align/sideOffset/alignOffset/collisionPadding/collisionAvoidance from the React Aria placement/offset/crossOffset/containerPadding/shouldFlip props) > Menu.Popup (the popover box, role cleared); Dropdown.Menu = the role=menu box with the selection context, wrapping its items in Menu.RadioGroup when the menu itself is single-select; Dropdown.Section = Menu.Group, or Menu.RadioGroup when the section declares selectionMode=\"single\"; Dropdown.SectionHeader = Menu.GroupLabel; Dropdown.Item = Menu.Item | Menu.RadioItem | Menu.CheckboxItem | Menu.LinkItem | Menu.SubmenuTrigger chosen from props/context; Dropdown.Separator = Menu.Separator; Dropdown.Submenu = Menu.SubmenuRoot; Dropdown.DotsButton = a native button composed as the trigger.",
+    "whyNotOneToOne": "React Aria's trigger/popover/menu triple must be unrolled into Base UI's explicit parts (Root + Trigger + Portal/Positioner/Popup), and React Aria's single MenuItem + collection-level selection state has to be re-expressed as five Base UI item parts plus a RadioGroup/CheckboxItem split, which is why dropdown.tsx carries a selection-owner context rather than a 1:1 prop map. The popover box and the menu box also had to stay two elements (the payload stacks backgrounds on both, e.g. dropdown-account-button's bg-secondary_alt popover around a bg-primary menu) while Base UI merges the menu role into its popup — hence the role is moved onto the menu box."
+  },
+  "publicApiChanges": [
+    {
+      "prop": "Dropdown.Submenu (new namespace member)",
+      "before": "no equivalent — the 12 sibling files imported `SubmenuTrigger` from react-aria-components around an Item + Popover",
+      "after": "Dropdown.Submenu takes the same two children (the trigger `Dropdown.Item` first, then its `Dropdown.Popover`) and forwards delay/closeDelay/isOpen/defaultOpen/onOpenChange",
+      "reason": "Base UI nests submenus through explicit SubmenuRoot/SubmenuTrigger parts and the React Aria import had to go.",
+      "migrationNote": "Additive; consumers that compose their own submenu can use it with the same child shape they used for React Aria's SubmenuTrigger.",
+      "compatibility": "additive"
+    },
+    {
+      "prop": "Selection / SelectedKeys / SelectionMode / Key / DropdownPlacement / DropdownItemState / DropdownMenuState / DropdownPopoverState",
+      "before": "the sibling files imported `Selection` from react-aria-components; the other types were not exported",
+      "after": "exported from dropdown.tsx (Selection is React Aria's `\"all\" | Set<Key>`, SelectedKeys is `\"all\" | Iterable<Key>`)",
+      "reason": "react-aria-components may no longer be imported for the family's types.",
+      "migrationNote": "Type-only, additive; `Selection` keeps React Aria's exact shape so `keys.keys().toArray()` in dropdown-button-link.tsx and `useState<Selection>(new Set([...]))` in the siblings still compile.",
+      "compatibility": "unchanged"
+    },
+    {
+      "prop": "Dropdown.Item accepted props",
+      "before": "React Aria `MenuItemProps`: RenderProps (className/children functions), LinkDOMProps (href), HoverEvents (onHoverStart/End/Change), FocusEvents (onFocus/onBlur/onFocusChange), PressEvents (onPress/onPressStart/onPressUp/onPressEnd/onPressChange), `aria-*`, any DOM attribute, `value`",
+      "after": "the declared props (id, label, addon, unstyled, icon, avatarUrl, selectionIndicator, isDisabled/disabled, textValue, onAction, href, shouldCloseOnSelect/closeOnClick, onPress, onClick, className string|function, children node|function, aria-label, style, data-*)",
+      "reason": "Base UI's parts type their own DOM surface; the unused React Aria event set was dropped rather than re-declared.",
+      "migrationNote": "Every prop any in-repo call site passes is declared (verified by typecheck across the 16 files plus the two consumers outside the directory). `onHoverStart`/`onFocusChange`-style hooks are gone; no call site used them.",
+      "compatibility": "compile-time narrowing (unused props only)"
+    },
+    {
+      "prop": "Dropdown.Item className/children render-prop state",
+      "before": "{ isSelected, isDisabled, isPressed, isFocused, isFocusVisible, hasSubmenu, isOpen, selectionMode }",
+      "after": "same shape; `isPressed` is always false (Base UI exposes no item press state) and `isFocusVisible` is always false (Base UI focuses the item element itself)",
+      "reason": "Base UI's item state is {disabled, highlighted(, checked, open)}.",
+      "migrationNote": "Both fields are kept for type compatibility; CSS should use `:focus-visible` on the item and `:active`-style hooks instead (the family's own markup does). The live fields — isSelected, isDisabled, isFocused, hasSubmenu, isOpen, selectionMode — are all accurate.",
+      "compatibility": "two state fields become inert"
+    },
+    {
+      "prop": "Dropdown.DotsButton className",
+      "before": "string | ((state: { isPressed, isHovered, isFocusVisible }) => string)",
+      "after": "unchanged (the function form is still supported)",
+      "reason": "React Aria exposed those states as render props; the states are now tracked from pointer/keyboard/focus events on the button.",
+      "migrationNote": "Verified in a browser: the dots button reports hovered/pressed/focus-visible as before (the classes it derives from them are unchanged), and Base UI adds data-popup-open/data-pressed to the element for CSS consumers.",
+      "compatibility": "unchanged"
+    },
+    {
+      "prop": "Dropdown.Popover placement",
+      "before": "React Aria placement strings, defaults to \"bottom right\", physical left/right for sides and alignments",
+      "after": "same strings and default; `start`/`end` map to Base UI's logical inline sides, and the alignment tokens left/right map to Base UI's start/end",
+      "reason": "Base UI positions with side+align and has no physical alignment tokens.",
+      "migrationNote": "Side mapping keeps physical left/right (left => side left, right => side right); only the cross-axis alignment follows the logical edge Base UI supports, i.e. `left`/`right` align behave as start/end in RTL instead of physical edges — no in-repo call site depends on RTL physical alignment.",
+      "compatibility": "behaviour change for RTL physical alignment only"
+    },
+    {
+      "prop": "Dropdown.Menu props not carried over",
+      "before": "React Aria `MenuProps` extras: items/dynamic collections, function children, renderEmptyState, autoFocus, shouldFocusWrap, onClose, selectionBehavior, `value`/`onAction` on items",
+      "after": "not accepted",
+      "reason": "Base UI menus are not collection components (children are rendered directly) and none of these were used by any of the 21 downstream items.",
+      "migrationNote": "Recorded so the gap is explicit; a consumer that needs a dynamic collection maps its array before rendering items.",
+      "compatibility": "compile-time removal of unused props"
+    },
+    {
+      "prop": "Dropdown.Menu aria-label / aria-labelledby",
+      "before": "landed on React Aria's role=menu element, which also defaulted to aria-labelledby=<trigger id>",
+      "after": "identical: the role=menu box inside the popup carries both, with the trigger id generated by Dropdown.Root",
+      "reason": "Base UI puts role=menu on the popup, which also holds non-menu content.",
+      "migrationNote": "Verified in a browser: the harness menu reports aria-label=\"Actions\" and aria-labelledby=<trigger id>, matching the React Aria baseline's accessible name.",
+      "compatibility": "unchanged"
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "dropdown.tsx: react-aria-components {ButtonProps as AriaButtonProps, MenuItemProps as AriaMenuItemProps, MenuProps as AriaMenuProps, PopoverProps as AriaPopoverProps, SeparatorProps as AriaSeparatorProps, MenuItemRenderProps} + {Button as AriaButton, Header as AriaHeader, Menu as AriaMenu, MenuItem as AriaMenuItem, MenuSection as AriaMenuSection, MenuTrigger as AriaMenuTrigger, Popover as AriaPopover, Separator as AriaSeparator}",
+    "dropdown-account-breadcrumb.tsx: {Button as AriaButton, MenuItem as AriaMenuItem}",
+    "dropdown-account-button.tsx / dropdown-account-card-md|sm|xs.tsx / dropdown-avatar.tsx / dropdown-button-advanced.tsx / dropdown-icon-advanced.tsx: {Button as AriaButton, SubmenuTrigger} + type {Selection}",
+    "dropdown-button-link.tsx: {Button as AriaButton}",
+    "dropdown-button-simple.tsx / dropdown-icon-simple.tsx: {SubmenuTrigger}",
+    "dropdown-context-menu-simple.tsx / dropdown-context-menu-advanced.tsx: {Button as AriaButton, SubmenuTrigger} (+ type {Selection} in the advanced file)",
+    "dropdown-search-simple.tsx / dropdown-search-advanced.tsx: {Autocomplete, SearchField, useFilter} (+ SubmenuTrigger, type {Selection} in the advanced file)"
+  ],
+  "baseUiImportsAdded": ["@base-ui/react/menu (dropdown.tsx and every sibling through the Dropdown namespace)", "@base-ui/react/context-menu (dropdown.tsx, for trigger=\"contextMenu\")", "@base-ui/react/autocomplete (the two search demos, for the filter matcher)"],
+  "stateSelectorChanges": [
+    {
+      "from": "placement-right|placement-top|placement-bottom:* (popover enter/exit slide, React Aria's Tailwind variants)",
+      "to": "computed slide-in-from-* / slide-out-to-* classes selected from the resolved side (SLIDE_IN_BY_SIDE/SLIDE_OUT_BY_SIDE) inside the popup's className function",
+      "reason": "Base UI emits data-side (not data-placement), and the React Aria variant plugin's placement-* variants only match data-placement. The className function already receives the popup state, so the slide is chosen from the same side token the Positioner is given (including inline-start/inline-end)."
+    },
+    {
+      "from": "state.isEntering && 'duration-150 ease-out animate-in fade-in' / state.isExiting && 'duration-100 ease-in animate-out fade-out'",
+      "to": "state.open && ... / state.transitionStatus === 'ending' && ...",
+      "reason": "React Aria kept data-entering for the whole enter animation; Base UI's data-starting-style exists for a single frame, so the enter animation hangs off data-open (present for the whole open phase) and the exit off data-ending-style (present until the popup unmounts). Measured: enter animation 'enter' runs on open, exit unmounts 123 ms (Escape) / 159 ms (trigger click) after close."
+    },
+    {
+      "from": "origin-(--trigger-anchor-point)",
+      "to": "origin-(--transform-origin)",
+      "reason": "Base UI sets --transform-origin on the Positioner (the custom property inherits into the popup). Only affects scale/rotate animations; the dropdown popovers use fade+slide."
+    },
+    {
+      "from": "item state.isDisabled && 'cursor-not-allowed opacity-50'",
+      "to": "data-disabled:cursor-not-allowed data-disabled:opacity-50",
+      "reason": "Base UI emits data-disabled on the item element itself."
+    },
+    {
+      "from": "(!state.isDisabled && 'group-hover:bg-primary_hover') + (state.isFocused && 'bg-primary_hover')",
+      "to": "!state.isDisabled && 'in-data-highlighted:bg-primary_hover'",
+      "reason": "Base UI sets data-highlighted on the item element for both hover (highlightItemOnHover defaults true) and keyboard navigation, so one ancestor-attribute variant replaces the hover/focus pair; the inner box is the styled element, hence `in-`. Verified in a browser: highlighted items get oklch(0.985 0 none), a hovered disabled item keeps a transparent background."
+    },
+    {
+      "from": "state.isFocusVisible && 'outline-2 -outline-offset-2' (inner item box)",
+      "to": "in-focus-visible:outline-2 in-focus-visible:-outline-offset-2",
+      "reason": "Base UI moves real DOM focus onto the item element, so :focus-visible on that element is the live signal and the styled box is its child."
+    },
+    {
+      "from": "state.isFocused && 'text-secondary_hover' (item label)",
+      "to": "in-data-highlighted:text-secondary_hover",
+      "reason": "Same highlight state, read from the item ancestor."
+    },
+    {
+      "from": "trigger render-prop classNames: ({isPressed, isFocusVisible}) / ({isPressed, isFocused}) => ... outline-2",
+      "to": "'active:outline-2 focus-visible:outline-2' (focus-visible flavour) or 'active:outline-2 focus:outline-2' (focused flavour) on the native trigger buttons",
+      "reason": "The React Aria Button instances used as triggers became native buttons composed through Base UI's trigger `render` prop; the plugin's active/focus/focus-visible variants fall back to the native pseudo-classes on elements without data-rac, which is what React Aria's isPressed/isFocusVisible/isFocused meant."
+    },
+    {
+      "from": "DotsButton: (state.isPressed || state.isHovered) && 'text-fg-quaternary_hover', (state.isPressed || state.isFocusVisible) && 'outline-2 outline-offset-2'",
+      "to": "unchanged class logic, driven by tracked isHovered/isPressed/isFocusVisible state + data-popup-open (Base UI adds it while the menu is open)",
+      "reason": "The dots button is the trigger element, so its state arrives as DOM events rather than render props; the consumer-facing className function still receives the same state object."
+    },
+    {
+      "from": "(no RAC variant was dead in these files — all item state came from render props; the audit's placement-* entries were the only class-level variants)",
+      "to": "(none)",
+      "reason": "Recorded for the phase-7 audit: dropdown.tsx no longer contains any placement-*/selected:/open:/expanded: variant; the family's only attribute variants are Base UI's own (data-disabled, in-data-highlighted, in-focus-visible, data-popup-open)."
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "crossUnitNotes": [
+    "application/table table.tsx (TableRowActionsDropdown) and application/app-navigation header-navigation.tsx (DropdownAccountButton) consume the namespace/one sibling; both typecheck against the migrated API. table.tsx still has its own `selected:bg-secondary` variant on a TableRow (not a dropdown concern).",
+    "The family renders ../avatar, ../checkbox (CheckboxBase), ../radio-buttons (RadioButtonBase) and ../toggle (ToggleBase) with their existing `isSelected`/`isIndeterminate` props; those primitives were not touched."
+  ],
+  "evidence": {
+    "typecheck": "pass",
+    "notes": [
+      "node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json -> 0 errors in the whole payload (including every consumer of the preserved API).",
+      "Browser verification through the real app (vite dev server, migration.html harness + catalog.html): harness dropdown case — trigger gets aria-haspopup=\"menu\"/aria-expanded and an id, menu opens with role=menu, aria-label \"Actions\" and aria-labelledby=<trigger id>, first item focused, ArrowDown moves the highlight item by item, Escape closes (200 ms exit, unmounts at 123 ms) and returns focus to the trigger; zero console errors or warnings.",
+      "All 16 demos rendered, opened their menus and reported a named menu (sweep over catalog.html): account-breadcrumb (menuitemradio + aria-checked, selecting Sienna updates the trigger and closes the menu), account-button / account-card-* (groups + radiogroup sections + separators; Switch Account radios checked correctly; SectionHeader renders with the consumer's own classes and labels its group), avatar, button-simple/advanced (multiple selection toggles and keeps the menu open), button-link (single-select section with an array `selectedKeys`: choosing \"Can view\" updates the trigger label and closes), context-menu-simple/advanced (right click opens at the pointer: menu rect x/y == pointer x/y, side=bottom align=start), icon-simple/advanced, integration, search-simple/advanced (typing filters by textValue with the same `contains` semantics, selected rows stay checked, Escape clears the query without closing, ArrowDown moves focus into the list), nested submenus (2 and 3 levels deep) open on hover with side=right.",
+      "axe-core (wcag2a, wcag2aa, wcag21a, wcag21aa) on the harness page with the menu open and on the catalog's selection menus: no new violations (only the pre-recorded slider `label`, nav-account-card `button-name`/`image-alt`, plus the catalog's avatar `image-alt` which comes from the untouched `alt={label}` expression that the React Aria build also rendered).",
+      "Documented gaps (not blockers): Base UI's roving focus still lands on a disabled item (it cannot be activated; highlight styling is suppressed for it), a submenu trigger is a plain menuitem without aria-checked, `isPressed`/`isFocusVisible` in the item render-prop state are inert, and `placement` alignment tokens are logical rather than physical in RTL."
+    ]
+  }
+}

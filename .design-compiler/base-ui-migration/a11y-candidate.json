@@ -12,7 +12,7 @@
         "impact": "critical",
         "description": "Form elements must have labels",
         "nodes": [
-          "<input tabindex=\"0\" id=\"react-aria9222058451-_r_38_-0\" aria-labelledby=\"react-aria9222058451-_r_39_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+          "<input aria-orientation=\"horizontal\" aria-valuenow=\"30\" aria-valuetext=\"3,000%\" id=\"base-ui-_r_34_\" max=\"100\" min=\"0\" step=\"1\" type=\"range\" value=\"30\" style=\"cl"
         ]
       }
     ],
@@ -22,7 +22,7 @@
         "impact": "critical",
         "description": "Form elements must have labels",
         "nodes": [
-          "<input tabindex=\"0\" id=\"react-aria9222058451-_r_3e_-0\" aria-labelledby=\"react-aria9222058451-_r_3f_\" min=\"0\" max=\"100\" step=\"1\" aria-orientation=\"horizontal\" ar"
+          "<input aria-orientation=\"horizontal\" aria-valuenow=\"30\" aria-valuetext=\"3,000%\" id=\"base-ui-_r_38_\" max=\"100\" min=\"0\" step=\"1\" type=\"range\" value=\"30\" style=\"cl"
         ]
       }
     ],
@@ -32,7 +32,7 @@
         "impact": "critical",
         "description": "Buttons must have discernible text",
         "nodes": [
-          "<button class=\"absolute top-2 right...\" data-rac=\"\" type=\"button\" tabindex=\"0\" aria-expanded=\"false\" id=\"react-aria9222058451...\" data-react-aria-pres...=\"true\""
+          "<button type=\"button\" tabindex=\"0\" data-base-ui-click-t...=\"\" id=\"base-ui-_r_4d_\" aria-haspopup=\"dialog\" aria-expanded=\"false\" class=\"absolute top-2 right...\">"
         ]
       },
       {

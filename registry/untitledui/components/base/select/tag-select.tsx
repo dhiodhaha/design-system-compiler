@@ -1,54 +1,82 @@
 /* Adopted from untitleduico/react@8b7409c078f8 — components/base/select/tag-select.tsx
  * MIT licensed upstream source (Copyright (c) 2025 Untitled UI).
  * Adopted with the smallest necessary project-local transformations; deltas are recorded in
- * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
+ * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs.
+ *
+ * Base UI migration (branch migration/base-ui-v1.8): React Aria's `ComboBox`/`Group`/`Input`/`ListBox` plus its
+ * `useListData`/`useFilter`/`useFocusManager` helpers are replaced by `@base-ui/react@1.8.0`'s Combobox in
+ * `multiple` mode (Root > InputGroup(Input) > Portal > Positioner > Popup > List) wrapped in `Field.Root`. The
+ * consumer's `selectedItems` list stays the source of truth (Base UI's value is controlled from it, and the
+ * added/removed diff drives `selectedItems.append`/`remove` and the `onItemInserted`/`onItemCleared` callbacks),
+ * the already-selected items are filtered out locally while Base UI matches the query, and the payload's own
+ * tag/chip markup and focus traversal are kept — the unit record is
+ * .design-compiler/base-ui-migration/units/select-family.json. */
 "use client";
 
-import type { FocusEventHandler, KeyboardEvent, PointerEventHandler, RefAttributes, RefObject } from "react";
-import React, { createContext, useCallback, useContext, useRef, useState } from "react";
+import { Combobox as BaseCombobox, type ComboboxInputGroupState, type ComboboxRootChangeEventDetails } from "@base-ui/react/combobox";
+import { Field } from "@base-ui/react/field";
+import type { ComponentPropsWithoutRef, CSSProperties, KeyboardEvent, ReactNode, RefAttributes } from "react";
+import { createContext, useContext, useMemo, useRef, useState } from "react";
 import { SearchLg } from "@untitledui/icons";
-import { FocusScope, useFilter, useFocusManager } from "react-aria";
-import type { ComboBoxProps as AriaComboBoxProps, GroupProps as AriaGroupProps, ListBoxProps as AriaListBoxProps, Key } from "react-aria-components";
-import { ComboBox as AriaComboBox, Group as AriaGroup, Input as AriaInput, ListBox as AriaListBox, ComboBoxStateContext } from "react-aria-components";
-import type { ListData } from "react-stately";
-import { useListData } from "react-stately";
 import { Avatar } from "@/components/base/avatar/avatar";
 import type { IconComponentType } from "@/components/base/badges/badge-types";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
-import { Popover } from "@/components/base/select/popover";
+import { popoverPopupClassName, popoverPositionerProps } from "@/components/base/select/popover";
 import { SelectContext, type SelectItemType, sizes } from "@/components/base/select/select-shared";
 import { TagCloseX } from "@/components/base/tags/base-components/tag-close-x";
-import { useResizeObserver } from "@/hooks/use-resize-observer";
 import { cx } from "@/utils/cx";
 import { SelectItem } from "./select-item";
 
-interface TagSelectValueProps extends AriaGroupProps {
+/** React Aria's `Key`: the identity of an item. */
+type Key = string | number;
+
+/**
+ * The subset of react-stately's `ListData<SelectItemType>` this component drives: it reads the selected items and
+ * appends/removes as the selection changes. A `useListData()` result satisfies it as-is.
+ */
+interface TagSelectListData<T> {
+    readonly items: T[];
+    append(...items: T[]): void;
+    remove(...keys: Key[]): void;
+    getItem(key: Key): T | undefined;
+    setFilterText(filterText: string): void;
+    readonly filterText: string;
+}
+
+interface TagSelectValueProps
+    extends Omit<ComponentPropsWithoutRef<typeof BaseCombobox.InputGroup>, "className" | "style" | "children" | "render">,
+        RefAttributes<HTMLDivElement> {
     size: "sm" | "md" | "lg";
     shortcut?: boolean;
     isDisabled?: boolean;
     placeholder?: string;
     shortcutClassName?: string;
     icon?: IconComponentType | null;
-    ref?: RefObject<HTMLDivElement | null>;
-    onFocus?: FocusEventHandler;
-    onPointerEnter?: PointerEventHandler;
+    className?: string | ((state: ComboboxInputGroupState) => string | undefined);
+    style?: CSSProperties;
 }
 
 const TagSelectContext = createContext<{
     selectedKeys: Key[];
-    selectedItems: ListData<SelectItemType>;
+    selectedItems: TagSelectListData<SelectItemType>;
     onRemove: (keys: Set<Key>) => void;
     onInputChange: (value: string) => void;
+    /** Opens the listbox popup — React Aria's `menuTrigger="focus"`. */
+    onOpen: () => void;
+    /** Closes the listbox popup — React Aria's `ComboBoxStateContext.close()`. */
+    onClose: () => void;
     valueFormatter?: (item: SelectItemType) => string;
 }>({
     selectedKeys: [],
-    selectedItems: {} as ListData<SelectItemType>,
+    selectedItems: { items: [], append: () => {}, remove: () => {}, getItem: () => undefined, setFilterText: () => {}, filterText: "" },
     onRemove: () => {},
     onInputChange: () => {},
+    onOpen: () => {},
+    onClose: () => {},
 });
 
-interface TagSelectProps extends Omit<AriaComboBoxProps<SelectItemType>, "children" | "items">, RefAttributes<HTMLDivElement> {
+interface TagSelectProps extends RefAttributes<HTMLDivElement> {
     hint?: string;
     label?: string;
     tooltip?: string;
@@ -58,12 +86,30 @@ interface TagSelectProps extends Omit<AriaComboBoxProps<SelectItemType>, "childr
     items?: SelectItemType[];
     popoverClassName?: string;
     shortcutClassName?: string;
-    selectedItems: ListData<SelectItemType>;
+    selectedItems: TagSelectListData<SelectItemType>;
     icon?: IconComponentType | null;
-    children: AriaListBoxProps<SelectItemType>["children"];
+    children: ReactNode | ((item: SelectItemType) => ReactNode);
     onItemCleared?: (key: Key) => void;
     onItemInserted?: (key: Key) => void;
     valueFormatter?: (item: SelectItemType) => string;
+    /** Whether the select is disabled. */
+    isDisabled?: boolean;
+    /** Whether the select is required. */
+    isRequired?: boolean;
+    /** Whether the select is in an invalid state. */
+    isInvalid?: boolean;
+    /** Sets the open state of the listbox (controlled). */
+    isOpen?: boolean;
+    /** Sets the default open state of the listbox (uncontrolled). */
+    defaultOpen?: boolean;
+    /** Handler that is called when the open state changes. */
+    onOpenChange?: (isOpen: boolean) => void;
+    /** The id of the select. */
+    id?: string;
+    /** Accepted for React Aria compatibility; the payload never submitted the tag select's value by name. */
+    name?: string;
+    className?: string | ((state: { isOpen: boolean; isDisabled: boolean; isInvalid: boolean; isRequired: boolean }) => string | undefined);
+    style?: CSSProperties;
 }
 
 export const TagSelectBase = ({
@@ -77,143 +123,181 @@ export const TagSelectBase = ({
     shortcut,
     placeholder = "Search",
     icon,
+    hint,
+    label,
+    tooltip,
+    popoverClassName,
+    shortcutClassName,
+    isDisabled,
+    isRequired,
+    isInvalid,
+    isOpen,
+    defaultOpen,
+    onOpenChange,
+    id,
+    className,
+    style,
+    ref,
     // Omit name to avoid conflicts with the `Select` component
     name: _name,
-    className,
     ...props
 }: TagSelectProps) => {
-    const { contains } = useFilter({ sensitivity: "base" });
     const selectedKeys = selectedItems.items.map((item) => item.id);
 
-    const filter = useCallback(
-        (item: SelectItemType, filterText: string) => {
-            return !selectedKeys.includes(item.id) && contains(item.label || item.supportingText || "", filterText);
-        },
-        [contains, selectedKeys],
-    );
+    // React Aria built the accessible list with `useListData` and a filter that dropped the already-selected
+    // items before matching the query; Base UI matches the query itself, so only the exclusion is projected here.
+    const availableItems = useMemo(() => {
+        const selectedKeySet = new Set(selectedKeys);
+        return (items ?? []).filter((item) => !selectedKeySet.has(item.id));
+    }, [items, selectedKeys]);
 
-    const accessibleList = useListData({
-        initialItems: items,
-        filter,
-    });
+    const [filterText, setFilterText] = useState("");
+    const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen ?? false);
+    const open = isOpen ?? uncontrolledOpen;
 
-    const onRemove = useCallback(
-        (keys: Set<Key>) => {
-            const key = keys.values().next().value;
+    // React Aria's tag select closed the listbox when an item was picked; the popup staying open is what makes
+    // picking several tags in a row possible, so the close request that follows a selection is swallowed once.
+    const keepOpenRef = useRef(false);
 
-            if (!key) return;
+    const tagSelectState = {
+        isOpen: open,
+        isDisabled: Boolean(isDisabled),
+        isInvalid: Boolean(isInvalid),
+        isRequired: Boolean(isRequired),
+    };
 
-            selectedItems.remove(key);
-            onItemCleared?.(key);
-        },
-        [selectedItems, onItemCleared],
-    );
+    const onRemove = (keys: Set<Key>) => {
+        const key = keys.values().next().value;
 
-    const onSelectionChange = (id: Key | null) => {
-        if (!id) {
+        if (!key) return;
+
+        selectedItems.remove(key);
+        onItemCleared?.(key);
+    };
+
+    const handleValueChange = (nextValue: SelectItemType[], details: ComboboxRootChangeEventDetails) => {
+        // React Aria's tag select never cleared the selection on Escape; Base UI does when the popup is closed.
+        if (details.reason === "escape-key") {
+            details.cancel();
             return;
         }
 
-        const item = accessibleList.getItem(id);
+        const previousItems = selectedItems.items;
 
-        if (!item) {
+        nextValue.forEach((item) => {
+            if (!previousItems.some((previous) => previous.id === item.id)) {
+                selectedItems.append(item);
+                onItemInserted?.(item.id);
+            }
+        });
+
+        previousItems.forEach((item) => {
+            if (!nextValue.some((next) => next.id === item.id)) {
+                selectedItems.remove(item.id);
+                onItemCleared?.(item.id);
+            }
+        });
+
+        // React Aria cleared the filter text after a selection and left the popup open for the next tag.
+        setFilterText("");
+        keepOpenRef.current = true;
+    };
+
+    const handleOpenChange = (nextOpen: boolean) => {
+        if (!nextOpen && keepOpenRef.current) {
+            keepOpenRef.current = false;
             return;
         }
-
-        if (!selectedKeys.includes(id as string)) {
-            selectedItems.append(item);
-            onItemInserted?.(id);
+        if (isOpen === undefined) {
+            setUncontrolledOpen(nextOpen);
         }
-
-        accessibleList.setFilterText("");
+        onOpenChange?.(nextOpen);
     };
-
-    const onInputChange = (value: string) => {
-        accessibleList.setFilterText(value);
-    };
-
-    const placeholderRef = useRef<HTMLDivElement>(null);
-    const [popoverWidth, setPopoverWidth] = useState("");
-
-    // Resize observer for popover width
-    const onResize = useCallback(() => {
-        if (!placeholderRef.current) return;
-        let divRect = placeholderRef.current?.getBoundingClientRect();
-        setPopoverWidth(divRect.width + "px");
-    }, [placeholderRef, setPopoverWidth]);
-
-    useResizeObserver({
-        ref: placeholderRef,
-        onResize: onResize,
-        box: "border-box",
-    });
 
     return (
         <TagSelectContext.Provider
             value={{
                 selectedKeys,
                 selectedItems,
-                onInputChange,
+                onInputChange: setFilterText,
                 onRemove,
+                onOpen: () => handleOpenChange(true),
+                onClose: () => handleOpenChange(false),
                 valueFormatter,
             }}
         >
             <SelectContext.Provider value={{ size }}>
-                <AriaComboBox
-                    allowsEmptyCollection
-                    menuTrigger="focus"
-                    items={accessibleList.items}
-                    onInputChange={onInputChange}
-                    inputValue={accessibleList.filterText}
-                    // This keeps the combobox popover open and the input value unchanged when an item is selected.
-                    value={null}
-                    onChange={onSelectionChange}
-                    className={(state) => cx("flex flex-col gap-1.5", typeof className === "function" ? className(state) : className)}
-                    {...props}
+                <Field.Root
+                    disabled={isDisabled}
+                    invalid={isInvalid}
+                    ref={ref}
+                    render={<div style={style} data-open={open || undefined} className={cx("flex flex-col gap-1.5", typeof className === "function" ? className(tagSelectState) : className)} />}
                 >
-                    {(state) => (
-                        <>
-                            {props.label && (
-                                <Label isRequired={state.isRequired} tooltip={props.tooltip}>
-                                    {props.label}
-                                </Label>
-                            )}
+                    <BaseCombobox.Root
+                        multiple
+                        items={availableItems}
+                        value={selectedItems.items}
+                        onValueChange={handleValueChange}
+                        // Base UI matches values by identity; React Aria matched keys, so equality follows the key.
+                        isItemEqualToValue={(itemValue, valueToCompare) => itemValue === valueToCompare || itemValue?.id === valueToCompare?.id}
+                        // React Aria filtered on the label, falling back to the supporting text.
+                        itemToStringLabel={(itemValue) => itemValue?.label || itemValue?.supportingText || ""}
+                        itemToStringValue={(itemValue) => String(itemValue?.id ?? "")}
+                        inputValue={filterText}
+                        onInputValueChange={setFilterText}
+                        open={open}
+                        onOpenChange={handleOpenChange}
+                        modal={false}
+                        disabled={isDisabled}
+                        required={isRequired}
+                        id={id}
+                    >
+                        {label && (
+                            <Label isRequired={isRequired} tooltip={tooltip}>
+                                {label}
+                            </Label>
+                        )}
 
-                            <TagSelectTagsValue
-                                size={size}
-                                shortcut={shortcut}
-                                ref={placeholderRef}
-                                placeholder={placeholder}
-                                icon={icon}
-                                // This is a workaround to correctly calculating the trigger width
-                                // while using ResizeObserver wasn't 100% reliable.
-                                onFocus={onResize}
-                                onPointerEnter={onResize}
-                            />
+                        <TagSelectTagsValue size={size} shortcut={shortcut} placeholder={placeholder} icon={icon} shortcutClassName={shortcutClassName} />
 
-                            <Popover size={size} triggerRef={placeholderRef} style={{ width: popoverWidth }} className={props?.popoverClassName}>
-                                <AriaListBox selectionMode="multiple" className="size-full outline-hidden">
-                                    {children}
-                                </AriaListBox>
-                            </Popover>
+                        <BaseCombobox.Portal>
+                            <BaseCombobox.Positioner {...popoverPositionerProps}>
+                                <BaseCombobox.Popup className={cx(popoverPopupClassName(size), popoverClassName)}>
+                                    <BaseCombobox.List className="size-full outline-hidden">{children}</BaseCombobox.List>
+                                </BaseCombobox.Popup>
+                            </BaseCombobox.Positioner>
+                        </BaseCombobox.Portal>
 
-                            {props.hint && (
-                                <HintText isInvalid={state.isInvalid} className={cx(size === "sm" && "text-xs")}>
-                                    {props.hint}
-                                </HintText>
-                            )}
-                        </>
-                    )}
-                </AriaComboBox>
+                        {hint && (
+                            <HintText isInvalid={isInvalid} className={cx(size === "sm" && "text-xs")}>
+                                {hint}
+                            </HintText>
+                        )}
+                    </BaseCombobox.Root>
+                </Field.Root>
             </SelectContext.Provider>
         </TagSelectContext.Provider>
     );
 };
 
-const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, size = "sm" }: Omit<TagSelectProps, "selectedItems" | "children">) => {
-    const focusManager = useFocusManager();
+interface InnerTagSelectProps {
+    isDisabled?: boolean;
+    shortcut?: boolean;
+    shortcutClassName?: string;
+    placeholder?: string;
+    size?: "sm" | "md" | "lg";
+}
+
+const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, size = "sm" }: InnerTagSelectProps) => {
     const tagSelectContext = useContext(TagSelectContext);
-    const comboBoxStateContext = useContext(ComboBoxStateContext);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    // React Aria's `useFocusManager` moved focus between the tags and the input; that traversal is the DOM order
+    // of the group's buttons followed by its input, so the same moves are expressed against the container.
+    const moveFocus = (from: HTMLElement, direction: -1 | 1) => {
+        const focusable = Array.from(containerRef.current?.querySelectorAll<HTMLElement>("button:not(:disabled), input:not(:disabled)") ?? []);
+        focusable[focusable.indexOf(from) + direction]?.focus();
+    };
 
     const handleInputKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
         const isCaretAtStart = event.currentTarget.selectionStart === 0 && event.currentTarget.selectionEnd === 0;
@@ -225,18 +309,11 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
         switch (event.key) {
             case "Backspace":
             case "ArrowLeft":
-                focusManager?.focusPrevious({ wrap: false, tabbable: false });
+                moveFocus(event.currentTarget, -1);
                 break;
             case "ArrowRight":
-                focusManager?.focusNext({ wrap: false, tabbable: false });
+                moveFocus(event.currentTarget, 1);
                 break;
-        }
-    };
-
-    // Ensure dropdown opens on click even if input is already focused
-    const handleInputMouseDown = (_event: React.MouseEvent<HTMLInputElement>) => {
-        if (comboBoxStateContext && !comboBoxStateContext.isOpen) {
-            comboBoxStateContext.open();
         }
     };
 
@@ -255,22 +332,22 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
             case "Enter":
             case "Backspace":
                 if (isFirstTag) {
-                    focusManager?.focusNext({ wrap: false, tabbable: false });
+                    moveFocus(event.currentTarget, 1);
                 } else {
-                    focusManager?.focusPrevious({ wrap: false, tabbable: false });
+                    moveFocus(event.currentTarget, -1);
                 }
 
                 tagSelectContext.onRemove(new Set([value]));
                 break;
 
             case "ArrowLeft":
-                focusManager?.focusPrevious({ wrap: false, tabbable: false });
+                moveFocus(event.currentTarget, -1);
                 break;
             case "ArrowRight":
-                focusManager?.focusNext({ wrap: false, tabbable: false });
+                moveFocus(event.currentTarget, 1);
                 break;
             case "Escape":
-                comboBoxStateContext?.close();
+                tagSelectContext.onClose();
                 break;
         }
     };
@@ -278,7 +355,7 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
     const isSelectionEmpty = tagSelectContext?.selectedItems?.items?.length === 0;
 
     return (
-        <div className="relative flex w-full min-w-0 flex-1 flex-row flex-wrap items-center justify-start gap-1.5">
+        <div ref={containerRef} className="relative flex w-full min-w-0 flex-1 flex-row flex-wrap items-center justify-start gap-1.5">
             {!isSelectionEmpty &&
                 tagSelectContext?.selectedItems?.items?.map((value) => (
                     <span
@@ -311,10 +388,11 @@ const InnerTagSelect = ({ isDisabled, shortcut, shortcutClassName, placeholder, 
                 ))}
 
             <div className={cx("relative flex min-w-12 flex-1 flex-row items-center", !isSelectionEmpty && "ml-0.5", shortcut && "min-w-[30%]")}>
-                <AriaInput
+                <BaseCombobox.Input
                     placeholder={placeholder}
                     onKeyDown={handleInputKeyDown}
-                    onMouseDown={handleInputMouseDown}
+                    // React Aria's `menuTrigger="focus"` opened the listbox as soon as the input was focused.
+                    onFocus={() => tagSelectContext.onOpen()}
                     className={cx(
                         "w-full flex-[1_0_0] appearance-none bg-transparent text-ellipsis text-primary caret-alpha-black/90 outline-hidden placeholder:text-placeholder focus:outline-hidden disabled:cursor-not-allowed",
                         sizes[size].text,
@@ -351,6 +429,7 @@ export const TagSelectTagsValue = ({
     placeholder,
     shortcutClassName,
     icon: Icon = SearchLg,
+    className,
     // Omit this prop to avoid invalid HTML attribute warning
     isDisabled: _isDisabled,
     ...otherProps
@@ -360,13 +439,15 @@ export const TagSelectTagsValue = ({
     const selectedItemsCount = tagSelectContext.selectedKeys.length;
 
     return (
-        <AriaGroup
+        <BaseCombobox.InputGroup
             {...otherProps}
-            className={({ isFocusWithin, isDisabled }) =>
+            className={(state) =>
                 cx(
                     "relative flex w-full items-center rounded-lg bg-primary shadow-xs ring-1 ring-primary outline-hidden transition duration-100 ease-linear ring-inset",
-                    isDisabled && "cursor-not-allowed opacity-50",
-                    isFocusWithin && "ring-2 ring-brand",
+
+                    // React Aria's `isFocusWithin`/`isDisabled` group state, on Base UI's field state.
+                    state.disabled && "cursor-not-allowed opacity-50",
+                    state.focused && "ring-2 ring-brand",
 
                     // Icon styles
                     "*:data-icon:shrink-0 *:data-icon:text-fg-quaternary",
@@ -376,24 +457,23 @@ export const TagSelectTagsValue = ({
                     // Overwrite vertical padding for small size when there are selected items
                     // to prevent height jump because the tags are taller than the input text.
                     size === "sm" && selectedItemsCount > 0 && "py-1.5",
+
+                    typeof className === "function" ? className(state) : className,
                 )
             }
-        >
-            {({ isDisabled }) => (
-                <>
+            render={(groupProps, state) => (
+                <div {...groupProps}>
                     {Icon && <Icon data-icon className="pointer-events-none" />}
-                    <FocusScope contain={false} autoFocus={false} restoreFocus={false}>
-                        <InnerTagSelect
-                            isDisabled={isDisabled}
-                            size={size}
-                            shortcut={shortcut}
-                            shortcutClassName={shortcutClassName}
-                            placeholder={placeholder}
-                        />
-                    </FocusScope>
-                </>
+                    <InnerTagSelect
+                        isDisabled={state.disabled}
+                        size={size}
+                        shortcut={shortcut}
+                        shortcutClassName={shortcutClassName}
+                        placeholder={placeholder}
+                    />
+                </div>
             )}
-        </AriaGroup>
+        />
     );
 };
 

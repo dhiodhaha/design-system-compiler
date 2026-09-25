@@ -62,7 +62,9 @@ const WIDGET_STATE_JS = `
     );
   };
   const widgetState = (root) => {
-    const candidates = [...(root?.querySelectorAll("input,select,textarea,[role=checkbox],[role=radio],[role=switch],[role=slider],[role=option],[role=tab],[aria-pressed],[aria-checked]") ?? [])]
+    // Widgets are recognised by the ARIA role they expose, not by the element kind: React Aria carries
+    // some roles on native inputs, Base UI carries them on ARIA elements (role=combobox on a button).
+    const candidates = [...(root?.querySelectorAll("input,select,textarea,[role=checkbox],[role=radio],[role=switch],[role=slider],[role=option],[role=tab],[role=combobox],[role=menuitemcheckbox],[role=menuitemradio],[aria-pressed],[aria-checked]") ?? [])]
       .filter((el) => el.getAttribute("type") !== "hidden");
     return candidates
       .filter((el) => {

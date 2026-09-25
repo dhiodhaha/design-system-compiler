@@ -6,8 +6,7 @@
 
 import { useState } from "react";
 import { ChevronDown, LogOut01, Moon01, Plus, Settings01 } from "@untitledui/icons";
-import type { Selection } from "react-aria-components";
-import { Button as AriaButton, SubmenuTrigger } from "react-aria-components";
+import type { Selection } from "@/components/base/dropdown/dropdown";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
@@ -18,13 +17,12 @@ export const DropdownAccountCardXS = () => {
 
     return (
         <Dropdown.Root>
-            <AriaButton
-                className={({ isPressed, isFocused }) =>
-                    cx(
-                        "relative flex w-38 cursor-pointer items-center gap-1.5 rounded-lg bg-primary_alt p-2 text-left inset-ring-1 inset-ring-border-secondary outline-offset-2 outline-focus-ring",
-                        (isPressed || isFocused) && "outline-2",
-                    )
-                }
+            <button
+                type="button"
+                className={cx(
+                    "relative flex w-38 cursor-pointer items-center gap-1.5 rounded-lg bg-primary_alt p-2 text-left inset-ring-1 inset-ring-border-secondary outline-offset-2 outline-focus-ring",
+                    "active:outline-2 focus:outline-2",
+                )}
             >
                 <Avatar size="xs" src="https://www.untitledui.com/images/avatars/olivia-rhye?fm=webp&q=80" className="size-5" />
 
@@ -33,7 +31,7 @@ export const DropdownAccountCardXS = () => {
                 <div className="absolute top-1 right-1 flex size-7 items-center justify-center rounded-md">
                     <ChevronDown className="size-4 shrink-0 stroke-[2.25px] text-fg-quaternary" />
                 </div>
-            </AriaButton>
+            </button>
 
             <Dropdown.Popover className="w-50">
                 <Dropdown.Menu>
@@ -65,7 +63,7 @@ export const DropdownAccountCardXS = () => {
 
                     <Dropdown.Separator />
 
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item icon={LogOut01}>Sign out</Dropdown.Item>
 
                         <Dropdown.Popover placement="right top" offset={-6}>
@@ -74,7 +72,7 @@ export const DropdownAccountCardXS = () => {
                                 <Dropdown.Item>All devices</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
                 </Dropdown.Menu>
             </Dropdown.Popover>
         </Dropdown.Root>

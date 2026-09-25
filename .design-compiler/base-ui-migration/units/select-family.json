@@ -1,0 +1,204 @@
+{
+  "unit": "select-family",
+  "matrixItems": ["select", "combobox", "multi-select", "tag-select"],
+  "files": [
+    "registry/untitledui/components/base/select/select.tsx",
+    "registry/untitledui/components/base/select/select-item.tsx",
+    "registry/untitledui/components/base/select/popover.tsx",
+    "registry/untitledui/components/base/select/combobox.tsx",
+    "registry/untitledui/components/base/select/multi-select.tsx",
+    "registry/untitledui/components/base/select/tag-select.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "baseUiPrimitives": [
+    {
+      "primitive": "select",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/select.json",
+        "node_modules/@base-ui/react/docs/react/components/select.md",
+        "node_modules/@base-ui/react/select/{index.parts,root/SelectRoot,trigger/SelectTrigger,value/SelectValue,icon/SelectIcon,list/SelectList,item/SelectItem,item-indicator/SelectItemIndicator,positioner/SelectPositioner,popup/SelectPopup}.d.ts + *.mjs",
+        "node_modules/@base-ui/react/internals/useRenderElement.mjs (render prop: element cloned with merged props, function form receives merged props + state)",
+        "node_modules/@base-ui/react/merge-props/mergeProps.mjs (rightmost wins; handlers merged; className concatenated; ref not merged)",
+        "node_modules/@base-ui/react/utils/popupStateMapping.mjs + select/positioner/SelectPositionerCssVars.mjs"
+      ],
+      "semanticDifferences": [
+        "Root renders no HTML element: React Aria's Select root was one <div> carrying the payload's classes and the state attributes. The wrapper is now provided by a merged Field.Root element (render={<div …/>}) that also keeps data-disabled/data-invalid/data-dirty/data-touched/data-filled/data-focused for the group-* selectors the payload's Label/HintText use; data-open/data-focused/data-focus-visible are re-applied by the unit because React Aria exposed them on that element.",
+        "Value selection is a value, not a key: React Aria addressed options by `id`/`selectedKey`. Base UI stores the item itself, so Select passes the item object and sets isItemEqualToValue to compare `id` — the payload's selectedKey/defaultSelectedKey/onSelectionChange keep working through a key<->item bridge built from the `items` prop (an unknown key resolves to a bare `{ id }` item).",
+        "Item identity: React Aria's ListBoxItem `id` was the collection key; Base UI keys options by `value` and renders `id` as a DOM attribute, so SelectItem keeps `id` as the payload's key, feeds it into `value`, and does not forward it to the DOM. `textValue` maps to Base UI's `label` (typeahead).",
+        "Select.Item is a <div role=option> that does not render its children as its element content: the payload's outer/inner split (outer w-full py-px px-1, inner rounded hover/press surface) is reproduced with `render={(props, state) => <div {...props}>{inner}</div>}` so the role/aria/data attributes stay on the outer element.",
+        "Options are rendered by the caller, so the payload's `children` render function is projected over the `items` prop (`items.map(item => children(item))`); Base UI's Select has no Collection part.",
+        "React Aria's ListBoxItem supplied the option's accessible name/description through its Text slots (`labelProps.id`/`descriptionProps.id` -> aria-labelledby/aria-describedby). SelectItem regenerates those ids (useId) on the label/description spans and sets the same ARIA relations.",
+        "Positioner default `alignItemWithTrigger` is true (popup overlaps the trigger); the payload expects a detached bottom-start dropdown, so it is set to false and the popover's placement/offset are expressed as side='bottom' align='start' sideOffset=4 collisionPadding=0.",
+        "Popup surface vars changed: React Aria's --trigger-width/--trigger-anchor-point are Base UI's --anchor-width/--transform-origin (set on the Positioner, inherited by the Popup).",
+        "Root `modal` defaults to true in Base UI (scroll lock + blocked outside pointer interaction); React Aria's select popover was non-modal, so the unit passes modal={false} by default.",
+        "The React Aria render-prop state handed to the root `className` ({isFocused,isFocusVisible,isDisabled,isOpen,isInvalid,isRequired}) is rebuilt from the props plus locally tracked trigger focus, because Base UI's Root has no state (its state lives on the parts).",
+        "React Aria's `disabledKeys` was a collection-level prop; Base UI disables per item, so the root publishes the key set through `SelectDisabledKeysContext` (exported from select-item.tsx) and SelectItem ORs it with its own `isDisabled`.",
+        "`selectionMode`/`value`+`onChange` were not carried over: the payload's Select is single-selection (multi-value selection is MultiSelect), so only selectedKey/defaultSelectedKey/onSelectionChange (and Base UI's value/defaultValue/onValueChange shape for items) are wired."
+      ]
+    },
+    {
+      "primitive": "combobox",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/combobox.json",
+        ".design-compiler/base-ui-migration/docs/autocomplete.json (used to confirm no selection state / filter contract; Autocomplete itself was not needed)",
+        "node_modules/@base-ui/react/docs/react/components/combobox.md (anatomy, Empty placement, input-inside-popup pattern)",
+        "node_modules/@base-ui/react/combobox/{index.parts,root/ComboboxRoot,root/AriaCombobox,input/ComboboxInput,input-group/ComboboxInputGroup,list/ComboboxList,item/ComboboxItem,empty/ComboboxEmpty,value/ComboboxValue,popup/ComboboxPopup,positioner/ComboboxPositioner,root/utils/useFilter,root/utils/useFilteredItems}.d.ts + *.mjs",
+        "node_modules/@base-ui/react/internals/filter.mjs (default filter: Intl.Collator usage='search', sensitivity='base', ignorePunctuation=true — the same matcher React Aria's useFilter({sensitivity:'base'}) provided)",
+        "node_modules/@base-ui/react/combobox/root/AriaCombobox.mjs (filtered items derivation, selection commit, input-value sync on close, inputInsidePopup detection)"
+      ],
+      "semanticDifferences": [
+        "Two independent controlled pairs replace React Aria's single ComboBox state: `value`+`onValueChange` (selection) and `inputValue`+`onInputValueChange` (typed text). The unit controls both from its own state so the payload's selectedKey/onSelectionChange and inputValue/onInputChange keep their old semantics, and so the mirrored value behind the transparent input can be rendered.",
+        "Filtering is prop-driven: React Aria filtered the collection with `defaultFilter(textValue, inputValue)`; Base UI filters `items` with its collator, so `defaultFilter` is re-expressed through Base UI's `filter(item, query, itemToString)` and the compared string is React Aria's `textValue` (label + supporting text), which also keeps the selected item visible for queries that match it.",
+        "React Aria's `menuTrigger='focus'` (open on focus) has no Base UI prop: the unit opens the popup from the input's focus handler (Base UI opens on input click and on typing by default, which covers `input`; `manual` maps to openOnInputClick={false} only).",
+        "`allowsCustomValue` has no Base UI equivalent in 1.8.0 (the docs state the Combobox does not allow free-form text as a value). The prop is kept on the type for source compatibility and does nothing; `allowsEmptyCollection` is likewise unnecessary (Base UI renders the popup/list-empty state itself).",
+        "Form submission follows Base UI: `formValue='key'` is itemToStringValue = String(id) and `formValue='text'` is the item's textValue; Base UI submits through its hidden input (React Aria used the input's own name/value).",
+        "The trigger width workaround (ResizeObserver measuring the styled group and passing an explicit popup width) is gone: Base UI anchors the Positioner to the InputGroup and the popup uses `w-(--anchor-width)`.",
+        "`shouldFocusWrap` maps to Base UI's `loopFocus`."
+      ]
+    },
+    {
+      "primitive": "popover",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/popover.json",
+        "node_modules/@base-ui/react/popover/{index.parts,root/PopoverRoot,positioner/PopoverPositioner,popup/PopoverPopup,portal/PopoverPortal}.d.ts + positioner/PopoverPositionerCssVars.mjs",
+        "node_modules/@base-ui/react/internals/useAnchorPositioning.d.ts (anchor/side/align/sideOffset/collisionPadding)"
+      ],
+      "semanticDifferences": [
+        "React Aria's single <Popover> element becomes Portal > Positioner > Popup. Like the React Aria original it is not standalone: it must be rendered inside a Popover.Root that owns the trigger (React Aria required the same overlay-trigger context).",
+        "React Aria's `placement` (and `offset`/`containerPadding`) become Base UI's `side`/`align`/`sideOffset`/`alignOffset`/`collisionPadding`; the payload's placement='bottom', offset={4}, containerPadding={0} are exported as `popoverPositionerProps` so every select-family popup anchors identically.",
+        "The popup class string (and its size-based max heights) is exported as `popoverPopupClassName(size)` and reused by select/combobox/tag-select, replacing the component wrapper those files used to render.",
+        "`triggerRef` (React Aria's overlay-to-trigger association) maps to Base UI's Positioner `anchor`.",
+        "Animation states are attributes: data-open covers the enter phase and data-ending-style the exit phase (React Aria's isEntering/isExiting render props), and `placement-*` variants are re-pointed at data-side."
+      ]
+    },
+    {
+      "primitive": "field",
+      "version": "1.8.0",
+      "docsConsulted": [".design-compiler/base-ui-migration/docs/field.json", ".design-compiler/base-ui-migration/units/field-text.json (sibling unit's Field.Root usage)"],
+      "semanticDifferences": [
+        "Select/ComboBox only consume Field context, so every select-family root wraps its parts in Field.Root to keep the payload's Label/HintText associated with the control: Field.Label publishes the label id the trigger/input points at with aria-labelledby (React Aria's label context did this inside its own field), Field.Description does the same for the hint, and Field.Root supplies data-focused/data-invalid/data-disabled to the parts.",
+        "Field.Root renders a <div>: the payload's own wrapper (className, style, ref) is merged into it with `render`, so the DOM keeps one root element. Field.Root has no `required` prop (required lives on the control), so `isRequired` goes to the root component only and the Label keeps its explicit isRequired asterisk."
+      ]
+    },
+    {
+      "primitive": "merge-props / use-render",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/merge-props.json",
+        ".design-compiler/base-ui-migration/docs/use-render.json",
+        "node_modules/@base-ui/react/internals/useRenderElement.mjs (how `render` merges props; children of the render element win over the default children)"
+      ],
+      "semanticDifferences": [
+        "The `render` prop is used as the state channel that React Aria's render-prop children used to be: SelectItem renders the payload's inner surface with `render={(props, state) => …}`, TagSelectTagsValue reads the group's disabled/focused state through it, and Select.Icon/Select.ItemIndicator use the element form with an explicit `children={null}` because their default children (▼ / ✔️) would otherwise be merged into the replaced element."
+      ]
+    }
+  ],
+  "migrationRecord": {
+    "publicComponent": "Select (+ Select.Item, Select.ComboBox, SelectContext, sizes, CommonProps, SelectItemType), Popover, ComboBox, MultiSelect (+ MultiSelect.Item/.Footer/.EmptyState), TagSelect (+ TagSelect.Item, TagSelectBase, TagSelectTagsValue)",
+    "existingUntitledUiBehavior": "Select is React Aria's Select wrapped in a styled trigger button (avatar/icon + label + supporting text or placeholder + chevron), a Label above and a HintText below, with the options rendered through a ListBox inside a Popover; items are keyed by `id`, carry avatarUrl/label/supportingText/icon/isDisabled, and every item draws its own hover/selected surface plus a checkmark, checkbox or no indicator. ComboBox adds a styled Group with a leading icon, a transparent input over a mirrored value (label + supporting text in two colours) and a ⌘K shortcut badge. MultiSelect is a dialog-style popup with a search field, a multiple listbox, an empty state and a reset/select-all footer, reporting a count in its trigger. TagSelect keeps its selected items as chips inside the input group (avatar + label + remove button, valueFormatter), filters out already-selected items, and navigates between chips and input with the arrow keys.",
+    "canonicalBehavioralContract": "Keys stay the public selection vocabulary (selectedKey/defaultSelectedKey/onSelectionChange, Selection = 'all' | Set<Key>), the trigger/value/option rendering and their class strings are unchanged, React Aria's render-prop state shapes survive for every public className/style/children function, option typeahead matches the same textValue, filtering matches React Aria's collator `contains` semantics, the popup is a non-modal bottom-start dropdown sized to the trigger, every Label/HintText stays associated with its control, and the exported symbols/props/defaults of the six files are unchanged.",
+    "baseUiCompositionChosen": "Field.Root (merged wrapper) > Select.Root > (Label?, Trigger > Value(> Icon), Portal > Positioner > Popup > List > Item*) + HintText; ComboBox = Field.Root > Combobox.Root > InputGroup (combobox.tsx) or Trigger + Portal > Positioner > Popup > (Input?, Empty?, List, footer) (multi-select) > HintText; TagSelect = Field.Root > Combobox.Root(multiple) > InputGroup(tags + Input) + Portal > Positioner > Popup > List. Contexts: the payload's SelectContext (size) is unchanged, with a new SelectDisabledKeysContext for `disabledKeys` and a TagSelectContext carrying the tag callbacks.",
+    "whyNotOneToOne": "React Aria composes one element per concern and hands state to render props (Select renders a div that is the field, the trigger, the value, the popup and the listbox at once; ComboBox merges selection and input text into one state), while Base UI splits each family into parts whose state lives in data attributes and whose popup owns Portal/Positioner/Popup. The payload's public API is key-based and render-prop shaped, so each file keeps its prop names and remaps them onto the part composition, re-creating the state those render props used to receive and bridging keys <-> item values with id equality."
+  },
+  "publicApiChanges": [
+    {
+      "component": "Select",
+      "before": "SelectProps extends React Aria's AriaSelectProps<SelectItemType> (selectedKey/defaultSelectedKey/onSelectionChange, selectionMode, disabledKeys, value/defaultValue/onChange, items, isDisabled/isRequired/isInvalid, isOpen/defaultOpen/onOpenChange, name/form/autoComplete/validationBehavior, className(render state), style, ref, aria-*)",
+      "after": "SelectProps is declared by the unit: selectedKey/defaultSelectedKey/onSelectionChange, value/defaultValue/onChange, disabledKeys, isDisabled/isRequired/isInvalid, isOpen/defaultOpen/onOpenChange, modal, highlightItemOnHover, name/form/autoComplete/id, items, popoverClassName, icon, children, className(render state)/style/ref plus CommonProps",
+      "reason": "The React Aria type cannot be imported after the migration. Every prop the payload documented or its call sites use is preserved; `selectionMode` (single-selection component), `validationBehavior`/`isReadOnly` (Base UI's Field/validation model differs) and React Aria's aria-label plumbing (pass-through on DOM props) are the deliberate omissions."
+    },
+    {
+      "component": "Select.Item",
+      "before": "SelectItemProps extends Omit<ListBoxItemProps<SelectItemType>, 'id'>, SelectItemType (id, value, textValue, isDisabled, className(render state), children(render state), render, className/style functions, href/onAction, ...)",
+      "after": "SelectItemProps is declared by the unit: id/value/label/avatarUrl/supportingText/isDisabled/icon (SelectItemType), selectionIndicator, selectionIndicatorAlign, className(render state)/style(render state)/children(render state)/render(render state)/ref plus Base UI Item's DOM props",
+      "reason": "Same surface for the payload's own props; `textValue` is replaced by Base UI's `label` (the same string is passed internally), and React Aria's drag-and-drop/`href`/`onAction` item props have no Base UI Select equivalent (the render state therefore reports isSelected/isFocused/isFocusVisible/isHovered/isPressed/isDisabled without selectionMode/allowsDragging/isDragging/isDropTarget)."
+    },
+    {
+      "component": "Popover",
+      "before": "PopoverProps extends React Aria's PopoverProps + { size } (placement, offset, crossOffset, containerPadding, triggerRef, isNonModal, shouldFlip, arrowRef, boundaryElement, className(render state), style, children, ref)",
+      "after": "PopoverProps is declared by the unit: { size, className(state), style, children, triggerRef, side, align, sideOffset, alignOffset, collisionPadding, ref } + exported popoverPositionerProps / popoverPopupClassName",
+      "reason": "React Aria's positioning/overlay props map onto Base UI's Positioner props one way or another (placement -> side/align, offset -> sideOffset, containerPadding -> collisionPadding, triggerRef -> anchor); the props that only existed for React Aria's own overlay manager (isNonModal, shouldFlip, arrowRef, boundaryElement) are dropped rather than silently ignored."
+    },
+    {
+      "component": "ComboBox",
+      "before": "ComboBoxProps extends Omit<AriaComboBoxProps<SelectItemType>, 'children'|'items'> + { shortcut, items, popoverClassName, shortcutClassName, icon, children, ...CommonProps }",
+      "after": "Same prop names plus an explicit declaration: selectedKey/defaultSelectedKey/onSelectionChange, value/defaultValue/onChange, inputValue/defaultInputValue/onInputChange, isOpen/defaultOpen/onOpenChange, menuTrigger, defaultFilter, formValue, shouldFocusWrap, allowsCustomValue/allowsEmptyCollection (kept, no Base UI equivalent), isDisabled/isRequired/isInvalid, name/form/autoComplete/id, autoFocus, className(render state)/style/ref",
+      "reason": "React Aria's type is gone, so the surface it provided is restated. Behaviour differences that Base UI cannot express are recorded in the primitive list above instead of being emulated silently."
+    },
+    {
+      "component": "MultiSelect",
+      "before": "MultiSelectProps (unchanged names) with `Selection` imported from react-aria-components",
+      "after": "Same prop names; `Selection` is a local `'all' | Set<string|number>` alias, and isOpen/defaultOpen/onOpenChange/name/id/style were added (they were previously impossible: the trigger was React Aria's DialogTrigger without an exposed state)",
+      "reason": "Removing the react-aria-components type import; the alias is structurally identical, and the added props are additive."
+    },
+    {
+      "component": "TagSelect / TagSelectBase / TagSelectTagsValue",
+      "before": "TagSelectProps extends Omit<AriaComboBoxProps<SelectItemType>, 'children'|'items'> with selectedItems: ListData<SelectItemType> (react-stately)",
+      "after": "Same prop names; selectedItems: TagSelectListData<SelectItemType> — a structural subset of react-stately's ListData (items, append, remove, getItem, setFilterText, filterText) — and TagSelectTagsValue's props extend Base UI's InputGroup props instead of AriaGroupProps",
+      "reason": "The react-stately import is removed while any `useListData()` result still satisfies the prop type. `hint`/`label`/`tooltip`/`popoverClassName`/`shortcutClassName` are now destructured instead of only being forwarded through the RAC props spread (identical rendering)."
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "select.tsx: react-aria-components (SelectProps as AriaSelectProps, Button as AriaButton, ListBox as AriaListBox, Select as AriaSelect, SelectValue as AriaSelectValue)",
+    "select-item.tsx: react-aria-components (ListBoxItemProps as AriaListBoxItemProps, ListBoxItem as AriaListBoxItem, Text as AriaText)",
+    "popover.tsx: react-aria-components (PopoverProps as AriaPopoverProps, Popover as AriaPopover)",
+    "combobox.tsx: react-aria-components (ComboBoxProps as AriaComboBoxProps, GroupProps as AriaGroupProps, ListBoxProps as AriaListBoxProps, ComboBox as AriaComboBox, Group as AriaGroup, Input as AriaInput, ListBox as AriaListBox, ComboBoxStateContext)",
+    "multi-select.tsx: react-aria (useFilter), react-aria-components (Selection, Autocomplete as AriaAutocomplete, Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Input as AriaInput, ListBox as AriaListBox, Popover as AriaPopover, SearchField as AriaSearchField)",
+    "tag-select.tsx: react-aria (FocusScope, useFilter, useFocusManager), react-aria-components (ComboBoxProps as AriaComboBoxProps, GroupProps as AriaGroupProps, ListBoxProps as AriaListBoxProps, Key, ComboBox as AriaComboBox, Group as AriaGroup, Input as AriaInput, ListBox as AriaListBox, ComboBoxStateContext), react-stately (ListData, useListData)"
+  ],
+  "baseUiImportsAdded": [
+    "@base-ui/react/field (Field)",
+    "@base-ui/react/select (Select, SelectItemState)",
+    "@base-ui/react/popover (Popover, PopoverPopupState)",
+    "@base-ui/react/combobox (Combobox, ComboboxInputGroupState, ComboboxRootChangeEventDetails)"
+  ],
+  "stateSelectorChanges": [
+    {
+      "from": "hovered: / focused: / focus-visible: / disabled: / invalid: (React Aria variants, native fallbacks while data-rac was present)",
+      "to": "unchanged where they are native (focus-visible: / focus-within: / :disabled / placeholder:), re-pointed at Base UI attributes where Base UI owns the state: data-focused: (field context), data-disabled:, data-popup-open:, data-pressed:",
+      "reason": "globals.css still loads tailwindcss-react-aria-components, but without data-rac those variants now compile to RAC-only attribute selectors that Base UI never sets. The select family declares no selected:/open:/expanded:/entering:/exiting: variants, so the audit's PENDING_MIGRATION rows for these files are resolved by the replacements listed here."
+    },
+    {
+      "from": "placement-right|top|bottom:slide-in-from-* / slide-out-to-* (popover.tsx, multi-select.tsx)",
+      "to": "data-open:data-[side=right|top|bottom]:slide-in-from-* and data-ending-style:data-[side=…]:slide-out-to-*",
+      "reason": "React Aria emitted data-placement; Base UI emits data-side on the Positioner/Popup, and its enter phase is data-open (starting-style lasts a single frame) while the exit phase is data-ending-style."
+    },
+    {
+      "from": "isEntering/isExiting render props for the popup transition classes",
+      "to": "data-open:/data-ending-style: variants",
+      "reason": "Same two phases, expressed as the attributes Base UI keeps mounted for the whole enter/exit animation."
+    },
+    {
+      "from": "w-(--trigger-width) origin-(--trigger-anchor-point)",
+      "to": "w-(--anchor-width) origin-(--transform-origin)",
+      "reason": "Base UI sets those two custom properties on the Positioner (inherited by the Popup) instead of on the floating element."
+    },
+    {
+      "from": "ComboboxValue group state render prop (isFocusWithin/isDisabled) and MultiSelect trigger (isFocusVisible/isPressed)",
+      "to": "data-focused:/data-disabled: on the InputGroup (field state) and focus-visible:/data-pressed:/data-popup-open: on the trigger button",
+      "reason": "Base UI exposes those states as attributes/state on the parts rather than as a render-prop state object on the element the payload styled."
+    },
+    {
+      "from": "Selected item indicator/option surfaces driven by ListBoxItem state {isFocused,isHovered,isSelected}",
+      "to": "Base UI item state {selected, highlighted, disabled} + locally tracked isHovered/isPressed/isFocusVisible, used only for the public className/children functions",
+      "reason": "Base UI highlights on hover by default (highlightItemOnHover), so `highlighted` covers both React Aria's isFocused and isHovered for the item surface; the remaining flags are tracked to keep consumer className functions working."
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "crossUnitNotes": [
+    "select-shared.tsx needed no change (size context + item type only) — it is not part of this unit's file list and was left untouched.",
+    "SelectItem (Select.Item / MultiSelect.Item / TagSelect.Item) is shared with the dropdown family in upstream Untitled UI; the dropdown unit keeps its own item component, so nothing outside this unit consumes SelectItem's new SelectDisabledKeysContext.",
+    "popover.tsx no longer wraps the overlay for the select family (Base UI's own popup parts do), and no other registry file imports it — the exported Popover keeps the popup classes/props for consumers of that module.",
+    "multi-select.tsx uses the payload's own Button/TagCloseX (owned by other units) unchanged, with `onClick`/`onPress` as before.",
+    "The lead's capture/parity harness renders the select and combobox cases from src/migration-harness.tsx; both call sites only use props preserved here (label, placeholder, items, render-function children, Select.Item id/children, ComboBox label/placeholder/items)."
+  ],
+  "evidence": {
+    "typecheck": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` reports 0 errors in the six files of this unit (the only remaining errors are in components/application/tabs/tabs.tsx, owned by the in-flight tabs unit). A scoped config covering registry/untitledui/components/base/select/*.tsx passes clean: 0 errors.",
+    "reactAriaImports": "grep for react-aria/react-stately/@react-types in the six files: no imports remain (tag-select.tsx mentions react-stately only in a comment documenting the structural ListData type).",
+    "runtime": "Not run by this unit (the lead runs capture/parity/a11y/hydration centrally). Known runtime-sensitive points to watch in the harness: the Select popup is non-modal bottom-start with alignItemWithTrigger={false}; the combobox opens on input focus (menuTrigger='focus') and filters through Base UI's collator; the multi-select popup keeps the search input inside the dialog-role popup."
+  }
+}

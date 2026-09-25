@@ -1,18 +1,23 @@
 /* Adopted from untitleduico/react@8b7409c078f8 — components/application/app-navigation/base-components/nav-account-card.tsx
  * MIT licensed upstream source (Copyright (c) 2025 Untitled UI).
  * Adopted with the smallest necessary project-local transformations; deltas are recorded in
- * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
+ * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs.
+ *
+ * Base UI migration (branch migration/base-ui-v1.8): React Aria's `DialogTrigger`/`Popover`/`Dialog` and its
+ * `useFocusManager` are replaced by `@base-ui/react@1.8.0` Popover (`Root > Trigger > Portal > Positioner > Popup`,
+ * anchored to the card as React Aria's `triggerRef` was) with the account menu's own dialog element inside the
+ * popup. Every export, prop name and default is unchanged; the unit record is
+ * .design-compiler/base-ui-migration/units/overlay-family.json. */
 "use client";
 
+import { Popover as BasePopover } from "@base-ui/react/popover";
 import type { FC, HTMLAttributes } from "react";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { BookOpen01, ChevronSelectorVertical, LogOut01, Plus, Settings01, User01 } from "@untitledui/icons";
-import { useFocusManager } from "react-aria";
-import type { DialogProps as AriaDialogProps, Placement as AriaPlacement } from "react-aria-components";
-import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
 import { AvatarLabelGroup } from "@/components/base/avatar/avatar-label-group";
 import { Button } from "@/components/base/buttons/button";
 import { RadioButtonBase } from "@/components/base/radio-buttons/radio-buttons";
+import type { TooltipPlacement } from "@/components/base/tooltip/tooltip";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import { cx } from "@/utils/cx";
 
@@ -46,45 +51,93 @@ const placeholderAccounts: NavAccountType[] = [
     },
 ];
 
-export const NavAccountMenu = ({
-    className,
-    selectedAccountId = "olivia",
-    ...dialogProps
-}: AriaDialogProps & { className?: string; accounts?: NavAccountType[]; selectedAccountId?: string }) => {
-    const focusManager = useFocusManager();
-    const dialogRef = useRef<HTMLDivElement>(null);
+/** React Aria's placement vocabulary (as the payload's `Tooltip` re-exposes it) → Base UI's `side`/`align` pair. */
+const PLACEMENT_SIDES: Record<string, "top" | "bottom" | "left" | "right" | "inline-start" | "inline-end"> = {
+    top: "top",
+    bottom: "bottom",
+    left: "left",
+    right: "right",
+    start: "inline-start",
+    end: "inline-end",
+};
 
-    const onKeyDown = useCallback(
-        (e: KeyboardEvent) => {
-            switch (e.key) {
-                case "ArrowDown":
-                    focusManager?.focusNext({ tabbable: true, wrap: true });
-                    break;
-                case "ArrowUp":
-                    focusManager?.focusPrevious({ tabbable: true, wrap: true });
-                    break;
-            }
-        },
-        [focusManager],
+/** React Aria's alignment tokens → Base UI alignments (`top`/`left` are the alignment axis' start). */
+const PLACEMENT_ALIGNMENTS: Record<string, "start" | "center" | "end"> = {
+    top: "start",
+    left: "start",
+    start: "start",
+    bottom: "end",
+    right: "end",
+    end: "end",
+    center: "center",
+};
+
+/** The tabbable descendants of the menu, in DOM order — the sequence React Aria's `useFocusManager` walked. */
+const TABBABLE_SELECTOR =
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+const focusMenuItem = (container: HTMLElement, direction: 1 | -1) => {
+    const tabbables = [...container.querySelectorAll<HTMLElement>(TABBABLE_SELECTOR)].filter(
+        // A `tabindex="-1"` element is not part of the sequence, and a hidden one cannot take focus.
+        (element) => element.tabIndex >= 0 && element.getClientRects().length > 0,
     );
 
+    if (tabbables.length === 0) {
+        return;
+    }
+
+    const currentIndex = tabbables.indexOf(document.activeElement as HTMLElement);
+    // React Aria wrapped in both directions; from the dialog itself the sequence starts at the nearest end.
+    const nextIndex =
+        currentIndex === -1
+            ? direction === 1
+                ? 0
+                : tabbables.length - 1
+            : (currentIndex + direction + tabbables.length) % tabbables.length;
+
+    tabbables[nextIndex]?.focus();
+};
+
+/** Props for the account menu: the dialog element's attributes plus the account list it renders. */
+interface NavAccountMenuProps extends Omit<HTMLAttributes<HTMLElement>, "className"> {
+    /** The accessibility role for the dialog. */
+    role?: "dialog" | "alertdialog";
+    /** Additional CSS classes to apply to the dialog. */
+    className?: string;
+    /** Accounts to display in the switcher. */
+    accounts?: NavAccountType[];
+    /** The account that is currently selected. */
+    selectedAccountId?: string;
+}
+
+export const NavAccountMenu = ({ className, role = "dialog", selectedAccountId = "olivia", ...dialogProps }: NavAccountMenuProps) => {
+    const dialogRef = useRef<HTMLElement>(null);
+
+    // React Aria's `useFocusManager().focusNext/focusPrevious({ tabbable: true, wrap: true })` on the dialog element.
     useEffect(() => {
         const element = dialogRef.current;
-        if (element) {
-            element.addEventListener("keydown", onKeyDown);
+        if (!element) {
+            return;
         }
 
-        return () => {
-            if (element) {
-                element.removeEventListener("keydown", onKeyDown);
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "ArrowDown") {
+                focusMenuItem(element, 1);
+            } else if (event.key === "ArrowUp") {
+                focusMenuItem(element, -1);
             }
         };
-    }, [onKeyDown]);
+
+        element.addEventListener("keydown", onKeyDown);
+
+        return () => element.removeEventListener("keydown", onKeyDown);
+    }, []);
 
     return (
-        <AriaDialog
+        <section
             {...dialogProps}
             ref={dialogRef}
+            role={role}
             className={cx("w-66 rounded-xl bg-secondary_alt shadow-lg ring ring-secondary_alt outline-hidden", className)}
         >
             <div className="rounded-xl bg-primary ring-1 ring-secondary">
@@ -122,7 +175,7 @@ export const NavAccountMenu = ({
             <div className="pt-1 pb-1.5">
                 <NavAccountCardMenuItem label="Sign out" icon={LogOut01} shortcut="⌥⇧Q" />
             </div>
-        </AriaDialog>
+        </section>
     );
 };
 
@@ -163,7 +216,7 @@ export const NavAccountCard = ({
     items = placeholderAccounts,
     avatarRounded,
 }: {
-    popoverPlacement?: AriaPlacement;
+    popoverPlacement?: TooltipPlacement;
     selectedAccountId?: string;
     items?: NavAccountType[];
     avatarRounded?: boolean;
@@ -178,6 +231,10 @@ export const NavAccountCard = ({
         return null;
     }
 
+    const [sideToken, alignToken] = (popoverPlacement ?? (isDesktop ? "right bottom" : "top right")).split(/\s+/);
+    const side = PLACEMENT_SIDES[sideToken] ?? "bottom";
+    const align = alignToken ? (PLACEMENT_ALIGNMENTS[alignToken] ?? "center") : "center";
+
     return (
         <div ref={triggerRef} className="relative flex items-center gap-3 rounded-xl p-3 ring-1 ring-secondary ring-inset">
             <AvatarLabelGroup
@@ -189,27 +246,30 @@ export const NavAccountCard = ({
                 rounded={avatarRounded}
             />
 
-            <AriaDialogTrigger>
-                <AriaButton className="absolute top-2 right-2 flex cursor-pointer items-center justify-center rounded-md p-1.5 text-fg-quaternary outline-focus-ring transition duration-100 ease-linear hover:bg-primary_hover hover:text-fg-quaternary_hover focus-visible:outline-2 focus-visible:outline-offset-2 pressed:bg-primary_hover pressed:text-fg-quaternary_hover">
+            <BasePopover.Root>
+                <BasePopover.Trigger className="absolute top-2 right-2 flex cursor-pointer items-center justify-center rounded-md p-1.5 text-fg-quaternary outline-focus-ring transition duration-100 ease-linear hover:bg-primary_hover hover:text-fg-quaternary_hover focus-visible:outline-2 focus-visible:outline-offset-2 active:bg-primary_hover active:text-fg-quaternary_hover">
                     <ChevronSelectorVertical className="size-4 shrink-0 stroke-[2.25px]" />
-                </AriaButton>
-                <AriaPopover
-                    placement={popoverPlacement ?? (isDesktop ? "right bottom" : "top right")}
-                    triggerRef={triggerRef}
-                    offset={8}
-                    className={({ isEntering, isExiting }) =>
-                        cx(
-                            "origin-(--trigger-anchor-point) will-change-transform",
-                            isEntering &&
-                                "duration-150 ease-out animate-in fade-in placement-right:slide-in-from-left-0.5 placement-top:slide-in-from-bottom-0.5 placement-bottom:slide-in-from-top-0.5",
-                            isExiting &&
-                                "duration-100 ease-in animate-out fade-out placement-right:slide-out-to-left-0.5 placement-top:slide-out-to-bottom-0.5 placement-bottom:slide-out-to-top-0.5",
-                        )
-                    }
-                >
-                    <NavAccountMenu selectedAccountId={selectedAccountId} accounts={items} />
-                </AriaPopover>
-            </AriaDialogTrigger>
+                </BasePopover.Trigger>
+
+                <BasePopover.Portal>
+                    {/* React Aria anchored this popover to the whole card rather than to the trigger button. */}
+                    <BasePopover.Positioner side={side} align={align} sideOffset={8} anchor={triggerRef}>
+                        <BasePopover.Popup
+                            // The account menu renders the dialog element itself; the popup container keeps no role.
+                            role={undefined}
+                            className={cx(
+                                "origin-(--transform-origin) will-change-transform",
+                                "data-open:duration-150 data-open:ease-out data-open:animate-in data-open:fade-in",
+                                "data-ending-style:duration-100 data-ending-style:ease-in data-ending-style:animate-out data-ending-style:fade-out",
+                                "data-[side=right]:data-open:slide-in-from-left-0.5 data-[side=top]:data-open:slide-in-from-bottom-0.5 data-[side=bottom]:data-open:slide-in-from-top-0.5",
+                                "data-[side=right]:data-ending-style:slide-out-to-left-0.5 data-[side=top]:data-ending-style:slide-out-to-bottom-0.5 data-[side=bottom]:data-ending-style:slide-out-to-top-0.5",
+                            )}
+                        >
+                            <NavAccountMenu selectedAccountId={selectedAccountId} accounts={items} />
+                        </BasePopover.Popup>
+                    </BasePopover.Positioner>
+                </BasePopover.Portal>
+            </BasePopover.Root>
         </div>
     );
 };

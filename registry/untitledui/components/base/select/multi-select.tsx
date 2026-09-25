@@ -1,32 +1,38 @@
 /* Adopted from untitleduico/react@8b7409c078f8 — components/base/select/multi-select.tsx
  * MIT licensed upstream source (Copyright (c) 2025 Untitled UI).
  * Adopted with the smallest necessary project-local transformations; deltas are recorded in
- * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
+ * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs.
+ *
+ * Base UI migration (branch migration/base-ui-v1.8): React Aria's `DialogTrigger`/`Dialog`/`Popover`/
+ * `Autocomplete`/`SearchField`/`ListBox` are replaced by `@base-ui/react@1.8.0`'s Combobox in `multiple` mode
+ * (Root > Trigger | Portal > Positioner > Popup(Input + Empty + List) ) wrapped in `Field.Root`, with the search
+ * input living inside the popup (Base UI's input-in-dialog composition: dialog-role popup, combobox trigger,
+ * focus moved to the search input). React Aria's `Selection` (`"all" | Set<Key>`) still types the public props
+ * and is bridged to Base UI's value array; filtering moves to Base UI's `items` + collator filter, which matches
+ * React Aria's `useFilter({ sensitivity: "base" })` — the unit record is
+ * .design-compiler/base-ui-migration/units/select-family.json. */
 "use client";
 
-import type { FC, ReactNode, RefAttributes } from "react";
-import { isValidElement, useCallback, useRef, useState } from "react";
+import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
+import { Field } from "@base-ui/react/field";
+import type { FC, CSSProperties, ReactNode, RefAttributes } from "react";
+import { isValidElement, useMemo, useState } from "react";
 import { ChevronDown, SearchLg } from "@untitledui/icons";
-import { useFilter } from "react-aria";
-import type { Selection } from "react-aria-components";
-import {
-    Autocomplete as AriaAutocomplete,
-    Button as AriaButton,
-    Dialog as AriaDialog,
-    DialogTrigger as AriaDialogTrigger,
-    Input as AriaInput,
-    ListBox as AriaListBox,
-    Popover as AriaPopover,
-    SearchField as AriaSearchField,
-} from "react-aria-components";
 import { Button } from "@/components/base/buttons/button";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
 import { cx } from "@/utils/cx";
 import { isReactComponent } from "@/utils/is-react-component";
+import { popoverPositionerProps } from "./popover";
 import { SelectItem } from "./select-item";
 import { type CommonProps, SelectContext, type SelectItemType, sizes } from "./select-shared";
+
+/** React Aria's `Key`: the identity of an item. */
+type MultiSelectKey = string | number;
+
+/** React Aria's `Selection`: every key, or the selected subset. */
+type Selection = "all" | Set<MultiSelectKey>;
 
 const searchSizes = {
     sm: { wrapper: "py-1", root: "px-3 py-2 gap-2 *:data-icon:size-4 *:data-icon:stroke-[2.25px]", text: "text-sm" },
@@ -159,6 +165,17 @@ interface MultiSelectProps extends RefAttributes<HTMLDivElement>, CommonProps {
     supportingText?: ReactNode;
     /** Leading icon rendered in the trigger, before the placeholder / selected count. Matches `Select`'s `icon`. */
     icon?: FC | ReactNode;
+    /** Sets the open state of the listbox (controlled). */
+    isOpen?: boolean;
+    /** Sets the default open state of the listbox (uncontrolled). */
+    defaultOpen?: boolean;
+    /** Handler that is called when the open state changes. */
+    onOpenChange?: (isOpen: boolean) => void;
+    /** Identifies the field when a form is submitted. */
+    name?: string;
+    /** The id of the select. */
+    id?: string;
+    style?: CSSProperties;
 }
 
 const MultiSelectRoot = ({
@@ -187,50 +204,104 @@ const MultiSelectRoot = ({
     selectedCountFormatter,
     supportingText,
     icon,
+    isOpen,
+    defaultOpen,
+    onOpenChange,
+    name,
+    id,
+    ref,
+    style,
 }: MultiSelectProps) => {
-    const { contains } = useFilter({ sensitivity: "base" });
+    const itemsById = useMemo(() => new Map((items ?? []).map((item) => [item.id, item])), [items]);
+    const allKeys = useMemo(() => (items ?? []).map((item) => item.id), [items]);
+
+    // React Aria's `Selection` is either "all" or a key set; Base UI selects with an array of item values, so the
+    // two representations are converted at this boundary.
+    const selectedKeySet = useMemo(
+        () => (selectedKeys === undefined ? undefined : selectedKeys === "all" ? new Set(allKeys) : new Set(selectedKeys)),
+        [selectedKeys, allKeys],
+    );
+
+    const [uncontrolledKeys, setUncontrolledKeys] = useState<Set<MultiSelectKey>>(() =>
+        defaultSelectedKeys === undefined ? new Set() : defaultSelectedKeys === "all" ? new Set(allKeys) : new Set(defaultSelectedKeys),
+    );
+
+    const activeKeySet = selectedKeySet ?? uncontrolledKeys;
+    const selectedValue = useMemo(
+        () => Array.from(activeKeySet).map((key) => itemsById.get(key) ?? { id: key }),
+        [activeKeySet, itemsById],
+    );
+
+    const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen ?? false);
+    const open = isOpen ?? uncontrolledOpen;
+
     const [searchValue, setSearchValue] = useState("");
 
-    const triggerRef = useRef<HTMLButtonElement>(null);
-    const [popoverWidth, setPopoverWidth] = useState("");
-
-    const onResize = useCallback(() => {
-        if (!triggerRef.current) return;
-        const rect = triggerRef.current.getBoundingClientRect();
-        setPopoverWidth(rect.width + "px");
-    }, []);
-
-    const selectedCount = selectedKeys instanceof Set ? selectedKeys.size : selectedKeys === "all" ? (items?.length ?? 0) : 0;
+    const selectedCount = selectedValue.length;
     const hasSelection = selectedCount > 0;
 
     // Capitalized alias so a function-component icon can be rendered as JSX (mirrors Select).
     const Icon = icon;
 
-    const handleClearSearch = useCallback(() => {
-        setSearchValue("");
-    }, []);
+    const handleValueChange = (nextValue: SelectItemType[]) => {
+        const nextKeys = new Set(nextValue.map((item) => item.id));
+        if (selectedKeys === undefined) {
+            setUncontrolledKeys(nextKeys);
+        }
+        // React Aria collapsed a full selection into `"all"`; keep that shape for consumers.
+        onSelectionChange?.(nextKeys.size === allKeys.length && allKeys.every((key) => nextKeys.has(key)) ? "all" : nextKeys);
+    };
+
+    const handleOpenChange = (nextOpen: boolean) => {
+        if (isOpen === undefined) {
+            setUncontrolledOpen(nextOpen);
+        }
+        onOpenChange?.(nextOpen);
+    };
 
     return (
-        <SelectContext.Provider value={{ size }}>
-            <div className={cx("flex flex-col gap-1.5", className)}>
-                {label && (
-                    <Label isRequired={hideRequiredIndicator ? false : isRequired} isInvalid={isInvalid} tooltip={tooltip}>
-                        {label}
-                    </Label>
-                )}
+        <Field.Root
+            disabled={isDisabled}
+            invalid={isInvalid}
+            ref={ref}
+            render={<div style={style} data-open={open || undefined} className={cx("flex flex-col gap-1.5", className)} />}
+        >
+            <SelectContext.Provider value={{ size }}>
+                <BaseCombobox.Root
+                    multiple
+                    items={items}
+                    value={selectedValue}
+                    onValueChange={handleValueChange}
+                    // Base UI matches values by identity; React Aria matched keys, so equality follows the key.
+                    isItemEqualToValue={(itemValue, valueToCompare) => itemValue === valueToCompare || itemValue?.id === valueToCompare?.id}
+                    itemToStringLabel={(itemValue) => itemValue?.label ?? String(itemValue?.id ?? "")}
+                    itemToStringValue={(itemValue) => String(itemValue?.id ?? "")}
+                    inputValue={searchValue}
+                    onInputValueChange={setSearchValue}
+                    open={open}
+                    onOpenChange={handleOpenChange}
+                    modal={false}
+                    disabled={isDisabled}
+                    required={isRequired}
+                    name={name}
+                    id={id}
+                >
+                    {label && (
+                        <Label isRequired={hideRequiredIndicator ? false : isRequired} isInvalid={isInvalid} tooltip={tooltip}>
+                            {label}
+                        </Label>
+                    )}
 
-                <AriaDialogTrigger>
-                    <AriaButton
-                        ref={triggerRef}
-                        isDisabled={isDisabled}
-                        onClick={onResize}
-                        className={(state) =>
-                            cx(
-                                "relative flex w-full cursor-pointer items-center rounded-lg bg-primary shadow-xs ring-1 ring-primary outline-hidden transition duration-100 ease-linear ring-inset",
-                                (state.isFocusVisible || state.isPressed) && "ring-2 ring-brand",
-                                state.isDisabled && "cursor-not-allowed opacity-50",
-                            )
-                        }
+                    <BaseCombobox.Trigger
+                        className={cx(
+                            "relative flex w-full cursor-pointer items-center rounded-lg bg-primary shadow-xs ring-1 ring-primary outline-hidden transition duration-100 ease-linear ring-inset",
+
+                            // React Aria's `isFocusVisible || isPressed` ring. The trigger is a native button, so
+                            // focus-visible stays a native selector; Base UI reports the open/pressed states.
+                            "focus-visible:ring-2 focus-visible:ring-brand",
+                            "data-pressed:ring-2 data-pressed:ring-brand",
+                            "data-disabled:cursor-not-allowed data-disabled:opacity-50",
+                        )}
                     >
                         <span
                             className={cx(
@@ -257,75 +328,64 @@ const MultiSelectRoot = ({
                                 className={cx("ml-auto shrink-0 text-fg-quaternary", size === "lg" ? "size-5" : "size-4 stroke-[2.25px]")}
                             />
                         </span>
-                    </AriaButton>
+                    </BaseCombobox.Trigger>
 
-                    <AriaPopover
-                        placement="bottom"
-                        offset={4}
-                        containerPadding={0}
-                        style={{ width: popoverWidth || undefined }}
-                        className={(state) =>
-                            cx(
-                                "w-(--trigger-width) origin-(--trigger-anchor-point) overflow-hidden rounded-lg bg-primary shadow-lg ring-1 ring-secondary_alt outline-hidden will-change-transform",
-                                state.isEntering &&
-                                    "duration-150 ease-out animate-in fade-in placement-top:slide-in-from-bottom-0.5 placement-bottom:slide-in-from-top-0.5",
-                                state.isExiting &&
-                                    "duration-100 ease-in animate-out fade-out placement-top:slide-out-to-bottom-0.5 placement-bottom:slide-out-to-top-0.5",
-                                popoverClassName,
-                            )
-                        }
-                    >
-                        <AriaDialog className="outline-hidden">
-                            <AriaAutocomplete filter={contains} inputValue={searchValue} onInputChange={setSearchValue}>
+                    <BaseCombobox.Portal>
+                        <BaseCombobox.Positioner {...popoverPositionerProps}>
+                            <BaseCombobox.Popup
+                                className={cx(
+                                    "w-(--anchor-width) origin-(--transform-origin) overflow-hidden rounded-lg bg-primary shadow-lg ring-1 ring-secondary_alt outline-hidden will-change-transform",
+                                    "data-open:duration-150 data-open:ease-out data-open:animate-in data-open:fade-in",
+                                    "data-open:data-[side=top]:slide-in-from-bottom-0.5 data-open:data-[side=bottom]:slide-in-from-top-0.5",
+                                    "data-ending-style:duration-100 data-ending-style:ease-in data-ending-style:animate-out data-ending-style:fade-out",
+                                    "data-ending-style:data-[side=top]:slide-out-to-bottom-0.5 data-ending-style:data-[side=bottom]:slide-out-to-top-0.5",
+                                    popoverClassName,
+                                )}
+                            >
                                 {showSearch && (
                                     <div className={cx("border-b border-secondary", searchSizes[size].wrapper)}>
-                                        <AriaSearchField aria-label="Search" value={searchValue} onChange={setSearchValue} autoFocus>
-                                            <div className={cx("flex items-center", searchSizes[size].root)}>
-                                                <SearchLg data-icon aria-hidden="true" className="shrink-0 text-fg-quaternary" />
-                                                <AriaInput
-                                                    placeholder="Search"
-                                                    className={cx(
-                                                        "w-full appearance-none bg-transparent text-primary caret-alpha-black/90 outline-hidden placeholder:text-placeholder",
-                                                        searchSizes[size].text,
-                                                    )}
-                                                />
-                                            </div>
-                                        </AriaSearchField>
+                                        <div className={cx("flex items-center", searchSizes[size].root)}>
+                                            <SearchLg data-icon aria-hidden="true" className="shrink-0 text-fg-quaternary" />
+                                            <BaseCombobox.Input
+                                                aria-label="Search"
+                                                placeholder="Search"
+                                                className={cx(
+                                                    "w-full appearance-none bg-transparent text-primary caret-alpha-black/90 outline-hidden placeholder:text-placeholder",
+                                                    searchSizes[size].text,
+                                                )}
+                                            />
+                                        </div>
                                     </div>
                                 )}
 
-                                <AriaListBox
+                                <BaseCombobox.Empty>
+                                    <MultiSelectEmptyState
+                                        title={emptyStateTitle}
+                                        description={emptyStateDescription}
+                                        onClearSearch={searchValue ? () => setSearchValue("") : undefined}
+                                    />
+                                </BaseCombobox.Empty>
+
+                                <BaseCombobox.List
                                     aria-label={label || "Options"}
-                                    items={items}
-                                    selectionMode="multiple"
-                                    selectedKeys={selectedKeys}
-                                    defaultSelectedKeys={defaultSelectedKeys}
-                                    onSelectionChange={onSelectionChange}
-                                    renderEmptyState={() => (
-                                        <MultiSelectEmptyState
-                                            title={emptyStateTitle}
-                                            description={emptyStateDescription}
-                                            onClearSearch={searchValue ? handleClearSearch : undefined}
-                                        />
-                                    )}
                                     className={cx("overflow-y-auto py-1 outline-hidden", popoverMaxHeights[size])}
                                 >
                                     {children}
-                                </AriaListBox>
-                            </AriaAutocomplete>
+                                </BaseCombobox.List>
 
-                            {showFooter && <MultiSelectFooter size={size} onReset={onReset} onSelectAll={onSelectAll} />}
-                        </AriaDialog>
-                    </AriaPopover>
-                </AriaDialogTrigger>
+                                {showFooter && <MultiSelectFooter size={size} onReset={onReset} onSelectAll={onSelectAll} />}
+                            </BaseCombobox.Popup>
+                        </BaseCombobox.Positioner>
+                    </BaseCombobox.Portal>
+                </BaseCombobox.Root>
 
                 {hint && (
                     <HintText isInvalid={isInvalid} className={cx(size === "sm" && "text-xs")}>
                         {hint}
                     </HintText>
                 )}
-            </div>
-        </SelectContext.Provider>
+            </SelectContext.Provider>
+        </Field.Root>
     );
 };
 

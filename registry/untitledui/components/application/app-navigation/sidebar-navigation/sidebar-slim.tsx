@@ -7,8 +7,8 @@
 import type { FC } from "react";
 import { useState } from "react";
 import { DotsVertical, LifeBuoy01, Settings01 } from "@untitledui/icons";
+import { Popover as BasePopover } from "@base-ui/react/popover";
 import { AnimatePresence, motion } from "motion/react";
-import { Button as AriaButton, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { ButtonUtility } from "@/components/base/buttons/button-utility";
 import { UntitledLogo } from "@/components/foundations/logo/untitledui-logo";
@@ -94,12 +94,8 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
                         </ul>
                     )}
 
-                    <AriaDialogTrigger>
-                        <AriaButton
-                            className={({ isPressed, isFocused }) =>
-                                cx("group relative inline-flex rounded-full", (isPressed || isFocused) && "outline-2 outline-offset-2 outline-focus-ring")
-                            }
-                        >
+                    <BasePopover.Root>
+                        <BasePopover.Trigger className="group relative inline-flex rounded-full focus:outline-2 focus:outline-offset-2 focus:outline-focus-ring active:outline-2 active:outline-offset-2 active:outline-focus-ring">
                             <Avatar
                                 border
                                 status="online"
@@ -107,24 +103,26 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
                                 size="md"
                                 alt="Olivia Rhye"
                             />
-                        </AriaButton>
-                        <AriaPopover
-                            placement="right bottom"
-                            offset={8}
-                            crossOffset={6}
-                            className={({ isEntering, isExiting }) =>
-                                cx(
-                                    "will-change-transform",
-                                    isEntering &&
-                                        "duration-300 ease-out animate-in fade-in placement-right:slide-in-from-left-2 placement-top:slide-in-from-bottom-2 placement-bottom:slide-in-from-top-2",
-                                    isExiting &&
-                                        "duration-150 ease-in animate-out fade-out placement-right:slide-out-to-left-2 placement-top:slide-out-to-bottom-2 placement-bottom:slide-out-to-top-2",
-                                )
-                            }
-                        >
-                            <NavAccountMenu />
-                        </AriaPopover>
-                    </AriaDialogTrigger>
+                        </BasePopover.Trigger>
+                        <BasePopover.Portal>
+                            <BasePopover.Positioner side="right" align="end" sideOffset={8} alignOffset={6}>
+                                <BasePopover.Popup
+                                    // The account menu renders the dialog element itself; the popup container keeps no role.
+                                    role={undefined}
+                                    className={cx(
+                                        "will-change-transform",
+                                        // Animations: Base UI animates in while the popup is open and out while it carries `data-ending-style`.
+                                        "data-open:duration-300 data-open:ease-out data-open:animate-in data-open:fade-in",
+                                        "data-ending-style:duration-150 data-ending-style:ease-in data-ending-style:animate-out data-ending-style:fade-out",
+                                        "data-[side=right]:data-open:slide-in-from-left-2 data-[side=top]:data-open:slide-in-from-bottom-2 data-[side=bottom]:data-open:slide-in-from-top-2",
+                                        "data-[side=right]:data-ending-style:slide-out-to-left-2 data-[side=top]:data-ending-style:slide-out-to-bottom-2 data-[side=bottom]:data-ending-style:slide-out-to-top-2",
+                                    )}
+                                >
+                                    <NavAccountMenu />
+                                </BasePopover.Popup>
+                            </BasePopover.Positioner>
+                        </BasePopover.Portal>
+                    </BasePopover.Root>
                 </div>
             </div>
         </aside>

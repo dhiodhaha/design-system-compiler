@@ -1,14 +1,20 @@
 /* Adopted from untitleduico/react@8b7409c078f8 — components/application/app-navigation/base-components/nav-item.tsx
  * MIT licensed upstream source (Copyright (c) 2025 Untitled UI).
  * Adopted with the smallest necessary project-local transformations; deltas are recorded in
- * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
+ * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs.
+ *
+ * Base UI migration (branch migration/base-ui-v1.8): React Aria's `Link` is replaced by a native anchor (or the
+ * `span[role=link]` React Aria itself fell back to when the item had no usable target), rendered through Base UI's
+ * `useRender` so the `render` prop keeps working. The press layer is the payload Button's, so `onPress` still
+ * receives React Aria's press event. The unit record is
+ * .design-compiler/base-ui-migration/units/overlay-family.json. */
 "use client";
 
-import type { FC, HTMLAttributes, MouseEventHandler, ReactNode, RefAttributes } from "react";
+import { useRender } from "@base-ui/react/use-render";
 import { ChevronDown, Share04 } from "@untitledui/icons";
-import type { LinkProps as AriaLinkProps } from "react-aria-components";
-import { Link as AriaLink } from "react-aria-components";
+import type { ComponentPropsWithRef, FC, HTMLAttributes, MouseEventHandler, ReactNode, Ref } from "react";
 import { Badge } from "@/components/base/badges/badges";
+import { type PressEvents, usePressEvents } from "@/components/base/buttons/button";
 import { cx, sortCx } from "@/utils/cx";
 
 const styles = sortCx({
@@ -43,17 +49,82 @@ export interface NavItemCollapsibleProps extends NavItemCommonProps {
 }
 
 /**
- * Props for the link variants (anchor tag). Accepts all React Aria `Link` props such as `routerOptions`, `isDisabled` and `onPress`.
+ * Props for the link variants (anchor tag). Accepts the press props and link attributes the React Aria `Link`
+ * accepted, including `isDisabled`, `onPress` and `render`.
  */
-export interface NavItemLinkProps extends NavItemCommonProps, Omit<AriaLinkProps, "children" | "className" | "onClick">, RefAttributes<HTMLAnchorElement> {
+export interface NavItemLinkProps
+    extends NavItemCommonProps,
+        Omit<ComponentPropsWithRef<"a">, "children" | "className" | "href" | "onClick" | "ref">,
+        PressEvents {
     /** Type of the nav item. */
     type: "link" | "collapsible-child";
     /** URL to navigate to when the nav item is clicked. */
-    href?: AriaLinkProps["href"];
+    href?: string;
+    /** Whether the nav item is disabled. */
+    isDisabled?: boolean;
+    /**
+     * Allows you to replace the component's HTML element with a different tag, or compose it with another
+     * component — the same contract as the React Aria `render` prop.
+     */
+    render?: useRender.RenderProp;
+    ref?: Ref<HTMLAnchorElement>;
 }
 
 /** Union type of collapsible and link props */
 export type NavItemBaseProps = NavItemCollapsibleProps | NavItemLinkProps;
+
+/**
+ * The link variants: an anchor while the item has a usable target, and the `span[role=link]` React Aria's `Link`
+ * fell back to otherwise (disabled items included).
+ */
+const NavItemLink = ({
+    type,
+    href,
+    isDisabled,
+    current,
+    onPress,
+    onClick,
+    className,
+    render,
+    ref,
+    children,
+    ...linkProps
+}: NavItemLinkProps & { className?: string }) => {
+    const isAnchor = Boolean(href) && !isDisabled;
+    const isExternal = href?.startsWith("http");
+
+    const elementProps = usePressEvents({ ...linkProps, isDisabled, onPress, onClick });
+
+    return useRender({
+        defaultTagName: isAnchor ? "a" : "span",
+        render,
+        ref,
+        state: { isDisabled: Boolean(isDisabled), isCurrent: Boolean(current) },
+        stateAttributesMapping: {
+            isDisabled: (value) => (value ? { "data-disabled": "" } : null),
+            isCurrent: (value) => (value ? { "data-current": "" } : null),
+        },
+        props: {
+            // Defaults that consumers can override through the link props.
+            target: isExternal ? "_blank" : "_self",
+            rel: "noopener noreferrer",
+            "aria-current": current ? "page" : undefined,
+            ...elementProps,
+            // Dropping `href` when disabled prevents navigation via middle-click or "open in new tab".
+            href: isDisabled ? undefined : href,
+            "aria-disabled": isDisabled || undefined,
+            // A `span` has no native link semantics, so it carries them explicitly, as React Aria's link did.
+            ...(isAnchor ? {} : { role: "link", tabIndex: elementProps.tabIndex ?? (isDisabled ? undefined : 0) }),
+            className: cx(
+                type === "collapsible-child" ? "py-2 pr-3 pl-10" : "group/item p-2",
+                styles.root,
+                current && styles.rootSelected,
+                "aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:opacity-50",
+            ),
+            children,
+        },
+    });
+};
 
 export const NavItemBase = (props: NavItemBaseProps) => {
     const { icon: Icon, badge, current, truncate = true, onClick, children, ...rest } = props;
@@ -104,32 +175,14 @@ export const NavItemBase = (props: NavItemBaseProps) => {
     }
 
     const { type, href, isDisabled, ...linkProps } = rest;
-
     const isExternal = href?.startsWith("http");
-    const externalIcon = isExternal && <Share04 className="size-4 stroke-[2.5px] text-fg-quaternary" />;
 
     return (
-        <AriaLink
-            // Defaults that consumers can override through React Aria link props.
-            target={isExternal ? "_blank" : "_self"}
-            rel="noopener noreferrer"
-            aria-current={current ? "page" : undefined}
-            {...linkProps}
-            // Dropping `href` when disabled prevents navigation via middle-click or "open in new tab".
-            href={isDisabled ? undefined : href}
-            isDisabled={isDisabled}
-            onClick={onClick}
-            className={cx(
-                type === "collapsible-child" ? "py-2 pr-3 pl-10" : "group/item p-2",
-                styles.root,
-                current && styles.rootSelected,
-                "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-            )}
-        >
+        <NavItemLink {...linkProps} type={type} href={href} isDisabled={isDisabled} current={current} onClick={onClick}>
             {type === "link" && iconElement}
             {labelElement}
-            {externalIcon}
+            {isExternal && <Share04 className="size-4 stroke-[2.5px] text-fg-quaternary" />}
             {badgeElement}
-        </AriaLink>
+        </NavItemLink>
     );
 };

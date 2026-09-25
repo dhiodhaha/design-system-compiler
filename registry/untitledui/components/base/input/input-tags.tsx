@@ -7,7 +7,8 @@
 import type { Key, KeyboardEvent, ReactNode } from "react";
 import { useCallback, useRef, useState } from "react";
 import { HelpCircle, InfoCircle } from "@untitledui/icons";
-import { Group as AriaGroup, Input as AriaInput } from "react-aria-components";
+import { Field } from "@base-ui/react/field";
+import { Input as BaseInput } from "@base-ui/react/input";
 import { HintText } from "@/components/base/input/hint-text";
 import { Label } from "@/components/base/input/label";
 import { Tag, TagGroup, TagList } from "@/components/base/tags/tags";
@@ -94,6 +95,7 @@ export const InputTags = ({
     const inputRef = useRef<HTMLInputElement>(null);
     const tagGroupRef = useRef<HTMLDivElement>(null);
     const [inputValue, setInputValue] = useState("");
+    const [isFocusWithin, setFocusWithin] = useState(false);
 
     const [internalEntries, setInternalEntries] = useState<TagEntry[]>(() => (defaultValue ?? []).map((label) => ({ id: nextId(), label })));
 
@@ -242,86 +244,86 @@ export const InputTags = ({
     });
 
     return (
-        <div className={cx("flex flex-col gap-1.5", className)}>
+        <Field.Root disabled={isDisabled} invalid={isInvalid} className={cx("flex flex-col gap-1.5", className)}>
             {label && <Label isRequired={hideRequiredIndicator ? false : isRequired}>{label}</Label>}
 
-            <AriaGroup
-                isDisabled={isDisabled}
-                isInvalid={isInvalid}
-                className={({ isFocusWithin, isDisabled, isInvalid }) =>
-                    cx(
-                        "group/input relative flex w-full items-center rounded-lg bg-primary shadow-xs ring-1 ring-primary outline-hidden transition duration-100 ease-linear ring-inset",
-                        isDisabled && "cursor-not-allowed opacity-50",
-                        isFocusWithin && !isDisabled && "ring-2 ring-brand",
-                        isInvalid && !isFocusWithin && "ring-error_subtle",
-                        isInvalid && isFocusWithin && "ring-2 ring-error",
-                        sizes[size].root,
-                    )
-                }
+            <div
+                // The field's group: everything inside it shares one focus ring, one invalid state and one
+                // disabled state (React Aria's `Group` did the same through its render state).
+                role="group"
+                data-disabled={isDisabled || undefined}
+                data-invalid={isInvalid || undefined}
+                onFocus={() => setFocusWithin(true)}
+                onBlur={() => setFocusWithin(false)}
+                className={cx(
+                    "group/input relative flex w-full items-center rounded-lg bg-primary shadow-xs ring-1 ring-primary outline-hidden transition duration-100 ease-linear ring-inset",
+                    isDisabled && "cursor-not-allowed opacity-50",
+                    isFocusWithin && !isDisabled && "ring-2 ring-brand",
+                    isInvalid && !isFocusWithin && "ring-error_subtle",
+                    isInvalid && isFocusWithin && "ring-2 ring-error",
+                    sizes[size].root,
+                )}
             >
-                {({ isDisabled }) => (
-                    <>
-                        <div className={cx("relative flex w-full flex-1 flex-row flex-wrap items-center justify-start", size === "sm" ? "gap-1.5" : "gap-2")}>
-                            {!isEmpty && (
-                                <div ref={tagGroupRef} onKeyDown={handleTagGroupKeyDown} className="contents">
-                                    <TagGroup label={label || "Tags"} size={size === "lg" ? "md" : size} onRemove={handleRemove} className="contents">
-                                        <TagList className="flex flex-wrap gap-1.5 focus:outline-hidden" items={entries}>
-                                            {(item) => (
-                                                <Tag
-                                                    id={item.id}
-                                                    isDisabled={isDisabled}
-                                                    className="focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-[-2px] focus-visible:outline-hidden"
-                                                >
-                                                    {item.label}
-                                                </Tag>
-                                            )}
-                                        </TagList>
-                                    </TagGroup>
-                                </div>
-                            )}
-
-                            <div className="relative flex min-w-[20%] flex-1 flex-row items-center">
-                                <AriaInput
-                                    ref={inputRef}
-                                    type="text"
-                                    value={inputValue}
-                                    disabled={isDisabled}
-                                    placeholder={isEmpty ? placeholder : undefined}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    onKeyDown={handleInputKeyDown}
-                                    className="w-full flex-[1_0_0] appearance-none bg-transparent text-ellipsis text-primary caret-alpha-black/90 outline-hidden placeholder:text-placeholder focus:outline-hidden disabled:cursor-not-allowed"
-                                />
-                            </div>
-                        </div>
-
-                        {tooltip && (
-                            <Tooltip title={tooltip} placement="top">
-                                <TooltipTrigger
-                                    className={cx(
-                                        "absolute cursor-pointer text-fg-quaternary transition duration-100 ease-linear group-invalid/input:hidden hover:text-fg-quaternary_hover focus:text-fg-quaternary_hover",
-                                        sizes[size].iconTrailing,
+                <div className={cx("relative flex w-full flex-1 flex-row flex-wrap items-center justify-start", size === "sm" ? "gap-1.5" : "gap-2")}>
+                    {!isEmpty && (
+                        <div ref={tagGroupRef} onKeyDown={handleTagGroupKeyDown} className="contents">
+                            <TagGroup label={label || "Tags"} size={size === "lg" ? "md" : size} onRemove={handleRemove} className="contents">
+                                <TagList className="flex flex-wrap gap-1.5 focus:outline-hidden" items={entries}>
+                                    {(item) => (
+                                        <Tag
+                                            id={item.id}
+                                            isDisabled={isDisabled}
+                                            className="focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-[-2px] focus-visible:outline-hidden"
+                                        >
+                                            {item.label}
+                                        </Tag>
                                     )}
-                                >
-                                    <HelpCircle className="size-4 stroke-[2.25px]" />
-                                </TooltipTrigger>
-                            </Tooltip>
-                        )}
+                                </TagList>
+                            </TagGroup>
+                        </div>
+                    )}
 
-                        <InfoCircle
+                    <div className="relative flex min-w-[20%] flex-1 flex-row items-center">
+                        <BaseInput
+                            ref={inputRef}
+                            type="text"
+                            value={inputValue}
+                            disabled={isDisabled}
+                            required={isRequired || undefined}
+                            placeholder={isEmpty ? placeholder : undefined}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            onKeyDown={handleInputKeyDown}
+                            className="w-full flex-[1_0_0] appearance-none bg-transparent text-ellipsis text-primary caret-alpha-black/90 outline-hidden placeholder:text-placeholder focus:outline-hidden disabled:cursor-not-allowed"
+                        />
+                    </div>
+                </div>
+
+                {tooltip && (
+                    <Tooltip title={tooltip} placement="top">
+                        <TooltipTrigger
                             className={cx(
-                                "pointer-events-none absolute hidden size-4 stroke-[2.25px] text-fg-error-secondary group-invalid/input:block",
+                                "absolute cursor-pointer text-fg-quaternary transition duration-100 ease-linear group-data-invalid/input:hidden hover:text-fg-quaternary_hover focus:text-fg-quaternary_hover",
                                 sizes[size].iconTrailing,
                             )}
-                        />
-                    </>
+                        >
+                            <HelpCircle className="size-4 stroke-[2.25px]" />
+                        </TooltipTrigger>
+                    </Tooltip>
                 )}
-            </AriaGroup>
+
+                <InfoCircle
+                    className={cx(
+                        "pointer-events-none absolute hidden size-4 stroke-[2.25px] text-fg-error-secondary group-data-invalid/input:block",
+                        sizes[size].iconTrailing,
+                    )}
+                />
+            </div>
 
             {hint && (
                 <HintText isInvalid={isInvalid} className={cx(size === "sm" && "text-xs")}>
                     {hint}
                 </HintText>
             )}
-        </div>
+        </Field.Root>
     );
 };

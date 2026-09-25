@@ -4,7 +4,7 @@
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
 "use client";
 
-import { useControlledState } from "@react-stately/utils";
+import { useState } from "react";
 import { HintText } from "@/components/base/input/hint-text";
 import type { InputProps } from "@/components/base/input/input";
 import { InputBase, TextField } from "@/components/base/input/input";
@@ -107,12 +107,21 @@ export const PaymentInput = ({
     type = "text",
     ...props
 }: PaymentInputProps) => {
-    const [cardNumber, setCardNumber] = useControlledState(value, defaultValue || "", (value) => {
-        // Remove all non-numeric characters
-        value = value.replace(/\D/g, "");
+    // The card number is mirrored here rather than read straight from the input: the displayed value is
+    // the formatted number, while the value the consumer owns is the digits.
+    const isControlled = value !== undefined;
+    const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue ?? "");
+    const cardNumber = isControlled ? value : uncontrolledValue;
 
-        onChange?.(value || "");
-    });
+    const setCardNumber = (nextValue: string) => {
+        // Remove all non-numeric characters
+        const digits = nextValue.replace(/\D/g, "");
+
+        if (!isControlled) {
+            setUncontrolledValue(digits);
+        }
+        onChange?.(digits || "");
+    };
 
     const card = detectCardType(cardNumber);
 

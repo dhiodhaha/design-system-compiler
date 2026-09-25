@@ -13,8 +13,8 @@
   "totals": {
     "units": 25,
     "byStatus": {
-      "MIGRATED_PENDING_GATES": 7,
-      "MIGRATING": 18
+      "MIGRATED_PENDING_GATES": 23,
+      "MIGRATING": 2
     },
     "byWave": {
       "1": 4,
@@ -241,7 +241,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -372,7 +372,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -410,7 +410,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -447,7 +447,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -527,7 +527,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -563,7 +563,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -612,11 +612,11 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/select.json",
       "dependsOn": [],
       "dependencyNote": null,
-      "publicApiChanges": 0,
+      "publicApiChanges": 6,
       "blockers": []
     },
     {
@@ -657,11 +657,11 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/combobox.json",
       "dependsOn": [],
       "dependencyNote": null,
-      "publicApiChanges": 0,
+      "publicApiChanges": 6,
       "blockers": []
     },
     {
@@ -704,11 +704,11 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/multi-select.json",
       "dependsOn": [],
       "dependencyNote": null,
-      "publicApiChanges": 0,
+      "publicApiChanges": 6,
       "blockers": []
     },
     {
@@ -753,11 +753,11 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/tag-select.json",
       "dependsOn": [],
       "dependencyNote": null,
-      "publicApiChanges": 0,
+      "publicApiChanges": 6,
       "blockers": []
     },
     {
@@ -826,11 +826,11 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/dropdown-menu.json",
       "dependsOn": [],
       "dependencyNote": null,
-      "publicApiChanges": 0,
+      "publicApiChanges": 8,
       "blockers": []
     },
     {
@@ -869,7 +869,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -910,13 +910,13 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/modal-dialog.json",
       "dependsOn": [
         "buttons-native"
       ],
       "dependencyNote": "React Aria's DialogTrigger wires its child through React Aria press props; once the payload Button is a native element it no longer consumes them, so the trigger stops opening the dialog (observed in the migrated capture: aria-expanded never becomes true). These consumers must migrate in the same batch as, or after, the button family.",
-      "publicApiChanges": 0,
+      "publicApiChanges": 7,
       "blockers": []
     },
     {
@@ -956,13 +956,13 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/slideout.json",
       "dependsOn": [
         "buttons-native"
       ],
       "dependencyNote": "same React Aria trigger/child press-wiring dependency as modal-dialog",
-      "publicApiChanges": 0,
+      "publicApiChanges": 7,
       "blockers": []
     },
     {
@@ -1002,7 +1002,7 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
+      "status": "MIGRATED_PENDING_GATES",
       "record": null,
       "dependsOn": [],
       "dependencyNote": null,
@@ -1057,13 +1057,13 @@
         "a11y",
         "visual"
       ],
-      "status": "MIGRATING",
-      "record": null,
+      "status": "MIGRATED_PENDING_GATES",
+      "record": ".design-compiler/base-ui-migration/units/nav-parts.json",
       "dependsOn": [
         "buttons-native"
       ],
       "dependencyNote": "app-navigation parts render the payload Button inside React Aria DialogTrigger/Popover and use Card/Dialog contexts; same press-wiring dependency as modal-dialog",
-      "publicApiChanges": 0,
+      "publicApiChanges": 7,
       "blockers": []
     },
     {

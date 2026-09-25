@@ -6,8 +6,7 @@
 
 import { useState } from "react";
 import { ChevronDown, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@untitledui/icons";
-import type { Selection } from "react-aria-components";
-import { SubmenuTrigger } from "react-aria-components";
+import type { Selection } from "@/components/base/dropdown/dropdown";
 import { Button } from "@/components/base/buttons/button";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 
@@ -39,7 +38,7 @@ export const DropdownAccountButton = () => {
                             Dark mode
                         </Dropdown.Item>
                     </Dropdown.Section>
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item icon={HelpCircle}>Support</Dropdown.Item>
 
                         <Dropdown.Popover placement="right top" offset={-6}>
@@ -49,7 +48,7 @@ export const DropdownAccountButton = () => {
                                 <Dropdown.Item>Send feedback</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
 
                     <Dropdown.Separator />
 

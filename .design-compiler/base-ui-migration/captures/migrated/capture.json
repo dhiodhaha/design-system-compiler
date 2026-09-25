@@ -1,7 +1,7 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "migrated",
-  "capturedAt": "2026-09-25T13:24:40.635Z",
+  "capturedAt": "2026-09-25T14:00:17.825Z",
   "cases": {
     "button-default": {
       "static": {
@@ -3750,32 +3750,34 @@
     },
     "select-closed": {
       "static": {
-        "text": "Team member Select team member Phoenix Baker Olivia Rhye Lana Steiner",
+        "text": "Team member Select team member",
         "controlState": [
           {
             "type": null,
-            "checked": null,
-            "indeterminate": null,
+            "checked": false,
+            "indeterminate": false,
             "value": "",
             "disabled": false,
             "required": false,
             "name": null,
-            "hidden": false
+            "hidden": true
           }
         ],
         "stateful": [
           {
             "role": "combobox",
-            "name": "Phoenix BakerOlivia RhyeLana S",
+            "name": "Select team member",
             "checked": null,
             "disabled": false,
-            "focusable": false
+            "focusable": true
           }
         ],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
-        "roles": [],
+        "roles": [
+          "combobox[expanded=false]"
+        ],
         "focusable": [
           {
             "tag": "button",
@@ -3787,19 +3789,19 @@
             "checked": null,
             "selected": null,
             "expanded": "false",
-            "role": "button"
+            "role": "combobox"
           },
           {
-            "tag": "select",
+            "tag": "input",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Phoenix BakerOlivia RhyeLana Steiner",
+            "name": "",
             "pressed": null,
-            "checked": null,
+            "checked": "false",
             "selected": null,
             "expanded": null,
-            "role": "select"
+            "role": "input"
           }
         ],
         "interactiveCount": 2,
@@ -3807,17 +3809,17 @@
         "slotMetrics": {
           "button,[role=combobox]": {
             "tag": "button",
-            "role": null,
+            "role": "combobox",
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria8899783799-_r_2g_",
-              "data-rac": "",
               "type": "button",
-              "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria8899783799-_r_2l_",
+              "data-placeholder": "",
+              "id": "base-ui-_r_2e_",
+              "role": "combobox",
+              "aria-expanded": "false",
               "aria-haspopup": "listbox",
-              "aria-expanded": "false"
+              "aria-labelledby": "base-ui-_r_2h_"
             },
             "styles": {
               "display": "flex",
@@ -3852,10 +3854,10 @@
             "controls": [
               {
                 "type": null,
-                "checked": null,
+                "checked": false,
                 "value": "",
                 "disabled": false,
-                "hidden": false
+                "hidden": true
               }
             ],
             "expanded": [
@@ -3873,32 +3875,34 @@
     },
     "select-open": {
       "static": {
-        "text": "Team member Select team member Phoenix Baker Olivia Rhye Lana Steiner",
+        "text": "Team member Select team member",
         "controlState": [
           {
             "type": null,
-            "checked": null,
-            "indeterminate": null,
+            "checked": false,
+            "indeterminate": false,
             "value": "",
             "disabled": false,
             "required": false,
             "name": null,
-            "hidden": false
+            "hidden": true
           }
         ],
         "stateful": [
           {
             "role": "combobox",
-            "name": "Phoenix BakerOlivia RhyeLana S",
+            "name": "Select team member",
             "checked": null,
             "disabled": false,
-            "focusable": false
+            "focusable": true
           }
         ],
         "portals": [],
         "focusVisible": false,
         "pointerEvents": "auto",
-        "roles": [],
+        "roles": [
+          "combobox[expanded=false]"
+        ],
         "focusable": [
           {
             "tag": "button",
@@ -3910,19 +3914,19 @@
             "checked": null,
             "selected": null,
             "expanded": "false",
-            "role": "button"
+            "role": "combobox"
           },
           {
-            "tag": "select",
+            "tag": "input",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Phoenix BakerOlivia RhyeLana Steiner",
+            "name": "",
             "pressed": null,
-            "checked": null,
+            "checked": "false",
             "selected": null,
             "expanded": null,
-            "role": "select"
+            "role": "input"
           }
         ],
         "interactiveCount": 2,
@@ -3930,17 +3934,17 @@
         "slotMetrics": {
           "button,[role=combobox],[role=listbox]": {
             "tag": "button",
-            "role": null,
+            "role": "combobox",
             "type": "button",
             "name": "Select team member",
             "attrs": {
-              "id": "react-aria8899783799-_r_2q_",
-              "data-rac": "",
               "type": "button",
-              "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria8899783799-_r_2v_",
+              "data-placeholder": "",
+              "id": "base-ui-_r_2j_",
+              "role": "combobox",
+              "aria-expanded": "false",
               "aria-haspopup": "listbox",
-              "aria-expanded": "false"
+              "aria-labelledby": "base-ui-_r_2m_"
             },
             "styles": {
               "display": "flex",
@@ -3992,10 +3996,10 @@
             "controls": [
               {
                 "type": null,
-                "checked": null,
+                "checked": false,
                 "value": "",
                 "disabled": false,
-                "hidden": false
+                "hidden": true
               }
             ],
             "expanded": [
@@ -4014,10 +4018,10 @@
             "controls": [
               {
                 "type": null,
-                "checked": null,
+                "checked": false,
                 "value": "",
                 "disabled": false,
-                "hidden": false
+                "hidden": true
               }
             ],
             "expanded": [
@@ -4026,7 +4030,7 @@
             "ariaStates": [
               "combobox:null:false"
             ],
-            "overlays": 5,
+            "overlays": 4,
             "active": "div"
           }
         },
@@ -4036,10 +4040,10 @@
             "controls": [
               {
                 "type": null,
-                "checked": null,
+                "checked": false,
                 "value": "",
                 "disabled": false,
-                "hidden": false
+                "hidden": true
               }
             ],
             "expanded": [
@@ -4048,7 +4052,7 @@
             "ariaStates": [
               "combobox:null:false"
             ],
-            "overlays": 5,
+            "overlays": 4,
             "active": "div"
           }
         },
@@ -4058,10 +4062,10 @@
             "controls": [
               {
                 "type": null,
-                "checked": null,
+                "checked": false,
                 "value": "a",
                 "disabled": false,
-                "hidden": false
+                "hidden": true
               }
             ],
             "expanded": [
@@ -4076,77 +4080,78 @@
         }
       ],
       "afterInteraction": {
-        "text": "Team member Phoenix Baker phoenix@untitledui.com Phoenix Baker Olivia Rhye Lana Steiner",
+        "text": "Team member Phoenix Baker",
         "controlState": [
           {
             "type": null,
-            "checked": null,
-            "indeterminate": null,
+            "checked": false,
+            "indeterminate": false,
             "value": "a",
             "disabled": false,
             "required": false,
             "name": null,
-            "hidden": false
+            "hidden": true
           }
         ],
         "stateful": [
           {
             "role": "combobox",
-            "name": "Phoenix BakerOlivia RhyeLana S",
+            "name": "Phoenix Baker",
             "checked": null,
             "disabled": false,
-            "focusable": false
+            "focusable": true
           }
         ],
         "portals": [],
         "focusVisible": true,
         "pointerEvents": "auto",
-        "roles": [],
+        "roles": [
+          "combobox[expanded=false]"
+        ],
         "focusable": [
           {
             "tag": "button",
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "Phoenix Bakerphoenix@untitledui.com",
+            "name": "Phoenix Baker",
             "pressed": null,
             "checked": null,
             "selected": null,
             "expanded": "false",
-            "role": "button"
+            "role": "combobox"
           },
           {
-            "tag": "select",
+            "tag": "input",
             "type": null,
             "tabIndex": "-1",
             "disabled": false,
-            "name": "Phoenix BakerOlivia RhyeLana Steiner",
+            "name": "",
             "pressed": null,
-            "checked": null,
+            "checked": "false",
             "selected": null,
             "expanded": null,
-            "role": "select"
+            "role": "input"
           }
         ],
         "interactiveCount": 2,
-        "activeElement": "button:Phoenix Bakerphoenix@untitledu",
+        "activeElement": "button:Phoenix Baker",
         "slotMetrics": {
           "button,[role=combobox],[role=listbox]": {
             "tag": "button",
-            "role": null,
+            "role": "combobox",
             "type": "button",
-            "name": "Phoenix Bakerphoenix@untitledui.com",
+            "name": "Phoenix Baker",
             "attrs": {
-              "id": "react-aria8899783799-_r_2q_",
-              "data-rac": "",
               "type": "button",
-              "data-react-aria-pressable": "true",
-              "aria-labelledby": "react-aria8899783799-_r_2v_",
-              "aria-haspopup": "listbox",
+              "id": "base-ui-_r_2j_",
+              "role": "combobox",
               "aria-expanded": "false",
-              "data-hovered": "true",
-              "data-focused": "true",
-              "data-focus-visible": "true"
+              "aria-haspopup": "listbox",
+              "aria-labelledby": "base-ui-_r_2m_",
+              "data-focused": "",
+              "data-dirty": "",
+              "data-filled": ""
             },
             "styles": {
               "display": "flex",
@@ -4195,7 +4200,7 @@
           }
         ],
         "interactiveCount": 1,
-        "activeElement": "button:Phoenix Bakerphoenix@untitledu",
+        "activeElement": "button:Phoenix Baker",
         "slotMetrics": {
           "button,[role=tooltip]": {
             "tag": "button",
@@ -4203,7 +4208,7 @@
             "type": "button",
             "name": "Trigger",
             "attrs": {
-              "id": "base-ui-_r_34_",
+              "id": "base-ui-_r_2q_",
               "data-base-ui-tooltip-trigger": "",
               "type": "button"
             },
@@ -4339,11 +4344,11 @@
             "type": "button",
             "name": "Trigger",
             "attrs": {
-              "id": "base-ui-_r_34_",
+              "id": "base-ui-_r_2q_",
               "data-base-ui-tooltip-trigger": "",
               "type": "button",
               "data-popup-open": "",
-              "aria-describedby": "_r_32_"
+              "aria-describedby": "_r_2o_"
             },
             "styles": {
               "display": "inline-block",
@@ -4425,8 +4430,8 @@
         ],
         "focusable": [
           {
-            "tag": "div",
-            "type": null,
+            "tag": "button",
+            "type": "button",
             "tabIndex": "0",
             "disabled": false,
             "name": "One",
@@ -4437,8 +4442,8 @@
             "role": "tab"
           },
           {
-            "tag": "div",
-            "type": null,
+            "tag": "button",
+            "type": "button",
             "tabIndex": "-1",
             "disabled": false,
             "name": "Two",
@@ -4449,8 +4454,8 @@
             "role": "tab"
           },
           {
-            "tag": "div",
-            "type": null,
+            "tag": "button",
+            "type": "button",
             "tabIndex": "-1",
             "disabled": false,
             "name": "Three",
@@ -4482,13 +4487,10 @@
             "type": null,
             "name": "Tabs",
             "attrs": {
-              "data-rac": "",
-              "data-collection": "react-aria8899783799-_r_35_",
-              "id": "react-aria8899783799-_r_36_",
-              "aria-label": "Tabs",
+              "data-orientation": "horizontal",
+              "data-activation-direction": "none",
               "role": "tablist",
-              "aria-orientation": "horizontal",
-              "data-orientation": "horizontal"
+              "aria-label": "Tabs"
             },
             "styles": {
               "display": "flex",
@@ -4591,8 +4593,8 @@
         ],
         "focusable": [
           {
-            "tag": "div",
-            "type": null,
+            "tag": "button",
+            "type": "button",
             "tabIndex": "0",
             "disabled": false,
             "name": "One",
@@ -4603,8 +4605,8 @@
             "role": "tab"
           },
           {
-            "tag": "div",
-            "type": null,
+            "tag": "button",
+            "type": "button",
             "tabIndex": "-1",
             "disabled": false,
             "name": "Two",
@@ -4615,8 +4617,8 @@
             "role": "tab"
           },
           {
-            "tag": "div",
-            "type": null,
+            "tag": "button",
+            "type": "button",
             "tabIndex": "-1",
             "disabled": false,
             "name": "Three",
@@ -4648,13 +4650,10 @@
             "type": null,
             "name": "Tabs",
             "attrs": {
-              "data-rac": "",
-              "data-collection": "react-aria8899783799-_r_35_",
-              "id": "react-aria8899783799-_r_36_",
-              "aria-label": "Tabs",
+              "data-orientation": "horizontal",
+              "data-activation-direction": "none",
               "role": "tablist",
-              "aria-orientation": "horizontal",
-              "data-orientation": "horizontal"
+              "aria-label": "Tabs"
             },
             "styles": {
               "display": "flex",
@@ -4713,7 +4712,7 @@
           {
             "tag": "input",
             "type": "range",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -4732,18 +4731,16 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria8899783799-_r_38_-0",
-              "aria-labelledby": "react-aria8899783799-_r_39_",
               "aria-orientation": "horizontal",
+              "aria-valuenow": "30",
               "aria-valuetext": "3,000%",
-              "aria-describedby": "",
-              "aria-details": "",
+              "id": "base-ui-_r_34_",
               "type": "range",
               "value": "30"
             },
             "styles": {
-              "display": "inline-block",
-              "position": "static",
+              "display": "block",
+              "position": "fixed",
               "color": "rgb(0, 0, 0)",
               "backgroundColor": "rgba(0, 0, 0, 0)",
               "borderColor": "rgb(0, 0, 0)",
@@ -4825,7 +4822,7 @@
           {
             "tag": "input",
             "type": "range",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -4844,18 +4841,16 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria8899783799-_r_3e_-0",
-              "aria-labelledby": "react-aria8899783799-_r_3f_",
               "aria-orientation": "horizontal",
+              "aria-valuenow": "30",
               "aria-valuetext": "3,000%",
-              "aria-describedby": "",
-              "aria-details": "",
+              "id": "base-ui-_r_38_",
               "type": "range",
               "value": "30"
             },
             "styles": {
-              "display": "inline-block",
-              "position": "static",
+              "display": "block",
+              "position": "fixed",
               "color": "rgb(0, 0, 0)",
               "backgroundColor": "rgba(0, 0, 0, 0)",
               "borderColor": "rgb(0, 0, 0)",
@@ -4985,7 +4980,7 @@
           {
             "tag": "input",
             "type": "range",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -5004,18 +4999,16 @@
             "type": "range",
             "name": "",
             "attrs": {
-              "id": "react-aria8899783799-_r_3e_-0",
-              "aria-labelledby": "react-aria8899783799-_r_3f_",
               "aria-orientation": "horizontal",
+              "aria-valuenow": "31",
               "aria-valuetext": "3,100%",
-              "aria-describedby": "",
-              "aria-details": "",
+              "id": "base-ui-_r_38_",
               "type": "range",
               "value": "31"
             },
             "styles": {
-              "display": "inline-block",
-              "position": "static",
+              "display": "block",
+              "position": "fixed",
               "color": "rgb(0, 0, 0)",
               "backgroundColor": "rgba(0, 0, 0, 0)",
               "borderColor": "rgb(0, 0, 0)",
@@ -5068,12 +5061,10 @@
             "type": "button",
             "name": "Open menu",
             "attrs": {
-              "data-rac": "",
-              "type": "button",
-              "aria-haspopup": "true",
+              "aria-haspopup": "menu",
               "aria-expanded": "false",
-              "id": "react-aria8899783799-_r_3k_",
-              "data-react-aria-pressable": "true",
+              "id": "_r_39_",
+              "type": "button",
               "aria-label": "Open menu"
             },
             "styles": {
@@ -5146,7 +5137,7 @@
               "true"
             ],
             "ariaStates": [],
-            "overlays": 5,
+            "overlays": 4,
             "active": "div"
           }
         },
@@ -5158,7 +5149,7 @@
               "true"
             ],
             "ariaStates": [],
-            "overlays": 5,
+            "overlays": 4,
             "active": "div"
           }
         },
@@ -5170,7 +5161,7 @@
               "true"
             ],
             "ariaStates": [],
-            "overlays": 5,
+            "overlays": 4,
             "active": "div"
           }
         },
@@ -5218,16 +5209,11 @@
             "type": "button",
             "name": "Open menu",
             "attrs": {
-              "data-rac": "",
-              "type": "button",
-              "aria-haspopup": "true",
+              "aria-haspopup": "menu",
               "aria-expanded": "false",
-              "id": "react-aria8899783799-_r_3k_",
-              "data-react-aria-pressable": "true",
-              "aria-label": "Open menu",
-              "data-hovered": "true",
-              "data-focused": "true",
-              "data-focus-visible": "true"
+              "id": "_r_39_",
+              "type": "button",
+              "aria-label": "Open menu"
             },
             "styles": {
               "display": "inline-block",
@@ -5257,7 +5243,7 @@
         "text": "Search members ⌘K",
         "controlState": [
           {
-            "type": "text",
+            "type": null,
             "checked": false,
             "indeterminate": false,
             "value": "",
@@ -5265,6 +5251,16 @@
             "required": false,
             "name": null,
             "hidden": false
+          },
+          {
+            "type": null,
+            "checked": false,
+            "indeterminate": false,
+            "value": "",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
           }
         ],
         "stateful": [
@@ -5286,8 +5282,8 @@
         "focusable": [
           {
             "tag": "input",
-            "type": "text",
-            "tabIndex": "0",
+            "type": null,
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -5295,25 +5291,37 @@
             "selected": null,
             "expanded": "false",
             "role": "combobox"
+          },
+          {
+            "tag": "input",
+            "type": null,
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
-        "interactiveCount": 1,
+        "interactiveCount": 2,
         "activeElement": "button:Open menu",
         "slotMetrics": {
           "input,[role=combobox],[role=listbox]": {
             "tag": "input",
             "role": "combobox",
-            "type": "text",
+            "type": null,
             "name": "",
             "attrs": {
-              "aria-autocomplete": "list",
-              "placeholder": "Search by name",
-              "id": "react-aria8899783799-_r_3s_",
               "role": "combobox",
               "aria-expanded": "false",
-              "data-rac": "",
-              "type": "text",
-              "value": ""
+              "aria-haspopup": "listbox",
+              "aria-autocomplete": "list",
+              "id": "base-ui-_r_3f_",
+              "placeholder": "Search by name",
+              "value": "",
+              "aria-labelledby": "base-ui-_r_3i_"
             },
             "styles": {
               "display": "block",
@@ -5369,11 +5377,18 @@
           "state": {
             "controls": [
               {
-                "type": "text",
+                "type": null,
                 "checked": false,
                 "value": "",
                 "disabled": false,
                 "hidden": false
+              },
+              {
+                "type": null,
+                "checked": false,
+                "value": "",
+                "disabled": false,
+                "hidden": true
               }
             ],
             "expanded": [
@@ -5389,178 +5404,41 @@
         {
           "step": "0:click",
           "state": {
-            "controls": [
-              {
-                "type": "text",
-                "checked": false,
-                "value": "",
-                "disabled": false,
-                "hidden": false
-              }
-            ],
-            "expanded": [
-              "true"
-            ],
-            "ariaStates": [
-              "combobox:false:false"
-            ],
-            "overlays": 4,
-            "active": "input"
+            "controls": [],
+            "expanded": [],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
           }
         },
         {
           "step": "1:type",
-          "state": {
-            "controls": [
-              {
-                "type": "text",
-                "checked": false,
-                "value": "Oli",
-                "disabled": false,
-                "hidden": false
-              }
-            ],
-            "expanded": [
-              "true"
-            ],
-            "ariaStates": [
-              "combobox:false:false"
-            ],
-            "overlays": 2,
-            "active": "input"
-          }
+          "error": "target not found",
+          "target": "input"
         },
         {
           "step": "2:press ArrowDown",
           "state": {
-            "controls": [
-              {
-                "type": "text",
-                "checked": false,
-                "value": "Oli",
-                "disabled": false,
-                "hidden": false
-              }
-            ],
-            "expanded": [
-              "true"
-            ],
-            "ariaStates": [
-              "combobox:false:false"
-            ],
-            "overlays": 2,
-            "active": "input"
+            "controls": [],
+            "expanded": [],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
           }
         },
         {
           "step": "3:press Enter",
           "state": {
-            "controls": [
-              {
-                "type": "text",
-                "checked": false,
-                "value": "Olivia Rhye",
-                "disabled": false,
-                "hidden": false
-              }
-            ],
-            "expanded": [
-              "false"
-            ],
-            "ariaStates": [
-              "combobox:false:false"
-            ],
+            "controls": [],
+            "expanded": [],
+            "ariaStates": [],
             "overlays": 0,
-            "active": "input"
+            "active": "body"
           }
         }
       ],
       "afterInteraction": {
-        "text": "Search members Olivia Rhye ⌘K",
-        "controlState": [
-          {
-            "type": "text",
-            "checked": false,
-            "indeterminate": false,
-            "value": "Olivia Rhye",
-            "disabled": false,
-            "required": false,
-            "name": null,
-            "hidden": false
-          }
-        ],
-        "stateful": [
-          {
-            "role": "combobox",
-            "name": "",
-            "checked": "false",
-            "disabled": false,
-            "focusable": true
-          }
-        ],
-        "portals": [],
-        "focusVisible": true,
-        "pointerEvents": "auto",
-        "roles": [
-          "group",
-          "combobox[expanded=false]"
-        ],
-        "focusable": [
-          {
-            "tag": "input",
-            "type": "text",
-            "tabIndex": "0",
-            "disabled": false,
-            "name": "",
-            "pressed": null,
-            "checked": "false",
-            "selected": null,
-            "expanded": "false",
-            "role": "combobox"
-          }
-        ],
-        "interactiveCount": 1,
-        "activeElement": "input:",
-        "slotMetrics": {
-          "input,[role=combobox],[role=listbox]": {
-            "tag": "input",
-            "role": "combobox",
-            "type": "text",
-            "name": "",
-            "attrs": {
-              "aria-autocomplete": "list",
-              "placeholder": "Search by name",
-              "id": "react-aria8899783799-_r_3s_",
-              "role": "combobox",
-              "aria-expanded": "false",
-              "data-rac": "",
-              "type": "text",
-              "value": "Olivia Rhye",
-              "data-hovered": "true",
-              "data-focused": "true",
-              "data-focus-visible": "true"
-            },
-            "styles": {
-              "display": "block",
-              "position": "static",
-              "color": "rgba(0, 0, 0, 0)",
-              "backgroundColor": "rgba(0, 0, 0, 0)",
-              "borderColor": "rgba(0, 0, 0, 0)",
-              "borderRadius": "0px",
-              "fontFamily": "Inter",
-              "fontSize": "16px",
-              "fontWeight": "400",
-              "lineHeight": "24px",
-              "padding": "0px 0px 0px 0px",
-              "margin": "0px 0px 0px 0px",
-              "gap": "normal",
-              "width": 908,
-              "height": 24,
-              "opacity": "1",
-              "visibility": "visible"
-            }
-          }
-        }
+        "renderError": "Base UI: SelectRootContext is missing. Select parts must be placed within <Select.Root>."
       }
     },
     "tags-render": {
@@ -5587,7 +5465,7 @@
             }
           }
         ],
-        "focusVisible": true,
+        "focusVisible": false,
         "pointerEvents": "auto",
         "roles": [
           "grid",
@@ -5649,7 +5527,7 @@
           }
         ],
         "interactiveCount": 0,
-        "activeElement": "input:",
+        "activeElement": "body:button-defaultButtonbutton-sec",
         "slotMetrics": {
           "[role=list],[role=listitem]": {
             "missing": true
@@ -5767,7 +5645,7 @@
           }
         ],
         "interactiveCount": 0,
-        "activeElement": "body:3 options available.2 options ",
+        "activeElement": "body:button-defaultButtonbutton-sec",
         "slotMetrics": {
           "[role=list],[role=listitem]": {
             "missing": true
@@ -5788,6 +5666,16 @@
             "required": false,
             "name": null,
             "hidden": false
+          },
+          {
+            "type": "number",
+            "checked": false,
+            "indeterminate": false,
+            "value": "1",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
           }
         ],
         "stateful": [
@@ -5809,7 +5697,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -5841,10 +5729,22 @@
             "selected": null,
             "expanded": null,
             "role": "button"
+          },
+          {
+            "tag": "input",
+            "type": "number",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
-        "interactiveCount": 3,
-        "activeElement": "body:3 options available.2 options ",
+        "interactiveCount": 4,
+        "activeElement": "body:button-defaultButtonbutton-sec",
         "slotMetrics": {
           "input,label": {
             "tag": "label",
@@ -5852,7 +5752,10 @@
             "type": null,
             "name": "Quantity*",
             "attrs": {
-              "data-label": "true"
+              "id": "base-ui-_r_3o_",
+              "for": "base-ui-_r_3n_",
+              "data-label": "true",
+              "data-filled": ""
             },
             "styles": {
               "display": "flex",
@@ -5908,6 +5811,13 @@
                 "value": "1",
                 "disabled": false,
                 "hidden": false
+              },
+              {
+                "type": "number",
+                "checked": false,
+                "value": "1",
+                "disabled": false,
+                "hidden": true
               }
             ],
             "expanded": [],
@@ -5928,6 +5838,13 @@
                 "value": "1",
                 "disabled": false,
                 "hidden": false
+              },
+              {
+                "type": "number",
+                "checked": false,
+                "value": "1",
+                "disabled": false,
+                "hidden": true
               }
             ],
             "expanded": [],
@@ -5948,6 +5865,13 @@
                 "value": "2",
                 "disabled": false,
                 "hidden": false
+              },
+              {
+                "type": "number",
+                "checked": false,
+                "value": "2",
+                "disabled": false,
+                "hidden": true
               }
             ],
             "expanded": [],
@@ -5968,6 +5892,13 @@
                 "value": "3",
                 "disabled": false,
                 "hidden": false
+              },
+              {
+                "type": "number",
+                "checked": false,
+                "value": "3",
+                "disabled": false,
+                "hidden": true
               }
             ],
             "expanded": [],
@@ -5991,6 +5922,16 @@
             "required": false,
             "name": null,
             "hidden": false
+          },
+          {
+            "type": "number",
+            "checked": false,
+            "indeterminate": false,
+            "value": "3",
+            "disabled": false,
+            "required": false,
+            "name": null,
+            "hidden": true
           }
         ],
         "stateful": [
@@ -6012,7 +5953,7 @@
           {
             "tag": "input",
             "type": "text",
-            "tabIndex": "0",
+            "tabIndex": null,
             "disabled": false,
             "name": "",
             "pressed": null,
@@ -6044,9 +5985,21 @@
             "selected": null,
             "expanded": null,
             "role": "button"
+          },
+          {
+            "tag": "input",
+            "type": "number",
+            "tabIndex": "-1",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": "false",
+            "selected": null,
+            "expanded": null,
+            "role": "input"
           }
         ],
-        "interactiveCount": 3,
+        "interactiveCount": 4,
         "activeElement": "input:",
         "slotMetrics": {
           "input,label": {
@@ -6055,7 +6008,12 @@
             "type": null,
             "name": "Quantity*",
             "attrs": {
-              "data-label": "true"
+              "id": "base-ui-_r_3o_",
+              "for": "base-ui-_r_3n_",
+              "data-label": "true",
+              "data-filled": "",
+              "data-focused": "",
+              "data-dirty": ""
             },
             "styles": {
               "display": "flex",
@@ -6133,8 +6091,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "id": "base-ui-_r_4n_",
-              "for": "base-ui-_r_4m_",
+              "id": "base-ui-_r_3r_",
+              "for": "base-ui-_r_3q_",
               "data-label": "true"
             },
             "styles": {
@@ -6263,8 +6221,8 @@
             "type": null,
             "name": "Card number*",
             "attrs": {
-              "id": "base-ui-_r_4n_",
-              "for": "base-ui-_r_4m_",
+              "id": "base-ui-_r_3r_",
+              "for": "base-ui-_r_3q_",
               "data-label": "true",
               "data-focused": "",
               "data-dirty": "",
@@ -6346,6 +6304,8 @@
             "type": null,
             "name": "Tags*",
             "attrs": {
+              "id": "base-ui-_r_3u_",
+              "for": "base-ui-_r_3t_",
               "data-label": "true"
             },
             "styles": {
@@ -6557,7 +6517,12 @@
             "type": null,
             "name": "Tags*",
             "attrs": {
-              "data-label": "true"
+              "id": "base-ui-_r_3u_",
+              "for": "base-ui-_r_3t_",
+              "data-label": "true",
+              "data-focused": "",
+              "data-touched": "",
+              "data-valid": ""
             },
             "styles": {
               "display": "flex",
@@ -7256,13 +7221,13 @@
           {
             "tag": "button",
             "type": "button",
-            "tabIndex": null,
+            "tabIndex": "0",
             "disabled": false,
             "name": "Open dialog",
             "pressed": null,
             "checked": null,
             "selected": null,
-            "expanded": null,
+            "expanded": "false",
             "role": "button"
           }
         ],
@@ -7275,7 +7240,11 @@
             "type": "button",
             "name": "Open dialog",
             "attrs": {
-              "type": "button"
+              "type": "button",
+              "data-base-ui-click-trigger": "",
+              "id": "base-ui-_r_4a_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
             },
             "styles": {
               "display": "inline-flex",
@@ -7319,7 +7288,9 @@
           "step": "start",
           "state": {
             "controls": [],
-            "expanded": [],
+            "expanded": [
+              "false"
+            ],
             "ariaStates": [],
             "overlays": 0,
             "active": "body"
@@ -7329,9 +7300,11 @@
           "step": "0:click",
           "state": {
             "controls": [],
-            "expanded": [],
+            "expanded": [
+              "true"
+            ],
             "ariaStates": [],
-            "overlays": 0,
+            "overlays": 1,
             "active": "button"
           }
         },
@@ -7339,7 +7312,9 @@
           "step": "1:press Escape",
           "state": {
             "controls": [],
-            "expanded": [],
+            "expanded": [
+              "false"
+            ],
             "ariaStates": [],
             "overlays": 0,
             "active": "button"
@@ -7358,13 +7333,13 @@
           {
             "tag": "button",
             "type": "button",
-            "tabIndex": null,
+            "tabIndex": "0",
             "disabled": false,
             "name": "Open dialog",
             "pressed": null,
             "checked": null,
             "selected": null,
-            "expanded": null,
+            "expanded": "false",
             "role": "button"
           }
         ],
@@ -7377,7 +7352,11 @@
             "type": "button",
             "name": "Open dialog",
             "attrs": {
-              "type": "button"
+              "type": "button",
+              "data-base-ui-click-trigger": "",
+              "id": "base-ui-_r_4a_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
             },
             "styles": {
               "display": "inline-flex",
@@ -7434,11 +7413,11 @@
             "type": "button",
             "name": "",
             "attrs": {
-              "data-rac": "",
               "type": "button",
-              "aria-expanded": "false",
-              "id": "react-aria9830409041-_r_56_",
-              "data-react-aria-pressable": "true"
+              "data-base-ui-click-trigger": "",
+              "id": "base-ui-_r_4d_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
             },
             "styles": {
               "display": "flex",
@@ -7499,7 +7478,7 @@
             ],
             "ariaStates": [],
             "overlays": 1,
-            "active": "section"
+            "active": "button"
           }
         },
         {
@@ -7546,14 +7525,11 @@
             "type": "button",
             "name": "",
             "attrs": {
-              "data-rac": "",
               "type": "button",
-              "aria-expanded": "false",
-              "id": "react-aria9830409041-_r_56_",
-              "data-react-aria-pressable": "true",
-              "data-hovered": "true",
-              "data-focused": "true",
-              "data-focus-visible": "true"
+              "data-base-ui-click-trigger": "",
+              "id": "base-ui-_r_4d_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
             },
             "styles": {
               "display": "flex",

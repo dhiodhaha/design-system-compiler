@@ -19,6 +19,8 @@ import { Slider } from "../registry/untitledui/components/base/slider/slider";
 import { Dropdown } from "../registry/untitledui/components/base/dropdown/dropdown";
 import { ComboBox } from "../registry/untitledui/components/base/select/combobox";
 import { Tag, TagGroup, TagList } from "../registry/untitledui/components/base/tags/tags";
+import { MultiSelect } from "../registry/untitledui/components/base/select/multi-select";
+import { TagSelect } from "../registry/untitledui/components/base/select/tag-select";
 import { InputNumber } from "../registry/untitledui/components/base/input/input-number";
 import { PaymentInput } from "../registry/untitledui/components/base/input/input-payment";
 import { InputTags } from "../registry/untitledui/components/base/input/input-tags";

@@ -4,7 +4,6 @@
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
 "use client";
 
-import { SubmenuTrigger } from "react-aria-components";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 
 export const DropdownIconSimple = () => (
@@ -26,7 +25,7 @@ export const DropdownIconSimple = () => (
                 </Dropdown.Section>
                 <Dropdown.Separator />
                 <Dropdown.Section>
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item>View details</Dropdown.Item>
                         <Dropdown.Popover placement="right top" offset={-6} className="w-50">
                             <Dropdown.Menu>
@@ -35,7 +34,7 @@ export const DropdownIconSimple = () => (
                                 <Dropdown.Item>Archive</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
                 </Dropdown.Section>
             </Dropdown.Menu>
         </Dropdown.Popover>

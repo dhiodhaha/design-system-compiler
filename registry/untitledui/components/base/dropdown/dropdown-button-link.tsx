@@ -6,7 +6,6 @@
 
 import { useState } from "react";
 import { ChevronDown, Trash01 } from "@untitledui/icons";
-import { Button as AriaButton } from "react-aria-components";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
 
@@ -21,17 +20,18 @@ export const DropdownButtonLink = () => {
 
     return (
         <Dropdown.Root>
-            <AriaButton
-                className={({ isPressed, isFocusVisible }) =>
-                    cx(
-                        "flex cursor-pointer items-center gap-1 rounded text-sm font-semibold text-tertiary outline-0 outline-offset-2 outline-focus-ring",
-                        (isPressed || isFocusVisible) && "outline-2",
-                    )
-                }
+            <button
+                type="button"
+                className={cx(
+                    "flex cursor-pointer items-center gap-1 rounded text-sm font-semibold text-tertiary outline-0 outline-offset-2 outline-focus-ring",
+                    // React Aria's isPressed/isFocusVisible render props are the browser's own :active/:focus-visible
+                    // (and Base UI's trigger keeps the pressed state on the element it renders).
+                    "active:outline-2 focus-visible:outline-2",
+                )}
             >
                 {permissions.find((permission) => permission.id === selectedPermission.toString())?.label}
                 <ChevronDown className="size-3 shrink-0 stroke-3 text-fg-quaternary" />
-            </AriaButton>
+            </button>
 
             <Dropdown.Popover className="w-40">
                 <Dropdown.Menu>

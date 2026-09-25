@@ -2,13 +2,14 @@
  * MIT licensed upstream source (Copyright (c) 2025 Untitled UI).
  * Adopted with the smallest necessary project-local transformations; deltas are recorded in
  * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { createContext, useContext, useId } from "react";
-import { Form as AriaForm } from "react-aria-components";
 import type { Control, FieldPath, FieldValues, UseControllerReturn, UseFormReturn } from "react-hook-form";
 import { FormProvider, useController, useFormContext } from "react-hook-form";
+import type { FormProps as FormComponentProps } from "./form";
+import { Form } from "./form";
 
-interface FormProps<TFieldValues extends FieldValues = FieldValues> extends ComponentPropsWithoutRef<typeof AriaForm> {
+interface FormProps<TFieldValues extends FieldValues = FieldValues> extends FormComponentProps {
     form: UseFormReturn<TFieldValues>;
     children: ReactNode;
 }
@@ -42,7 +43,7 @@ export const useFormFieldContext = () => {
 export const HookForm = <TFieldValues extends FieldValues = FieldValues>({ form, ...props }: FormProps<TFieldValues>) => {
     return (
         <FormProvider {...form}>
-            <AriaForm {...props} />
+            <Form {...props} />
         </FormProvider>
     );
 };
@@ -55,6 +56,11 @@ export const FormField = <TFieldValues extends FieldValues = FieldValues, TName 
 }: FormFieldProps<TFieldValues, TName>) => {
     const id = "form-item-" + useId();
     const control = useController(props);
+    // `validationBehavior` is React Aria's field-level switch between native constraint validation and
+    // ARIA validation, and call sites spread `control.field` into the inputs they render, so the key is
+    // part of this component's contract and stays. Under Base UI it describes the behaviour it actually
+    // gets: Base UI fields report validity through ARIA (data-invalid/aria-invalid) and validate on
+    // submit, while `Form`'s `validationBehavior` decides whether native constraint validation runs first.
     const withValidationBehavior = {
         ...control,
         field: {

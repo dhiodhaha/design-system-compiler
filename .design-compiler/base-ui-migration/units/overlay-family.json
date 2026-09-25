@@ -1,0 +1,225 @@
+{
+  "unit": "overlay-family",
+  "files": [
+    "registry/untitledui/components/application/modals/modal.tsx",
+    "registry/untitledui/components/application/slideout-menus/slideout-menu.tsx",
+    "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
+    "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
+    "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+    "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
+    "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx"
+  ],
+  "status": "MIGRATED_PENDING_GATES",
+  "matrixItems": ["modal-dialog", "slideout", "nav-parts"],
+  "baseUiPrimitives": [
+    {
+      "primitive": "dialog",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/dialog.json (parts, keyProps, data attributes, keyboard, notableDifferences, 'modal defaults to TRUE', 'no isDismissable / no isKeyboardDismissDisabled', 'nested dialogs are first-class', 'Viewport is a new part')",
+        "node_modules/@base-ui/react/dialog/{root/useRenderDialogRoot,root/DialogRoot,trigger/DialogTrigger,portal/DialogPortal,portal/DialogPortalContext,backdrop/DialogBackdrop,popup/DialogPopup,close/DialogClose,utils/stateAttributesMapping}.mjs (verified: Trigger emits aria-haspopup+aria-expanded+aria-controls; Portal renders nothing until mounted, adds an InternalBackdrop when modal===true and throws without a Portal ancestor; Popup carries role=dialog + tabIndex=-1 + FloatingFocusManager; Backdrop is role=presentation and has no dismissal handler of its own; root's onChange details expose reason/event/cancel)",
+        "node_modules/@base-ui/react/{internals/useTransitionStatus,internals/stateAttributesMapping,internals/useOpenChangeComplete,internals/useAnimationsFinished,utils/popupStateMapping,utils/InternalBackdrop,utils/popups/store,utils/popups/popupHandle,dialog/store/DialogHandle}.mjs (transition phases, data-open/data-ending-style emission, detached-trigger handle semantics: triggers register into whichever store the handle resolves to and migrate when the root attaches)"
+      ],
+      "semanticDifferences": [
+        "React Aria's trigger and overlay were siblings wired through context; Base UI links them with `Dialog.createHandle()` + a detached `Dialog.Trigger` (the composition Base UI documents for that exact shape). The handle lives in the trigger and reaches the overlay through a private context, so a standalone `<ModalOverlay>` still creates its own handle and no public export changed.",
+        "`isDismissable` (default false) has no Base UI prop; it is carried by `disablePointerDismissal={!isDismissable}` on the Root, which also blocks focus-out dismissal for non-modal dialogs (documented Base UI behaviour; React Aria's prop only covered outside presses).",
+        "`isKeyboardDismissDisabled` has no Base UI prop: Escape is vetoed through `eventDetails.cancel()` when the reason is 'escape-key'; `shouldCloseOnInteractOutside` is reconstructed from `eventDetails.event.target` for the 'outside-press' and 'focus-out' reasons.",
+        "Base UI's `Dialog.Popup` is itself `role=\"dialog\"`; the adopted payload already renders React Aria's dialog element inside it. The popup's role is therefore removed (role={undefined}) so the DOM keeps exactly one named dialog element — Base UI's `Dialog.Title`/`Description` parts are not used by this payload, so a popup-owned role would have been nameless (axe `aria-dialog-name`).",
+        "Enter/exit phases are attribute driven. React Aria applied classes while `isEntering`/`isExiting` were true; `data-starting-style` in Base UI lasts a single frame (the enter animation would be cancelled when the class is removed), so entries key off `data-open` and exits off `data-ending-style`, the same pattern the landed tooltip unit uses. The render props consumers receive are derived: `isExiting` = data-ending-style phase, `isEntering` = open && !ending.",
+        "Base UI portals nothing on the server (verified: `<ModalOverlay isOpen>` renders \"\" with renderToString, exactly like the frozen React Aria baseline), so SSR output is unchanged: the trigger is server-rendered with aria-expanded=false and the overlay mounts on the client.",
+        "Initial focus differs by design: React Aria focused the dialog element, Base UI focuses the first tabbable element inside the popup (the popup itself on touch). Focus containment, Escape handling (topmost dialog first) and focus return to the trigger are unchanged; `Popup.initialFocus` can restore the old behaviour if a consumer wants it.",
+        "Base UI adds two invisible internals React Aria had no equivalent for: an InternalBackdrop (`div[role=presentation][data-base-ui-inert]`) when modal, and focus-guard spans inside the backdrop. Neither is a slot or affects geometry.",
+        "React Aria published `--visual-viewport-height` (and page size) on the modal element; the adopted class `max-h-[calc(var(--visual-viewport-height)-var(--modal-pt)-var(--modal-pb))]` reads it. Base UI has no equivalent, so modal.tsx restores that single variable from `window.visualViewport` (falling back to `document.documentElement.clientHeight`, ignoring pinch-zoomed updates, `0px` on the server — React Aria's own SSR value). `--visual-viewport-width`/`--page-*` were not restored because no adopted class reads them.",
+        "`AlertDialog` is not used by this unit; per docs/alert-dialog.json its parts are the Dialog parts verbatim, so nothing here would change if one were added."
+      ]
+    },
+    {
+      "primitive": "popover",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/popover.json (Portal > Positioner > Popup composition, side/align/sideOffset/alignOffset, anchor, modal default false, data-open/data-ending-style/data-instant, trigger data-popup-open, --transform-origin on the Positioner)",
+        "node_modules/@base-ui/react/popover/{root/PopoverRoot,trigger/PopoverTrigger,portal/PopoverPortal,positioner/PopoverPositioner,popup/PopoverPopup}.mjs (Trigger emits aria-haspopup=\"dialog\"+aria-expanded+aria-controls and, while open from a trigger press, data-pressed; Positioner requires a Portal ancestor; Popup is role=dialog with FloatingFocusManager)"
+      ],
+      "semanticDifferences": [
+        "React Aria's `triggerRef` anchored the overlay to any element; Base UI's `Positioner.anchor` takes that same ref, so `NavAccountCard` still anchors its menu to the whole card while the trigger stays the chevron button.",
+        "React Aria's `placement` string pair is expressed as `side` + `align`; both nav call sites translate with the same token tables the landed tooltip unit uses ('right bottom' → side=right/align=end, 'top right' → side=top/align=end).",
+        "Animation classes moved from the `className({isEntering,isExiting})` render props to `data-open:` for the entry and `data-ending-style:` for the exit; the placement-specific slide-ins moved from React Aria's `placement-right|top|bottom:` enum variants (which compile to `[data-placement-*]` and would be dead without `data-rac`) to `data-[side=…]:` stacked with the phase variant.",
+        "`origin-(--trigger-anchor-point)` (React Aria) becomes `origin-(--transform-origin)`, the variable Base UI's Positioner publishes.",
+        "The nav popups are `role=dialog` in Base UI; both were stripped to no role because the account menu renders its own dialog element (React Aria's `Dialog`), keeping one dialog per surface.",
+        "`pressed:` on the nav-account-card trigger became `active:` — Base UI emits `data-pressed` only while the popover is open from a trigger press, which is not React Aria's press-and-hold state."
+      ]
+    },
+    {
+      "primitive": "use-render",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/use-render.json (parameters: render/ref/state/stateAttributesMapping/props/enabled/defaultTagName; 'this hook IS the render-prop implementation for author components')",
+        "node_modules/@base-ui/react/{internals/useRenderElement,internals/getStateAttributesProps,internals/types}.d.ts (render element cloning, ref merging, state → data-* mapping, HTMLProps shape)"
+      ],
+      "semanticDifferences": [
+        "`useRender` replaces React Aria's `useRenderProps`/cloneElement path for the two author components that are plain elements: `Dialog` (section, keeps React Aria's element-level `render` prop) and `NavItemBase`'s link variant (anchor, or the `span[role=link]` React Aria fell back to).",
+        "Base UI's automatic state mapping would emit `data-is-disabled`/`data-is-current`; explicit `stateAttributesMapping` entries keep React Aria's `data-disabled`/`data-current` attribute names."
+      ]
+    },
+    {
+      "primitive": "drawer",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/drawer.json (parts table, swipe/snap-point/indent machinery, VirtualKeyboardProvider, and the explicit guidance 'a slide-in panel without gestures should just be Dialog')"
+      ],
+      "semanticDifferences": [
+        "Consulted and deliberately NOT used for the slideout: the payload slide-in is a CSS transition from the right with no gesture, no snap points and no indent effect, so `Drawer`'s SwipeArea/snapPoint/Provider machinery would be dead weight — and its Popup would need its own provider tree. SlideoutMenu is therefore Base UI `Dialog` with the payload's own slide classes (`data-open:slide-in-from-right` / `data-ending-style:slide-out-to-right`)."
+      ]
+    },
+    {
+      "primitive": "merge-props",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/merge-props.json (merge semantics, ref is not merged, preventBaseUIHandler; the repo's only React Aria mergeProps+filterDOMProps call site is file-upload-trigger, not this unit)"
+      ],
+      "semanticDifferences": [
+        "Not needed here: the only manual prop merge React Aria forced on this unit (pushing trigger props onto a consumer's element) is performed by Base UI itself via `Dialog.Trigger`/`Popover.Trigger`'s `render` prop, and `useRender` merges the props of the two author components. No `mergeProps` import was added."
+      ]
+    },
+    {
+      "primitive": "alert-dialog",
+      "version": "1.8.0",
+      "docsConsulted": [
+        ".design-compiler/base-ui-migration/docs/alert-dialog.json (always modal, no `modal`/`disablePointerDismissal` props, parts re-exported from Dialog)"
+      ],
+      "semanticDifferences": [
+        "Not used: no alert dialog exists in these seven files, and the payload's `Dialog` keeps React Aria's `role=\"dialog\" | \"alertdialog\"` prop, so an alert-styled dialog can still be expressed by passing the role."
+      ]
+    }
+  ],
+  "migrationRecord": {
+    "publicComponent": "application/modals/modal.tsx (DialogTrigger, ModalOverlay, Modal, Dialog), application/slideout-menus/slideout-menu.tsx (ModalOverlay, Modal, Dialog, SlideoutMenu with .Trigger/.Content/.Header/.Footer), application/app-navigation nav parts (NavAccountMenu, NavAccountCard, MobileNavigationHeader, NavItemBase, NavButton, SidebarNavigationSlim)",
+    "existingUntitledUiBehavior": "React Aria composition: `<DialogTrigger>` provided the overlay state through context and cloned/press-wired the first child; `ModalOverlay` rendered the dimmed, centring underlay (isDismissable/isKeyboardDismissDisabled live here); `Modal` rendered the panel; `Dialog` rendered the `section[role=dialog]` content and exposed `{close}` to its children function. The nav parts used React Aria `Button`/`Pressable`/`Link`/`Popover`/`useFocusManager`, anchored the account menu to the whole card and did arrow-key focus movement inside it.",
+    "canonicalBehavioralContract": "A trigger with aria-expanded/aria-haspopup opens one visible overlay; Escape closes the topmost overlay and returns focus to the trigger; focus is contained while modal; outside presses dismiss only when `isDismissable`; the trigger's open state stays reachable from render props (`isEntering`/`isExiting`/`state`, `{close}`); the account menu keeps ArrowUp/ArrowDown tabbable wrapping; the dialog element keeps its accessible name (aria-label or aria-labelledby).",
+    "baseUiCompositionChosen": "Dialog: `Dialog.Root(handle)` > `Dialog.Portal` > `Dialog.Backdrop` (the payload's overlay classes) > the payload's `Modal` = `Dialog.Popup` (role stripped) > the payload's `Dialog` (useRender `section[role=dialog]`). Trigger side: `Dialog.Trigger handle={…} render={<FirstChild/>}`. Slideout: identical with its own slide classes (considered `Drawer`, rejected — see baseUiPrimitives). Popover (nav): `Popover.Root` > `Popover.Trigger` (chevron button / avatar button) > `Popover.Portal` > `Popover.Positioner (anchor=card ref)` > `Popover.Popup role={undefined}` > `NavAccountMenu` (section role=dialog). mobile-header composes the Dialog parts directly because its overlay/panel classes are unrelated to the modal's.",
+    "whyNotOneToOne": "React Aria's `DialogTrigger` puts the trigger and the overlay in one state provider that also clones the trigger element. Base UI has no single part that does both, and its popup parts must be composed `Portal > Backdrop/Positioner > Popup`; the visible contract (aria-expanded + one visible overlay, Escape/focus/cancel semantics) is preserved by shipping the same part names over Base UI primitives, with the trigger wired by `Dialog.createHandle()` because the payload's children are siblings. Two invisible differences are accepted and documented above: Base UI's InternalBackdrop + focus guards, and the initial-focus target."
+  },
+  "publicApiChanges": [
+    {
+      "prop": "modal.tsx ModalOverlay/Modal className, style and children (function forms)",
+      "before": "string | ((state: ModalRenderProps) => string) with `state = { isEntering, isExiting, state }` driven by React Aria's animation tracking",
+      "after": "same prop names and signatures; the state object keeps the same three keys, derived from Base UI (`isExiting` = data-ending-style phase, `isEntering` = open && !ending, `state` = OverlayTriggerState-shaped object whose close/open drive the dialog)",
+      "reason": "Base UI owns its own phase attributes; the render props are kept because the payload's public types document them.",
+      "compatibility": "compile-time identical; runtime values are truthful for exits and stay true for the whole entry (Base UI's entry phase is `data-open`)."
+    },
+    {
+      "prop": "modal.tsx isEntering / isExiting (as inputs)",
+      "before": "accepted React Aria render-prop state",
+      "after": "accepted and ignored (documented as not-an-input)",
+      "reason": "Base UI derives the phase from the element's own state attributes.",
+      "compatibility": "no call site passes them; typecheck passes."
+    },
+    {
+      "prop": "nav-account-card popoverPlacement",
+      "before": "React Aria `Placement` string union",
+      "after": "`TooltipPlacement` from the payload's Tooltip (the same string vocabulary, re-exported by the landed tooltip unit)",
+      "reason": "React Aria's `Placement` type cannot be imported without the migration's target dependency.",
+      "compatibility": "every React Aria placement string stays assignable; the default `isDesktop ? 'right bottom' : 'top right'` is unchanged."
+    },
+    {
+      "prop": "nav-item NavItemLinkProps",
+      "before": "Omit<AriaLinkProps, 'children'|'className'|'onClick'> (href, isDisabled, onPress*, target/rel/aria-*, routerOptions, render, ref to HTMLAnchorElement)",
+      "after": "Omit<ComponentPropsWithRef<'a'>, 'children'|'className'|'href'|'onClick'|'ref'> + PressEvents (href, isDisabled, onPress*, target/rel/aria-*/data-*, render, ref)",
+      "reason": "React Aria's Link type is gone; the anchor attribute surface plus the payload's shared press vocabulary replaces it.",
+      "compatibility": "`routerOptions` (React Aria's Next.js router integration) is dropped — it had no runtime effect in this harness and has no Base UI analogue; all other props are kept, and `onPress` still receives a PressEvent because the payload Button's press layer is reused."
+    },
+    {
+      "prop": "nav-item className disabled styles + onClick",
+      "before": "`disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50`; React Aria's `Link` deleted the consumer's onClick and only honoured onPress",
+      "after": "`aria-disabled:…`; the consumer's onClick reaches the anchor/span (chained after the press layer)",
+      "reason": "An anchor or span never matches `:disabled`, so the disabled styles would have been dead; the click handler was dead upstream.",
+      "compatibility": "visual behaviour for disabled items is restored (previously unstyled); onClick now works, which is what its name and the collapsible variant promise."
+    },
+    {
+      "prop": "nav-button",
+      "before": "React Aria `Pressable` wrapping the anchor (press state, data-pressed/data-hovered)",
+      "after": "native anchor inside the payload's `Tooltip` (the same composition button-utility.tsx uses)",
+      "reason": "NavButton exposes only onClick; the press layer added no reachable behaviour.",
+      "compatibility": "no prop changed; the element, classes and tooltip placement are identical."
+    },
+    {
+      "prop": "mobile-header dialog labelling",
+      "before": "React Aria labelled the dialog with the trigger's generated id (`overlayProps['aria-labelledby'] = triggerProps.id`)",
+      "after": "the trigger carries an explicit `id` (useId) and the dialog element points at it with aria-labelledby",
+      "reason": "Base UI only labels a popup through `Dialog.Title`, which this payload does not use.",
+      "compatibility": "the dialog's accessible name is 'Expand navigation menu', exactly as before (verified in the browser)."
+    }
+  ],
+  "reactAriaImportsRemoved": [
+    "modal.tsx: react-aria-components (`Dialog`, `DialogTrigger`, `Modal`, `ModalOverlay`, `DialogProps`, `ModalOverlayProps`)",
+    "slideout-menu.tsx: react-aria-components (`Dialog`, `DialogTrigger`, `Modal`, `ModalOverlay`, `DialogProps`, `ModalOverlayProps`, `ModalRenderProps`)",
+    "nav-account-card.tsx: react-aria (`useFocusManager`), react-aria-components (`Button`, `Dialog`, `DialogTrigger`, `Popover`, `DialogProps`, `Placement`)",
+    "mobile-header.tsx: react-aria-components (`Button`, `Dialog`, `DialogTrigger`, `Modal`, `ModalOverlay`)",
+    "nav-item.tsx: react-aria-components (`Link`, `LinkProps`)",
+    "nav-button.tsx: react-aria-components (`Pressable`)",
+    "sidebar-slim.tsx: react-aria-components (`Button`, `DialogTrigger`, `Popover`)"
+  ],
+  "baseUiImportsAdded": [
+    "modal.tsx: `@base-ui/react/dialog` (Dialog), `@base-ui/react/use-render` (useRender)",
+    "slideout-menu.tsx: `@base-ui/react/dialog` (Dialog), `@base-ui/react/use-render` (useRender)",
+    "nav-account-card.tsx: `@base-ui/react/popover` (Popover)",
+    "mobile-header.tsx: `@base-ui/react/dialog` (Dialog)",
+    "nav-item.tsx: `@base-ui/react/use-render` (useRender); reuses the payload's `usePressEvents`/`PressEvents` from components/base/buttons/button",
+    "nav-button.tsx: none (native anchor + the payload's Tooltip)",
+    "sidebar-slim.tsx: `@base-ui/react/popover` (Popover)"
+  ],
+  "stateSelectorChanges": [
+    {
+      "file": "modal.tsx, slideout-menu.tsx, mobile-header.tsx",
+      "before": "className function: `state.isEntering && 'duration-300 ease-out animate-in fade-in'`, `state.isExiting && 'duration-200 ease-in animate-out fade-out'`",
+      "after": "`data-open:duration-300 data-open:ease-out data-open:animate-in data-open:fade-in` and `data-ending-style:duration-200 data-ending-style:ease-in data-ending-style:animate-out data-ending-style:fade-out`",
+      "reason": "`entering`/`exiting` are React-Aria-only state values; `data-starting-style` lasts one frame, so the entry uses `data-open` and the exit uses `data-ending-style` (the landed tooltip unit's pattern)."
+    },
+    {
+      "file": "nav-account-card.tsx, sidebar-slim.tsx",
+      "before": "`placement-right:slide-in-from-left-0.5 placement-top:… placement-bottom:…` (React Aria enum variant, compiles to `[data-placement-*]`)",
+      "after": "`data-[side=right]:data-open:slide-in-from-left-0.5` etc. (stacked with the phase variant)",
+      "reason": "Base UI emits `data-side`, so the placement variants would otherwise be dead selectors."
+    },
+    {
+      "file": "nav-account-card.tsx, sidebar-slim.tsx",
+      "before": "`origin-(--trigger-anchor-point)` (React Aria's anchor variable)",
+      "after": "`origin-(--transform-origin)` (Base UI Positioner variable), sidebar-slim keeps its previous classes (no origin class)",
+      "reason": "The variable React Aria published does not exist in Base UI."
+    },
+    {
+      "file": "nav-account-card.tsx",
+      "before": "`pressed:bg-primary_hover pressed:text-fg-quaternary_hover` (React Aria press-and-hold)",
+      "after": "`active:bg-primary_hover active:text-fg-quaternary_hover` (native)",
+      "reason": "Base UI emits `data-pressed` only while a trigger-pressed popup is open, which is not the pressed state this styling describes."
+    },
+    {
+      "file": "sidebar-slim.tsx",
+      "before": "`className={({ isPressed, isFocused }) => (isPressed || isFocused) && 'outline-2 outline-offset-2 outline-focus-ring'}`",
+      "after": "`focus:outline-2 focus:outline-offset-2 focus:outline-focus-ring active:outline-2 active:outline-offset-2 active:outline-focus-ring`",
+      "reason": "Same states, expressed with the native pseudo-classes Base UI's plain trigger exposes."
+    },
+    {
+      "file": "nav-item.tsx",
+      "before": "`disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50`",
+      "after": "`aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:opacity-50`",
+      "reason": "The link variant renders an anchor or a `span[role=link]`, neither of which can match `:disabled`; React Aria marked them with `aria-disabled`."
+    },
+    {
+      "file": "all seven",
+      "before": "`open:`/`selected:`/`pressed:`/`entering:`/`exiting:` React Aria variants would have been dead once `data-rac` disappeared",
+      "after": "no React Aria attribute-only variant remains: the files use only `data-open`, `data-ending-style`, `data-[side=…]`, native `hover:`/`focus:`/`focus-visible:`/`active:`, `aria-disabled:` and `group-aria-expanded:`",
+      "reason": "Audited every variant token in the seven files against .design-compiler/base-ui-migration/state-selectors.json."
+    }
+  ],
+  "testsAdded": [],
+  "blockers": [],
+  "evidence": {
+    "typecheck": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` -> PASS, no diagnostics for any of the seven files (and no diagnostics anywhere in the payload).",
+    "defectFixed": "The measured modal-open defect is gone. Browser measurement against the dev server (click the trigger, then Escape, reading the harness DOM): modal-open `aria-expanded` false -> true -> false and visible overlays 0 -> 1 -> 0, i.e. the frozen baseline's trace. nav-account-card measures the same (its overlay is the account menu's `section[role=dialog]`).",
+    "behaviourMeasured": "Scoped browser probes (throwaway, deleted): SlideoutMenu opens/closes via the trigger, via `{close}` from the dialog render prop and via Escape, and reopens; MobileNavigationHeader opens from the header button (aria-expanded=true, aria-controls set, popup carries data-open) and closes from `Dialog.Close`; NavItemBase renders `a[href][aria-current=page]` for enabled items and `span[role=link][aria-disabled=true]` for disabled ones, fires onClick and onPress (click and keyboard Enter); NavButton shows its tooltip on hover; SidebarNavigationSlim opens the account menu from the avatar and closes on Escape. No console errors in any probe.",
+    "publicApiExercised": "Scoped browser probe of the non-default paths: `DialogTrigger defaultOpen` opens on mount, `ModalOverlay` children-as-function receives `{isEntering, isExiting, state}` with live values, `state.close()` and the dialog's `{close}` both close, `onOpenChange` fires at the overlay, `Dialog render={(props) => <article {...props}/>}` replaces the element, Escape closes.",
+    "ssr": "Throwaway bun SSR smoke (deleted): the trigger is server-rendered with aria-expanded=\"false\"/aria-haspopup=\"dialog\" and no closed overlay is server-rendered; an open `<ModalOverlay isOpen>` renders \"\" exactly like React Aria's (verified side by side against react-aria-components).",
+    "a11y": "Scoped axe (wcag2a/aa + 21a/aa) on this unit's surfaces: with the dialog or the slideout open, 0 violations; closed, only the two pre-existing nav-account-card rules the baseline already records (`button-name` on the deliberately nameless chevron trigger, `image-alt` on the avatar), i.e. no new rule. The mobile dialog resolves to the accessible name 'Expand navigation menu' through aria-labelledby."
+  }
+}

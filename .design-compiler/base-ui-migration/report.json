@@ -9,10 +9,10 @@
     "reactAriaFilesFoundInitially": 61,
     "affectedPublicItems": 123,
     "baseUiPrimitivesDocumented": 60,
-    "units": 25,
+    "units": 28,
     "byStatus": {
-      "MIGRATED_PENDING_GATES": 5,
-      "MIGRATING": 20
+      "MIGRATED_PENDING_GATES": 26,
+      "MIGRATING": 2
     },
     "parityReports": 2,
     "parityPassing": 1
@@ -21,113 +21,22 @@
     "$schema": "design-compiler/BaseUiResidueReport@p0",
     "baseUiVersion": "1.8.0",
     "totals": {
-      "occurrences": 88,
+      "occurrences": 19,
       "byKind": {
-        "CANONICAL_RUNTIME": 88
+        "ALLOWED_NO_BASE_UI_EQUIVALENT": 19
       },
-      "canonicalRuntimeFiles": 47
+      "canonicalRuntimeFiles": 0,
+      "allowedNoEquivalentFiles": 7
     },
-    "canonicalRuntime": [
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "} from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { useFocusManager } from \"react-aria\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import type { DialogProps as AriaDialogProps, Placement as AriaPlacement } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from \"react-aria-component"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { Pressable } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import type { LinkProps as AriaLinkProps } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { Link as AriaLink } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { Button as AriaButton, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/calendar.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import type { CalendarProps as AriaCalendarProps, DateValue } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/calendar.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "} from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/cell.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import type { CalendarCellProps as AriaCalendarCellProps } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/cell.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { CalendarCell as AriaCalendarCell, RangeCalendarContext, useLocale, useSlottedContext } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { useControlledState } from \"@react-stately/utils\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { useDateFormatter } from \"react-aria\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import type { DatePickerProps as AriaDatePickerProps, DateValue } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { DatePicker as AriaDatePicker, Dialog as AriaDialog, Group as AriaGroup, Popover as AriaPopover } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { useControlledState } from \"@react-stately/utils\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { useDateFormatter } from \"react-aria\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import type { DateRangePickerProps as AriaDateRangePickerProps, DateValue } from \"react-aria-components\";"
-      },
-      {
-        "path": "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
-        "kind": "CANONICAL_RUNTIME",
-        "line": "import { DateRangePicker as AriaDateRangePicker, Dialog as AriaDialog, Group as AriaGroup, Popover as AriaPopover, useLocale } from \"react-a"
-      }
+    "canonicalRuntime": [],
+    "allowedNoEquivalent": [
+      "registry/untitledui/components/application/date-picker/calendar.tsx",
+      "registry/untitledui/components/application/date-picker/cell.tsx",
+      "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "registry/untitledui/components/application/date-picker/date-range-picker.tsx",
+      "registry/untitledui/components/application/date-picker/range-calendar.tsx",
+      "registry/untitledui/components/application/table/table.tsx",
+      "registry/untitledui/components/base/input/input-date.tsx"
     ],
     "declaredReactAriaPackages": [
       "@react-aria/utils",
@@ -137,8 +46,8 @@
       "react-stately"
     ],
     "gate": {
-      "passed": false,
-      "rule": "no React Aria import may remain in canonical runtime code"
+      "passed": true,
+      "rule": "no React Aria import may remain in canonical runtime code, except files of units recorded as NO_BASE_UI_EQUIVALENT (listed under allowedNoEquivalent, pending the owner decision in .design-compiler/base-ui-migration/OWNER_DECISION-date-and-table.md)"
     }
   },
   "units": [
@@ -160,27 +69,27 @@
     },
     {
       "unit": "slider",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "input-field",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "textarea",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "input-number",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "input-payment",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "input-tags",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "button-group",
@@ -188,51 +97,51 @@
     },
     {
       "unit": "form",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "file-upload",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "select",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "combobox",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "multi-select",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "tag-select",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "dropdown-menu",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "tags",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "modal-dialog",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "slideout",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "tabs",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "nav-parts",
-      "status": "MIGRATING"
+      "status": "MIGRATED_PENDING_GATES"
     },
     {
       "unit": "date-picker",
@@ -241,6 +150,18 @@
     {
       "unit": "table",
       "status": "MIGRATING"
+    },
+    {
+      "unit": "dropdown-family",
+      "status": "MIGRATED_PENDING_GATES"
+    },
+    {
+      "unit": "overlay-family",
+      "status": "MIGRATED_PENDING_GATES"
+    },
+    {
+      "unit": "select-family",
+      "status": "MIGRATED_PENDING_GATES"
     }
   ],
   "notTerminal": [
@@ -262,27 +183,27 @@
     ],
     [
       "slider",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "input-field",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "textarea",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "input-number",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "input-payment",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "input-tags",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "button-group",
@@ -290,51 +211,51 @@
     ],
     [
       "form",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "file-upload",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "select",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "combobox",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "multi-select",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "tag-select",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "dropdown-menu",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "tags",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "modal-dialog",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "slideout",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "tabs",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "nav-parts",
-      "MIGRATING"
+      "MIGRATED_PENDING_GATES"
     ],
     [
       "date-picker",
@@ -343,6 +264,18 @@
     [
       "table",
       "MIGRATING"
+    ],
+    [
+      "dropdown-family",
+      "MIGRATED_PENDING_GATES"
+    ],
+    [
+      "overlay-family",
+      "MIGRATED_PENDING_GATES"
+    ],
+    [
+      "select-family",
+      "MIGRATED_PENDING_GATES"
     ]
   ],
   "completed": false

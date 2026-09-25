@@ -6,8 +6,7 @@
 
 import { useState } from "react";
 import { ChevronSelectorVertical, HelpCircle, LogOut01, Moon01, Plus, Settings01, User01 } from "@untitledui/icons";
-import type { Selection } from "react-aria-components";
-import { Button as AriaButton, SubmenuTrigger } from "react-aria-components";
+import type { Selection } from "@/components/base/dropdown/dropdown";
 import { Dropdown } from "@/components/base/dropdown/dropdown";
 import { cx } from "@/utils/cx";
 import { AvatarLabelGroup } from "../avatar/avatar-label-group";
@@ -18,13 +17,12 @@ export const DropdownAccountCardMD = () => {
 
     return (
         <Dropdown.Root>
-            <AriaButton
-                className={({ isPressed, isFocusVisible }) =>
-                    cx(
-                        "relative w-60 cursor-pointer rounded-lg bg-primary_alt p-2 text-left inset-ring-1 inset-ring-border-secondary outline-offset-2 outline-focus-ring",
-                        (isPressed || isFocusVisible) && "outline-2",
-                    )
-                }
+            <button
+                type="button"
+                className={cx(
+                    "relative w-60 cursor-pointer rounded-lg bg-primary_alt p-2 text-left inset-ring-1 inset-ring-border-secondary outline-offset-2 outline-focus-ring",
+                    "active:outline-2 focus-visible:outline-2",
+                )}
             >
                 <AvatarLabelGroup
                     size="md"
@@ -37,7 +35,7 @@ export const DropdownAccountCardMD = () => {
                 <div className="absolute top-2 right-2 flex size-7 items-center justify-center rounded-md">
                     <ChevronSelectorVertical className="size-4 shrink-0 stroke-[2.25px] text-fg-quaternary" />
                 </div>
-            </AriaButton>
+            </button>
 
             <Dropdown.Popover className="w-60">
                 <div className="flex flex-col border-b border-secondary px-4 py-3">
@@ -57,7 +55,7 @@ export const DropdownAccountCardMD = () => {
                         </Dropdown.Item>
                     </Dropdown.Section>
 
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item icon={HelpCircle}>Support</Dropdown.Item>
 
                         <Dropdown.Popover placement="right top" offset={-6}>
@@ -67,7 +65,7 @@ export const DropdownAccountCardMD = () => {
                                 <Dropdown.Item>Send feedback</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
 
                     <Dropdown.Separator />
 
@@ -82,7 +80,7 @@ export const DropdownAccountCardMD = () => {
 
                     <Dropdown.Separator />
 
-                    <SubmenuTrigger>
+                    <Dropdown.Submenu>
                         <Dropdown.Item icon={LogOut01}>Sign out</Dropdown.Item>
 
                         <Dropdown.Popover placement="right top" offset={-6}>
@@ -91,7 +89,7 @@ export const DropdownAccountCardMD = () => {
                                 <Dropdown.Item>All devices</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
-                    </SubmenuTrigger>
+                    </Dropdown.Submenu>
                 </Dropdown.Menu>
                 <div className="flex justify-between border-t border-secondary px-4 py-3">
                     <span className="truncate text-sm text-quaternary">&copy; Untitled UI</span>
