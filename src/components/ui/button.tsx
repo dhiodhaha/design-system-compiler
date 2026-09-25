@@ -13,7 +13,7 @@ import { FIGMA_VARIANT, SIZES, SUPPORTS_ICON_ONLY, UNSUPPORTED, VARIANTS, type B
  *   • Composition   <Button><PlusIcon /> Add user</Button> — an element child in the leading or trailing
  *                   position fills that visual slot; explicit leadingIcon/trailingIcon props win.
  *   • States        hover = :hover, focus = :focus-visible, disabled = native disabled, loading = runtime.
- *                   `state` exists only to force a state for visual regression and is documented as test-only.
+ *                   A visual test may force a state by passing data-state (plain attribute), not via a prop.
  *   • Loading       sets aria-busy, keeps focus, and blocks activation (no double submit). `loadingText`
  *                   defaults to the normal label; Figma's "Submitting..." is specimen content, not a default.
  *   • Motion        the generated stylesheet disables transitions under prefers-reduced-motion and keeps a
@@ -63,8 +63,6 @@ export interface ButtonProps extends Omit<ComponentPropsWithRef<"button">, "colo
   loadingText?: ReactNode;
   leadingIcon?: ReactNode;
   trailingIcon?: ReactNode;
-  /** Force a visual state. Test/visual-regression only — not for production state handling. */
-  state?: ButtonVisualState;
 }
 
 const isDev = (() => {
@@ -77,7 +75,7 @@ const isDev = (() => {
 })();
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { variant = "primary", size = "xs", iconOnly = false, loading = false, loadingText, leadingIcon, trailingIcon, state, disabled, type = "button", children, className, onClick, ...props },
+  { variant = "primary", size = "xs", iconOnly = false, loading = false, loadingText, leadingIcon, trailingIcon, disabled, type = "button", children, className, onClick, ...props },
   ref,
 ) {
   const sizeIsIcon = isIconSize(size);
@@ -97,10 +95,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   }
   const unsupported = resolvedIconOnly && !SUPPORTS_ICON_ONLY.includes(variant);
 
-  // force a state only when asked; otherwise native/CSS states drive the visuals.
-  // Lower-cased defensively so JavaScript consumers passing Figma's "Hover" still get the right styles.
-  const forcedState = state ? (String(state).toLowerCase() as ButtonVisualState) : undefined;
-  const resolvedState = forcedState ?? (loading ? "loading" : disabled ? "disabled" : undefined);
+  // No state prop. Real states are native/CSS; a visual-regression harness may force one by passing the
+  // `data-state` attribute (ordinary attribute passthrough), so production carries no test-only API.
+  const forcedState = (props as { "data-state"?: ButtonVisualState })["data-state"];
+  const resolvedState = loading ? "loading" : disabled ? "disabled" : forcedState;
 
   // Composition-first slots. Precedence: explicit props > `data-icon="inline-start|inline-end"` markers
   // (shadcn's convention) > element child in the leading/trailing position.

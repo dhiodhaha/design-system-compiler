@@ -188,7 +188,12 @@ export function emitThemeCss({ rules, variants }) {
     const state = /\[data-state="([^"]+)"\]/.exec(selector)?.[1];
     if (!state) return [selector];
     const natural = STATE_ALIAS[state.toLowerCase()]?.(selector) ?? selector;
-    return natural === selector ? [selector] : [natural, selector];
+    if (natural === selector) return [selector];
+    // A state-only rule whose state is "default" collapses to the empty selector. That is not "no rule":
+    // it means the values apply to every button, so anchor them to the component root instead of emitting
+    // an empty selector (which browsers drop entirely — invalid CSS).
+    const normalized = natural.trim().replace(/^\s*\{\s*$/, "") || "[data-ds-button]";
+    return [normalized, selector];
   };
 
   // ---- calibrated renderer offsets (measured, recorded, never guessed)

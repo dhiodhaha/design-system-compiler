@@ -1,0 +1,2089 @@
+{
+  "$schema": "design-compiler/ReferenceGraph@p0",
+  "library": "untitledui",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "componentNodes": 83,
+  "internalEdges": 496,
+  "componentEdges": 127,
+  "dependencyOrder": [
+    [
+      "components/application/charts/charts-base.tsx",
+      "components/application/date-picker/cell.tsx",
+      "components/application/file-upload/draggable.tsx",
+      "components/application/loading-indicator/loading-indicator.tsx",
+      "components/application/modals/modal.tsx",
+      "components/application/pagination/pagination-dot.tsx",
+      "components/application/pagination/pagination-line.tsx",
+      "components/base/avatar/base-components/avatar-company-icon.tsx",
+      "components/base/avatar/base-components/avatar-count.tsx",
+      "components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "components/base/avatar/base-components/verified-tick.tsx",
+      "components/base/badges/badge-groups.tsx",
+      "components/base/button-group/button-group.tsx",
+      "components/base/buttons/app-store-buttons-outline.tsx",
+      "components/base/buttons/app-store-buttons.tsx",
+      "components/base/buttons/button.tsx",
+      "components/base/buttons/close-button.tsx",
+      "components/base/buttons/social-logos.tsx",
+      "components/base/checkbox/checkbox.tsx",
+      "components/base/file-upload-trigger/file-upload-trigger.tsx",
+      "components/base/form/form.tsx",
+      "components/base/form/hook-form.tsx",
+      "components/base/input/hint-text.tsx",
+      "components/base/progress-indicators/progress-circles.tsx",
+      "components/base/progress-indicators/progress-indicators.tsx",
+      "components/base/progress-indicators/simple-circle.tsx",
+      "components/base/radio-buttons/radio-buttons.tsx",
+      "components/base/select/popover.tsx",
+      "components/base/slider/slider.tsx",
+      "components/base/tags/base-components/tag-checkbox.tsx",
+      "components/base/tags/base-components/tag-close-x.tsx",
+      "components/base/toggle/toggle.tsx",
+      "components/base/tooltip/tooltip.tsx",
+      "components/foundations/dot-icon.tsx",
+      "components/foundations/featured-icon/featured-icon.tsx",
+      "components/foundations/logo/untitledui-logo-minimal.tsx",
+      "components/foundations/play-button-icon.tsx",
+      "components/foundations/rating-stars.tsx"
+    ],
+    [
+      "components/application/app-navigation/base-components/nav-button.tsx",
+      "components/application/slideout-menus/slideout-menu.tsx",
+      "components/base/avatar/avatar.tsx",
+      "components/base/avatar/base-components/avatar-add-button.tsx",
+      "components/base/badges/badges.tsx",
+      "components/base/buttons/button-utility.tsx",
+      "components/base/buttons/social-button.tsx",
+      "components/base/input/label.tsx",
+      "components/base/tags/tags.tsx",
+      "components/foundations/logo/untitledui-logo.tsx",
+      "components/foundations/rating-badge.tsx"
+    ],
+    [
+      "components/application/app-navigation/base-components/mobile-header.tsx",
+      "components/application/app-navigation/base-components/nav-item.tsx",
+      "components/application/file-upload/file-upload-base.tsx",
+      "components/application/table/table.tsx",
+      "components/application/tabs/tabs.tsx",
+      "components/base/avatar/avatar-label-group.tsx",
+      "components/base/avatar/avatar-profile-photo.tsx",
+      "components/base/input/input-date.tsx",
+      "components/base/input/input-number.tsx",
+      "components/base/input/input-tags.tsx",
+      "components/base/input/input.tsx",
+      "components/base/select/combobox.tsx",
+      "components/base/select/select-item.tsx",
+      "components/base/select/select-native.tsx",
+      "components/base/textarea/textarea.tsx"
+    ],
+    [
+      "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "components/application/app-navigation/base-components/nav-list.tsx",
+      "components/application/date-picker/calendar.tsx",
+      "components/application/date-picker/range-calendar.tsx",
+      "components/application/pagination/pagination.tsx",
+      "components/base/dropdown/dropdown-avatar.tsx",
+      "components/base/input/input-group.tsx",
+      "components/base/input/input-payment.tsx",
+      "components/base/input/input-tags-outer.tsx",
+      "components/base/select/tag-select.tsx"
+    ],
+    [
+      "components/application/app-navigation/header-navigation.tsx",
+      "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "components/application/date-picker/date-picker.tsx",
+      "components/application/date-picker/date-range-picker.tsx",
+      "components/base/input/input-file.tsx"
+    ]
+  ],
+  "edges": [
+    {
+      "from": ".storybook/preview.ts",
+      "to": "styles/globals.css"
+    },
+    {
+      "from": ".storybook/preview.ts",
+      "to": ".storybook/colors.css"
+    },
+    {
+      "from": ".storybook/preview.ts",
+      "to": ".storybook/themes.ts"
+    },
+    {
+      "from": ".storybook/preview.ts",
+      "to": ".storybook/wrapper.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.demo.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.demo.tsx",
+      "to": "components/base/buttons/close-button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.demo.tsx",
+      "to": "components/base/progress-indicators/progress-circles.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.demo.tsx",
+      "to": "components/base/progress-indicators/progress-indicators.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.story.tsx",
+      "to": "components/application/app-navigation/base-components/featured-cards.demo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/featured-cards.story.tsx",
+      "to": "components/internal/decorators.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/mobile-header.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/mobile-header.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "to": "components/base/avatar/avatar-label-group.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "to": "components/base/radio-buttons/radio-buttons.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "to": "hooks/use-breakpoint.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-button.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-button.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-item.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-item.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-list.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-list.tsx",
+      "to": "components/application/app-navigation/base-components/nav-item.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/base-components/nav-list.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.demo.tsx",
+      "to": "components/application/app-navigation/base-components/nav-button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.demo.tsx",
+      "to": "components/application/app-navigation/header-navigation.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.demo.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.demo.tsx",
+      "to": "components/base/dropdown/dropdown-account-card-sm.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.demo.tsx",
+      "to": "components/base/dropdown/dropdown-avatar.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.story.tsx",
+      "to": "components/application/app-navigation/header-navigation.demo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.story.tsx",
+      "to": "components/internal/decorators.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/application/app-navigation/base-components/mobile-header.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/application/app-navigation/base-components/nav-account-card.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/application/app-navigation/base-components/nav-button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/application/app-navigation/base-components/nav-item.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/application/app-navigation/base-components/nav-list.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/application/tabs/tabs.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/base/dropdown/dropdown-account-button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/header-navigation.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/application/app-navigation/base-components/mobile-header.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/application/app-navigation/base-components/nav-account-card.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/application/app-navigation/base-components/nav-item.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/application/app-navigation/base-components/nav-list.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "to": "components/application/app-navigation/base-components/mobile-header.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "to": "components/application/app-navigation/base-components/nav-account-card.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "to": "components/application/app-navigation/base-components/nav-list.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "to": "components/application/app-navigation/base-components/mobile-header.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "to": "components/application/app-navigation/base-components/nav-account-card.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "to": "components/application/app-navigation/base-components/nav-item.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "to": "components/base/buttons/button-utility.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/application/app-navigation/base-components/mobile-header.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/application/app-navigation/base-components/nav-account-card.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/application/app-navigation/base-components/nav-item.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/application/app-navigation/base-components/nav-list.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/application/app-navigation/base-components/mobile-header.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/application/app-navigation/base-components/nav-account-card.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/application/app-navigation/base-components/nav-button.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/application/app-navigation/base-components/nav-item.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/application/app-navigation/base-components/nav-list.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/base/buttons/button-utility.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/foundations/logo/untitledui-logo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "components/foundations/logo/untitledui-logo-minimal.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/base-components/featured-cards.demo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/config.ts"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.demo.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.story.tsx",
+      "to": "components/application/app-navigation/sidebar-navigation.demo.tsx"
+    },
+    {
+      "from": "components/application/app-navigation/sidebar-navigation.story.tsx",
+      "to": "components/internal/decorators.tsx"
+    },
+    {
+      "from": "components/application/carousel/carousel-base.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/carousel/carousel.demo.tsx",
+      "to": "components/application/carousel/carousel-base.tsx"
+    },
+    {
+      "from": "components/application/carousel/carousel.demo.tsx",
+      "to": "components/application/pagination/pagination-dot.tsx"
+    },
+    {
+      "from": "components/application/carousel/carousel.story.tsx",
+      "to": "components/application/carousel/carousel.demo.tsx"
+    },
+    {
+      "from": "components/application/charts/activity-gauges.demo.tsx",
+      "to": "components/application/charts/charts-base.tsx"
+    },
+    {
+      "from": "components/application/charts/activity-gauges.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/charts/activity-gauges.story.tsx",
+      "to": "components/application/charts/activity-gauges.demo.tsx"
+    },
+    {
+      "from": "components/application/charts/bar-charts.demo.tsx",
+      "to": "components/application/charts/charts-base.tsx"
+    },
+    {
+      "from": "components/application/charts/bar-charts.demo.tsx",
+      "to": "hooks/use-breakpoint.ts"
+    },
+    {
+      "from": "components/application/charts/bar-charts.story.tsx",
+      "to": "components/application/charts/bar-charts.demo.tsx"
+    },
+    {
+      "from": "components/application/charts/charts-base.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/charts/line-charts.demo.tsx",
+      "to": "components/application/charts/charts-base.tsx"
+    },
+    {
+      "from": "components/application/charts/line-charts.demo.tsx",
+      "to": "hooks/use-breakpoint.ts"
+    },
+    {
+      "from": "components/application/charts/line-charts.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/charts/line-charts.story.tsx",
+      "to": "components/application/charts/line-charts.demo.tsx"
+    },
+    {
+      "from": "components/application/charts/pie-charts.demo.tsx",
+      "to": "components/application/charts/charts-base.tsx"
+    },
+    {
+      "from": "components/application/charts/pie-charts.story.tsx",
+      "to": "components/application/charts/pie-charts.demo.tsx"
+    },
+    {
+      "from": "components/application/charts/progress-circles.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/charts/progress-circles.story.tsx",
+      "to": "components/application/charts/progress-circles.demo.tsx"
+    },
+    {
+      "from": "components/application/charts/radar-charts.demo.tsx",
+      "to": "components/application/charts/charts-base.tsx"
+    },
+    {
+      "from": "components/application/charts/radar-charts.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/charts/radar-charts.story.tsx",
+      "to": "components/application/charts/radar-charts.demo.tsx"
+    },
+    {
+      "from": "components/application/date-picker/calendar.tsx",
+      "to": "components/application/date-picker/cell.tsx"
+    },
+    {
+      "from": "components/application/date-picker/calendar.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/date-picker/calendar.tsx",
+      "to": "components/base/input/input-date.tsx"
+    },
+    {
+      "from": "components/application/date-picker/calendar.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/date-picker/cell.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/application/date-picker/calendar.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/application/date-picker/date-picker.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/application/date-picker/date-range-picker.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/application/date-picker/range-calendar.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/base/input/input-date.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "components/base/select/select.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.story.tsx",
+      "to": "components/application/date-picker/date-picker.demo.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.tsx",
+      "to": "components/application/date-picker/calendar.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-picker.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/date-picker/date-range-picker.tsx",
+      "to": "components/application/date-picker/range-calendar.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-range-picker.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-range-picker.tsx",
+      "to": "components/base/input/input-date.tsx"
+    },
+    {
+      "from": "components/application/date-picker/date-range-picker.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/date-picker/range-calendar.tsx",
+      "to": "components/application/date-picker/cell.tsx"
+    },
+    {
+      "from": "components/application/date-picker/range-calendar.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/date-picker/range-calendar.tsx",
+      "to": "components/base/input/input-date.tsx"
+    },
+    {
+      "from": "components/application/date-picker/range-calendar.tsx",
+      "to": "hooks/use-breakpoint.ts"
+    },
+    {
+      "from": "components/application/date-picker/range-calendar.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/empty-state/empty-state.tsx",
+      "to": "components/foundations/featured-icon/featured-icon.tsx"
+    },
+    {
+      "from": "components/application/empty-state/empty-state.tsx",
+      "to": "components/shared-assets/background-patterns/index.tsx"
+    },
+    {
+      "from": "components/application/empty-state/empty-state.tsx",
+      "to": "components/shared-assets/illustrations/index.tsx"
+    },
+    {
+      "from": "components/application/empty-state/empty-state.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/file-upload/file-upload-base.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/file-upload/file-upload-base.tsx",
+      "to": "components/base/buttons/button-utility.tsx"
+    },
+    {
+      "from": "components/application/file-upload/file-upload-base.tsx",
+      "to": "components/base/progress-indicators/progress-indicators.tsx"
+    },
+    {
+      "from": "components/application/file-upload/file-upload-base.tsx",
+      "to": "components/foundations/featured-icon/featured-icon.tsx"
+    },
+    {
+      "from": "components/application/file-upload/file-upload-base.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/file-upload/file-upload.demo.tsx",
+      "to": "components/application/file-upload/file-upload-base.tsx"
+    },
+    {
+      "from": "components/application/file-upload/file-upload.story.tsx",
+      "to": "components/application/file-upload/draggable.tsx"
+    },
+    {
+      "from": "components/application/file-upload/file-upload.story.tsx",
+      "to": "components/application/file-upload/file-upload.demo.tsx"
+    },
+    {
+      "from": "components/application/loading-indicator/loading-indicator.demo.tsx",
+      "to": "components/application/loading-indicator/loading-indicator.tsx"
+    },
+    {
+      "from": "components/application/loading-indicator/loading-indicator.story.tsx",
+      "to": "components/application/loading-indicator/loading-indicator.demo.tsx"
+    },
+    {
+      "from": "components/application/loading-indicator/loading-indicator.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/modals/modal.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/pagination/pagination-dot.tsx",
+      "to": "components/application/pagination/pagination-base.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination-dot.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/pagination/pagination-line.tsx",
+      "to": "components/application/pagination/pagination-base.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination-line.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/pagination/pagination.demo.tsx",
+      "to": "components/application/pagination/pagination.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.demo.tsx",
+      "to": "components/application/pagination/pagination-dot.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.demo.tsx",
+      "to": "components/application/pagination/pagination-line.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.story.tsx",
+      "to": "components/application/pagination/pagination.demo.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "components/application/pagination/pagination-base.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "components/base/button-group/button-group.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "components/base/select/select.tsx"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "hooks/use-breakpoint.ts"
+    },
+    {
+      "from": "components/application/pagination/pagination.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/slideout-menus/slideout-menu.tsx",
+      "to": "components/base/buttons/close-button.tsx"
+    },
+    {
+      "from": "components/application/slideout-menus/slideout-menu.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/application/date-picker/date-range-picker.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/application/tabs/tabs.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/application/empty-state/empty-state.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/application/pagination/pagination.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/application/table/table.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/badges/badge-types.ts"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/buttons/button-utility.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/dropdown/dropdown-icon-simple.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/application/table/table.demo.tsx",
+      "to": "components/base/progress-indicators/progress-indicators.tsx"
+    },
+    {
+      "from": "components/application/table/table.story.tsx",
+      "to": "components/application/table/table.demo.tsx"
+    },
+    {
+      "from": "components/application/table/table.story.tsx",
+      "to": "components/internal/decorators.tsx"
+    },
+    {
+      "from": "components/application/table/table.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/application/table/table.tsx",
+      "to": "components/base/checkbox/checkbox.tsx"
+    },
+    {
+      "from": "components/application/table/table.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/application/table/table.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/application/table/table.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/tabs/tabs.demo.tsx",
+      "to": "components/application/tabs/tabs.tsx"
+    },
+    {
+      "from": "components/application/tabs/tabs.demo.tsx",
+      "to": "components/base/select/select-native.tsx"
+    },
+    {
+      "from": "components/application/tabs/tabs.story.tsx",
+      "to": "components/application/tabs/tabs.demo.tsx"
+    },
+    {
+      "from": "components/application/tabs/tabs.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/application/tabs/tabs.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/application/tabs/tabs.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/avatar/avatar-label-group.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar-label-group.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/avatar-profile-photo.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar-profile-photo.tsx",
+      "to": "components/base/avatar/base-components/index.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar-profile-photo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/avatar.demo.tsx",
+      "to": "components/base/avatar/base-components/avatar-count.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.demo.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.demo.tsx",
+      "to": "components/base/avatar/avatar-label-group.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.demo.tsx",
+      "to": "components/base/avatar/avatar-profile-photo.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.demo.tsx",
+      "to": "components/base/avatar/base-components/index.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.story.tsx",
+      "to": "components/base/avatar/avatar.demo.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.tsx",
+      "to": "components/base/avatar/base-components/index.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.tsx",
+      "to": "components/base/avatar/base-components/avatar-count.tsx"
+    },
+    {
+      "from": "components/base/avatar/avatar.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/base-components/avatar-add-button.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/avatar/base-components/avatar-add-button.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/base-components/avatar-company-icon.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/base-components/avatar-count.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/avatar/base-components/verified-tick.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/badges/badge-groups.demo.tsx",
+      "to": "components/base/badges/badge-groups.tsx"
+    },
+    {
+      "from": "components/base/badges/badge-groups.story.tsx",
+      "to": "components/base/badges/badge-groups.demo.tsx"
+    },
+    {
+      "from": "components/base/badges/badge-groups.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/badges/badge-groups.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/badges/badges.demo.tsx",
+      "to": "components/base/badges/badge-types.ts"
+    },
+    {
+      "from": "components/base/badges/badges.demo.tsx",
+      "to": "components/base/badges/badges.tsx"
+    },
+    {
+      "from": "components/base/badges/badges.story.tsx",
+      "to": "components/base/badges/badges.demo.tsx"
+    },
+    {
+      "from": "components/base/badges/badges.tsx",
+      "to": "components/base/badges/badge-types.ts"
+    },
+    {
+      "from": "components/base/badges/badges.tsx",
+      "to": "components/foundations/dot-icon.tsx"
+    },
+    {
+      "from": "components/base/badges/badges.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/button-group/button-group.demo.tsx",
+      "to": "components/base/button-group/button-group.tsx"
+    },
+    {
+      "from": "components/base/button-group/button-group.demo.tsx",
+      "to": "components/foundations/dot-icon.tsx"
+    },
+    {
+      "from": "components/base/button-group/button-group.story.tsx",
+      "to": "components/base/button-group/button-group.demo.tsx"
+    },
+    {
+      "from": "components/base/button-group/button-group.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/button-group/button-group.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/buttons/app-store-buttons-outline.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/app-store-buttons.demo.tsx",
+      "to": "components/base/buttons/app-store-buttons.tsx"
+    },
+    {
+      "from": "components/base/buttons/app-store-buttons.demo.tsx",
+      "to": "components/base/buttons/app-store-buttons-outline.tsx"
+    },
+    {
+      "from": "components/base/buttons/app-store-buttons.story.tsx",
+      "to": "components/base/buttons/app-store-buttons.demo.tsx"
+    },
+    {
+      "from": "components/base/buttons/app-store-buttons.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/button-utility.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/buttons/button-utility.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/button-utility.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/buttons/button.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/button.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/buttons/buttons.demo.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/buttons/buttons.demo.tsx",
+      "to": "components/base/buttons/button-utility.tsx"
+    },
+    {
+      "from": "components/base/buttons/buttons.demo.tsx",
+      "to": "components/base/buttons/close-button.tsx"
+    },
+    {
+      "from": "components/base/buttons/buttons.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/buttons.story.tsx",
+      "to": "components/base/buttons/buttons.demo.tsx"
+    },
+    {
+      "from": "components/base/buttons/close-button.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/social-button.tsx",
+      "to": "components/base/buttons/social-logos.tsx"
+    },
+    {
+      "from": "components/base/buttons/social-button.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/buttons/social-buttons.demo.tsx",
+      "to": "components/base/buttons/social-button.tsx"
+    },
+    {
+      "from": "components/base/buttons/social-buttons.story.tsx",
+      "to": "components/base/buttons/social-buttons.demo.tsx"
+    },
+    {
+      "from": "components/base/checkbox/checkbox.demo.tsx",
+      "to": "components/base/checkbox/checkbox.tsx"
+    },
+    {
+      "from": "components/base/checkbox/checkbox.story.tsx",
+      "to": "components/base/checkbox/checkbox.demo.tsx"
+    },
+    {
+      "from": "components/base/checkbox/checkbox.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "to": "components/base/radio-buttons/radio-buttons.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-breadcrumb.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-button.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-button.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-md.tsx",
+      "to": "components/base/avatar/avatar-label-group.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-md.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-md.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-sm.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-sm.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-sm.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-xs.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-xs.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-account-card-xs.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-avatar.tsx",
+      "to": "components/base/avatar/avatar-label-group.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-avatar.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-avatar.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-avatar.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-avatar.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-advanced.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-advanced.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-advanced.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-link.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-link.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-simple.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-button-simple.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-context-menu-advanced.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-context-menu-advanced.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-context-menu-simple.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-icon-advanced.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-icon-advanced.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-icon-simple.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-integration.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-integration.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-integration.tsx",
+      "to": "components/foundations/integration-icons/index.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-search-advanced.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-search-advanced.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-search-advanced.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-search-simple.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-search-simple.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown-search-simple.tsx",
+      "to": "components/base/dropdown/dropdown.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-account-breadcrumb.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-account-button.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-account-card-md.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-account-card-sm.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-account-card-xs.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-avatar.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-button-advanced.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-button-link.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-button-simple.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-context-menu-advanced.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-context-menu-simple.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-icon-advanced.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-icon-simple.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-integration.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-search-advanced.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.story.tsx",
+      "to": "components/base/dropdown/dropdown-search-simple.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.tsx",
+      "to": "components/base/checkbox/checkbox.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.tsx",
+      "to": "components/base/radio-buttons/radio-buttons.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.tsx",
+      "to": "components/base/toggle/toggle.tsx"
+    },
+    {
+      "from": "components/base/dropdown/dropdown.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/hint-text.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-date.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/input/input-date.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input-date.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input-date.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-file.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/input/input-file.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/input/input-file.tsx",
+      "to": "components/base/input/input-group.tsx"
+    },
+    {
+      "from": "components/base/input/input-file.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-group.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input-group.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/input/input-group.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input-group.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-number.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/input/input-number.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input-number.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input-number.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-payment.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input-payment.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/input/input-payment.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input-payment.tsx",
+      "to": "components/foundations/payment-icons/index.tsx"
+    },
+    {
+      "from": "components/base/input/input-payment.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-tags-outer.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags-outer.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags-outer.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags-outer.tsx",
+      "to": "components/base/tags/tags.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags-outer.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input-tags.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags.tsx",
+      "to": "components/base/tags/tags.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/input/input-tags.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/input.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/input.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/input.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/input/input.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-date.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-number.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-file.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-group.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-payment.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-tags.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/input/input-tags-outer.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "components/base/select/select-native.tsx"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "hooks/use-clipboard.ts"
+    },
+    {
+      "from": "components/base/input/inputs.demo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/inputs.story.tsx",
+      "to": "components/base/input/inputs.demo.tsx"
+    },
+    {
+      "from": "components/base/input/label.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/input/label.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/input/pin-input.demo.tsx",
+      "to": "components/base/input/pin-input.tsx"
+    },
+    {
+      "from": "components/base/input/pin-input.story.tsx",
+      "to": "components/base/input/pin-input.demo.tsx"
+    },
+    {
+      "from": "components/base/input/pin-input.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/input/pin-input.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/input/pin-input.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/progress-indicators/progress-circles.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/progress-indicators/progress-indicators.demo.tsx",
+      "to": "components/base/progress-indicators/progress-circles.tsx"
+    },
+    {
+      "from": "components/base/progress-indicators/progress-indicators.demo.tsx",
+      "to": "components/base/progress-indicators/progress-indicators.tsx"
+    },
+    {
+      "from": "components/base/progress-indicators/progress-indicators.story.tsx",
+      "to": "components/base/progress-indicators/progress-indicators.demo.tsx"
+    },
+    {
+      "from": "components/base/progress-indicators/progress-indicators.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/radio-buttons/radio-buttons.demo.tsx",
+      "to": "components/base/radio-buttons/radio-buttons.tsx"
+    },
+    {
+      "from": "components/base/radio-buttons/radio-buttons.story.tsx",
+      "to": "components/base/radio-buttons/radio-buttons.demo.tsx"
+    },
+    {
+      "from": "components/base/radio-buttons/radio-buttons.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "components/base/select/popover.tsx"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "components/base/select/select-shared.tsx"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "hooks/use-resize-observer.ts"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/combobox.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "components/base/select/select-item.tsx"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "components/base/select/select-shared.tsx"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "components/base/buttons/button.tsx"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "components/foundations/featured-icon/featured-icon.tsx"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/multi-select.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/select/popover.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/select-item.tsx",
+      "to": "components/base/select/select-shared.tsx"
+    },
+    {
+      "from": "components/base/select/select-item.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/select/select-item.tsx",
+      "to": "components/base/checkbox/checkbox.tsx"
+    },
+    {
+      "from": "components/base/select/select-item.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/select-item.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/select/select-native.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/select/select-native.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/select/select-native.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/select.demo.tsx",
+      "to": "components/base/select/multi-select.tsx"
+    },
+    {
+      "from": "components/base/select/select.demo.tsx",
+      "to": "components/base/select/select.tsx"
+    },
+    {
+      "from": "components/base/select/select.demo.tsx",
+      "to": "components/base/select/select-native.tsx"
+    },
+    {
+      "from": "components/base/select/select.demo.tsx",
+      "to": "components/base/select/tag-select.tsx"
+    },
+    {
+      "from": "components/base/select/select.demo.tsx",
+      "to": "components/foundations/dot-icon.tsx"
+    },
+    {
+      "from": "components/base/select/select.story.tsx",
+      "to": "components/base/select/select.demo.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/select/combobox.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/select/popover.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/select/select-item.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/select/select-shared.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/select/select.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/select/select-item.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/avatar/avatar.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/badges/badge-types.ts"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/select/popover.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/select/select-shared.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "components/base/tags/base-components/tag-close-x.tsx"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "hooks/use-resize-observer.ts"
+    },
+    {
+      "from": "components/base/select/tag-select.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/slider/slider.demo.tsx",
+      "to": "components/base/slider/slider.tsx"
+    },
+    {
+      "from": "components/base/slider/slider.story.tsx",
+      "to": "components/base/slider/slider.demo.tsx"
+    },
+    {
+      "from": "components/base/slider/slider.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/tags/base-components/tag-checkbox.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/tags/base-components/tag-close-x.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/tags/tags.demo.tsx",
+      "to": "components/base/tags/tags.tsx"
+    },
+    {
+      "from": "components/base/tags/tags.story.tsx",
+      "to": "components/base/tags/tags.demo.tsx"
+    },
+    {
+      "from": "components/base/tags/tags.tsx",
+      "to": "components/base/tags/base-components/tag-checkbox.tsx"
+    },
+    {
+      "from": "components/base/tags/tags.tsx",
+      "to": "components/base/tags/base-components/tag-close-x.tsx"
+    },
+    {
+      "from": "components/base/tags/tags.tsx",
+      "to": "components/foundations/dot-icon.tsx"
+    },
+    {
+      "from": "components/base/tags/tags.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/textarea/textarea.demo.tsx",
+      "to": "components/base/textarea/textarea.tsx"
+    },
+    {
+      "from": "components/base/textarea/textarea.story.tsx",
+      "to": "components/base/textarea/textarea.demo.tsx"
+    },
+    {
+      "from": "components/base/textarea/textarea.tsx",
+      "to": "components/base/input/hint-text.tsx"
+    },
+    {
+      "from": "components/base/textarea/textarea.tsx",
+      "to": "components/base/input/label.tsx"
+    },
+    {
+      "from": "components/base/textarea/textarea.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/toggle/toggle.demo.tsx",
+      "to": "components/base/toggle/toggle.tsx"
+    },
+    {
+      "from": "components/base/toggle/toggle.story.tsx",
+      "to": "components/base/toggle/toggle.demo.tsx"
+    },
+    {
+      "from": "components/base/toggle/toggle.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/base/tooltip/tooltip.demo.tsx",
+      "to": "components/base/tooltip/tooltip.tsx"
+    },
+    {
+      "from": "components/base/tooltip/tooltip.story.tsx",
+      "to": "components/base/tooltip/tooltip.demo.tsx"
+    },
+    {
+      "from": "components/base/tooltip/tooltip.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/foundations/featured-icon/featured-icon.demo.tsx",
+      "to": "components/foundations/featured-icon/featured-icon.tsx"
+    },
+    {
+      "from": "components/foundations/featured-icon/featured-icon.story.tsx",
+      "to": "components/foundations/featured-icon/featured-icon.demo.tsx"
+    },
+    {
+      "from": "components/foundations/featured-icon/featured-icon.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/foundations/featured-icon/featured-icon.tsx",
+      "to": "utils/is-react-component.ts"
+    },
+    {
+      "from": "components/foundations/integration-icons/integration-icons.story.tsx",
+      "to": "components/foundations/integration-icons/index.tsx"
+    },
+    {
+      "from": "components/foundations/logo/untitledui-logo-minimal.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/foundations/logo/untitledui-logo.tsx",
+      "to": "components/foundations/logo/untitledui-logo-minimal.tsx"
+    },
+    {
+      "from": "components/foundations/logo/untitledui-logo.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/foundations/payment-icons/payment-icons.story.tsx",
+      "to": "components/foundations/payment-icons/index.tsx"
+    },
+    {
+      "from": "components/foundations/play-button-icon.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/foundations/rating-badge.tsx",
+      "to": "components/foundations/rating-stars.tsx"
+    },
+    {
+      "from": "components/foundations/rating-badge.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/foundations/rating-stars.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/circle.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/grid.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/index.tsx",
+      "to": "components/shared-assets/background-patterns/circle.tsx"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/index.tsx",
+      "to": "components/shared-assets/background-patterns/grid.tsx"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/index.tsx",
+      "to": "components/shared-assets/background-patterns/grid-check.tsx"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/index.tsx",
+      "to": "components/shared-assets/background-patterns/square.tsx"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/index.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/background-patterns/square.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/credit-card/credit-card.demo.tsx",
+      "to": "components/shared-assets/credit-card/credit-card.tsx"
+    },
+    {
+      "from": "components/shared-assets/credit-card/credit-card.story.tsx",
+      "to": "components/shared-assets/credit-card/credit-card.tsx"
+    },
+    {
+      "from": "components/shared-assets/credit-card/credit-card.tsx",
+      "to": "components/shared-assets/credit-card/icons.tsx"
+    },
+    {
+      "from": "components/shared-assets/credit-card/credit-card.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/illustrations/box.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/illustrations/cloud.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/illustrations/credit-card.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/illustrations/documents.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/illustrations/index.tsx",
+      "to": "components/shared-assets/illustrations/box.tsx"
+    },
+    {
+      "from": "components/shared-assets/illustrations/index.tsx",
+      "to": "components/shared-assets/illustrations/cloud.tsx"
+    },
+    {
+      "from": "components/shared-assets/illustrations/index.tsx",
+      "to": "components/shared-assets/illustrations/credit-card.tsx"
+    },
+    {
+      "from": "components/shared-assets/illustrations/index.tsx",
+      "to": "components/shared-assets/illustrations/documents.tsx"
+    },
+    {
+      "from": "components/shared-assets/iphone-mockup.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/qr-code.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "components/shared-assets/section-divider.tsx",
+      "to": "utils/cx.ts"
+    },
+    {
+      "from": "utils/countries.tsx",
+      "to": "components/base/select/select.tsx"
+    },
+    {
+      "from": "utils/timezones.tsx",
+      "to": "components/base/select/select.tsx"
+    }
+  ]
+}

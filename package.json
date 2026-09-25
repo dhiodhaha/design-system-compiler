@@ -8,7 +8,9 @@
     "typecheck": "tsc --noEmit",
     "compile": "node compiler/figma/normalize.mjs && node compiler/figma/compile.mjs",
     "test": "node --test tests/invariants.test.mjs",
-    "verify": "pnpm compile && pnpm test && bun tests/ssr.tsx && node visual/verify-matrix.mjs --dpr 2 --canaries && node visual/verify-matrix.mjs --dpr 2 && node visual/verify-matrix.mjs --dpr 1 && node visual/run.mjs && node visual/behavior.mjs && node visual/accuracy.mjs"
+    "verify": "pnpm compile && pnpm test && bun tests/ssr.tsx && node visual/check-css.mjs && node visual/verify-matrix.mjs --dpr 2 --canaries && node visual/verify-matrix.mjs --dpr 2 && node visual/verify-matrix.mjs --dpr 1 && node visual/run.mjs && node visual/behavior.mjs && node visual/accuracy.mjs",
+    "reference:index": "node compiler/reference/index-oss.mjs --repo ${OSS_REPO:-/tmp/untitled-react}",
+    "reference:diff": "node compiler/reference/index-oss.mjs --repo ${OSS_REPO:-/tmp/untitled-react} --diff"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -25,11 +27,13 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
     "axe-core": "^4.13.0",
+    "css-tree": "^3.2.1",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
     "puppeteer-core": "^25.12.0",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
+    "typescript5": "npm:typescript@5.7.3",
     "vite": "^8.3.0"
   }
 }

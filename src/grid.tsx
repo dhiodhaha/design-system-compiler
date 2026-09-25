@@ -61,7 +61,7 @@ createRoot(document.getElementById("grid")!).render(
             iconOnly={iconOnly === "True"}
             loading={State === "Loading"}
             loadingText={label?.text}
-            state={forced}
+            {...(forced ? { "data-state": forced } : {})}
             disabled={State === "Disabled"}
             aria-label={iconOnly === "True" ? `${Hierarchy} ${Size} icon only specimen` : undefined}
             leadingIcon={icons > 0 && !variant.sig.icons.some((i) => i.kind === "spinner") ? <PlaceholderCircleIcon /> : undefined}

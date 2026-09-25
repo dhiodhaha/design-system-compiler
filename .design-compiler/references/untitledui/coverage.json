@@ -1,0 +1,778 @@
+{
+  "$schema": "design-compiler/ReferenceCoverage@p0",
+  "library": "untitledui",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "totals": {
+    "totalEligibleOss": 83,
+    "referenceIndexed": 83,
+    "contractResolved": 1,
+    "targetImplemented": 0,
+    "verified": 0,
+    "proOnlyDiscovered": 0,
+    "proOnlyCompiled": 0,
+    "unresolved": 0,
+    "notEligible": 232
+  },
+  "byKind": {
+    "ASSET": 19,
+    "NON_COMPONENT": 114,
+    "DEMO": 36,
+    "STORY": 39,
+    "COMPOUND_COMPONENT": 20,
+    "APPLICATION_COMPONENT": 21,
+    "BASE_COMPONENT": 35,
+    "RECIPE_OR_BLOCK": 15,
+    "FOUNDATION": 7,
+    "INTERNAL": 1,
+    "HELPER": 8
+  },
+  "candidates": [
+    {
+      "id": "mobile-header",
+      "path": "components/application/app-navigation/base-components/mobile-header.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "nav-account-card",
+      "path": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "nav-button",
+      "path": "components/application/app-navigation/base-components/nav-button.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "nav-item",
+      "path": "components/application/app-navigation/base-components/nav-item.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "nav-list",
+      "path": "components/application/app-navigation/base-components/nav-list.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "header-navigation",
+      "path": "components/application/app-navigation/header-navigation.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "sidebar-dual-tier",
+      "path": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "sidebar-section-dividers",
+      "path": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "sidebar-sections-subheadings",
+      "path": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "sidebar-simple",
+      "path": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "sidebar-slim",
+      "path": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "charts-base",
+      "path": "components/application/charts/charts-base.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "charting",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "calendar",
+      "path": "components/application/date-picker/calendar.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "cell",
+      "path": "components/application/date-picker/cell.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "date-picker",
+      "path": "components/application/date-picker/date-picker.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "date-range-picker",
+      "path": "components/application/date-picker/date-range-picker.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "range-calendar",
+      "path": "components/application/date-picker/range-calendar.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "draggable",
+      "path": "components/application/file-upload/draggable.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "file-upload-base",
+      "path": "components/application/file-upload/file-upload-base.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "loading-indicator",
+      "path": "components/application/loading-indicator/loading-indicator.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "modal",
+      "path": "components/application/modals/modal.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "pagination-dot",
+      "path": "components/application/pagination/pagination-dot.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "pagination-line",
+      "path": "components/application/pagination/pagination-line.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "pagination",
+      "path": "components/application/pagination/pagination.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "slideout-menu",
+      "path": "components/application/slideout-menus/slideout-menu.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "table",
+      "path": "components/application/table/table.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "tabs",
+      "path": "components/application/tabs/tabs.tsx",
+      "kind": "APPLICATION_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar-label-group",
+      "path": "components/base/avatar/avatar-label-group.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar-profile-photo",
+      "path": "components/base/avatar/avatar-profile-photo.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar",
+      "path": "components/base/avatar/avatar.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar-add-button",
+      "path": "components/base/avatar/base-components/avatar-add-button.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar-company-icon",
+      "path": "components/base/avatar/base-components/avatar-company-icon.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar-count",
+      "path": "components/base/avatar/base-components/avatar-count.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "avatar-online-indicator",
+      "path": "components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "verified-tick",
+      "path": "components/base/avatar/base-components/verified-tick.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "badge-groups",
+      "path": "components/base/badges/badge-groups.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "badges",
+      "path": "components/base/badges/badges.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "button-group",
+      "path": "components/base/button-group/button-group.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "app-store-buttons-outline",
+      "path": "components/base/buttons/app-store-buttons-outline.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "app-store-buttons",
+      "path": "components/base/buttons/app-store-buttons.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "button-utility",
+      "path": "components/base/buttons/button-utility.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "button",
+      "path": "components/base/buttons/button.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "CONTRACT_RESOLVED",
+      "parityStatus": "benchmark (figma-first) — pending reference-first migration",
+      "license": "MIT"
+    },
+    {
+      "id": "close-button",
+      "path": "components/base/buttons/close-button.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "social-button",
+      "path": "components/base/buttons/social-button.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "social-logos",
+      "path": "components/base/buttons/social-logos.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "checkbox",
+      "path": "components/base/checkbox/checkbox.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "dropdown-avatar",
+      "path": "components/base/dropdown/dropdown-avatar.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "file-upload-trigger",
+      "path": "components/base/file-upload-trigger/file-upload-trigger.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "form",
+      "path": "components/base/form/form.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "hook-form",
+      "path": "components/base/form/hook-form.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "hint-text",
+      "path": "components/base/input/hint-text.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-date",
+      "path": "components/base/input/input-date.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-file",
+      "path": "components/base/input/input-file.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-group",
+      "path": "components/base/input/input-group.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-number",
+      "path": "components/base/input/input-number.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-payment",
+      "path": "components/base/input/input-payment.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-tags-outer",
+      "path": "components/base/input/input-tags-outer.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input-tags",
+      "path": "components/base/input/input-tags.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "input",
+      "path": "components/base/input/input.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "label",
+      "path": "components/base/input/label.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "progress-circles",
+      "path": "components/base/progress-indicators/progress-circles.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "progress-indicators",
+      "path": "components/base/progress-indicators/progress-indicators.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "simple-circle",
+      "path": "components/base/progress-indicators/simple-circle.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "radio-buttons",
+      "path": "components/base/radio-buttons/radio-buttons.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "combobox",
+      "path": "components/base/select/combobox.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "popover",
+      "path": "components/base/select/popover.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "select-item",
+      "path": "components/base/select/select-item.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "select-native",
+      "path": "components/base/select/select-native.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "tag-select",
+      "path": "components/base/select/tag-select.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "slider",
+      "path": "components/base/slider/slider.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "tag-checkbox",
+      "path": "components/base/tags/base-components/tag-checkbox.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "tag-close-x",
+      "path": "components/base/tags/base-components/tag-close-x.tsx",
+      "kind": "COMPOUND_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "tags",
+      "path": "components/base/tags/tags.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "textarea",
+      "path": "components/base/textarea/textarea.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "toggle",
+      "path": "components/base/toggle/toggle.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "tooltip",
+      "path": "components/base/tooltip/tooltip.tsx",
+      "kind": "BASE_COMPONENT",
+      "primitiveEngine": "react-aria-components",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "dot-icon",
+      "path": "components/foundations/dot-icon.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "featured-icon",
+      "path": "components/foundations/featured-icon/featured-icon.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "untitledui-logo-minimal",
+      "path": "components/foundations/logo/untitledui-logo-minimal.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "untitledui-logo",
+      "path": "components/foundations/logo/untitledui-logo.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "play-button-icon",
+      "path": "components/foundations/play-button-icon.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "rating-badge",
+      "path": "components/foundations/rating-badge.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    },
+    {
+      "id": "rating-stars",
+      "path": "components/foundations/rating-stars.tsx",
+      "kind": "FOUNDATION",
+      "primitiveEngine": "native",
+      "status": "REFERENCE_INDEXED",
+      "parityStatus": "not-started",
+      "license": "MIT"
+    }
+  ]
+}

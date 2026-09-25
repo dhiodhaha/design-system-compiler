@@ -1,0 +1,23 @@
+{
+  "$schema": "design-compiler/references@p0",
+  "libraries": [
+    {
+      "id": "untitledui",
+      "kind": "oss-react-reference",
+      "repository": "untitleduico/react",
+      "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+      "license": "MIT",
+      "role": "primary semantic/behavior reference (REFERENCE_LIBRARY.md)",
+      "indexed": true
+    },
+    {
+      "id": "untitledui-pro-figma",
+      "kind": "licensed-figma-source",
+      "repository": null,
+      "revision": null,
+      "license": "commercial (PRO)",
+      "role": "visual/composition truth + fallback for components absent from OSS",
+      "indexed": "partial (Button component set 3287:427074)"
+    }
+  ]
+}

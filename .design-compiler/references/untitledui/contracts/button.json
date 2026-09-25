@@ -1,0 +1,117 @@
+{
+  "$schema": "design-compiler/ReferenceContract@p0",
+  "id": "button",
+  "library": "untitledui",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "source": "components/base/buttons/button.tsx",
+  "license": "MIT",
+  "exports": [
+    {
+      "name": "styles",
+      "kind": "const"
+    },
+    {
+      "name": "CommonProps",
+      "kind": "type"
+    },
+    {
+      "name": "ButtonProps",
+      "kind": "type"
+    },
+    {
+      "name": "Props",
+      "kind": "type"
+    },
+    {
+      "name": "Button",
+      "kind": "component"
+    }
+  ],
+  "primitiveEngine": "react-aria-components",
+  "variantVocabulary": {
+    "common": [
+      "root",
+      "icon"
+    ],
+    "sizes": [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl"
+    ],
+    "colors": [
+      "primary",
+      "secondary",
+      "tertiary"
+    ]
+  },
+  "capabilities": [
+    "color-variants",
+    "destructive",
+    "disabled",
+    "icon-only",
+    "icon-slots",
+    "link/navigation",
+    "loading",
+    "sizes"
+  ],
+  "propEvidence": [
+    "as",
+    "children",
+    "className",
+    "color",
+    "href",
+    "iconLeading",
+    "iconTrailing",
+    "isDisabled",
+    "isLoading",
+    "showTextWhileLoading",
+    "size"
+  ],
+  "anatomy": [
+    {
+      "role": "root",
+      "evidence": "Button from react-aria-components (renders native button)"
+    },
+    {
+      "role": "linkRoot",
+      "evidence": "AriaLink used when href is present — navigation capability"
+    },
+    {
+      "role": "leadingVisual",
+      "evidence": "iconLeading | element children detected via isValidElement"
+    },
+    {
+      "role": "label",
+      "evidence": "children / data-text marker"
+    },
+    {
+      "role": "trailingVisual",
+      "evidence": "iconTrailing | element children detected via isValidElement"
+    },
+    {
+      "role": "loadingIndicator",
+      "evidence": "Spinner when loading/isPending"
+    },
+    {
+      "role": "iconOnly",
+      "evidence": "derived from children shape (isIconOnly) + data-icon-only styling hook"
+    }
+  ],
+  "states": [
+    "default",
+    "hover",
+    "focus-visible",
+    "disabled",
+    "loading",
+    "pending",
+    "icon-only"
+  ],
+  "openQuestionsForParity": [
+    "exact loading motion contract (duration/easing) — Figma prototype says DISSOLVE 100ms LINEAR for hover; loading animation must come from the reference, not guessed",
+    "link capability must be preserved by the target adapter (href -> anchor semantics)",
+    "which upstream props are capability-required vs implementation-specific naming"
+  ],
+  "parsedPropsBlockFound": false
+}

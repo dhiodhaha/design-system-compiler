@@ -83,7 +83,7 @@
   padding-inline: var(--dsb-hierarchy-label-padding, 0px);
 }
 
- {
+[data-ds-button] {
   --dsb-hierarchy-opacity: 1;
 }
 [data-icon-only="false"] {
