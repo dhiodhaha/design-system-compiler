@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/ProGapCompile@p0",
-  "at": "2026-09-25T11:36:18.858Z",
+  "at": "2026-09-25T12:04:59.997Z",
   "figmaFile": "sLqnzw7tFXpuPA1TbqsjZx",
   "families": [
     {
@@ -27,20 +27,19 @@
       "reuseScore": 0,
       "canonicalRefs": [
         "Avatar",
-        "Badge",
-        "Divider"
+        "theme typography + colour tokens"
       ],
-      "classification": "BLOCK",
-      "status": "NEEDS_FIGMA_SLICE",
-      "artifact": null,
-      "rationale": "58 variants across 6+ boolean axes (Caption, Divider, Avatar group, Attribution, Breakpoint) — composing it needs per-variant styling evidence",
-      "nextAction": "deep-read 3 representative variants (Heading/sm, Body/lg, With-avatar) at depth 6, then compose as a block",
+      "classification": "COMPOSE",
+      "status": "COMPOSED",
+      "artifact": "registry/pro/content-item.tsx",
+      "rationale": "58 variants collapse into 7 structural signatures; three owner-verified representative deep reads plus the shallow variant signatures give every type scale, colour and spacing pair. Modelled as semantic components (Heading/Paragraph/Divider/Image/Quote/FeatureText + ContentStack) with a thin Figma-Type dispatcher instead of one union prop.",
+      "nextAction": "none — representative verification passed; Mobile pixel parity and Quote-left inner text remain recorded as INFERRED",
       "license": "PRO-derived (private); canonical children remain MIT",
       "evidence": [
-        "sliced anatomy: Measure + spacing guide, Content item",
-        "Avatar",
-        "Badge",
-        "Divider"
+        "typography: Heading xs..xl = 18/28 20/30 24/32 30/38 36/44 w600 #171717; Paragraph sm..xl = 14/20 16/24 18/28 20/30 w400 #525252; Quote sm..2xl = 16/24..30/38 w500 #171717",
+        "spacing pairs measured for all 58 variants (e.g. Heading sm Desktop 32/12, Mobile 20/8; Paragraph lg 0/18; Divider md 32/32)",
+        "Feature text nests Content item instances inside a container (not a text style)",
+        "design-tool annotations ('Measure + spacing guide') are excluded from every implementation"
       ]
     },
     {
@@ -194,13 +193,14 @@
   "totals": {
     "candidates": 5,
     "compiled": 2,
+    "composed": 1,
     "coveredByOss": 1,
     "assetsOnly": 1,
-    "needsFigmaSlice": 1,
+    "needsFigmaSlice": 0,
     "unresolved": 0,
     "averageReuseScore": 0.533,
     "generatedFiles": 2,
-    "reusedCanonicalComponents": 10
+    "reusedCanonicalComponents": 9
   },
   "validation": {
     "typecheck": {
@@ -211,6 +211,18 @@
       "pass": true,
       "detail": "SSR PRO PASSED — PRO compositions render on the server from canonical children"
     }
+  },
+  "representativeValidation": {
+    "item": "content-item",
+    "status": "PASS",
+    "checks": 19,
+    "failures": 0,
+    "report": ".design-compiler/visual/pro-content-item-validation.json",
+    "inferred": [
+      "Quote left's inner text scale was not exposed by the shallow read: it reuses the Quote centre scale (recorded as INFERRED)",
+      "Image captions and Feature text container padding were not deep-read: canonical caption/container tokens are used (INFERRED)",
+      "Mobile typography steps are derived from the Figma size axes mapped onto the canonical type scale (INFERRED); Mobile spacing comes from the variant signatures (measured)"
+    ]
   },
   "proOnlyIcons": {
     "count": 1688,

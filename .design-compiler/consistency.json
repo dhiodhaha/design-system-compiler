@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/Consistency@p0",
-  "at": "2026-09-25T11:36:23.919Z",
+  "at": "2026-09-25T12:05:12.337Z",
   "checks": [
     {
       "check": "docs: Option D stated in docs/README.md",
@@ -95,7 +95,7 @@
     {
       "check": "pro: PRO-derived files are marked private and are not published as OSS",
       "pass": true,
-      "evidence": "2 artifacts checked"
+      "evidence": "3 artifacts checked"
     },
     {
       "check": "pro: compositions reuse canonical children (never regenerate a primitive)",

@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/StateReport@p1",
-  "generatedAt": "2026-09-25T11:36:28.846Z",
+  "generatedAt": "2026-09-25T12:05:12.242Z",
   "derived": true,
   "derivedBy": "compiler/state/reconcile.mjs",
   "architecture": "Option D — official Untitled UI OSS React source is canonical; Base UI is optional for genuinely new PRO-only primitives",
@@ -15771,13 +15771,14 @@
     "totals": {
       "candidates": 5,
       "compiled": 2,
+      "composed": 1,
       "coveredByOss": 1,
       "assetsOnly": 1,
-      "needsFigmaSlice": 1,
+      "needsFigmaSlice": 0,
       "unresolved": 0,
       "averageReuseScore": 0.533,
       "generatedFiles": 2,
-      "reusedCanonicalComponents": 10
+      "reusedCanonicalComponents": 9
     },
     "validation": {
       "typecheck": {
@@ -15792,14 +15793,13 @@
     "families": [
       {
         "name": "Content item",
-        "status": "NEEDS_FIGMA_SLICE",
-        "classification": "BLOCK",
+        "status": "COMPOSED",
+        "classification": "COMPOSE",
         "reuseScore": 0,
-        "artifact": null,
+        "artifact": "registry/pro/content-item.tsx",
         "canonicalChildren": [
           "Avatar",
-          "Badge",
-          "Divider"
+          "theme typography + colour tokens"
         ]
       },
       {

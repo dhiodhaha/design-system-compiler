@@ -1,17 +1,33 @@
 import { fileURLToPath } from "node:url";
-import { defineConfig } from "vite";
+import { existsSync } from "node:fs";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 // Framework-agnostic DS dev harness (Vite React). No Next/TanStack imports anywhere in src/components.
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  // upstream adopted sources import through `@/...` exactly as in the reference repository
-  resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } },
+  // upstream adopted sources import through `@/...` exactly as in the reference repository.
+  // Resolution order: the adopted payload first (canonical source), then the app's own src/.
+  plugins: [
+    react(),
+    tailwindcss(),
+    {
+      name: "payload-first-@-alias",
+      enforce: "pre",
+      resolveId(source) {
+        if (!source.startsWith("@/")) return null;
+        const payload = fileURLToPath(new URL(`./registry/untitledui/${source.slice(2)}`, import.meta.url));
+        for (const candidate of [payload, `${payload}.tsx`, `${payload}.ts`, `${payload}/index.tsx`, `${payload}/index.ts`]) {
+          if (existsSync(candidate)) return candidate;
+        }
+        return null; // fall through to the `@` -> src alias below
+      },
+    } satisfies Plugin,
+  ],
   server: { host: "127.0.0.1", port: 5173, strictPort: true },
   build: {
     rollupOptions: {
-      input: { index: "index.html", specimen: "specimen.html", grid: "grid.html", behavior: "behavior.html", adopted: "adopted.html", parity: "parity.html" },
+      input: { index: "index.html", specimen: "specimen.html", grid: "grid.html", behavior: "behavior.html", adopted: "adopted.html", parity: "parity.html", pro: "pro.html" },
     },
   },
 });

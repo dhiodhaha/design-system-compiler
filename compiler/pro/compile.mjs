@@ -13,6 +13,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const REF = ".design-compiler/references";
+const OUT_ROOT = ".design-compiler";
 const LIB = "untitledui";
 const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null);
 
@@ -90,11 +91,20 @@ const DECISIONS = {
     nextAction: "use <FeaturedIcon theme=\"outline\" …>; no PRO code is needed",
   },
   "Content item": {
-    classification: "BLOCK",
-    status: "NEEDS_FIGMA_SLICE",
-    rationale: "58 variants across 6+ boolean axes (Caption, Divider, Avatar group, Attribution, Breakpoint) — composing it needs per-variant styling evidence",
-    canonicalChildren: ["Avatar", "Badge", "Divider"],
-    nextAction: "deep-read 3 representative variants (Heading/sm, Body/lg, With-avatar) at depth 6, then compose as a block",
+    classification: "COMPOSE",
+    status: "COMPOSED",
+    artifact: "registry/pro/content-item.tsx",
+    rationale:
+      "58 variants collapse into 7 structural signatures; three owner-verified representative deep reads plus the shallow variant signatures give every type scale, colour and spacing pair. Modelled as semantic components (Heading/Paragraph/Divider/Image/Quote/FeatureText + ContentStack) with a thin Figma-Type dispatcher instead of one union prop.",
+    canonicalChildren: ["Avatar", "theme typography + colour tokens"],
+    evidence: [
+      "typography: Heading xs..xl = 18/28 20/30 24/32 30/38 36/44 w600 #171717; Paragraph sm..xl = 14/20 16/24 18/28 20/30 w400 #525252; Quote sm..2xl = 16/24..30/38 w500 #171717",
+      "spacing pairs measured for all 58 variants (e.g. Heading sm Desktop 32/12, Mobile 20/8; Paragraph lg 0/18; Divider md 32/32)",
+      "Feature text nests Content item instances inside a container (not a text style)",
+      "design-tool annotations ('Measure + spacing guide') are excluded from every implementation",
+    ],
+    verification: ".design-compiler/visual/pro-content-item-validation.json — 19/19 representative checks (typography, colour, spacing, container width, container semantics)",
+    nextAction: "none — representative verification passed; Mobile pixel parity and Quote-left inner text remain recorded as INFERRED",
   },
   "Background pattern decorative": {
     classification: "ASSET",
@@ -127,7 +137,7 @@ for (const queued of gaps.workQueue) {
     rationale: decision.rationale,
     nextAction: decision.nextAction ?? null,
     license: "PRO-derived (private); canonical children remain MIT",
-    evidence: decision.classification === "COVERED_BY_CANONICAL" ? ["canonical component covers the whole family", ...decision.canonicalChildren] : [`sliced anatomy: ${instances.map((i) => i.name).join(", ") || "no instances"}`, ...decision.canonicalChildren],
+    evidence: decision.evidence ?? (decision.classification === "COVERED_BY_CANONICAL" ? ["canonical component covers the whole family", ...decision.canonicalChildren] : [`sliced anatomy: ${instances.map((i) => i.name).join(", ") || "no instances"}`, ...decision.canonicalChildren]),
   });
 }
 
@@ -148,6 +158,8 @@ try {
 }
 
 const compiled = families.filter((f) => f.status === "COMPILED");
+const composed = families.filter((f) => f.status === "COMPOSED");
+const contentValidation = existsSync(`${OUT_ROOT}/visual/pro-content-item-validation.json`) ? JSON.parse(readFileSync(`${OUT_ROOT}/visual/pro-content-item-validation.json`, "utf8")) : null;
 const report = {
   $schema: "design-compiler/ProGapCompile@p0",
   at: new Date().toISOString(),
@@ -156,6 +168,7 @@ const report = {
   totals: {
     candidates: families.length,
     compiled: compiled.length,
+    composed: composed.length,
     coveredByOss: families.filter((f) => f.status === "COVERED_BY_OSS").length,
     assetsOnly: families.filter((f) => f.status === "ASSET_ONLY").length,
     needsFigmaSlice: families.filter((f) => f.status === "NEEDS_FIGMA_SLICE").length,
@@ -165,6 +178,7 @@ const report = {
     reusedCanonicalComponents: [...new Set(families.flatMap((f) => f.canonicalRefs))].length,
   },
   validation,
+  representativeValidation: contentValidation ? { item: "content-item", status: contentValidation.status, checks: contentValidation.checks.length, failures: contentValidation.failures.length, report: ".design-compiler/visual/pro-content-item-validation.json", inferred: contentValidation.inferred } : null,
   proOnlyIcons: { count: gaps.totals.proOnlyIcons, status: "LICENSE_BLOCKED_FOR_PUBLIC_OUTPUT", note: "private extraction path only; never redistributed" },
   policy: {
     adoptFirst: "canonical OSS source is reused for every child; only glue is generated",

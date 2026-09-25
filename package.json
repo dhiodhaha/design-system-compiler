@@ -24,7 +24,10 @@
     "report": "node compiler/state/reconcile.mjs",
     "typecheck:app": "tsc --noEmit",
     "typecheck:payload": "node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json",
-    "typecheck:pro": "node node_modules/typescript5/bin/tsc -p registry/pro/tsconfig.json"
+    "typecheck:pro": "node node_modules/typescript5/bin/tsc -p registry/pro/tsconfig.json",
+    "pro:compile": "node compiler/pro/compile.mjs",
+    "pro:verify": "node compiler/pro/verify-content-item.mjs",
+    "pro:all": "pnpm pro:compile && pnpm pro:verify"
   },
   "dependencies": {
     "@internationalized/date": "3.12.3",

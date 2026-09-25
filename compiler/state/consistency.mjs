@@ -102,7 +102,7 @@ check("pro: no forbidden fabrication in the queue", workQueue.every((w) => !/Mod
 
 // ---- 8. every non-icon PRO gap has a terminal status; PRO artifacts stay private
 const proCompile = read(resolve(REF, LIB, "pro-gap-compile.json"));
-const PRO_TERMINAL = new Set(["COMPILED", "COVERED_BY_OSS", "ASSET_ONLY", "NEEDS_FIGMA_SLICE", "LICENSE_BLOCKED", "VALIDATION_FAILED"]);
+const PRO_TERMINAL = new Set(["COMPILED", "COMPOSED", "COVERED_BY_OSS", "ASSET_ONLY", "NEEDS_FIGMA_SLICE", "LICENSE_BLOCKED", "VALIDATION_FAILED"]);
 const proFamilies = proCompile?.families ?? [];
 const nonTerminalPro = proFamilies.filter((f) => !PRO_TERMINAL.has(f.status));
 check("pro: every non-icon gap has a terminal status", proFamilies.length > 0 && nonTerminalPro.length === 0, `${proFamilies.length} families, non-terminal: ${nonTerminalPro.map((f) => f.figma.name).join(", ") || "none"}`);

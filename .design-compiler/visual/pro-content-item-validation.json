@@ -1,0 +1,175 @@
+{
+  "$schema": "design-compiler/ProValidation@p0",
+  "item": "content-item",
+  "figma": {
+    "fileKey": "sLqnzw7tFXpuPA1TbqsjZx",
+    "componentSetId": "3947:417447",
+    "representatives": [
+      "3947:417423",
+      "3947:417429"
+    ]
+  },
+  "method": "render the representatives at the Figma frame width, measure the DOM, compare against the sliced evidence",
+  "checks": [
+    {
+      "rep": "3947:417423",
+      "property": "font-size",
+      "expected": 20,
+      "actual": 20,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417423",
+      "property": "line-height",
+      "expected": 30,
+      "actual": 30,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417423",
+      "property": "font-weight",
+      "expected": 600,
+      "actual": 600,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417423",
+      "property": "colour",
+      "expected": "rgb(23, 23, 23)",
+      "actual": "rgb(23, 23, 23)",
+      "delta": null,
+      "pass": true
+    },
+    {
+      "rep": "3947:417423",
+      "property": "padding-top (desktop)",
+      "expected": 32,
+      "actual": 32,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417423",
+      "property": "padding-bottom (desktop)",
+      "expected": 12,
+      "actual": 12,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417423",
+      "property": "frame width (figma 720px)",
+      "expected": 720,
+      "actual": 720,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "font-size",
+      "expected": 18,
+      "actual": 18,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "line-height",
+      "expected": 28,
+      "actual": 28,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "font-weight",
+      "expected": 400,
+      "actual": 400,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "colour",
+      "expected": "rgb(82, 82, 82)",
+      "actual": "rgb(82, 82, 82)",
+      "delta": null,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "padding-top (desktop)",
+      "expected": 0,
+      "actual": 0,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "padding-bottom (desktop)",
+      "expected": 18,
+      "actual": 18,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:417429",
+      "property": "frame width (figma 720px)",
+      "expected": 720,
+      "actual": 720,
+      "delta": 0,
+      "pass": true
+    },
+    {
+      "rep": "3947:420501",
+      "property": "feature-text is a container (has a background, not a text style)",
+      "expected": true,
+      "actual": true,
+      "delta": null,
+      "pass": true
+    },
+    {
+      "rep": "3947:420501",
+      "property": "feature-text nests content items",
+      "expected": true,
+      "actual": true,
+      "delta": null,
+      "pass": true
+    },
+    {
+      "rep": "quote",
+      "property": "quote renders",
+      "expected": true,
+      "actual": true,
+      "delta": null,
+      "pass": true
+    },
+    {
+      "rep": "divider",
+      "property": "divider renders a hairline",
+      "expected": true,
+      "actual": true,
+      "delta": null,
+      "pass": true
+    },
+    {
+      "rep": "stack",
+      "property": "stack composes children",
+      "expected": true,
+      "actual": true,
+      "delta": null,
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "inferred": [
+    "Quote left's inner text scale was not exposed by the shallow read: it reuses the Quote centre scale (recorded as INFERRED)",
+    "Image captions and Feature text container padding were not deep-read: canonical caption/container tokens are used (INFERRED)",
+    "Mobile typography steps are derived from the Figma size axes mapped onto the canonical type scale (INFERRED); Mobile spacing comes from the variant signatures (measured)"
+  ],
+  "screenshot": ".design-compiler/visual/pro-content-item@2x.png",
+  "status": "PASS"
+}
