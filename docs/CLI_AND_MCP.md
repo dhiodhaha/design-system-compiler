@@ -1,527 +1,165 @@
 # CLI, npx, and MCP Direction
 
-## Recommendation
+## Principle
 
-Build one compiler core and expose it through three interfaces:
-
-```text
-                       compiler core
-                            │
-             ┌──────────────┼──────────────┐
-             ▼              ▼              ▼
-            CLI            npx            MCP
-       local/CI engine   distribution   agent interface
-```
-
-Do not build separate logic for CLI and MCP.
-
-The CLI should be the canonical deterministic execution surface.
-
-`npx` is a convenient way to run the CLI without a global install.
-
-The MCP server should expose the same compiler APIs to agents.
-
-## Why CLI first
-
-A CLI gives the project:
-
-- deterministic behavior;
-- easy local debugging;
-- CI integration;
-- no model dependency;
-- structured JSON output;
-- reproducible commands;
-- simple caching;
-- a stable core that MCP can wrap later.
-
-If the compiler only exists inside an agent prompt, it is harder to test and reuse.
-
-## Proposed package layout
+One compiler core, multiple thin interfaces:
 
 ```text
-packages/
-  core/
-  design-ir/
-  figma/
-  validator/
-  registry/
-  cli/
-  mcp/
+compiler core
+├── CLI
+├── npx distribution
+└── MCP
 ```
 
-Possible future package names:
+Do not duplicate business logic.
 
-```text
-@ds-compiler/core
-@ds-compiler/figma
-@ds-compiler/validator
-@ds-compiler/cli
-@ds-compiler/mcp
-```
+## Reference commands
 
-Names are placeholders until publication.
-
-## Proposed CLI commands
-
-### init
+Future canonical direction:
 
 ```bash
-npx ds-compiler init
+npx ds-compiler reference add untitledui --repo untitleduico/react --ref <sha>
+npx ds-compiler reference sync untitledui
+npx ds-compiler reference inspect untitledui/button
+npx ds-compiler reference diff untitledui --to <sha>
 ```
 
-Creates:
+These commands should produce compact structured contracts and provenance.
 
-```text
-.design-compiler/
-design-system.config.ts
-```
-
-### inspect
+## Port commands
 
 ```bash
-npx ds-compiler inspect "<figma-component-set-url>"
+npx ds-compiler port button --reference untitledui --target base-ui
+npx ds-compiler parity button
 ```
 
-Responsibilities:
+`port` means contract adaptation, not syntax rewriting.
 
-- parse URL;
-- shallow-read component set;
-- create ComponentSetIndex;
-- show axes;
-- show supported combinations;
-- produce SlicePlan;
-- do not implement code.
-
-Useful flags:
-
-```text
---json
---refresh
---transport rest|mcp|broker
---max-deep-reads <n>
-```
-
-### slice
+## Figma commands
 
 ```bash
-npx ds-compiler slice button
+npx ds-compiler inspect "<figma-url>"
+npx ds-compiler compile "<figma-url>"
+npx ds-compiler verify button --figma
 ```
 
-Responsibilities:
+For reference-backed components, `compile` should reconcile the existing contract instead of creating semantics from scratch.
 
-- choose representative nodes;
-- explain why each node is selected;
-- detect likely outliers;
-- write DeepReadPlan.
-
-### compile
-
-```bash
-npx ds-compiler compile button
-```
-
-Responsibilities:
-
-- use cached IR where possible;
-- deep-read required slices;
-- resolve semantics;
-- reuse/extend/create;
-- update implementation;
-- update manifest.
-
-Useful future flags:
-
-```text
---no-ai
---model <provider/model>
---allow-create
---dry-run
---json
-```
-
-### verify
-
-```bash
-npx ds-compiler verify button
-```
-
-Responsibilities:
-
-- render representative specimens;
-- geometry/computed-style checks;
-- pixel diff;
-- emit structured report.
-
-Possible flags:
-
-```text
---representative
---full-matrix
---update-baseline
---threshold <value>
---json
-```
-
-### status
-
-```bash
-npx ds-compiler status
-```
-
-Example output:
-
-```text
-Button       partial   18/22 representative rules verified
-Input        unstarted
-Tooltip      unstarted
-Dialog       unstarted
-
-cache hit rate: 92%
-AI calls last compile: 0
-```
-
-### add
+## Distribution
 
 ```bash
 npx ds-compiler add button
 ```
 
-This is the source-distribution command inspired by shadcn.
+The registry item should include:
 
-It should copy the verified component and required dependencies into the consumer project.
-
-The registry should declare:
-
-- files;
-- token dependencies;
+- source files;
+- target primitive dependency;
+- token/style dependencies;
 - component dependencies;
-- runtime dependencies;
-- supported framework adapters.
+- upstream reference provenance;
+- Figma mapping;
+- parity status;
+- license/distribution metadata.
 
-### explain
+## Shared services
 
-```bash
-npx ds-compiler explain button
-```
-
-Useful for observability:
-
-- why a Figma node maps to Button;
-- why a variant became CSS state;
-- why a combination is unsupported;
-- why a new component was or was not created;
-- which decision came from deterministic logic vs Jev vs model.
-
-## Structured output is mandatory
-
-Every important CLI command should support `--json`.
-
-Agents and CI should consume structured data rather than scrape pretty terminal output.
-
-Example:
-
-```json
-{
-  "component": "Button",
-  "status": "partial",
-  "figmaRequests": 2,
-  "cacheHits": 17,
-  "modelCalls": 0,
-  "jevCalls": 0,
-  "representativeTests": {
-    "passed": 12,
-    "failed": 0
-  }
-}
-```
-
-## Config direction
-
-Possible future `design-system.config.ts`:
+Conceptual:
 
 ```ts
-export default {
-  figma: {
-    transport: "rest",
-  },
-  output: {
-    framework: "react",
-    styling: "tailwind4",
-    componentsDir: "src/components/ui",
-  },
-  validation: {
-    browser: "chromium",
-    maxGeometryDeltaPx: 1,
-    maxVisualMismatch: 0.01,
-  },
-  ai: {
-    enabled: true,
-    policy: "only-when-needed",
-  },
-}
-```
-
-Exact schema should be Zod-validated.
-
-## npx
-
-`npx` should simply run the published CLI package.
-
-Example desired UX:
-
-```bash
-npx ds-compiler@latest inspect "<figma-url>"
-```
-
-For reproducible CI, pin a version:
-
-```bash
-npx ds-compiler@0.3.0 verify --full-matrix button
-```
-
-Do not make `npx` a separate implementation.
-
-## MCP server
-
-The MCP server exists so Codex/Claude/other agents can operate the compiler without manually invoking shell commands.
-
-It should expose narrow tools that return compact structured responses.
-
-Possible tools:
-
-### `ds_init`
-
-Initialize compiler state.
-
-### `ds_inspect_component_set`
-
-Input:
-
-```json
-{
-  "figmaUrl": "..."
-}
-```
-
-Output:
-
-```json
-{
-  "component": "Button",
-  "axes": {},
-  "variantCount": 200,
-  "slicePlanId": "..."
-}
-```
-
-Do not return the full raw Figma tree.
-
-### `ds_get_slice_plan`
-
-Returns only selected representative nodes and reasons.
-
-### `ds_compile_component`
-
-Compiles/reuses/extends a component.
-
-Optional mode:
-
-```text
-deterministic-only
-allow-ai
-```
-
-### `ds_verify_component`
-
-Runs representative or full-matrix validation.
-
-### `ds_get_manifest`
-
-Returns compact mappings/status.
-
-### `ds_explain_decision`
-
-Explains the provenance of a semantic decision.
-
-### `ds_add_component`
-
-Copies a verified registry item to the target project.
-
-## MCP response policy
-
-The MCP server should protect model context.
-
-It should:
-
-- return summaries by default;
-- return references/IDs to large artifacts;
-- provide pagination/ranges for verbose reports;
-- never dump entire raw Figma cache unless explicitly requested;
-- expose structured diagnostics.
-
-The MCP server is an anti-context-explosion boundary.
-
-## CLI and MCP share the same services
-
-Example internal API:
-
-```ts
-inspectComponentSet()
-planSlices()
-compileComponent()
-verifyComponent()
-getManifest()
+addReferenceLibrary()
+syncReferenceLibrary()
+indexReferenceComponent()
+extractReferenceContract()
+resolveFigmaFamily()
+reconcileContract()
+planTargetImplementation()
+portComponent()
+verifyReferenceParity()
+verifyFigmaParity()
+verifyProductionization()
+compileComposition()
 addRegistryItem()
 explainDecision()
 ```
 
-CLI calls these functions.
+CLI, MCP, tests, and agents all call the same services.
 
-MCP calls these functions.
+## Structured output
 
-Tests call these functions.
-
-No duplicate business logic.
-
-## Model integration
-
-The compiler core should support model providers behind an interface.
-
-The CLI/MCP should expose model policy rather than model-specific implementation details.
+Every important command should support `--json`.
 
 Example:
 
-```text
---ai never
---ai auto
---ai required
-```
-
-`auto` means:
-
-```text
-deterministic resolver
-→ ambiguity?
-   no → continue without model
-   yes → typed decision / coding model as configured
-```
-
-## Jev integration
-
-Jev should be another service behind a typed interface.
-
-Potential command:
-
-```bash
-npx ds-compiler explain-decision <decision-id>
-```
-
-The stored decision should show:
-
-- evidence;
-- deterministic rules attempted;
-- Jev request schema;
-- typed result;
-- confidence if available;
-- final action.
-
-Never store the API key.
-
-## CI use case
-
-Example future workflow:
-
-```bash
-npx ds-compiler verify --full-matrix button
-npx ds-compiler verify --changed
-```
-
-CI can fail when:
-
-- a verified component drifts beyond threshold;
-- a token changed without updated baselines;
-- a supported combination regresses;
-- registry output is stale.
-
-## Registry direction
-
-The registry is the bridge from compiler output to shadcn-like consumption.
-
-A registry item should describe:
-
 ```json
 {
-  "name": "button",
-  "files": [
-    "src/components/ui/button.tsx"
-  ],
-  "styleDependencies": [
-    "tokens.css"
-  ],
-  "componentDependencies": [],
-  "runtimeDependencies": [
-    "class-variance-authority"
-  ]
+  "component": "Button",
+  "reference": {
+    "library": "untitledui",
+    "revision": "<sha>",
+    "status": "REFERENCE_INDEXED"
+  },
+  "target": {
+    "engine": "base-ui",
+    "status": "TARGET_IMPLEMENTED"
+  },
+  "parity": {
+    "reference": "PASS",
+    "figma": "PASS",
+    "behavior": "PASS",
+    "production": "PASS"
+  }
 }
 ```
 
-Then:
+## MCP context firewall
 
-```bash
-npx ds-compiler add button
-```
+MCP should return:
 
-copies source into a consumer app.
+- summaries;
+- IDs;
+- compact contract fragments;
+- paginated diagnostics.
 
-## Suggested build order
+Do not dump full upstream repos or Figma trees into model context.
 
-1. compiler core + IR;
-2. Figma adapter/cache;
-3. slicer;
-4. deterministic validator;
-5. CLI;
-6. registry;
-7. MCP wrapper;
-8. broader model-provider integrations.
+## Build order
 
-Do not build the MCP first and hide immature compiler logic behind tools.
+1. reference manifest + indexer;
+2. canonical contract schema;
+3. Button reference extraction;
+4. Base UI target adapter;
+5. parity harness;
+6. Figma reconciliation;
+7. productionization gate;
+8. registry/source distribution;
+9. CLI UX polish;
+10. MCP wrapper.
+
+The existing Figma benchmark/compiler may remain as a fallback subsystem.
+
+## Explainability
+
+`explain` should show:
+
+- reference source and revision;
+- Figma evidence;
+- canonical contract decision;
+- target primitive mapping;
+- API adaptation;
+- behavior delta;
+- visual delta;
+- confidence;
+- license provenance.
 
 ## Product thesis
 
 The CLI makes the compiler reproducible.
 
-The registry makes the output reusable.
+The reference layer makes semantics reusable.
+
+The parity layer makes primitive migration safe.
+
+The registry makes output source-owned.
 
 The MCP makes the compiler agent-native.
-
-All three should be thin interfaces over the same verified core.
-
-
-## API-policy provenance
-
-The CLI/MCP should expose why a public API decision was made.
-
-For example:
-
-~~~json
-{
-  "component": "Button",
-  "decision": "leading icon uses composition",
-  "sources": [
-    "figma:INSTANCE_SWAP",
-    "compiler:slot-policy",
-    "api-policy:composition-first"
-  ],
-  "references": [
-    "shadcn-like ergonomics"
-  ],
-  "visualSource": "figma",
-  "behaviorSource": "native-button"
-}
-~~~
-
-Shadcn references must never be reported as visual provenance.
-
-The registry/source-owned model may be shadcn-inspired, but visual styling and semantic evidence remain specific to the compiled design system.
-
-See [API_DESIGN_POLICY.md](./API_DESIGN_POLICY.md).
