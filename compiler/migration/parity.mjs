@@ -95,6 +95,20 @@ for (const id of cases) {
     });
   }
 
+  // 1b. accessible names: losing a name is a regression; gaining one (Base UI labels what React Aria left
+  // implicit) is an improvement and is reported, never failed.
+  const namesOf = (state) => (state?.stateful ?? []).filter((entry) => entry.name).map((entry) => `${entry.role}:${entry.name}`);
+  const baseNames = namesOf(testCase.static);
+  const candNames = namesOf(current.static);
+  const lostNames = baseNames.filter((name) => !candNames.includes(name));
+  if (lostNames.length) {
+    failures.push({ case: id, class: "ACCESSIBILITY_FAILURE", detail: `accessible names lost: ${JSON.stringify(lostNames)}` });
+  }
+  const addedNames = candNames.filter((name) => !baseNames.includes(name));
+  if (addedNames.length) {
+    notes.push({ case: id, class: "ACCESSIBLE_NAME_ADDED", detail: JSON.stringify(addedNames) });
+  }
+
   // 2. form control state
   const baseSemantics = semanticSignature(testCase.static);
   const candSemantics = semanticSignature(current.static);
