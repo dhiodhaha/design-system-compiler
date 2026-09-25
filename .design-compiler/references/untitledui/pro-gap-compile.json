@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/ProGapCompile@p0",
-  "at": "2026-09-25T12:04:59.997Z",
+  "at": "2026-09-25T12:06:18.726Z",
   "figmaFile": "sLqnzw7tFXpuPA1TbqsjZx",
   "families": [
     {
@@ -24,7 +24,9 @@
         ],
         "textNodes": 38
       },
-      "reuseScore": 0,
+      "reuseScore": null,
+      "reusedCanonicalPieces": 2,
+      "reuseBasis": "canonical children composed with generated layout glue (no instance ratio)",
       "canonicalRefs": [
         "Avatar",
         "theme typography + colour tokens"
@@ -64,6 +66,8 @@
         "textNodes": 36
       },
       "reuseScore": 1,
+      "reusedCanonicalPieces": 2,
+      "reuseBasis": "2 nested instances",
       "canonicalRefs": [
         "icon-package",
         "Circle",
@@ -100,6 +104,8 @@
         "textNodes": 0
       },
       "reuseScore": 1,
+      "reusedCanonicalPieces": 1,
+      "reuseBasis": "canonical component covers the family",
       "canonicalRefs": [
         "Circle",
         "FeaturedIcon"
@@ -132,7 +138,9 @@
         ],
         "textNodes": 0
       },
-      "reuseScore": 0,
+      "reuseScore": null,
+      "reusedCanonicalPieces": 0,
+      "reuseBasis": "canonical children composed with generated layout glue (no instance ratio)",
       "canonicalRefs": [],
       "classification": "ASSET",
       "status": "ASSET_ONLY",
@@ -170,6 +178,8 @@
         "textNodes": 0
       },
       "reuseScore": 0.667,
+      "reusedCanonicalPieces": 3,
+      "reuseBasis": "3 nested instances",
       "canonicalRefs": [
         "Circle",
         "Tooltip",
@@ -198,7 +208,8 @@
     "assetsOnly": 1,
     "needsFigmaSlice": 0,
     "unresolved": 0,
-    "averageReuseScore": 0.533,
+    "averageReuseScore": 0.889,
+    "familiesWithReuseMetric": 3,
     "generatedFiles": 2,
     "reusedCanonicalComponents": 9
   },

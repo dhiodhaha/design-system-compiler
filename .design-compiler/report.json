@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/StateReport@p1",
-  "generatedAt": "2026-09-25T12:05:12.242Z",
+  "generatedAt": "2026-09-25T12:06:22.204Z",
   "derived": true,
   "derivedBy": "compiler/state/reconcile.mjs",
   "architecture": "Option D — official Untitled UI OSS React source is canonical; Base UI is optional for genuinely new PRO-only primitives",
@@ -15776,7 +15776,8 @@
       "assetsOnly": 1,
       "needsFigmaSlice": 0,
       "unresolved": 0,
-      "averageReuseScore": 0.533,
+      "averageReuseScore": 0.889,
+      "familiesWithReuseMetric": 3,
       "generatedFiles": 2,
       "reusedCanonicalComponents": 9
     },
@@ -15795,7 +15796,7 @@
         "name": "Content item",
         "status": "COMPOSED",
         "classification": "COMPOSE",
-        "reuseScore": 0,
+        "reuseScore": null,
         "artifact": "registry/pro/content-item.tsx",
         "canonicalChildren": [
           "Avatar",
@@ -15830,7 +15831,7 @@
         "name": "Background pattern decorative",
         "status": "ASSET_ONLY",
         "classification": "ASSET",
-        "reuseScore": 0,
+        "reuseScore": null,
         "artifact": null,
         "canonicalChildren": []
       },

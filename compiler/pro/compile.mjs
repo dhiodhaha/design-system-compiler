@@ -129,7 +129,15 @@ for (const queued of gaps.workQueue) {
   families.push({
     figma: { setId: queued.id, name: queued.name, page: queued.page, variants: queued.variants, recipeValues: queued.recipeValues },
     anatomy: { nestedInstances: instances, textNodes },
-    reuseScore: decision.classification === "COVERED_BY_CANONICAL" ? 1 : reuseScore,
+    // reuse = how much of the family came from canonical pieces. When the family's own nested instances
+    // are annotations/self-references (as in Content item), the reuse is the canonical children it composes
+    // (Avatar + theme tokens), which is reported explicitly rather than as a nested-instance ratio.
+    // reuse is only expressible as an instance ratio when the family's nested instances are canonical
+    // components; a family whose instances are self-references and design annotations reuses canonical
+    // pieces through its generated code instead, which is reported as a count, not as a fabricated ratio.
+    reuseScore: decision.classification === "COVERED_BY_CANONICAL" ? 1 : canonicalRefs.filter((r) => !/icon-package/i.test(r)).length && instances.length ? reuseScore : null,
+    reusedCanonicalPieces: (decision.canonicalChildren ?? []).length,
+    reuseBasis: decision.classification === "COVERED_BY_CANONICAL" ? "canonical component covers the family" : instances.length && canonicalRefs.length ? `${instances.length} nested instances` : "canonical children composed with generated layout glue (no instance ratio)",
     canonicalRefs: [...new Set([...canonicalRefs, ...(decision.canonicalChildren ?? [])])],
     classification: decision.classification,
     status: decision.status,
@@ -173,7 +181,11 @@ const report = {
     assetsOnly: families.filter((f) => f.status === "ASSET_ONLY").length,
     needsFigmaSlice: families.filter((f) => f.status === "NEEDS_FIGMA_SLICE").length,
     unresolved: families.filter((f) => f.status === "NEEDS_FIGMA_SOURCE" || f.status === "UNRESOLVED").length,
-    averageReuseScore: +(families.reduce((a, f) => a + f.reuseScore, 0) / families.length).toFixed(3),
+    averageReuseScore: (() => {
+      const scored = families.filter((f) => typeof f.reuseScore === "number");
+      return scored.length ? +(scored.reduce((a, f) => a + f.reuseScore, 0) / scored.length).toFixed(3) : null;
+    })(),
+    familiesWithReuseMetric: families.filter((f) => typeof f.reuseScore === "number").length,
     generatedFiles: compiled.length,
     reusedCanonicalComponents: [...new Set(families.flatMap((f) => f.canonicalRefs))].length,
   },
