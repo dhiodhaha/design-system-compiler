@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Project font stack (shared by the compiled benchmark and the adopted upstream stack). */
+@import "./styles/fonts.css";
+
 /* Semantic tokens generated from .design-compiler/tokens.json by scripts/gen-tokens.mjs. Do not hand-edit. */
 @import "./styles/tokens.css";
 

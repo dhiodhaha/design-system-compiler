@@ -1,0 +1,24 @@
+{
+  "$schema": "design-compiler/Aliases@p0",
+  "note": "Persisted mapping memory: design-system vocabulary (usually a Figma axis value) -> upstream export. Deterministic, reviewable, no model involved. Extend only with evidence.",
+  "aliases": {
+    "payment-input": ["PaymentInput"],
+    "tags-inner": ["InputTags"],
+    "tags-outer": ["InputTagsOuter"],
+    "otp": ["PinInput"],
+    "file-upload": ["InputFile"],
+    "number-counter-horizontal": ["InputNumber"],
+    "number-counter-vertical": ["InputNumber"],
+    "date-and-time": ["InputDate"],
+    "leading-dropdown": ["Select"],
+    "trailing-dropdown": ["Select"],
+    "trailing-button": ["InputGroup"],
+    "leading-text": ["InputGroup"],
+    "social-button": ["SocialButton"],
+    "app-store-badge": ["AppStoreButton"],
+    "google-play-badge": ["GooglePlayButton"],
+    "close-x": ["CloseButton"],
+    "help-icon": ["Tooltip"],
+    "section-divider": ["Divider"]
+  }
+}

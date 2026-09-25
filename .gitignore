@@ -23,3 +23,6 @@ pnpm-debug.log*
 # typescript incremental build info
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+
+# Figma PRO raw payloads (licensed content, never published)
+.design-compiler/references/figma/raw/

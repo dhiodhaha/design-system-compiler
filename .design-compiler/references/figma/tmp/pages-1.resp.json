@@ -1,5 +1,0 @@
-{
-  "successful": false,
-  "error": "The tool response payload is too large. Please reduce the amount of data requested — for example, use pagination, apply filters, limit the number of results, or request specific fields instead of full objects.",
-  "slug": "ToolRouterV2_PayloadTooLarge"
-}
