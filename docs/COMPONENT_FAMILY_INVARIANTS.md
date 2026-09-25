@@ -370,3 +370,31 @@ Figma component set
 ```
 
 Variant nodes are evidence for a component's styling and behavior, not independent components by default.
+
+
+## Reference-first note
+
+These invariants remain active after the reference-first pivot.
+
+A pinned reference implementation can tell the compiler what the family means, but it does not change the grouping rule:
+
+```text
+one Figma COMPONENT_SET
+→ one ComponentFamily by default
+```
+
+The preferred mapping is now:
+
+```text
+Figma ComponentFamily
++
+Reference Component Contract
+↓
+Canonical Component Contract
+↓
+one target component family
+```
+
+A reference implementation must not cause each Figma state/variant to become a separate target component.
+
+Likewise, a reference-only capability that is absent from the selected Figma family must be recorded as `REFERENCE_ONLY` rather than silently injected into the Figma family.
