@@ -1,7 +1,7 @@
 {
   "$schema": "design-compiler/BaseUiMigrationCapture@p0",
   "label": "migrated",
-  "capturedAt": "2026-09-25T14:13:20.603Z",
+  "capturedAt": "2026-09-25T14:18:18.261Z",
   "cases": {
     "button-default": {
       "static": {
@@ -7858,6 +7858,179 @@
       ],
       "afterInteraction": null
     },
+    "slideout-open": {
+      "static": {
+        "text": "Open slideout",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": false,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Open slideout",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "body:button-defaultButtonbutton-sec",
+        "slotMetrics": {
+          "[role=dialog],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Open slideout",
+            "attrs": {
+              "type": "button",
+              "data-base-ui-click-trigger": "",
+              "id": "base-ui-_r_4m_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 126.36,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      },
+      "slots": [
+        "[role=dialog],button"
+      ],
+      "actions": [
+        {
+          "type": "click",
+          "target": "button"
+        },
+        {
+          "type": "press",
+          "keys": [
+            "Escape"
+          ]
+        }
+      ],
+      "actionTrace": [
+        {
+          "step": "start",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "body"
+          }
+        },
+        {
+          "step": "0:click",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "true"
+            ],
+            "ariaStates": [],
+            "overlays": 1,
+            "active": "button"
+          }
+        },
+        {
+          "step": "1:press Escape",
+          "state": {
+            "controls": [],
+            "expanded": [
+              "false"
+            ],
+            "ariaStates": [],
+            "overlays": 0,
+            "active": "button"
+          }
+        }
+      ],
+      "afterInteraction": {
+        "text": "Open slideout",
+        "controlState": [],
+        "stateful": [],
+        "portals": [],
+        "focusVisible": true,
+        "pointerEvents": "auto",
+        "roles": [],
+        "focusable": [
+          {
+            "tag": "button",
+            "type": "button",
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "Open slideout",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": "false",
+            "role": "button"
+          }
+        ],
+        "interactiveCount": 1,
+        "activeElement": "button:Open slideout",
+        "slotMetrics": {
+          "[role=dialog],button": {
+            "tag": "button",
+            "role": null,
+            "type": "button",
+            "name": "Open slideout",
+            "attrs": {
+              "type": "button",
+              "data-base-ui-click-trigger": "",
+              "id": "base-ui-_r_4m_",
+              "aria-haspopup": "dialog",
+              "aria-expanded": "false"
+            },
+            "styles": {
+              "display": "inline-flex",
+              "position": "relative",
+              "color": "rgb(255, 255, 255)",
+              "backgroundColor": "rgb(127, 86, 217)",
+              "borderColor": "rgb(255, 255, 255)",
+              "borderRadius": "8px",
+              "fontFamily": "Inter",
+              "fontSize": "14px",
+              "fontWeight": "600",
+              "lineHeight": "20px",
+              "padding": "10px 14px 10px 14px",
+              "margin": "0px 0px 0px 0px",
+              "gap": "4px",
+              "width": 126.36,
+              "height": 40,
+              "opacity": "1",
+              "visibility": "visible"
+            }
+          }
+        }
+      }
+    },
     "multi-select": {
       "static": {
         "text": "Team members Select members",
@@ -7883,7 +8056,7 @@
           }
         ],
         "portals": [],
-        "focusVisible": false,
+        "focusVisible": true,
         "pointerEvents": "auto",
         "roles": [
           "combobox[expanded=false]"
@@ -7915,7 +8088,7 @@
           }
         ],
         "interactiveCount": 2,
-        "activeElement": "body:button-defaultButtonbutton-sec",
+        "activeElement": "button:Open slideout",
         "slotMetrics": {
           "[role=combobox],button": {
             "tag": "button",
@@ -7925,11 +8098,11 @@
             "attrs": {
               "type": "button",
               "data-placeholder": "",
-              "id": "base-ui-_r_4m_",
+              "id": "base-ui-_r_4o_",
               "role": "combobox",
               "aria-expanded": "false",
               "aria-haspopup": "dialog",
-              "aria-labelledby": "base-ui-_r_4p_"
+              "aria-labelledby": "base-ui-_r_4r_"
             },
             "styles": {
               "display": "flex",
@@ -8138,18 +8311,18 @@
               }
             ],
             "expanded": [
-              "false"
+              "true"
             ],
             "ariaStates": [
               "combobox:null:false"
             ],
-            "overlays": 0,
-            "active": "button"
+            "overlays": 5,
+            "active": "input"
           }
         }
       ],
       "afterInteraction": {
-        "text": "Team members 2 selected",
+        "text": "Team members Select members",
         "controlState": [
           {
             "type": null,
@@ -8165,17 +8338,103 @@
         "stateful": [
           {
             "role": "combobox",
-            "name": "2 selected",
+            "name": "Select members",
             "checked": null,
             "disabled": false,
             "focusable": true
           }
         ],
-        "portals": [],
+        "portals": [
+          {
+            "role": "dialog",
+            "text": "Phoenix BakerOlivia RhyeLana SteinerResetSelect all",
+            "styles": {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 898,
+              "w": 960,
+              "h": 240
+            }
+          },
+          {
+            "role": "listbox",
+            "text": "Phoenix BakerOlivia RhyeLana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 943,
+              "w": 960,
+              "h": 134
+            }
+          },
+          {
+            "role": "option",
+            "text": "Phoenix Baker",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 947,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Olivia Rhye",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 989,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Lana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 1031,
+              "w": 960,
+              "h": 42
+            }
+          }
+        ],
         "focusVisible": true,
         "pointerEvents": "auto",
         "roles": [
-          "combobox[expanded=false]"
+          "combobox[expanded=true]"
         ],
         "focusable": [
           {
@@ -8183,12 +8442,36 @@
             "type": "button",
             "tabIndex": "0",
             "disabled": false,
-            "name": "2 selected",
+            "name": "Select members",
             "pressed": null,
             "checked": null,
             "selected": null,
-            "expanded": "false",
+            "expanded": "true",
             "role": "combobox"
+          },
+          {
+            "tag": "span",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "span"
+          },
+          {
+            "tag": "span",
+            "type": null,
+            "tabIndex": "0",
+            "disabled": false,
+            "name": "",
+            "pressed": null,
+            "checked": null,
+            "selected": null,
+            "expanded": null,
+            "role": "span"
           },
           {
             "tag": "input",
@@ -8204,23 +8487,26 @@
           }
         ],
         "interactiveCount": 2,
-        "activeElement": "button:2 selected",
+        "activeElement": "input:Search",
         "slotMetrics": {
           "[role=combobox],button": {
             "tag": "button",
             "role": "combobox",
             "type": "button",
-            "name": "2 selected",
+            "name": "Select members",
             "attrs": {
               "type": "button",
-              "id": "base-ui-_r_4m_",
+              "id": "base-ui-_r_4o_",
               "role": "combobox",
-              "aria-expanded": "false",
+              "aria-expanded": "true",
               "aria-haspopup": "dialog",
-              "aria-labelledby": "base-ui-_r_4p_",
+              "aria-labelledby": "base-ui-_r_4r_",
               "data-focused": "",
-              "data-dirty": "",
-              "data-filled": ""
+              "data-popup-open": "",
+              "data-pressed": "",
+              "aria-controls": "base-ui-_r_4o_-popup",
+              "data-popup-side": "top",
+              "data-placeholder": ""
             },
             "styles": {
               "display": "flex",
@@ -8279,7 +8565,93 @@
             "focusable": true
           }
         ],
-        "portals": [],
+        "portals": [
+          {
+            "role": "dialog",
+            "text": "Phoenix BakerOlivia RhyeLana SteinerResetSelect all",
+            "styles": {
+              "backgroundColor": "rgb(255, 255, 255)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 898,
+              "w": 960,
+              "h": 240
+            }
+          },
+          {
+            "role": "listbox",
+            "text": "Phoenix BakerOlivia RhyeLana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 943,
+              "w": 960,
+              "h": 134
+            }
+          },
+          {
+            "role": "option",
+            "text": "Phoenix Baker",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 947,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Olivia Rhye",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 989,
+              "w": 960,
+              "h": 42
+            }
+          },
+          {
+            "role": "option",
+            "text": "Lana Steiner",
+            "styles": {
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "borderColor": "rgb(0, 0, 0)",
+              "borderRadius": "0px",
+              "boxShadow": "none",
+              "zIndex": "auto"
+            },
+            "rect": {
+              "x": 32,
+              "y": 1031,
+              "w": 960,
+              "h": 42
+            }
+          }
+        ],
         "focusVisible": true,
         "pointerEvents": "auto",
         "roles": [
@@ -8313,7 +8685,7 @@
           }
         ],
         "interactiveCount": 2,
-        "activeElement": "button:2 selected",
+        "activeElement": "input:Search",
         "slotMetrics": {
           "input,[role=combobox]": {
             "tag": "input",
@@ -8325,10 +8697,10 @@
               "aria-expanded": "false",
               "aria-haspopup": "listbox",
               "aria-autocomplete": "list",
-              "id": "base-ui-_r_4r_",
+              "id": "base-ui-_r_4t_",
               "placeholder": "Add labels",
               "value": "",
-              "aria-labelledby": "base-ui-_r_4u_"
+              "aria-labelledby": "base-ui-_r_50_"
             },
             "styles": {
               "display": "block",
@@ -8406,7 +8778,7 @@
               "combobox:false:false"
             ],
             "overlays": 0,
-            "active": "body"
+            "active": "button"
           }
         },
         {
@@ -8605,10 +8977,10 @@
               "aria-expanded": "false",
               "aria-haspopup": "listbox",
               "aria-autocomplete": "list",
-              "id": "base-ui-_r_4r_",
+              "id": "base-ui-_r_4t_",
               "placeholder": "Add labels",
               "value": "",
-              "aria-labelledby": "base-ui-_r_4u_",
+              "aria-labelledby": "base-ui-_r_50_",
               "data-focused": ""
             },
             "styles": {

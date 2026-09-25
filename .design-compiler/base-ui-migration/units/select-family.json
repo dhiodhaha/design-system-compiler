@@ -211,6 +211,32 @@
     "typecheck": "`node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json` reports 0 errors in the six files of this unit (remaining errors are in components/application/tabs/tabs.tsx, owned by the in-flight tabs unit). A scoped config over registry/untitledui/components/base/select/*.tsx passes clean.",
     "reactAriaImports": "grep for react-aria/react-stately/@react-types in the six files: no imports remain (tag-select.tsx mentions react-stately only in a comment documenting the structural ListData type).",
     "runtime": "Not run by this unit (the lead runs capture/parity/a11y/hydration centrally). Known runtime-sensitive points to watch in the harness: the Select popup is non-modal bottom-start with alignItemWithTrigger={false}; the combobox opens on input focus (menuTrigger='focus') and filters through Base UI's collator; the multi-select popup keeps the search input inside the dialog-role popup.",
-    "gates": "Lead gate commands rerun by this unit: `node compiler/migration/capture.mjs --label migrated --port 5173` (43 cases, 20 with interaction) then `node compiler/migration/parity.mjs --label migrated` -> status PASS, comparedCases 43, failures 0 (the previously failing `combobox` case now reports only the accepted FORM_INTEGRATION_ADDED / FOCUS_SURFACE_DELTA notes). Verified by hand on http://127.0.0.1:5173/migration.html: a real click on the role=combobox input yields aria-expanded=true, aria-controls pointing at a mounted listbox and its 3 options; typing `Oli` filters to `Olivia Rhye`; ArrowDown + Enter selects it, closes the popup and mirrors the label."
-  }
+    "gates": "Lead gate commands rerun by this unit after every round-trip fix: `node compiler/migration/capture.mjs --label migrated --port 5173` then `node compiler/migration/parity.mjs --label migrated` -> status PASS, comparedCases 46, failures 0 (notes only: the accepted FORM_INTEGRATION_ADDED / FOCUS_SURFACE_DELTA / role-snapshot classes). By hand on http://127.0.0.1:5173/migration.html: click on the combobox input -> aria-expanded=true, aria-controls -> mounted listbox with 3 options, 'Oli' filters to Olivia Rhye, ArrowDown+Enter selects/closes; tag-select Escape closes; multi-select Escape clears the selection and keeps the dialog open."
+  },
+  "roundTripFixes": [
+    {
+      "round": 1,
+      "case": "combobox",
+      "symptom": "Clicking the role=combobox input mounted nothing (0 listboxes/options) and aria-expanded disappeared after the interaction; every other select-family case passed.",
+      "rootCause": "The payload renders `Select.Item` inside `ComboBox` (the harness case and the payload's own documented pairing). React Aria's ListBoxItem served both collections, but Base UI's Select.Item and Combobox.Item are separate parts: Select.Item inside a Combobox root throws `Base UI: SelectRootContext is missing` as soon as the popup mounts, so the popup never appeared.",
+      "fix": "select-item.tsx exports a new SelectItemOwnerContext (default 'select'); combobox.tsx, multi-select.tsx and tag-select.tsx mark their subtree with value='combobox'; SelectItem renders Combobox.Item there and Select.Item otherwise. Both items take the same props/state, so markup, className render state, aria wiring and behaviour are unchanged. A second smaller fix: the mirrored value behind the transparent combobox input split on the selected item's supporting text even when absent (per-character split); it now mirrors the whole input value (React Aria's split(undefined) behaviour).",
+      "verification": "capture + parity after the fix: 43/43 cases PASS, 0 failures; hand-checked click -> aria-expanded=true + aria-controls -> mounted listbox with 3 options, typing 'Oli' filters to Olivia Rhye, ArrowDown+Enter selects and closes."
+    },
+    {
+      "round": 2,
+      "case": "tag-select",
+      "symptom": "After a selection the popup stayed open (correct) but Escape no longer closed it (baseline closes on the first Escape).",
+      "rootCause": "The re-open guard used a sticky ref instead of the close request's reason: with an empty query Base UI does not request the post-selection close at all, so the flag stayed set and swallowed the next close (Escape).",
+      "fix": "tag-select.tsx only skips the close whose reason is 'item-press' (the close that belongs to the selection itself), so Escape/outside-press closes as in the baseline.",
+      "verification": "migrated capture: tag-select after Escape has aria-expanded=false and 0 overlays, matching its baseline; parity PASS."
+    },
+    {
+      "round": 3,
+      "case": "multi-select",
+      "symptom": "Escape closed the popup and kept the selection, while the baseline keeps the popup open and clears the selection.",
+      "rootCause": "React Aria's multi-select consumes the first Escape twice over (its search field clears a non-empty query; the multiple listbox then clears the selection via its default `escapeKeyBehavior='clearSelection'` — verified in react-aria's useSelectableCollection escape handler), so the React Aria dialog never saw the press. Base UI instead dismisses the popup on Escape.",
+      "fix": "multi-select.tsx mirrors the baseline on an escape-key close request: a non-empty query is cleared (popup stays open), else a non-empty selection is cleared through the same uncontrolled/controlled path as a value change (popup stays open), else the popup closes. tag-select's Escape behaviour was deliberately left as its own baseline requires (closes on the first Escape).",
+      "verification": "migrated capture: multi-select after Escape = trigger text 'Select members' (selection cleared), aria-expanded=true, 5 overlays — identical to the baseline's after-Escape state; parity PASS on 46 cases with 0 failures."
+    }
+  ]
 }

@@ -12,12 +12,11 @@
     "baseUiPrimitivesDocumented": 60,
     "units": 25,
     "byStatus": {
-      "BASE_UI_VERIFIED": 21,
-      "MIGRATED_PENDING_GATES": 2,
+      "BASE_UI_VERIFIED": 23,
       "NO_BASE_UI_EQUIVALENT": 2
     },
     "parityReports": 2,
-    "parityPassing": 1
+    "parityPassing": 2
   },
   "residue": {
     "$schema": "design-compiler/BaseUiResidueReport@p0",
@@ -115,7 +114,7 @@
     },
     {
       "unit": "multi-select",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "tag-select",
@@ -135,7 +134,7 @@
     },
     {
       "unit": "slideout",
-      "status": "MIGRATED_PENDING_GATES"
+      "status": "BASE_UI_VERIFIED"
     },
     {
       "unit": "tabs",
@@ -154,19 +153,7 @@
       "status": "NO_BASE_UI_EQUIVALENT"
     }
   ],
-  "notTerminal": [
-    {
-      "unit": "multi-select",
-      "status": "MIGRATED_PENDING_GATES"
-    },
-    {
-      "unit": "slideout",
-      "status": "MIGRATED_PENDING_GATES"
-    }
-  ],
-  "pendingEvidence": [
-    "multi-select",
-    "slideout"
-  ],
-  "completed": false
+  "notTerminal": [],
+  "pendingEvidence": [],
+  "completed": true
 }

@@ -273,7 +273,9 @@ for (const id of cases) {
       else if (action.type === "hover") await target.hover().catch(() => {});
       else if (action.type === "type" && action.value) await target.type(action.value).catch(() => {});
       else if (action.type === "press" && action.keys) for (const key of action.keys) await page.keyboard.press(key).catch(() => {});
-      await new Promise((r) => setTimeout(r, 260));
+      // Exit animations differ per component (the slideout's is 500ms), so a step's observation must wait
+      // long enough for a close to become observable, otherwise "did Escape close it?" is undecidable.
+      await new Promise((r) => setTimeout(r, 700));
       trace.push({ step: `${index}:${action.type}${action.keys ? " " + action.keys.join("+") : ""}`, state: await stepState() });
     }
     return trace;

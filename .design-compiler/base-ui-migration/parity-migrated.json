@@ -2,28 +2,12 @@
   "$schema": "design-compiler/BaseUiParityReport@p0",
   "label": "migrated",
   "unit": null,
-  "comparedCases": 45,
+  "comparedCases": 46,
   "tolerances": {
     "geometry": 1,
     "portalPlacement": 12
   },
-  "failures": [
-    {
-      "case": "multi-select",
-      "class": "POPUP_STATE_FAILURE",
-      "detail": "step 5:press Escape: aria-expanded baseline=true candidate=false"
-    },
-    {
-      "case": "multi-select",
-      "class": "PORTAL_FAILURE",
-      "detail": "step 5:press Escape: visible overlays baseline=5 candidate=0"
-    },
-    {
-      "case": "multi-select",
-      "class": "PORTAL_CONTENT_CHANGE",
-      "detail": "baseline=[\"dialog:Phoenix BakerOlivia RhyeLana SteinerResetSelect all\",\"listbox:Phoenix BakerOlivia RhyeLana Steiner\",\"option:Phoenix Baker\",\"option:Olivia Rhye\",\"option:Lana Steiner\"] candidate=[]"
-    }
-  ],
+  "failures": [],
   "notes": [
     {
       "case": "checkbox-unchecked",
@@ -411,5 +395,5 @@
       "detail": "baseline=input:text:false candidate=input:null:false,input:null:false"
     }
   ],
-  "status": "FAIL"
+  "status": "PASS"
 }

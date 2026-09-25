@@ -13,7 +13,7 @@
  * .design-compiler/base-ui-migration/units/select-family.json. */
 "use client";
 
-import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
+import { Combobox as BaseCombobox, type ComboboxRootChangeEventDetails } from "@base-ui/react/combobox";
 import { Field } from "@base-ui/react/field";
 import type { FC, CSSProperties, ReactNode, RefAttributes } from "react";
 import { isValidElement, useMemo, useState } from "react";
@@ -252,7 +252,24 @@ const MultiSelectRoot = ({
         onSelectionChange?.(nextKeys.size === allKeys.length && allKeys.every((key) => nextKeys.has(key)) ? "all" : nextKeys);
     };
 
-    const handleOpenChange = (nextOpen: boolean) => {
+    const handleOpenChange = (nextOpen: boolean, details?: ComboboxRootChangeEventDetails) => {
+        // React Aria's multi-select consumed the first Escape twice over: its search field cleared a non-empty
+        // query, and the multiple listbox then cleared the selection (its default `escapeKeyBehavior`), so the
+        // popup only closed once there was nothing left to clear.
+        if (!nextOpen && details?.reason === "escape-key") {
+            if (searchValue !== "") {
+                setSearchValue("");
+                return;
+            }
+            if (activeKeySet.size > 0) {
+                if (selectedKeys === undefined) {
+                    setUncontrolledKeys(new Set());
+                }
+                onSelectionChange?.(new Set());
+                return;
+            }
+        }
+
         if (isOpen === undefined) {
             setUncontrolledOpen(nextOpen);
         }

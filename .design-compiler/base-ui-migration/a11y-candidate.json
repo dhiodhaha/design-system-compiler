@@ -2,7 +2,7 @@
   "$schema": "design-compiler/BaseUiA11yReport@p0",
   "label": "candidate",
   "standard": "axe-core wcag2a, wcag2aa, wcag21a, wcag21aa",
-  "cases": 45,
+  "cases": 46,
   "violatingCases": 3,
   "newViolations": {},
   "preExisting": {

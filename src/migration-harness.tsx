@@ -20,6 +20,7 @@ import { Dropdown } from "../registry/untitledui/components/base/dropdown/dropdo
 import { ComboBox } from "../registry/untitledui/components/base/select/combobox";
 import { Tag, TagGroup, TagList } from "../registry/untitledui/components/base/tags/tags";
 import { MultiSelect } from "../registry/untitledui/components/base/select/multi-select";
+import { SlideoutMenu } from "../registry/untitledui/components/application/slideout-menus/slideout-menu";
 import { TagSelect } from "../registry/untitledui/components/base/select/tag-select";
 import { InputNumber } from "../registry/untitledui/components/base/input/input-number";
 import { PaymentInput } from "../registry/untitledui/components/base/input/input-payment";
@@ -388,6 +389,35 @@ export const CASES: MigrationCase[] = [
     ),
   },
   { id: "date-picker", unit: "date-picker", slots: ["button,input,label"], node: <DatePicker aria-label="Start date" /> },
+  {
+    id: "slideout-open",
+    unit: "slideout",
+    slots: ["[role=dialog],button"],
+    actions: [
+      { type: "click", target: "button" },
+      { type: "press", keys: ["Escape"] },
+    ],
+    node: (
+      <SlideoutMenu.Trigger>
+        <Button color="primary" size="md">
+          Open slideout
+        </Button>
+        <SlideoutMenu isDismissable>
+          <SlideoutMenu.Content>
+            <SlideoutMenu.Header>
+              <p>Slideout header</p>
+            </SlideoutMenu.Header>
+            <p>Slideout body</p>
+            <SlideoutMenu.Footer>
+              <Button color="secondary" size="md">
+                Save
+              </Button>
+            </SlideoutMenu.Footer>
+          </SlideoutMenu.Content>
+        </SlideoutMenu>
+      </SlideoutMenu.Trigger>
+    ),
+  },
   {
     id: "multi-select",
     unit: "multi-select",

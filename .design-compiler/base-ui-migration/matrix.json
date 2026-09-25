@@ -1039,7 +1039,7 @@
         "visual"
       ],
       "harnessCases": [
-        "slideout"
+        "slideout-open"
       ],
       "status": "MIGRATED_PENDING_GATES",
       "record": ".design-compiler/base-ui-migration/units/slideout.json",

@@ -116,7 +116,7 @@ const HARNESS_CASES = {
   "dropdown-menu": ["dropdown-menu"],
   tags: ["tags-render"],
   "modal-dialog": ["modal-open"],
-  slideout: ["slideout"],
+  slideout: ["slideout-open"],
   tabs: ["tabs-default"],
   "nav-parts": ["nav-account-card"],
   "date-picker": [],
