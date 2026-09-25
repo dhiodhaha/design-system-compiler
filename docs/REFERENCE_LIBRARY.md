@@ -208,3 +208,30 @@ npx ds-compiler reference inspect untitledui/button
 ```
 
 A sync should show what changed before replacing verified contracts.
+
+
+## Exhaustive OSS inventory
+
+Button is only the first parity canary.
+
+The intended scope is to inventory and classify the **entire pinned Untitled UI OSS repository**, then port every eligible production component in dependency order.
+
+The indexer should distinguish:
+
+```text
+production component
+compound component
+application component
+recipe/block
+foundation/asset
+helper/internal
+demo/story/test
+```
+
+Demo/story files are evidence sources, not registry components.
+
+The target is not "a few representative components." The target is maximum practical coverage of eligible OSS components.
+
+When a component exists in OSS, use the official implementation as semantic/behavior reference.
+
+When a component exists only in licensed PRO Figma, switch to the PRO fallback path described in [COVERAGE_STRATEGY.md](./COVERAGE_STRATEGY.md) and [PRO_FIGMA_COMPOSITION.md](./PRO_FIGMA_COMPOSITION.md).
