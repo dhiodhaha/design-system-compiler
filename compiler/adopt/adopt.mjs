@@ -82,11 +82,12 @@ for (const path of [...closure].sort()) {
   const source = readFileSync(resolve(REPO, path), "utf8");
   const localPath = path; // upstream shape preserved under the source root, so @/ aliases resolve untouched
   const destination = resolve(TARGET, localPath);
+  const repoPath = relative(process.cwd(), destination); // what the record and later gates read
   const alreadyAdopted = existsSync(destination) && readFileSync(destination, "utf8").includes(`Adopted from ${revisionInfo.repository}@`);
   const content = alreadyAdopted ? readFileSync(destination, "utf8") : `${header(path)}${source}`;
   files.push({
     upstreamPath: path,
-    localPath: localPath,
+    localPath: repoPath,
     upstreamSha256: createHash("sha256").update(source).digest("hex").slice(0, 16),
     localSha256: createHash("sha256").update(content).digest("hex").slice(0, 16),
     bytes: Buffer.byteLength(content),
@@ -127,7 +128,7 @@ console.log(
       entries,
       closureSize: files.length,
       byKind: files.reduce((a, f) => ({ ...a, [f.kind]: (a[f.kind] ?? 0) + 1 }), {}),
-      files: files.map((f) => `${f.upstreamPath} -> ${TARGET === resolve("src") ? "src/" : TARGET + "/"}${f.localPath}`).slice(0, 20),
+      files: files.map((f) => `${f.upstreamPath} -> ${f.localPath}`).slice(0, 20),
       externalDependencies: record.externalDependencies,
       transforms: transforms.length,
       record: relative(process.cwd(), recordPath),

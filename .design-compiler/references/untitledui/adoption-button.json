@@ -16,57 +16,57 @@
   "files": [
     {
       "upstreamPath": "components/base/buttons/button.tsx",
-      "localPath": "components/base/buttons/button.tsx",
+      "localPath": "src/components/base/buttons/button.tsx",
       "upstreamSha256": "1eb74e3672d0f8c5",
       "localSha256": "356da383bc2e4407",
       "bytes": 12183,
       "kind": "BASE_COMPONENT",
-      "adopted": true
+      "adopted": false
     },
     {
       "upstreamPath": "styles/globals.css",
-      "localPath": "styles/globals.css",
+      "localPath": "src/styles/globals.css",
       "upstreamSha256": "0c1fd5eebe0cb65d",
       "localSha256": "d41058f182358cd1",
       "bytes": 2073,
       "kind": "ASSET",
-      "adopted": true
+      "adopted": false
     },
     {
       "upstreamPath": "styles/theme.css",
-      "localPath": "styles/theme.css",
+      "localPath": "src/styles/theme.css",
       "upstreamSha256": "52241a7d0d28f702",
       "localSha256": "6c71c72f2f5ad6d5",
       "bytes": 44505,
       "kind": "ASSET",
-      "adopted": true
+      "adopted": false
     },
     {
       "upstreamPath": "styles/typography.css",
-      "localPath": "styles/typography.css",
+      "localPath": "src/styles/typography.css",
       "upstreamSha256": "531cc316caf58796",
       "localSha256": "9ab33d407da88dfe",
       "bytes": 12887,
       "kind": "ASSET",
-      "adopted": true
+      "adopted": false
     },
     {
       "upstreamPath": "utils/cx.ts",
-      "localPath": "utils/cx.ts",
+      "localPath": "src/utils/cx.ts",
       "upstreamSha256": "d32cbae0ef101a95",
       "localSha256": "2dc2812611c904c4",
       "bytes": 1084,
       "kind": "HELPER",
-      "adopted": true
+      "adopted": false
     },
     {
       "upstreamPath": "utils/is-react-component.ts",
-      "localPath": "utils/is-react-component.ts",
+      "localPath": "src/utils/is-react-component.ts",
       "upstreamSha256": "2f24cf5e7c8cc9b8",
       "localSha256": "5b5f0371f91c4d40",
       "bytes": 1705,
       "kind": "HELPER",
-      "adopted": true
+      "adopted": false
     }
   ],
   "externalDependencies": [

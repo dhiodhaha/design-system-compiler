@@ -1,0 +1,271 @@
+{
+  "$schema": "design-compiler/registry-item@p0",
+  "name": "button",
+  "type": "design-system-component",
+  "title": "Button",
+  "description": "Adopted from the official Untitled UI OSS React source; visuals reconciled against the licensed PRO Figma.",
+  "files": [
+    {
+      "path": "src/components/base/buttons/button.tsx",
+      "upstream": "components/base/buttons/button.tsx",
+      "sha256": "356da383bc2e4407",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "src/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "d41058f182358cd1",
+      "kind": "ASSET"
+    },
+    {
+      "path": "src/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "6c71c72f2f5ad6d5",
+      "kind": "ASSET"
+    },
+    {
+      "path": "src/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "9ab33d407da88dfe",
+      "kind": "ASSET"
+    },
+    {
+      "path": "src/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "2dc2812611c904c4",
+      "kind": "HELPER"
+    },
+    {
+      "path": "src/utils/is-react-component.ts",
+      "upstream": "utils/is-react-component.ts",
+      "sha256": "5b5f0371f91c4d40",
+      "kind": "HELPER"
+    }
+  ],
+  "dependencies": {
+    "components": [
+      "src/components/base/buttons/button.tsx"
+    ],
+    "helpers": [
+      "src/utils/cx.ts",
+      "src/utils/is-react-component.ts"
+    ],
+    "styles": [
+      "src/styles/globals.css",
+      "src/styles/theme.css",
+      "src/styles/typography.css"
+    ],
+    "projectStyles": [
+      "src/styles/fonts.css"
+    ],
+    "external": [
+      {
+        "name": "react-aria-components",
+        "resolvedVersion": "1.20.0",
+        "reason": "behaviour + accessibility primitives"
+      },
+      {
+        "name": "tailwind-merge",
+        "resolvedVersion": "3.6.0",
+        "reason": "class merging in cx()"
+      }
+    ],
+    "tailwindPlugins": [
+      {
+        "name": "tailwindcss-animate",
+        "resolvedVersion": "1.0.7",
+        "reason": "required by the adopted stylesheet (globals.css @plugin directives)"
+      },
+      {
+        "name": "tailwindcss-react-aria-components",
+        "resolvedVersion": "2.2.0",
+        "reason": "required by the adopted stylesheet (globals.css @plugin directives)"
+      },
+      {
+        "name": "@tailwindcss/typography",
+        "resolvedVersion": null,
+        "reason": "required by the adopted stylesheet (globals.css @plugin directives)"
+      }
+    ],
+    "iconPackages": [
+      {
+        "name": "@untitledui/file-icons",
+        "resolvedVersion": "0.0.9",
+        "redistribute": true
+      },
+      {
+        "name": "@untitledui/icons",
+        "resolvedVersion": "0.0.22",
+        "redistribute": true
+      }
+    ]
+  },
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true,
+    "transforms": []
+  },
+  "figma": {
+    "fileKey": "sLqnzw7tFXpuPA1TbqsjZx",
+    "componentSets": [
+      {
+        "id": "3287:427074",
+        "name": "Buttons/Button",
+        "variants": 200,
+        "relationship": "EXACT_OSS_MATCH",
+        "evidence": [
+          "capability overlap: loading, disabled, icon-slots",
+          "signal S1",
+          "candidates: Button",
+          "variant vocabulary overlap (10): primary, secondary, tertiary, link-color, link-gray, xs"
+        ]
+      },
+      {
+        "id": "1256:132638",
+        "name": "Buttons/Social button group",
+        "variants": 12,
+        "relationship": "OSS_COMPONENT_SPLIT",
+        "evidence": [
+          "signal S2",
+          "candidates: Button, SocialButton",
+          "variant vocabulary overlap (3): md, lg, gray",
+          "all candidates live in one upstream family directory (buttons)",
+          "axis Style=\"Buttons\" -> GooglePlayButton",
+          "axis Style=\"Buttons\" -> AppStoreButton",
+          "3 axis values are recipe/composition inputs, not primitives"
+        ]
+      },
+      {
+        "id": "2763:420129",
+        "name": "Button close X",
+        "variants": 18,
+        "relationship": "OSS_COMPONENT_SET_MERGE",
+        "evidence": [
+          "capability overlap: icon-slots",
+          "signal S2",
+          "candidates: Button, CloseButton",
+          "variant vocabulary overlap (3): sm, md, lg",
+          "all candidates live in one upstream family directory (buttons)"
+        ]
+      },
+      {
+        "id": "5969:7471",
+        "name": "Buttons/Button destructive",
+        "variants": 175,
+        "relationship": "EXACT_OSS_MATCH",
+        "evidence": [
+          "capability overlap: loading, disabled, icon-slots",
+          "signal S2",
+          "candidates: Button",
+          "variant vocabulary overlap (8): primary, secondary, tertiary, xs, sm, md",
+          "1 axis values are recipe/composition inputs, not primitives"
+        ]
+      },
+      {
+        "id": "8465:382002",
+        "name": "Buttons/Button loading icon",
+        "variants": 2,
+        "relationship": "EXACT_OSS_MATCH",
+        "evidence": [
+          "signal S2",
+          "candidates: Button",
+          "variant vocabulary overlap (2): sm, md"
+        ]
+      }
+    ],
+    "parity": {
+      "classification": "MATCH_WITH_RECORDED_RENDERER_EXCEPTION",
+      "perceptualPercent": 1.507,
+      "dominantCause": "sub-pixel label box: adopted content 77.36px vs Figma 78px shifts the trailing visual by 0.64px",
+      "report": ".design-compiler/references/untitledui/parity/button.json"
+    }
+  },
+  "coverage": {
+    "status": [
+      {
+        "state": "REFERENCE_INDEXED",
+        "pass": true
+      },
+      {
+        "state": "SOURCE_ADOPTED",
+        "pass": true
+      },
+      {
+        "state": "DEPENDENCIES_RESOLVED",
+        "pass": true
+      },
+      {
+        "state": "FIGMA_MAPPED",
+        "pass": true
+      },
+      {
+        "state": "TYPECHECK_PASS",
+        "pass": true
+      },
+      {
+        "state": "SSR_PASS",
+        "pass": true
+      },
+      {
+        "state": "BEHAVIOR_PASS",
+        "pass": true
+      },
+      {
+        "state": "ACCESSIBILITY_PASS",
+        "pass": true
+      },
+      {
+        "state": "VISUAL_PASS",
+        "pass": true
+      },
+      {
+        "state": "PRODUCTION_PASS",
+        "pass": true
+      }
+    ],
+    "upstreamGaps": [
+      {
+        "gate": "REDUCED_MOTION",
+        "finding": "the official Button animates its spinner with no prefers-reduced-motion handling",
+        "consumerRemedy": "wrap or extend in the consuming project; recorded rather than patched locally"
+      },
+      {
+        "gate": "LOADING_ACCESSIBLE_NAME",
+        "finding": "with showTextWhileLoading=false the label is hidden during loading, so an isLoading button needs its own accessible name",
+        "consumerRemedy": "pass aria-label (or showTextWhileLoading) on buttons used in loading state"
+      }
+    ]
+  },
+  "install": {
+    "command": "npx ds-compiler add button",
+    "files": [
+      "src/components/base/buttons/button.tsx",
+      "src/styles/globals.css",
+      "src/styles/theme.css",
+      "src/styles/typography.css",
+      "src/utils/cx.ts",
+      "src/utils/is-react-component.ts"
+    ],
+    "consumes": [
+      "src/styles/fonts.css (or an equivalent Inter face)",
+      "src/styles/globals.css",
+      "src/styles/theme.css",
+      "src/styles/typography.css"
+    ],
+    "postInstall": [
+      "import the adopted stylesheet in the app entry so Tailwind sees the upstream theme",
+      "Tailwind v4 plugins declared in the stylesheet must be installed (listed under dependencies.tailwindPlugins)",
+      "upstream gap: REDUCED_MOTION — wrap or extend in the consuming project; recorded rather than patched locally",
+      "upstream gap: LOADING_ACCESSIBLE_NAME — pass aria-label (or showTextWhileLoading) on buttons used in loading state"
+    ]
+  },
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT-licensed upstream source; keep the provenance header and the upstream LICENSE notice. PRO-derived compositions stay private unless their license permits publication."
+  },
+  "status": "VERIFIED"
+}

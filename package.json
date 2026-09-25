@@ -10,12 +10,17 @@
     "test": "node --test tests/invariants.test.mjs",
     "verify": "pnpm compile && pnpm test && bun tests/ssr.tsx && node visual/check-css.mjs && node visual/verify-matrix.mjs --dpr 2 --canaries && node visual/verify-matrix.mjs --dpr 2 && node visual/verify-matrix.mjs --dpr 1 && node visual/run.mjs && node visual/behavior.mjs && node visual/accuracy.mjs",
     "reference:index": "node compiler/reference/index-oss.mjs --repo ${OSS_REPO:-/tmp/untitled-react}",
-    "reference:diff": "node compiler/reference/index-oss.mjs --repo ${OSS_REPO:-/tmp/untitled-react} --diff"
+    "reference:diff": "node compiler/reference/index-oss.mjs --repo ${OSS_REPO:-/tmp/untitled-react} --diff",
+    "reference:crosswalk": "node compiler/reference/crosswalk.mjs",
+    "reference:gaps": "node compiler/reference/pro-gaps.mjs",
+    "adopt": "node compiler/adopt/adopt.mjs",
+    "adopt:parity": "node compiler/adopt/parity.mjs --item button",
+    "adopt:validate": "node compiler/adopt/validate.mjs --item button",
+    "registry:build": "node compiler/registry/build.mjs --item button",
+    "verify:adopted": "pnpm adopt:parity && pnpm adopt:validate && pnpm registry:build"
   },
   "dependencies": {
     "@untitledui/icons": "0.0.22",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "react": "^19.3.0",
     "react-aria-components": "1.20.0",
     "react-dom": "^19.3.0",

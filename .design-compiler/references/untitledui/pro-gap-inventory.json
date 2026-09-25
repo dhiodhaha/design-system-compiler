@@ -1,0 +1,1374 @@
+{
+  "$schema": "design-compiler/ProGapInventory@p0",
+  "library": "untitledui",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "figmaFile": "sLqnzw7tFXpuPA1TbqsjZx",
+  "totals": {
+    "figmaFamilies": 2253,
+    "mapped": 79,
+    "externalPackageResolved": 472,
+    "proOnlyIcons": 1690,
+    "compositionCandidates": 6,
+    "componentSplit": 6,
+    "figmaOnlyUnclassified": 0,
+    "ossWithoutFigmaFamily": 94,
+    "registryItemsBuilt": [
+      "button"
+    ]
+  },
+  "byCategory": {
+    "PRO_ONLY_ICON": 1690,
+    "MAPPED": 79,
+    "EXTERNAL_PACKAGE_RESOLVED": 472,
+    "OSS_COMPOSITION": 6,
+    "OSS_COMPONENT_SPLIT": 6
+  },
+  "workQueue": [
+    {
+      "rank": 1,
+      "id": "3947:417447",
+      "name": "Content item",
+      "page": "Content",
+      "pageId": "647:15097",
+      "variants": 58,
+      "relationship": "OSS_COMPOSITION",
+      "verified": false,
+      "codeTargets": [
+        "Button"
+      ],
+      "recipeValues": 12,
+      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
+      "evidence": [
+        "variant-vocabulary overlap alone (5 shared values) in components/base/buttons",
+        "signal S3",
+        "candidates: Button",
+        "variant vocabulary overlap (5): xs, sm, md, lg, xl",
+        "12 axis values (e.g. Breakpoint=\"Desktop\", Breakpoint=\"Mobile\", Size=\"2xl\", Type=\"Heading\") describe recipes/compositions over Button, not new primitives"
+      ]
+    },
+    {
+      "rank": 2,
+      "id": "1345:1610",
+      "name": "Check item text",
+      "page": "Misc icons",
+      "pageId": "1025:31781",
+      "variants": 36,
+      "relationship": "OSS_COMPOSITION",
+      "verified": false,
+      "codeTargets": [
+        "Button"
+      ],
+      "recipeValues": 6,
+      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
+      "evidence": [
+        "variant-vocabulary overlap alone (3 shared values) in components/base/buttons",
+        "signal S3",
+        "candidates: Button",
+        "variant vocabulary overlap (3): sm, md, lg",
+        "6 axis values (e.g. Breakpoint=\"Desktop\", Breakpoint=\"Mobile\", Color=\"Brand\", Color=\"Success\") describe recipes/compositions over Button, not new primitives"
+      ]
+    },
+    {
+      "rank": 3,
+      "id": "1303:2162",
+      "name": "Mobile app store badge",
+      "page": "Buttons",
+      "pageId": "1:1183",
+      "variants": 30,
+      "relationship": "OSS_COMPOSITION",
+      "verified": false,
+      "codeTargets": [
+        "Badge"
+      ],
+      "recipeValues": 8,
+      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
+      "evidence": [
+        "signal S2",
+        "candidates: Badge",
+        "8 axis values (e.g. Store=\"Google Play\", Store=\"App Store\", Store=\"Galaxy Store\", Store=\"AppGallery\") describe recipes/compositions over Badge, not new primitives"
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "4843:410985",
+      "name": "Featured icon outline",
+      "page": "Misc icons",
+      "pageId": "1025:31781",
+      "variants": 20,
+      "relationship": "OSS_COMPOSITION",
+      "verified": false,
+      "codeTargets": [
+        "FeaturedIcon"
+      ],
+      "recipeValues": 5,
+      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
+      "evidence": [
+        "signal S2",
+        "candidates: FeaturedIcon",
+        "5 axis values (e.g. Color=\"Brand\", Color=\"Gray\", Color=\"Error\", Color=\"Warning\") describe recipes/compositions over FeaturedIcon, not new primitives"
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "4933:393069",
+      "name": "Background pattern decorative",
+      "page": "Background elements",
+      "pageId": "4938:371336",
+      "variants": 15,
+      "relationship": "OSS_COMPOSITION",
+      "verified": false,
+      "codeTargets": [
+        "Button"
+      ],
+      "recipeValues": 5,
+      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
+      "evidence": [
+        "variant-vocabulary overlap alone (3 shared values) in components/base/buttons",
+        "signal S3",
+        "candidates: Button",
+        "variant vocabulary overlap (3): sm, md, lg",
+        "5 axis values (e.g. Type=\"Empty\", Type=\"Grid\", Type=\"Grid dot\", Type=\"Circles\") describe recipes/compositions over Button, not new primitives"
+      ]
+    },
+    {
+      "rank": 6,
+      "id": "1054:13",
+      "name": "Help icon",
+      "page": "Tooltips",
+      "pageId": "1052:485",
+      "variants": 28,
+      "relationship": "OSS_COMPOSITION",
+      "verified": false,
+      "codeTargets": [],
+      "recipeValues": 0,
+      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
+      "evidence": [
+        "large composite family (28 variants) with no single OSS primitive; expected to compose verified components"
+      ]
+    }
+  ],
+  "ossWithoutFigmaFamily": [
+    {
+      "source": "components/application/app-navigation/base-components/mobile-header.tsx",
+      "export": "MobileNavigationHeader",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "MobileHeader",
+        "MobileNavigationHeader"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "export": "NavAccountMenu",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "NavAccountCard",
+        "NavAccountMenu"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/base-components/nav-account-card.tsx",
+      "export": "NavAccountCard",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "NavAccountCard",
+        "NavAccountMenu"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/base-components/nav-button.tsx",
+      "export": "NavButton",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "NavButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/base-components/nav-item.tsx",
+      "export": "NavItemBase",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "NavItem",
+        "NavItemBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/base-components/nav-list.tsx",
+      "export": "NavList",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "NavList"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/header-navigation.tsx",
+      "export": "HeaderNavigationBase",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppNavigation",
+        "HeaderNavigation",
+        "HeaderNavigationBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/sidebar-navigation/sidebar-dual-tier.tsx",
+      "export": "SidebarNavigationDualTier",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "SidebarDualTier",
+        "SidebarNavigation",
+        "SidebarNavigationDualTier"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/sidebar-navigation/sidebar-section-dividers.tsx",
+      "export": "SidebarNavigationSectionDividers",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "SidebarNavigation",
+        "SidebarNavigationSectionDividers",
+        "SidebarSectionDividers"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/sidebar-navigation/sidebar-sections-subheadings.tsx",
+      "export": "SidebarNavigationSectionsSubheadings",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "SidebarNavigation",
+        "SidebarNavigationSectionsSubheadings",
+        "SidebarSectionsSubheadings"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/sidebar-navigation/sidebar-simple.tsx",
+      "export": "SidebarNavigationSimple",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "SidebarNavigation",
+        "SidebarNavigationSimple",
+        "SidebarSimple"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
+      "export": "SidebarNavigationSlim",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "SidebarNavigation",
+        "SidebarNavigationSlim",
+        "SidebarSlim"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/carousel/carousel-base.tsx",
+      "export": "Carousel",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Carousel",
+        "CarouselBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/charts/charts-base.tsx",
+      "export": "ChartLegendContent",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ChartActiveDot",
+        "ChartLegendContent",
+        "ChartTooltipContent",
+        "Charts",
+        "ChartsBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/charts/charts-base.tsx",
+      "export": "ChartTooltipContent",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ChartActiveDot",
+        "ChartLegendContent",
+        "ChartTooltipContent",
+        "Charts",
+        "ChartsBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/charts/charts-base.tsx",
+      "export": "ChartActiveDot",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ChartActiveDot",
+        "ChartLegendContent",
+        "ChartTooltipContent",
+        "Charts",
+        "ChartsBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/date-picker/cell.tsx",
+      "export": "CalendarCell",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "CalendarCell",
+        "Cell",
+        "DatePicker"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/date-picker/date-picker.tsx",
+      "export": "DatePicker",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "DatePicker"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/date-picker/date-range-picker.tsx",
+      "export": "DateRangePicker",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "DatePicker",
+        "DateRangePicker"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/date-picker/range-calendar.tsx",
+      "export": "RangeCalendarContextProvider",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "DatePicker",
+        "RangeCalendar",
+        "RangeCalendarContextProvider",
+        "RangePresetButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/date-picker/range-calendar.tsx",
+      "export": "RangePresetButton",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "DatePicker",
+        "RangeCalendar",
+        "RangeCalendarContextProvider",
+        "RangePresetButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/date-picker/range-calendar.tsx",
+      "export": "RangeCalendar",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "DatePicker",
+        "RangeCalendar",
+        "RangeCalendarContextProvider",
+        "RangePresetButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/file-upload/file-upload-base.tsx",
+      "export": "FileListItemProgressBar",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "FileListItemProgressBar",
+        "FileListItemProgressFill",
+        "FileUpload",
+        "FileUploadBase",
+        "FileUploadDropZone"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/file-upload/file-upload-base.tsx",
+      "export": "FileListItemProgressFill",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "FileListItemProgressBar",
+        "FileListItemProgressFill",
+        "FileUpload",
+        "FileUploadBase",
+        "FileUploadDropZone"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/file-upload/file-upload-base.tsx",
+      "export": "FileUpload",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "FileListItemProgressBar",
+        "FileListItemProgressFill",
+        "FileUpload",
+        "FileUploadBase",
+        "FileUploadDropZone"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/loading-indicator/loading-indicator.tsx",
+      "export": "LoadingIndicator",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "LoadingIndicator"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination-base.tsx",
+      "export": "Pagination",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination-dot.tsx",
+      "export": "PaginationDot",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationDot"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination-line.tsx",
+      "export": "PaginationLine",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationLine"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination.tsx",
+      "export": "PaginationPageDefault",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationButtonGroup",
+        "PaginationCardAdvanced",
+        "PaginationCardDefault",
+        "PaginationCardMinimal",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination.tsx",
+      "export": "PaginationPageMinimalCenter",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationButtonGroup",
+        "PaginationCardAdvanced",
+        "PaginationCardDefault",
+        "PaginationCardMinimal",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination.tsx",
+      "export": "PaginationCardDefault",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationButtonGroup",
+        "PaginationCardAdvanced",
+        "PaginationCardDefault",
+        "PaginationCardMinimal",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination.tsx",
+      "export": "PaginationCardMinimal",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationButtonGroup",
+        "PaginationCardAdvanced",
+        "PaginationCardDefault",
+        "PaginationCardMinimal",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination.tsx",
+      "export": "PaginationButtonGroup",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationButtonGroup",
+        "PaginationCardAdvanced",
+        "PaginationCardDefault",
+        "PaginationCardMinimal",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/pagination/pagination.tsx",
+      "export": "PaginationCardAdvanced",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Pagination",
+        "PaginationButtonGroup",
+        "PaginationCardAdvanced",
+        "PaginationCardDefault",
+        "PaginationCardMinimal",
+        "PaginationPageDefault",
+        "PaginationPageMinimalCenter"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/tabs/tabs.tsx",
+      "export": "TabList",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Tab",
+        "TabList",
+        "TabPanel",
+        "Tabs"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/tabs/tabs.tsx",
+      "export": "TabPanel",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Tab",
+        "TabList",
+        "TabPanel",
+        "Tabs"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/tabs/tabs.tsx",
+      "export": "Tab",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Tab",
+        "TabList",
+        "TabPanel",
+        "Tabs"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/application/tabs/tabs.tsx",
+      "export": "Tabs",
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Tab",
+        "TabList",
+        "TabPanel",
+        "Tabs"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/avatar/base-components/avatar-add-button.tsx",
+      "export": "AvatarAddButton",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "AvatarAddButton",
+        "BaseComponents"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/avatar/base-components/avatar-company-icon.tsx",
+      "export": "AvatarCompanyIcon",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "AvatarCompanyIcon",
+        "BaseComponents"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/avatar/base-components/avatar-count.tsx",
+      "export": "AvatarCount",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "AvatarCount",
+        "BaseComponents"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "export": "AvatarOnlineIndicator",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "AvatarOnlineIndicator",
+        "BaseComponents"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/avatar/base-components/verified-tick.tsx",
+      "export": "VerifiedTick",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "VerifiedTick"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons-outline.tsx",
+      "export": "GalaxyStoreButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtonsOutline",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons-outline.tsx",
+      "export": "AppGalleryButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtonsOutline",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons.tsx",
+      "export": "GooglePlayButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtons",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton",
+        "GooglePlayWhiteButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons.tsx",
+      "export": "GooglePlayWhiteButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtons",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton",
+        "GooglePlayWhiteButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons.tsx",
+      "export": "AppStoreButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtons",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton",
+        "GooglePlayWhiteButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons.tsx",
+      "export": "GalaxyStoreButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtons",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton",
+        "GooglePlayWhiteButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/app-store-buttons.tsx",
+      "export": "AppGalleryButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppGalleryButton",
+        "AppStoreButton",
+        "AppStoreButtons",
+        "Buttons",
+        "GalaxyStoreButton",
+        "GooglePlayButton",
+        "GooglePlayWhiteButton"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "GoogleLogo",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "FigmaLogo",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "FigmaLogoOutlined",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "DribbleLogo",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "FacebookLogo",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "AppleLogo",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/buttons/social-logos.tsx",
+      "export": "TwitterLogo",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "AppleLogo",
+        "Buttons",
+        "DribbleLogo",
+        "FacebookLogo",
+        "FigmaLogo",
+        "FigmaLogoOutlined",
+        "GoogleLogo",
+        "SocialLogos",
+        "TwitterLogo"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/checkbox/checkbox.tsx",
+      "export": "CheckboxBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Checkbox",
+        "CheckboxBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/checkbox/checkbox.tsx",
+      "export": "Checkbox",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Checkbox",
+        "CheckboxBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/dropdown/dropdown-account-card-sm.tsx",
+      "export": "DropdownAccountCardSM",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Dropdown",
+        "DropdownAccountCardSM",
+        "DropdownAccountCardSm"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/dropdown/dropdown-account-card-xs.tsx",
+      "export": "DropdownAccountCardXS",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Dropdown",
+        "DropdownAccountCardXS",
+        "DropdownAccountCardXs"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/dropdown/dropdown-avatar.tsx",
+      "export": "DropdownAvatar",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Dropdown",
+        "DropdownAvatar"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/dropdown/dropdown.tsx",
+      "export": "Dropdown",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Dropdown"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/file-upload-trigger/file-upload-trigger.tsx",
+      "export": "FileTrigger",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "FileTrigger",
+        "FileUploadTrigger"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/form/form.tsx",
+      "export": "Form",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Form"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/form/hook-form.tsx",
+      "export": "HookForm",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Form",
+        "FormField",
+        "HookForm"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/form/hook-form.tsx",
+      "export": "FormField",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Form",
+        "FormField",
+        "HookForm"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/input/hint-text.tsx",
+      "export": "HintText",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "HintText",
+        "Input"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/input/input-date.tsx",
+      "export": "InputDateBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Input",
+        "InputDate",
+        "InputDateBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/input/input-file.tsx",
+      "export": "InputFile",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Input",
+        "InputFile"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/input/input-number.tsx",
+      "export": "InputNumberBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Input",
+        "InputNumber",
+        "InputNumberBase"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/input/input.tsx",
+      "export": "TextField",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Input",
+        "InputBase",
+        "TextField"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/progress-indicators/progress-circles.tsx",
+      "export": "ProgressBarCircle",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ProgressBarCircle",
+        "ProgressBarHalfCircle",
+        "ProgressCircles",
+        "ProgressIndicators"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/progress-indicators/progress-circles.tsx",
+      "export": "ProgressBarHalfCircle",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ProgressBarCircle",
+        "ProgressBarHalfCircle",
+        "ProgressCircles",
+        "ProgressIndicators"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/progress-indicators/progress-indicators.tsx",
+      "export": "ProgressBarBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ProgressBar",
+        "ProgressBarBase",
+        "ProgressIndicators"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/progress-indicators/progress-indicators.tsx",
+      "export": "ProgressBar",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ProgressBar",
+        "ProgressBarBase",
+        "ProgressIndicators"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/progress-indicators/simple-circle.tsx",
+      "export": "CircleProgressBar",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "CircleProgressBar",
+        "ProgressIndicators",
+        "SimpleCircle"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/radio-buttons/radio-buttons.tsx",
+      "export": "RadioButtonBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "RadioButton",
+        "RadioButtonBase",
+        "RadioButtons",
+        "RadioGroup"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/radio-buttons/radio-buttons.tsx",
+      "export": "RadioButton",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "RadioButton",
+        "RadioButtonBase",
+        "RadioButtons",
+        "RadioGroup"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/radio-buttons/radio-buttons.tsx",
+      "export": "RadioGroup",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "RadioButton",
+        "RadioButtonBase",
+        "RadioButtons",
+        "RadioGroup"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/select/combobox.tsx",
+      "export": "ComboBox",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "ComboBox",
+        "Combobox",
+        "Select"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/select/popover.tsx",
+      "export": "Popover",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Popover",
+        "Select"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/select/select-item.tsx",
+      "export": "SelectItem",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "Select",
+        "SelectItem"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/select/select-native.tsx",
+      "export": "NativeSelect",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "NativeSelect",
+        "Select",
+        "SelectNative"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/select/tag-select.tsx",
+      "export": "TagSelectBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Select",
+        "TagSelect",
+        "TagSelectBase",
+        "TagSelectTagsValue"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/select/tag-select.tsx",
+      "export": "TagSelectTagsValue",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Select",
+        "TagSelect",
+        "TagSelectBase",
+        "TagSelectTagsValue"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/slider/slider.tsx",
+      "export": "Slider",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Slider"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/tags/base-components/tag-checkbox.tsx",
+      "export": "TagCheckbox",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "TagCheckbox"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/tags/base-components/tag-close-x.tsx",
+      "export": "TagCloseX",
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "figmaNames": [
+        "BaseComponents",
+        "TagCloseX"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/tags/tags.tsx",
+      "export": "TagAvatar",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Tag",
+        "TagAvatar",
+        "TagGroup",
+        "Tags"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/tags/tags.tsx",
+      "export": "TagGroup",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "Tag",
+        "TagAvatar",
+        "TagGroup",
+        "Tags"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/textarea/textarea.tsx",
+      "export": "TextAreaBase",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "TextArea",
+        "TextAreaBase",
+        "Textarea"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "source": "components/base/textarea/textarea.tsx",
+      "export": "TextArea",
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "figmaNames": [
+        "TextArea",
+        "TextAreaBase",
+        "Textarea"
+      ],
+      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    }
+  ],
+  "notes": [
+    "absence from the current PRO STYLES v8.0 file is NOT_PRESENT_IN_CURRENT_FIGMA_FILE; the user may supply further PRO files",
+    "PRO-derived output keeps private/licensed provenance and is not published as an OSS clone",
+    "icons are a package concern (@untitledui/icons / file-icons / PRO icons), not a component-port concern",
+    "the existing OSS inventory stands at 204 adoptable files (80 public registry candidates)"
+  ]
+}

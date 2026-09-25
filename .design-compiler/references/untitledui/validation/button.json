@@ -1,0 +1,130 @@
+{
+  "$schema": "design-compiler/AdoptionValidation@p0",
+  "item": "button",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "generatedAt": "2026-09-25T10:33:23.090Z",
+  "gates": [
+    {
+      "gate": "SOURCE_ADOPTED",
+      "pass": true,
+      "evidence": "6 files adopted from untitleduico/react@8b7409c078f8",
+      "detail": [
+        "src/components/base/buttons/button.tsx",
+        "src/styles/globals.css",
+        "src/styles/theme.css",
+        "src/styles/typography.css",
+        "src/utils/cx.ts",
+        "src/utils/is-react-component.ts"
+      ]
+    },
+    {
+      "gate": "DEPENDENCIES_RESOLVED",
+      "pass": true,
+      "evidence": "every internal import of every adopted file resolves inside the repo",
+      "detail": []
+    },
+    {
+      "gate": "EXTERNAL_DEPENDENCIES_INSTALLED",
+      "pass": true,
+      "evidence": "3 external imports, all resolvable",
+      "detail": []
+    },
+    {
+      "gate": "NO_FIGMA_FIXTURE_LEAKAGE",
+      "pass": true,
+      "evidence": "adopted sources never import harness fixtures",
+      "detail": []
+    },
+    {
+      "gate": "NO_TEST_ONLY_API",
+      "pass": true,
+      "evidence": "no forced-state/test hooks in adopted source",
+      "detail": []
+    },
+    {
+      "gate": "REAL_LOADING_ANIMATION",
+      "pass": true,
+      "evidence": "loading spinner animates (Tailwind animate-spin), not a static glyph",
+      "detail": []
+    },
+    {
+      "gate": "LINK_BUTTON_SEMANTICS",
+      "pass": true,
+      "evidence": "href renders an anchor (AriaLink) and the default renders a button (AriaButton)",
+      "detail": []
+    },
+    {
+      "gate": "CSS_VALID",
+      "pass": true,
+      "evidence": "3 adopted stylesheets parse with no null/undefined values",
+      "detail": []
+    },
+    {
+      "gate": "NO_DEAD_PACKAGE_DEPENDENCIES",
+      "pass": true,
+      "evidence": "every runtime dependency is imported by source",
+      "detail": []
+    },
+    {
+      "gate": "TYPECHECK_PASS",
+      "pass": true,
+      "evidence": "tsc --noEmit over the repository including adopted sources",
+      "detail": [
+        ""
+      ]
+    },
+    {
+      "gate": "SSR_PASS",
+      "pass": true,
+      "evidence": "react-dom/server renders the adopted component with no DOM and no browser globals",
+      "detail": []
+    },
+    {
+      "gate": "BEHAVIOR_PASS",
+      "pass": true,
+      "evidence": "link semantics (A), native disabled, keyboard focus + :focus-visible, 53 buttons rendered",
+      "detail": {
+        "count": 53,
+        "linkTag": "A",
+        "linkHref": "https://example.com",
+        "disabledNative": true,
+        "loadingBusy": true,
+        "focused": true,
+        "focusVisible": true,
+        "spinnerAnimated": false
+      }
+    },
+    {
+      "gate": "ACCESSIBILITY_PASS",
+      "pass": true,
+      "evidence": "axe-core WCAG A/AA over the adopted specimen (canonical loading usage: showTextWhileLoading or aria-label)",
+      "detail": []
+    },
+    {
+      "gate": "VISUAL_PASS",
+      "pass": true,
+      "evidence": "parity: MATCH_WITH_RECORDED_RENDERER_EXCEPTION (perceptual 1.507% at 2x, all deltas <= 1px)",
+      "detail": "sub-pixel label box: adopted content 77.36px vs Figma 78px shifts the trailing visual by 0.64px"
+    },
+    {
+      "gate": "PRODUCTION_PASS",
+      "pass": true,
+      "evidence": "all production checks pass",
+      "detail": []
+    }
+  ],
+  "upstreamGaps": [
+    {
+      "gate": "REDUCED_MOTION",
+      "finding": "the official Button animates its spinner with no prefers-reduced-motion handling",
+      "consumerRemedy": "wrap or extend in the consuming project; recorded rather than patched locally"
+    },
+    {
+      "gate": "LOADING_ACCESSIBLE_NAME",
+      "finding": "with showTextWhileLoading=false the label is hidden during loading, so an isLoading button needs its own accessible name",
+      "consumerRemedy": "pass aria-label (or showTextWhileLoading) on buttons used in loading state"
+    }
+  ],
+  "status": "VERIFIED"
+}

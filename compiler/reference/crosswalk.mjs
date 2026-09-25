@@ -39,6 +39,8 @@ const norm = (s) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 /** strip only the container prefix (e.g. "Buttons/") and leading underscores */
+/** page names in the PRO file carry decorative prefixes ("      ↳ Content") */
+const cleanPage = (n) => String(n ?? "").replace(/[^\w\s]/g, " ").replace(/\s+/g, " ").trim();
 const familyBase = (name) => norm(String(name).split("/").pop());
 const tokens = (s) => new Set(norm(s).split("-").filter((t) => t && t.length > 1));
 const singular = (s) => s.replace(/s$/, "");
@@ -187,7 +189,7 @@ for (const family of FIGMA.families ?? []) {
     // icon families resolve to the official packages by name, on any page they appear
     const iconHit =
       iconIndex["@untitledui/icons"].get(base) ?? iconIndex["@untitledui/icons"].get(singular(base)) ?? iconIndex["@untitledui/file-icons"].get(base);
-    const iconPage = /^(icons|misc icons|logos|background elements|miscellaneous assets|design annotations)$/i.test(family.page ?? "");
+    const iconPage = /^(icons|misc icons|logos|background elements|miscellaneous assets|design annotations|content)$/i.test(cleanPage(family.page));
     if (iconHit) {
       relationship = "EXTERNAL_PACKAGE";
       code = [{ source: `@untitledui/icons (installed package)`, export: iconHit, layer: "external-package" }];

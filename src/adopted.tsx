@@ -45,7 +45,7 @@ createRoot(document.getElementById("adopted")!).render(
       </Button>
     ))}
     {row("icon only (isIcon)", <Button iconLeading={Check} aria-label="Confirm" />)}
-    {row("isLoading", <Button isLoading>Loading</Button>)}
+    {row("isLoading", <Button isLoading aria-label="Loading" iconLeading={Check} />)}
     {row("isLoading + text", <Button isLoading showTextWhileLoading>Loading with text</Button>)}
     {row("isDisabled", <Button isDisabled iconLeading={Trash01}>Delete</Button>)}
     {row("href (link)", <Button href="https://example.com">Link styled button</Button>)}
