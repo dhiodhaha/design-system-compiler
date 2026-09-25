@@ -72,3 +72,24 @@ The compiler must pin an exact revision before extracting contracts.
 - deterministic parity before model judgement;
 - generate only the unknown delta;
 - preserve license provenance.
+
+
+## Coverage target
+
+Button is only the first parity canary.
+
+The intended library scope is:
+
+```text
+all eligible production components
+from the pinned Untitled UI OSS repository
++
+components/recipes/blocks that exist only
+in the user's licensed Untitled UI PRO Figma
+```
+
+If a component exists in OSS, use the official code as semantic/behavior reference.
+
+If it does not exist in OSS, slice it from the licensed PRO Figma, reuse all known nested components, and generate only the missing delta.
+
+See [docs/COVERAGE_STRATEGY.md](docs/COVERAGE_STRATEGY.md).
