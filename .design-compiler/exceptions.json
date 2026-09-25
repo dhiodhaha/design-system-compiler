@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "exceptions": [
+    {
+      "id": "button-label-box-rounding",
+      "scope": "specimen:12246:5764",
+      "property": "label box width",
+      "figma": {
+        "value": "78px",
+        "source": "TEXT node box width (Figma rounds the hug text box up to whole pixels)",
+        "node": "12246:5764"
+      },
+      "browser": {
+        "value": "78px",
+        "source": "identical glyph ink; Chromium keeps the fractional advance (Inter 3.19, 14px/600)"
+      },
+      "delta": "0.64px",
+      "reason": "Glyph ink is pixel-identical between Figma and Chromium (verified by column ink profile); Figma's integer text box is 0.64px wider, which shifts the trailing icon 1px. Pinned in the specimen harness only (specimen.html) so the component keeps no magic constants.",
+      "appliedIn": "specimen.html",
+      "permanentFix": "text-measurement utility that rounds the label box like Figma, or accept <=1px geometry tolerance"
+    },
+    {
+      "id": "link-underline-offset",
+      "scope": "hierarchy:Link color|Link gray, state:Hover",
+      "property": "text-underline-offset",
+      "figma": {
+        "value": "underline row 3-4px below the glyph baseline",
+        "source": "measured from reference export (Figma API exposes no underline metric)"
+      },
+      "browser": {
+        "value": "Chromium places it from the font's own underline position",
+        "source": "measured from the rendered capture"
+      },
+      "reason": "Figma stores the hover underline as a character-level textDecoration override (styleOverrideTable) with no offset; the two renderers position it differently. Measured per size by visual/calibrate-underline.mjs and emitted as text-underline-offset.",
+      "appliedIn": "src/styles/button.theme.css (generated) from .design-compiler/ir/renderer-calibration.json",
+      "permanentFix": "re-measure after a font or renderer change: node visual/calibrate-underline.mjs --force"
+    },
+    {
+      "id": "focus-ring-corner-approximation",
+      "scope": "state:Focused (all hierarchies)",
+      "property": "box-shadow corner radius",
+      "figma": {
+        "value": "exact rounded rect (radius + spread)",
+        "source": "reference export"
+      },
+      "browser": {
+        "value": "Chromium approximates shadow corners from the border radius",
+        "source": "rendered capture"
+      },
+      "reason": "CSS box-shadow spread does not reproduce Figma's exact corner geometry at 4px spread; residual is a 1-2px arc difference on the focus ring.",
+      "appliedIn": "accepted (within the matrix perceptual gate)",
+      "permanentFix": "draw focus rings with an explicit pseudo-element rounded rect when a future specimen needs sub-pixel ring fidelity"
+    },
+    {
+      "id": "icon-only-loading-spinner",
+      "scope": "state:Loading, iconOnly:True",
+      "property": "spinner arc rendering",
+      "figma": {
+        "value": "track + arc ellipses",
+        "source": "node payload arcData"
+      },
+      "browser": {
+        "value": "track + arc rendered from normalised 16-unit paths",
+        "source": "generated icon"
+      },
+      "reason": "Tail of the matrix: these 3-5 variants remain the only ones above the 3% perceptual outlier threshold (track/arc rasterisation on a 32-48px square).",
+      "appliedIn": "tracked as a matrix outlier (.design-compiler/visual/matrix-report@2x.json)",
+      "permanentFix": "compare the spinner at the ellipse's native scale or export a dedicated spinner reference"
+    }
+  ]
+}

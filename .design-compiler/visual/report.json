@@ -1,0 +1,228 @@
+{
+  "component": "Button",
+  "figma": {
+    "componentSet": "<REDACTED>",
+    "specimen": "12246:5764",
+    "variant": {
+      "Size": "xs",
+      "Hierarchy": "Primary",
+      "State": "Default",
+      "Icon only": "False"
+    }
+  },
+  "api": {
+    "variant": "primary",
+    "size": "xs",
+    "iconOnly": false,
+    "icons": [
+      "leading",
+      "trailing"
+    ]
+  },
+  "thresholds": {
+    "exactDiffPercent": 1,
+    "perceptualPercent": 1,
+    "structuralPercent": 1,
+    "geometryMaxDelta": 1,
+    "tokenMismatches": 0,
+    "criticalLayoutErrors": 0
+  },
+  "scales": [
+    {
+      "dpr": 1,
+      "componentBox": {
+        "x": 0,
+        "y": 0,
+        "width": 142,
+        "height": 32
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 142,
+        "height": 32
+      },
+      "perceptualPercent": 0.264,
+      "structuralPercent": 10.541,
+      "exactDiffPercent": 27.641,
+      "channelDelta": {
+        "max": 148,
+        "mean": 3.739
+      },
+      "byRegion": {
+        "text": {
+          "px": 1560,
+          "exactPercent": 25.19,
+          "over8Percent": 18.46,
+          "over32Percent": 6.35,
+          "maxDelta": 148
+        },
+        "full": {
+          "px": 4544,
+          "exactPercent": 27.64,
+          "over8Percent": 10.54,
+          "over32Percent": 3.06,
+          "maxDelta": 148
+        },
+        "textBox": {
+          "x": 32,
+          "y": 6,
+          "w": 78,
+          "h": 20
+        }
+      },
+      "worstTiles": [
+        {
+          "tile": "r2c5",
+          "x": 90,
+          "y": 8,
+          "mismatchPercent": 31.94,
+          "maxDelta": 148
+        },
+        {
+          "tile": "r2c1",
+          "x": 18,
+          "y": 8,
+          "mismatchPercent": 25,
+          "maxDelta": 148
+        },
+        {
+          "tile": "r2c2",
+          "x": 36,
+          "y": 8,
+          "mismatchPercent": 13.89,
+          "maxDelta": 148
+        },
+        {
+          "tile": "r2c4",
+          "x": 72,
+          "y": 8,
+          "mismatchPercent": 16.67,
+          "maxDelta": 110
+        },
+        {
+          "tile": "r3c2",
+          "x": 36,
+          "y": 12,
+          "mismatchPercent": 36.11,
+          "maxDelta": 85
+        },
+        {
+          "tile": "r2c3",
+          "x": 54,
+          "y": 8,
+          "mismatchPercent": 4.41,
+          "maxDelta": 84
+        }
+      ],
+      "conformance": {
+        "status": "PASS",
+        "checks": 24,
+        "geometryMaxDelta": 0,
+        "tokenMismatches": 0,
+        "failures": []
+      }
+    },
+    {
+      "dpr": 2,
+      "componentBox": {
+        "x": 0,
+        "y": 0,
+        "width": 142,
+        "height": 32
+      },
+      "clip": {
+        "x": 0,
+        "y": 0,
+        "width": 142,
+        "height": 32
+      },
+      "perceptualPercent": 0.033,
+      "structuralPercent": 6.019,
+      "exactDiffPercent": 21.754,
+      "channelDelta": {
+        "max": 169,
+        "mean": 2.473
+      },
+      "byRegion": {
+        "text": {
+          "px": 6240,
+          "exactPercent": 12.69,
+          "over8Percent": 10,
+          "over32Percent": 3.86,
+          "maxDelta": 169
+        },
+        "full": {
+          "px": 18176,
+          "exactPercent": 21.75,
+          "over8Percent": 6.02,
+          "over32Percent": 2.54,
+          "maxDelta": 169
+        },
+        "textBox": {
+          "x": 64,
+          "y": 12,
+          "w": 156,
+          "h": 40
+        }
+      },
+      "worstTiles": [
+        {
+          "tile": "r2c2",
+          "x": 72,
+          "y": 16,
+          "mismatchPercent": 6.25,
+          "maxDelta": 169
+        },
+        {
+          "tile": "r2c3",
+          "x": 108,
+          "y": 16,
+          "mismatchPercent": 3.57,
+          "maxDelta": 169
+        },
+        {
+          "tile": "r3c2",
+          "x": 72,
+          "y": 24,
+          "mismatchPercent": 24.65,
+          "maxDelta": 127
+        },
+        {
+          "tile": "r3c3",
+          "x": 108,
+          "y": 24,
+          "mismatchPercent": 23.57,
+          "maxDelta": 127
+        },
+        {
+          "tile": "r2c5",
+          "x": 180,
+          "y": 16,
+          "mismatchPercent": 10.71,
+          "maxDelta": 115
+        },
+        {
+          "tile": "r2c1",
+          "x": 36,
+          "y": 16,
+          "mismatchPercent": 12.86,
+          "maxDelta": 106
+        }
+      ],
+      "conformance": {
+        "status": "PASS",
+        "checks": 24,
+        "geometryMaxDelta": 0,
+        "tokenMismatches": 0,
+        "failures": []
+      }
+    }
+  ],
+  "status": "PASS",
+  "notes": {
+    "exactDiffPercent": "Raw 'any channel differs' count. At 1x it is dominated by font rasterization differences between Figma's renderer and Chromium (identical glyph ink, identical layout): see byRegion.text.",
+    "structuralPercent": "Pixels whose worst channel delta exceeds 8/255 - the practical structural metric; the remainder is anti-aliasing noise.",
+    "chrome": "/home/dhio/.cache/puppeteer/chrome/linux-148.0.7778.167/chrome-linux64/chrome"
+  }
+}

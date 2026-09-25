@@ -1,0 +1,105 @@
+{
+  "reference": {
+    "file": ".design-compiler/reference/golden@2x.png",
+    "crop": {
+      "x": 4,
+      "y": 2,
+      "w": 284,
+      "h": 64
+    }
+  },
+  "actual": {
+    "file": ".design-compiler/visual/golden@2x.png"
+  },
+  "size": {
+    "w": 284,
+    "h": 64
+  },
+  "threshold": 0.1,
+  "pixels": {
+    "total": 18176,
+    "exactDiff": 3954,
+    "perceptualDiff": 6,
+    "over2": 1630,
+    "over8": 1094,
+    "over32": 461
+  },
+  "exactDiffPercent": 21.754,
+  "perceptualPercent": 0.033,
+  "structuralPercent": 6.019,
+  "channelDelta": {
+    "max": 169,
+    "mean": 2.473
+  },
+  "byRegion": {
+    "text": {
+      "px": 6240,
+      "exactPercent": 12.69,
+      "over8Percent": 10,
+      "over32Percent": 3.86,
+      "maxDelta": 169
+    },
+    "full": {
+      "px": 18176,
+      "exactPercent": 21.75,
+      "over8Percent": 6.02,
+      "over32Percent": 2.54,
+      "maxDelta": 169
+    },
+    "textBox": {
+      "x": 64,
+      "y": 12,
+      "w": 156,
+      "h": 40
+    }
+  },
+  "worstTiles": [
+    {
+      "tile": "r2c2",
+      "x": 72,
+      "y": 16,
+      "mismatchPercent": 6.25,
+      "maxDelta": 169
+    },
+    {
+      "tile": "r2c3",
+      "x": 108,
+      "y": 16,
+      "mismatchPercent": 3.57,
+      "maxDelta": 169
+    },
+    {
+      "tile": "r3c2",
+      "x": 72,
+      "y": 24,
+      "mismatchPercent": 24.65,
+      "maxDelta": 127
+    },
+    {
+      "tile": "r3c3",
+      "x": 108,
+      "y": 24,
+      "mismatchPercent": 23.57,
+      "maxDelta": 127
+    },
+    {
+      "tile": "r2c5",
+      "x": 180,
+      "y": 16,
+      "mismatchPercent": 10.71,
+      "maxDelta": 115
+    },
+    {
+      "tile": "r2c1",
+      "x": 36,
+      "y": 16,
+      "mismatchPercent": 12.86,
+      "maxDelta": 106
+    }
+  ],
+  "pass": {
+    "perceptualUnder1Percent": true,
+    "structuralUnder1Percent": false,
+    "maxChannelDelta": 169
+  }
+}

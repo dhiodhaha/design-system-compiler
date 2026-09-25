@@ -1,0 +1,179 @@
+{
+  "component": "Button",
+  "generatedAt": "2026-09-25T07:36:33.050Z",
+  "status": "VERIFIED",
+  "requirements": [
+    {
+      "requirement": "family mapping verified",
+      "pass": true
+    },
+    {
+      "requirement": "axes classified",
+      "pass": true
+    },
+    {
+      "requirement": "anatomy and slots resolved",
+      "pass": true
+    },
+    {
+      "requirement": "fixtures classified",
+      "pass": true
+    },
+    {
+      "requirement": "public API recorded (approved by deterministic policy)",
+      "pass": true
+    },
+    {
+      "requirement": "tokens canonical (no sampled colours)",
+      "pass": true
+    },
+    {
+      "requirement": "representative semantic tests pass",
+      "pass": true
+    },
+    {
+      "requirement": "representative visual tests pass",
+      "pass": true
+    },
+    {
+      "requirement": "full supported matrix passes configured validation",
+      "pass": true
+    },
+    {
+      "requirement": "behavioural tests pass",
+      "pass": true
+    },
+    {
+      "requirement": "accessibility requirements pass",
+      "pass": true
+    },
+    {
+      "requirement": "reuse mappings persisted",
+      "pass": true
+    }
+  ],
+  "metrics": {
+    "familyGroupingAccuracy": {
+      "value": 1,
+      "pass": true,
+      "evidence": "one component set -> one family -> one public component"
+    },
+    "axisClassificationCoverage": {
+      "value": 1,
+      "pass": true,
+      "evidence": "Size, Hierarchy, State, Icon only classified"
+    },
+    "slotClassificationCoverage": {
+      "value": 1,
+      "pass": true,
+      "evidence": "label, leadingIcon, trailingIcon, loadingIndicator"
+    },
+    "anatomyRoles": {
+      "value": 4,
+      "pass": true,
+      "evidence": "semantic roles instead of child indices"
+    },
+    "fixtureLeakCount": {
+      "value": 0,
+      "pass": true,
+      "evidence": "public module imports no fixture; placeholder classified placeholder-icon"
+    },
+    "tokenCoverage": {
+      "value": 1,
+      "pass": true,
+      "evidence": "36 tokens; 9 carry Figma style ids"
+    },
+    "unsupportedPreservation": {
+      "value": 50,
+      "pass": true,
+      "evidence": "50 undocumented combinations recorded, never invented"
+    },
+    "representativeVisualPassRate": {
+      "value": 0.875,
+      "pass": true,
+      "evidence": "8 canaries at DPR2"
+    },
+    "fullMatrixVisualPassRate": {
+      "value": 1,
+      "pass": true,
+      "evidence": "200 combinations; perceptual 0.18% at DPR2, 0.23% at DPR1"
+    },
+    "geometryDeviationPx": {
+      "value": 0,
+      "pass": true,
+      "evidence": "0 failures at 1px tolerance"
+    },
+    "specimenRegressionPassRate": {
+      "value": 1,
+      "pass": true,
+      "evidence": "golden specimen 0.033% at DPR2"
+    },
+    "behaviorTestPassRate": {
+      "value": 1,
+      "pass": true,
+      "evidence": "19/19 interaction assertions"
+    },
+    "accessibilityRulePassRate": {
+      "value": 1,
+      "pass": true,
+      "evidence": "accessible name + axe-core (WCAG A/AA) on two pages"
+    },
+    "apiSemanticWarnings": {
+      "value": 1,
+      "pass": true,
+      "evidence": "API decisions recorded with confidence (iconOnly boolean, forced-state test hook)"
+    },
+    "generalization": {
+      "value": "56 samples -> 99.54% holdout",
+      "pass": true,
+      "evidence": "holdout accuracy of representative-mined rules (ACCURACY_STRATEGY §17)"
+    },
+    "aiCallsPerCompile": {
+      "value": 0,
+      "pass": true,
+      "evidence": "compiler + validators are deterministic; no model call in the accuracy loop"
+    },
+    "cacheHitRate": {
+      "value": "n/a",
+      "pass": true,
+      "evidence": "single-page source; index hashing in place (hashes.json)"
+    },
+    "manualReviewRate": {
+      "value": 0,
+      "pass": true,
+      "evidence": "no human decisions required for the compiled matrix"
+    }
+  },
+  "taxonomy": [
+    {
+      "category": "VISUAL",
+      "impact": "low",
+      "count": 5,
+      "detail": "spinner/ring rasterisation on small icon-only variants: xs/Primary/Loading/True, sm/Primary/Loading/True, md/Primary/Loading/True, lg/Primary/Loading/True"
+    },
+    {
+      "category": "TOKEN",
+      "impact": "medium",
+      "count": 0,
+      "detail": "file_variables:read scope unavailable: names come from published styles, not variables"
+    }
+  ],
+  "exceptions": [
+    "button-label-box-rounding",
+    "link-underline-offset",
+    "focus-ring-corner-approximation",
+    "icon-only-loading-spinner"
+  ],
+  "sources": {
+    "index": ".design-compiler/ir/button.index.json",
+    "rules": ".design-compiler/ir/button.rules.json",
+    "semantics": ".design-compiler/ir/button.semantics.json",
+    "visual": [
+      ".design-compiler/visual/report.json",
+      ".design-compiler/visual/matrix-report@1x.json",
+      ".design-compiler/visual/matrix-report@2x.json",
+      ".design-compiler/visual/canary-report@2x.json"
+    ],
+    "behavior": ".design-compiler/visual/behavior-report.json"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "count": 50,
+  "combinations": [
+    {
+      "size": "lg",
+      "hierarchy": "Link color",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link color",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link color",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link color",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link color",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link gray",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link gray",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link gray",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link gray",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "lg",
+      "hierarchy": "Link gray",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link color",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link color",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link color",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link color",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link color",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link gray",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link gray",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link gray",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link gray",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "md",
+      "hierarchy": "Link gray",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link color",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link color",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link color",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link color",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link color",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link gray",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link gray",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link gray",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link gray",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "sm",
+      "hierarchy": "Link gray",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link color",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link color",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link color",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link color",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link color",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link gray",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link gray",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link gray",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link gray",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xl",
+      "hierarchy": "Link gray",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link color",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link color",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link color",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link color",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link color",
+      "state": "Loading",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link gray",
+      "state": "Default",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link gray",
+      "state": "Disabled",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link gray",
+      "state": "Focused",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link gray",
+      "state": "Hover",
+      "iconOnly": "True"
+    },
+    {
+      "size": "xs",
+      "hierarchy": "Link gray",
+      "state": "Loading",
+      "iconOnly": "True"
+    }
+  ]
+}

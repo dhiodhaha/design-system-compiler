@@ -1,0 +1,35 @@
+{
+  "name": "ds-compiler-p0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc --noEmit",
+    "compile": "node compiler/figma/normalize.mjs && node compiler/figma/compile.mjs",
+    "test": "node --test tests/invariants.test.mjs",
+    "verify": "pnpm compile && pnpm test && bun tests/ssr.tsx && node visual/verify-matrix.mjs --dpr 2 --canaries && node visual/verify-matrix.mjs --dpr 2 && node visual/verify-matrix.mjs --dpr 1 && node visual/run.mjs && node visual/behavior.mjs && node visual/accuracy.mjs"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.2",
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "axe-core": "^4.13.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^25.12.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}

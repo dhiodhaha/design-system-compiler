@@ -1,0 +1,81 @@
+{
+  "component": "Buttons/Button",
+  "base": {
+    "nodeId": "9255:450097",
+    "axesKey": "xs/Primary/Default/False",
+    "reason": "verified golden specimen (visual + token conformance PASS)"
+  },
+  "deepRead": [
+    {
+      "nodeId": "3287:429411",
+      "axesKey": "sm/Primary/Default/False",
+      "reason": "size delta: Size=sm"
+    },
+    {
+      "nodeId": "3287:427299",
+      "axesKey": "md/Primary/Default/False",
+      "reason": "size delta: Size=md"
+    },
+    {
+      "nodeId": "3287:427827",
+      "axesKey": "lg/Primary/Default/False",
+      "reason": "size delta: Size=lg"
+    },
+    {
+      "nodeId": "3287:428579",
+      "axesKey": "xl/Primary/Default/False",
+      "reason": "size delta: Size=xl"
+    },
+    {
+      "nodeId": "9255:450129",
+      "axesKey": "xs/Secondary/Default/False",
+      "reason": "hierarchy delta: Hierarchy=Secondary"
+    },
+    {
+      "nodeId": "9255:450120",
+      "axesKey": "xs/Tertiary/Default/False",
+      "reason": "hierarchy delta: Hierarchy=Tertiary"
+    },
+    {
+      "nodeId": "9255:450106",
+      "axesKey": "xs/Link color/Default/False",
+      "reason": "hierarchy delta: Hierarchy=Link color"
+    },
+    {
+      "nodeId": "9255:450113",
+      "axesKey": "xs/Link gray/Default/False",
+      "reason": "hierarchy delta: Hierarchy=Link gray"
+    },
+    {
+      "nodeId": "9255:450184",
+      "axesKey": "xs/Primary/Hover/False",
+      "reason": "state delta: State=Hover"
+    },
+    {
+      "nodeId": "9255:450161",
+      "axesKey": "xs/Primary/Focused/False",
+      "reason": "state delta: State=Focused"
+    },
+    {
+      "nodeId": "9255:450138",
+      "axesKey": "xs/Primary/Disabled/False",
+      "reason": "state delta: State=Disabled"
+    },
+    {
+      "nodeId": "9255:450102",
+      "axesKey": "xs/Primary/Loading/False",
+      "reason": "state delta: State=Loading"
+    },
+    {
+      "nodeId": "9258:450484",
+      "axesKey": "xs/Primary/Default/True",
+      "reason": "iconOnly delta: Icon only=True"
+    }
+  ],
+  "policy": "One batched request covered all 200 variants at depth 3 (children included), so no per-representative fetch was needed. Outliers from rule mining (§9) were resolved from the same index instead of extra reads.",
+  "skipped": 186,
+  "requests": {
+    "batched": 1,
+    "perRepresentative": 0
+  }
+}

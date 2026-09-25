@@ -1,0 +1,3180 @@
+{
+  "base": "xs/Primary/Default/False",
+  "classification": {
+    "Size": "public visual variant",
+    "Hierarchy": "public semantic variant (paint + structure)",
+    "State": "browser/CSS state: Default base, Hover=:hover, Focused=:focus-visible, Disabled=:disabled, Loading=aria-busy",
+    "Icon only": "composition/API decision"
+  },
+  "deltas": {
+    "sm/Primary/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "sm/Primary/Default/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 154
+        },
+        {
+          "property": "box.h",
+          "before": 32,
+          "after": 36
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": "[8,12,8,12]"
+        },
+        {
+          "property": "icons[0].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[0].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        }
+      ]
+    },
+    "md/Primary/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "md/Primary/Default/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 158
+        },
+        {
+          "property": "box.h",
+          "before": 32,
+          "after": 40
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": "[10,14,10,14]"
+        },
+        {
+          "property": "icons[0].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[0].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        }
+      ]
+    },
+    "lg/Primary/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "lg/Primary/Default/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 177
+        },
+        {
+          "property": "box.h",
+          "before": 32,
+          "after": 44
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": "[10,16,10,16]"
+        },
+        {
+          "property": "gap",
+          "before": 4,
+          "after": 6
+        },
+        {
+          "property": "label.box.w",
+          "before": 78,
+          "after": 89
+        },
+        {
+          "property": "label.box.h",
+          "before": 20,
+          "after": 24
+        },
+        {
+          "property": "label.fontSize",
+          "before": 14,
+          "after": 16
+        },
+        {
+          "property": "label.lineHeight",
+          "before": 20,
+          "after": 24
+        },
+        {
+          "property": "icons[0].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[0].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        }
+      ]
+    },
+    "xl/Primary/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xl/Primary/Default/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 181
+        },
+        {
+          "property": "box.h",
+          "before": 32,
+          "after": 48
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": "[12,18,12,18]"
+        },
+        {
+          "property": "gap",
+          "before": 4,
+          "after": 6
+        },
+        {
+          "property": "label.box.w",
+          "before": 78,
+          "after": 89
+        },
+        {
+          "property": "label.box.h",
+          "before": 20,
+          "after": 24
+        },
+        {
+          "property": "label.fontSize",
+          "before": 14,
+          "after": 16
+        },
+        {
+          "property": "label.lineHeight",
+          "before": 20,
+          "after": 24
+        },
+        {
+          "property": "icons[0].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[0].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[0].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].box.w",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].box.h",
+          "before": 16,
+          "after": 20
+        },
+        {
+          "property": "icons[1].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        },
+        {
+          "property": "icons[1].parts[0].box.w",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].box.h",
+          "before": 13.333,
+          "after": 16.667
+        },
+        {
+          "property": "icons[1].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 1.667
+        }
+      ]
+    },
+    "xs/Secondary/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Secondary/Default/False",
+      "changes": [
+        {
+          "property": "fill",
+          "before": "#7F56D9",
+          "after": "#FFFFFF"
+        },
+        {
+          "property": "stroke.type",
+          "before": "GRADIENT_LINEAR",
+          "after": "SOLID"
+        },
+        {
+          "property": "stroke.weight",
+          "before": 2,
+          "after": 1
+        },
+        {
+          "property": "stroke.stops[0].at",
+          "before": 0,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].color",
+          "before": "rgba(255, 255, 255, 0.12)",
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].at",
+          "before": 1,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].color",
+          "before": "rgba(255, 255, 255, 0)",
+          "after": null
+        },
+        {
+          "property": "label.color",
+          "before": "#FFFFFF",
+          "after": "#404040"
+        },
+        {
+          "property": "icons[0].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[0].color",
+          "before": "#FFFFFF",
+          "after": "#A3A3A3"
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[1].color",
+          "before": "#FFFFFF",
+          "after": "#A3A3A3"
+        },
+        {
+          "property": "stroke.color",
+          "before": null,
+          "after": "#D4D4D4"
+        }
+      ]
+    },
+    "xs/Tertiary/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Tertiary/Default/False",
+      "changes": [
+        {
+          "property": "fill",
+          "before": "#7F56D9",
+          "after": null
+        },
+        {
+          "property": "stroke.type",
+          "before": "GRADIENT_LINEAR",
+          "after": null
+        },
+        {
+          "property": "stroke.weight",
+          "before": 2,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].at",
+          "before": 0,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].color",
+          "before": "rgba(255, 255, 255, 0.12)",
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].at",
+          "before": 1,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].color",
+          "before": "rgba(255, 255, 255, 0)",
+          "after": null
+        },
+        {
+          "property": "shadow",
+          "before": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+          "after": null
+        },
+        {
+          "property": "label.color",
+          "before": "#FFFFFF",
+          "after": "#525252"
+        },
+        {
+          "property": "icons[0].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[0].color",
+          "before": "#FFFFFF",
+          "after": "#A3A3A3"
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[1].color",
+          "before": "#FFFFFF",
+          "after": "#A3A3A3"
+        }
+      ]
+    },
+    "xs/Link color/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Link color/Default/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 118
+        },
+        {
+          "property": "box.h",
+          "before": 32,
+          "after": 20
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": null
+        },
+        {
+          "property": "radius",
+          "before": 8,
+          "after": null
+        },
+        {
+          "property": "fill",
+          "before": "#7F56D9",
+          "after": null
+        },
+        {
+          "property": "stroke.type",
+          "before": "GRADIENT_LINEAR",
+          "after": null
+        },
+        {
+          "property": "stroke.weight",
+          "before": 2,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].at",
+          "before": 0,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].color",
+          "before": "rgba(255, 255, 255, 0.12)",
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].at",
+          "before": 1,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].color",
+          "before": "rgba(255, 255, 255, 0)",
+          "after": null
+        },
+        {
+          "property": "shadow",
+          "before": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+          "after": null
+        },
+        {
+          "property": "labelWrapper",
+          "before": "frame",
+          "after": "none"
+        },
+        {
+          "property": "labelWrapperPadding",
+          "before": "[2,2]",
+          "after": null
+        },
+        {
+          "property": "label.color",
+          "before": "#FFFFFF",
+          "after": "#6941C6"
+        },
+        {
+          "property": "icons[0].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[0].color",
+          "before": "#FFFFFF",
+          "after": "#9E77ED"
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[1].color",
+          "before": "#FFFFFF",
+          "after": "#9E77ED"
+        }
+      ]
+    },
+    "xs/Link gray/Default/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Link gray/Default/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 118
+        },
+        {
+          "property": "box.h",
+          "before": 32,
+          "after": 20
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": null
+        },
+        {
+          "property": "radius",
+          "before": 8,
+          "after": null
+        },
+        {
+          "property": "fill",
+          "before": "#7F56D9",
+          "after": null
+        },
+        {
+          "property": "stroke.type",
+          "before": "GRADIENT_LINEAR",
+          "after": null
+        },
+        {
+          "property": "stroke.weight",
+          "before": 2,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].at",
+          "before": 0,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[0].color",
+          "before": "rgba(255, 255, 255, 0.12)",
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].at",
+          "before": 1,
+          "after": null
+        },
+        {
+          "property": "stroke.stops[1].color",
+          "before": "rgba(255, 255, 255, 0)",
+          "after": null
+        },
+        {
+          "property": "shadow",
+          "before": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+          "after": null
+        },
+        {
+          "property": "labelWrapper",
+          "before": "frame",
+          "after": "none"
+        },
+        {
+          "property": "labelWrapperPadding",
+          "before": "[2,2]",
+          "after": null
+        },
+        {
+          "property": "label.color",
+          "before": "#FFFFFF",
+          "after": "#525252"
+        },
+        {
+          "property": "icons[0].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[0].color",
+          "before": "#FFFFFF",
+          "after": "#A3A3A3"
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": 1
+        },
+        {
+          "property": "icons[1].color",
+          "before": "#FFFFFF",
+          "after": "#A3A3A3"
+        }
+      ]
+    },
+    "xs/Primary/Hover/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Primary/Hover/False",
+      "changes": [
+        {
+          "property": "fill",
+          "before": "#7F56D9",
+          "after": "#6941C6"
+        },
+        {
+          "property": "icons[0].opacity",
+          "before": 0.6,
+          "after": 0.7
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": 0.7
+        }
+      ]
+    },
+    "xs/Primary/Focused/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Primary/Focused/False",
+      "changes": [
+        {
+          "property": "shadow",
+          "before": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+          "after": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+        }
+      ]
+    },
+    "xs/Primary/Disabled/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Primary/Disabled/False",
+      "changes": [
+        {
+          "property": "nodeOpacity",
+          "before": 1,
+          "after": 0.5
+        }
+      ]
+    },
+    "xs/Primary/Loading/False": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Primary/Loading/False",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 131
+        },
+        {
+          "property": "fill",
+          "before": "#7F56D9",
+          "after": "#6941C6"
+        },
+        {
+          "property": "label.text",
+          "before": "Button CTA",
+          "after": "Submitting..."
+        },
+        {
+          "property": "label.box.w",
+          "before": 78,
+          "after": 87
+        },
+        {
+          "property": "icons[0].kind",
+          "before": "placeholder",
+          "after": "spinner"
+        },
+        {
+          "property": "icons[0].strokeWeight",
+          "before": 1.5,
+          "after": 2
+        },
+        {
+          "property": "icons[0].parts[0].kind",
+          "before": "vector",
+          "after": "ellipse"
+        },
+        {
+          "property": "icons[0].parts[0].name",
+          "before": "Icon",
+          "after": "Background"
+        },
+        {
+          "property": "icons[0].parts[0].box.w",
+          "before": 13.333,
+          "after": 14.4
+        },
+        {
+          "property": "icons[0].parts[0].box.h",
+          "before": 13.333,
+          "after": 14.4
+        },
+        {
+          "property": "icons[0].parts[0].opacity",
+          "before": 1,
+          "after": 0.3
+        },
+        {
+          "property": "icons[0].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": 2
+        },
+        {
+          "property": "icons[1].kind",
+          "before": "placeholder",
+          "after": null
+        },
+        {
+          "property": "icons[1].box.w",
+          "before": 16,
+          "after": null
+        },
+        {
+          "property": "icons[1].box.h",
+          "before": 16,
+          "after": null
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": null
+        },
+        {
+          "property": "icons[1].strokeWeight",
+          "before": 1.5,
+          "after": null
+        },
+        {
+          "property": "icons[1].color",
+          "before": "#FFFFFF",
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].kind",
+          "before": "vector",
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].name",
+          "before": "Icon",
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].box.w",
+          "before": 13.333,
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].box.h",
+          "before": 13.333,
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].opacity",
+          "before": 1,
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": null
+        },
+        {
+          "property": "icons[0].parts[0].arcData.endingAngle",
+          "before": null,
+          "after": 6.283185958862305
+        },
+        {
+          "property": "icons[0].parts[0].arcData.innerRadius",
+          "before": null,
+          "after": 1
+        },
+        {
+          "property": "icons[0].parts[0].arcData.startingAngle",
+          "before": null,
+          "after": 0
+        },
+        {
+          "property": "icons[0].parts[1].kind",
+          "before": null,
+          "after": "ellipse"
+        },
+        {
+          "property": "icons[0].parts[1].name",
+          "before": null,
+          "after": "Line"
+        },
+        {
+          "property": "icons[0].parts[1].box.w",
+          "before": null,
+          "after": 14.4
+        },
+        {
+          "property": "icons[0].parts[1].box.h",
+          "before": null,
+          "after": 14.4
+        },
+        {
+          "property": "icons[0].parts[1].opacity",
+          "before": null,
+          "after": 1
+        },
+        {
+          "property": "icons[0].parts[1].strokeWeight",
+          "before": null,
+          "after": 2
+        },
+        {
+          "property": "icons[0].parts[1].arcData.endingAngle",
+          "before": null,
+          "after": 6.2831854820251465
+        },
+        {
+          "property": "icons[0].parts[1].arcData.innerRadius",
+          "before": null,
+          "after": 1
+        },
+        {
+          "property": "icons[0].parts[1].arcData.startingAngle",
+          "before": null,
+          "after": 4.71238899230957
+        },
+        {
+          "property": "spinner.box.w",
+          "before": null,
+          "after": 16
+        },
+        {
+          "property": "spinner.box.h",
+          "before": null,
+          "after": 16
+        },
+        {
+          "property": "spinner.opacity",
+          "before": null,
+          "after": 0.6
+        },
+        {
+          "property": "spinner.track.opacity",
+          "before": null,
+          "after": 0.3
+        },
+        {
+          "property": "spinner.track.strokeWeight",
+          "before": null,
+          "after": 2
+        },
+        {
+          "property": "spinner.track.color",
+          "before": null,
+          "after": "#FFFFFF"
+        },
+        {
+          "property": "spinner.track.d",
+          "before": null,
+          "after": "M13.4 7.2A6.2 6.2 0 1 1 1 7.2A6.2 6.2 0 1 1 13.4 7.2"
+        },
+        {
+          "property": "spinner.arc.opacity",
+          "before": null,
+          "after": 1
+        },
+        {
+          "property": "spinner.arc.strokeWeight",
+          "before": null,
+          "after": 2
+        },
+        {
+          "property": "spinner.arc.color",
+          "before": null,
+          "after": "#FFFFFF"
+        },
+        {
+          "property": "spinner.arc.d",
+          "before": null,
+          "after": "M7.2 1A6.2 6.2 0 0 1 13.4 7.2"
+        }
+      ]
+    },
+    "xs/Primary/Default/True": {
+      "from": "xs/Primary/Default/False",
+      "to": "xs/Primary/Default/True",
+      "changes": [
+        {
+          "property": "box.w",
+          "before": 142,
+          "after": 32
+        },
+        {
+          "property": "padding",
+          "before": "[6,10,6,10]",
+          "after": "[8,8,8,8]"
+        },
+        {
+          "property": "gap",
+          "before": 4,
+          "after": null
+        },
+        {
+          "property": "labelWrapper",
+          "before": "frame",
+          "after": null
+        },
+        {
+          "property": "labelWrapperPadding",
+          "before": "[2,2]",
+          "after": null
+        },
+        {
+          "property": "labelOverrides",
+          "before": "NONE",
+          "after": null
+        },
+        {
+          "property": "label.text",
+          "before": "Button CTA",
+          "after": null
+        },
+        {
+          "property": "label.box.w",
+          "before": 78,
+          "after": null
+        },
+        {
+          "property": "label.box.h",
+          "before": 20,
+          "after": null
+        },
+        {
+          "property": "label.fontFamily",
+          "before": "Inter",
+          "after": null
+        },
+        {
+          "property": "label.fontWeight",
+          "before": 600,
+          "after": null
+        },
+        {
+          "property": "label.fontSize",
+          "before": 14,
+          "after": null
+        },
+        {
+          "property": "label.lineHeight",
+          "before": 20,
+          "after": null
+        },
+        {
+          "property": "label.letterSpacing",
+          "before": 0,
+          "after": null
+        },
+        {
+          "property": "label.color",
+          "before": "#FFFFFF",
+          "after": null
+        },
+        {
+          "property": "icons[1].kind",
+          "before": "placeholder",
+          "after": null
+        },
+        {
+          "property": "icons[1].box.w",
+          "before": 16,
+          "after": null
+        },
+        {
+          "property": "icons[1].box.h",
+          "before": 16,
+          "after": null
+        },
+        {
+          "property": "icons[1].opacity",
+          "before": 0.6,
+          "after": null
+        },
+        {
+          "property": "icons[1].strokeWeight",
+          "before": 1.5,
+          "after": null
+        },
+        {
+          "property": "icons[1].color",
+          "before": "#FFFFFF",
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].kind",
+          "before": "vector",
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].name",
+          "before": "Icon",
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].box.w",
+          "before": 13.333,
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].box.h",
+          "before": 13.333,
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].opacity",
+          "before": 1,
+          "after": null
+        },
+        {
+          "property": "icons[1].parts[0].strokeWeight",
+          "before": 1.5,
+          "after": null
+        }
+      ]
+    }
+  },
+  "rules": {
+    "box.w": {
+      "determinant": null,
+      "kind": "derived",
+      "note": "computed by layout, verified visually"
+    },
+    "box.h": {
+      "determinant": [
+        "Size",
+        "Hierarchy"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Link color": 24,
+        "lg|Link gray": 24,
+        "lg|Primary": 44,
+        "lg|Secondary": 44,
+        "lg|Tertiary": 44,
+        "md|Link color": 20,
+        "md|Link gray": 20,
+        "md|Primary": 40,
+        "md|Secondary": 40,
+        "md|Tertiary": 40,
+        "sm|Link color": 20,
+        "sm|Link gray": 20,
+        "sm|Primary": 36,
+        "sm|Secondary": 36,
+        "sm|Tertiary": 36,
+        "xl|Link color": 24,
+        "xl|Link gray": 24,
+        "xl|Primary": 48,
+        "xl|Secondary": 48,
+        "xl|Tertiary": 48,
+        "xs|Link color": 20,
+        "xs|Link gray": 20,
+        "xs|Primary": 32,
+        "xs|Secondary": 32,
+        "xs|Tertiary": 32
+      },
+      "exceptions": []
+    },
+    "padding": {
+      "determinant": [
+        "Size",
+        "Hierarchy",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Link color|False": null,
+        "lg|Link gray|False": null,
+        "lg|Primary|False": "[10,16,10,16]",
+        "lg|Primary|True": "[12,12,12,12]",
+        "lg|Secondary|False": "[10,16,10,16]",
+        "lg|Secondary|True": "[12,12,12,12]",
+        "lg|Tertiary|False": "[10,16,10,16]",
+        "lg|Tertiary|True": "[12,12,12,12]",
+        "md|Link color|False": null,
+        "md|Link gray|False": null,
+        "md|Primary|False": "[10,14,10,14]",
+        "md|Primary|True": "[10,10,10,10]",
+        "md|Secondary|False": "[10,14,10,14]",
+        "md|Secondary|True": "[10,10,10,10]",
+        "md|Tertiary|False": "[10,14,10,14]",
+        "md|Tertiary|True": "[10,10,10,10]",
+        "sm|Link color|False": null,
+        "sm|Link gray|False": null,
+        "sm|Primary|False": "[8,12,8,12]",
+        "sm|Primary|True": "[8,8,8,8]",
+        "sm|Secondary|False": "[8,12,8,12]",
+        "sm|Secondary|True": "[8,8,8,8]",
+        "sm|Tertiary|False": "[8,12,8,12]",
+        "sm|Tertiary|True": "[8,8,8,8]",
+        "xl|Link color|False": null,
+        "xl|Link gray|False": null,
+        "xl|Primary|False": "[12,18,12,18]",
+        "xl|Primary|True": "[14,14,14,14]",
+        "xl|Secondary|False": "[12,18,12,18]",
+        "xl|Secondary|True": "[14,14,14,14]",
+        "xl|Tertiary|False": "[12,18,12,18]",
+        "xl|Tertiary|True": "[14,14,14,14]",
+        "xs|Link color|False": null,
+        "xs|Link gray|False": null,
+        "xs|Primary|False": "[6,10,6,10]",
+        "xs|Primary|True": "[8,8,8,8]",
+        "xs|Secondary|False": "[6,10,6,10]",
+        "xs|Secondary|True": "[8,8,8,8]",
+        "xs|Tertiary|False": "[6,10,6,10]",
+        "xs|Tertiary|True": "[8,8,8,8]"
+      },
+      "exceptions": []
+    },
+    "gap": {
+      "determinant": [
+        "Size",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|False": 6,
+        "lg|True": null,
+        "md|False": 4,
+        "md|True": null,
+        "sm|False": 4,
+        "sm|True": null,
+        "xl|False": 6,
+        "xl|True": null,
+        "xs|False": 4,
+        "xs|True": null
+      },
+      "exceptions": []
+    },
+    "radius": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": 4,
+        "Link color|Hover": null,
+        "Link color|Loading": null,
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": 4,
+        "Link gray|Hover": null,
+        "Link gray|Loading": null,
+        "Primary|Default": 8,
+        "Primary|Disabled": 8,
+        "Primary|Focused": 8,
+        "Primary|Hover": 8,
+        "Primary|Loading": 8,
+        "Secondary|Default": 8,
+        "Secondary|Disabled": 8,
+        "Secondary|Focused": 8,
+        "Secondary|Hover": 8,
+        "Secondary|Loading": 8,
+        "Tertiary|Default": 8,
+        "Tertiary|Disabled": 8,
+        "Tertiary|Focused": 8,
+        "Tertiary|Hover": 8,
+        "Tertiary|Loading": 8
+      },
+      "exceptions": []
+    },
+    "fill": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": "#FFFFFF",
+        "Link color|Hover": null,
+        "Link color|Loading": null,
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": "#FFFFFF",
+        "Link gray|Hover": null,
+        "Link gray|Loading": null,
+        "Primary|Default": "#7F56D9",
+        "Primary|Disabled": "#7F56D9",
+        "Primary|Focused": "#7F56D9",
+        "Primary|Hover": "#6941C6",
+        "Primary|Loading": "#6941C6",
+        "Secondary|Default": "#FFFFFF",
+        "Secondary|Disabled": "#FFFFFF",
+        "Secondary|Focused": "#FFFFFF",
+        "Secondary|Hover": "#FAFAFA",
+        "Secondary|Loading": "#FAFAFA",
+        "Tertiary|Default": null,
+        "Tertiary|Disabled": null,
+        "Tertiary|Focused": "#FFFFFF",
+        "Tertiary|Hover": "#FAFAFA",
+        "Tertiary|Loading": "#FAFAFA"
+      },
+      "exceptions": []
+    },
+    "stroke": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": null,
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "shadow": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF",
+        "Link color|Hover": null,
+        "Link color|Loading": null,
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF",
+        "Link gray|Hover": null,
+        "Link gray|Loading": null,
+        "Primary|Default": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Primary|Disabled": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Primary|Focused": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Primary|Hover": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Primary|Loading": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Secondary|Default": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Secondary|Disabled": "0px 1px 2px 0px rgba(0, 0, 0, 0.05)",
+        "Secondary|Focused": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Secondary|Hover": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Secondary|Loading": "0px 1px 2px 0px rgba(0, 0, 0, 0.05), inset 0px -2px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+        "Tertiary|Default": null,
+        "Tertiary|Disabled": null,
+        "Tertiary|Focused": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF",
+        "Tertiary|Hover": null,
+        "Tertiary|Loading": null
+      },
+      "exceptions": []
+    },
+    "nodeOpacity": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": 1,
+        "Disabled": 0.5,
+        "Focused": 1,
+        "Hover": 1,
+        "Loading": 1
+      },
+      "exceptions": []
+    },
+    "labelWrapper": {
+      "determinant": [
+        "Hierarchy",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|False": "none",
+        "Link gray|False": "none",
+        "Primary|False": "frame",
+        "Primary|True": null,
+        "Secondary|False": "frame",
+        "Secondary|True": null,
+        "Tertiary|False": "frame",
+        "Tertiary|True": null
+      },
+      "exceptions": []
+    },
+    "labelWrapperPadding": {
+      "determinant": [
+        "Hierarchy",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|False": null,
+        "Link gray|False": null,
+        "Primary|False": "[2,2]",
+        "Primary|True": null,
+        "Secondary|False": "[2,2]",
+        "Secondary|True": null,
+        "Tertiary|False": "[2,2]",
+        "Tertiary|True": null
+      },
+      "exceptions": []
+    },
+    "labelOverrides": {
+      "determinant": [
+        "Hierarchy",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default|False": "NONE",
+        "Link color|Disabled|False": "NONE",
+        "Link color|Focused|False": "NONE",
+        "Link color|Hover|False": "textDecoration=UNDERLINE",
+        "Link color|Loading|False": "NONE",
+        "Link gray|Default|False": "NONE",
+        "Link gray|Disabled|False": "NONE",
+        "Link gray|Focused|False": "NONE",
+        "Link gray|Hover|False": "textDecoration=UNDERLINE",
+        "Link gray|Loading|False": "NONE",
+        "Primary|Default|False": "NONE",
+        "Primary|Default|True": null,
+        "Primary|Disabled|False": "NONE",
+        "Primary|Disabled|True": null,
+        "Primary|Focused|False": "NONE",
+        "Primary|Focused|True": null,
+        "Primary|Hover|False": "NONE",
+        "Primary|Hover|True": null,
+        "Primary|Loading|False": "NONE",
+        "Primary|Loading|True": null,
+        "Secondary|Default|False": "NONE",
+        "Secondary|Default|True": null,
+        "Secondary|Disabled|False": "NONE",
+        "Secondary|Disabled|True": null,
+        "Secondary|Focused|False": "NONE",
+        "Secondary|Focused|True": null,
+        "Secondary|Hover|False": "NONE",
+        "Secondary|Hover|True": null,
+        "Secondary|Loading|False": "NONE",
+        "Secondary|Loading|True": null,
+        "Tertiary|Default|False": "NONE",
+        "Tertiary|Default|True": null,
+        "Tertiary|Disabled|False": "NONE",
+        "Tertiary|Disabled|True": null,
+        "Tertiary|Focused|False": "NONE",
+        "Tertiary|Focused|True": null,
+        "Tertiary|Hover|False": "NONE",
+        "Tertiary|Hover|True": null,
+        "Tertiary|Loading|False": "NONE",
+        "Tertiary|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "label.text": {
+      "determinant": [
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Default|False": "Button CTA",
+        "Disabled|False": "Button CTA",
+        "Focused|False": "Button CTA",
+        "Hover|False": "Button CTA",
+        "Loading|False": "Submitting...",
+        "Default|True": null,
+        "Disabled|True": null,
+        "Focused|True": null,
+        "Hover|True": null,
+        "Loading|True": null
+      },
+      "exceptions": []
+    },
+    "label.box.w": {
+      "determinant": null,
+      "kind": "derived",
+      "note": "computed by layout, verified visually"
+    },
+    "label.box.h": {
+      "determinant": [
+        "Size",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|False": 24,
+        "lg|True": null,
+        "md|False": 20,
+        "md|True": null,
+        "sm|False": 20,
+        "sm|True": null,
+        "xl|False": 24,
+        "xl|True": null,
+        "xs|False": 20,
+        "xs|True": null
+      },
+      "exceptions": []
+    },
+    "label.fontFamily": {
+      "determinant": [
+        "Icon only"
+      ],
+      "kind": "axis",
+      "values": {
+        "False": "Inter",
+        "True": null
+      },
+      "exceptions": []
+    },
+    "label.fontWeight": {
+      "determinant": [
+        "Icon only"
+      ],
+      "kind": "axis",
+      "values": {
+        "False": 600,
+        "True": null
+      },
+      "exceptions": []
+    },
+    "label.fontSize": {
+      "determinant": [
+        "Size",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|False": 16,
+        "lg|True": null,
+        "md|False": 14,
+        "md|True": null,
+        "sm|False": 14,
+        "sm|True": null,
+        "xl|False": 16,
+        "xl|True": null,
+        "xs|False": 14,
+        "xs|True": null
+      },
+      "exceptions": []
+    },
+    "label.lineHeight": {
+      "determinant": [
+        "Size",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|False": 24,
+        "lg|True": null,
+        "md|False": 20,
+        "md|True": null,
+        "sm|False": 20,
+        "sm|True": null,
+        "xl|False": 24,
+        "xl|True": null,
+        "xs|False": 20,
+        "xs|True": null
+      },
+      "exceptions": []
+    },
+    "label.letterSpacing": {
+      "determinant": [
+        "Icon only"
+      ],
+      "kind": "axis",
+      "values": {
+        "False": 0,
+        "True": null
+      },
+      "exceptions": []
+    },
+    "label.color": {
+      "determinant": [
+        "Hierarchy",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default|False": "#6941C6",
+        "Link color|Disabled|False": "#6941C6",
+        "Link color|Focused|False": "#6941C6",
+        "Link color|Hover|False": "#53389E",
+        "Link color|Loading|False": "#6941C6",
+        "Link gray|Default|False": "#525252",
+        "Link gray|Disabled|False": "#525252",
+        "Link gray|Focused|False": "#525252",
+        "Link gray|Hover|False": "#404040",
+        "Link gray|Loading|False": "#525252",
+        "Primary|Default|False": "#FFFFFF",
+        "Primary|Default|True": null,
+        "Primary|Disabled|False": "#FFFFFF",
+        "Primary|Disabled|True": null,
+        "Primary|Focused|False": "#FFFFFF",
+        "Primary|Focused|True": null,
+        "Primary|Hover|False": "#FFFFFF",
+        "Primary|Hover|True": null,
+        "Primary|Loading|False": "#FFFFFF",
+        "Primary|Loading|True": null,
+        "Secondary|Default|False": "#404040",
+        "Secondary|Default|True": null,
+        "Secondary|Disabled|False": "#404040",
+        "Secondary|Disabled|True": null,
+        "Secondary|Focused|False": "#404040",
+        "Secondary|Focused|True": null,
+        "Secondary|Hover|False": "#262626",
+        "Secondary|Hover|True": null,
+        "Secondary|Loading|False": "#404040",
+        "Secondary|Loading|True": null,
+        "Tertiary|Default|False": "#525252",
+        "Tertiary|Default|True": null,
+        "Tertiary|Disabled|False": "#525252",
+        "Tertiary|Disabled|True": null,
+        "Tertiary|Focused|False": "#525252",
+        "Tertiary|Focused|True": null,
+        "Tertiary|Hover|False": "#404040",
+        "Tertiary|Hover|True": null,
+        "Tertiary|Loading|False": "#525252",
+        "Tertiary|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[0].kind": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": "placeholder",
+        "Disabled": "placeholder",
+        "Focused": "placeholder",
+        "Hover": "placeholder",
+        "Loading": "spinner"
+      },
+      "exceptions": []
+    },
+    "icons[0].box.w": {
+      "determinant": [
+        "Size"
+      ],
+      "kind": "axis",
+      "values": {
+        "lg": 20,
+        "md": 20,
+        "sm": 20,
+        "xl": 20,
+        "xs": 16
+      },
+      "exceptions": []
+    },
+    "icons[0].box.h": {
+      "determinant": [
+        "Size"
+      ],
+      "kind": "axis",
+      "values": {
+        "lg": 20,
+        "md": 20,
+        "sm": 20,
+        "xl": 20,
+        "xs": 16
+      },
+      "exceptions": []
+    },
+    "icons[0].opacity": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": 1,
+        "Link color|Disabled": 1,
+        "Link color|Focused": 1,
+        "Link color|Hover": 1,
+        "Link color|Loading": 1,
+        "Link gray|Default": 1,
+        "Link gray|Disabled": 1,
+        "Link gray|Focused": 1,
+        "Link gray|Hover": 1,
+        "Link gray|Loading": 1,
+        "Primary|Default": 0.6,
+        "Primary|Disabled": 0.6,
+        "Primary|Focused": 0.6,
+        "Primary|Hover": 0.7,
+        "Primary|Loading": 0.6,
+        "Secondary|Default": 1,
+        "Secondary|Disabled": 1,
+        "Secondary|Focused": 1,
+        "Secondary|Hover": 1,
+        "Secondary|Loading": 1,
+        "Tertiary|Default": 1,
+        "Tertiary|Disabled": 1,
+        "Tertiary|Focused": 1,
+        "Tertiary|Hover": 1,
+        "Tertiary|Loading": 1
+      },
+      "exceptions": []
+    },
+    "icons[0].strokeWeight": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": 1.667,
+        "lg|Disabled": 1.667,
+        "lg|Focused": 1.667,
+        "lg|Hover": 1.667,
+        "lg|Loading": 2,
+        "md|Default": 1.667,
+        "md|Disabled": 1.667,
+        "md|Focused": 1.667,
+        "md|Hover": 1.667,
+        "md|Loading": 2,
+        "sm|Default": 1.667,
+        "sm|Disabled": 1.667,
+        "sm|Focused": 1.667,
+        "sm|Hover": 1.667,
+        "sm|Loading": 2,
+        "xl|Default": 1.667,
+        "xl|Disabled": 1.667,
+        "xl|Focused": 1.667,
+        "xl|Hover": 1.667,
+        "xl|Loading": 2,
+        "xs|Default": 1.5,
+        "xs|Disabled": 1.5,
+        "xs|Focused": 1.5,
+        "xs|Hover": 1.5,
+        "xs|Loading": 2
+      },
+      "exceptions": []
+    },
+    "icons[0].color": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": "#9E77ED",
+        "Link color|Disabled": "#9E77ED",
+        "Link color|Focused": "#9E77ED",
+        "Link color|Hover": "#7F56D9",
+        "Link color|Loading": "#9E77ED",
+        "Link gray|Default": "#A3A3A3",
+        "Link gray|Disabled": "#A3A3A3",
+        "Link gray|Focused": "#A3A3A3",
+        "Link gray|Hover": "#737373",
+        "Link gray|Loading": "#A3A3A3",
+        "Primary|Default": "#FFFFFF",
+        "Primary|Disabled": "#FFFFFF",
+        "Primary|Focused": "#FFFFFF",
+        "Primary|Hover": "#FFFFFF",
+        "Primary|Loading": "#FFFFFF",
+        "Secondary|Default": "#A3A3A3",
+        "Secondary|Disabled": "#A3A3A3",
+        "Secondary|Focused": "#A3A3A3",
+        "Secondary|Hover": "#737373",
+        "Secondary|Loading": "#A3A3A3",
+        "Tertiary|Default": "#A3A3A3",
+        "Tertiary|Disabled": "#A3A3A3",
+        "Tertiary|Focused": "#A3A3A3",
+        "Tertiary|Hover": "#737373",
+        "Tertiary|Loading": "#A3A3A3"
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].kind": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": "vector",
+        "Disabled": "vector",
+        "Focused": "vector",
+        "Hover": "vector",
+        "Loading": "ellipse"
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].name": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": "Icon",
+        "Disabled": "Icon",
+        "Focused": "Icon",
+        "Hover": "Icon",
+        "Loading": "Background"
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].box.w": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": 16.667,
+        "lg|Disabled": 16.667,
+        "lg|Focused": 16.667,
+        "lg|Hover": 16.667,
+        "lg|Loading": 18,
+        "md|Default": 16.667,
+        "md|Disabled": 16.667,
+        "md|Focused": 16.667,
+        "md|Hover": 16.667,
+        "md|Loading": 18,
+        "sm|Default": 16.667,
+        "sm|Disabled": 16.667,
+        "sm|Focused": 16.667,
+        "sm|Hover": 16.667,
+        "sm|Loading": 18,
+        "xl|Default": 16.667,
+        "xl|Disabled": 16.667,
+        "xl|Focused": 16.667,
+        "xl|Hover": 16.667,
+        "xl|Loading": 18,
+        "xs|Default": 13.333,
+        "xs|Disabled": 13.333,
+        "xs|Focused": 13.333,
+        "xs|Hover": 13.333,
+        "xs|Loading": 14.4
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].box.h": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": 16.667,
+        "lg|Disabled": 16.667,
+        "lg|Focused": 16.667,
+        "lg|Hover": 16.667,
+        "lg|Loading": 18,
+        "md|Default": 16.667,
+        "md|Disabled": 16.667,
+        "md|Focused": 16.667,
+        "md|Hover": 16.667,
+        "md|Loading": 18,
+        "sm|Default": 16.667,
+        "sm|Disabled": 16.667,
+        "sm|Focused": 16.667,
+        "sm|Hover": 16.667,
+        "sm|Loading": 18,
+        "xl|Default": 16.667,
+        "xl|Disabled": 16.667,
+        "xl|Focused": 16.667,
+        "xl|Hover": 16.667,
+        "xl|Loading": 18,
+        "xs|Default": 13.333,
+        "xs|Disabled": 13.333,
+        "xs|Focused": 13.333,
+        "xs|Hover": 13.333,
+        "xs|Loading": 14.4
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].opacity": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": 1,
+        "Disabled": 1,
+        "Focused": 1,
+        "Hover": 1,
+        "Loading": 0.3
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].strokeWeight": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": 1.667,
+        "lg|Disabled": 1.667,
+        "lg|Focused": 1.667,
+        "lg|Hover": 1.667,
+        "lg|Loading": 2,
+        "md|Default": 1.667,
+        "md|Disabled": 1.667,
+        "md|Focused": 1.667,
+        "md|Hover": 1.667,
+        "md|Loading": 2,
+        "sm|Default": 1.667,
+        "sm|Disabled": 1.667,
+        "sm|Focused": 1.667,
+        "sm|Hover": 1.667,
+        "sm|Loading": 2,
+        "xl|Default": 1.667,
+        "xl|Disabled": 1.667,
+        "xl|Focused": 1.667,
+        "xl|Hover": 1.667,
+        "xl|Loading": 2,
+        "xs|Default": 1.5,
+        "xs|Disabled": 1.5,
+        "xs|Focused": 1.5,
+        "xs|Hover": 1.5,
+        "xs|Loading": 2
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].arcData": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": null,
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "icons[1].kind": {
+      "determinant": [
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Default|False": "placeholder",
+        "Disabled|False": "placeholder",
+        "Focused|False": "placeholder",
+        "Hover|False": "placeholder",
+        "Loading|False": null,
+        "Default|True": null,
+        "Disabled|True": null,
+        "Focused|True": null,
+        "Hover|True": null,
+        "Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].box.w": {
+      "determinant": [
+        "Size",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default|False": 20,
+        "lg|Disabled|False": 20,
+        "lg|Focused|False": 20,
+        "lg|Hover|False": 20,
+        "lg|Loading|False": null,
+        "lg|Default|True": null,
+        "lg|Disabled|True": null,
+        "lg|Focused|True": null,
+        "lg|Hover|True": null,
+        "lg|Loading|True": null,
+        "md|Default|False": 20,
+        "md|Disabled|False": 20,
+        "md|Focused|False": 20,
+        "md|Hover|False": 20,
+        "md|Loading|False": null,
+        "md|Default|True": null,
+        "md|Disabled|True": null,
+        "md|Focused|True": null,
+        "md|Hover|True": null,
+        "md|Loading|True": null,
+        "sm|Default|False": 20,
+        "sm|Disabled|False": 20,
+        "sm|Focused|False": 20,
+        "sm|Hover|False": 20,
+        "sm|Loading|False": null,
+        "sm|Default|True": null,
+        "sm|Disabled|True": null,
+        "sm|Focused|True": null,
+        "sm|Hover|True": null,
+        "sm|Loading|True": null,
+        "xl|Default|False": 20,
+        "xl|Disabled|False": 20,
+        "xl|Focused|False": 20,
+        "xl|Hover|False": 20,
+        "xl|Loading|False": null,
+        "xl|Default|True": null,
+        "xl|Disabled|True": null,
+        "xl|Focused|True": null,
+        "xl|Hover|True": null,
+        "xl|Loading|True": null,
+        "xs|Default|False": 16,
+        "xs|Disabled|False": 16,
+        "xs|Focused|False": 16,
+        "xs|Hover|False": 16,
+        "xs|Loading|False": null,
+        "xs|Default|True": null,
+        "xs|Disabled|True": null,
+        "xs|Focused|True": null,
+        "xs|Hover|True": null,
+        "xs|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].box.h": {
+      "determinant": [
+        "Size",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default|False": 20,
+        "lg|Disabled|False": 20,
+        "lg|Focused|False": 20,
+        "lg|Hover|False": 20,
+        "lg|Loading|False": null,
+        "lg|Default|True": null,
+        "lg|Disabled|True": null,
+        "lg|Focused|True": null,
+        "lg|Hover|True": null,
+        "lg|Loading|True": null,
+        "md|Default|False": 20,
+        "md|Disabled|False": 20,
+        "md|Focused|False": 20,
+        "md|Hover|False": 20,
+        "md|Loading|False": null,
+        "md|Default|True": null,
+        "md|Disabled|True": null,
+        "md|Focused|True": null,
+        "md|Hover|True": null,
+        "md|Loading|True": null,
+        "sm|Default|False": 20,
+        "sm|Disabled|False": 20,
+        "sm|Focused|False": 20,
+        "sm|Hover|False": 20,
+        "sm|Loading|False": null,
+        "sm|Default|True": null,
+        "sm|Disabled|True": null,
+        "sm|Focused|True": null,
+        "sm|Hover|True": null,
+        "sm|Loading|True": null,
+        "xl|Default|False": 20,
+        "xl|Disabled|False": 20,
+        "xl|Focused|False": 20,
+        "xl|Hover|False": 20,
+        "xl|Loading|False": null,
+        "xl|Default|True": null,
+        "xl|Disabled|True": null,
+        "xl|Focused|True": null,
+        "xl|Hover|True": null,
+        "xl|Loading|True": null,
+        "xs|Default|False": 16,
+        "xs|Disabled|False": 16,
+        "xs|Focused|False": 16,
+        "xs|Hover|False": 16,
+        "xs|Loading|False": null,
+        "xs|Default|True": null,
+        "xs|Disabled|True": null,
+        "xs|Focused|True": null,
+        "xs|Hover|True": null,
+        "xs|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].opacity": {
+      "determinant": [
+        "Hierarchy",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default|False": 1,
+        "Link color|Disabled|False": 1,
+        "Link color|Focused|False": 1,
+        "Link color|Hover|False": 1,
+        "Link color|Loading|False": null,
+        "Link gray|Default|False": 1,
+        "Link gray|Disabled|False": 1,
+        "Link gray|Focused|False": 1,
+        "Link gray|Hover|False": 1,
+        "Link gray|Loading|False": null,
+        "Primary|Default|False": 0.6,
+        "Primary|Default|True": null,
+        "Primary|Disabled|False": 0.6,
+        "Primary|Disabled|True": null,
+        "Primary|Focused|False": 0.6,
+        "Primary|Focused|True": null,
+        "Primary|Hover|False": 0.7,
+        "Primary|Hover|True": null,
+        "Primary|Loading|False": null,
+        "Primary|Loading|True": null,
+        "Secondary|Default|False": 1,
+        "Secondary|Default|True": null,
+        "Secondary|Disabled|False": 1,
+        "Secondary|Disabled|True": null,
+        "Secondary|Focused|False": 1,
+        "Secondary|Focused|True": null,
+        "Secondary|Hover|False": 1,
+        "Secondary|Hover|True": null,
+        "Secondary|Loading|False": null,
+        "Secondary|Loading|True": null,
+        "Tertiary|Default|False": 1,
+        "Tertiary|Default|True": null,
+        "Tertiary|Disabled|False": 1,
+        "Tertiary|Disabled|True": null,
+        "Tertiary|Focused|False": 1,
+        "Tertiary|Focused|True": null,
+        "Tertiary|Hover|False": 1,
+        "Tertiary|Hover|True": null,
+        "Tertiary|Loading|False": null,
+        "Tertiary|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].strokeWeight": {
+      "determinant": [
+        "Size",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default|False": 1.667,
+        "lg|Disabled|False": 1.667,
+        "lg|Focused|False": 1.667,
+        "lg|Hover|False": 1.667,
+        "lg|Loading|False": null,
+        "lg|Default|True": null,
+        "lg|Disabled|True": null,
+        "lg|Focused|True": null,
+        "lg|Hover|True": null,
+        "lg|Loading|True": null,
+        "md|Default|False": 1.667,
+        "md|Disabled|False": 1.667,
+        "md|Focused|False": 1.667,
+        "md|Hover|False": 1.667,
+        "md|Loading|False": null,
+        "md|Default|True": null,
+        "md|Disabled|True": null,
+        "md|Focused|True": null,
+        "md|Hover|True": null,
+        "md|Loading|True": null,
+        "sm|Default|False": 1.667,
+        "sm|Disabled|False": 1.667,
+        "sm|Focused|False": 1.667,
+        "sm|Hover|False": 1.667,
+        "sm|Loading|False": null,
+        "sm|Default|True": null,
+        "sm|Disabled|True": null,
+        "sm|Focused|True": null,
+        "sm|Hover|True": null,
+        "sm|Loading|True": null,
+        "xl|Default|False": 1.667,
+        "xl|Disabled|False": 1.667,
+        "xl|Focused|False": 1.667,
+        "xl|Hover|False": 1.667,
+        "xl|Loading|False": null,
+        "xl|Default|True": null,
+        "xl|Disabled|True": null,
+        "xl|Focused|True": null,
+        "xl|Hover|True": null,
+        "xl|Loading|True": null,
+        "xs|Default|False": 1.5,
+        "xs|Disabled|False": 1.5,
+        "xs|Focused|False": 1.5,
+        "xs|Hover|False": 1.5,
+        "xs|Loading|False": null,
+        "xs|Default|True": null,
+        "xs|Disabled|True": null,
+        "xs|Focused|True": null,
+        "xs|Hover|True": null,
+        "xs|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].color": {
+      "determinant": [
+        "Hierarchy",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default|False": "#9E77ED",
+        "Link color|Disabled|False": "#9E77ED",
+        "Link color|Focused|False": "#9E77ED",
+        "Link color|Hover|False": "#7F56D9",
+        "Link color|Loading|False": null,
+        "Link gray|Default|False": "#A3A3A3",
+        "Link gray|Disabled|False": "#A3A3A3",
+        "Link gray|Focused|False": "#A3A3A3",
+        "Link gray|Hover|False": "#737373",
+        "Link gray|Loading|False": null,
+        "Primary|Default|False": "#FFFFFF",
+        "Primary|Default|True": null,
+        "Primary|Disabled|False": "#FFFFFF",
+        "Primary|Disabled|True": null,
+        "Primary|Focused|False": "#FFFFFF",
+        "Primary|Focused|True": null,
+        "Primary|Hover|False": "#FFFFFF",
+        "Primary|Hover|True": null,
+        "Primary|Loading|False": null,
+        "Primary|Loading|True": null,
+        "Secondary|Default|False": "#A3A3A3",
+        "Secondary|Default|True": null,
+        "Secondary|Disabled|False": "#A3A3A3",
+        "Secondary|Disabled|True": null,
+        "Secondary|Focused|False": "#A3A3A3",
+        "Secondary|Focused|True": null,
+        "Secondary|Hover|False": "#737373",
+        "Secondary|Hover|True": null,
+        "Secondary|Loading|False": null,
+        "Secondary|Loading|True": null,
+        "Tertiary|Default|False": "#A3A3A3",
+        "Tertiary|Default|True": null,
+        "Tertiary|Disabled|False": "#A3A3A3",
+        "Tertiary|Disabled|True": null,
+        "Tertiary|Focused|False": "#A3A3A3",
+        "Tertiary|Focused|True": null,
+        "Tertiary|Hover|False": "#737373",
+        "Tertiary|Hover|True": null,
+        "Tertiary|Loading|False": null,
+        "Tertiary|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].kind": {
+      "determinant": [
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Default|False": "vector",
+        "Disabled|False": "vector",
+        "Focused|False": "vector",
+        "Hover|False": "vector",
+        "Loading|False": null,
+        "Default|True": null,
+        "Disabled|True": null,
+        "Focused|True": null,
+        "Hover|True": null,
+        "Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].name": {
+      "determinant": [
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Default|False": "Icon",
+        "Disabled|False": "Icon",
+        "Focused|False": "Icon",
+        "Hover|False": "Icon",
+        "Loading|False": null,
+        "Default|True": null,
+        "Disabled|True": null,
+        "Focused|True": null,
+        "Hover|True": null,
+        "Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].box.w": {
+      "determinant": [
+        "Size",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default|False": 16.667,
+        "lg|Disabled|False": 16.667,
+        "lg|Focused|False": 16.667,
+        "lg|Hover|False": 16.667,
+        "lg|Loading|False": null,
+        "lg|Default|True": null,
+        "lg|Disabled|True": null,
+        "lg|Focused|True": null,
+        "lg|Hover|True": null,
+        "lg|Loading|True": null,
+        "md|Default|False": 16.667,
+        "md|Disabled|False": 16.667,
+        "md|Focused|False": 16.667,
+        "md|Hover|False": 16.667,
+        "md|Loading|False": null,
+        "md|Default|True": null,
+        "md|Disabled|True": null,
+        "md|Focused|True": null,
+        "md|Hover|True": null,
+        "md|Loading|True": null,
+        "sm|Default|False": 16.667,
+        "sm|Disabled|False": 16.667,
+        "sm|Focused|False": 16.667,
+        "sm|Hover|False": 16.667,
+        "sm|Loading|False": null,
+        "sm|Default|True": null,
+        "sm|Disabled|True": null,
+        "sm|Focused|True": null,
+        "sm|Hover|True": null,
+        "sm|Loading|True": null,
+        "xl|Default|False": 16.667,
+        "xl|Disabled|False": 16.667,
+        "xl|Focused|False": 16.667,
+        "xl|Hover|False": 16.667,
+        "xl|Loading|False": null,
+        "xl|Default|True": null,
+        "xl|Disabled|True": null,
+        "xl|Focused|True": null,
+        "xl|Hover|True": null,
+        "xl|Loading|True": null,
+        "xs|Default|False": 13.333,
+        "xs|Disabled|False": 13.333,
+        "xs|Focused|False": 13.333,
+        "xs|Hover|False": 13.333,
+        "xs|Loading|False": null,
+        "xs|Default|True": null,
+        "xs|Disabled|True": null,
+        "xs|Focused|True": null,
+        "xs|Hover|True": null,
+        "xs|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].box.h": {
+      "determinant": [
+        "Size",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default|False": 16.667,
+        "lg|Disabled|False": 16.667,
+        "lg|Focused|False": 16.667,
+        "lg|Hover|False": 16.667,
+        "lg|Loading|False": null,
+        "lg|Default|True": null,
+        "lg|Disabled|True": null,
+        "lg|Focused|True": null,
+        "lg|Hover|True": null,
+        "lg|Loading|True": null,
+        "md|Default|False": 16.667,
+        "md|Disabled|False": 16.667,
+        "md|Focused|False": 16.667,
+        "md|Hover|False": 16.667,
+        "md|Loading|False": null,
+        "md|Default|True": null,
+        "md|Disabled|True": null,
+        "md|Focused|True": null,
+        "md|Hover|True": null,
+        "md|Loading|True": null,
+        "sm|Default|False": 16.667,
+        "sm|Disabled|False": 16.667,
+        "sm|Focused|False": 16.667,
+        "sm|Hover|False": 16.667,
+        "sm|Loading|False": null,
+        "sm|Default|True": null,
+        "sm|Disabled|True": null,
+        "sm|Focused|True": null,
+        "sm|Hover|True": null,
+        "sm|Loading|True": null,
+        "xl|Default|False": 16.667,
+        "xl|Disabled|False": 16.667,
+        "xl|Focused|False": 16.667,
+        "xl|Hover|False": 16.667,
+        "xl|Loading|False": null,
+        "xl|Default|True": null,
+        "xl|Disabled|True": null,
+        "xl|Focused|True": null,
+        "xl|Hover|True": null,
+        "xl|Loading|True": null,
+        "xs|Default|False": 13.333,
+        "xs|Disabled|False": 13.333,
+        "xs|Focused|False": 13.333,
+        "xs|Hover|False": 13.333,
+        "xs|Loading|False": null,
+        "xs|Default|True": null,
+        "xs|Disabled|True": null,
+        "xs|Focused|True": null,
+        "xs|Hover|True": null,
+        "xs|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].opacity": {
+      "determinant": [
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "Default|False": 1,
+        "Disabled|False": 1,
+        "Focused|False": 1,
+        "Hover|False": 1,
+        "Loading|False": null,
+        "Default|True": null,
+        "Disabled|True": null,
+        "Focused|True": null,
+        "Hover|True": null,
+        "Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].strokeWeight": {
+      "determinant": [
+        "Size",
+        "State",
+        "Icon only"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default|False": 1.667,
+        "lg|Disabled|False": 1.667,
+        "lg|Focused|False": 1.667,
+        "lg|Hover|False": 1.667,
+        "lg|Loading|False": null,
+        "lg|Default|True": null,
+        "lg|Disabled|True": null,
+        "lg|Focused|True": null,
+        "lg|Hover|True": null,
+        "lg|Loading|True": null,
+        "md|Default|False": 1.667,
+        "md|Disabled|False": 1.667,
+        "md|Focused|False": 1.667,
+        "md|Hover|False": 1.667,
+        "md|Loading|False": null,
+        "md|Default|True": null,
+        "md|Disabled|True": null,
+        "md|Focused|True": null,
+        "md|Hover|True": null,
+        "md|Loading|True": null,
+        "sm|Default|False": 1.667,
+        "sm|Disabled|False": 1.667,
+        "sm|Focused|False": 1.667,
+        "sm|Hover|False": 1.667,
+        "sm|Loading|False": null,
+        "sm|Default|True": null,
+        "sm|Disabled|True": null,
+        "sm|Focused|True": null,
+        "sm|Hover|True": null,
+        "sm|Loading|True": null,
+        "xl|Default|False": 1.667,
+        "xl|Disabled|False": 1.667,
+        "xl|Focused|False": 1.667,
+        "xl|Hover|False": 1.667,
+        "xl|Loading|False": null,
+        "xl|Default|True": null,
+        "xl|Disabled|True": null,
+        "xl|Focused|True": null,
+        "xl|Hover|True": null,
+        "xl|Loading|True": null,
+        "xs|Default|False": 1.5,
+        "xs|Disabled|False": 1.5,
+        "xs|Focused|False": 1.5,
+        "xs|Hover|False": 1.5,
+        "xs|Loading|False": null,
+        "xs|Default|True": null,
+        "xs|Disabled|True": null,
+        "xs|Focused|True": null,
+        "xs|Hover|True": null,
+        "xs|Loading|True": null
+      },
+      "exceptions": []
+    },
+    "icons[1].parts[0].arcData": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": null,
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].arcData.endingAngle": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 6.283185958862305
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].arcData.innerRadius": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 1
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[0].arcData.startingAngle": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 0
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].kind": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": "ellipse"
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].name": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": "Line"
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].box.w": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": null,
+        "lg|Disabled": null,
+        "lg|Focused": null,
+        "lg|Hover": null,
+        "lg|Loading": 18,
+        "md|Default": null,
+        "md|Disabled": null,
+        "md|Focused": null,
+        "md|Hover": null,
+        "md|Loading": 18,
+        "sm|Default": null,
+        "sm|Disabled": null,
+        "sm|Focused": null,
+        "sm|Hover": null,
+        "sm|Loading": 18,
+        "xl|Default": null,
+        "xl|Disabled": null,
+        "xl|Focused": null,
+        "xl|Hover": null,
+        "xl|Loading": 18,
+        "xs|Default": null,
+        "xs|Disabled": null,
+        "xs|Focused": null,
+        "xs|Hover": null,
+        "xs|Loading": 14.4
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].box.h": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": null,
+        "lg|Disabled": null,
+        "lg|Focused": null,
+        "lg|Hover": null,
+        "lg|Loading": 18,
+        "md|Default": null,
+        "md|Disabled": null,
+        "md|Focused": null,
+        "md|Hover": null,
+        "md|Loading": 18,
+        "sm|Default": null,
+        "sm|Disabled": null,
+        "sm|Focused": null,
+        "sm|Hover": null,
+        "sm|Loading": 18,
+        "xl|Default": null,
+        "xl|Disabled": null,
+        "xl|Focused": null,
+        "xl|Hover": null,
+        "xl|Loading": 18,
+        "xs|Default": null,
+        "xs|Disabled": null,
+        "xs|Focused": null,
+        "xs|Hover": null,
+        "xs|Loading": 14.4
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].opacity": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 1
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].strokeWeight": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 2
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].arcData.endingAngle": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 6.2831854820251465
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].arcData.innerRadius": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 1
+      },
+      "exceptions": []
+    },
+    "icons[0].parts[1].arcData.startingAngle": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 4.71238899230957
+      },
+      "exceptions": []
+    },
+    "spinner.box.w": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": null,
+        "lg|Disabled": null,
+        "lg|Focused": null,
+        "lg|Hover": null,
+        "lg|Loading": 20,
+        "md|Default": null,
+        "md|Disabled": null,
+        "md|Focused": null,
+        "md|Hover": null,
+        "md|Loading": 20,
+        "sm|Default": null,
+        "sm|Disabled": null,
+        "sm|Focused": null,
+        "sm|Hover": null,
+        "sm|Loading": 20,
+        "xl|Default": null,
+        "xl|Disabled": null,
+        "xl|Focused": null,
+        "xl|Hover": null,
+        "xl|Loading": 20,
+        "xs|Default": null,
+        "xs|Disabled": null,
+        "xs|Focused": null,
+        "xs|Hover": null,
+        "xs|Loading": 16
+      },
+      "exceptions": []
+    },
+    "spinner.box.h": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": null,
+        "lg|Disabled": null,
+        "lg|Focused": null,
+        "lg|Hover": null,
+        "lg|Loading": 20,
+        "md|Default": null,
+        "md|Disabled": null,
+        "md|Focused": null,
+        "md|Hover": null,
+        "md|Loading": 20,
+        "sm|Default": null,
+        "sm|Disabled": null,
+        "sm|Focused": null,
+        "sm|Hover": null,
+        "sm|Loading": 20,
+        "xl|Default": null,
+        "xl|Disabled": null,
+        "xl|Focused": null,
+        "xl|Hover": null,
+        "xl|Loading": 20,
+        "xs|Default": null,
+        "xs|Disabled": null,
+        "xs|Focused": null,
+        "xs|Hover": null,
+        "xs|Loading": 16
+      },
+      "exceptions": []
+    },
+    "spinner.opacity": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": null,
+        "Link color|Hover": null,
+        "Link color|Loading": 1,
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": null,
+        "Link gray|Hover": null,
+        "Link gray|Loading": 1,
+        "Primary|Default": null,
+        "Primary|Disabled": null,
+        "Primary|Focused": null,
+        "Primary|Hover": null,
+        "Primary|Loading": 0.6,
+        "Secondary|Default": null,
+        "Secondary|Disabled": null,
+        "Secondary|Focused": null,
+        "Secondary|Hover": null,
+        "Secondary|Loading": 1,
+        "Tertiary|Default": null,
+        "Tertiary|Disabled": null,
+        "Tertiary|Focused": null,
+        "Tertiary|Hover": null,
+        "Tertiary|Loading": 1
+      },
+      "exceptions": []
+    },
+    "spinner.track.opacity": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 0.3
+      },
+      "exceptions": []
+    },
+    "spinner.track.strokeWeight": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 2
+      },
+      "exceptions": []
+    },
+    "spinner.track.color": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": null,
+        "Link color|Hover": null,
+        "Link color|Loading": "#9E77ED",
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": null,
+        "Link gray|Hover": null,
+        "Link gray|Loading": "#A3A3A3",
+        "Primary|Default": null,
+        "Primary|Disabled": null,
+        "Primary|Focused": null,
+        "Primary|Hover": null,
+        "Primary|Loading": "#FFFFFF",
+        "Secondary|Default": null,
+        "Secondary|Disabled": null,
+        "Secondary|Focused": null,
+        "Secondary|Hover": null,
+        "Secondary|Loading": "#A3A3A3",
+        "Tertiary|Default": null,
+        "Tertiary|Disabled": null,
+        "Tertiary|Focused": null,
+        "Tertiary|Hover": null,
+        "Tertiary|Loading": "#A3A3A3"
+      },
+      "exceptions": []
+    },
+    "spinner.track.d": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": null,
+        "lg|Disabled": null,
+        "lg|Focused": null,
+        "lg|Hover": null,
+        "lg|Loading": "M17 9A8 8 0 1 1 1 9A8 8 0 1 1 17 9",
+        "md|Default": null,
+        "md|Disabled": null,
+        "md|Focused": null,
+        "md|Hover": null,
+        "md|Loading": "M17 9A8 8 0 1 1 1 9A8 8 0 1 1 17 9",
+        "sm|Default": null,
+        "sm|Disabled": null,
+        "sm|Focused": null,
+        "sm|Hover": null,
+        "sm|Loading": "M17 9A8 8 0 1 1 1 9A8 8 0 1 1 17 9",
+        "xl|Default": null,
+        "xl|Disabled": null,
+        "xl|Focused": null,
+        "xl|Hover": null,
+        "xl|Loading": "M17 9A8 8 0 1 1 1 9A8 8 0 1 1 17 9",
+        "xs|Default": null,
+        "xs|Disabled": null,
+        "xs|Focused": null,
+        "xs|Hover": null,
+        "xs|Loading": "M13.4 7.2A6.2 6.2 0 1 1 1 7.2A6.2 6.2 0 1 1 13.4 7.2"
+      },
+      "exceptions": []
+    },
+    "spinner.arc.opacity": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 1
+      },
+      "exceptions": []
+    },
+    "spinner.arc.strokeWeight": {
+      "determinant": [
+        "State"
+      ],
+      "kind": "axis",
+      "values": {
+        "Default": null,
+        "Disabled": null,
+        "Focused": null,
+        "Hover": null,
+        "Loading": 2
+      },
+      "exceptions": []
+    },
+    "spinner.arc.color": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": null,
+        "Link color|Hover": null,
+        "Link color|Loading": "#9E77ED",
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": null,
+        "Link gray|Hover": null,
+        "Link gray|Loading": "#A3A3A3",
+        "Primary|Default": null,
+        "Primary|Disabled": null,
+        "Primary|Focused": null,
+        "Primary|Hover": null,
+        "Primary|Loading": "#FFFFFF",
+        "Secondary|Default": null,
+        "Secondary|Disabled": null,
+        "Secondary|Focused": null,
+        "Secondary|Hover": null,
+        "Secondary|Loading": "#A3A3A3",
+        "Tertiary|Default": null,
+        "Tertiary|Disabled": null,
+        "Tertiary|Focused": null,
+        "Tertiary|Hover": null,
+        "Tertiary|Loading": "#A3A3A3"
+      },
+      "exceptions": []
+    },
+    "spinner.arc.d": {
+      "determinant": [
+        "Size",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "lg|Default": null,
+        "lg|Disabled": null,
+        "lg|Focused": null,
+        "lg|Hover": null,
+        "lg|Loading": "M9 1A8 8 0 0 1 17 9",
+        "md|Default": null,
+        "md|Disabled": null,
+        "md|Focused": null,
+        "md|Hover": null,
+        "md|Loading": "M9 1A8 8 0 0 1 17 9",
+        "sm|Default": null,
+        "sm|Disabled": null,
+        "sm|Focused": null,
+        "sm|Hover": null,
+        "sm|Loading": "M9 1A8 8 0 0 1 17 9",
+        "xl|Default": null,
+        "xl|Disabled": null,
+        "xl|Focused": null,
+        "xl|Hover": null,
+        "xl|Loading": "M9 1A8 8 0 0 1 17 9",
+        "xs|Default": null,
+        "xs|Disabled": null,
+        "xs|Focused": null,
+        "xs|Hover": null,
+        "xs|Loading": "M7.2 1A6.2 6.2 0 0 1 13.4 7.2"
+      },
+      "exceptions": []
+    },
+    "stroke.type": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": "GRADIENT_LINEAR",
+        "Secondary": "SOLID",
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "stroke.weight": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": 2,
+        "Secondary": 1,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "stroke.stops[0].at": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": 0,
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "stroke.stops[0].color": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": "rgba(255, 255, 255, 0.12)",
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "stroke.stops[1].at": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": 1,
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "stroke.stops[1].color": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": "rgba(255, 255, 255, 0)",
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "label": {
+      "determinant": [
+        "Hierarchy"
+      ],
+      "kind": "axis",
+      "values": {
+        "Link color": null,
+        "Link gray": null,
+        "Primary": null,
+        "Secondary": null,
+        "Tertiary": null
+      },
+      "exceptions": []
+    },
+    "stroke.color": {
+      "determinant": [
+        "Hierarchy",
+        "State"
+      ],
+      "kind": "compound",
+      "values": {
+        "Link color|Default": null,
+        "Link color|Disabled": null,
+        "Link color|Focused": null,
+        "Link color|Hover": null,
+        "Link color|Loading": null,
+        "Link gray|Default": null,
+        "Link gray|Disabled": null,
+        "Link gray|Focused": null,
+        "Link gray|Hover": null,
+        "Link gray|Loading": null,
+        "Primary|Default": null,
+        "Primary|Disabled": null,
+        "Primary|Focused": null,
+        "Primary|Hover": null,
+        "Primary|Loading": null,
+        "Secondary|Default": "#D4D4D4",
+        "Secondary|Disabled": "#E5E5E5",
+        "Secondary|Focused": "#D4D4D4",
+        "Secondary|Hover": "#D4D4D4",
+        "Secondary|Loading": "#D4D4D4",
+        "Tertiary|Default": null,
+        "Tertiary|Disabled": null,
+        "Tertiary|Focused": null,
+        "Tertiary|Hover": null,
+        "Tertiary|Loading": null
+      },
+      "exceptions": []
+    }
+  },
+  "summary": {
+    "derived": 2,
+    "compound": 42,
+    "axis": 34
+  },
+  "verification": {
+    "checkedProperties": 15200,
+    "failures": 0,
+    "failuresDetail": []
+  }
+}

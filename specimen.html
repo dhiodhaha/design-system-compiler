@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440, initial-scale=1.0" />
+    <title>Golden specimen — Button</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #specimen {
+        /* zero-origin stage: keeps screenshot clip coordinates equal to DOM coordinates.
+           The stage is pinned to the Figma specimen box (node 12246:5764, 142x32) so captures are
+           size-stable: a hug-width difference in the component shows up as content shift, not canvas
+           mismatch. flex avoids line-box/baseline offsets around the inline-flex button. */
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 142px;
+        height: 32px;
+      }
+      #specimen button > [data-slot="label"] {
+        /* Recorded exception (see .design-compiler/exceptions.json#button-label-box-rounding):
+           Figma's hug text box for "Button CTA" is 78px (integer-rounded) + 2px inline padding each side
+           = 82px; Chromium keeps the 77.359px fractional advance with pixel-identical glyph ink.
+           Pinned here, in the specimen harness only, so the shipped component carries no
+           specimen-specific constant. */
+        inline-size: 78px; /* content box: the 2px inline padding sits outside it (see exceptions.json) */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="specimen"></div>
+    <script type="module" src="/src/specimen.tsx"></script>
+  </body>
+</html>

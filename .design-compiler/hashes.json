@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    ".design-compiler/raw/figma-button-set-shallow.json": "ba6bd848cf268577",
+    ".design-compiler/raw/figma-golden-deep.json": "49c05318fc30b403",
+    ".design-compiler/reference/golden.svg": "fce6791ad393f1df"
+  },
+  "outputs": {
+    ".design-compiler/ir/button.component.json": "0fe3c19ff28b04ab",
+    ".design-compiler/tokens.json": "63dcbac8e459a5a5",
+    ".design-compiler/manifest.json": "cf0407ded0ed7180",
+    ".design-compiler/mappings.json": "a5c8653d2f44494c",
+    "src/styles/tokens.css": "2860bc0741157a5f"
+  }
+}

@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Semantic tokens generated from .design-compiler/tokens.json by scripts/gen-tokens.mjs. Do not hand-edit. */
+@import "./styles/tokens.css";
+
+/* Component rule matrix generated from .design-compiler/ir/button.rules.json. Do not hand-edit. */
+@import "./styles/button.theme.css";

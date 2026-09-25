@@ -1,0 +1,6274 @@
+{
+  "$schema": "design-compiler/ComponentIR@p0",
+  "figma": {
+    "fileKey": "sLqnzw7tFXpuPA1TbqsjZx",
+    "componentSetId": "<REDACTED>",
+    "componentSetName": "Buttons/Button",
+    "nodeUrl": "https://www.figma.com/design/sLqnzw7tFXpuPA1TbqsjZx/?node-id=3287-427074"
+  },
+  "semanticRole": "action",
+  "axes": {
+    "Hierarchy": {
+      "values": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Link color",
+        "Link gray"
+      ],
+      "default": "Primary",
+      "type": "VARIANT"
+    },
+    "Size": {
+      "values": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ],
+      "default": "xs",
+      "type": "VARIANT"
+    },
+    "State": {
+      "values": [
+        "Default",
+        "Hover",
+        "Focused",
+        "Disabled",
+        "Loading"
+      ],
+      "default": "Default",
+      "type": "VARIANT"
+    },
+    "Icon only": {
+      "values": [
+        "False",
+        "True"
+      ],
+      "default": "False",
+      "type": "VARIANT"
+    }
+  },
+  "booleanProps": {
+    "Loading text#8468:0": {
+      "type": "BOOLEAN",
+      "default": true
+    },
+    "➡️ Icon trailing#3287:2338": {
+      "type": "BOOLEAN",
+      "default": true
+    },
+    "⬅️ Icon leading#3287:1577": {
+      "type": "BOOLEAN",
+      "default": true
+    },
+    "🔀 Icon leading swap#3466:91": {
+      "type": "INSTANCE_SWAP",
+      "default": "3465:410042"
+    },
+    "🔀 Icon trailing swap#3466:852": {
+      "type": "INSTANCE_SWAP",
+      "default": "3465:410042"
+    }
+  },
+  "variantCount": 200,
+  "sizeScale": {
+    "xs": {
+      "height": 32,
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8
+    },
+    "sm": {
+      "height": 36,
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8
+    },
+    "md": {
+      "height": 40,
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8
+    },
+    "lg": {
+      "height": 44,
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8
+    },
+    "xl": {
+      "height": 48,
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8
+    }
+  },
+  "iconOnlyScale": {
+    "xs": {
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "radius": 8
+    },
+    "sm": {
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "radius": 8
+    },
+    "md": {
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "radius": 8
+    },
+    "lg": {
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "radius": 8
+    },
+    "xl": {
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "radius": 8
+    }
+  },
+  "variantMatrix": [
+    {
+      "nodeId": "3287:427299",
+      "name": "Size=md, Hierarchy=Primary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427307",
+      "name": "Size=md, Hierarchy=Link color, State=Default, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link color",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427311",
+      "name": "Size=md, Hierarchy=Link gray, State=Default, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link gray",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427319",
+      "name": "Size=md, Hierarchy=Tertiary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427323",
+      "name": "Size=md, Hierarchy=Secondary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427327",
+      "name": "Size=md, Hierarchy=Primary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427335",
+      "name": "Size=md, Hierarchy=Link color, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link color",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427339",
+      "name": "Size=md, Hierarchy=Link gray, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link gray",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427347",
+      "name": "Size=md, Hierarchy=Tertiary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427351",
+      "name": "Size=md, Hierarchy=Secondary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:427355",
+      "name": "Size=md, Hierarchy=Primary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427363",
+      "name": "Size=md, Hierarchy=Link color, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link color",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427367",
+      "name": "Size=md, Hierarchy=Link gray, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link gray",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427375",
+      "name": "Size=md, Hierarchy=Tertiary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427379",
+      "name": "Size=md, Hierarchy=Secondary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427383",
+      "name": "Size=md, Hierarchy=Primary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427391",
+      "name": "Size=md, Hierarchy=Link color, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link color",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427395",
+      "name": "Size=md, Hierarchy=Link gray, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link gray",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427403",
+      "name": "Size=md, Hierarchy=Tertiary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427407",
+      "name": "Size=md, Hierarchy=Secondary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427415",
+      "name": "Size=md, Hierarchy=Primary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427447",
+      "name": "Size=md, Hierarchy=Tertiary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427455",
+      "name": "Size=md, Hierarchy=Secondary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427463",
+      "name": "Size=md, Hierarchy=Primary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427495",
+      "name": "Size=md, Hierarchy=Tertiary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427503",
+      "name": "Size=md, Hierarchy=Secondary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:427511",
+      "name": "Size=md, Hierarchy=Primary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427543",
+      "name": "Size=md, Hierarchy=Tertiary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427551",
+      "name": "Size=md, Hierarchy=Secondary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427559",
+      "name": "Size=md, Hierarchy=Primary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427591",
+      "name": "Size=md, Hierarchy=Tertiary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427599",
+      "name": "Size=md, Hierarchy=Secondary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427827",
+      "name": "Size=lg, Hierarchy=Primary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427835",
+      "name": "Size=lg, Hierarchy=Link color, State=Default, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link color",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427839",
+      "name": "Size=lg, Hierarchy=Link gray, State=Default, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link gray",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427847",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427851",
+      "name": "Size=lg, Hierarchy=Secondary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427855",
+      "name": "Size=lg, Hierarchy=Primary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427863",
+      "name": "Size=lg, Hierarchy=Link color, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link color",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427867",
+      "name": "Size=lg, Hierarchy=Link gray, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link gray",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427875",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427879",
+      "name": "Size=lg, Hierarchy=Secondary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:427883",
+      "name": "Size=lg, Hierarchy=Primary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427891",
+      "name": "Size=lg, Hierarchy=Link color, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link color",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427895",
+      "name": "Size=lg, Hierarchy=Link gray, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link gray",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427903",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:427907",
+      "name": "Size=lg, Hierarchy=Secondary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427911",
+      "name": "Size=lg, Hierarchy=Primary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427919",
+      "name": "Size=lg, Hierarchy=Link color, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link color",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427923",
+      "name": "Size=lg, Hierarchy=Link gray, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link gray",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427931",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427935",
+      "name": "Size=lg, Hierarchy=Secondary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 177,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427943",
+      "name": "Size=lg, Hierarchy=Primary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427975",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:427983",
+      "name": "Size=lg, Hierarchy=Secondary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:427991",
+      "name": "Size=lg, Hierarchy=Primary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428023",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428031",
+      "name": "Size=lg, Hierarchy=Secondary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:428039",
+      "name": "Size=lg, Hierarchy=Primary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428071",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:428079",
+      "name": "Size=lg, Hierarchy=Secondary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428087",
+      "name": "Size=lg, Hierarchy=Primary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428119",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428127",
+      "name": "Size=lg, Hierarchy=Secondary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428579",
+      "name": "Size=xl, Hierarchy=Primary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428595",
+      "name": "Size=xl, Hierarchy=Link color, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link color",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428603",
+      "name": "Size=xl, Hierarchy=Link gray, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link gray",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428619",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428627",
+      "name": "Size=xl, Hierarchy=Secondary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428635",
+      "name": "Size=xl, Hierarchy=Primary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428651",
+      "name": "Size=xl, Hierarchy=Link color, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link color",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428659",
+      "name": "Size=xl, Hierarchy=Link gray, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link gray",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428675",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428683",
+      "name": "Size=xl, Hierarchy=Secondary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:428691",
+      "name": "Size=xl, Hierarchy=Primary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428707",
+      "name": "Size=xl, Hierarchy=Link color, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link color",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:428715",
+      "name": "Size=xl, Hierarchy=Link gray, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link gray",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:428731",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:428739",
+      "name": "Size=xl, Hierarchy=Secondary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428747",
+      "name": "Size=xl, Hierarchy=Primary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428763",
+      "name": "Size=xl, Hierarchy=Link color, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link color",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428771",
+      "name": "Size=xl, Hierarchy=Link gray, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link gray",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428787",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428795",
+      "name": "Size=xl, Hierarchy=Secondary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 181,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428811",
+      "name": "Size=xl, Hierarchy=Primary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428875",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428891",
+      "name": "Size=xl, Hierarchy=Secondary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428907",
+      "name": "Size=xl, Hierarchy=Primary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:428971",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:428987",
+      "name": "Size=xl, Hierarchy=Secondary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:429003",
+      "name": "Size=xl, Hierarchy=Primary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429067",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:429083",
+      "name": "Size=xl, Hierarchy=Secondary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429099",
+      "name": "Size=xl, Hierarchy=Primary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429163",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429179",
+      "name": "Size=xl, Hierarchy=Secondary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429411",
+      "name": "Size=sm, Hierarchy=Primary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429419",
+      "name": "Size=sm, Hierarchy=Link color, State=Default, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link color",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429423",
+      "name": "Size=sm, Hierarchy=Link gray, State=Default, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link gray",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429431",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429435",
+      "name": "Size=sm, Hierarchy=Secondary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429439",
+      "name": "Size=sm, Hierarchy=Primary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429447",
+      "name": "Size=sm, Hierarchy=Link color, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link color",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429451",
+      "name": "Size=sm, Hierarchy=Link gray, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link gray",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429459",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429463",
+      "name": "Size=sm, Hierarchy=Secondary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:429467",
+      "name": "Size=sm, Hierarchy=Primary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429475",
+      "name": "Size=sm, Hierarchy=Link color, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link color",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:429479",
+      "name": "Size=sm, Hierarchy=Link gray, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link gray",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:429487",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:429491",
+      "name": "Size=sm, Hierarchy=Secondary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429495",
+      "name": "Size=sm, Hierarchy=Primary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429503",
+      "name": "Size=sm, Hierarchy=Link color, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link color",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429507",
+      "name": "Size=sm, Hierarchy=Link gray, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link gray",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 126,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429515",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429519",
+      "name": "Size=sm, Hierarchy=Secondary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 154,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429527",
+      "name": "Size=sm, Hierarchy=Primary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429559",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429567",
+      "name": "Size=sm, Hierarchy=Secondary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429575",
+      "name": "Size=sm, Hierarchy=Primary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429607",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429615",
+      "name": "Size=sm, Hierarchy=Secondary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "3287:429623",
+      "name": "Size=sm, Hierarchy=Primary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429655",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "3287:429663",
+      "name": "Size=sm, Hierarchy=Secondary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429671",
+      "name": "Size=sm, Hierarchy=Primary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "3287:429703",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "3287:429711",
+      "name": "Size=sm, Hierarchy=Secondary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382217",
+      "name": "Size=md, Hierarchy=Primary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 143,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382222",
+      "name": "Size=md, Hierarchy=Tertiary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 143,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382227",
+      "name": "Size=md, Hierarchy=Secondary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 143,
+        "h": 40
+      },
+      "padding": [
+        10,
+        14,
+        10,
+        14
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382232",
+      "name": "Size=md, Hierarchy=Primary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382234",
+      "name": "Size=md, Hierarchy=Tertiary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382236",
+      "name": "Size=md, Hierarchy=Secondary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "padding": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382238",
+      "name": "Size=lg, Hierarchy=Primary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 161,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382243",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 161,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382248",
+      "name": "Size=lg, Hierarchy=Secondary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 161,
+        "h": 44
+      },
+      "padding": [
+        10,
+        16,
+        10,
+        16
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382253",
+      "name": "Size=lg, Hierarchy=Primary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382255",
+      "name": "Size=lg, Hierarchy=Tertiary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382257",
+      "name": "Size=lg, Hierarchy=Secondary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382259",
+      "name": "Size=xl, Hierarchy=Primary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 165,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382269",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 165,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382279",
+      "name": "Size=xl, Hierarchy=Secondary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 165,
+        "h": 48
+      },
+      "padding": [
+        12,
+        18,
+        12,
+        18
+      ],
+      "gap": 6,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382289",
+      "name": "Size=xl, Hierarchy=Primary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382293",
+      "name": "Size=xl, Hierarchy=Tertiary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382297",
+      "name": "Size=xl, Hierarchy=Secondary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "padding": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382301",
+      "name": "Size=sm, Hierarchy=Primary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 139,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382306",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 139,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382311",
+      "name": "Size=sm, Hierarchy=Secondary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 139,
+        "h": 36
+      },
+      "padding": [
+        8,
+        12,
+        8,
+        12
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382316",
+      "name": "Size=sm, Hierarchy=Primary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382318",
+      "name": "Size=sm, Hierarchy=Tertiary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382320",
+      "name": "Size=sm, Hierarchy=Secondary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "8468:382948",
+      "name": "Size=md, Hierarchy=Link color, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link color",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 111,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382952",
+      "name": "Size=md, Hierarchy=Link gray, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "md",
+        "Hierarchy": "Link gray",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 111,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382956",
+      "name": "Size=lg, Hierarchy=Link color, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link color",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 125,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382960",
+      "name": "Size=lg, Hierarchy=Link gray, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "lg",
+        "Hierarchy": "Link gray",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 125,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382964",
+      "name": "Size=xl, Hierarchy=Link color, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link color",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 125,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382972",
+      "name": "Size=xl, Hierarchy=Link gray, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xl",
+        "Hierarchy": "Link gray",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 125,
+        "h": 24
+      },
+      "padding": null,
+      "gap": 6,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382980",
+      "name": "Size=sm, Hierarchy=Link color, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link color",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 111,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "8468:382984",
+      "name": "Size=sm, Hierarchy=Link gray, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "sm",
+        "Hierarchy": "Link gray",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 111,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450097",
+      "name": "Size=xs, Hierarchy=Primary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450102",
+      "name": "Size=xs, Hierarchy=Primary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 131,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450106",
+      "name": "Size=xs, Hierarchy=Link color, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link color",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450110",
+      "name": "Size=xs, Hierarchy=Link color, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link color",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 107,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450113",
+      "name": "Size=xs, Hierarchy=Link gray, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link gray",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450117",
+      "name": "Size=xs, Hierarchy=Link gray, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link gray",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 107,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450120",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450125",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 131,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450129",
+      "name": "Size=xs, Hierarchy=Secondary, State=Default, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450134",
+      "name": "Size=xs, Hierarchy=Secondary, State=Loading, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 131,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450138",
+      "name": "Size=xs, Hierarchy=Primary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450143",
+      "name": "Size=xs, Hierarchy=Link color, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link color",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450147",
+      "name": "Size=xs, Hierarchy=Link gray, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link gray",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450151",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450156",
+      "name": "Size=xs, Hierarchy=Secondary, State=Disabled, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "9255:450161",
+      "name": "Size=xs, Hierarchy=Primary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450166",
+      "name": "Size=xs, Hierarchy=Link color, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link color",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "9255:450170",
+      "name": "Size=xs, Hierarchy=Link gray, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link gray",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": 4,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "9255:450174",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "9255:450179",
+      "name": "Size=xs, Hierarchy=Secondary, State=Focused, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450184",
+      "name": "Size=xs, Hierarchy=Primary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9255:450189",
+      "name": "Size=xs, Hierarchy=Link color, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link color",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450193",
+      "name": "Size=xs, Hierarchy=Link gray, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Link gray",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 118,
+        "h": 20
+      },
+      "padding": null,
+      "gap": 4,
+      "radius": null,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450197",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9255:450202",
+      "name": "Size=xs, Hierarchy=Secondary, State=Hover, Icon only=False",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "False"
+      },
+      "box": {
+        "w": 142,
+        "h": 32
+      },
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "gap": 4,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450484",
+      "name": "Size=xs, Hierarchy=Primary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450486",
+      "name": "Size=xs, Hierarchy=Primary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450488",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9258:450490",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9258:450492",
+      "name": "Size=xs, Hierarchy=Secondary, State=Default, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Default",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450494",
+      "name": "Size=xs, Hierarchy=Secondary, State=Loading, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Loading",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450496",
+      "name": "Size=xs, Hierarchy=Primary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450498",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": null,
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9258:450500",
+      "name": "Size=xs, Hierarchy=Secondary, State=Disabled, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Disabled",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 0.5,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#E5E5E5"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05)"
+    },
+    {
+      "nodeId": "9258:450502",
+      "name": "Size=xs, Hierarchy=Primary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#7F56D9",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450504",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": null,
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF"
+    },
+    {
+      "nodeId": "9258:450506",
+      "name": "Size=xs, Hierarchy=Secondary, State=Focused, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Focused",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 0px 0px 4px #9E77ED, 0px 0px 0px 2px #FFFFFF, 0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450508",
+      "name": "Size=xs, Hierarchy=Primary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Primary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#6941C6",
+      "stroke": {
+        "weight": 2,
+        "align": "INSIDE",
+        "type": "GRADIENT_LINEAR",
+        "stops": [
+          {
+            "position": 0,
+            "color": "rgba(255, 255, 255, 0.12)"
+          },
+          {
+            "position": 1,
+            "color": "rgba(255, 255, 255, 0)"
+          }
+        ],
+        "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    {
+      "nodeId": "9258:450510",
+      "name": "Size=xs, Hierarchy=Tertiary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Tertiary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": null,
+      "shadow": null
+    },
+    {
+      "nodeId": "9258:450512",
+      "name": "Size=xs, Hierarchy=Secondary, State=Hover, Icon only=True",
+      "axes": {
+        "Size": "xs",
+        "Hierarchy": "Secondary",
+        "State": "Hover",
+        "Icon only": "True"
+      },
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": null,
+      "radius": 8,
+      "opacity": 1,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "weight": 1,
+        "align": "INSIDE",
+        "type": "SOLID",
+        "color": "#D4D4D4"
+      },
+      "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    }
+  ],
+  "specimen": {
+    "nodeId": "12246:5764",
+    "variant": {
+      "Size": "xs",
+      "Hierarchy": "Primary",
+      "State": "Default",
+      "Icon only": "False"
+    },
+    "variantNodeId": "9255:450097",
+    "box": {
+      "w": 142,
+      "h": 32
+    },
+    "layout": {
+      "mode": "HORIZONTAL",
+      "primaryAxisAlignItems": "CENTER",
+      "counterAxisAlignItems": "CENTER",
+      "gap": 4,
+      "padding": [
+        6,
+        10,
+        6,
+        10
+      ],
+      "radius": 8,
+      "clipsContent": true
+    },
+    "fill": "#7F56D9",
+    "ringStroke": {
+      "weight": 2,
+      "align": "INSIDE",
+      "type": "GRADIENT_LINEAR",
+      "stops": [
+        {
+          "position": 0,
+          "color": "rgba(255, 255, 255, 0.12)"
+        },
+        {
+          "position": 1,
+          "color": "rgba(255, 255, 255, 0)"
+        }
+      ],
+      "css": "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)"
+    },
+    "shadow": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)",
+    "label": {
+      "characters": "Button CTA",
+      "fontFamily": "Inter",
+      "fontPostScriptName": "Inter-SemiBold",
+      "fontWeight": 600,
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "letterSpacing": "0px",
+      "textAlignHorizontal": "LEFT",
+      "textAutoResize": "WIDTH_AND_HEIGHT",
+      "color": "#FFFFFF",
+      "wrapperPaddingInline": 2
+    },
+    "icons": [
+      {
+        "slot": "leading",
+        "instanceBox": {
+          "w": 16,
+          "h": 16
+        },
+        "instanceOpacity": 0.6000000238418579,
+        "vectorBox": {
+          "w": 13.333,
+          "h": 13.333
+        },
+        "strokeColor": "#FFFFFF",
+        "strokeWeight": 1.5,
+        "strokeCap": "ROUND",
+        "strokeJoin": "ROUND",
+        "svgPaths": [
+          "d=\"M20 23.6666C23.6819 23.6666 26.6667 20.6819 26.6667 17C26.6667 13.3181 23.6819 10.3333 20 10.3333C16.3181 10.3333 13.3333 13.3181 13.3333 17C13.3333 20.6819 16.3181 23.6666 20 23.6666Z\" stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\""
+        ],
+        "geometryPath": "M13.3333 6.66667L12.5833 6.66667C12.5833 9.93435 9.93435 12.5833 6.66667 12.5833L6.66667 13.3333L6.66667 14.0833C10.7628 14.0833 14.0833 10.7628 14.0833 6.66667L13.3333 6.66667ZM6.66667 13.3333L6.66667 12.5833C3.39898 12.5833 0.75 9.93435 0.75 6.66667L0 6.66667L-0.75 6.66667C-0.75 10.7628 2.57055 14.0833 6.66667 14.0833L6.66667 13.3333ZM0 6.66667L0.75 6.66667C0.75 3.39898 3.39898 0.75 6.66667 0.75L6.66667 0L6.66667 -0.75C2.57055 -0.75 -0.75 2.57055 -0.75 6.66667L0 6.66667ZM6.66667 0L6.66667 0.75C9.93435 0.75 12.5833 3.39898 12.5833 6.66667L13.3333 6.66667L14.0833 6.66667C14.0833 2.57055 10.7628 -0.75 6.66667 -0.75L6.66667 0Z"
+      },
+      {
+        "slot": "trailing",
+        "instanceBox": {
+          "w": 16,
+          "h": 16
+        },
+        "instanceOpacity": 0.6000000238418579,
+        "vectorBox": {
+          "w": 13.333,
+          "h": 13.333
+        },
+        "strokeColor": "#FFFFFF",
+        "strokeWeight": 1.5,
+        "strokeCap": "ROUND",
+        "strokeJoin": "ROUND",
+        "svgPaths": [
+          "d=\"M126 23.6666C129.682 23.6666 132.667 20.6819 132.667 17C132.667 13.3181 129.682 10.3333 126 10.3333C122.318 10.3333 119.333 13.3181 119.333 17C119.333 20.6819 122.318 23.6666 126 23.6666Z\" stroke=\"white\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\""
+        ],
+        "geometryPath": "M13.3333 6.66667L12.5833 6.66667C12.5833 9.93435 9.93435 12.5833 6.66667 12.5833L6.66667 13.3333L6.66667 14.0833C10.7628 14.0833 14.0833 10.7628 14.0833 6.66667L13.3333 6.66667ZM6.66667 13.3333L6.66667 12.5833C3.39898 12.5833 0.75 9.93435 0.75 6.66667L0 6.66667L-0.75 6.66667C-0.75 10.7628 2.57055 14.0833 6.66667 14.0833L6.66667 13.3333ZM0 6.66667L0.75 6.66667C0.75 3.39898 3.39898 0.75 6.66667 0.75L6.66667 0L6.66667 -0.75C2.57055 -0.75 -0.75 2.57055 -0.75 6.66667L0 6.66667ZM6.66667 0L6.66667 0.75C9.93435 0.75 12.5833 3.39898 12.5833 6.66667L13.3333 6.66667L14.0833 6.66667C14.0833 2.57055 10.7628 -0.75 6.66667 -0.75L6.66667 0Z"
+      }
+    ],
+    "iconOriginInExport": {
+      "x": 12,
+      "y": 9
+    }
+  },
+  "behavior": {
+    "base": "native <button>",
+    "rationale": "Base UI adds no required behavior for a plain action button; native semantics carry focus, keyboard, disabled and form participation.",
+    "requiredStates": [
+      "default",
+      "hover",
+      "focus-visible",
+      "disabled",
+      "loading"
+    ],
+    "toggledByAttrs": {
+      "disabled": "disabled attr + aria-disabled for loading",
+      "loading": "aria-busy + aria-live polite label swap"
+    }
+  },
+  "motion": null,
+  "status": "candidate"
+}

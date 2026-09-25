@@ -1,0 +1,56 @@
+{
+  "$schema": "design-compiler/renderer-calibration@p0",
+  "note": "Measured renderer differences, not authored Figma properties. Consumed by compiler/figma/emit.mjs.",
+  "measuredFrom": {
+    "reference": ".design-compiler/reference/button-set@1x.png",
+    "capture": ".design-compiler/visual/matrix@1x.png"
+  },
+  "link-underline-offset": {
+    "mechanism": "text-underline-offset",
+    "unit": "px",
+    "sizes": {
+      "lg": 4,
+      "md": 3,
+      "sm": 3,
+      "xl": 4,
+      "xs": 3
+    },
+    "evidence": {
+      "lg": {
+        "figmaRow": 22,
+        "chromiumRow": 21,
+        "appliedOffset": 3,
+        "offset": 4,
+        "fontSize": 16
+      },
+      "md": {
+        "figmaRow": 18,
+        "chromiumRow": 17,
+        "appliedOffset": 2,
+        "offset": 3,
+        "fontSize": 14
+      },
+      "sm": {
+        "figmaRow": 18,
+        "chromiumRow": 17,
+        "appliedOffset": 2,
+        "offset": 3,
+        "fontSize": 14
+      },
+      "xl": {
+        "figmaRow": 22,
+        "chromiumRow": 21,
+        "appliedOffset": 3,
+        "offset": 4,
+        "fontSize": 16
+      },
+      "xs": {
+        "figmaRow": 18,
+        "chromiumRow": 17,
+        "appliedOffset": 2,
+        "offset": 3,
+        "fontSize": 14
+      }
+    }
+  }
+}

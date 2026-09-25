@@ -1,0 +1,40 @@
+{
+  "$schema": "design-compiler/MotionIR@p0",
+  "component": "Buttons/Button",
+  "source": "prototype",
+  "definitions": [
+    {
+      "trigger": "hover",
+      "from": {
+        "nodeId": "12246:5764",
+        "variant": "Size=xs, Hierarchy=Primary, State=Default, Icon only=False"
+      },
+      "to": {
+        "nodeId": "9255:450184",
+        "variant": "Size=xs, Hierarchy=Primary, State=Hover, Icon only=False"
+      },
+      "type": "transition",
+      "figmaTransition": "DISSOLVE",
+      "durationMs": 100,
+      "easing": "LINEAR",
+      "properties": [
+        "background-color"
+      ],
+      "implementation": {
+        "approach": "css-transition",
+        "mappedTo": "background-color transition (DISSOLVE approximated: single-layer background swap)",
+        "tokens": {
+          "duration": "--ds-motion-duration-fast",
+          "easing": "--ds-motion-ease-standard"
+        }
+      },
+      "evidence": "prototype interaction ON_HOVER -> CHANGE_TO on node 12246:5764"
+    }
+  ],
+  "unmapped": [
+    "press",
+    "focus",
+    "disabled",
+    "exit"
+  ]
+}

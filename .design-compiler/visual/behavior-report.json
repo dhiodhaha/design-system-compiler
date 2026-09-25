@@ -1,0 +1,179 @@
+{
+  "component": "Button",
+  "environment": {
+    "browser": "Chrome/148.0.7778.167",
+    "viewport": "800x700 (behavior) / 1440x1700 (axe)",
+    "dpr": 1,
+    "colorScheme": "light",
+    "reducedMotion": "no-preference",
+    "fonts": "pinned via src/styles/tokens.css"
+  },
+  "byCategory": {
+    "BEHAVIOR": {
+      "total": 19,
+      "pass": 19
+    },
+    "ACCESSIBILITY": {
+      "total": 3,
+      "pass": 3
+    }
+  },
+  "checks": [
+    {
+      "category": "BEHAVIOR",
+      "check": "hover changes background to the Hover rule",
+      "pass": true,
+      "expected": "rgb(105, 65, 198)",
+      "actual": "rgb(127, 86, 217) -> rgb(105, 65, 198)"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "Tab focuses the first Button",
+      "pass": true,
+      "expected": "case-primary",
+      "actual": "case-primary"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "focus-visible renders the focus ring",
+      "pass": true,
+      "expected": "white 2px + #9E77ED 4px ring",
+      "actual": "rgba(0, 0, 0, 0.18) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.05) 0px -2px 0px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgb(255, 255, 255) 0px 0px 0px 2px, rgb(158, 119, 237) 0px 0px 0px 4px"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "click fires once",
+      "pass": true,
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "Enter and Space both activate",
+      "pass": true,
+      "expected": 2,
+      "actual": 2
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "composition: leading element child becomes the leading visual",
+      "pass": true,
+      "expected": "[\"icon\",\"label\"]",
+      "actual": "[\"icon\",\"label\"]"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "composition: trailing element child becomes the trailing visual",
+      "pass": true,
+      "expected": "[\"label\",\"icon\"]",
+      "actual": "[\"label\",\"icon\"]"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "size=\"icon-lg\" sets the icon-only layout",
+      "pass": true,
+      "expected": "size=lg iconOnly=true",
+      "actual": "{\"variant\":\"primary\",\"size\":\"lg\",\"iconOnly\":\"true\",\"slots\":[\"label\"],\"bg\":\"rgb(127, 86, 217)\",\"radius\":\"8px\"}"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "data-icon markers place both visuals explicitly",
+      "pass": true,
+      "expected": "[\"icon\",\"label\",\"icon\"]",
+      "actual": "[\"icon\",\"label\",\"icon\"]"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "composed <Spinner data-icon> renders in the leading slot",
+      "pass": true,
+      "expected": "icon",
+      "actual": "[\"icon\",\"label\"]"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "buttonVariants on a plain <a> matches the <Button> styling",
+      "pass": true,
+      "expected": "bg rgb(255, 255, 255) r 8px",
+      "actual": "bg rgb(255, 255, 255) r 8px"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "DOM exposes the public contract, not Figma vocabulary",
+      "pass": true,
+      "expected": "data-variant=\"secondary\"",
+      "actual": "{\"variant\":\"secondary\",\"size\":\"xs\",\"iconOnly\":\"false\",\"figma\":\"Secondary\"}"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "disabled blocks activation",
+      "pass": true,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "disabled uses the native attribute",
+      "pass": true,
+      "expected": true,
+      "actual": true
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "disabled keeps the Figma opacity",
+      "pass": true,
+      "expected": "0.5",
+      "actual": "0.5"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "loading exposes aria-busy",
+      "pass": true,
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "loading blocks activation (no double submit)",
+      "pass": true,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "loading exposes aria-disabled while staying focusable",
+      "pass": true,
+      "expected": "true",
+      "actual": "true"
+    },
+    {
+      "category": "BEHAVIOR",
+      "check": "loading blocks keyboard and programmatic activation",
+      "pass": true,
+      "expected": 0,
+      "actual": 0
+    },
+    {
+      "category": "ACCESSIBILITY",
+      "check": "icon-only button exposes an accessible name",
+      "pass": true,
+      "expected": "Settings",
+      "actual": "Settings"
+    },
+    {
+      "category": "ACCESSIBILITY",
+      "check": "axe-core: no WCAG A/AA violations on behavior",
+      "pass": true,
+      "expected": 0,
+      "actual": "[]"
+    },
+    {
+      "category": "ACCESSIBILITY",
+      "check": "axe-core: no WCAG A/AA violations on grid",
+      "pass": true,
+      "expected": 0,
+      "actual": "[]"
+    }
+  ],
+  "failures": [],
+  "status": "PASS"
+}

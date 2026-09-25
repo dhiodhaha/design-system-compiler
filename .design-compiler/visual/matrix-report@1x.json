@@ -1,0 +1,4295 @@
+{
+  "component": "Buttons/Button",
+  "stage": {
+    "size": {
+      "w": 1364,
+      "h": 1568
+    },
+    "dpr": 1,
+    "reference": ".design-compiler/reference/button-set@1x.png",
+    "environment": {
+      "browser": "Chrome/148.0.7778.167",
+      "colorProfile": "srgb",
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "locale": "en-US",
+      "hinting": "none",
+      "lcdText": "disabled"
+    }
+  },
+  "mode": "full-matrix",
+  "supportedVariants": 200,
+  "unsupportedExcluded": 0,
+  "whole": {
+    "w": 1364,
+    "h": 1568,
+    "perceptual": 0.23,
+    "over8Percent": 3.28,
+    "maxDelta": 185
+  },
+  "status": "PASS",
+  "geometry": {
+    "checked": 200,
+    "tolerancePx": 1,
+    "failures": [],
+    "maxDelta": 0
+  },
+  "visual": {
+    "gate": "perceptual < 1% overall",
+    "outlierPercent": 3,
+    "outlierCount": 7,
+    "outliers": [
+      "md/Link color/Loading/False",
+      "sm/Link color/Loading/False",
+      "lg/Link gray/Hover/False",
+      "xl/Link gray/Hover/False",
+      "xs/Primary/Loading/True",
+      "sm/Primary/Loading/True",
+      "md/Primary/Loading/True"
+    ],
+    "worst": [
+      {
+        "key": "md/Link color/Loading/False",
+        "figmaBox": {
+          "w": 111,
+          "h": 20
+        },
+        "domBox": {
+          "w": 111,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 111,
+        "h": 20,
+        "perceptual": 3.2,
+        "over8Percent": 22.88,
+        "maxDelta": 167
+      },
+      {
+        "key": "sm/Link color/Loading/False",
+        "figmaBox": {
+          "w": 111,
+          "h": 20
+        },
+        "domBox": {
+          "w": 111,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 111,
+        "h": 20,
+        "perceptual": 3.2,
+        "over8Percent": 22.88,
+        "maxDelta": 167
+      },
+      {
+        "key": "md/Link gray/Loading/False",
+        "figmaBox": {
+          "w": 111,
+          "h": 20
+        },
+        "domBox": {
+          "w": 111,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 111,
+        "h": 20,
+        "perceptual": 2.34,
+        "over8Percent": 21.35,
+        "maxDelta": 151
+      },
+      {
+        "key": "sm/Link gray/Loading/False",
+        "figmaBox": {
+          "w": 111,
+          "h": 20
+        },
+        "domBox": {
+          "w": 111,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 111,
+        "h": 20,
+        "perceptual": 2.34,
+        "over8Percent": 21.35,
+        "maxDelta": 151
+      },
+      {
+        "key": "xs/Link color/Loading/False",
+        "figmaBox": {
+          "w": 107,
+          "h": 20
+        },
+        "domBox": {
+          "w": 107,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 107,
+        "h": 20,
+        "perceptual": 2.2,
+        "over8Percent": 21.31,
+        "maxDelta": 167
+      },
+      {
+        "key": "xs/Link color/Hover/False",
+        "figmaBox": {
+          "w": 118,
+          "h": 20
+        },
+        "domBox": {
+          "w": 118,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 118,
+        "h": 20,
+        "perceptual": 0.97,
+        "over8Percent": 21.1,
+        "maxDelta": 174
+      },
+      {
+        "key": "xs/Link gray/Hover/False",
+        "figmaBox": {
+          "w": 118,
+          "h": 20
+        },
+        "domBox": {
+          "w": 118,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 118,
+        "h": 20,
+        "perceptual": 0.97,
+        "over8Percent": 20.64,
+        "maxDelta": 168
+      },
+      {
+        "key": "xs/Link color/Default/False",
+        "figmaBox": {
+          "w": 118,
+          "h": 20
+        },
+        "domBox": {
+          "w": 118,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 118,
+        "h": 20,
+        "perceptual": 0.72,
+        "over8Percent": 20.55,
+        "maxDelta": 167
+      },
+      {
+        "key": "xs/Link color/Focused/False",
+        "figmaBox": {
+          "w": 118,
+          "h": 20
+        },
+        "domBox": {
+          "w": 118,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 118,
+        "h": 20,
+        "perceptual": 0.76,
+        "over8Percent": 20.55,
+        "maxDelta": 167
+      },
+      {
+        "key": "xs/Link gray/Loading/False",
+        "figmaBox": {
+          "w": 107,
+          "h": 20
+        },
+        "domBox": {
+          "w": 107,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 107,
+        "h": 20,
+        "perceptual": 1.78,
+        "over8Percent": 20.33,
+        "maxDelta": 151
+      },
+      {
+        "key": "md/Link color/Hover/False",
+        "figmaBox": {
+          "w": 126,
+          "h": 20
+        },
+        "domBox": {
+          "w": 126,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 126,
+        "h": 20,
+        "perceptual": 0.95,
+        "over8Percent": 19.52,
+        "maxDelta": 174
+      },
+      {
+        "key": "sm/Link color/Hover/False",
+        "figmaBox": {
+          "w": 126,
+          "h": 20
+        },
+        "domBox": {
+          "w": 126,
+          "h": 20
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 126,
+        "h": 20,
+        "perceptual": 0.95,
+        "over8Percent": 19.52,
+        "maxDelta": 174
+      }
+    ]
+  },
+  "perVariant": [
+    {
+      "key": "md/Link color/Loading/False",
+      "figmaBox": {
+        "w": 111,
+        "h": 20
+      },
+      "domBox": {
+        "w": 111,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 111,
+      "h": 20,
+      "perceptual": 3.2,
+      "over8Percent": 22.88,
+      "maxDelta": 167
+    },
+    {
+      "key": "sm/Link color/Loading/False",
+      "figmaBox": {
+        "w": 111,
+        "h": 20
+      },
+      "domBox": {
+        "w": 111,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 111,
+      "h": 20,
+      "perceptual": 3.2,
+      "over8Percent": 22.88,
+      "maxDelta": 167
+    },
+    {
+      "key": "md/Link gray/Loading/False",
+      "figmaBox": {
+        "w": 111,
+        "h": 20
+      },
+      "domBox": {
+        "w": 111,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 111,
+      "h": 20,
+      "perceptual": 2.34,
+      "over8Percent": 21.35,
+      "maxDelta": 151
+    },
+    {
+      "key": "sm/Link gray/Loading/False",
+      "figmaBox": {
+        "w": 111,
+        "h": 20
+      },
+      "domBox": {
+        "w": 111,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 111,
+      "h": 20,
+      "perceptual": 2.34,
+      "over8Percent": 21.35,
+      "maxDelta": 151
+    },
+    {
+      "key": "xs/Link color/Loading/False",
+      "figmaBox": {
+        "w": 107,
+        "h": 20
+      },
+      "domBox": {
+        "w": 107,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 107,
+      "h": 20,
+      "perceptual": 2.2,
+      "over8Percent": 21.31,
+      "maxDelta": 167
+    },
+    {
+      "key": "xs/Link color/Hover/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.97,
+      "over8Percent": 21.1,
+      "maxDelta": 174
+    },
+    {
+      "key": "xs/Link gray/Hover/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.97,
+      "over8Percent": 20.64,
+      "maxDelta": 168
+    },
+    {
+      "key": "xs/Link color/Default/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.72,
+      "over8Percent": 20.55,
+      "maxDelta": 167
+    },
+    {
+      "key": "xs/Link color/Focused/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.76,
+      "over8Percent": 20.55,
+      "maxDelta": 167
+    },
+    {
+      "key": "xs/Link gray/Loading/False",
+      "figmaBox": {
+        "w": 107,
+        "h": 20
+      },
+      "domBox": {
+        "w": 107,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 107,
+      "h": 20,
+      "perceptual": 1.78,
+      "over8Percent": 20.33,
+      "maxDelta": 151
+    },
+    {
+      "key": "md/Link color/Hover/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.95,
+      "over8Percent": 19.52,
+      "maxDelta": 174
+    },
+    {
+      "key": "sm/Link color/Hover/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.95,
+      "over8Percent": 19.52,
+      "maxDelta": 174
+    },
+    {
+      "key": "lg/Link gray/Hover/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 3.13,
+      "over8Percent": 19.3,
+      "maxDelta": 84
+    },
+    {
+      "key": "xl/Link gray/Hover/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 3.13,
+      "over8Percent": 19.3,
+      "maxDelta": 84
+    },
+    {
+      "key": "md/Link gray/Hover/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.83,
+      "over8Percent": 18.77,
+      "maxDelta": 168
+    },
+    {
+      "key": "sm/Link gray/Hover/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.83,
+      "over8Percent": 18.77,
+      "maxDelta": 168
+    },
+    {
+      "key": "md/Link color/Default/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.79,
+      "over8Percent": 18.53,
+      "maxDelta": 167
+    },
+    {
+      "key": "md/Link color/Focused/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.99,
+      "over8Percent": 18.53,
+      "maxDelta": 167
+    },
+    {
+      "key": "sm/Link color/Default/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.79,
+      "over8Percent": 18.53,
+      "maxDelta": 167
+    },
+    {
+      "key": "sm/Link color/Focused/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.99,
+      "over8Percent": 18.53,
+      "maxDelta": 167
+    },
+    {
+      "key": "xs/Link gray/Default/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.68,
+      "over8Percent": 18.52,
+      "maxDelta": 151
+    },
+    {
+      "key": "xs/Link gray/Focused/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.68,
+      "over8Percent": 18.52,
+      "maxDelta": 151
+    },
+    {
+      "key": "lg/Link color/Loading/False",
+      "figmaBox": {
+        "w": 125,
+        "h": 24
+      },
+      "domBox": {
+        "w": 125,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 125,
+      "h": 24,
+      "perceptual": 2,
+      "over8Percent": 18.13,
+      "maxDelta": 136
+    },
+    {
+      "key": "xl/Link color/Loading/False",
+      "figmaBox": {
+        "w": 125,
+        "h": 24
+      },
+      "domBox": {
+        "w": 125,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 125,
+      "h": 24,
+      "perceptual": 2,
+      "over8Percent": 18.13,
+      "maxDelta": 136
+    },
+    {
+      "key": "lg/Link color/Hover/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.56,
+      "over8Percent": 17.38,
+      "maxDelta": 87
+    },
+    {
+      "key": "xl/Link color/Hover/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.56,
+      "over8Percent": 17.38,
+      "maxDelta": 87
+    },
+    {
+      "key": "lg/Link gray/Loading/False",
+      "figmaBox": {
+        "w": 125,
+        "h": 24
+      },
+      "domBox": {
+        "w": 125,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 125,
+      "h": 24,
+      "perceptual": 1.37,
+      "over8Percent": 16.43,
+      "maxDelta": 94
+    },
+    {
+      "key": "xl/Link gray/Loading/False",
+      "figmaBox": {
+        "w": 125,
+        "h": 24
+      },
+      "domBox": {
+        "w": 125,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 125,
+      "h": 24,
+      "perceptual": 1.37,
+      "over8Percent": 16.43,
+      "maxDelta": 94
+    },
+    {
+      "key": "md/Link gray/Default/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.83,
+      "over8Percent": 16.23,
+      "maxDelta": 151
+    },
+    {
+      "key": "md/Link gray/Focused/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.91,
+      "over8Percent": 16.23,
+      "maxDelta": 151
+    },
+    {
+      "key": "sm/Link gray/Default/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.83,
+      "over8Percent": 16.23,
+      "maxDelta": 151
+    },
+    {
+      "key": "sm/Link gray/Focused/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.91,
+      "over8Percent": 16.23,
+      "maxDelta": 151
+    },
+    {
+      "key": "xs/Link color/Disabled/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.3,
+      "over8Percent": 14.75,
+      "maxDelta": 85
+    },
+    {
+      "key": "xs/Secondary/Loading/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 1.27,
+      "over8Percent": 14.26,
+      "maxDelta": 87
+    },
+    {
+      "key": "lg/Link color/Default/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.47,
+      "over8Percent": 13.89,
+      "maxDelta": 84
+    },
+    {
+      "key": "lg/Link color/Focused/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.56,
+      "over8Percent": 13.89,
+      "maxDelta": 84
+    },
+    {
+      "key": "xl/Link color/Default/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.47,
+      "over8Percent": 13.89,
+      "maxDelta": 84
+    },
+    {
+      "key": "xl/Link color/Focused/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.56,
+      "over8Percent": 13.89,
+      "maxDelta": 84
+    },
+    {
+      "key": "sm/Secondary/Loading/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 1.16,
+      "over8Percent": 13.81,
+      "maxDelta": 87
+    },
+    {
+      "key": "xs/Primary/Loading/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 4.2,
+      "over8Percent": 13.77,
+      "maxDelta": 114
+    },
+    {
+      "key": "xs/Secondary/Disabled/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.18,
+      "over8Percent": 13.53,
+      "maxDelta": 85
+    },
+    {
+      "key": "xs/Secondary/Disabled/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 13.48,
+      "maxDelta": 25
+    },
+    {
+      "key": "sm/Primary/Loading/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 4.32,
+      "over8Percent": 13.27,
+      "maxDelta": 114
+    },
+    {
+      "key": "xs/Link gray/Disabled/False",
+      "figmaBox": {
+        "w": 118,
+        "h": 20
+      },
+      "domBox": {
+        "w": 118,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 118,
+      "h": 20,
+      "perceptual": 0.3,
+      "over8Percent": 13.22,
+      "maxDelta": 78
+    },
+    {
+      "key": "xs/Secondary/Hover/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 12.99,
+      "maxDelta": 69
+    },
+    {
+      "key": "md/Link color/Disabled/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.28,
+      "over8Percent": 12.86,
+      "maxDelta": 85
+    },
+    {
+      "key": "sm/Link color/Disabled/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.28,
+      "over8Percent": 12.86,
+      "maxDelta": 85
+    },
+    {
+      "key": "lg/Link gray/Default/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.5,
+      "over8Percent": 12.59,
+      "maxDelta": 77
+    },
+    {
+      "key": "lg/Link gray/Focused/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.56,
+      "over8Percent": 12.59,
+      "maxDelta": 77
+    },
+    {
+      "key": "xl/Link gray/Default/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.5,
+      "over8Percent": 12.59,
+      "maxDelta": 77
+    },
+    {
+      "key": "xl/Link gray/Focused/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0.56,
+      "over8Percent": 12.59,
+      "maxDelta": 77
+    },
+    {
+      "key": "xs/Secondary/Focused/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 12.01,
+      "maxDelta": 48
+    },
+    {
+      "key": "xs/Secondary/Loading/False",
+      "figmaBox": {
+        "w": 131,
+        "h": 32
+      },
+      "domBox": {
+        "w": 131,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 131,
+      "h": 32,
+      "perceptual": 0.88,
+      "over8Percent": 11.76,
+      "maxDelta": 162
+    },
+    {
+      "key": "xs/Primary/Hover/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0.2,
+      "over8Percent": 11.72,
+      "maxDelta": 67
+    },
+    {
+      "key": "xs/Secondary/Hover/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.44,
+      "over8Percent": 11.66,
+      "maxDelta": 185
+    },
+    {
+      "key": "xs/Primary/Loading/False",
+      "figmaBox": {
+        "w": 131,
+        "h": 32
+      },
+      "domBox": {
+        "w": 131,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 131,
+      "h": 32,
+      "perceptual": 1.31,
+      "over8Percent": 11.52,
+      "maxDelta": 166
+    },
+    {
+      "key": "xs/Primary/Focused/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 11.52,
+      "maxDelta": 52
+    },
+    {
+      "key": "xs/Secondary/Default/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 11.43,
+      "maxDelta": 48
+    },
+    {
+      "key": "md/Secondary/Loading/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.94,
+      "over8Percent": 11.25,
+      "maxDelta": 87
+    },
+    {
+      "key": "xs/Primary/Hover/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.35,
+      "over8Percent": 11.05,
+      "maxDelta": 166
+    },
+    {
+      "key": "xs/Secondary/Focused/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.37,
+      "over8Percent": 11.03,
+      "maxDelta": 168
+    },
+    {
+      "key": "sm/Secondary/Disabled/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.14,
+      "over8Percent": 10.95,
+      "maxDelta": 85
+    },
+    {
+      "key": "xs/Secondary/Default/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.37,
+      "over8Percent": 10.85,
+      "maxDelta": 168
+    },
+    {
+      "key": "md/Primary/Loading/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 3.5,
+      "over8Percent": 10.81,
+      "maxDelta": 114
+    },
+    {
+      "key": "sm/Tertiary/Loading/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 1.16,
+      "over8Percent": 10.8,
+      "maxDelta": 87
+    },
+    {
+      "key": "xs/Primary/Focused/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.26,
+      "over8Percent": 10.78,
+      "maxDelta": 148
+    },
+    {
+      "key": "xs/Primary/Default/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 10.64,
+      "maxDelta": 52
+    },
+    {
+      "key": "md/Link gray/Disabled/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.28,
+      "over8Percent": 10.63,
+      "maxDelta": 78
+    },
+    {
+      "key": "sm/Link gray/Disabled/False",
+      "figmaBox": {
+        "w": 126,
+        "h": 20
+      },
+      "domBox": {
+        "w": 126,
+        "h": 20
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 126,
+      "h": 20,
+      "perceptual": 0.28,
+      "over8Percent": 10.63,
+      "maxDelta": 78
+    },
+    {
+      "key": "sm/Primary/Loading/False",
+      "figmaBox": {
+        "w": 139,
+        "h": 36
+      },
+      "domBox": {
+        "w": 139,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 139,
+      "h": 36,
+      "perceptual": 1.3,
+      "over8Percent": 10.59,
+      "maxDelta": 166
+    },
+    {
+      "key": "sm/Secondary/Loading/False",
+      "figmaBox": {
+        "w": 139,
+        "h": 36
+      },
+      "domBox": {
+        "w": 139,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 139,
+      "h": 36,
+      "perceptual": 0.86,
+      "over8Percent": 10.59,
+      "maxDelta": 162
+    },
+    {
+      "key": "xs/Primary/Default/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.26,
+      "over8Percent": 10.52,
+      "maxDelta": 148
+    },
+    {
+      "key": "xs/Tertiary/Loading/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 1.27,
+      "over8Percent": 10.45,
+      "maxDelta": 87
+    },
+    {
+      "key": "xs/Tertiary/Hover/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.37,
+      "over8Percent": 10.41,
+      "maxDelta": 162
+    },
+    {
+      "key": "xs/Tertiary/Loading/False",
+      "figmaBox": {
+        "w": 131,
+        "h": 32
+      },
+      "domBox": {
+        "w": 131,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 131,
+      "h": 32,
+      "perceptual": 0.79,
+      "over8Percent": 10.38,
+      "maxDelta": 147
+    },
+    {
+      "key": "sm/Secondary/Disabled/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0,
+      "over8Percent": 10.34,
+      "maxDelta": 18
+    },
+    {
+      "key": "md/Secondary/Disabled/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.13,
+      "over8Percent": 9.86,
+      "maxDelta": 85
+    },
+    {
+      "key": "xs/Tertiary/Focused/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.35,
+      "over8Percent": 9.82,
+      "maxDelta": 151
+    },
+    {
+      "key": "sm/Secondary/Hover/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.23,
+      "over8Percent": 9.8,
+      "maxDelta": 51
+    },
+    {
+      "key": "xs/Tertiary/Default/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.35,
+      "over8Percent": 9.62,
+      "maxDelta": 151
+    },
+    {
+      "key": "sm/Tertiary/Loading/False",
+      "figmaBox": {
+        "w": 139,
+        "h": 36
+      },
+      "domBox": {
+        "w": 139,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 139,
+      "h": 36,
+      "perceptual": 0.8,
+      "over8Percent": 9.43,
+      "maxDelta": 147
+    },
+    {
+      "key": "md/Primary/Loading/False",
+      "figmaBox": {
+        "w": 143,
+        "h": 40
+      },
+      "domBox": {
+        "w": 143,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 143,
+      "h": 40,
+      "perceptual": 1.12,
+      "over8Percent": 9.39,
+      "maxDelta": 166
+    },
+    {
+      "key": "md/Secondary/Disabled/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0,
+      "over8Percent": 9.38,
+      "maxDelta": 18
+    },
+    {
+      "key": "sm/Secondary/Hover/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.47,
+      "over8Percent": 9.31,
+      "maxDelta": 185
+    },
+    {
+      "key": "xs/Tertiary/Hover/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 9.28,
+      "maxDelta": 69
+    },
+    {
+      "key": "md/Secondary/Loading/False",
+      "figmaBox": {
+        "w": 143,
+        "h": 40
+      },
+      "domBox": {
+        "w": 143,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 143,
+      "h": 40,
+      "perceptual": 0.75,
+      "over8Percent": 9.25,
+      "maxDelta": 162
+    },
+    {
+      "key": "lg/Secondary/Loading/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.77,
+      "over8Percent": 9.19,
+      "maxDelta": 87
+    },
+    {
+      "key": "lg/Link color/Disabled/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0,
+      "over8Percent": 9.16,
+      "maxDelta": 43
+    },
+    {
+      "key": "xl/Link color/Disabled/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0,
+      "over8Percent": 9.16,
+      "maxDelta": 43
+    },
+    {
+      "key": "xs/Tertiary/Focused/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 9.08,
+      "maxDelta": 48
+    },
+    {
+      "key": "sm/Primary/Hover/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.32,
+      "over8Percent": 9.02,
+      "maxDelta": 166
+    },
+    {
+      "key": "lg/Primary/Loading/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 2.89,
+      "over8Percent": 8.88,
+      "maxDelta": 114
+    },
+    {
+      "key": "sm/Primary/Hover/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.23,
+      "over8Percent": 8.8,
+      "maxDelta": 49
+    },
+    {
+      "key": "md/Tertiary/Loading/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.94,
+      "over8Percent": 8.75,
+      "maxDelta": 87
+    },
+    {
+      "key": "lg/Secondary/Disabled/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 8.57,
+      "maxDelta": 18
+    },
+    {
+      "key": "sm/Secondary/Focused/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.41,
+      "over8Percent": 8.55,
+      "maxDelta": 168
+    },
+    {
+      "key": "lg/Secondary/Disabled/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 8.55,
+      "maxDelta": 43
+    },
+    {
+      "key": "sm/Secondary/Focused/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.23,
+      "over8Percent": 8.49,
+      "maxDelta": 35
+    },
+    {
+      "key": "sm/Primary/Focused/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.22,
+      "over8Percent": 8.48,
+      "maxDelta": 148
+    },
+    {
+      "key": "sm/Primary/Focused/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0,
+      "over8Percent": 8.41,
+      "maxDelta": 37
+    },
+    {
+      "key": "sm/Secondary/Default/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.41,
+      "over8Percent": 8.39,
+      "maxDelta": 168
+    },
+    {
+      "key": "sm/Tertiary/Hover/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.41,
+      "over8Percent": 8.32,
+      "maxDelta": 162
+    },
+    {
+      "key": "sm/Primary/Default/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.22,
+      "over8Percent": 8.32,
+      "maxDelta": 148
+    },
+    {
+      "key": "md/Tertiary/Loading/False",
+      "figmaBox": {
+        "w": 143,
+        "h": 40
+      },
+      "domBox": {
+        "w": 143,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 143,
+      "h": 40,
+      "perceptual": 0.7,
+      "over8Percent": 8.25,
+      "maxDelta": 147
+    },
+    {
+      "key": "md/Secondary/Hover/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.41,
+      "over8Percent": 8.2,
+      "maxDelta": 185
+    },
+    {
+      "key": "xs/Tertiary/Default/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 8.2,
+      "maxDelta": 48
+    },
+    {
+      "key": "lg/Secondary/Loading/False",
+      "figmaBox": {
+        "w": 161,
+        "h": 44
+      },
+      "domBox": {
+        "w": 161,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 161,
+      "h": 44,
+      "perceptual": 0.48,
+      "over8Percent": 8.06,
+      "maxDelta": 101
+    },
+    {
+      "key": "md/Secondary/Hover/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 8,
+      "maxDelta": 51
+    },
+    {
+      "key": "lg/Primary/Loading/False",
+      "figmaBox": {
+        "w": 161,
+        "h": 44
+      },
+      "domBox": {
+        "w": 161,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 161,
+      "h": 44,
+      "perceptual": 0.69,
+      "over8Percent": 7.96,
+      "maxDelta": 114
+    },
+    {
+      "key": "md/Primary/Hover/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.28,
+      "over8Percent": 7.91,
+      "maxDelta": 166
+    },
+    {
+      "key": "xl/Secondary/Disabled/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 7.9,
+      "maxDelta": 18
+    },
+    {
+      "key": "xl/Secondary/Disabled/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 7.85,
+      "maxDelta": 43
+    },
+    {
+      "key": "sm/Secondary/Default/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.23,
+      "over8Percent": 7.79,
+      "maxDelta": 35
+    },
+    {
+      "key": "xl/Secondary/Loading/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.65,
+      "over8Percent": 7.77,
+      "maxDelta": 87
+    },
+    {
+      "key": "sm/Primary/Default/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0,
+      "over8Percent": 7.72,
+      "maxDelta": 37
+    },
+    {
+      "key": "xl/Primary/Loading/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 2.43,
+      "over8Percent": 7.55,
+      "maxDelta": 114
+    },
+    {
+      "key": "sm/Tertiary/Focused/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.4,
+      "over8Percent": 7.54,
+      "maxDelta": 151
+    },
+    {
+      "key": "md/Secondary/Focused/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.36,
+      "over8Percent": 7.52,
+      "maxDelta": 168
+    },
+    {
+      "key": "md/Primary/Focused/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 7.42,
+      "maxDelta": 148
+    },
+    {
+      "key": "sm/Tertiary/Default/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.32,
+      "over8Percent": 7.38,
+      "maxDelta": 151
+    },
+    {
+      "key": "md/Secondary/Default/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.36,
+      "over8Percent": 7.37,
+      "maxDelta": 168
+    },
+    {
+      "key": "lg/Link gray/Disabled/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0,
+      "over8Percent": 7.36,
+      "maxDelta": 39
+    },
+    {
+      "key": "xl/Link gray/Disabled/False",
+      "figmaBox": {
+        "w": 141,
+        "h": 24
+      },
+      "domBox": {
+        "w": 141,
+        "h": 24
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 141,
+      "h": 24,
+      "perceptual": 0,
+      "over8Percent": 7.36,
+      "maxDelta": 39
+    },
+    {
+      "key": "md/Tertiary/Hover/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.36,
+      "over8Percent": 7.31,
+      "maxDelta": 162
+    },
+    {
+      "key": "md/Primary/Default/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 7.28,
+      "maxDelta": 148
+    },
+    {
+      "key": "lg/Tertiary/Loading/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.77,
+      "over8Percent": 7.23,
+      "maxDelta": 87
+    },
+    {
+      "key": "xl/Secondary/Loading/False",
+      "figmaBox": {
+        "w": 165,
+        "h": 48
+      },
+      "domBox": {
+        "w": 165,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 165,
+      "h": 48,
+      "perceptual": 0.43,
+      "over8Percent": 7.21,
+      "maxDelta": 101
+    },
+    {
+      "key": "md/Primary/Hover/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 7.19,
+      "maxDelta": 49
+    },
+    {
+      "key": "xl/Primary/Loading/False",
+      "figmaBox": {
+        "w": 165,
+        "h": 48
+      },
+      "domBox": {
+        "w": 165,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 165,
+      "h": 48,
+      "perceptual": 0.62,
+      "over8Percent": 7.12,
+      "maxDelta": 114
+    },
+    {
+      "key": "xs/Primary/Disabled/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.15,
+      "over8Percent": 7,
+      "maxDelta": 74
+    },
+    {
+      "key": "xs/Tertiary/Disabled/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 142,
+      "h": 32,
+      "perceptual": 0.15,
+      "over8Percent": 6.91,
+      "maxDelta": 78
+    },
+    {
+      "key": "lg/Tertiary/Loading/False",
+      "figmaBox": {
+        "w": 161,
+        "h": 44
+      },
+      "domBox": {
+        "w": 161,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 161,
+      "h": 44,
+      "perceptual": 0.47,
+      "over8Percent": 6.9,
+      "maxDelta": 91
+    },
+    {
+      "key": "md/Secondary/Focused/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 6.88,
+      "maxDelta": 35
+    },
+    {
+      "key": "sm/Tertiary/Hover/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.23,
+      "over8Percent": 6.87,
+      "maxDelta": 51
+    },
+    {
+      "key": "md/Primary/Focused/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0,
+      "over8Percent": 6.75,
+      "maxDelta": 38
+    },
+    {
+      "key": "lg/Secondary/Hover/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.3,
+      "over8Percent": 6.68,
+      "maxDelta": 93
+    },
+    {
+      "key": "lg/Secondary/Hover/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 6.66,
+      "maxDelta": 51
+    },
+    {
+      "key": "md/Tertiary/Focused/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.35,
+      "over8Percent": 6.65,
+      "maxDelta": 151
+    },
+    {
+      "key": "xs/Primary/Disabled/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 6.64,
+      "maxDelta": 26
+    },
+    {
+      "key": "md/Tertiary/Default/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.32,
+      "over8Percent": 6.5,
+      "maxDelta": 151
+    },
+    {
+      "key": "lg/Primary/Hover/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.21,
+      "over8Percent": 6.5,
+      "maxDelta": 83
+    },
+    {
+      "key": "md/Secondary/Default/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 6.31,
+      "maxDelta": 35
+    },
+    {
+      "key": "xl/Tertiary/Loading/False",
+      "figmaBox": {
+        "w": 165,
+        "h": 48
+      },
+      "domBox": {
+        "w": 165,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 165,
+      "h": 48,
+      "perceptual": 0.42,
+      "over8Percent": 6.17,
+      "maxDelta": 91
+    },
+    {
+      "key": "lg/Primary/Hover/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 6.15,
+      "maxDelta": 49
+    },
+    {
+      "key": "md/Primary/Default/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0,
+      "over8Percent": 6.13,
+      "maxDelta": 38
+    },
+    {
+      "key": "lg/Secondary/Focused/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.26,
+      "over8Percent": 6.1,
+      "maxDelta": 84
+    },
+    {
+      "key": "sm/Tertiary/Focused/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.23,
+      "over8Percent": 6.1,
+      "maxDelta": 35
+    },
+    {
+      "key": "xl/Tertiary/Loading/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.65,
+      "over8Percent": 6.08,
+      "maxDelta": 87
+    },
+    {
+      "key": "lg/Tertiary/Hover/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.24,
+      "over8Percent": 6.06,
+      "maxDelta": 81
+    },
+    {
+      "key": "xs/Tertiary/Disabled/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 32,
+      "h": 32,
+      "perceptual": 0,
+      "over8Percent": 6.05,
+      "maxDelta": 25
+    },
+    {
+      "key": "lg/Primary/Focused/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.13,
+      "over8Percent": 6.02,
+      "maxDelta": 75
+    },
+    {
+      "key": "xl/Secondary/Hover/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.26,
+      "over8Percent": 5.97,
+      "maxDelta": 93
+    },
+    {
+      "key": "lg/Secondary/Default/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.26,
+      "over8Percent": 5.97,
+      "maxDelta": 84
+    },
+    {
+      "key": "lg/Primary/Default/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.13,
+      "over8Percent": 5.88,
+      "maxDelta": 75
+    },
+    {
+      "key": "xl/Primary/Hover/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.18,
+      "over8Percent": 5.78,
+      "maxDelta": 83
+    },
+    {
+      "key": "lg/Primary/Focused/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 5.68,
+      "maxDelta": 38
+    },
+    {
+      "key": "lg/Secondary/Focused/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 5.68,
+      "maxDelta": 35
+    },
+    {
+      "key": "lg/Tertiary/Focused/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.23,
+      "over8Percent": 5.59,
+      "maxDelta": 77
+    },
+    {
+      "key": "md/Tertiary/Hover/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 5.56,
+      "maxDelta": 51
+    },
+    {
+      "key": "xl/Secondary/Hover/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 5.56,
+      "maxDelta": 51
+    },
+    {
+      "key": "lg/Tertiary/Default/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0.23,
+      "over8Percent": 5.47,
+      "maxDelta": 77
+    },
+    {
+      "key": "xl/Secondary/Focused/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.23,
+      "over8Percent": 5.46,
+      "maxDelta": 84
+    },
+    {
+      "key": "xl/Tertiary/Hover/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.22,
+      "over8Percent": 5.43,
+      "maxDelta": 81
+    },
+    {
+      "key": "sm/Tertiary/Default/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0.08,
+      "over8Percent": 5.4,
+      "maxDelta": 34
+    },
+    {
+      "key": "xl/Primary/Focused/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.12,
+      "over8Percent": 5.39,
+      "maxDelta": 75
+    },
+    {
+      "key": "xl/Secondary/Default/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.23,
+      "over8Percent": 5.36,
+      "maxDelta": 84
+    },
+    {
+      "key": "xl/Primary/Default/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.12,
+      "over8Percent": 5.29,
+      "maxDelta": 75
+    },
+    {
+      "key": "lg/Primary/Default/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 5.17,
+      "maxDelta": 38
+    },
+    {
+      "key": "lg/Secondary/Default/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 5.17,
+      "maxDelta": 35
+    },
+    {
+      "key": "xl/Primary/Hover/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 5.08,
+      "maxDelta": 49
+    },
+    {
+      "key": "xl/Tertiary/Focused/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.21,
+      "over8Percent": 5.01,
+      "maxDelta": 77
+    },
+    {
+      "key": "md/Tertiary/Focused/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.19,
+      "over8Percent": 4.94,
+      "maxDelta": 35
+    },
+    {
+      "key": "sm/Primary/Disabled/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.13,
+      "over8Percent": 4.91,
+      "maxDelta": 74
+    },
+    {
+      "key": "xl/Tertiary/Default/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0.21,
+      "over8Percent": 4.9,
+      "maxDelta": 77
+    },
+    {
+      "key": "xl/Secondary/Focused/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 4.82,
+      "maxDelta": 35
+    },
+    {
+      "key": "sm/Tertiary/Disabled/False",
+      "figmaBox": {
+        "w": 154,
+        "h": 36
+      },
+      "domBox": {
+        "w": 154,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 154,
+      "h": 36,
+      "perceptual": 0.13,
+      "over8Percent": 4.8,
+      "maxDelta": 78
+    },
+    {
+      "key": "xl/Primary/Focused/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 4.77,
+      "maxDelta": 38
+    },
+    {
+      "key": "lg/Tertiary/Hover/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 4.6,
+      "maxDelta": 51
+    },
+    {
+      "key": "xl/Primary/Default/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 4.43,
+      "maxDelta": 38
+    },
+    {
+      "key": "md/Tertiary/Default/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0.13,
+      "over8Percent": 4.38,
+      "maxDelta": 34
+    },
+    {
+      "key": "md/Primary/Disabled/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.11,
+      "over8Percent": 4.35,
+      "maxDelta": 74
+    },
+    {
+      "key": "xl/Secondary/Default/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 4.34,
+      "maxDelta": 35
+    },
+    {
+      "key": "md/Tertiary/Disabled/False",
+      "figmaBox": {
+        "w": 158,
+        "h": 40
+      },
+      "domBox": {
+        "w": 158,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 158,
+      "h": 40,
+      "perceptual": 0.11,
+      "over8Percent": 4.21,
+      "maxDelta": 78
+    },
+    {
+      "key": "lg/Tertiary/Focused/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 4.08,
+      "maxDelta": 35
+    },
+    {
+      "key": "xl/Tertiary/Hover/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 3.86,
+      "maxDelta": 51
+    },
+    {
+      "key": "lg/Tertiary/Default/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0.15,
+      "over8Percent": 3.62,
+      "maxDelta": 35
+    },
+    {
+      "key": "sm/Primary/Disabled/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0,
+      "over8Percent": 3.55,
+      "maxDelta": 18
+    },
+    {
+      "key": "xl/Tertiary/Focused/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 3.43,
+      "maxDelta": 35
+    },
+    {
+      "key": "lg/Primary/Disabled/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 3.27,
+      "maxDelta": 37
+    },
+    {
+      "key": "lg/Tertiary/Disabled/False",
+      "figmaBox": {
+        "w": 177,
+        "h": 44
+      },
+      "domBox": {
+        "w": 177,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 177,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 3.17,
+      "maxDelta": 39
+    },
+    {
+      "key": "xl/Tertiary/Default/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0.13,
+      "over8Percent": 3.04,
+      "maxDelta": 35
+    },
+    {
+      "key": "sm/Tertiary/Disabled/True",
+      "figmaBox": {
+        "w": 36,
+        "h": 36
+      },
+      "domBox": {
+        "w": 36,
+        "h": 36
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 36,
+      "h": 36,
+      "perceptual": 0,
+      "over8Percent": 2.93,
+      "maxDelta": 18
+    },
+    {
+      "key": "xl/Primary/Disabled/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 2.92,
+      "maxDelta": 37
+    },
+    {
+      "key": "md/Primary/Disabled/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0,
+      "over8Percent": 2.88,
+      "maxDelta": 18
+    },
+    {
+      "key": "xl/Tertiary/Disabled/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 181,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 2.84,
+      "maxDelta": 39
+    },
+    {
+      "key": "lg/Primary/Disabled/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 2.43,
+      "maxDelta": 18
+    },
+    {
+      "key": "md/Tertiary/Disabled/True",
+      "figmaBox": {
+        "w": 40,
+        "h": 40
+      },
+      "domBox": {
+        "w": 40,
+        "h": 40
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 40,
+      "h": 40,
+      "perceptual": 0,
+      "over8Percent": 2.38,
+      "maxDelta": 18
+    },
+    {
+      "key": "lg/Tertiary/Disabled/True",
+      "figmaBox": {
+        "w": 44,
+        "h": 44
+      },
+      "domBox": {
+        "w": 44,
+        "h": 44
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 44,
+      "h": 44,
+      "perceptual": 0,
+      "over8Percent": 1.96,
+      "maxDelta": 18
+    },
+    {
+      "key": "xl/Primary/Disabled/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 1.91,
+      "maxDelta": 18
+    },
+    {
+      "key": "xl/Tertiary/Disabled/True",
+      "figmaBox": {
+        "w": 48,
+        "h": 48
+      },
+      "domBox": {
+        "w": 48,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 48,
+      "h": 48,
+      "perceptual": 0,
+      "over8Percent": 1.65,
+      "maxDelta": 18
+    }
+  ]
+}

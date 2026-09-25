@@ -1,0 +1,228 @@
+{
+  "component": "Button",
+  "variant": "primary",
+  "size": "xs",
+  "specimen": "12246:5764",
+  "checks": [
+    {
+      "check": "button.width",
+      "expected": 142,
+      "actual": 142,
+      "delta": 0,
+      "tolerance": 1,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "button.height",
+      "expected": 32,
+      "actual": 32,
+      "delta": 0,
+      "tolerance": 1,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "button.x",
+      "expected": 0,
+      "actual": 0,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "button.y",
+      "expected": 0,
+      "actual": 0,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "label.x",
+      "expected": 30,
+      "actual": 30,
+      "delta": 0,
+      "tolerance": 1,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "label.contentStart",
+      "expected": 32,
+      "actual": 32,
+      "delta": 0,
+      "tolerance": 1,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "label.inlinePadding",
+      "expected": "2px",
+      "actual": 2,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "icon.leading.x",
+      "expected": 10,
+      "actual": 10,
+      "delta": 0,
+      "tolerance": 1,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "icon.trailing.x",
+      "expected": 116,
+      "actual": 116,
+      "delta": 0,
+      "tolerance": 1,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "icon.width",
+      "expected": 16,
+      "actual": 16,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "icon.opacity",
+      "expected": "0.6",
+      "actual": "0.6",
+      "delta": null,
+      "tolerance": 0.001,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "check": "padding.blockStart",
+      "expected": 6,
+      "actual": 6,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "padding.inlineEnd",
+      "expected": 10,
+      "actual": 10,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "gap",
+      "expected": 4,
+      "actual": 4,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "radius",
+      "expected": 8,
+      "actual": 8,
+      "delta": 0,
+      "tolerance": 0.5,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "color.background",
+      "expected": "#7F56D9",
+      "actual": "#7f56d9",
+      "delta": null,
+      "tolerance": 0,
+      "unit": "hex",
+      "pass": true
+    },
+    {
+      "check": "shadow",
+      "expected": "0px 1px 2px 0px #000000@0.05, inset 0px -2px 0px 0px #000000@0.05, inset 0px 0px 0px 1px #000000@0.18",
+      "actual": "0px 1px 2px 0px #000000@0.05, inset 0px -2px 0px 0px #000000@0.05, inset 0px 0px 0px 1px #000000@0.18",
+      "delta": null,
+      "tolerance": 0,
+      "unit": "shadow",
+      "pass": true
+    },
+    {
+      "check": "ring.width",
+      "expected": "2px",
+      "actual": "2px",
+      "delta": 0,
+      "tolerance": 0,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "ring.maskComposite",
+      "expected": "exclude",
+      "actual": "exclude",
+      "delta": null,
+      "tolerance": 0,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "check": "typography.family",
+      "expected": "Inter",
+      "actual": "Inter",
+      "delta": null,
+      "tolerance": 0,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "check": "typography.weight",
+      "expected": 600,
+      "actual": 600,
+      "delta": 0,
+      "tolerance": 0,
+      "unit": "",
+      "pass": true
+    },
+    {
+      "check": "typography.size",
+      "expected": 14,
+      "actual": 14,
+      "delta": 0,
+      "tolerance": 0,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "typography.lineHeight",
+      "expected": 20,
+      "actual": 20,
+      "delta": 0,
+      "tolerance": 0,
+      "unit": "px",
+      "pass": true
+    },
+    {
+      "check": "motion.duration",
+      "expected": 100,
+      "actual": 100,
+      "delta": 0,
+      "tolerance": 0.001,
+      "unit": "ms",
+      "pass": true
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "geometryMaxDelta": 0,
+  "tokenMismatches": 0
+}

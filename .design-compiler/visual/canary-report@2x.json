@@ -1,0 +1,399 @@
+{
+  "component": "Buttons/Button",
+  "stage": {
+    "size": {
+      "w": 2728,
+      "h": 3136
+    },
+    "dpr": 2,
+    "reference": ".design-compiler/reference/button-set@2x.png",
+    "environment": {
+      "browser": "Chrome/148.0.7778.167",
+      "colorProfile": "srgb",
+      "colorScheme": "light",
+      "reducedMotion": "no-preference",
+      "locale": "en-US",
+      "hinting": "none",
+      "lcdText": "disabled"
+    }
+  },
+  "mode": "canaries",
+  "canaries": [
+    "xs/Primary/Default/False",
+    "xl/Primary/Default/False",
+    "xs/Secondary/Default/False",
+    "xs/Primary/Hover/False",
+    "xs/Primary/Focused/False",
+    "xs/Primary/Disabled/False",
+    "xs/Primary/Loading/False",
+    "xs/Primary/Default/True"
+  ],
+  "supportedVariants": 8,
+  "unsupportedExcluded": 192,
+  "whole": {
+    "w": 2728,
+    "h": 3136,
+    "perceptual": 0.18,
+    "over8Percent": 2.2,
+    "maxDelta": 212
+  },
+  "status": "PASS",
+  "canaryFailures": [
+    {
+      "key": "xs/Primary/Loading/False",
+      "figmaBox": {
+        "w": 131,
+        "h": 32
+      },
+      "domBox": {
+        "w": 131,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 262,
+      "h": 64,
+      "perceptual": 1.1,
+      "over8Percent": 7.33,
+      "maxDelta": 190
+    }
+  ],
+  "geometry": {
+    "checked": 8,
+    "tolerancePx": 1,
+    "failures": [],
+    "maxDelta": 0
+  },
+  "visual": {
+    "gate": "perceptual < 1% overall",
+    "outlierPercent": 3,
+    "outlierCount": 0,
+    "outliers": [],
+    "worst": [
+      {
+        "key": "xs/Primary/Loading/False",
+        "figmaBox": {
+          "w": 131,
+          "h": 32
+        },
+        "domBox": {
+          "w": 131,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 262,
+        "h": 64,
+        "perceptual": 1.1,
+        "over8Percent": 7.33,
+        "maxDelta": 190
+      },
+      {
+        "key": "xs/Primary/Default/True",
+        "figmaBox": {
+          "w": 32,
+          "h": 32
+        },
+        "domBox": {
+          "w": 32,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 64,
+        "h": 64,
+        "perceptual": 0,
+        "over8Percent": 6.25,
+        "maxDelta": 69
+      },
+      {
+        "key": "xs/Primary/Hover/False",
+        "figmaBox": {
+          "w": 142,
+          "h": 32
+        },
+        "domBox": {
+          "w": 142,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 284,
+        "h": 64,
+        "perceptual": 0.03,
+        "over8Percent": 6.18,
+        "maxDelta": 190
+      },
+      {
+        "key": "xs/Secondary/Default/False",
+        "figmaBox": {
+          "w": 142,
+          "h": 32
+        },
+        "domBox": {
+          "w": 142,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 284,
+        "h": 64,
+        "perceptual": 0.04,
+        "over8Percent": 6.13,
+        "maxDelta": 191
+      },
+      {
+        "key": "xs/Primary/Focused/False",
+        "figmaBox": {
+          "w": 142,
+          "h": 32
+        },
+        "domBox": {
+          "w": 142,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 284,
+        "h": 64,
+        "perceptual": 0.03,
+        "over8Percent": 6.06,
+        "maxDelta": 169
+      },
+      {
+        "key": "xs/Primary/Default/False",
+        "figmaBox": {
+          "w": 142,
+          "h": 32
+        },
+        "domBox": {
+          "w": 142,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 284,
+        "h": 64,
+        "perceptual": 0.03,
+        "over8Percent": 6.05,
+        "maxDelta": 169
+      },
+      {
+        "key": "xs/Primary/Disabled/False",
+        "figmaBox": {
+          "w": 142,
+          "h": 32
+        },
+        "domBox": {
+          "w": 142,
+          "h": 32
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 284,
+        "h": 64,
+        "perceptual": 0.03,
+        "over8Percent": 4.33,
+        "maxDelta": 85
+      },
+      {
+        "key": "xl/Primary/Default/False",
+        "figmaBox": {
+          "w": 181,
+          "h": 48
+        },
+        "domBox": {
+          "w": 181,
+          "h": 48
+        },
+        "geometryDelta": {
+          "w": 0,
+          "h": 0
+        },
+        "w": 362,
+        "h": 96,
+        "perceptual": 0.01,
+        "over8Percent": 3.56,
+        "maxDelta": 127
+      }
+    ]
+  },
+  "perVariant": [
+    {
+      "key": "xs/Primary/Loading/False",
+      "figmaBox": {
+        "w": 131,
+        "h": 32
+      },
+      "domBox": {
+        "w": 131,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 262,
+      "h": 64,
+      "perceptual": 1.1,
+      "over8Percent": 7.33,
+      "maxDelta": 190
+    },
+    {
+      "key": "xs/Primary/Default/True",
+      "figmaBox": {
+        "w": 32,
+        "h": 32
+      },
+      "domBox": {
+        "w": 32,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 64,
+      "h": 64,
+      "perceptual": 0,
+      "over8Percent": 6.25,
+      "maxDelta": 69
+    },
+    {
+      "key": "xs/Primary/Hover/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 284,
+      "h": 64,
+      "perceptual": 0.03,
+      "over8Percent": 6.18,
+      "maxDelta": 190
+    },
+    {
+      "key": "xs/Secondary/Default/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 284,
+      "h": 64,
+      "perceptual": 0.04,
+      "over8Percent": 6.13,
+      "maxDelta": 191
+    },
+    {
+      "key": "xs/Primary/Focused/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 284,
+      "h": 64,
+      "perceptual": 0.03,
+      "over8Percent": 6.06,
+      "maxDelta": 169
+    },
+    {
+      "key": "xs/Primary/Default/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 284,
+      "h": 64,
+      "perceptual": 0.03,
+      "over8Percent": 6.05,
+      "maxDelta": 169
+    },
+    {
+      "key": "xs/Primary/Disabled/False",
+      "figmaBox": {
+        "w": 142,
+        "h": 32
+      },
+      "domBox": {
+        "w": 142,
+        "h": 32
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 284,
+      "h": 64,
+      "perceptual": 0.03,
+      "over8Percent": 4.33,
+      "maxDelta": 85
+    },
+    {
+      "key": "xl/Primary/Default/False",
+      "figmaBox": {
+        "w": 181,
+        "h": 48
+      },
+      "domBox": {
+        "w": 181,
+        "h": 48
+      },
+      "geometryDelta": {
+        "w": 0,
+        "h": 0
+      },
+      "w": 362,
+      "h": 96,
+      "perceptual": 0.01,
+      "over8Percent": 3.56,
+      "maxDelta": 127
+    }
+  ]
+}

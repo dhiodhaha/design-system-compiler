@@ -1,0 +1,195 @@
+{
+  "component": "Buttons/Button",
+  "props": {
+    "variant": {
+      "figmaAxis": "Hierarchy",
+      "values": {
+        "Primary": "primary",
+        "Secondary": "secondary",
+        "Tertiary": "tertiary",
+        "Link color": "link-color",
+        "Link gray": "link-gray"
+      }
+    },
+    "size": {
+      "figmaAxis": "Size",
+      "values": {
+        "xs": "xs",
+        "sm": "sm",
+        "md": "md",
+        "lg": "lg",
+        "xl": "xl"
+      }
+    },
+    "state": {
+      "figmaAxis": "State",
+      "values": {
+        "Default": "default",
+        "Hover": "hover",
+        "Focused": "focus-visible",
+        "Disabled": "disabled",
+        "Loading": "loading"
+      },
+      "note": "state is not a prop; derived from interaction + disabled/loading props"
+    },
+    "iconOnly": {
+      "figmaAxis": "Icon only",
+      "values": {
+        "False": false,
+        "True": true
+      }
+    }
+  },
+  "tokens": {
+    "color.brand.solid": {
+      "cssVar": "--ds-color-brand-solid",
+      "value": "#7F56D9"
+    },
+    "color.brand.solid.hover": {
+      "cssVar": "--ds-color-brand-solid-hover",
+      "value": "#6941C6"
+    },
+    "color.fg.on-brand": {
+      "cssVar": "--ds-color-fg-on-brand",
+      "value": "#FFFFFF"
+    },
+    "color.ring.highlight-start": {
+      "cssVar": "--ds-color-ring-highlight-start",
+      "value": "rgba(255, 255, 255, 0.12)"
+    },
+    "color.ring.highlight-end": {
+      "cssVar": "--ds-color-ring-highlight-end",
+      "value": "rgba(255, 255, 255, 0)"
+    },
+    "ring.width": {
+      "cssVar": "--ds-ring-width",
+      "value": "2px"
+    },
+    "radius.button": {
+      "cssVar": "--ds-radius-button",
+      "value": "8px"
+    },
+    "shadow.button.default": {
+      "cssVar": "--ds-shadow-button",
+      "value": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    "shadow.button.focus": {
+      "cssVar": "--ds-shadow-button-rest",
+      "value": "0px 1px 2px rgba(0, 0, 0, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18)"
+    },
+    "shadow.button.focus-ring": {
+      "cssVar": "--ds-shadow-button-focus-ring",
+      "value": "0 0 0 2px #FFFFFF, 0 0 0 4px #9E77ED"
+    },
+    "opacity.disabled": {
+      "cssVar": "--ds-opacity-disabled",
+      "value": "0.5"
+    },
+    "opacity.button.icon": {
+      "cssVar": "--ds-opacity-button-icon",
+      "value": "0.6"
+    },
+    "motion.duration-fast": {
+      "cssVar": "--ds-motion-duration-fast",
+      "value": "100ms"
+    },
+    "motion.ease.standard": {
+      "cssVar": "--ds-motion-ease-standard",
+      "value": "linear"
+    },
+    "typography.label.sm": {
+      "cssVar": "--ds-typography-label-sm",
+      "value": {
+        "fontFamily": "Inter",
+        "fontWeight": 600,
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "letterSpacing": "0px"
+      }
+    },
+    "space.label-padding-inline": {
+      "cssVar": "--ds-space-label-padding-inline",
+      "value": "2px"
+    },
+    "height.button.xs": {
+      "cssVar": "--ds-height-button-xs",
+      "value": "32px"
+    },
+    "padding.button.xs": {
+      "cssVar": "--ds-padding-button-xs",
+      "value": "6px 10px 6px 10px"
+    },
+    "gap.button.xs": {
+      "cssVar": "--ds-gap-button-xs",
+      "value": "4px"
+    },
+    "padding.button-icon-only.xs": {
+      "cssVar": "--ds-padding-button-icon-only-xs",
+      "value": "8px 8px 8px 8px"
+    },
+    "height.button.sm": {
+      "cssVar": "--ds-height-button-sm",
+      "value": "36px"
+    },
+    "padding.button.sm": {
+      "cssVar": "--ds-padding-button-sm",
+      "value": "8px 12px 8px 12px"
+    },
+    "gap.button.sm": {
+      "cssVar": "--ds-gap-button-sm",
+      "value": "4px"
+    },
+    "padding.button-icon-only.sm": {
+      "cssVar": "--ds-padding-button-icon-only-sm",
+      "value": "8px 8px 8px 8px"
+    },
+    "height.button.md": {
+      "cssVar": "--ds-height-button-md",
+      "value": "40px"
+    },
+    "padding.button.md": {
+      "cssVar": "--ds-padding-button-md",
+      "value": "10px 14px 10px 14px"
+    },
+    "gap.button.md": {
+      "cssVar": "--ds-gap-button-md",
+      "value": "4px"
+    },
+    "padding.button-icon-only.md": {
+      "cssVar": "--ds-padding-button-icon-only-md",
+      "value": "10px 10px 10px 10px"
+    },
+    "height.button.lg": {
+      "cssVar": "--ds-height-button-lg",
+      "value": "44px"
+    },
+    "padding.button.lg": {
+      "cssVar": "--ds-padding-button-lg",
+      "value": "10px 16px 10px 16px"
+    },
+    "gap.button.lg": {
+      "cssVar": "--ds-gap-button-lg",
+      "value": "6px"
+    },
+    "padding.button-icon-only.lg": {
+      "cssVar": "--ds-padding-button-icon-only-lg",
+      "value": "12px 12px 12px 12px"
+    },
+    "height.button.xl": {
+      "cssVar": "--ds-height-button-xl",
+      "value": "48px"
+    },
+    "padding.button.xl": {
+      "cssVar": "--ds-padding-button-xl",
+      "value": "12px 18px 12px 18px"
+    },
+    "gap.button.xl": {
+      "cssVar": "--ds-gap-button-xl",
+      "value": "6px"
+    },
+    "padding.button-icon-only.xl": {
+      "cssVar": "--ds-padding-button-icon-only-xl",
+      "value": "14px 14px 14px 14px"
+    }
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "$schema": "design-compiler/SemanticPass@p0",
+  "component": "Button",
+  "family": {
+    "name": "Button",
+    "figmaComponentSetId": "3287:427074",
+    "variants": 200,
+    "reactComponentCandidates": 1,
+    "publicComponents": [
+      "Button"
+    ],
+    "notGenerated": [
+      "ButtonDefault",
+      "ButtonHover",
+      "ButtonFocused",
+      "ButtonDisabled",
+      "ButtonLoading",
+      "PlaceholderCircleButton"
+    ],
+    "evidence": [
+      "componentPropertyDefinitions on the set",
+      "200 COMPONENT children of one COMPONENT_SET"
+    ],
+    "confidence": "verified"
+  },
+  "anatomy": {
+    "rootRole": "action",
+    "parts": [
+      {
+        "role": "leadingVisual",
+        "required": false,
+        "repeatable": false,
+        "componentRef": "INSTANCE:placeholder",
+        "evidence": "INSTANCE before label in every iconOnly=False variant"
+      },
+      {
+        "role": "label",
+        "required": true,
+        "repeatable": false,
+        "componentRef": "TEXT",
+        "evidence": "TEXT node; wrapped by FRAME \"Text padding\" in padded hierarchies, direct child in Link hierarchies"
+      },
+      {
+        "role": "trailingVisual",
+        "nodeIds": [],
+        "required": false,
+        "repeatable": false,
+        "componentRef": "INSTANCE:placeholder",
+        "evidence": "second INSTANCE after label"
+      },
+      {
+        "role": "loadingIndicator",
+        "nodeIds": [],
+        "required": false,
+        "repeatable": false,
+        "componentRef": "INSTANCE:Buttons/Button loading icon",
+        "evidence": "INSTANCE named 'Buttons/Button loading icon' present only in State=Loading"
+      }
+    ],
+    "variants": {
+      "iconOnly": "single visual, no label"
+    }
+  },
+  "slots": [
+    {
+      "name": "label",
+      "kind": "text",
+      "position": "only",
+      "cardinality": "one",
+      "source": {
+        "nodeIds": [],
+        "componentRefs": [
+          "TEXT"
+        ]
+      },
+      "publicApi": "children",
+      "provenance": {
+        "decision": "children",
+        "evidence": [
+          "TEXT node is the component's primary content",
+          "textAutoResize=WIDTH_AND_HEIGHT"
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "name": "leadingIcon",
+      "kind": "icon",
+      "position": "leading",
+      "cardinality": "optional",
+      "source": {
+        "figmaProperty": "🔀 Icon leading swap#3466:91",
+        "nodeIds": [],
+        "componentRefs": [
+          "3465:410042"
+        ]
+      },
+      "publicApi": "prop",
+      "provenance": {
+        "decision": "leadingIcon",
+        "evidence": [
+          "INSTANCE_SWAP property \"🔀 Icon leading swap#3466:91\"",
+          "BOOLEAN property \"⬅️ Icon leading#3287:1577\"",
+          "geometry: 16-20px INSTANCE before label"
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "name": "trailingIcon",
+      "kind": "icon",
+      "position": "trailing",
+      "cardinality": "optional",
+      "source": {
+        "figmaProperty": "🔀 Icon trailing swap#3466:852",
+        "nodeIds": [],
+        "componentRefs": [
+          "3465:410042"
+        ]
+      },
+      "publicApi": "prop",
+      "provenance": {
+        "decision": "trailingIcon",
+        "evidence": [
+          "INSTANCE_SWAP property \"🔀 Icon trailing swap#3466:852\"",
+          "BOOLEAN property \"➡️ Icon trailing#3287:2338\"",
+          "geometry: 16-20px INSTANCE after label"
+        ],
+        "confidence": "verified"
+      }
+    },
+    {
+      "name": "loadingIndicator",
+      "kind": "icon",
+      "position": "leading",
+      "cardinality": "optional",
+      "source": {
+        "figmaProperty": "Loading text#8468:0",
+        "nodeIds": [],
+        "componentRefs": [
+          "INSTANCE:Buttons/Button loading icon"
+        ]
+      },
+      "publicApi": "prop",
+      "provenance": {
+        "decision": "loadingIndicator",
+        "evidence": [
+          "INSTANCE named 'Buttons/Button loading icon' in every State=Loading variant",
+          "ellipse composition (track + arc) reused per size"
+        ],
+        "confidence": "verified"
+      }
+    }
+  ],
+  "fixtureIr": {
+    "fixtures": [
+      {
+        "sourceNodeIds": [
+          "3465:410042"
+        ],
+        "slot": "leadingIcon",
+        "fixtureKind": "placeholder-icon",
+        "productionMeaning": "consumer-supplied icon; the Figma placeholder demonstrates the slot only",
+        "renderedInHarnessBy": "src/fixtures/placeholder-circle.tsx",
+        "evidence": [
+          "INSTANCE_SWAP default target",
+          "nested component name 'placeholder'"
+        ],
+        "confidence": "verified"
+      },
+      {
+        "sourceNodeIds": [],
+        "slot": "label (state-dependent)",
+        "fixtureKind": "sample-text",
+        "productionMeaning": "consumer-supplied label text",
+        "renderedInHarnessBy": "src/grid.tsx (specimen data from button.index.json)",
+        "value": "Button CTA",
+        "evidence": [
+          "TEXT characters present in 100 variants"
+        ],
+        "confidence": "verified"
+      },
+      {
+        "sourceNodeIds": [],
+        "slot": "label (state-dependent)",
+        "fixtureKind": "sample-text",
+        "productionMeaning": "consumer-supplied label text",
+        "renderedInHarnessBy": "src/grid.tsx (specimen data from button.index.json)",
+        "value": "Submitting...",
+        "evidence": [
+          "TEXT characters present in 25 variants"
+        ],
+        "confidence": "verified"
+      }
+    ],
+    "leakCheck": "public component module must not export or require them"
+  },
+  "behavior": {
+    "semanticElement": "button",
+    "domContract": {
+      "attributes": {
+        "variant": "data-variant",
+        "size": "data-size",
+        "iconOnly": "data-icon-only",
+        "state": "data-state"
+      },
+      "rule": "the DOM exposes the public API values; Figma's authoring vocabulary is kept in data-figma-variant for traceability only",
+      "stability": "these attributes are the documented consumer styling hook (button.theme.css keys on them)"
+    },
+    "rationale": "plain action; native <button> carries focus, keyboard, disabled and form semantics; Base UI adds nothing required",
+    "interactions": {
+      "hover": "css",
+      "focus": "focus-visible",
+      "disabled": "native",
+      "loading": "runtime",
+      "open": "none",
+      "close": "none"
+    },
+    "stateMappings": {
+      "Default": "base",
+      "Hover": "css",
+      "Focused": "css",
+      "Disabled": "native",
+      "Loading": "runtime"
+    },
+    "forcedStateAttribute": {
+      "attribute": "data-state",
+      "purpose": "visual-regression harness only",
+      "publicApi": "internal-test-only"
+    }
+  },
+  "accessibility": {
+    "requirements": [
+      {
+        "rule": "icon-only button requires an accessible name",
+        "reason": "no text content is rendered",
+        "source": "native-semantics",
+        "enforcedBy": "dev warning + behavior test"
+      },
+      {
+        "rule": "disabled must use the native disabled attribute",
+        "reason": "keyboard and AT must skip it consistently",
+        "source": "native-semantics",
+        "enforcedBy": "behavior test"
+      },
+      {
+        "rule": "loading must expose aria-busy and block activation",
+        "reason": "state must be announced and double-submit prevented",
+        "source": "project-policy",
+        "enforcedBy": "behavior test"
+      },
+      {
+        "rule": "focus must be visible via :focus-visible",
+        "reason": "keyboard operability",
+        "source": "native-semantics",
+        "enforcedBy": "behavior test"
+      },
+      {
+        "rule": "loading must block activation and keep focus",
+        "reason": "prevents double submit while staying announced",
+        "source": "project-policy",
+        "enforcedBy": "behavior test"
+      },
+      {
+        "rule": "respect prefers-reduced-motion",
+        "reason": "motion sensitivity; interaction stays usable without transitions",
+        "source": "project-policy",
+        "enforcedBy": "generated stylesheet"
+      },
+      {
+        "rule": "stay legible under forced-colors",
+        "reason": "Windows high-contrast users must see the boundary",
+        "source": "project-policy",
+        "enforcedBy": "generated stylesheet"
+      }
+    ]
+  },
+  "publicApiPlan": {
+    "componentName": "Button",
+    "primitive": "native <button>",
+    "props": {
+      "variant": {
+        "type": "'primary'|'secondary'|'tertiary'|'link-color'|'link-gray'",
+        "source": "axis:Hierarchy",
+        "default": "primary"
+      },
+      "size": {
+        "type": "'xs'|'sm'|'md'|'lg'|'xl'",
+        "source": "axis:Size",
+        "default": "xs"
+      },
+      "iconOnly": {
+        "type": "boolean",
+        "source": "axis:Icon only",
+        "default": false
+      },
+      "loading": {
+        "type": "boolean",
+        "source": "state:Loading",
+        "default": false
+      },
+      "loadingText": {
+        "type": "ReactNode",
+        "source": "property:Loading text (fixture value is 'Submitting...')"
+      },
+      "leadingIcon": {
+        "type": "ReactNode",
+        "source": "slot:leadingIcon"
+      },
+      "trailingIcon": {
+        "type": "ReactNode",
+        "source": "slot:trailingIcon"
+      },
+      "state": {
+        "type": "forced visual state",
+        "source": "validator contract",
+        "publicApi": "internal-test-only"
+      }
+    },
+    "content": {
+      "label": "children",
+      "leadingVisual": "children-order (element child in leading position) or leadingIcon prop",
+      "trailingVisual": "children-order (element child in trailing position) or trailingIcon prop",
+      "loadingIndicator": "derived"
+    },
+    "compositionStrategy": {
+      "rule": "composition-first: an element child in the leading/trailing position renders in that visual slot; explicit leadingIcon/trailingIcon props take precedence; a single element child stays the label (or the icon when iconOnly)",
+      "evidence": [
+        "API_DESIGN_POLICY.md#icon-slots",
+        "COMPONENT_SEMANTICS.md#15"
+      ],
+      "verifiedBy": "behavior.mjs case 'composition slots'"
+    },
+    "nativeProps": {
+      "preserved": [
+        "type",
+        "disabled",
+        "onClick",
+        "aria-*",
+        "data-*",
+        "form",
+        "name",
+        "value",
+        "autoFocus"
+      ],
+      "mechanism": "ComponentPropsWithoutRef<'button'> spread; the component declares none of them itself"
+    },
+    "fixtureExclusions": [
+      {
+        "fixture": "placeholder circle icon",
+        "productionSubstitute": "consumer icon via composition or slot props"
+      },
+      {
+        "fixture": "\"Button CTA\"",
+        "productionSubstitute": "children"
+      },
+      {
+        "fixture": "\"Submitting...\"",
+        "productionSubstitute": "loadingText prop (no baked default)"
+      }
+    ],
+    "policyProvenance": [
+      {
+        "policy": "API_DESIGN_POLICY.md#hard-rule-do-not-translate-figma-props-11",
+        "decision": "Figma booleans (Icon leading/trailing swap, Loading text) became slots/children, not boolean props",
+        "confidence": "verified"
+      },
+      {
+        "policy": "API_DESIGN_POLICY.md#variant-policy",
+        "decision": "orthogonal axes kept; compound rules used only where the source proves interaction (Hierarchy x State fill/shadow, Size x Hierarchy x IconOnly padding)",
+        "confidence": "verified"
+      },
+      {
+        "policy": "API_DESIGN_POLICY.md#state-policy",
+        "decision": "hover/focus/disabled/loading are CSS/native/runtime, never consumer props; forced-state attribute is internal-test-only",
+        "confidence": "verified"
+      },
+      {
+        "policy": "API_DESIGN_POLICY.md#hard-rule-do-not-copy-shadcn-visually",
+        "decision": "all visual values come from Figma tokens; no shadcn dependency installed",
+        "confidence": "verified"
+      },
+      {
+        "policy": "API_DESIGN_POLICY.md#native-props",
+        "decision": "native <button> props preserved by type + spread",
+        "confidence": "verified"
+      },
+      {
+        "policy": "API_DESIGN_POLICY.md#component-vs-recipe-block",
+        "decision": "intent/destructive variants are not invented: the source defines none, so no intent prop is exposed",
+        "confidence": "evidence-backed"
+      }
+    ],
+    "stateMappings": {
+      "default": "base",
+      "hover": "css",
+      "focused": "css",
+      "disabled": "native",
+      "loading": "runtime",
+      "forcedStates": "internal-test-only"
+    },
+    "unsupportedCombinations": [
+      "lg/Link color/Default/iconOnly=True",
+      "lg/Link color/Disabled/iconOnly=True",
+      "lg/Link color/Focused/iconOnly=True",
+      "lg/Link color/Hover/iconOnly=True",
+      "lg/Link color/Loading/iconOnly=True",
+      "lg/Link gray/Default/iconOnly=True",
+      "lg/Link gray/Disabled/iconOnly=True",
+      "lg/Link gray/Focused/iconOnly=True",
+      "lg/Link gray/Hover/iconOnly=True",
+      "lg/Link gray/Loading/iconOnly=True",
+      "md/Link color/Default/iconOnly=True",
+      "md/Link color/Disabled/iconOnly=True",
+      "md/Link color/Focused/iconOnly=True",
+      "md/Link color/Hover/iconOnly=True",
+      "md/Link color/Loading/iconOnly=True",
+      "md/Link gray/Default/iconOnly=True",
+      "md/Link gray/Disabled/iconOnly=True",
+      "md/Link gray/Focused/iconOnly=True",
+      "md/Link gray/Hover/iconOnly=True",
+      "md/Link gray/Loading/iconOnly=True",
+      "sm/Link color/Default/iconOnly=True",
+      "sm/Link color/Disabled/iconOnly=True",
+      "sm/Link color/Focused/iconOnly=True",
+      "sm/Link color/Hover/iconOnly=True",
+      "sm/Link color/Loading/iconOnly=True",
+      "sm/Link gray/Default/iconOnly=True",
+      "sm/Link gray/Disabled/iconOnly=True",
+      "sm/Link gray/Focused/iconOnly=True",
+      "sm/Link gray/Hover/iconOnly=True",
+      "sm/Link gray/Loading/iconOnly=True",
+      "xl/Link color/Default/iconOnly=True",
+      "xl/Link color/Disabled/iconOnly=True",
+      "xl/Link color/Focused/iconOnly=True",
+      "xl/Link color/Hover/iconOnly=True",
+      "xl/Link color/Loading/iconOnly=True",
+      "xl/Link gray/Default/iconOnly=True",
+      "xl/Link gray/Disabled/iconOnly=True",
+      "xl/Link gray/Focused/iconOnly=True",
+      "xl/Link gray/Hover/iconOnly=True",
+      "xl/Link gray/Loading/iconOnly=True",
+      "xs/Link color/Default/iconOnly=True",
+      "xs/Link color/Disabled/iconOnly=True",
+      "xs/Link color/Focused/iconOnly=True",
+      "xs/Link color/Hover/iconOnly=True",
+      "xs/Link color/Loading/iconOnly=True",
+      "xs/Link gray/Default/iconOnly=True",
+      "xs/Link gray/Disabled/iconOnly=True",
+      "xs/Link gray/Focused/iconOnly=True",
+      "xs/Link gray/Hover/iconOnly=True",
+      "xs/Link gray/Loading/iconOnly=True"
+    ],
+    "registry": {
+      "item": "button",
+      "files": [
+        "src/components/ui/button.tsx",
+        "src/styles/button.theme.css",
+        "src/styles/tokens.css",
+        "src/components/icons/spinner.tsx"
+      ],
+      "registryMetadata": ".design-compiler/registry.json",
+      "verification": "see .design-compiler/visual/accuracy-report.json"
+    },
+    "apiDecisions": [
+      {
+        "decision": "iconOnly as a boolean rather than a size token (e.g. size='icon-md')",
+        "reason": "Figma models it as an independent axis; the padding matrix is keyed by (Size, Hierarchy, IconOnly) and a boolean keeps the axis 1:1 with the source",
+        "confidence": "evidence-backed",
+        "evidence": [
+          "componentPropertyDefinitions: 'Icon only' is a VARIANT axis with values False|True"
+        ]
+      }
+    ]
+  },
+  "confidenceSummary": {
+    "verified": 8,
+    "evidence-backed": 4
+  },
+  "codegenGate": {
+    "status": "open",
+    "blockers": [],
+    "rule": "no component codegen while blocked (COMPONENT_SEMANTICS.md)"
+  }
+}

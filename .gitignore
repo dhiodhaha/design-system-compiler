@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+dist-ssr/
+.vite/
+
+# logs and caches
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.env
+.env.*
+.DS_Store
+
+# Figma source artifacts (extracted from a commercial design system, e.g. Untitled UI PRO).
+# Excluded from the public repo on purpose: they are the licensed design file's content, not ours.
+# Kept locally so `pnpm compile` / `pnpm verify` stay offline-reproducible.
+.design-compiler/raw/
+.design-compiler/reference/
