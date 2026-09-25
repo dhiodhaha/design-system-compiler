@@ -186,3 +186,38 @@ unknown generated primitives ↓
 raw Figma HTML ↓
 manual semantic guessing ↓
 ```
+
+
+## OSS-missing component fallback
+
+Licensed PRO Figma is also the fallback design source for components that do not exist in the pinned OSS GitHub reference.
+
+Decision flow:
+
+```text
+Figma component encountered
+↓
+exact local mapping?
+├── yes → reuse
+└── no
+    ↓
+official OSS reference exists?
+├── yes → reference-backed port/reuse
+└── no
+    ↓
+PRO-only Figma component
+→ family normalization
+→ representative slicing
+→ resolve known nested components
+→ semantic compile only unresolved parts
+→ Base UI/native/specialized implementation
+→ Figma verification
+```
+
+This means the final library can grow beyond the public GitHub coverage without re-implementing components that are already known.
+
+A PRO-only component should preferably become a recipe/block/composition when it is mainly assembled from verified base components.
+
+Only create a new primitive when composition is insufficient.
+
+See [COVERAGE_STRATEGY.md](./COVERAGE_STRATEGY.md).
