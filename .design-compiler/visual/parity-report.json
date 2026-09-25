@@ -1,0 +1,84 @@
+{
+  "reference": {
+    "file": ".design-compiler/reference/golden@2x.png",
+    "crop": {
+      "x": 4,
+      "y": 2,
+      "w": 284,
+      "h": 64
+    }
+  },
+  "actual": {
+    "file": ".design-compiler/visual/parity-adopted@2x.png"
+  },
+  "size": {
+    "w": 284,
+    "h": 64
+  },
+  "threshold": 0.1,
+  "pixels": {
+    "total": 18176,
+    "exactDiff": 4021,
+    "perceptualDiff": 274,
+    "over2": 2565,
+    "over8": 2019,
+    "over32": 745
+  },
+  "exactDiffPercent": 22.123,
+  "perceptualPercent": 1.507,
+  "structuralPercent": 11.108,
+  "channelDelta": {
+    "max": 180,
+    "mean": 4.989
+  },
+  "byRegion": null,
+  "worstTiles": [
+    {
+      "tile": "r6c7",
+      "x": 252,
+      "y": 48,
+      "mismatchPercent": 13.93,
+      "maxDelta": 180
+    },
+    {
+      "tile": "r7c7",
+      "x": 252,
+      "y": 56,
+      "mismatchPercent": 19.29,
+      "maxDelta": 179
+    },
+    {
+      "tile": "r5c7",
+      "x": 252,
+      "y": 40,
+      "mismatchPercent": 25.36,
+      "maxDelta": 177
+    },
+    {
+      "tile": "r4c7",
+      "x": 252,
+      "y": 32,
+      "mismatchPercent": 31.43,
+      "maxDelta": 173
+    },
+    {
+      "tile": "r3c7",
+      "x": 252,
+      "y": 24,
+      "mismatchPercent": 34.64,
+      "maxDelta": 170
+    },
+    {
+      "tile": "r2c2",
+      "x": 72,
+      "y": 16,
+      "mismatchPercent": 6.25,
+      "maxDelta": 169
+    }
+  ],
+  "pass": {
+    "perceptualUnder1Percent": false,
+    "structuralUnder1Percent": false,
+    "maxChannelDelta": 180
+  }
+}

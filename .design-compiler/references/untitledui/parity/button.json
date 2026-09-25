@@ -1,0 +1,148 @@
+{
+  "$schema": "design-compiler/Parity@p0",
+  "item": "button",
+  "source": "src/components/base/buttons/button.tsx (adopted from untitleduico/react)",
+  "figma": {
+    "componentSetId": "3287:427074",
+    "specimen": "12246:5764",
+    "variant": {
+      "Size": "xs",
+      "Hierarchy": "Primary",
+      "State": "Default",
+      "Icon only": "False"
+    }
+  },
+  "classification": "MATCH_WITH_RECORDED_RENDERER_EXCEPTION",
+  "structural": {
+    "deltas": [
+      {
+        "property": "box.width",
+        "figma": 142,
+        "actual": 141.359,
+        "delta": -0.641,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "box.height",
+        "figma": 32,
+        "actual": 32,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "padding.block",
+        "figma": 6,
+        "actual": 6,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "padding.inline",
+        "figma": 10,
+        "actual": 10,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "gap",
+        "figma": 4,
+        "actual": 4,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "radius",
+        "figma": 8,
+        "actual": 8,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "font.size",
+        "figma": 14,
+        "actual": 14,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "font.lineHeight",
+        "figma": 20,
+        "actual": 20,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "font.weight",
+        "figma": 600,
+        "actual": 600,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "leadingVisual.x",
+        "figma": 10,
+        "actual": 10,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "trailingVisual.x",
+        "figma": 116,
+        "actual": 115.36,
+        "delta": -0.64,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "leadingVisual.size",
+        "figma": 16,
+        "actual": 16,
+        "delta": 0,
+        "unit": "px",
+        "ok": true
+      },
+      {
+        "property": "label.contentWidth",
+        "figma": 78,
+        "actual": 77.36,
+        "delta": -0.64,
+        "unit": "px",
+        "ok": true,
+        "exception": "button-label-box-rounding (Figma rounds the hug text box up; Chromium keeps the fractional advance)"
+      }
+    ],
+    "structuralFailures": [],
+    "tolerancePx": 1
+  },
+  "pixels": {
+    "reference": "Figma export crop (4,2,284,64) of golden@2x.png",
+    "perceptualPercent": 1.507,
+    "structuralPercent": 11.108,
+    "meanChannelDelta": 4.989,
+    "dominantCause": "sub-pixel label box: adopted content 77.36px vs Figma 78px shifts the trailing visual by 0.64px"
+  },
+  "benchmark": {
+    "note": "the Figma-compiled benchmark is the fidelity reference; the adopted source is the canonical implementation",
+    "box": {
+      "w": 142,
+      "h": 32
+    },
+    "labelWidth": 82,
+    "labelContentWidth": 78,
+    "perceptualPercent": 0.033
+  },
+  "knownExceptions": [
+    "button-label-box-rounding"
+  ],
+  "verifier": "compiler/adopt/parity.mjs"
+}
