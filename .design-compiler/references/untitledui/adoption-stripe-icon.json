@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "stripe-icon",
+  "title": "stripe-icon",
+  "export": "StripeIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/payment-icons/stripe-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/payment-icons/stripe-icon.tsx",
+      "upstreamSha256": "33e7db25a76e1add",
+      "sha": "4eadea80377ab119",
+      "copied": false,
+      "bytes": 3435,
+      "kind": "FOUNDATION"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

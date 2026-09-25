@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "use-breakpoint",
+  "title": "use-breakpoint",
+  "export": "useBreakpoint",
+  "layer": "helper",
+  "installable": false,
+  "distribution": "closure",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "hooks/use-breakpoint.ts",
+      "destination": "registry/untitledui/hooks/use-breakpoint.ts",
+      "upstreamSha256": "ba5c0a5d3e67b3a7",
+      "sha": "e52807f59a4e0a12",
+      "copied": true,
+      "bytes": 1458,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "rating-badge",
+  "title": "rating-badge",
+  "export": "Wreath",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 3,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/rating-badge.tsx",
+      "destination": "registry/untitledui/components/foundations/rating-badge.tsx",
+      "upstreamSha256": "f1f91ea2e5d5b2a6",
+      "sha": "2bb960c00a883ed9",
+      "copied": true,
+      "bytes": 13334,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/rating-stars.tsx",
+      "destination": "registry/untitledui/components/foundations/rating-stars.tsx",
+      "upstreamSha256": "86222fc8da3a0b98",
+      "sha": "0806ca55e4996d4f",
+      "copied": false,
+      "bytes": 3825,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

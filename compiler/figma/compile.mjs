@@ -176,7 +176,9 @@ const registry = {
   },
   note: "Visual language comes from the compiled Figma design system; shadcn informs API ergonomics and source distribution only.",
 };
-writeFileSync(p(".design-compiler/registry.json"), JSON.stringify(registry, null, 2));
+// Benchmark registry entry (the canonical registry is produced by compiler/state/reconcile.mjs).
+mkdirSync(p(".design-compiler/registry"), { recursive: true });
+writeFileSync(p(".design-compiler/registry/benchmark-figma-button.generated.json"), JSON.stringify({ ...registry, type: "COMPILER_RECONSTRUCTION_BENCHMARK", canonical: false }, null, 2));
 if (semantic.codegenGate.status === "blocked") {
   console.error("codegen gate BLOCKED:", semantic.codegenGate.blockers);
   process.exit(3);

@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "perplexity-icon",
+  "title": "perplexity-icon",
+  "export": "PerplexityIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/integration-icons/perplexity-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/perplexity-icon.tsx",
+      "upstreamSha256": "2a9aa70f57c23a45",
+      "sha": "1d1592899d13e769",
+      "copied": false,
+      "bytes": 4798,
+      "kind": "FOUNDATION"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

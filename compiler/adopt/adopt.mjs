@@ -1,139 +1,248 @@
 #!/usr/bin/env node
 /**
- * Official-source adoption (OSS source policy: adopt, do not rewrite).
+ * Generic OSS adoption engine (plan Phase 2, "ADOPT > ADAPT > COMPOSE > GENERATE").
  *
- *   node compiler/adopt/adopt.mjs --entry components/base/buttons/button.tsx [--entries a,b] [--dry]
+ *   node compiler/adopt/adopt.mjs --item button          # one public item
+ *   node compiler/adopt/adopt.mjs --items input,select   # several
+ *   node compiler/adopt/adopt.mjs --all                  # the whole adoptable queue, dependency order
+ *   node compiler/adopt/adopt.mjs --all --layer component
  *
- * Copies the pinned upstream source plus its transitive internal dependency closure into a source-owned
- * tree, preserving the upstream directory shape so `@/...` aliases keep resolving without rewriting.
+ * One engine, not one script per component:
+ *   resolve canonical source -> transitive internal closure -> styles layer -> copy with zero rewrite into
+ *   the source-owned payload tree (registry/untitledui/<upstream path>) -> dedupe by content hash ->
+ *   provenance header -> per-item adoption record -> registry metadata -> fail-soft status.
  *
- * Guarantees:
- *   • only files inside the pinned revision are read, and each copy carries a provenance header
- *     (repository, revision, upstream path, MIT notice) unless one is already present
- *   • applied transformations are recorded as an explicit delta list, never silent
- *   • the adoption record lists upstream/local hashes so a sync can prove what changed
- *   • no model call
+ * Deterministic. No model call, no network. Files that already exist byte-identically are not rewritten.
  */
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith("--") ? (a.push([v.slice(2), arr[i + 1]]), a) : a), []));
 const REPO = resolve(args.repo ?? "/tmp/untitled-react");
-const OUT = resolve(args.out ?? ".design-compiler/references/untitledui");
-const TARGET = resolve(args.target ?? "src");
-const DRY = process.argv.includes("--dry");
-const entries = (args.entries ?? args.entry ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+const REF = resolve(".design-compiler/references");
+const LIB = "untitledui";
+const PAYLOAD = resolve(args.payload ?? "registry/untitledui");
+const ALL = process.argv.includes("--all");
+const LAYER_FILTER = args.layer ?? null;
 
-if (!entries.length) {
-  console.error("usage: adopt.mjs --entry <upstream/path.tsx[,more]> [--repo DIR] [--target src] [--dry]");
-  process.exit(1);
-}
-
-const index = JSON.parse(readFileSync(resolve(OUT, "index.json"), "utf8"));
-const revisionInfo = JSON.parse(readFileSync(resolve(OUT, "revision.json"), "utf8"));
+const index = JSON.parse(readFileSync(resolve(REF, LIB, "index.json"), "utf8"));
+const graph = JSON.parse(readFileSync(resolve(REF, LIB, "graph.json"), "utf8"));
+const revisionInfo = JSON.parse(readFileSync(resolve(REF, LIB, "revision.json"), "utf8"));
 const byPath = new Map(index.entries.map((e) => [e.path, e]));
 
-/** Resolve an upstream import specifier to a repository path. */
-const resolveInternal = (from, spec) => {
-  const candidates = (base) => [base, `${base}.tsx`, `${base}.ts`, `${base}/index.ts`, `${base}/index.tsx`, `${base}.css`];
-  if (spec.startsWith("@/")) {
-    const base = spec.slice(2);
-    return candidates(base).find((c) => byPath.has(c) || existsSync(resolve(REPO, c))) ?? null;
+const kebab = (s) => s.replace(/([a-z0-9])([A-Z])/g, "$1-$2").replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-|-$/g, "").toLowerCase();
+
+// ---------------------------------------------------------------- item catalogue
+/** The unit of installation is a developer-meaningful item, not a source file. */
+const catalogue = [];
+for (const entry of index.entries) {
+  if (entry.layer === "component" || entry.layer === "component-part") {
+    for (const exp of entry.exports) {
+      if (!["component", "compound-namespace", "default-component"].includes(exp.kind)) continue;
+      if (exp.name === "(default)") continue;
+      catalogue.push({
+        id: kebab(exp.name),
+        title: exp.name,
+        export: exp.name,
+        path: entry.path,
+        kind: entry.kind,
+        layer: entry.layer,
+        installable: Boolean(entry.publicRegistryCandidate),
+        distribution: entry.publicRegistryCandidate ? "public-source" : "closure",
+      });
+    }
+  } else if (entry.layer === "recipe" || entry.layer === "foundation" || entry.layer === "asset" || entry.layer === "helper") {
+    const id = kebab(entry.path.split("/").pop().replace(/\.tsx?$/, ""));
+    catalogue.push({
+      id,
+      title: id,
+      export: entry.exports.find((e) => e.kind !== "type")?.name ?? null,
+      path: entry.path,
+      kind: entry.kind,
+      layer: entry.layer,
+      installable: entry.layer === "recipe" || entry.layer === "foundation",
+      distribution: entry.layer === "helper" || entry.layer === "asset" ? "closure" : "public-source",
+    });
   }
+}
+
+// de-duplicate by id, preferring public registry candidates
+const items = new Map();
+for (const c of catalogue) {
+  const existing = items.get(c.id);
+  if (!existing || (!existing.installable && c.installable)) items.set(c.id, c);
+}
+const itemList = [...items.values()];
+
+// ---------------------------------------------------------------- closure resolution
+/** a candidate counts only if it is a file: an extension-less match can be a directory. */
+const isFile = (p) => {
+  try {
+    return statSync(resolve(REPO, p)).isFile();
+  } catch {
+    return false;
+  }
+};
+
+const resolveInternal = (from, spec) => {
+  const candidates = (base) => [base, `${base}.tsx`, `${base}.ts`, `${base}/index.ts`, `${base}/index.tsx`, `${base}.css`].filter(isFile);
+  if (spec.startsWith("@/")) return candidates(spec.slice(2)).find((c) => byPath.has(c) || existsSync(resolve(REPO, c))) ?? null;
   if (spec.startsWith(".")) {
     const dir = from.split("/").slice(0, -1).join("/");
-    const base = resolve("/", dir, spec).slice(1);
-    return candidates(base).find((c) => byPath.has(c) || existsSync(resolve(REPO, c))) ?? null;
+    return candidates(resolve("/", dir, spec).slice(1)).find((c) => byPath.has(c) || existsSync(resolve(REPO, c))) ?? null;
   }
   return null;
 };
 
-/** Transitive internal closure: local source, styles and hooks travel with the component. */
-const closure = new Set();
-const external = new Set();
-const queue = [...entries];
-while (queue.length) {
-  const path = queue.shift();
-  if (closure.has(path)) continue;
-  closure.add(path);
-  const entry = byPath.get(path);
-  const abs = resolve(REPO, path);
-  if (!entry || !existsSync(abs)) continue;
-  for (const spec of entry.dependencies) {
-    const target = resolveInternal(path, spec);
-    if (target) queue.push(target);
-    else if (!spec.startsWith(".") && !spec.startsWith("@/")) external.add(spec);
+const STYLE_LAYER = ["styles/globals.css", "styles/theme.css", "styles/typography.css"];
+
+const closureOf = (rootPath) => {
+  const files = new Set();
+  const external = new Set();
+  const queue = [rootPath];
+  while (queue.length) {
+    const path = queue.shift();
+    if (files.has(path)) continue;
+    files.add(path);
+    const abs = resolve(REPO, path);
+    if (!existsSync(abs)) continue;
+    const src = readFileSync(abs, "utf8");
+    const specs = [...src.matchAll(/from\s+"([^"]+)"/g)].map((m) => m[1]).concat([...src.matchAll(/@import\s+"([^"]+)"/g)].map((m) => m[1]));
+    for (const spec of specs) {
+      const target = resolveInternal(path, spec);
+      if (target) queue.push(target);
+      else if (!spec.startsWith(".") && !spec.startsWith("@/")) external.add(spec);
+    }
   }
-}
+  return { files: [...files], external: [...external] };
+};
+
+/** Every adopted item depends on the adopted stylesheet layer (the upstream app imports it at the root). */
+const styleClosure = STYLE_LAYER.filter((p) => existsSync(resolve(REPO, p)));
 
 const header = (upstreamPath) =>
   [
     `/* Adopted from ${revisionInfo.repository}@${revisionInfo.revision.slice(0, 12)} — ${upstreamPath}`,
-    ` * ${revisionInfo.license} licensed upstream source, adopted with the smallest necessary project-local`,
-    ` * transformations. Local deltas, if any, are listed in .design-compiler/references/untitledui/adoption-*.json.`,
-    ` * Do not hand-edit: re-run compiler/adopt/adopt.mjs to re-adopt. */`,
+    ` * ${revisionInfo.license} licensed upstream source (${revisionInfo.copyright ?? "see upstream LICENSE"}).`,
+    ` * Adopted with the smallest necessary project-local transformations; deltas are recorded in`,
+    ` * .design-compiler/references/untitledui/adoption-*.json. Do not hand-edit: re-run compiler/adopt/adopt.mjs. */`,
     "",
   ].join("\n");
 
-const files = [];
-const transforms = [];
-for (const path of [...closure].sort()) {
-  const source = readFileSync(resolve(REPO, path), "utf8");
-  const localPath = path; // upstream shape preserved under the source root, so @/ aliases resolve untouched
-  const destination = resolve(TARGET, localPath);
-  const repoPath = relative(process.cwd(), destination); // what the record and later gates read
-  const alreadyAdopted = existsSync(destination) && readFileSync(destination, "utf8").includes(`Adopted from ${revisionInfo.repository}@`);
-  const content = alreadyAdopted ? readFileSync(destination, "utf8") : `${header(path)}${source}`;
-  files.push({
-    upstreamPath: path,
-    localPath: repoPath,
-    upstreamSha256: createHash("sha256").update(source).digest("hex").slice(0, 16),
-    localSha256: createHash("sha256").update(content).digest("hex").slice(0, 16),
-    bytes: Buffer.byteLength(content),
-    kind: byPath.get(path)?.kind ?? "UNKNOWN",
-    adopted: !alreadyAdopted,
-  });
-  if (!DRY && !alreadyAdopted) {
+const hash = (s) => createHash("sha256").update(s).digest("hex").slice(0, 16);
+
+// ---------------------------------------------------------------- adopt
+const adoptedThisRun = new Map(); // upstreamPath -> {destination, sha, copied}
+const copiedFiles = [];
+const itemRecords = [];
+const failures = [];
+
+const copyFile = (upstreamPath) => {
+  if (adoptedThisRun.has(upstreamPath)) return adoptedThisRun.get(upstreamPath);
+  const abs = resolve(REPO, upstreamPath);
+  if (!existsSync(abs)) {
+    const rec = { upstreamPath, destination: null, sha: null, copied: false, error: "missing upstream file" };
+    adoptedThisRun.set(upstreamPath, rec);
+    return rec;
+  }
+  const source = readFileSync(abs, "utf8");
+  const destination = resolve(PAYLOAD, upstreamPath);
+  const isCode = /\.(tsx?|css)$/.test(upstreamPath);
+  const alreadyHeader = existsSync(destination) && readFileSync(destination, "utf8").includes(`Adopted from ${revisionInfo.repository}@`);
+  const content = alreadyHeader ? readFileSync(destination, "utf8") : isCode ? `${header(upstreamPath)}${source}` : source;
+  const existing = existsSync(destination) ? readFileSync(destination, "utf8") : null;
+  const copied = existing !== content;
+  if (copied) {
     mkdirSync(dirname(destination), { recursive: true });
     writeFileSync(destination, content);
+    copiedFiles.push(relative(process.cwd(), destination));
   }
-}
-
-const record = {
-  $schema: "design-compiler/Adoption@p0",
-  library: "untitledui",
-  repository: revisionInfo.repository,
-  revision: revisionInfo.revision,
-  license: revisionInfo.license,
-  adoptedAt: new Date().toISOString().slice(0, 10),
-  dryRun: DRY,
-  entries,
-  closureSize: files.length,
-  files,
-  externalDependencies: [...external].sort(),
-  transforms,
-  transformPolicy:
-    "no rewriting by default: upstream path shape is preserved so `@/` aliases resolve; only demonstrated portability defects may add an entry here",
+  const rec = { upstreamPath, destination: relative(process.cwd(), destination), upstreamSha256: hash(source), sha: hash(content), copied, bytes: Buffer.byteLength(content), kind: byPath.get(upstreamPath)?.kind ?? "UNKNOWN" };
+  adoptedThisRun.set(upstreamPath, rec);
+  return rec;
 };
 
-mkdirSync(OUT, { recursive: true });
-const recordPath = resolve(OUT, `adoption-${entries[0].split("/").pop().replace(/\.[^.]+$/, "")}.json`);
-writeFileSync(recordPath, JSON.stringify(record, null, 2));
+const layerOrder = graph.dependencyOrder ?? [];
+const orderedIds = new Map();
+layerOrder.forEach((layer, i) => layer.forEach((p) => orderedIds.set(p, i)));
+
+let queue = ALL ? itemList : (args.items ?? args.item ?? "").split(",").map((s) => s.trim()).filter(Boolean).map((id) => items.get(id) ?? { id, path: null, missing: true });
+if (LAYER_FILTER) queue = queue.filter((i) => i.layer === LAYER_FILTER);
+if (ALL) {
+  queue.sort((a, b) => (orderedIds.get(a.path) ?? 999) - (orderedIds.get(b.path) ?? 999) || a.id.localeCompare(b.id));
+}
+
+for (const item of queue) {
+  if (!item.path) {
+    failures.push({ item: item.id, status: "UNKNOWN_ITEM", reason: "no catalogue entry with this id" });
+    continue;
+  }
+  const { files, external } = closureOf(item.path);
+  const styleFiles = item.layer === "component" || item.layer === "component-part" || item.layer === "recipe" ? styleClosure : [];
+  const records = [...files, ...styleFiles].map(copyFile);
+  const missing = records.filter((r) => r.error);
+  const status = missing.length ? "BLOCKED" : records.some((r) => r.copied) ? "SOURCE_ADOPTED" : "SOURCE_ADOPTED_UNCHANGED";
+  itemRecords.push({
+    $schema: "design-compiler/Adoption@p1",
+    item: item.id,
+    title: item.title,
+    export: item.export,
+    layer: item.layer,
+    installable: item.installable,
+    distribution: item.distribution,
+    library: LIB,
+    repository: revisionInfo.repository,
+    revision: revisionInfo.revision,
+    license: revisionInfo.license,
+    adopted: true,
+    copiedThisRun: records.some((r) => r.copied),
+    status,
+    closureSize: records.length,
+    files: records.filter((r) => !r.error),
+    sharedStyleDependencies: styleFiles,
+    externalDependencies: [...new Set(external)].sort(),
+    transforms: [],
+    transformPolicy: "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here",
+  });
+  if (missing.length) failures.push({ item: item.id, status: "BLOCKED", reason: `missing upstream files: ${missing.map((m) => m.upstreamPath).join(", ")}` });
+  writeFileSync(resolve(REF, LIB, `adoption-${item.id}.json`), JSON.stringify(itemRecords[itemRecords.length - 1], null, 2));
+}
+
+const byStatus = itemRecords.reduce((a, r) => ({ ...a, [r.status]: (a[r.status] ?? 0) + 1 }), {});
+const report = {
+  $schema: "design-compiler/AdoptionRun@p1",
+  at: new Date().toISOString(),
+  library: LIB,
+  repository: revisionInfo.repository,
+  revision: revisionInfo.revision,
+  mode: ALL ? "all" : "selected",
+  itemsRequested: queue.length,
+  itemsAdopted: itemRecords.length,
+  byStatus,
+  byLayer: itemRecords.reduce((a, r) => ({ ...a, [r.layer]: (a[r.layer] ?? 0) + 1 }), {}),
+  filesWritten: copiedFiles.length,
+  uniqueFilesInPayload: adoptedThisRun.size,
+  failures,
+  items: itemRecords.map((r) => ({ item: r.item, layer: r.layer, status: r.status, closureSize: r.closureSize, installable: r.installable })),
+};
+writeFileSync(resolve(REF, LIB, "adoption-run.json"), JSON.stringify(report, null, 2));
 
 console.log(
   JSON.stringify(
     {
-      dryRun: DRY,
-      entries,
-      closureSize: files.length,
-      byKind: files.reduce((a, f) => ({ ...a, [f.kind]: (a[f.kind] ?? 0) + 1 }), {}),
-      files: files.map((f) => `${f.upstreamPath} -> ${f.localPath}`).slice(0, 20),
-      externalDependencies: record.externalDependencies,
-      transforms: transforms.length,
-      record: relative(process.cwd(), recordPath),
+      mode: report.mode,
+      itemsAdopted: report.itemsAdopted,
+      byStatus,
+      byLayer: report.byLayer,
+      filesWritten: report.filesWritten,
+      uniqueFilesInPayload: report.uniqueFilesInPayload,
+      payload: relative(process.cwd(), PAYLOAD),
+      failures: failures.slice(0, 10),
+      sampleItems: report.items.slice(0, 12).map((i) => `${i.item} (${i.layer}, ${i.closureSize} files)`),
     },
     null,
     2,
   ),
 );
+process.exit(failures.length ? 1 : 0);

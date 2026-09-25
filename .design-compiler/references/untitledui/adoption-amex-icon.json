@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "amex-icon",
+  "title": "amex-icon",
+  "export": "AmexIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/payment-icons/amex-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/payment-icons/amex-icon.tsx",
+      "upstreamSha256": "e90ce4931e2f35de",
+      "sha": "05e9ed9c9dc6e595",
+      "copied": false,
+      "bytes": 1834,
+      "kind": "FOUNDATION"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

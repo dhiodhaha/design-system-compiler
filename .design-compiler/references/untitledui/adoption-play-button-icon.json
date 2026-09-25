@@ -1,0 +1,44 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "play-button-icon",
+  "title": "play-button-icon",
+  "export": "PlayButtonIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 2,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/play-button-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/play-button-icon.tsx",
+      "upstreamSha256": "d212c8841eaee952",
+      "sha": "74ae8dab582d84a3",
+      "copied": false,
+      "bytes": 2311,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

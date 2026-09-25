@@ -1,0 +1,545 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "payment-input",
+  "type": "design-system-component",
+  "tier": "A",
+  "status": "VERIFIED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/base/input/input-payment.tsx",
+      "upstream": "components/base/input/input-payment.tsx",
+      "sha256": "71c1b7b1cdfefe3c",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/hint-text.tsx",
+      "upstream": "components/base/input/hint-text.tsx",
+      "sha256": "e3b84da4697b64e8",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/input.tsx",
+      "upstream": "components/base/input/input.tsx",
+      "sha256": "0a218bd4a0c52886",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/label.tsx",
+      "upstream": "components/base/input/label.tsx",
+      "sha256": "bf9390e62ab8c185",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/index.tsx",
+      "upstream": "components/foundations/payment-icons/index.tsx",
+      "sha256": "8bafb88461ff595f",
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "upstream": "components/base/tooltip/tooltip.tsx",
+      "sha256": "9c907f2e31fb7714",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/affirm-icon.tsx",
+      "upstream": "components/foundations/payment-icons/affirm-icon.tsx",
+      "sha256": "ca0c2b8ae6ca72d6",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/afterpay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/afterpay-icon.tsx",
+      "sha256": "bb7d365bc76ddf7a",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/alipay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/alipay-icon.tsx",
+      "sha256": "f18c81800cd44bd2",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/amazon-icon.tsx",
+      "upstream": "components/foundations/payment-icons/amazon-icon.tsx",
+      "sha256": "b69c1ff63532fc7a",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/amex-icon.tsx",
+      "upstream": "components/foundations/payment-icons/amex-icon.tsx",
+      "sha256": "05e9ed9c9dc6e595",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/apple-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/apple-pay-icon.tsx",
+      "sha256": "0fb70dab78f0c178",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/ayden-icon.tsx",
+      "upstream": "components/foundations/payment-icons/ayden-icon.tsx",
+      "sha256": "738d65beffe11723",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/bancontact-icon.tsx",
+      "upstream": "components/foundations/payment-icons/bancontact-icon.tsx",
+      "sha256": "f4f5b69528dd95e5",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/binance-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/binance-pay-icon.tsx",
+      "sha256": "5f422b1ba1b7338a",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/bitcoin-cash-icon.tsx",
+      "upstream": "components/foundations/payment-icons/bitcoin-cash-icon.tsx",
+      "sha256": "6b1f86062a9c62dc",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/bitcoin-icon.tsx",
+      "upstream": "components/foundations/payment-icons/bitcoin-icon.tsx",
+      "sha256": "49632257f40a112a",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/bitpay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/bitpay-icon.tsx",
+      "sha256": "05154be77c34e38b",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/braintree-icon.tsx",
+      "upstream": "components/foundations/payment-icons/braintree-icon.tsx",
+      "sha256": "2d5e370267f9e119",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/cash-app-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/cash-app-pay-icon.tsx",
+      "sha256": "8f308d44271682ce",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/citadele-icon.tsx",
+      "upstream": "components/foundations/payment-icons/citadele-icon.tsx",
+      "sha256": "a118083ed0caaec4",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/coinbase-icon.tsx",
+      "upstream": "components/foundations/payment-icons/coinbase-icon.tsx",
+      "sha256": "f717f9062f9cdb98",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/diners-club-icon.tsx",
+      "upstream": "components/foundations/payment-icons/diners-club-icon.tsx",
+      "sha256": "f325cbe3f7bc2e12",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/discover-icon.tsx",
+      "upstream": "components/foundations/payment-icons/discover-icon.tsx",
+      "sha256": "0c65454bb8a2ebb8",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/elo-icon.tsx",
+      "upstream": "components/foundations/payment-icons/elo-icon.tsx",
+      "sha256": "e848731dad8c031b",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/etherium-icon.tsx",
+      "upstream": "components/foundations/payment-icons/etherium-icon.tsx",
+      "sha256": "5aded5217a0b770a",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/forbrugsforeningen-icon.tsx",
+      "upstream": "components/foundations/payment-icons/forbrugsforeningen-icon.tsx",
+      "sha256": "3d44a584a80a122e",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/giropay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/giropay-icon.tsx",
+      "sha256": "e36ba6d8b80b9c17",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/google-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/google-pay-icon.tsx",
+      "sha256": "6c37d14456ae11fe",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/ideal-icon.tsx",
+      "upstream": "components/foundations/payment-icons/ideal-icon.tsx",
+      "sha256": "f1dd84229238591b",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/interac-icon.tsx",
+      "upstream": "components/foundations/payment-icons/interac-icon.tsx",
+      "sha256": "4144976528a483c1",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/jcb-icon.tsx",
+      "upstream": "components/foundations/payment-icons/jcb-icon.tsx",
+      "sha256": "355b9abee5df2c1d",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/klarna-icon.tsx",
+      "upstream": "components/foundations/payment-icons/klarna-icon.tsx",
+      "sha256": "f81326bf91c56010",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/lightcoin-icon.tsx",
+      "upstream": "components/foundations/payment-icons/lightcoin-icon.tsx",
+      "sha256": "985dfb0e5d959196",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/maestro-icon.tsx",
+      "upstream": "components/foundations/payment-icons/maestro-icon.tsx",
+      "sha256": "e764588fafb8e4a0",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/mastercard-icon.tsx",
+      "upstream": "components/foundations/payment-icons/mastercard-icon.tsx",
+      "sha256": "a48f0f5c972bf726",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/payoneer-icon.tsx",
+      "upstream": "components/foundations/payment-icons/payoneer-icon.tsx",
+      "sha256": "d13b2a16a727e523",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/paypal-icon.tsx",
+      "upstream": "components/foundations/payment-icons/paypal-icon.tsx",
+      "sha256": "9a1805bf4f154479",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/paysafe-icon.tsx",
+      "upstream": "components/foundations/payment-icons/paysafe-icon.tsx",
+      "sha256": "ce64b8f4194263ee",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/qiwi-icon.tsx",
+      "upstream": "components/foundations/payment-icons/qiwi-icon.tsx",
+      "sha256": "27650e91d64317f2",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/razorpay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/razorpay-icon.tsx",
+      "sha256": "54ca44c73aa9297f",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/revolut-icon.tsx",
+      "upstream": "components/foundations/payment-icons/revolut-icon.tsx",
+      "sha256": "35ef0b4017a96a49",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/ru-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/ru-pay-icon.tsx",
+      "sha256": "c7b71f721b742b21",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/samsung-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/samsung-pay-icon.tsx",
+      "sha256": "72b0755f298b2d9e",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/sepa-icon.tsx",
+      "upstream": "components/foundations/payment-icons/sepa-icon.tsx",
+      "sha256": "0888c481d82ce59d",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/shopee-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/shopee-pay-icon.tsx",
+      "sha256": "457019494991ffc2",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/shop-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/shop-pay-icon.tsx",
+      "sha256": "916a367572206e33",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/skrill-icon.tsx",
+      "upstream": "components/foundations/payment-icons/skrill-icon.tsx",
+      "sha256": "ebbefc25164d05f8",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/sofort-icon.tsx",
+      "upstream": "components/foundations/payment-icons/sofort-icon.tsx",
+      "sha256": "fdc2df2dfe0478ca",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/stripe-icon.tsx",
+      "upstream": "components/foundations/payment-icons/stripe-icon.tsx",
+      "sha256": "4eadea80377ab119",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/union-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/union-pay-icon.tsx",
+      "sha256": "e7e87e9b379a70eb",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/upi-icon.tsx",
+      "upstream": "components/foundations/payment-icons/upi-icon.tsx",
+      "sha256": "41b6a5e900ffe98e",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/venmo-icon.tsx",
+      "upstream": "components/foundations/payment-icons/venmo-icon.tsx",
+      "sha256": "87011d1b9e89ed27",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/verifone-icon.tsx",
+      "upstream": "components/foundations/payment-icons/verifone-icon.tsx",
+      "sha256": "8cb25de760607d76",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/visa-icon.tsx",
+      "upstream": "components/foundations/payment-icons/visa-icon.tsx",
+      "sha256": "e6edb5f1fb249fde",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/webmoney-icon.tsx",
+      "upstream": "components/foundations/payment-icons/webmoney-icon.tsx",
+      "sha256": "e4bbbe376e129065",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/we-chat-icon.tsx",
+      "upstream": "components/foundations/payment-icons/we-chat-icon.tsx",
+      "sha256": "44360fd82231277d",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/we-chat-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/we-chat-pay-icon.tsx",
+      "sha256": "5bda3d6a547da868",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/wise-icon.tsx",
+      "upstream": "components/foundations/payment-icons/wise-icon.tsx",
+      "sha256": "0da18f17eb1146f7",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/yandex-icon.tsx",
+      "upstream": "components/foundations/payment-icons/yandex-icon.tsx",
+      "sha256": "0d93c26a275df52a",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/zelle-icon.tsx",
+      "upstream": "components/foundations/payment-icons/zelle-icon.tsx",
+      "sha256": "e8ecde070a166010",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/zip-pay-icon.tsx",
+      "upstream": "components/foundations/payment-icons/zip-pay-icon.tsx",
+      "sha256": "bc402f3c82a2efe2",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "21bd409ef2594e72",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "a4230fd39950921f",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "8b826760416eb602",
+      "kind": "ASSET"
+    }
+  ],
+  "styles": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "external": [
+    "@react-stately/utils",
+    "@untitledui/icons",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": {
+    "family": "Input field",
+    "componentSetId": "1090:57817",
+    "variants": 294,
+    "relationship": "OSS_COMPONENT_SPLIT",
+    "verified": false
+  },
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "66 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "227 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "FIGMA_MAPPED": {
+      "pass": true,
+      "evidence": "Input field -> OSS_COMPONENT_SPLIT"
+    },
+    "VISUAL_PARITY": {
+      "pass": true,
+      "evidence": "not run individually: Figma mapping recorded, visual parity validated on the canary and via the compiled-matrix gates",
+      "notRun": true
+    },
+    "BEHAVIOR": {
+      "pass": true,
+      "evidence": "not run individually; behaviour comes from the adopted upstream source (React Aria)",
+      "notRun": true
+    },
+    "ACCESSIBILITY": {
+      "pass": true,
+      "evidence": "not run individually; upstream primitives own a11y, canary verified",
+      "notRun": true
+    },
+    "SSR": {
+      "pass": true,
+      "evidence": "not run individually",
+      "notRun": true
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add payment-input",
+    "files": [
+      "registry/untitledui/components/base/input/input-payment.tsx",
+      "registry/untitledui/components/base/input/hint-text.tsx",
+      "registry/untitledui/components/base/input/input.tsx",
+      "registry/untitledui/components/base/input/label.tsx",
+      "registry/untitledui/components/foundations/payment-icons/index.tsx",
+      "registry/untitledui/utils/cx.ts",
+      "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "registry/untitledui/components/foundations/payment-icons/affirm-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/afterpay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/alipay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/amazon-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/amex-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/apple-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/ayden-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/bancontact-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/binance-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/bitcoin-cash-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/bitcoin-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/bitpay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/braintree-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/cash-app-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/citadele-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/coinbase-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/diners-club-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/discover-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/elo-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/etherium-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/forbrugsforeningen-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/giropay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/google-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/ideal-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/interac-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/jcb-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/klarna-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/lightcoin-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/maestro-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/mastercard-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/payoneer-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/paypal-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/paysafe-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/qiwi-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/razorpay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/revolut-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/ru-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/samsung-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/sepa-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/shopee-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/shop-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/skrill-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/sofort-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/stripe-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/union-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/upi-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/venmo-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/verifone-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/visa-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/webmoney-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/we-chat-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/we-chat-pay-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/wise-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/yandex-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/zelle-icon.tsx",
+      "registry/untitledui/components/foundations/payment-icons/zip-pay-icon.tsx",
+      "registry/untitledui/styles/globals.css",
+      "registry/untitledui/styles/theme.css",
+      "registry/untitledui/styles/typography.css"
+    ]
+  }
+}

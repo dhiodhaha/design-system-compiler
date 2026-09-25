@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "google-pay-icon",
+  "title": "google-pay-icon",
+  "export": "GooglePayIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/payment-icons/google-pay-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/payment-icons/google-pay-icon.tsx",
+      "upstreamSha256": "f9c69a11d638b028",
+      "sha": "6c37d14456ae11fe",
+      "copied": false,
+      "bytes": 3934,
+      "kind": "FOUNDATION"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

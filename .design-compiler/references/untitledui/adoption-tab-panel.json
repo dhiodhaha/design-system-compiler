@@ -1,0 +1,113 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "tab-panel",
+  "title": "TabPanel",
+  "export": "TabPanel",
+  "layer": "component",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 9,
+  "files": [
+    {
+      "upstreamPath": "components/application/tabs/tabs.tsx",
+      "destination": "registry/untitledui/components/application/tabs/tabs.tsx",
+      "upstreamSha256": "090aa84ea228281d",
+      "sha": "ed4f2cdd77291270",
+      "copied": true,
+      "bytes": 9987,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/badges/badges.tsx",
+      "destination": "registry/untitledui/components/base/badges/badges.tsx",
+      "upstreamSha256": "3ba3b3a1da36b921",
+      "sha": "a8a28cc851b294af",
+      "copied": true,
+      "bytes": 15481,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "utils/is-react-component.ts",
+      "destination": "registry/untitledui/utils/is-react-component.ts",
+      "upstreamSha256": "2f24cf5e7c8cc9b8",
+      "sha": "f518f86f81a9adf6",
+      "copied": false,
+      "bytes": 1713,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/foundations/dot-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/dot-icon.tsx",
+      "upstreamSha256": "a908145b197665d9",
+      "sha": "bb4b2ad57f35eb15",
+      "copied": false,
+      "bytes": 970,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/base/badges/badge-types.ts",
+      "destination": "registry/untitledui/components/base/badges/badge-types.ts",
+      "upstreamSha256": "086f2d74cddd0dec",
+      "sha": "1af02a56f9fedc74",
+      "copied": true,
+      "bytes": 3844,
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "upstreamPath": "styles/globals.css",
+      "destination": "registry/untitledui/styles/globals.css",
+      "upstreamSha256": "0c1fd5eebe0cb65d",
+      "sha": "21bd409ef2594e72",
+      "copied": false,
+      "bytes": 2081,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/theme.css",
+      "destination": "registry/untitledui/styles/theme.css",
+      "upstreamSha256": "52241a7d0d28f702",
+      "sha": "a4230fd39950921f",
+      "copied": false,
+      "bytes": 44513,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/typography.css",
+      "destination": "registry/untitledui/styles/typography.css",
+      "upstreamSha256": "531cc316caf58796",
+      "sha": "8b826760416eb602",
+      "copied": false,
+      "bytes": 12895,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "externalDependencies": [
+    "@untitledui/icons",
+    "react",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

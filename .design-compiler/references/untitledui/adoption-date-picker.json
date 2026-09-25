@@ -1,0 +1,152 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "date-picker",
+  "title": "DatePicker",
+  "export": "DatePicker",
+  "layer": "component",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 13,
+  "files": [
+    {
+      "upstreamPath": "components/application/date-picker/date-picker.tsx",
+      "destination": "registry/untitledui/components/application/date-picker/date-picker.tsx",
+      "upstreamSha256": "2644218cc4aed8d5",
+      "sha": "13fb03701004a31a",
+      "copied": true,
+      "bytes": 4443,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/buttons/button.tsx",
+      "destination": "registry/untitledui/components/base/buttons/button.tsx",
+      "upstreamSha256": "1eb74e3672d0f8c5",
+      "sha": "dc691191c309b11b",
+      "copied": false,
+      "bytes": 12191,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/application/date-picker/calendar.tsx",
+      "destination": "registry/untitledui/components/application/date-picker/calendar.tsx",
+      "upstreamSha256": "9bd9d085340852c9",
+      "sha": "f999a6e4818c2af6",
+      "copied": true,
+      "bytes": 5419,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "utils/is-react-component.ts",
+      "destination": "registry/untitledui/utils/is-react-component.ts",
+      "upstreamSha256": "2f24cf5e7c8cc9b8",
+      "sha": "f518f86f81a9adf6",
+      "copied": false,
+      "bytes": 1713,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/base/input/input-date.tsx",
+      "destination": "registry/untitledui/components/base/input/input-date.tsx",
+      "upstreamSha256": "c3f54bdb87553517",
+      "sha": "16bcfeb9c29b064d",
+      "copied": true,
+      "bytes": 10088,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/application/date-picker/cell.tsx",
+      "destination": "registry/untitledui/components/application/date-picker/cell.tsx",
+      "upstreamSha256": "5276acf52e43a8d3",
+      "sha": "a5d54baeb06e6579",
+      "copied": false,
+      "bytes": 5958,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/tooltip/tooltip.tsx",
+      "destination": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "upstreamSha256": "920be9cec3b0ebaa",
+      "sha": "9c907f2e31fb7714",
+      "copied": false,
+      "bytes": 4792,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/input/hint-text.tsx",
+      "destination": "registry/untitledui/components/base/input/hint-text.tsx",
+      "upstreamSha256": "521941d440c71a80",
+      "sha": "e3b84da4697b64e8",
+      "copied": false,
+      "bytes": 1434,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/input/label.tsx",
+      "destination": "registry/untitledui/components/base/input/label.tsx",
+      "upstreamSha256": "12c33452d3f864b5",
+      "sha": "bf9390e62ab8c185",
+      "copied": true,
+      "bytes": 2812,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "styles/globals.css",
+      "destination": "registry/untitledui/styles/globals.css",
+      "upstreamSha256": "0c1fd5eebe0cb65d",
+      "sha": "21bd409ef2594e72",
+      "copied": false,
+      "bytes": 2081,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/theme.css",
+      "destination": "registry/untitledui/styles/theme.css",
+      "upstreamSha256": "52241a7d0d28f702",
+      "sha": "a4230fd39950921f",
+      "copied": false,
+      "bytes": 44513,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/typography.css",
+      "destination": "registry/untitledui/styles/typography.css",
+      "upstreamSha256": "531cc316caf58796",
+      "sha": "8b826760416eb602",
+      "copied": false,
+      "bytes": 12895,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "externalDependencies": [
+    "@internationalized/date",
+    "@react-stately/utils",
+    "@untitledui/icons",
+    "react",
+    "react-aria",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

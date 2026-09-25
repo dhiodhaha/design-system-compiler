@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "verifone-icon",
+  "title": "verifone-icon",
+  "export": "VerifoneIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/payment-icons/verifone-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/payment-icons/verifone-icon.tsx",
+      "upstreamSha256": "b203247e632a49e0",
+      "sha": "8cb25de760607d76",
+      "copied": false,
+      "bytes": 5435,
+      "kind": "FOUNDATION"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

@@ -1,72 +1,111 @@
 {
-  "$schema": "design-compiler/StateReport@p0",
-  "generatedAt": "2026-09-25T10:34:44.744Z",
-  "ossReference": {
+  "$schema": "design-compiler/StateReport@p1",
+  "generatedAt": "2026-09-25T11:24:06.649Z",
+  "derived": true,
+  "derivedBy": "compiler/state/reconcile.mjs",
+  "architecture": "Option D — official Untitled UI OSS React source is canonical; Base UI is optional for genuinely new PRO-only primitives",
+  "oss": {
     "repository": "untitleduico/react",
     "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
     "license": "MIT",
     "copyright": "Copyright (c) 2025 Untitled UI",
     "sourceFilesIndexed": 315,
     "sourceContentDigestSha256": "6c355b5183d550ed",
-    "repositoryFilesWalked": 342
-  },
-  "ossInventory": {
-    "files": 315,
-    "byKind": {
-      "ASSET": 19,
-      "NON_COMPONENT": 16,
-      "COMPONENT_UNKNOWN": 1,
-      "DEMO": 36,
-      "STORY": 39,
-      "COMPOUND_COMPONENT": 18,
-      "APPLICATION_COMPONENT": 23,
-      "RECIPE_OR_BLOCK": 14,
-      "BASE_COMPONENT": 39,
-      "FOUNDATION": 101,
-      "INTERNAL": 1,
-      "HELPER": 8
+    "repositoryFilesWalked": 342,
+    "inventory": {
+      "files": 315,
+      "byKind": {
+        "ASSET": 19,
+        "NON_COMPONENT": 16,
+        "COMPONENT_UNKNOWN": 1,
+        "DEMO": 36,
+        "STORY": 39,
+        "COMPOUND_COMPONENT": 18,
+        "APPLICATION_COMPONENT": 23,
+        "RECIPE_OR_BLOCK": 14,
+        "BASE_COMPONENT": 39,
+        "FOUNDATION": 101,
+        "INTERNAL": 1,
+        "HELPER": 8
+      },
+      "byAdoptionLayer": {
+        "asset": 19,
+        "none": 17,
+        "evidence": 75,
+        "component-part": 18,
+        "component": 62,
+        "recipe": 14,
+        "foundation": 101,
+        "internal": 1,
+        "helper": 8
+      },
+      "publicRegistryCandidates": 80,
+      "recipesAndBlocks": 14,
+      "foundationsAndAssets": 120,
+      "helpers": 8,
+      "evidenceOnly": 75,
+      "devOnly": 0,
+      "adoptable": 204,
+      "componentExports": 902,
+      "iconComponentExports": 95,
+      "compoundNamespaceExports": 4,
+      "defaultExports": 138,
+      "reExports": 110
     },
-    "adoptionLayers": {
-      "asset": 19,
-      "none": 17,
-      "evidence": 75,
-      "component-part": 18,
-      "component": 62,
-      "recipe": 14,
+    "dependencyGraph": {
+      "componentNodes": 195,
+      "internalEdges": 496,
+      "componentEdges": 165,
+      "layers": 5
+    },
+    "externalPackages": [
+      "@untitledui/file-icons@0.0.9 (4 files)",
+      "@untitledui/icons@0.0.22 (70 files)"
+    ]
+  },
+  "adoption": {
+    "items": 269,
+    "byStatus": {
+      "SOURCE_ADOPTED_UNCHANGED": 158,
+      "SOURCE_ADOPTED": 111
+    },
+    "byLayer": {
       "foundation": 101,
-      "internal": 1,
+      "component": 110,
+      "component-part": 19,
+      "recipe": 14,
+      "asset": 17,
       "helper": 8
     },
-    "adoptable": 204,
-    "publicRegistryCandidates": 80,
-    "recipesAndBlocks": 14,
-    "foundationsAndAssets": 120,
-    "evidenceOnly": 75,
-    "componentExports": 902,
-    "iconComponentExports": 95,
-    "defaultExports": 138,
-    "compoundNamespaceExports": 4
+    "payloadFiles": 227,
+    "filesWrittenThisRun": 89,
+    "sharedFiles": 144,
+    "failures": [],
+    "payloadIntegrity": {
+      "pass": true,
+      "unresolvedInternal": []
+    },
+    "payloadTypecheck": {
+      "pass": true,
+      "errors": 0,
+      "files": []
+    }
   },
-  "dependencyGraph": {
-    "componentNodes": 195,
-    "internalEdges": 496,
-    "componentEdges": 165,
-    "layers": 5
+  "registry": {
+    "canonicalIndex": ".design-compiler/registry/index.json",
+    "installable": 244,
+    "items": ".design-compiler/registry/<item>.json",
+    "benchmark": "COMPILER_RECONSTRUCTION_BENCHMARK (not canonical)"
   },
-  "externalPackages": [
-    "@untitledui/file-icons@0.0.9 (4 files)",
-    "@untitledui/icons@0.0.22 (70 files)"
-  ],
-  "figmaSurface": {
+  "figma": {
     "fileKey": "sLqnzw7tFXpuPA1TbqsjZx",
+    "fileName": "❖ Untitled UI Figma – PRO STYLES (v8.0) KTWJ8mYFqVpN (Copy)",
     "pages": 13,
-    "componentSets": null,
-    "standaloneComponents": null,
+    "componentSets": 64,
+    "standaloneComponents": 2189,
     "variantsInsideSets": null,
-    "families": 2253
-  },
-  "crosswalk": {
-    "totals": {
+    "families": 2253,
+    "crosswalkRaw": {
       "figmaFamilies": 2253,
       "ossComponents": 136,
       "byRelationship": {
@@ -78,7 +117,15 @@
         "OSS_COMPONENT_SPLIT": 6
       },
       "verified": 69
-    }
+    },
+    "crosswalkNormalized": {
+      "PRO_ONLY_ICON": 1690,
+      "MAPPED": 79,
+      "EXTERNAL_PACKAGE_RESOLVED": 472,
+      "OSS_COMPOSITION": 6,
+      "OSS_COMPONENT_SPLIT": 6
+    },
+    "note": "raw crosswalk totals count every Figma family relationship; normalized totals regroup them into adoption categories"
   },
   "proGaps": {
     "totals": {
@@ -94,84 +141,48 @@
         "button"
       ]
     },
-    "byCategory": {
-      "PRO_ONLY_ICON": 1690,
-      "MAPPED": 79,
-      "EXTERNAL_PACKAGE_RESOLVED": 472,
-      "OSS_COMPOSITION": 6,
-      "OSS_COMPONENT_SPLIT": 6
-    },
     "workQueue": [
       {
         "rank": 1,
         "name": "Content item",
-        "page": "Content",
         "variants": 58,
         "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive"
       },
       {
         "rank": 2,
         "name": "Check item text",
-        "page": "Misc icons",
         "variants": 36,
         "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive"
       },
       {
         "rank": 3,
         "name": "Mobile app store badge",
-        "page": "Buttons",
         "variants": 30,
         "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive"
       },
       {
         "rank": 4,
         "name": "Featured icon outline",
-        "page": "Misc icons",
         "variants": 20,
         "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive"
       },
       {
         "rank": 5,
         "name": "Background pattern decorative",
-        "page": "Background elements",
         "variants": 15,
         "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive"
       },
       {
         "rank": 6,
         "name": "Help icon",
-        "page": "Tooltips",
         "variants": 28,
         "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive"
       }
     ]
   },
-  "adoptedItems": [
-    {
-      "item": "button",
-      "closure": 6,
-      "transforms": 0,
-      "parity": "MATCH_WITH_RECORDED_RENDERER_EXCEPTION",
-      "validation": "VERIFIED",
-      "registry": "VERIFIED",
-      "upstreamGaps": [
-        "REDUCED_MOTION",
-        "LOADING_ACCESSIBLE_NAME"
-      ]
-    }
-  ],
-  "registryReady": [
-    "button"
-  ],
-  "adoptedCount": 1,
-  "remainingWork": [
-    "PRO composition candidates: 6",
-    "PRO-only icons (package concern): 1690",
-    "OSS components absent from this Figma file: 94",
-    "OSS adoption queue: 204 adoptable files, 1 adopted"
-  ],
   "benchmark": {
     "status": "VERIFIED",
-    "requirements": 12
+    "requirements": 12,
+    "role": "COMPILER_RECONSTRUCTION_BENCHMARK"
   }
 }

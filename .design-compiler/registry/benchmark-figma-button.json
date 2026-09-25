@@ -1,0 +1,22 @@
+{
+  "$schema": "design-compiler/Benchmark@p0",
+  "type": "COMPILER_RECONSTRUCTION_BENCHMARK",
+  "name": "button",
+  "description": "Figma-first compiled Button. Kept as the evaluation benchmark for the fallback compiler; NOT the canonical registry item.",
+  "metrics": {
+    "status": "VERIFIED",
+    "requirements": 12
+  },
+  "visual": {
+    "specimenAt2x": 0.033,
+    "matrixAt2x": 0.18
+  },
+  "canonicalItem": "registry/button.json",
+  "source": [
+    "src/components/ui/button.tsx",
+    "src/components/ui/button.abi.ts",
+    "src/styles/button.theme.css",
+    "src/styles/tokens.css",
+    "src/components/icons/spinner.tsx"
+  ]
+}

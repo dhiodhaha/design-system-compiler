@@ -1,0 +1,59 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "ayden-icon",
+  "type": "design-system-foundation",
+  "tier": "C",
+  "status": "VALIDATED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/foundations/payment-icons/ayden-icon.tsx",
+      "upstream": "components/foundations/payment-icons/ayden-icon.tsx",
+      "sha256": "738d65beffe11723",
+      "kind": "FOUNDATION"
+    }
+  ],
+  "styles": [],
+  "external": [],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": null,
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "1 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "227 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "RENDER_VALIDITY": {
+      "pass": true,
+      "evidence": "static component: imported by the payload typecheck, no runtime state"
+    },
+    "PROVENANCE_HASH": {
+      "pass": true,
+      "evidence": "sha256 738d65beffe11723"
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add ayden-icon",
+    "files": [
+      "registry/untitledui/components/foundations/payment-icons/ayden-icon.tsx"
+    ]
+  }
+}

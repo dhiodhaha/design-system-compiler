@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "use-resize-observer",
+  "title": "use-resize-observer",
+  "export": "useResizeObserver",
+  "layer": "helper",
+  "installable": false,
+  "distribution": "closure",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "hooks/use-resize-observer.ts",
+      "destination": "registry/untitledui/hooks/use-resize-observer.ts",
+      "upstreamSha256": "2249879a7bce4473",
+      "sha": "a526633899aae6c6",
+      "copied": true,
+      "bytes": 2161,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

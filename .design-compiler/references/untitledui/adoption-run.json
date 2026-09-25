@@ -1,0 +1,1910 @@
+{
+  "$schema": "design-compiler/AdoptionRun@p1",
+  "at": "2026-09-25T11:20:42.233Z",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "mode": "all",
+  "itemsRequested": 269,
+  "itemsAdopted": 269,
+  "byStatus": {
+    "SOURCE_ADOPTED_UNCHANGED": 158,
+    "SOURCE_ADOPTED": 111
+  },
+  "byLayer": {
+    "foundation": 101,
+    "component": 110,
+    "component-part": 19,
+    "recipe": 14,
+    "asset": 17,
+    "helper": 8
+  },
+  "filesWritten": 89,
+  "uniqueFilesInPayload": 226,
+  "failures": [],
+  "items": [
+    {
+      "item": "affirm-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "afterpay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "alipay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "amazon-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "amex-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "angel-list",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "app-gallery-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "app-store-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "apple",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "apple-logo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "apple-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "avatar-company-icon",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "avatar-count",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "avatar-online-indicator",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "ayden-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "badge-group",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "bancontact-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "binance-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "bitcoin-cash-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "bitcoin-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "bitpay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "bolt-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "braintree-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "button-group",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "calendar-cell",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "carousel",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "cash-app-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "chart-active-dot",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "chart-legend-content",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "chart-tooltip-content",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "chatgpt-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "checkbox",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "checkbox-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "circle-progress-bar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "citadele-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "claude-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "close-button",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "clubhouse",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "coinbase-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "cursor-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "dialog",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "diners-club-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "discord",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "discover-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "dot-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "draggable",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "dribbble",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "dribble-logo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "elo-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "etherium-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "facebook",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "facebook-logo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "featured-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 3,
+      "installable": true
+    },
+    {
+      "item": "figma",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "figma-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "figma-logo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "figma-logo-outlined",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "file-trigger",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "forbrugsforeningen-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "form",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "form-field",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "galaxy-store-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "gemini-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "giropay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "github",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "github-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "google",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "google-logo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "google-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "google-play-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "google-play-white-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "grok-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "hint-text",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "hook-form",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "ideal-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "instagram",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "interac-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "jcb-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "klarna-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "layers",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "lightcoin-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "linkedin",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "loading-indicator",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "lovable-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "maestro-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "mastercard-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "modal",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "modal-overlay",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "nextjs-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "pagination",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "payoneer-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "paypal-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "paysafe-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "perplexity-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "pinterest",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "play-button-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 2,
+      "installable": true
+    },
+    {
+      "item": "popover",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "progress-bar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "progress-bar-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "progress-bar-circle",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "progress-bar-half-circle",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "qiwi-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "radio-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "radio-button-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "radio-group",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "rating-stars",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 2,
+      "installable": true
+    },
+    {
+      "item": "razorpay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "react-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "reddit",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "replit-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "revolut-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "ru-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "samsung-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "sepa-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "shop-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "shopee-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "signal",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "skrill-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "slider",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "snapchat",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "sofort-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "stripe-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "tag-checkbox",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "tag-close-x",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "tailwind-css-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "telegram",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "tiktok",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "toggle",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "toggle-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "tooltip",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "tooltip-trigger",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "tumblr",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "twitter",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "twitter-logo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 4,
+      "installable": true
+    },
+    {
+      "item": "union-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "untitledui-logo-minimal",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 2,
+      "installable": true
+    },
+    {
+      "item": "upi-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "v0-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "venmo-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "verified-tick",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "verifone-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "visa-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "vite-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "we-chat-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "we-chat-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "webmoney-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "wise-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "x",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "yandex-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "youtube",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "zelle-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "zip-pay-icon",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": true
+    },
+    {
+      "item": "avatar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 12,
+      "installable": true
+    },
+    {
+      "item": "avatar-add-button",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "badge",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "badge-icon",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "badge-with-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "badge-with-dot",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "badge-with-flag",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "badge-with-icon",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "badge-with-image",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "button-utility",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "label",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "nav-button",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "pagination-dot",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "pagination-line",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "rating-badge",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 3,
+      "installable": true
+    },
+    {
+      "item": "social-button",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": true
+    },
+    {
+      "item": "tag",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "tag-avatar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "tag-group",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "untitledui-logo",
+      "layer": "foundation",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 3,
+      "installable": true
+    },
+    {
+      "item": "avatar-label-group",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "avatar-profile-photo",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "combo-box",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 12,
+      "installable": true
+    },
+    {
+      "item": "dropdown",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 16,
+      "installable": true
+    },
+    {
+      "item": "file-list-item-progress-bar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 11,
+      "installable": true
+    },
+    {
+      "item": "file-list-item-progress-fill",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 11,
+      "installable": true
+    },
+    {
+      "item": "file-upload",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 11,
+      "installable": true
+    },
+    {
+      "item": "file-upload-drop-zone",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 11,
+      "installable": true
+    },
+    {
+      "item": "input",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "input-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "input-date",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "input-date-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "input-number",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 10,
+      "installable": true
+    },
+    {
+      "item": "input-number-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 10,
+      "installable": true
+    },
+    {
+      "item": "input-tags",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 12,
+      "installable": true
+    },
+    {
+      "item": "mobile-navigation-header",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 7,
+      "installable": true
+    },
+    {
+      "item": "native-select",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "nav-item-base",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "select-item",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 16,
+      "installable": true
+    },
+    {
+      "item": "tab",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 9,
+      "installable": true
+    },
+    {
+      "item": "tab-list",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 9,
+      "installable": true
+    },
+    {
+      "item": "tab-panel",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 9,
+      "installable": true
+    },
+    {
+      "item": "tabs",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 9,
+      "installable": true
+    },
+    {
+      "item": "text-area",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "text-area-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "text-field",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "calendar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 12,
+      "installable": true
+    },
+    {
+      "item": "calendar-context-provider",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 12,
+      "installable": true
+    },
+    {
+      "item": "dropdown-account-breadcrumb",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-account-button",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 19,
+      "installable": true
+    },
+    {
+      "item": "dropdown-account-card-md",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 18,
+      "installable": true
+    },
+    {
+      "item": "dropdown-account-card-sm",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-account-card-xs",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-avatar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 20,
+      "installable": true
+    },
+    {
+      "item": "dropdown-button-advanced",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 19,
+      "installable": true
+    },
+    {
+      "item": "dropdown-button-link",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-button-simple",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 19,
+      "installable": true
+    },
+    {
+      "item": "dropdown-context-menu-advanced",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-context-menu-simple",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-icon-advanced",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-icon-simple",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
+      "item": "dropdown-integration",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 36,
+      "installable": true
+    },
+    {
+      "item": "dropdown-search-advanced",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 22,
+      "installable": true
+    },
+    {
+      "item": "dropdown-search-simple",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 22,
+      "installable": true
+    },
+    {
+      "item": "input-group",
+      "layer": "recipe",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 9,
+      "installable": true
+    },
+    {
+      "item": "input-tags-outer",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "nav-account-card",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 18,
+      "installable": true
+    },
+    {
+      "item": "nav-account-menu",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 18,
+      "installable": true
+    },
+    {
+      "item": "nav-list",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 10,
+      "installable": true
+    },
+    {
+      "item": "pagination-button-group",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "pagination-card-advanced",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "pagination-card-default",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "pagination-card-minimal",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "pagination-page-default",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "pagination-page-minimal-center",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "payment-input",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 66,
+      "installable": true
+    },
+    {
+      "item": "range-calendar",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "range-calendar-context-provider",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "range-preset-button",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "table-row-actions-dropdown",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 20,
+      "installable": true
+    },
+    {
+      "item": "tag-select-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 23,
+      "installable": true
+    },
+    {
+      "item": "tag-select-tags-value",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 23,
+      "installable": true
+    },
+    {
+      "item": "date-picker",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 13,
+      "installable": true
+    },
+    {
+      "item": "date-range-picker",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 14,
+      "installable": true
+    },
+    {
+      "item": "header-navigation-base",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 37,
+      "installable": true
+    },
+    {
+      "item": "input-file",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 12,
+      "installable": true
+    },
+    {
+      "item": "sidebar-navigation-dual-tier",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 31,
+      "installable": true
+    },
+    {
+      "item": "sidebar-navigation-section-dividers",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 31,
+      "installable": true
+    },
+    {
+      "item": "sidebar-navigation-sections-subheadings",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 28,
+      "installable": true
+    },
+    {
+      "item": "sidebar-navigation-simple",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 31,
+      "installable": true
+    },
+    {
+      "item": "sidebar-navigation-slim",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 30,
+      "installable": true
+    },
+    {
+      "item": "box",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "circle",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "cloud",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "colors-css",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "countries",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 20,
+      "installable": false
+    },
+    {
+      "item": "credit-card",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 3,
+      "installable": false
+    },
+    {
+      "item": "cx",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "documents",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "globals-css",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 3,
+      "installable": false
+    },
+    {
+      "item": "grid",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "grid-check",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "icons",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "index",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 6,
+      "installable": false
+    },
+    {
+      "item": "iphone-mockup",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "is-react-component",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "qr-code",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "section-divider",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "square",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 2,
+      "installable": false
+    },
+    {
+      "item": "theme-css",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "timezones",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 20,
+      "installable": false
+    },
+    {
+      "item": "typography-css",
+      "layer": "asset",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "use-active-item",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "use-breakpoint",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "use-clipboard",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    },
+    {
+      "item": "use-resize-observer",
+      "layer": "helper",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 1,
+      "installable": false
+    }
+  ]
+}

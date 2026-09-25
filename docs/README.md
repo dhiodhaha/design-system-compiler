@@ -1,5 +1,12 @@
 # Documentation
 
+> **Architecture decision (final): Option D — reference-first adoption.**
+> Official Untitled UI OSS React source is the canonical implementation whenever it exists; it is adopted
+> with minimal transformations (ADOPT > ADAPT > COMPOSE > GENERATE). Base UI is **not** a migration target:
+> it is optional only for genuinely new PRO-only primitives. The Figma-first compiler remains the fallback
+> and its Button output is retained solely as a reconstruction benchmark.
+
+
 This directory contains the canonical documentation for the Design System Compiler.
 
 ## Current architecture

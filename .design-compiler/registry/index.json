@@ -1,0 +1,2866 @@
+{
+  "$schema": "design-compiler/registry-index@p1",
+  "generatedAt": "2026-09-25T11:24:06.637Z",
+  "library": "untitledui",
+  "canonical": true,
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI"
+  },
+  "counts": {
+    "items": 269,
+    "installable": 244,
+    "byLayer": {
+      "foundation": 101,
+      "component": 110,
+      "component-part": 19,
+      "recipe": 14,
+      "asset": 17,
+      "helper": 8
+    },
+    "byTier": {
+      "tierC": 126,
+      "tierA": 49,
+      "tierB": 80,
+      "tierD": 14
+    },
+    "byStatus": {
+      "VALIDATED": 220,
+      "VERIFIED": 49
+    },
+    "payloadFiles": 227,
+    "sharedFiles": 144
+  },
+  "externalDependencies": [
+    {
+      "name": "@untitledui/file-icons",
+      "resolvedVersion": "0.0.9",
+      "redistribute": true
+    },
+    {
+      "name": "@untitledui/icons",
+      "resolvedVersion": "0.0.22",
+      "redistribute": true
+    }
+  ],
+  "cliDependencies": [
+    "@internationalized/date",
+    "@react-aria/utils",
+    "@react-stately/utils",
+    "embla-carousel-react",
+    "motion",
+    "qr-code-styling",
+    "react",
+    "react-aria",
+    "react-aria-components",
+    "react-hook-form",
+    "react-stately",
+    "recharts",
+    "tailwind-merge",
+    "tailwindcss"
+  ],
+  "dedupe": {
+    "sharedFiles": [
+      {
+        "upstreamPath": "components/foundations/payment-icons/affirm-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "components/foundations/payment-icons/afterpay-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "components/foundations/payment-icons/alipay-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "components/foundations/payment-icons/amazon-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "components/foundations/payment-icons/amex-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "components/base/buttons/app-store-buttons-outline.tsx",
+        "usedByItems": 4
+      },
+      {
+        "upstreamPath": "utils/cx.ts",
+        "usedByItems": 149
+      },
+      {
+        "upstreamPath": "styles/globals.css",
+        "usedByItems": 144
+      },
+      {
+        "upstreamPath": "styles/theme.css",
+        "usedByItems": 145
+      },
+      {
+        "upstreamPath": "styles/typography.css",
+        "usedByItems": 145
+      },
+      {
+        "upstreamPath": "components/base/buttons/social-logos.tsx",
+        "usedByItems": 8
+      },
+      {
+        "upstreamPath": "components/foundations/payment-icons/apple-pay-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "components/base/avatar/base-components/avatar-add-button.tsx",
+        "usedByItems": 41
+      },
+      {
+        "upstreamPath": "components/base/tooltip/tooltip.tsx",
+        "usedByItems": 73
+      },
+      {
+        "upstreamPath": "components/base/avatar/base-components/avatar-company-icon.tsx",
+        "usedByItems": 41
+      },
+      {
+        "upstreamPath": "components/base/avatar/base-components/avatar-count.tsx",
+        "usedByItems": 41
+      },
+      {
+        "upstreamPath": "components/base/avatar/avatar-label-group.tsx",
+        "usedByItems": 11
+      },
+      {
+        "upstreamPath": "components/base/avatar/avatar.tsx",
+        "usedByItems": 40
+      },
+      {
+        "upstreamPath": "components/base/avatar/base-components/index.tsx",
+        "usedByItems": 40
+      },
+      {
+        "upstreamPath": "components/base/avatar/base-components/avatar-online-indicator.tsx",
+        "usedByItems": 41
+      },
+      {
+        "upstreamPath": "components/base/avatar/base-components/verified-tick.tsx",
+        "usedByItems": 41
+      },
+      {
+        "upstreamPath": "components/foundations/payment-icons/ayden-icon.tsx",
+        "usedByItems": 2
+      },
+      {
+        "upstreamPath": "utils/is-react-component.ts",
+        "usedByItems": 51
+      },
+      {
+        "upstreamPath": "components/base/badges/badges.tsx",
+        "usedByItems": 20
+      },
+      {
+        "upstreamPath": "components/foundations/dot-icon.tsx",
+        "usedByItems": 26
+      }
+    ],
+    "note": "installing several items installs each shared file once"
+  },
+  "benchmark": {
+    "item": "benchmark-figma-button",
+    "path": ".design-compiler/registry/benchmark-figma-button.json",
+    "canonical": false
+  },
+  "items": [
+    {
+      "id": "affirm-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "afterpay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "alipay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "amazon-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "amex-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "angel-list",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "app-gallery-button",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "app-store-button",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "apple",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "apple-logo",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "apple-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "avatar-company-icon",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "avatar-count",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "avatar-online-indicator",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "ayden-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-group",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "bancontact-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "binance-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "bitcoin-cash-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "bitcoin-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "bitpay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "bolt-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "braintree-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "button",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPOSITION",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "button-group",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 6,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "calendar-cell",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "carousel",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "cash-app-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "chart-active-dot",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "chart-legend-content",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "chart-tooltip-content",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "chatgpt-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "checkbox",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "checkbox-base",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "circle-progress-bar",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "citadele-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "claude-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "close-button",
+      "layer": "component-part",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "clubhouse",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "coinbase-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "cursor-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dialog",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "diners-club-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "discord",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "discover-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dot-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "draggable",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 4,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dribbble",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dribble-logo",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "elo-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "etherium-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "facebook",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "facebook-logo",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "featured-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 3,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "figma",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "figma-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "figma-logo",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "figma-logo-outlined",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "file-trigger",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "forbrugsforeningen-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "form",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "form-field",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "galaxy-store-button",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "gemini-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "giropay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "github",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "github-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "google",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "google-logo",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "google-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "google-play-button",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "google-play-white-button",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "grok-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "hint-text",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "hook-form",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "ideal-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "instagram",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "interac-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "jcb-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "klarna-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "layers",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "lightcoin-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "linkedin",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "loading-indicator",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "lovable-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "maestro-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "mastercard-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "modal",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "modal-overlay",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "nextjs-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "pagination",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "payoneer-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "paypal-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "paysafe-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "perplexity-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "pinterest",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "play-button-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "popover",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "progress-bar",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "progress-bar-base",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "progress-bar-circle",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "progress-bar-half-circle",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "qiwi-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "radio-button",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "radio-button-base",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "radio-group",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "rating-stars",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 2,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "razorpay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "react-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "reddit",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "replit-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "revolut-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "ru-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "samsung-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "sepa-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "shop-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "shopee-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "signal",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "skrill-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "slider",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "snapchat",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "sofort-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "stripe-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tag-checkbox",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tag-close-x",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tailwind-css-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "telegram",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tiktok",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "toggle",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "toggle-base",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tooltip",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tooltip-trigger",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 5,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tumblr",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "twitter",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "twitter-logo",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 4,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "union-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "untitledui-logo-minimal",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 2,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "upi-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "v0-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "venmo-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "verified-tick",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "verifone-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "visa-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "vite-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "we-chat-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "we-chat-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "webmoney-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "wise-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "x",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "yandex-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "youtube",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "zelle-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "zip-pay-icon",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "avatar",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 12,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "avatar-add-button",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 6,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "badge",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-icon",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-with-button",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-with-dot",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-with-flag",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-with-icon",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "badge-with-image",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "button-utility",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 7,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "label",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "nav-button",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 6,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-dot",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 6,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-line",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 6,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "rating-badge",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 3,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "social-button",
+      "layer": "component-part",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tag",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tag-avatar",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tag-group",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "untitledui-logo",
+      "layer": "foundation",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 3,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "avatar-label-group",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 13,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "avatar-profile-photo",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 13,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "combo-box",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 12,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "dropdown",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 16,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "file-list-item-progress-bar",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 11,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "file-list-item-progress-fill",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 11,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "file-upload",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 11,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "file-upload-drop-zone",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 11,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-base",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-date",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-date-base",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-number",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 10,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-number-base",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 10,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-tags",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 12,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "mobile-navigation-header",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 7,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "native-select",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 8,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-item-base",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 8,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "select-item",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 16,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tab",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 9,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tab-list",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 9,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tab-panel",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 9,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tabs",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 9,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "text-area",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 8,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "text-area-base",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 8,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "text-field",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 8,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "calendar",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 12,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "calendar-context-provider",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 12,
+      "mapping": "OSS_COMPONENT_SET_MERGE",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-account-breadcrumb",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-account-button",
+      "layer": "component-part",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 19,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-account-card-md",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 18,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-account-card-sm",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "dropdown-account-card-xs",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "dropdown-avatar",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 20,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "dropdown-button-advanced",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 19,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-button-link",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-button-simple",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 19,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-context-menu-advanced",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-context-menu-simple",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-icon-advanced",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-icon-simple",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-integration",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 36,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-search-advanced",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 22,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "dropdown-search-simple",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 22,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-group",
+      "layer": "recipe",
+      "tier": "D",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 9,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "input-tags-outer",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 13,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "nav-account-card",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 18,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-account-menu",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 18,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-list",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 10,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-button-group",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-card-advanced",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-card-default",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-card-minimal",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-page-default",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-page-minimal-center",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "payment-input",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 66,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "range-calendar",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 13,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "range-calendar-context-provider",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 13,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "range-preset-button",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 13,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "table-row-actions-dropdown",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 20,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tag-select-base",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 23,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "tag-select-tags-value",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 23,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "date-picker",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 13,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "date-range-picker",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 14,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "header-navigation-base",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 37,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "input-file",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 12,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "sidebar-navigation-dual-tier",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 31,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "sidebar-navigation-section-dividers",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 31,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "sidebar-navigation-sections-subheadings",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "sidebar-navigation-simple",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 31,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "sidebar-navigation-slim",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 30,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "box",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "circle",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "cloud",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "colors-css",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "countries",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 20,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "credit-card",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 3,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "cx",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "documents",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "globals-css",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 3,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "grid",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "grid-check",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "icons",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "index",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 6,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "iphone-mockup",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "is-react-component",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "qr-code",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "section-divider",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "square",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "theme-css",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "timezones",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 20,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "typography-css",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "use-active-item",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "use-breakpoint",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "use-clipboard",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "use-resize-observer",
+      "layer": "helper",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 1,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    }
+  ]
+}

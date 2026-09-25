@@ -1,0 +1,68 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "play-button-icon",
+  "type": "design-system-foundation",
+  "tier": "C",
+  "status": "VALIDATED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/foundations/play-button-icon.tsx",
+      "upstream": "components/foundations/play-button-icon.tsx",
+      "sha256": "74ae8dab582d84a3",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    }
+  ],
+  "styles": [],
+  "external": [
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": null,
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "2 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "227 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "RENDER_VALIDITY": {
+      "pass": true,
+      "evidence": "static component: imported by the payload typecheck, no runtime state"
+    },
+    "PROVENANCE_HASH": {
+      "pass": true,
+      "evidence": "sha256 74ae8dab582d84a3"
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add play-button-icon",
+    "files": [
+      "registry/untitledui/components/foundations/play-button-icon.tsx",
+      "registry/untitledui/utils/cx.ts"
+    ]
+  }
+}

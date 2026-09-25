@@ -1,0 +1,104 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "tag",
+  "title": "Tag",
+  "export": "Tag",
+  "layer": "component",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 8,
+  "files": [
+    {
+      "upstreamPath": "components/base/tags/tags.tsx",
+      "destination": "registry/untitledui/components/base/tags/tags.tsx",
+      "upstreamSha256": "c22cf1fb3cfb1a3a",
+      "sha": "45fb381a0a75d8e6",
+      "copied": true,
+      "bytes": 6793,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/foundations/dot-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/dot-icon.tsx",
+      "upstreamSha256": "a908145b197665d9",
+      "sha": "bb4b2ad57f35eb15",
+      "copied": false,
+      "bytes": 970,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/base/tags/base-components/tag-checkbox.tsx",
+      "destination": "registry/untitledui/components/base/tags/base-components/tag-checkbox.tsx",
+      "upstreamSha256": "2359c1dae409736e",
+      "sha": "ba3173caa145bab3",
+      "copied": false,
+      "bytes": 2051,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/tags/base-components/tag-close-x.tsx",
+      "destination": "registry/untitledui/components/base/tags/base-components/tag-close-x.tsx",
+      "upstreamSha256": "5d5fa633f18a1c9b",
+      "sha": "88c8193375e465bb",
+      "copied": false,
+      "bytes": 1696,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "styles/globals.css",
+      "destination": "registry/untitledui/styles/globals.css",
+      "upstreamSha256": "0c1fd5eebe0cb65d",
+      "sha": "21bd409ef2594e72",
+      "copied": false,
+      "bytes": 2081,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/theme.css",
+      "destination": "registry/untitledui/styles/theme.css",
+      "upstreamSha256": "52241a7d0d28f702",
+      "sha": "a4230fd39950921f",
+      "copied": false,
+      "bytes": 44513,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/typography.css",
+      "destination": "registry/untitledui/styles/typography.css",
+      "upstreamSha256": "531cc316caf58796",
+      "sha": "8b826760416eb602",
+      "copied": false,
+      "bytes": 12895,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "externalDependencies": [
+    "@untitledui/icons",
+    "react",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

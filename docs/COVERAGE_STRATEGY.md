@@ -16,8 +16,8 @@ The compiler should build the widest practical Untitled UI-compatible component 
 3. Canonical contracts
    → stable engine-independent meaning
 
-4. Base UI / native / specialized runtime adapters
-   → production implementation
+4. OSS source adoption (React Aria / native / specialized runtime)
+   → production implementation; Base UI only where a genuinely new PRO-only primitive needs it
 
 5. Deterministic parity validation
    → quality gate
@@ -72,7 +72,7 @@ Figma
 → visual reconciliation
 
 canonical contract
-→ Base UI/native/specialized target
+→ canonical OSS source (adopt, adapt) — Base UI is optional, never a migration target
 
 parity tests
 → verified component
@@ -212,7 +212,7 @@ OTP input
 → specialized input dependency may remain
 ```
 
-"Target Base UI" does not mean "force every component to depend on Base UI."
+"Option D is final": an existing official component is adopted as-is. Base UI may be used only for genuinely new PRO-only interactive primitives where it is the best foundation.
 
 ---
 

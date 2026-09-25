@@ -1,0 +1,261 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "pagination-card-minimal",
+  "type": "design-system-component",
+  "tier": "B",
+  "status": "VALIDATED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/application/pagination/pagination.tsx",
+      "upstream": "components/application/pagination/pagination.tsx",
+      "sha256": "ea7efff6a5166797",
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "upstream": "components/base/button-group/button-group.tsx",
+      "sha256": "9aa0f3e1894bf15c",
+      "kind": "RECIPE_OR_BLOCK"
+    },
+    {
+      "path": "registry/untitledui/components/base/buttons/button.tsx",
+      "upstream": "components/base/buttons/button.tsx",
+      "sha256": "dc691191c309b11b",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/input.tsx",
+      "upstream": "components/base/input/input.tsx",
+      "sha256": "0a218bd4a0c52886",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/select/select.tsx",
+      "upstream": "components/base/select/select.tsx",
+      "sha256": "88f8dbf4e9283cd6",
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/hooks/use-breakpoint.ts",
+      "upstream": "hooks/use-breakpoint.ts",
+      "sha256": "e52807f59a4e0a12",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/application/pagination/pagination-base.tsx",
+      "upstream": "components/application/pagination/pagination-base.tsx",
+      "sha256": "5c916e71ea7e9137",
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/utils/is-react-component.ts",
+      "upstream": "utils/is-react-component.ts",
+      "sha256": "f518f86f81a9adf6",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/hint-text.tsx",
+      "upstream": "components/base/input/hint-text.tsx",
+      "sha256": "e3b84da4697b64e8",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/label.tsx",
+      "upstream": "components/base/input/label.tsx",
+      "sha256": "bf9390e62ab8c185",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "upstream": "components/base/tooltip/tooltip.tsx",
+      "sha256": "9c907f2e31fb7714",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/avatar.tsx",
+      "upstream": "components/base/avatar/avatar.tsx",
+      "sha256": "9c4776f8f7d7feb9",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/select/combobox.tsx",
+      "upstream": "components/base/select/combobox.tsx",
+      "sha256": "e8b02dabc2e8b5ce",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/select/popover.tsx",
+      "upstream": "components/base/select/popover.tsx",
+      "sha256": "129147fdbeb4422f",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/select/select-item.tsx",
+      "upstream": "components/base/select/select-item.tsx",
+      "sha256": "0417657fb859e698",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/select/select-shared.tsx",
+      "upstream": "components/base/select/select-shared.tsx",
+      "sha256": "a91abcaffc1799a1",
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/base-components/index.tsx",
+      "upstream": "components/base/avatar/base-components/index.tsx",
+      "sha256": "1483e56fcb9bb8e9",
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/base-components/avatar-count.tsx",
+      "upstream": "components/base/avatar/base-components/avatar-count.tsx",
+      "sha256": "603462d4ab7a9755",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/hooks/use-resize-observer.ts",
+      "upstream": "hooks/use-resize-observer.ts",
+      "sha256": "a526633899aae6c6",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/base/checkbox/checkbox.tsx",
+      "upstream": "components/base/checkbox/checkbox.tsx",
+      "sha256": "c8a940390c848884",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "upstream": "components/base/avatar/base-components/avatar-add-button.tsx",
+      "sha256": "1efcd1e10f2142e9",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/base-components/avatar-company-icon.tsx",
+      "upstream": "components/base/avatar/base-components/avatar-company-icon.tsx",
+      "sha256": "07b4cc0e6a424488",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "upstream": "components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "sha256": "e202ea56883ebac1",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/avatar/base-components/verified-tick.tsx",
+      "upstream": "components/base/avatar/base-components/verified-tick.tsx",
+      "sha256": "aa67a43dc6b0d7a0",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "21bd409ef2594e72",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "a4230fd39950921f",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "8b826760416eb602",
+      "kind": "ASSET"
+    }
+  ],
+  "styles": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "external": [
+    "@untitledui/icons",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": null,
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "28 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "227 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "FIGMA_MAPPED": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE (not a failure; the current PRO file does not contain this family)"
+    },
+    "VISUAL_PARITY": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE",
+      "notRun": true
+    },
+    "UPSTREAM_EVIDENCE": {
+      "pass": true,
+      "evidence": "upstream demo/story evidence exists"
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add pagination-card-minimal",
+    "files": [
+      "registry/untitledui/components/application/pagination/pagination.tsx",
+      "registry/untitledui/components/base/button-group/button-group.tsx",
+      "registry/untitledui/components/base/buttons/button.tsx",
+      "registry/untitledui/components/base/input/input.tsx",
+      "registry/untitledui/components/base/select/select.tsx",
+      "registry/untitledui/hooks/use-breakpoint.ts",
+      "registry/untitledui/utils/cx.ts",
+      "registry/untitledui/components/application/pagination/pagination-base.tsx",
+      "registry/untitledui/utils/is-react-component.ts",
+      "registry/untitledui/components/base/input/hint-text.tsx",
+      "registry/untitledui/components/base/input/label.tsx",
+      "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "registry/untitledui/components/base/avatar/avatar.tsx",
+      "registry/untitledui/components/base/select/combobox.tsx",
+      "registry/untitledui/components/base/select/popover.tsx",
+      "registry/untitledui/components/base/select/select-item.tsx",
+      "registry/untitledui/components/base/select/select-shared.tsx",
+      "registry/untitledui/components/base/avatar/base-components/index.tsx",
+      "registry/untitledui/components/base/avatar/base-components/avatar-count.tsx",
+      "registry/untitledui/hooks/use-resize-observer.ts",
+      "registry/untitledui/components/base/checkbox/checkbox.tsx",
+      "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "registry/untitledui/components/base/avatar/base-components/avatar-company-icon.tsx",
+      "registry/untitledui/components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "registry/untitledui/components/base/avatar/base-components/verified-tick.tsx",
+      "registry/untitledui/styles/globals.css",
+      "registry/untitledui/styles/theme.css",
+      "registry/untitledui/styles/typography.css"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "iphone-mockup",
+  "title": "iphone-mockup",
+  "export": "IPhoneMockup",
+  "layer": "asset",
+  "installable": false,
+  "distribution": "closure",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 2,
+  "files": [
+    {
+      "upstreamPath": "components/shared-assets/iphone-mockup.tsx",
+      "destination": "registry/untitledui/components/shared-assets/iphone-mockup.tsx",
+      "upstreamSha256": "fd0c58b6d1c9ff6c",
+      "sha": "feb2ff3c29ca799a",
+      "copied": true,
+      "bytes": 16663,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

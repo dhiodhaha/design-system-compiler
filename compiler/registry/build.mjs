@@ -123,8 +123,10 @@ const registryItem = {
   status: verified ? "VERIFIED" : statusChain.filter(([, ok]) => !ok).map(([name]) => name),
 };
 
-mkdirSync(".design-compiler/registry", { recursive: true });
-writeFileSync(resolve(".design-compiler/registry", `${item}.json`), JSON.stringify(registryItem, null, 2));
+// Canonical per-item registry files are owned by compiler/state/reconcile.mjs; this richer view is a
+// detail report referenced from the canonical item, so there is exactly one canonical writer.
+mkdirSync(resolve(REF, LIB, "registry-detail"), { recursive: true });
+writeFileSync(resolve(REF, LIB, "registry-detail", `${item}.json`), JSON.stringify(registryItem, null, 2));
 console.log(
   JSON.stringify(
     {

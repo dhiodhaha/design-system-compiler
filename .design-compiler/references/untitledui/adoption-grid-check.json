@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "grid-check",
+  "title": "grid-check",
+  "export": "GridCheck",
+  "layer": "asset",
+  "installable": false,
+  "distribution": "closure",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "components/shared-assets/background-patterns/grid-check.tsx",
+      "destination": "registry/untitledui/components/shared-assets/background-patterns/grid-check.tsx",
+      "upstreamSha256": "7b9621d2d7ad43d4",
+      "sha": "200361b52aefc1d5",
+      "copied": true,
+      "bytes": 139374,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

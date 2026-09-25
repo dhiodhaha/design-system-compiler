@@ -1,0 +1,34 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "use-clipboard",
+  "title": "use-clipboard",
+  "export": "useClipboard",
+  "layer": "helper",
+  "installable": false,
+  "distribution": "closure",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 1,
+  "files": [
+    {
+      "upstreamPath": "hooks/use-clipboard.ts",
+      "destination": "registry/untitledui/hooks/use-clipboard.ts",
+      "upstreamSha256": "81caf04066b528bb",
+      "sha": "369df3ace4df9163",
+      "copied": true,
+      "bytes": 3119,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

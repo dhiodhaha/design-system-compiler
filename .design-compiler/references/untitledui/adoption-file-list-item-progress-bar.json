@@ -1,0 +1,134 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "file-list-item-progress-bar",
+  "title": "FileListItemProgressBar",
+  "export": "FileListItemProgressBar",
+  "layer": "component",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 11,
+  "files": [
+    {
+      "upstreamPath": "components/application/file-upload/file-upload-base.tsx",
+      "destination": "registry/untitledui/components/application/file-upload/file-upload-base.tsx",
+      "upstreamSha256": "91185f67b38fe143",
+      "sha": "0782cb0e70fd1d78",
+      "copied": true,
+      "bytes": 16389,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/buttons/button.tsx",
+      "destination": "registry/untitledui/components/base/buttons/button.tsx",
+      "upstreamSha256": "1eb74e3672d0f8c5",
+      "sha": "dc691191c309b11b",
+      "copied": false,
+      "bytes": 12191,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/buttons/button-utility.tsx",
+      "destination": "registry/untitledui/components/base/buttons/button-utility.tsx",
+      "upstreamSha256": "33365a02e747433d",
+      "sha": "8a8a45722570475f",
+      "copied": true,
+      "bytes": 4373,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/progress-indicators/progress-indicators.tsx",
+      "destination": "registry/untitledui/components/base/progress-indicators/progress-indicators.tsx",
+      "upstreamSha256": "0a8189b5f78080e8",
+      "sha": "cb336d3522484aca",
+      "copied": false,
+      "bytes": 5288,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/foundations/featured-icon/featured-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/featured-icon/featured-icon.tsx",
+      "upstreamSha256": "2c9e0227bcd87c88",
+      "sha": "5aca35b559164a8d",
+      "copied": false,
+      "bytes": 6800,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "utils/is-react-component.ts",
+      "destination": "registry/untitledui/utils/is-react-component.ts",
+      "upstreamSha256": "2f24cf5e7c8cc9b8",
+      "sha": "f518f86f81a9adf6",
+      "copied": false,
+      "bytes": 1713,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/base/tooltip/tooltip.tsx",
+      "destination": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "upstreamSha256": "920be9cec3b0ebaa",
+      "sha": "9c907f2e31fb7714",
+      "copied": false,
+      "bytes": 4792,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "styles/globals.css",
+      "destination": "registry/untitledui/styles/globals.css",
+      "upstreamSha256": "0c1fd5eebe0cb65d",
+      "sha": "21bd409ef2594e72",
+      "copied": false,
+      "bytes": 2081,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/theme.css",
+      "destination": "registry/untitledui/styles/theme.css",
+      "upstreamSha256": "52241a7d0d28f702",
+      "sha": "a4230fd39950921f",
+      "copied": false,
+      "bytes": 44513,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/typography.css",
+      "destination": "registry/untitledui/styles/typography.css",
+      "upstreamSha256": "531cc316caf58796",
+      "sha": "8b826760416eb602",
+      "copied": false,
+      "bytes": 12895,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "externalDependencies": [
+    "@untitledui/file-icons",
+    "@untitledui/icons",
+    "motion/react",
+    "react",
+    "react-aria",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

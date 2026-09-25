@@ -1,0 +1,284 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "pagination-page-default",
+  "title": "PaginationPageDefault",
+  "export": "PaginationPageDefault",
+  "layer": "component",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 28,
+  "files": [
+    {
+      "upstreamPath": "components/application/pagination/pagination.tsx",
+      "destination": "registry/untitledui/components/application/pagination/pagination.tsx",
+      "upstreamSha256": "8b1f94c0627fef69",
+      "sha": "ea7efff6a5166797",
+      "copied": true,
+      "bytes": 21626,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/button-group/button-group.tsx",
+      "destination": "registry/untitledui/components/base/button-group/button-group.tsx",
+      "upstreamSha256": "1871ab9149bc6fe1",
+      "sha": "9aa0f3e1894bf15c",
+      "copied": false,
+      "bytes": 4674,
+      "kind": "RECIPE_OR_BLOCK"
+    },
+    {
+      "upstreamPath": "components/base/buttons/button.tsx",
+      "destination": "registry/untitledui/components/base/buttons/button.tsx",
+      "upstreamSha256": "1eb74e3672d0f8c5",
+      "sha": "dc691191c309b11b",
+      "copied": false,
+      "bytes": 12191,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/input/input.tsx",
+      "destination": "registry/untitledui/components/base/input/input.tsx",
+      "upstreamSha256": "efd3961f68eecd39",
+      "sha": "0a218bd4a0c52886",
+      "copied": true,
+      "bytes": 11748,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/select/select.tsx",
+      "destination": "registry/untitledui/components/base/select/select.tsx",
+      "upstreamSha256": "5c7f17225c9171c9",
+      "sha": "88f8dbf4e9283cd6",
+      "copied": true,
+      "bytes": 6334,
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "upstreamPath": "hooks/use-breakpoint.ts",
+      "destination": "registry/untitledui/hooks/use-breakpoint.ts",
+      "upstreamSha256": "ba5c0a5d3e67b3a7",
+      "sha": "e52807f59a4e0a12",
+      "copied": true,
+      "bytes": 1458,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/application/pagination/pagination-base.tsx",
+      "destination": "registry/untitledui/components/application/pagination/pagination-base.tsx",
+      "upstreamSha256": "00e5327f3d3362e2",
+      "sha": "5c916e71ea7e9137",
+      "copied": false,
+      "bytes": 14316,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "utils/is-react-component.ts",
+      "destination": "registry/untitledui/utils/is-react-component.ts",
+      "upstreamSha256": "2f24cf5e7c8cc9b8",
+      "sha": "f518f86f81a9adf6",
+      "copied": false,
+      "bytes": 1713,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/base/input/hint-text.tsx",
+      "destination": "registry/untitledui/components/base/input/hint-text.tsx",
+      "upstreamSha256": "521941d440c71a80",
+      "sha": "e3b84da4697b64e8",
+      "copied": false,
+      "bytes": 1434,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/input/label.tsx",
+      "destination": "registry/untitledui/components/base/input/label.tsx",
+      "upstreamSha256": "12c33452d3f864b5",
+      "sha": "bf9390e62ab8c185",
+      "copied": true,
+      "bytes": 2812,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/tooltip/tooltip.tsx",
+      "destination": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "upstreamSha256": "920be9cec3b0ebaa",
+      "sha": "9c907f2e31fb7714",
+      "copied": false,
+      "bytes": 4792,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/avatar.tsx",
+      "destination": "registry/untitledui/components/base/avatar/avatar.tsx",
+      "upstreamSha256": "49bcc021bf717ab3",
+      "sha": "9c4776f8f7d7feb9",
+      "copied": true,
+      "bytes": 5512,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/select/combobox.tsx",
+      "destination": "registry/untitledui/components/base/select/combobox.tsx",
+      "upstreamSha256": "ae8996154967a26c",
+      "sha": "e8b02dabc2e8b5ce",
+      "copied": true,
+      "bytes": 7769,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/select/popover.tsx",
+      "destination": "registry/untitledui/components/base/select/popover.tsx",
+      "upstreamSha256": "a52e8f8f4537b2d1",
+      "sha": "129147fdbeb4422f",
+      "copied": false,
+      "bytes": 1936,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/select/select-item.tsx",
+      "destination": "registry/untitledui/components/base/select/select-item.tsx",
+      "upstreamSha256": "93a5e1ac3bc7a9ac",
+      "sha": "0417657fb859e698",
+      "copied": true,
+      "bytes": 5669,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/select/select-shared.tsx",
+      "destination": "registry/untitledui/components/base/select/select-shared.tsx",
+      "upstreamSha256": "abfd514facc4e3e3",
+      "sha": "a91abcaffc1799a1",
+      "copied": true,
+      "bytes": 2049,
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/base-components/index.tsx",
+      "destination": "registry/untitledui/components/base/avatar/base-components/index.tsx",
+      "upstreamSha256": "d630103c098195bb",
+      "sha": "1483e56fcb9bb8e9",
+      "copied": true,
+      "bytes": 525,
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/base-components/avatar-count.tsx",
+      "destination": "registry/untitledui/components/base/avatar/base-components/avatar-count.tsx",
+      "upstreamSha256": "ac7958c908a28fe7",
+      "sha": "603462d4ab7a9755",
+      "copied": false,
+      "bytes": 857,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "hooks/use-resize-observer.ts",
+      "destination": "registry/untitledui/hooks/use-resize-observer.ts",
+      "upstreamSha256": "2249879a7bce4473",
+      "sha": "a526633899aae6c6",
+      "copied": true,
+      "bytes": 2161,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/base/checkbox/checkbox.tsx",
+      "destination": "registry/untitledui/components/base/checkbox/checkbox.tsx",
+      "upstreamSha256": "4266edfa3562c505",
+      "sha": "c8a940390c848884",
+      "copied": false,
+      "bytes": 4896,
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/base-components/avatar-add-button.tsx",
+      "destination": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
+      "upstreamSha256": "4676000225227c5e",
+      "sha": "1efcd1e10f2142e9",
+      "copied": true,
+      "bytes": 1766,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/base-components/avatar-company-icon.tsx",
+      "destination": "registry/untitledui/components/base/avatar/base-components/avatar-company-icon.tsx",
+      "upstreamSha256": "52223fe32cd9f6b1",
+      "sha": "07b4cc0e6a424488",
+      "copied": false,
+      "bytes": 986,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "destination": "registry/untitledui/components/base/avatar/base-components/avatar-online-indicator.tsx",
+      "upstreamSha256": "40dd93e07eb5d287",
+      "sha": "e202ea56883ebac1",
+      "copied": false,
+      "bytes": 2370,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/base/avatar/base-components/verified-tick.tsx",
+      "destination": "registry/untitledui/components/base/avatar/base-components/verified-tick.tsx",
+      "upstreamSha256": "9cf7b0cd9970923b",
+      "sha": "aa67a43dc6b0d7a0",
+      "copied": false,
+      "bytes": 3441,
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "upstreamPath": "styles/globals.css",
+      "destination": "registry/untitledui/styles/globals.css",
+      "upstreamSha256": "0c1fd5eebe0cb65d",
+      "sha": "21bd409ef2594e72",
+      "copied": false,
+      "bytes": 2081,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/theme.css",
+      "destination": "registry/untitledui/styles/theme.css",
+      "upstreamSha256": "52241a7d0d28f702",
+      "sha": "a4230fd39950921f",
+      "copied": false,
+      "bytes": 44513,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/typography.css",
+      "destination": "registry/untitledui/styles/typography.css",
+      "upstreamSha256": "531cc316caf58796",
+      "sha": "8b826760416eb602",
+      "copied": false,
+      "bytes": 12895,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "externalDependencies": [
+    "@untitledui/icons",
+    "react",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

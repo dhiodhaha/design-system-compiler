@@ -1,0 +1,44 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "untitledui-logo-minimal",
+  "title": "untitledui-logo-minimal",
+  "export": "UntitledLogoMinimal",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 2,
+  "files": [
+    {
+      "upstreamPath": "components/foundations/logo/untitledui-logo-minimal.tsx",
+      "destination": "registry/untitledui/components/foundations/logo/untitledui-logo-minimal.tsx",
+      "upstreamSha256": "1878f083f794bf97",
+      "sha": "bffd1e735f9f0632",
+      "copied": false,
+      "bytes": 18938,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "react",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}
