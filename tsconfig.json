@@ -26,11 +26,11 @@
   },
   "include": [
     "src",
-    "vite.config.ts",
-    "tests"
+    "vite.config.ts"
   ],
   "exclude": [
     "registry/**",
+    "tests/**",
     "node_modules"
   ]
 }

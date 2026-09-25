@@ -1,0 +1,225 @@
+{
+  "$schema": "design-compiler/ProGapCompile@p0",
+  "at": "2026-09-25T11:34:42.922Z",
+  "figmaFile": "sLqnzw7tFXpuPA1TbqsjZx",
+  "families": [
+    {
+      "figma": {
+        "setId": "3947:417447",
+        "name": "Content item",
+        "page": "Content",
+        "variants": 58,
+        "recipeValues": 12
+      },
+      "anatomy": {
+        "nestedInstances": [
+          {
+            "name": "Measure + spacing guide",
+            "count": 108
+          },
+          {
+            "name": "Content item",
+            "count": 8
+          }
+        ],
+        "textNodes": 38
+      },
+      "reuseScore": 0,
+      "canonicalRefs": [
+        "Avatar",
+        "Badge",
+        "Divider"
+      ],
+      "classification": "BLOCK",
+      "status": "NEEDS_FIGMA_SLICE",
+      "artifact": null,
+      "rationale": "58 variants across 6+ boolean axes (Caption, Divider, Avatar group, Attribution, Breakpoint) — composing it needs per-variant styling evidence",
+      "nextAction": "deep-read 3 representative variants (Heading/sm, Body/lg, With-avatar) at depth 6, then compose as a block",
+      "license": "PRO-derived (private); canonical children remain MIT",
+      "evidence": [
+        "sliced anatomy: Measure + spacing guide, Content item",
+        "Avatar",
+        "Badge",
+        "Divider"
+      ]
+    },
+    {
+      "figma": {
+        "setId": "1345:1610",
+        "name": "Check item text",
+        "page": "Misc icons",
+        "variants": 36,
+        "recipeValues": 6
+      },
+      "anatomy": {
+        "nestedInstances": [
+          {
+            "name": "Check icon",
+            "count": 36
+          },
+          {
+            "name": "check-circle",
+            "count": 12
+          }
+        ],
+        "textNodes": 36
+      },
+      "reuseScore": 1,
+      "canonicalRefs": [
+        "icon-package",
+        "Circle",
+        "FeaturedIcon",
+        "@untitledui/icons/CheckCircle"
+      ],
+      "classification": "COMPOSE",
+      "status": "COMPILED",
+      "artifact": "registry/pro/check-item-text.tsx",
+      "rationale": "anatomy = 32px brand badge (FeaturedIcon light/brand/sm) + 18/28 tertiary label; every value is a canonical token",
+      "nextAction": null,
+      "license": "PRO-derived (private); canonical children remain MIT",
+      "evidence": [
+        "sliced anatomy: Check icon, check-circle",
+        "FeaturedIcon",
+        "@untitledui/icons/CheckCircle"
+      ]
+    },
+    {
+      "figma": {
+        "setId": "4843:410985",
+        "name": "Featured icon outline",
+        "page": "Misc icons",
+        "variants": 20,
+        "recipeValues": 5
+      },
+      "anatomy": {
+        "nestedInstances": [
+          {
+            "name": "check-circle",
+            "count": 20
+          }
+        ],
+        "textNodes": 0
+      },
+      "reuseScore": 1,
+      "canonicalRefs": [
+        "Circle",
+        "FeaturedIcon"
+      ],
+      "classification": "COVERED_BY_CANONICAL",
+      "status": "COVERED_BY_OSS",
+      "artifact": null,
+      "rationale": "FeaturedIcon already ships the `outline` theme plus the Color/Size axes this family uses",
+      "nextAction": "use <FeaturedIcon theme=\"outline\" …>; no PRO code is needed",
+      "license": "PRO-derived (private); canonical children remain MIT",
+      "evidence": [
+        "canonical component covers the whole family",
+        "FeaturedIcon"
+      ]
+    },
+    {
+      "figma": {
+        "setId": "4933:393069",
+        "name": "Background pattern decorative",
+        "page": "Background elements",
+        "variants": 15,
+        "recipeValues": 5
+      },
+      "anatomy": {
+        "nestedInstances": [
+          {
+            "name": "_Background mask",
+            "count": 12
+          }
+        ],
+        "textNodes": 0
+      },
+      "reuseScore": 0,
+      "canonicalRefs": [],
+      "classification": "ASSET",
+      "status": "ASSET_ONLY",
+      "artifact": null,
+      "rationale": "mask + drawn artwork with no component instances: a decorative asset, not a component",
+      "nextAction": "private asset extraction if a project needs the artwork; never published",
+      "license": "PRO-derived (private); canonical children remain MIT",
+      "evidence": [
+        "sliced anatomy: _Background mask"
+      ]
+    },
+    {
+      "figma": {
+        "setId": "1054:13",
+        "name": "Help icon",
+        "page": "Tooltips",
+        "variants": 28,
+        "recipeValues": 0
+      },
+      "anatomy": {
+        "nestedInstances": [
+          {
+            "name": "help-circle",
+            "count": 28
+          },
+          {
+            "name": "Tooltip",
+            "count": 14
+          },
+          {
+            "name": "Cursor",
+            "count": 14
+          }
+        ],
+        "textNodes": 0
+      },
+      "reuseScore": 0.667,
+      "canonicalRefs": [
+        "Circle",
+        "Tooltip",
+        "TooltipTrigger",
+        "@untitledui/icons/HelpCircle"
+      ],
+      "classification": "COMPOSE",
+      "status": "COMPILED",
+      "artifact": "registry/pro/help-icon.tsx",
+      "rationale": "anatomy = help-circle instance + canonical Tooltip; the OSS demo publishes this exact usage",
+      "nextAction": null,
+      "license": "PRO-derived (private); canonical children remain MIT",
+      "evidence": [
+        "sliced anatomy: help-circle, Tooltip, Cursor",
+        "Tooltip",
+        "TooltipTrigger",
+        "@untitledui/icons/HelpCircle"
+      ]
+    }
+  ],
+  "totals": {
+    "candidates": 5,
+    "compiled": 2,
+    "coveredByOss": 1,
+    "assetsOnly": 1,
+    "needsFigmaSlice": 1,
+    "unresolved": 0,
+    "averageReuseScore": 0.533,
+    "generatedFiles": 2,
+    "reusedCanonicalComponents": 10
+  },
+  "validation": {
+    "typecheck": {
+      "pass": true,
+      "errors": 0
+    },
+    "ssr": {
+      "pass": true,
+      "detail": "SSR PRO PASSED — PRO compositions render on the server from canonical children"
+    }
+  },
+  "proOnlyIcons": {
+    "count": 1688,
+    "status": "LICENSE_BLOCKED_FOR_PUBLIC_OUTPUT",
+    "note": "private extraction path only; never redistributed"
+  },
+  "policy": {
+    "adoptFirst": "canonical OSS source is reused for every child; only glue is generated",
+    "noFabrication": "a composition is generated only when its anatomy and styling are evidenced by the slice; otherwise a terminal NEEDS_FIGMA_SLICE status is recorded",
+    "provenance": "PRO-derived files are private and are not published as OSS"
+  }
+}

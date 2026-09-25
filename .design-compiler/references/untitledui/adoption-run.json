@@ -1,27 +1,83 @@
 {
   "$schema": "design-compiler/AdoptionRun@p1",
-  "at": "2026-09-25T11:28:52.006Z",
+  "at": "2026-09-25T11:33:55.600Z",
   "library": "untitledui",
   "repository": "untitleduico/react",
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "mode": "all",
-  "itemsRequested": 276,
-  "itemsAdopted": 276,
+  "itemsRequested": 293,
+  "itemsAdopted": 293,
   "byStatus": {
-    "SOURCE_ADOPTED_UNCHANGED": 276
+    "SOURCE_ADOPTED_UNCHANGED": 282,
+    "SOURCE_ADOPTED": 11
   },
   "byLayer": {
     "foundation": 101,
-    "component": 117,
-    "component-part": 19,
+    "component": 133,
+    "component-part": 20,
     "recipe": 14,
     "asset": 17,
     "helper": 8
   },
-  "filesWritten": 0,
-  "uniqueFilesInPayload": 227,
+  "filesWritten": 5,
+  "uniqueFilesInPayload": 233,
   "failures": [],
   "ambiguousExportNames": [
+    {
+      "exportName": "mobile-navigation-header",
+      "paths": [
+        "components/application/app-navigation/base-components/mobile-header.tsx",
+        "components/application/app-navigation/sidebar-navigation-base.tsx"
+      ],
+      "disambiguatedTo": [
+        "mobile-navigation-header--base-components",
+        "mobile-navigation-header--app-navigation"
+      ]
+    },
+    {
+      "exportName": "nav-account-card",
+      "paths": [
+        "components/application/app-navigation/base-components/nav-account-card.tsx",
+        "components/application/app-navigation/sidebar-navigation-base.tsx"
+      ],
+      "disambiguatedTo": [
+        "nav-account-card--base-components",
+        "nav-account-card--app-navigation"
+      ]
+    },
+    {
+      "exportName": "nav-button",
+      "paths": [
+        "components/application/app-navigation/base-components/nav-button.tsx",
+        "components/application/app-navigation/sidebar-navigation-base.tsx"
+      ],
+      "disambiguatedTo": [
+        "nav-button--base-components",
+        "nav-button--app-navigation"
+      ]
+    },
+    {
+      "exportName": "nav-item-base",
+      "paths": [
+        "components/application/app-navigation/base-components/nav-item.tsx",
+        "components/application/app-navigation/sidebar-navigation-base.tsx"
+      ],
+      "disambiguatedTo": [
+        "nav-item-base--base-components",
+        "nav-item-base--app-navigation"
+      ]
+    },
+    {
+      "exportName": "nav-list",
+      "paths": [
+        "components/application/app-navigation/base-components/nav-list.tsx",
+        "components/application/app-navigation/sidebar-navigation-base.tsx"
+      ],
+      "disambiguatedTo": [
+        "nav-list--base-components",
+        "nav-list--app-navigation"
+      ]
+    },
     {
       "exportName": "modal-overlay",
       "paths": [
@@ -750,6 +806,13 @@
       "installable": true
     },
     {
+      "item": "mobile-navigation-header--app-navigation",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
       "item": "modal--modals",
       "layer": "component",
       "status": "SOURCE_ADOPTED_UNCHANGED",
@@ -761,6 +824,55 @@
       "layer": "component",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 5,
+      "installable": true
+    },
+    {
+      "item": "nav-account-card--app-navigation",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
+      "item": "nav-button--app-navigation",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
+      "item": "nav-item-base--app-navigation",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
+      "item": "nav-item-base-props",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
+      "item": "nav-item-collapsible-props",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
+      "item": "nav-item-link-props",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
+      "installable": true
+    },
+    {
+      "item": "nav-list--app-navigation",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 29,
       "installable": true
     },
     {
@@ -1289,6 +1401,13 @@
       "installable": true
     },
     {
+      "item": "empty-state",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 17,
+      "installable": true
+    },
+    {
       "item": "label",
       "layer": "component",
       "status": "SOURCE_ADOPTED_UNCHANGED",
@@ -1310,7 +1429,7 @@
       "installable": true
     },
     {
-      "item": "nav-button",
+      "item": "nav-button--base-components",
       "layer": "component-part",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 6,
@@ -1335,6 +1454,13 @@
       "layer": "foundation",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 3,
+      "installable": true
+    },
+    {
+      "item": "slideout-menu",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 6,
       "installable": true
     },
     {
@@ -1478,7 +1604,7 @@
       "installable": true
     },
     {
-      "item": "mobile-navigation-header",
+      "item": "mobile-navigation-header--base-components",
       "layer": "component-part",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 7,
@@ -1492,9 +1618,16 @@
       "installable": true
     },
     {
-      "item": "nav-item-base",
+      "item": "nav-item-base--base-components",
       "layer": "component-part",
       "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 8,
+      "installable": true
+    },
+    {
+      "item": "pin-input",
+      "layer": "component-part",
+      "status": "SOURCE_ADOPTED",
       "closureSize": 8,
       "installable": true
     },
@@ -1695,7 +1828,14 @@
       "installable": true
     },
     {
-      "item": "nav-account-card",
+      "item": "multi-select",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED",
+      "closureSize": 21,
+      "installable": true
+    },
+    {
+      "item": "nav-account-card--base-components",
       "layer": "component-part",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 18,
@@ -1709,7 +1849,7 @@
       "installable": true
     },
     {
-      "item": "nav-list",
+      "item": "nav-list--base-components",
       "layer": "component-part",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 10,
@@ -1744,10 +1884,45 @@
       "installable": true
     },
     {
+      "item": "select",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 22,
+      "installable": true
+    },
+    {
+      "item": "select-context",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 22,
+      "installable": true
+    },
+    {
+      "item": "table",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 20,
+      "installable": true
+    },
+    {
+      "item": "table-card",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 20,
+      "installable": true
+    },
+    {
       "item": "table-row-actions-dropdown",
       "layer": "component",
       "status": "SOURCE_ADOPTED_UNCHANGED",
       "closureSize": 20,
+      "installable": true
+    },
+    {
+      "item": "tag-select",
+      "layer": "component",
+      "status": "SOURCE_ADOPTED_UNCHANGED",
+      "closureSize": 23,
       "installable": true
     },
     {

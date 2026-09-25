@@ -88,11 +88,12 @@
       "declarationModuleFileCount": 1180,
       "distSubdirectories": [],
       "entryTypesPath": "@untitledui/icons/dist/index.d.ts",
-      "exportCount": 1179,
-      "valueExportCount": 1179,
-      "typeExportCount": 0,
+      "entryExportCount": 1179,
+      "entryValueExportCount": 1179,
+      "entryTypeExportCount": 0,
+      "declarationExportCount": 1179,
       "exportsSample": {
-        "mode": "first-10-declaration-order",
+        "mode": "first-10-entry-declaration-order",
         "names": [
           "ActivityHeart",
           "Activity",
@@ -131,13 +132,23 @@
         "solid"
       ],
       "entryTypesPath": "@untitledui/file-icons/dist/index.d.ts",
-      "exportCount": 1,
-      "valueExportCount": 1,
-      "typeExportCount": 0,
+      "entryExportCount": 1,
+      "entryValueExportCount": 1,
+      "entryTypeExportCount": 0,
+      "declarationExportCount": 59,
       "exportsSample": {
-        "mode": "first-10-declaration-order",
+        "mode": "first-10-declaration-union-alphabetical",
         "names": [
-          "FileIcon"
+          "Aep",
+          "Ai",
+          "Audio",
+          "Avi",
+          "Code",
+          "Css",
+          "Csv",
+          "Dmg",
+          "Doc",
+          "Document"
         ]
       },
       "fileTypeTable": {
@@ -201,6 +212,64 @@
           "gray",
           "solid"
         ]
+      },
+      "typeModules": {
+        "count": 52,
+        "names": [
+          "aep",
+          "ai",
+          "audio",
+          "avi",
+          "code",
+          "css",
+          "csv",
+          "dmg",
+          "doc",
+          "document",
+          "docx",
+          "empty",
+          "eps",
+          "exe",
+          "fig",
+          "folder",
+          "gif",
+          "html",
+          "image",
+          "img",
+          "indd",
+          "java",
+          "jpeg",
+          "jpg",
+          "js",
+          "json",
+          "mkv",
+          "mp3",
+          "mp4",
+          "mpeg",
+          "pdf",
+          "pdf-simple",
+          "png",
+          "ppt",
+          "pptx",
+          "psd",
+          "rar",
+          "rss",
+          "spreadsheets",
+          "sql",
+          "svg",
+          "tiff",
+          "txt",
+          "video",
+          "video-01",
+          "video-02",
+          "wav",
+          "webp",
+          "xls",
+          "xlsx",
+          "xml",
+          "zip"
+        ],
+        "note": "one declaration module per file type; the gray/solid variant trees re-declare the same component names"
       },
       "evidence": {
         "entryTypesSha256": "dae7fe789c6bdbc656cbc00521ee5f2a6d5ca8678bb673a977fc8c2ab29222a4"
@@ -279,146 +348,194 @@
         {
           "path": "components/foundations/payment-icons/affirm-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AffirmIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/afterpay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AfterpayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/alipay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AlipayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/amazon-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AmazonIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/amex-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AmexIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/apple-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ApplePayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/ayden-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AydenIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/bancontact-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BancontactIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/binance-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BinancePayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/bitcoin-cash-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BitcoinCashIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/bitcoin-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BitcoinIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/bitpay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BitpayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/braintree-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BraintreeIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/cash-app-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "CashAppPayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/citadele-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "CitadeleIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/coinbase-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "CoinbaseIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/diners-club-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "DinersClubIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/discover-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "DiscoverIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/elo-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "EloIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/etherium-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "EtheriumIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/forbrugsforeningen-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ForbrugsforeningenIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/giropay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "GiropayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/google-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "GooglePayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/ideal-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "IdealIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/index.tsx",
@@ -486,194 +603,258 @@
         {
           "path": "components/foundations/payment-icons/interac-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "InteracIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/jcb-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "JCBIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/klarna-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "KlarnaIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/lightcoin-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "LightcoinIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/maestro-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "MaestroIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/mastercard-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "MastercardIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/payoneer-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "PayoneerIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/paypal-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "PayPalIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/paysafe-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "PaysafeIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/qiwi-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "QiwiIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/razorpay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "RazorpayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/revolut-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "RevolutIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/ru-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "RuPayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/samsung-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "SamsungPayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/sepa-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "SEPAIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/shop-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ShopPayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/shopee-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ShopeePayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/skrill-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "SkrillIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/sofort-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "SofortIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/stripe-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "StripeIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/union-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "UnionPayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/upi-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "UPIIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/venmo-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "VenmoIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/verifone-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "VerifoneIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/visa-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "VisaIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/we-chat-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "WeChatIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/we-chat-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "WeChatPayIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/webmoney-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "WebmoneyIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/wise-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "WiseIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/yandex-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "YandexIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/zelle-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ZelleIcon"
+          ]
         },
         {
           "path": "components/foundations/payment-icons/zip-pay-icon.tsx",
           "assetClass": "PAYMENT_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ZipPayIcon"
+          ]
         }
       ]
     },
@@ -714,56 +895,74 @@
         {
           "path": "components/foundations/social-icons/angel-list.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "AngelList"
+          ]
         },
         {
           "path": "components/foundations/social-icons/apple.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Apple"
+          ]
         },
         {
           "path": "components/foundations/social-icons/clubhouse.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Clubhouse"
+          ]
         },
         {
           "path": "components/foundations/social-icons/discord.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Discord"
+          ]
         },
         {
           "path": "components/foundations/social-icons/dribbble.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Dribbble"
+          ]
         },
         {
           "path": "components/foundations/social-icons/facebook.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Facebook"
+          ]
         },
         {
           "path": "components/foundations/social-icons/figma.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Figma"
+          ]
         },
         {
           "path": "components/foundations/social-icons/github.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "GitHub"
+          ]
         },
         {
           "path": "components/foundations/social-icons/google.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Google"
+          ]
         },
         {
           "path": "components/foundations/social-icons/index.tsx",
@@ -797,80 +996,106 @@
         {
           "path": "components/foundations/social-icons/instagram.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Instagram"
+          ]
         },
         {
           "path": "components/foundations/social-icons/layers.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Layers"
+          ]
         },
         {
           "path": "components/foundations/social-icons/linkedin.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "LinkedIn"
+          ]
         },
         {
           "path": "components/foundations/social-icons/pinterest.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Pinterest"
+          ]
         },
         {
           "path": "components/foundations/social-icons/reddit.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Reddit"
+          ]
         },
         {
           "path": "components/foundations/social-icons/signal.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Signal"
+          ]
         },
         {
           "path": "components/foundations/social-icons/snapchat.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Snapchat"
+          ]
         },
         {
           "path": "components/foundations/social-icons/telegram.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Telegram"
+          ]
         },
         {
           "path": "components/foundations/social-icons/tiktok.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "TikTok"
+          ]
         },
         {
           "path": "components/foundations/social-icons/tumblr.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Tumblr"
+          ]
         },
         {
           "path": "components/foundations/social-icons/twitter.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "Twitter"
+          ]
         },
         {
           "path": "components/foundations/social-icons/x.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "X"
+          ]
         },
         {
           "path": "components/foundations/social-icons/youtube.tsx",
           "assetClass": "SOCIAL_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "YouTube"
+          ]
         }
       ]
     },
@@ -905,50 +1130,66 @@
         {
           "path": "components/foundations/integration-icons/bolt-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "BoltIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/chatgpt-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ChatGPTIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/claude-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ClaudeIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/cursor-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "CursorIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/figma-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "FigmaIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/gemini-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "GeminiIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/github-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "GitHubIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/grok-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "GrokIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/index.tsx",
@@ -976,50 +1217,66 @@
         {
           "path": "components/foundations/integration-icons/lovable-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "LovableIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/nextjs-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "NextjsIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/perplexity-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "PerplexityIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/react-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ReactIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/replit-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ReplitIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/tailwind-css-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "TailwindCSSIcon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/v0-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "V0Icon"
+          ]
         },
         {
           "path": "components/foundations/integration-icons/vite-icon.tsx",
           "assetClass": "INTEGRATION_BRAND_ICON",
-          "exportCount": 0,
-          "exports": []
+          "exportCount": 1,
+          "exports": [
+            "ViteIcon"
+          ]
         }
       ]
     },
@@ -5978,7 +6235,7 @@
         "resolvedToFileIcons": 2,
         "resolvedToLocalOss": 17,
         "unresolved": 1003,
-        "unresolvedProOnlyCandidates": 982,
+        "unresolvedProOnlyCandidates": 983,
         "resolvedFamilies": {
           "icons": [
             [
@@ -6200,7 +6457,7 @@
       "resolvedToFileIcons": 2,
       "resolvedToLocalOss": 20,
       "unresolved": 1025,
-      "unresolvedProOnlyCandidates": 985
+      "unresolvedProOnlyCandidates": 986
     }
   },
   "unresolvedClassifications": [
@@ -6668,22 +6925,6 @@
       "evidence": {
         "tokens": [
           "badge"
-        ]
-      }
-    },
-    {
-      "name": "sublime_text",
-      "pageId": "1025:31781",
-      "pageName": "Misc icons",
-      "kind": "app-icon",
-      "category": "App icons / App icons / Coding",
-      "type": "COMPONENT",
-      "variants": 0,
-      "classification": "NON_ICON_ASSET",
-      "rule": "composite-not-icon",
-      "evidence": {
-        "tokens": [
-          "text"
         ]
       }
     },
@@ -20864,6 +21105,23 @@
       }
     },
     {
+      "name": "sublime_text",
+      "pageId": "1025:31781",
+      "pageName": "Misc icons",
+      "kind": "app-icon",
+      "category": "App icons / App icons / Coding",
+      "type": "COMPONENT",
+      "variants": 0,
+      "classification": "PRO_ONLY_ICON_CANDIDATE",
+      "rule": "page-icon-surface-unresolved",
+      "evidence": {
+        "kind": "app-icon",
+        "category": "App icons / App icons / Coding",
+        "axisValueMatches": [],
+        "axisValueMatchCount": 0
+      }
+    },
+    {
       "name": "Sudan-SD-circle",
       "pageId": "1025:31781",
       "pageName": "Misc icons",
@@ -23787,8 +24045,8 @@
     "pages": 5,
     "byClassification": {
       "DUPLICATE_OF_RESOLVED": 19,
-      "NON_ICON_ASSET": 18,
-      "PRO_ONLY_ICON_CANDIDATE": 985,
+      "NON_ICON_ASSET": 17,
+      "PRO_ONLY_ICON_CANDIDATE": 986,
       "HELPER_OR_INTERNAL": 3
     },
     "byRule": {
@@ -23796,12 +24054,18 @@
       "qualifier-stripped-stem-package-export": 2,
       "stem-token-source-family": 6,
       "numbered-package-family-style-wrapper": 1,
-      "composite-not-icon": 3,
-      "page-icon-surface-unresolved": 985,
+      "composite-not-icon": 2,
+      "page-icon-surface-unresolved": 986,
       "page-logos-brand-asset": 4,
       "internal-underscore-prefix": 3,
       "page-misc-asset-decor": 9,
       "page-background-decor-asset": 2
+    },
+    "proOnlyByKind": {
+      "app-icon": 201,
+      "flag-icon": 780,
+      "icon": 3,
+      "icon-set": 2
     }
   },
   "ruleTable": [
@@ -23813,7 +24077,7 @@
     {
       "id": "composite-not-icon",
       "classification": "NON_ICON_ASSET",
-      "description": "Family name carries a composite-UI token (item/text/badge/row/table/chart/nav/button/input/...): it is a component or block, not an icon."
+      "description": "Family name carries a composite-UI token (item/text/badge/row/table/chart/nav/button/input/...): it is a component or block, not an icon. App-icon and flag-icon families are exempt: their names are brand marks, not UI parts."
     },
     {
       "id": "qualifier-stripped-stem-package-export",
@@ -23899,7 +24163,7 @@
       "source": "PRO Figma file (licensed). Icon-page families that resolve to no free package and no local OSS component (see PRO_ONLY_ICON_CANDIDATE) belong to the licensed surface.",
       "redistribution": "NEVER_REDISTRIBUTE",
       "statement": "PRO icon families and their variants, glyph artwork and page payloads are licensed content: they must not be redistributed, vendored, published, or committed. PRO icon packages, if ever obtained, stay separate npm/licensed artifacts and are not part of this repository.",
-      "proOnlyCandidates": 985
+      "proOnlyCandidates": 986
     },
     "localExtractions": {
       "redistribution": "PRIVATE_ONLY",

@@ -10,23 +10,23 @@
     "recipesAndBlocks": 14,
     "foundationsAndAssets": 118,
     "evidenceOnly": 75,
-    "adoptedItems": 276,
-    "adoptedFiles": 229,
-    "installableItems": 251,
-    "verified": 52,
-    "validated": 224,
+    "adoptedItems": 293,
+    "adoptedFiles": 234,
+    "installableItems": 268,
+    "verified": 60,
+    "validated": 233,
     "validationFailed": 0,
     "blocked": 0
   },
   "byTier": {
     "tierC": 126,
-    "tierB": 84,
-    "tierA": 52,
+    "tierA": 60,
+    "tierB": 93,
     "tierD": 14
   },
   "byStatus": {
-    "VALIDATED": 224,
-    "VERIFIED": 52
+    "VALIDATED": 233,
+    "VERIFIED": 60
   },
   "figmaCrosswalk": {
     "figmaFamilies": 2253,
@@ -35,9 +35,9 @@
       "FIGMA_ONLY": 1636,
       "EXTERNAL_PACKAGE": 522,
       "OSS_COMPONENT_SET_MERGE": 10,
-      "OSS_COMPOSITION": 10,
+      "OSS_COMPOSITION": 9,
       "EXACT_OSS_MATCH": 69,
-      "OSS_COMPONENT_SPLIT": 6
+      "OSS_COMPONENT_SPLIT": 7
     },
     "verified": 69
   }

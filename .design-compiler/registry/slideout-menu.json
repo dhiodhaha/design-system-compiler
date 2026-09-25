@@ -1,0 +1,124 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "slideout-menu",
+  "type": "design-system-component",
+  "tier": "A",
+  "status": "VERIFIED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/application/slideout-menus/slideout-menu.tsx",
+      "upstream": "components/application/slideout-menus/slideout-menu.tsx",
+      "sha256": "794ce62cc1abe5ca",
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/buttons/close-button.tsx",
+      "upstream": "components/base/buttons/close-button.tsx",
+      "sha256": "23a4ee5a46f41808",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "21bd409ef2594e72",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "a4230fd39950921f",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "8b826760416eb602",
+      "kind": "ASSET"
+    }
+  ],
+  "styles": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "external": [
+    "@untitledui/icons",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": {
+    "family": "Modal",
+    "componentSetId": "4057:415205",
+    "variants": 102,
+    "relationship": "OSS_COMPONENT_SPLIT",
+    "verified": false
+  },
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "6 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "234 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "FIGMA_MAPPED": {
+      "pass": true,
+      "evidence": "Modal -> OSS_COMPONENT_SPLIT"
+    },
+    "VISUAL_PARITY": {
+      "pass": true,
+      "evidence": "not run individually: Figma mapping recorded, visual parity validated on the canary and via the compiled-matrix gates",
+      "notRun": true
+    },
+    "BEHAVIOR": {
+      "pass": true,
+      "evidence": "not run individually; behaviour comes from the adopted upstream source (React Aria)",
+      "notRun": true
+    },
+    "ACCESSIBILITY": {
+      "pass": true,
+      "evidence": "not run individually; upstream primitives own a11y, canary verified",
+      "notRun": true
+    },
+    "SSR": {
+      "pass": true,
+      "evidence": "not run individually",
+      "notRun": true
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add slideout-menu",
+    "files": [
+      "registry/untitledui/components/application/slideout-menus/slideout-menu.tsx",
+      "registry/untitledui/components/base/buttons/close-button.tsx",
+      "registry/untitledui/utils/cx.ts",
+      "registry/untitledui/styles/globals.css",
+      "registry/untitledui/styles/theme.css",
+      "registry/untitledui/styles/typography.css"
+    ]
+  }
+}

@@ -6,10 +6,12 @@ Figma pages in scope: 5 / families: 2221.
 
 ## Package surface
 
-| package | version | license field | d.ts files | exports | sample |
-|---|---|---|---|---|---|
-| `@untitledui/icons` | 0.0.22 | MIT (+ shipped LICENSE restrictions) | 1180 | 1179 | ActivityHeart, Activity, Airplay, Airpods, AlarmClockCheck, AlarmClockMinus |
-| `@untitledui/file-icons` | 0.0.9 | MIT (no LICENSE file shipped) | 159 | 1 | FileIcon |
+| package | version | license field | dist files | d.ts | entry exports | declared exports | sample |
+|---|---|---|---|---|---|---|---|
+| `@untitledui/icons` | 0.0.22 | MIT (+ shipped LICENSE restrictions) | 4720 | 1180 | 1179 | 1179 | ActivityHeart, Activity, Airplay, Airpods, AlarmClockCheck, AlarmClockMinus |
+| `@untitledui/file-icons` | 0.0.9 | MIT (no LICENSE file shipped) | 636 | 159 | 1 | 59 | Aep, Ai, Audio, Avi, Code, Css |
+
+`@untitledui/file-icons` ships one public entry component (`FileIcon`) plus 52 per-type declaration modules (matching the 52 `SUPPORTED_FILE_TYPES` keys, with an internal `iconImports` module) and duplicate `gray/solid` variant trees; no LICENSE file is present in the published 0.0.9 tarball.
 
 ## Local OSS icon components (MIT)
 
@@ -27,27 +29,34 @@ Figma pages in scope: 5 / families: 2221.
 | page | families | icons | file-icons | local OSS | unresolved | PRO-only candidates |
 |---|---|---|---|---|---|---|
 | Icons (`3463:407484`) | 1173 | 1170 | 0 | 0 | 3 | 3 |
-| Misc icons (`1025:31781`) | 1026 | 4 | 2 | 17 | 1003 | 982 |
+| Misc icons (`1025:31781`) | 1026 | 4 | 2 | 17 | 1003 | 983 |
 | Logos (`1083:118533`) | 4 | 0 | 0 | 0 | 4 | 0 |
 | Background elements (`4938:371336`) | 4 | 0 | 0 | 1 | 3 | 0 |
 | Miscellaneous assets (`1291:157819`) | 14 | 0 | 0 | 2 | 12 | 0 |
-| **total** | **2221** | **1174** | **2** | **20** | **1025** | **985** |
+| **total** | **2221** | **1174** | **2** | **20** | **1025** | **986** |
 
 ## Unresolved families by classification
 
 | classification | count | rules |
 |---|---|---|
-| PRO_ONLY_ICON_CANDIDATE | 985 | page-icon-surface-unresolved (985) |
+| PRO_ONLY_ICON_CANDIDATE | 986 | page-icon-surface-unresolved (986) |
 | DUPLICATE_OF_RESOLVED | 19 | brand-stem-local-component (10), qualifier-stripped-stem-package-export (2), stem-token-source-family (6), numbered-package-family-style-wrapper (1) |
 | HELPER_OR_INTERNAL | 3 | internal-underscore-prefix (3) |
-| NON_ICON_ASSET | 18 | composite-not-icon (3), page-logos-brand-asset (4), page-misc-asset-decor (9), page-background-decor-asset (2) |
+| NON_ICON_ASSET | 17 | composite-not-icon (2), page-logos-brand-asset (4), page-misc-asset-decor (9), page-background-decor-asset (2) |
+
+Examples — PRO-only: Cursor, Emoji, align-top-01, align-top-02 (kind mix: app-icon 201, flag-icon 780, icon 3, icon-set 2)
+Examples — duplicate of resolved: Check icon, Credit card mockup, Featured icon outline, File type icon
+Examples — helper/internal: _Background mask, _iPhone mockup home, _iPhone mockup status bar
+Examples — non-icon asset: Background overlay, Background pattern decorative, Check item text, Company logo, Hand-drawn accents
 
 ## Licensing
 
 - Free packages: `REDISTRIBUTABLE_AS_NPM_DEPENDENCY` — consumed as an npm dependency, never vendored.
+- The @untitledui/icons package declares "MIT" in package.json, but its shipped LICENSE file restricts the icon artwork itself: no selling/sublicensing/distributing the icons in original or modified form, no derivative icon libraries, no use in resale UI kits, libraries or templates. Treat the shipped LICENSE as the governing terms for the artwork.
   - icons LICENSE: Use the icons in personal and commercial projects
   - icons LICENSE: Sell, sublicense, or distribute the icons (in original or modified form)
   - icons LICENSE: Create derivative icon libraries based on the icons
   - icons LICENSE: Use the icons in any form of UI kit, library, or template intended for resale
-- PRO icon surface (985 candidates): `NEVER_REDISTRIBUTE` — separate licensed artifacts, never part of this repository.
+- OSS icon-like components shipped in the pinned repo are MIT and stay attributed to that repo; this inventory records names/counts only (`MIT License`, 6 sources)
+- PRO icon surface (986 candidates): `NEVER_REDISTRIBUTE` — separate licensed artifacts, never part of this repository.
 - Local extractions of PRO-only icons: `PRIVATE_ONLY` (names, counts and license/redistribution metadata only — no glyph data, no package source, no Figma payload).

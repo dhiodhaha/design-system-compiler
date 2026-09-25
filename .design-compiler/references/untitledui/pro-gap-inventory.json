@@ -8,10 +8,10 @@
     "mapped": 79,
     "externalPackageResolved": 474,
     "proOnlyIcons": 1688,
-    "compositionCandidates": 6,
-    "componentSplit": 6,
+    "compositionCandidates": 5,
+    "componentSplit": 7,
     "figmaOnlyUnclassified": 0,
-    "ossWithoutFigmaFamily": 94,
+    "ossWithoutFigmaFamily": 88,
     "registryItemsBuilt": [
       "affirm-icon",
       "afterpay-icon",
@@ -19,7 +19,13 @@
       "amazon-icon",
       "amex-icon",
       "angel-list",
+      "app-gallery-button--buttons--app-store-buttons-outline",
+      "app-gallery-button--buttons--app-store-buttons",
+      "app-gallery-button--buttons",
       "app-gallery-button",
+      "app-store-button--buttons--app-store-buttons-outline",
+      "app-store-button--buttons--app-store-buttons",
+      "app-store-button--buttons",
       "app-store-button",
       "apple-logo",
       "apple-pay-icon",
@@ -72,6 +78,8 @@
       "cursor-icon",
       "date-picker",
       "date-range-picker",
+      "dialog--modals",
+      "dialog--slideout-menus",
       "dialog",
       "diners-club-icon",
       "discord",
@@ -114,6 +122,9 @@
       "forbrugsforeningen-icon",
       "form-field",
       "form",
+      "galaxy-store-button--buttons--app-store-buttons-outline",
+      "galaxy-store-button--buttons--app-store-buttons",
+      "galaxy-store-button--buttons",
       "galaxy-store-button",
       "gemini-icon",
       "giropay-icon",
@@ -121,6 +132,9 @@
       "github",
       "google-logo",
       "google-pay-icon",
+      "google-play-button--buttons--app-store-buttons-outline",
+      "google-play-button--buttons--app-store-buttons",
+      "google-play-button--buttons",
       "google-play-button",
       "google-play-white-button",
       "google",
@@ -153,6 +167,10 @@
       "maestro-icon",
       "mastercard-icon",
       "mobile-navigation-header",
+      "modal--modals",
+      "modal--slideout-menus",
+      "modal-overlay--modals",
+      "modal-overlay--slideout-menus",
       "modal-overlay",
       "modal",
       "native-select",
@@ -265,8 +283,8 @@
     "PRO_ONLY_ICON": 1688,
     "MAPPED": 79,
     "EXTERNAL_PACKAGE_RESOLVED": 474,
-    "OSS_COMPOSITION": 6,
-    "OSS_COMPONENT_SPLIT": 6
+    "OSS_COMPOSITION": 5,
+    "OSS_COMPONENT_SPLIT": 7
   },
   "workQueue": [
     {
@@ -315,26 +333,6 @@
     },
     {
       "rank": 3,
-      "id": "1303:2162",
-      "name": "Mobile app store badge",
-      "page": "Buttons",
-      "pageId": "1:1183",
-      "variants": 30,
-      "relationship": "OSS_COMPOSITION",
-      "verified": false,
-      "codeTargets": [
-        "Badge"
-      ],
-      "recipeValues": 8,
-      "nextAction": "COMPOSE: build as a recipe over verified components; do not create a new primitive",
-      "evidence": [
-        "signal S2",
-        "candidates: Badge",
-        "8 axis values (e.g. Store=\"Google Play\", Store=\"App Store\", Store=\"Galaxy Store\", Store=\"AppGallery\") describe recipes/compositions over Badge, not new primitives"
-      ]
-    },
-    {
-      "rank": 4,
       "id": "4843:410985",
       "name": "Featured icon outline",
       "page": "Misc icons",
@@ -354,7 +352,7 @@
       ]
     },
     {
-      "rank": 5,
+      "rank": 4,
       "id": "4933:393069",
       "name": "Background pattern decorative",
       "page": "Background elements",
@@ -376,7 +374,7 @@
       ]
     },
     {
-      "rank": 6,
+      "rank": 5,
       "id": "1054:13",
       "name": "Help icon",
       "page": "Tooltips",
@@ -949,102 +947,8 @@
       "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
-      "source": "components/base/buttons/app-store-buttons-outline.tsx",
-      "export": "GalaxyStoreButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtonsOutline",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton"
-      ],
-      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons-outline.tsx",
-      "export": "AppGalleryButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtonsOutline",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton"
-      ],
-      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "GooglePlayButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ],
-      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
       "source": "components/base/buttons/app-store-buttons.tsx",
       "export": "GooglePlayWhiteButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ],
-      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "AppStoreButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ],
-      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "GalaxyStoreButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ],
-      "classification": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "AppGalleryButton",
       "kind": "BASE_COMPONENT",
       "layer": "component",
       "figmaNames": [

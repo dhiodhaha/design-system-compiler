@@ -10,9 +10,9 @@
       "FIGMA_ONLY": 1636,
       "EXTERNAL_PACKAGE": 522,
       "OSS_COMPONENT_SET_MERGE": 10,
-      "OSS_COMPOSITION": 10,
+      "OSS_COMPOSITION": 9,
       "EXACT_OSS_MATCH": 69,
-      "OSS_COMPONENT_SPLIT": 6
+      "OSS_COMPONENT_SPLIT": 7
     },
     "verified": 69
   },
@@ -37888,22 +37888,6 @@
       "recipeCandidates": [
         {
           "axis": "Store",
-          "value": "Google Play"
-        },
-        {
-          "axis": "Store",
-          "value": "App Store"
-        },
-        {
-          "axis": "Store",
-          "value": "Galaxy Store"
-        },
-        {
-          "axis": "Store",
-          "value": "AppGallery"
-        },
-        {
-          "axis": "Store",
           "value": "Mac App Store"
         },
         {
@@ -37924,13 +37908,59 @@
           "source": "components/base/badges/badges.tsx",
           "export": "Badge",
           "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons-outline.tsx",
+          "export": "GooglePlayButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons.tsx",
+          "export": "GooglePlayButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons-outline.tsx",
+          "export": "AppStoreButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons.tsx",
+          "export": "AppStoreButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons-outline.tsx",
+          "export": "GalaxyStoreButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons.tsx",
+          "export": "GalaxyStoreButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons-outline.tsx",
+          "export": "AppGalleryButton",
+          "layer": "component"
+        },
+        {
+          "source": "components/base/buttons/app-store-buttons.tsx",
+          "export": "AppGalleryButton",
+          "layer": "component"
         }
       ],
-      "relationship": "OSS_COMPOSITION",
+      "relationship": "OSS_COMPONENT_SPLIT",
       "evidence": [
         "signal S2",
         "candidates: Badge",
-        "8 axis values (e.g. Store=\"Google Play\", Store=\"App Store\", Store=\"Galaxy Store\", Store=\"AppGallery\") describe recipes/compositions over Badge, not new primitives"
+        "axis Store=\"Google Play\" -> GooglePlayButton",
+        "axis Store=\"Google Play\" -> GooglePlayButton",
+        "axis Store=\"App Store\" -> AppStoreButton",
+        "axis Store=\"App Store\" -> AppStoreButton",
+        "axis Store=\"Galaxy Store\" -> GalaxyStoreButton",
+        "axis Store=\"Galaxy Store\" -> GalaxyStoreButton",
+        "4 axis values are recipe/composition inputs, not primitives"
       ],
       "verified": false
     },

@@ -18,7 +18,11 @@ const index = read(".design-compiler/ir/button.index.json");
 const semantics = read(".design-compiler/ir/button.semantics.json");
 const unsupported = read(".design-compiler/ir/unsupported.json");
 const manifest = read(".design-compiler/manifest.json");
-const registry = read(".design-compiler/registry.json");
+// canonical registry (registry/index.json) + the official adopted item; the Figma reconstruction entry is
+// retained separately as a benchmark and must never be canonical.
+const registry = read(".design-compiler/registry/index.json");
+const registryButton = read(".design-compiler/registry/button.json");
+const benchmark = read(".design-compiler/registry/benchmark-figma-button.json");
 const pkg = read("package.json");
 
 test("family invariant: one component set resolves to one family and one public component", () => {
@@ -134,15 +138,15 @@ test("API: no framework-specific code hides behaviour", () => {
     const src = srcWithoutComments(p);
     assert.ok(!/from "next\//.test(src) && !/from "@tanstack\//.test(src), `${p} must stay framework-agnostic`);
   }
-  assert.equal(registry.dependencies.frameworkAgnostic, true);
-  assert.deepEqual(registry.dependencies.frameworkAdapters, []);
+  assert.equal(registry.canonical, true, "registry/index.json must be the canonical index");
+  assert.ok(registry.items.length > 100, `canonical index should carry the adopted library, got ${registry.items.length}`);
 });
 
 test("API: shadcn is a reference, not a dependency or a visual source", () => {
   const deps = { ...(pkg.dependencies ?? {}), ...(pkg.devDependencies ?? {}) };
   assert.ok(!Object.keys(deps).some((d) => /shadcn|radix/.test(d)), "no shadcn/radix dependency");
   assert.equal(plan.policyProvenance.some((x) => /do-not-copy-shadcn-visually/.test(x.policy)), true);
-  assert.match(registry.note, /shadcn informs API ergonomics/);
+  assert.match(registryButton.distribution.note, /MIT|provenance/i);
 });
 
 test("API: composition-first slots are documented, planned and typed", () => {
@@ -154,10 +158,12 @@ test("API: composition-first slots are documented, planned and typed", () => {
 });
 
 test("registry metadata declares the policy-required fields", () => {
-  for (const field of ["files", "dependencies", "verification"]) assert.ok(field in registry, `registry.${field} missing`);
-  assert.ok(registry.dependencies.tokens.length > 0);
-  assert.equal(registry.verification.status, "VERIFIED");
-  assert.ok(registry.fixturesExcludedFromDistribution.length > 0, "fixtures must be excluded from distribution");
+  for (const field of ["files", "reference", "figma", "gates", "install"]) assert.ok(field in registryButton, `registry item missing ${field}`);
+  assert.ok(registryButton.files.length > 0, "the canonical button item points at adopted files");
+  assert.match(registryButton.files[0].path, /registry\/untitledui\/components\/base\/buttons\/button\.tsx/);
+  assert.equal(benchmark.type, "COMPILER_RECONSTRUCTION_BENCHMARK");
+  assert.equal(benchmark.canonicalItem, "registry/button.json");
+  assert.ok(!registry.items.some((i) => /benchmark/.test(i.id)), "the benchmark must not be a registry item");
 });
 
 // ---------------------------------------------------------------------------------------------

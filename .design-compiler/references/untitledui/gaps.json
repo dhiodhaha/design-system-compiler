@@ -9840,12 +9840,6 @@
       "variants": 36
     },
     {
-      "id": "1303:2162",
-      "name": "Mobile app store badge",
-      "page": "1:1183",
-      "variants": 30
-    },
-    {
       "id": "1054:13",
       "name": "Help icon",
       "page": "1052:485",
@@ -13530,96 +13524,8 @@
       ]
     },
     {
-      "source": "components/base/buttons/app-store-buttons-outline.tsx",
-      "export": "GalaxyStoreButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtonsOutline",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton"
-      ]
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons-outline.tsx",
-      "export": "AppGalleryButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtonsOutline",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton"
-      ]
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "GooglePlayButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ]
-    },
-    {
       "source": "components/base/buttons/app-store-buttons.tsx",
       "export": "GooglePlayWhiteButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ]
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "AppStoreButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ]
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "GalaxyStoreButton",
-      "kind": "BASE_COMPONENT",
-      "layer": "component",
-      "figmaNames": [
-        "AppGalleryButton",
-        "AppStoreButton",
-        "AppStoreButtons",
-        "Buttons",
-        "GalaxyStoreButton",
-        "GooglePlayButton",
-        "GooglePlayWhiteButton"
-      ]
-    },
-    {
-      "source": "components/base/buttons/app-store-buttons.tsx",
-      "export": "AppGalleryButton",
       "kind": "BASE_COMPONENT",
       "layer": "component",
       "figmaNames": [

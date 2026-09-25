@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/registry-index@p1",
-  "generatedAt": "2026-09-25T11:28:57.627Z",
+  "generatedAt": "2026-09-25T11:35:11.714Z",
   "library": "untitledui",
   "canonical": true,
   "reference": {
@@ -10,28 +10,28 @@
     "copyright": "Copyright (c) 2025 Untitled UI"
   },
   "counts": {
-    "items": 276,
-    "installable": 251,
+    "items": 293,
+    "installable": 268,
     "byLayer": {
       "foundation": 101,
-      "component": 117,
-      "component-part": 19,
+      "component": 133,
+      "component-part": 20,
       "recipe": 14,
       "asset": 17,
       "helper": 8
     },
     "byTier": {
       "tierC": 126,
-      "tierB": 84,
-      "tierA": 52,
+      "tierA": 60,
+      "tierB": 93,
       "tierD": 14
     },
     "byStatus": {
-      "VALIDATED": 224,
-      "VERIFIED": 52
+      "VALIDATED": 233,
+      "VERIFIED": 60
     },
-    "payloadFiles": 229,
-    "sharedFiles": 145
+    "payloadFiles": 234,
+    "sharedFiles": 155
   },
   "externalDependencies": [
     {
@@ -50,6 +50,7 @@
     "@react-aria/utils",
     "@react-stately/utils",
     "embla-carousel-react",
+    "input-otp",
     "motion",
     "qr-code-styling",
     "react",
@@ -89,19 +90,19 @@
       },
       {
         "upstreamPath": "utils/cx.ts",
-        "usedByItems": 168
+        "usedByItems": 190
       },
       {
         "upstreamPath": "styles/globals.css",
-        "usedByItems": 162
+        "usedByItems": 184
       },
       {
         "upstreamPath": "styles/theme.css",
-        "usedByItems": 163
+        "usedByItems": 185
       },
       {
         "upstreamPath": "styles/typography.css",
-        "usedByItems": 163
+        "usedByItems": 185
       },
       {
         "upstreamPath": "components/base/buttons/app-store-buttons.tsx",
@@ -117,39 +118,39 @@
       },
       {
         "upstreamPath": "components/base/avatar/base-components/avatar-add-button.tsx",
-        "usedByItems": 41
+        "usedByItems": 56
       },
       {
         "upstreamPath": "components/base/tooltip/tooltip.tsx",
-        "usedByItems": 73
+        "usedByItems": 90
       },
       {
         "upstreamPath": "components/base/avatar/base-components/avatar-company-icon.tsx",
-        "usedByItems": 41
+        "usedByItems": 56
       },
       {
         "upstreamPath": "components/base/avatar/base-components/avatar-count.tsx",
-        "usedByItems": 41
+        "usedByItems": 56
       },
       {
         "upstreamPath": "components/base/avatar/avatar-label-group.tsx",
-        "usedByItems": 11
+        "usedByItems": 20
       },
       {
         "upstreamPath": "components/base/avatar/avatar.tsx",
-        "usedByItems": 40
+        "usedByItems": 55
       },
       {
         "upstreamPath": "components/base/avatar/base-components/index.tsx",
-        "usedByItems": 40
+        "usedByItems": 55
       },
       {
         "upstreamPath": "components/base/avatar/base-components/avatar-online-indicator.tsx",
-        "usedByItems": 41
+        "usedByItems": 56
       },
       {
         "upstreamPath": "components/base/avatar/base-components/verified-tick.tsx",
-        "usedByItems": 41
+        "usedByItems": 56
       },
       {
         "upstreamPath": "components/foundations/payment-icons/ayden-icon.tsx",
@@ -157,11 +158,11 @@
       },
       {
         "upstreamPath": "utils/is-react-component.ts",
-        "usedByItems": 51
+        "usedByItems": 65
       },
       {
         "upstreamPath": "components/base/badges/badges.tsx",
-        "usedByItems": 20
+        "usedByItems": 32
       }
     ],
     "note": "installing several items installs each shared file once"
@@ -235,12 +236,12 @@
     {
       "id": "app-gallery-button--buttons--app-store-buttons",
       "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
+      "tier": "A",
+      "status": "VERIFIED",
       "installable": true,
       "files": 5,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
     },
     {
       "id": "app-gallery-button--buttons--app-store-buttons-outline",
@@ -255,12 +256,12 @@
     {
       "id": "app-store-button--buttons--app-store-buttons",
       "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
+      "tier": "A",
+      "status": "VERIFIED",
       "installable": true,
       "files": 5,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
     },
     {
       "id": "app-store-button--buttons--app-store-buttons-outline",
@@ -815,12 +816,12 @@
     {
       "id": "galaxy-store-button--buttons--app-store-buttons",
       "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
+      "tier": "A",
+      "status": "VERIFIED",
       "installable": true,
       "files": 5,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
     },
     {
       "id": "galaxy-store-button--buttons--app-store-buttons-outline",
@@ -905,12 +906,12 @@
     {
       "id": "google-play-button--buttons--app-store-buttons",
       "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
+      "tier": "A",
+      "status": "VERIFIED",
       "installable": true,
       "files": 5,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
     },
     {
       "id": "google-play-button--buttons--app-store-buttons-outline",
@@ -925,12 +926,12 @@
     {
       "id": "google-play-white-button",
       "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
+      "tier": "A",
+      "status": "VERIFIED",
       "installable": true,
       "files": 5,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
     },
     {
       "id": "grok-icon",
@@ -1083,6 +1084,16 @@
       "figmaPresence": "PRESENT"
     },
     {
+      "id": "mobile-navigation-header--app-navigation",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
       "id": "modal--modals",
       "layer": "component",
       "tier": "A",
@@ -1101,6 +1112,76 @@
       "files": 5,
       "mapping": "OSS_COMPONENT_SPLIT",
       "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "nav-account-card--app-navigation",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-button--app-navigation",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-item-base--app-navigation",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-item-base-props",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-item-collapsible-props",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-item-link-props",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-list--app-navigation",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 29,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
       "id": "nextjs-icon",
@@ -1853,6 +1934,16 @@
       "figmaPresence": "PRESENT"
     },
     {
+      "id": "empty-state",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 17,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
       "id": "label",
       "layer": "component",
       "tier": "A",
@@ -1883,7 +1974,7 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "nav-button",
+      "id": "nav-button--base-components",
       "layer": "component-part",
       "tier": "B",
       "status": "VALIDATED",
@@ -1920,6 +2011,16 @@
       "installable": true,
       "files": 3,
       "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "slideout-menu",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPONENT_SPLIT",
       "figmaPresence": "PRESENT"
     },
     {
@@ -2123,7 +2224,7 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "mobile-navigation-header",
+      "id": "mobile-navigation-header--base-components",
       "layer": "component-part",
       "tier": "B",
       "status": "VALIDATED",
@@ -2143,7 +2244,17 @@
       "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
-      "id": "nav-item-base",
+      "id": "nav-item-base--base-components",
+      "layer": "component-part",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 8,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pin-input",
       "layer": "component-part",
       "tier": "B",
       "status": "VALIDATED",
@@ -2433,7 +2544,17 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "nav-account-card",
+      "id": "multi-select",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 21,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "nav-account-card--base-components",
       "layer": "component-part",
       "tier": "B",
       "status": "VALIDATED",
@@ -2453,7 +2574,7 @@
       "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
-      "id": "nav-list",
+      "id": "nav-list--base-components",
       "layer": "component-part",
       "tier": "B",
       "status": "VALIDATED",
@@ -2503,6 +2624,46 @@
       "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
+      "id": "select",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 22,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "select-context",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 22,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "table",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 20,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "table-card",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 20,
+      "mapping": "EXACT_OSS_MATCH",
+      "figmaPresence": "PRESENT"
+    },
+    {
       "id": "table-row-actions-dropdown",
       "layer": "component",
       "tier": "A",
@@ -2511,6 +2672,16 @@
       "files": 20,
       "mapping": "EXACT_OSS_MATCH",
       "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "tag-select",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 23,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
       "id": "tag-select-base",

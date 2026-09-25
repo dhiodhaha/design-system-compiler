@@ -1,0 +1,121 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "nav-item-base--base-components",
+  "type": "design-system-component",
+  "tier": "B",
+  "status": "VALIDATED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+      "upstream": "components/application/app-navigation/base-components/nav-item.tsx",
+      "sha256": "192a1d4748c4961e",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/badges/badges.tsx",
+      "upstream": "components/base/badges/badges.tsx",
+      "sha256": "a8a28cc851b294af",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/dot-icon.tsx",
+      "upstream": "components/foundations/dot-icon.tsx",
+      "sha256": "bb4b2ad57f35eb15",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/base/badges/badge-types.ts",
+      "upstream": "components/base/badges/badge-types.ts",
+      "sha256": "1af02a56f9fedc74",
+      "kind": "NON_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "21bd409ef2594e72",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "a4230fd39950921f",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "8b826760416eb602",
+      "kind": "ASSET"
+    }
+  ],
+  "styles": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "external": [
+    "@untitledui/icons",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": null,
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "8 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "234 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "FIGMA_MAPPED": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE (not a failure; the current PRO file does not contain this family)"
+    },
+    "VISUAL_PARITY": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE",
+      "notRun": true
+    },
+    "UPSTREAM_EVIDENCE": {
+      "pass": true,
+      "evidence": "upstream demo/story evidence exists"
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add nav-item-base--base-components",
+    "files": [
+      "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
+      "registry/untitledui/components/base/badges/badges.tsx",
+      "registry/untitledui/utils/cx.ts",
+      "registry/untitledui/components/foundations/dot-icon.tsx",
+      "registry/untitledui/components/base/badges/badge-types.ts",
+      "registry/untitledui/styles/globals.css",
+      "registry/untitledui/styles/theme.css",
+      "registry/untitledui/styles/typography.css"
+    ]
+  }
+}

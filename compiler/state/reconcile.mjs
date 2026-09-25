@@ -31,6 +31,9 @@ const figma = read(resolve(REF, "figma", "figma-surface.json"));
 const benchmarkAccuracy = read(".design-compiler/visual/accuracy-report.json");
 const parityButton = read(resolve(REF, LIB, "parity/button.json"));
 const validationButton = read(resolve(REF, LIB, "validation/button.json"));
+const proCompile = read(resolve(REF, LIB, "pro-gap-compile.json"));
+const refinements = read(resolve(REF, LIB, "crosswalk-refinements.json"));
+const iconInventory = read(resolve(REF, LIB, "icon-inventory.json"));
 
 if (!adoptionRun) {
   console.error("run compiler/adopt/adopt.mjs --all first");
@@ -296,9 +299,21 @@ const report = {
     families: figma?.families?.length ?? null,
     crosswalkRaw: crosswalk?.totals ?? null,
     crosswalkNormalized: proGaps?.byCategory ?? null,
+    refinements: refinements?.summary ?? null,
+    versionDrift: refinements?.families?.filter((f) => (f.versionDrift?.classification ?? f.classification) === "VERSION_DRIFT").map((f) => f.name) ?? null,
+    iconCoverage: iconInventory?.figmaMapping?.totals ?? refinements?.iconMappingCoverage?.totals ?? null,
     note: "raw crosswalk totals count every Figma family relationship; normalized totals regroup them into adoption categories",
   },
   proGaps: proGaps ? { totals: proGaps.totals, workQueue: proGaps.workQueue.map((w) => ({ rank: w.rank, name: w.name, variants: w.variants, nextAction: w.nextAction })) } : null,
+  proCompiled: proCompile
+    ? {
+        totals: proCompile.totals,
+        validation: proCompile.validation,
+        families: proCompile.families.map((f) => ({ name: f.figma.name, status: f.status, classification: f.classification, reuseScore: f.reuseScore, artifact: f.artifact, canonicalChildren: f.canonicalRefs })),
+        policy: proCompile.policy,
+        distribution: "private (PRO-derived); canonical children remain MIT",
+      }
+    : null,
   benchmark: benchmarkAccuracy ? { status: benchmarkAccuracy.status, requirements: benchmarkAccuracy.requirements.length, role: "COMPILER_RECONSTRUCTION_BENCHMARK" } : null,
 };
 writeFileSync(".design-compiler/report.json", JSON.stringify(report, null, 2));

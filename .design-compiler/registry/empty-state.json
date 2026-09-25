@@ -1,0 +1,184 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "empty-state",
+  "type": "design-system-component",
+  "tier": "B",
+  "status": "VALIDATED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/application/empty-state/empty-state.tsx",
+      "upstream": "components/application/empty-state/empty-state.tsx",
+      "sha256": "ba2ab88bb3855177",
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/foundations/featured-icon/featured-icon.tsx",
+      "upstream": "components/foundations/featured-icon/featured-icon.tsx",
+      "sha256": "5aca35b559164a8d",
+      "kind": "FOUNDATION"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/background-patterns/index.tsx",
+      "upstream": "components/shared-assets/background-patterns/index.tsx",
+      "sha256": "4ef39d15e3e81113",
+      "kind": "BARREL"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/illustrations/index.tsx",
+      "upstream": "components/shared-assets/illustrations/index.tsx",
+      "sha256": "0d7692870f56a02e",
+      "kind": "BARREL"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/utils/is-react-component.ts",
+      "upstream": "utils/is-react-component.ts",
+      "sha256": "f518f86f81a9adf6",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/background-patterns/circle.tsx",
+      "upstream": "components/shared-assets/background-patterns/circle.tsx",
+      "sha256": "33d705d26d909780",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/background-patterns/grid.tsx",
+      "upstream": "components/shared-assets/background-patterns/grid.tsx",
+      "sha256": "078334c9d3604ee2",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/background-patterns/grid-check.tsx",
+      "upstream": "components/shared-assets/background-patterns/grid-check.tsx",
+      "sha256": "200361b52aefc1d5",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/background-patterns/square.tsx",
+      "upstream": "components/shared-assets/background-patterns/square.tsx",
+      "sha256": "402da7b79f9b03a0",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/illustrations/box.tsx",
+      "upstream": "components/shared-assets/illustrations/box.tsx",
+      "sha256": "bdaa971f035e351d",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/illustrations/cloud.tsx",
+      "upstream": "components/shared-assets/illustrations/cloud.tsx",
+      "sha256": "d354da9eea3c6b9e",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/illustrations/credit-card.tsx",
+      "upstream": "components/shared-assets/illustrations/credit-card.tsx",
+      "sha256": "d9239df3d3282c0d",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/components/shared-assets/illustrations/documents.tsx",
+      "upstream": "components/shared-assets/illustrations/documents.tsx",
+      "sha256": "8c9227a5353e1a06",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "21bd409ef2594e72",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "a4230fd39950921f",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "8b826760416eb602",
+      "kind": "ASSET"
+    }
+  ],
+  "styles": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "external": [
+    "@untitledui/file-icons",
+    "@untitledui/icons",
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": null,
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "17 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "234 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "FIGMA_MAPPED": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE (not a failure; the current PRO file does not contain this family)"
+    },
+    "VISUAL_PARITY": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE",
+      "notRun": true
+    },
+    "UPSTREAM_EVIDENCE": {
+      "pass": true,
+      "evidence": "upstream demo/story evidence exists"
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add empty-state",
+    "files": [
+      "registry/untitledui/components/application/empty-state/empty-state.tsx",
+      "registry/untitledui/components/foundations/featured-icon/featured-icon.tsx",
+      "registry/untitledui/components/shared-assets/background-patterns/index.tsx",
+      "registry/untitledui/components/shared-assets/illustrations/index.tsx",
+      "registry/untitledui/utils/cx.ts",
+      "registry/untitledui/utils/is-react-component.ts",
+      "registry/untitledui/components/shared-assets/background-patterns/circle.tsx",
+      "registry/untitledui/components/shared-assets/background-patterns/grid.tsx",
+      "registry/untitledui/components/shared-assets/background-patterns/grid-check.tsx",
+      "registry/untitledui/components/shared-assets/background-patterns/square.tsx",
+      "registry/untitledui/components/shared-assets/illustrations/box.tsx",
+      "registry/untitledui/components/shared-assets/illustrations/cloud.tsx",
+      "registry/untitledui/components/shared-assets/illustrations/credit-card.tsx",
+      "registry/untitledui/components/shared-assets/illustrations/documents.tsx",
+      "registry/untitledui/styles/globals.css",
+      "registry/untitledui/styles/theme.css",
+      "registry/untitledui/styles/typography.css"
+    ]
+  }
+}

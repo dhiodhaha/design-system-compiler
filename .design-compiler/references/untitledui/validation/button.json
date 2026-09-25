@@ -3,7 +3,7 @@
   "item": "button",
   "repository": "untitleduico/react",
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
-  "generatedAt": "2026-09-25T11:24:59.267Z",
+  "generatedAt": "2026-09-25T11:34:37.629Z",
   "gates": [
     {
       "gate": "SOURCE_ADOPTED",
@@ -62,14 +62,9 @@
     },
     {
       "gate": "NO_DEAD_PACKAGE_DEPENDENCIES",
-      "pass": false,
+      "pass": true,
       "evidence": "every runtime dependency is imported by source",
-      "detail": [
-        "input-otp",
-        "next-themes",
-        "sonner",
-        "zod"
-      ]
+      "detail": []
     },
     {
       "gate": "TYPECHECK_PASS",
@@ -114,7 +109,7 @@
     },
     {
       "gate": "PRODUCTION_PASS",
-      "pass": false,
+      "pass": true,
       "evidence": "all production checks pass",
       "detail": []
     }
@@ -131,8 +126,5 @@
       "consumerRemedy": "pass aria-label (or showTextWhileLoading) on buttons used in loading state"
     }
   ],
-  "status": [
-    "NO_DEAD_PACKAGE_DEPENDENCIES",
-    "PRODUCTION_PASS"
-  ]
+  "status": "VERIFIED"
 }

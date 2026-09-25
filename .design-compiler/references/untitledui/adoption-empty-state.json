@@ -1,0 +1,185 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "empty-state",
+  "title": "EmptyState",
+  "export": "EmptyState",
+  "layer": "component",
+  "installable": true,
+  "distribution": "public-source",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": true,
+  "status": "SOURCE_ADOPTED",
+  "closureSize": 17,
+  "files": [
+    {
+      "upstreamPath": "components/application/empty-state/empty-state.tsx",
+      "destination": "registry/untitledui/components/application/empty-state/empty-state.tsx",
+      "upstreamSha256": "7ca8e4f7d4bda8ed",
+      "sha": "ba2ab88bb3855177",
+      "copied": true,
+      "bytes": 14544,
+      "kind": "APPLICATION_COMPONENT"
+    },
+    {
+      "upstreamPath": "components/foundations/featured-icon/featured-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/featured-icon/featured-icon.tsx",
+      "upstreamSha256": "2c9e0227bcd87c88",
+      "sha": "5aca35b559164a8d",
+      "copied": false,
+      "bytes": 6800,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/shared-assets/background-patterns/index.tsx",
+      "destination": "registry/untitledui/components/shared-assets/background-patterns/index.tsx",
+      "upstreamSha256": "4d13fbd538121384",
+      "sha": "4ef39d15e3e81113",
+      "copied": false,
+      "bytes": 1143,
+      "kind": "BARREL"
+    },
+    {
+      "upstreamPath": "components/shared-assets/illustrations/index.tsx",
+      "destination": "registry/untitledui/components/shared-assets/illustrations/index.tsx",
+      "upstreamSha256": "64a1959a9e0880a5",
+      "sha": "0d7692870f56a02e",
+      "copied": true,
+      "bytes": 1151,
+      "kind": "BARREL"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "utils/is-react-component.ts",
+      "destination": "registry/untitledui/utils/is-react-component.ts",
+      "upstreamSha256": "2f24cf5e7c8cc9b8",
+      "sha": "f518f86f81a9adf6",
+      "copied": false,
+      "bytes": 1713,
+      "kind": "HELPER"
+    },
+    {
+      "upstreamPath": "components/shared-assets/background-patterns/circle.tsx",
+      "destination": "registry/untitledui/components/shared-assets/background-patterns/circle.tsx",
+      "upstreamSha256": "e8663aba3df672be",
+      "sha": "33d705d26d909780",
+      "copied": false,
+      "bytes": 5549,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/background-patterns/grid.tsx",
+      "destination": "registry/untitledui/components/shared-assets/background-patterns/grid.tsx",
+      "upstreamSha256": "7e6ba096f2e9638d",
+      "sha": "078334c9d3604ee2",
+      "copied": false,
+      "bytes": 14063,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/background-patterns/grid-check.tsx",
+      "destination": "registry/untitledui/components/shared-assets/background-patterns/grid-check.tsx",
+      "upstreamSha256": "7b9621d2d7ad43d4",
+      "sha": "200361b52aefc1d5",
+      "copied": false,
+      "bytes": 139374,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/background-patterns/square.tsx",
+      "destination": "registry/untitledui/components/shared-assets/background-patterns/square.tsx",
+      "upstreamSha256": "4477946d65dc260e",
+      "sha": "402da7b79f9b03a0",
+      "copied": false,
+      "bytes": 12253,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/illustrations/box.tsx",
+      "destination": "registry/untitledui/components/shared-assets/illustrations/box.tsx",
+      "upstreamSha256": "329428bc72093df2",
+      "sha": "bdaa971f035e351d",
+      "copied": false,
+      "bytes": 16693,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/illustrations/cloud.tsx",
+      "destination": "registry/untitledui/components/shared-assets/illustrations/cloud.tsx",
+      "upstreamSha256": "4488d3b04ed8e91f",
+      "sha": "d354da9eea3c6b9e",
+      "copied": false,
+      "bytes": 20363,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/illustrations/credit-card.tsx",
+      "destination": "registry/untitledui/components/shared-assets/illustrations/credit-card.tsx",
+      "upstreamSha256": "85902d04406d1c9c",
+      "sha": "d9239df3d3282c0d",
+      "copied": false,
+      "bytes": 20036,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "components/shared-assets/illustrations/documents.tsx",
+      "destination": "registry/untitledui/components/shared-assets/illustrations/documents.tsx",
+      "upstreamSha256": "29f3af122c905c61",
+      "sha": "8c9227a5353e1a06",
+      "copied": false,
+      "bytes": 39563,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/globals.css",
+      "destination": "registry/untitledui/styles/globals.css",
+      "upstreamSha256": "0c1fd5eebe0cb65d",
+      "sha": "21bd409ef2594e72",
+      "copied": false,
+      "bytes": 2081,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/theme.css",
+      "destination": "registry/untitledui/styles/theme.css",
+      "upstreamSha256": "52241a7d0d28f702",
+      "sha": "a4230fd39950921f",
+      "copied": false,
+      "bytes": 44513,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "styles/typography.css",
+      "destination": "registry/untitledui/styles/typography.css",
+      "upstreamSha256": "531cc316caf58796",
+      "sha": "8b826760416eb602",
+      "copied": false,
+      "bytes": 12895,
+      "kind": "ASSET"
+    }
+  ],
+  "sharedStyleDependencies": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "externalDependencies": [
+    "@untitledui/file-icons",
+    "@untitledui/icons",
+    "react",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

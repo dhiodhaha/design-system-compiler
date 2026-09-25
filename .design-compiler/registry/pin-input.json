@@ -1,0 +1,122 @@
+{
+  "$schema": "design-compiler/registry-item@p1",
+  "name": "pin-input",
+  "type": "design-system-component",
+  "tier": "B",
+  "status": "VALIDATED",
+  "files": [
+    {
+      "path": "registry/untitledui/components/base/input/pin-input.tsx",
+      "upstream": "components/base/input/pin-input.tsx",
+      "sha256": "78ab116d64dd471f",
+      "kind": "COMPOUND_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/hint-text.tsx",
+      "upstream": "components/base/input/hint-text.tsx",
+      "sha256": "e3b84da4697b64e8",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/components/base/input/label.tsx",
+      "upstream": "components/base/input/label.tsx",
+      "sha256": "bf9390e62ab8c185",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/utils/cx.ts",
+      "upstream": "utils/cx.ts",
+      "sha256": "632feb90f95482d5",
+      "kind": "HELPER"
+    },
+    {
+      "path": "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "upstream": "components/base/tooltip/tooltip.tsx",
+      "sha256": "9c907f2e31fb7714",
+      "kind": "BASE_COMPONENT"
+    },
+    {
+      "path": "registry/untitledui/styles/globals.css",
+      "upstream": "styles/globals.css",
+      "sha256": "21bd409ef2594e72",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/theme.css",
+      "upstream": "styles/theme.css",
+      "sha256": "a4230fd39950921f",
+      "kind": "ASSET"
+    },
+    {
+      "path": "registry/untitledui/styles/typography.css",
+      "upstream": "styles/typography.css",
+      "sha256": "8b826760416eb602",
+      "kind": "ASSET"
+    }
+  ],
+  "styles": [
+    "styles/globals.css",
+    "styles/theme.css",
+    "styles/typography.css"
+  ],
+  "external": [
+    "@untitledui/icons",
+    "input-otp",
+    "react-aria-components",
+    "tailwind-merge"
+  ],
+  "reference": {
+    "repository": "untitleduico/react",
+    "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Untitled UI",
+    "attributionRequired": true
+  },
+  "figma": null,
+  "gates": {
+    "SOURCE_ADOPTED": {
+      "pass": true,
+      "evidence": "8 files copied from untitleduico/react@8b7409c078f8"
+    },
+    "PAYLOAD_INTEGRITY": {
+      "pass": true,
+      "evidence": "234 payload files; internal imports resolve"
+    },
+    "TYPECHECK": {
+      "pass": true,
+      "evidence": "payload typechecks (tsc, strict, upstream-compatible lib)"
+    },
+    "FIGMA_MAPPED": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE (not a failure; the current PRO file does not contain this family)"
+    },
+    "VISUAL_PARITY": {
+      "pass": true,
+      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE",
+      "notRun": true
+    },
+    "UPSTREAM_EVIDENCE": {
+      "pass": true,
+      "evidence": "upstream demo/story evidence exists"
+    }
+  },
+  "failedGates": [],
+  "distribution": {
+    "policy": "public-source",
+    "license": "MIT",
+    "note": "MIT source; keep provenance header and upstream LICENSE"
+  },
+  "install": {
+    "command": "npx ds-compiler add pin-input",
+    "files": [
+      "registry/untitledui/components/base/input/pin-input.tsx",
+      "registry/untitledui/components/base/input/hint-text.tsx",
+      "registry/untitledui/components/base/input/label.tsx",
+      "registry/untitledui/utils/cx.ts",
+      "registry/untitledui/components/base/tooltip/tooltip.tsx",
+      "registry/untitledui/styles/globals.css",
+      "registry/untitledui/styles/theme.css",
+      "registry/untitledui/styles/typography.css"
+    ]
+  }
+}

@@ -9,7 +9,7 @@
  * the official Button stays canonical · every OSS candidate, recipe, foundation/asset, Figma family and
  * non-icon PRO gap has a terminal status · no hand-maintained count contradicts a derived count.
  */
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null);
@@ -99,6 +99,37 @@ const workQueue = proGaps?.workQueue ?? [];
 const stubbed = workQueue.filter((w) => !w.nextAction || !w.relationship);
 check("pro: every queued gap has a status and a next action", stubbed.length === 0, `${workQueue.length} queued, ${stubbed.length} without action`);
 check("pro: no forbidden fabrication in the queue", workQueue.every((w) => !/Modal type=|Input type=/.test(w.nextAction ?? "")), "no giant union-prop plans");
+
+// ---- 8. every non-icon PRO gap has a terminal status; PRO artifacts stay private
+const proCompile = read(resolve(REF, LIB, "pro-gap-compile.json"));
+const PRO_TERMINAL = new Set(["COMPILED", "COVERED_BY_OSS", "ASSET_ONLY", "NEEDS_FIGMA_SLICE", "LICENSE_BLOCKED", "VALIDATION_FAILED"]);
+const proFamilies = proCompile?.families ?? [];
+const nonTerminalPro = proFamilies.filter((f) => !PRO_TERMINAL.has(f.status));
+check("pro: every non-icon gap has a terminal status", proFamilies.length > 0 && nonTerminalPro.length === 0, `${proFamilies.length} families, non-terminal: ${nonTerminalPro.map((f) => f.figma.name).join(", ") || "none"}`);
+check("pro: compiled artifacts validated", proCompile?.totals?.compiled === 0 || (proCompile?.validation?.typecheck?.pass === true && proCompile?.validation?.ssr?.pass === true), `typecheck ${proCompile?.validation?.typecheck?.pass}, ssr ${proCompile?.validation?.ssr?.pass}`);
+const proFiles = proFamilies.map((f) => f.artifact).filter(Boolean);
+const nonPrivate = proFiles.filter((p) => {
+  if (!existsSync(p)) return true;
+  return !/PRO composition/.test(text(p).slice(0, 400));
+});
+check("pro: PRO-derived files are marked private and are not published as OSS", nonPrivate.length === 0, `${proFiles.length} artifacts checked`);
+const canonicalChildrenOk = proFamilies.every((f) => (f.canonicalRefs ?? []).length > 0 || f.status === "ASSET_ONLY");
+check("pro: compositions reuse canonical children (never regenerate a primitive)", canonicalChildrenOk, "every compiled family lists canonical children");
+
+// ---- 9. every adoptable index entry actually reached the payload
+const payloadFiles = new Set();
+const walkAll = (dir) => {
+  if (!existsSync(dir)) return;
+  for (const e of readdirSync(dir)) {
+    const full = `${dir}/${e}`;
+    if (statSync(full).isDirectory()) walkAll(full);
+    else payloadFiles.add(full);
+  }
+};
+walkAll("registry/untitledui");
+const adoptableEntries = (index?.entries ?? []).filter((e) => e.adoptable);
+const missingFromPayload = adoptableEntries.filter((e) => !payloadFiles.has(`registry/untitledui/${e.path}`)).map((e) => e.path);
+check("coverage: every adoptable source file is present in the payload", missingFromPayload.length === 0, missingFromPayload.slice(0, 6).join(", ") || `${adoptableEntries.length} adoptable files present`);
 
 const failures = checks.filter((c) => !c.pass);
 const out = {

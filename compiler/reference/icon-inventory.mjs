@@ -107,6 +107,8 @@ function parseSourceExports(file) {
   for (const m of src.matchAll(/export\s+(?:async\s+)?(?:const|let|var|function|class)\s+([A-Za-z0-9_$]+)/g)) values.add(m[1]);
   for (const m of src.matchAll(/export\s+(?:interface|type)\s+([A-Za-z0-9_$]+)/g)) types.add(m[1]);
   for (const m of src.matchAll(/export\s+default\s+(?:async\s+)?(?:const|let|var|function|class)\s+([A-Za-z0-9_$]+)/g)) values.add(m[1]);
+  // bare identifier default export: `export default AmexIcon;`
+  for (const m of src.matchAll(/export\s+default\s+([A-Za-z0-9_$]+)\s*;/g)) values.add(m[1]);
   return { values: [...values].sort(), types: [...types].sort() };
 }
 
@@ -129,7 +131,6 @@ function parseFileIconTypes(declSrc) {
 }
 
 const packageRecords = [];
-let iconsIndexSource = "";
 let fileIconTypes = { count: 0, names: [] };
 for (const pkg of PACKAGES) {
   const dir = resolve("node_modules", pkg.name);
@@ -137,13 +138,20 @@ for (const pkg of PACKAGES) {
   const manifest = installed ? readJson(join(dir, "package.json")) : {};
   const typesAbs = join(dir, pkg.typesPath);
   const parsed = installed && existsSync(typesAbs) ? parseDeclarationExports(typesAbs) : { values: [], types: [], source: "" };
-  if (pkg.name === "@untitledui/icons") iconsIndexSource = parsed.source;
   const allFiles = installed ? walk(join(dir, pkg.distDir)) : [];
   const declFiles = allFiles.filter((f) => f.endsWith(".d.ts"));
   const declModuleFiles = allFiles.filter((f) => f.endsWith(".d.mts"));
   const distDirs = installed
     ? [...new Set(allFiles.map((f) => relative(join(dir, pkg.distDir), f).split("/").slice(0, -1).join("/")).filter(Boolean))].sort()
     : [];
+  /** every name declared anywhere under dist/*.d.ts (deep-import surface), not just the barrel */
+  const declarationUnion = [...new Set(declFiles.flatMap((f) => {
+    const d = parseDeclarationExports(f);
+    return [...d.values, ...d.types];
+  }))].sort();
+  const isTypeModule = (f) =>
+    !relative(join(dir, pkg.distDir), f).includes("/") && !["index.d.ts", "FileIcon.d.ts", "iconImports.d.ts"].includes(basename(f));
+  const typeModules = declFiles.filter(isTypeModule).map((f) => basename(f, ".d.ts")).sort();
   const licenseFiles = installed
     ? ["LICENSE", "LICENSE.md", "LICENSE.txt"].filter((f) => existsSync(join(dir, f))).map((f) => {
         const text = readFileSync(join(dir, f), "utf8");
@@ -179,11 +187,20 @@ for (const pkg of PACKAGES) {
     declarationModuleFileCount: declModuleFiles.length,
     distSubdirectories: distDirs,
     entryTypesPath: `${pkg.name}/${pkg.typesPath}`,
-    exportCount: parsed.values.length + parsed.types.length,
-    valueExportCount: parsed.values.length,
-    typeExportCount: parsed.types.length,
-    exportsSample: { mode: "first-10-declaration-order", names: parsed.values.slice(0, 10) },
-    ...(pkg.name === "@untitledui/file-icons" ? { fileTypeTable: { name: "SUPPORTED_FILE_TYPES", count: fileTypes.count, names: fileTypes.names, variantDirectories: distDirs } } : {}),
+    entryExportCount: parsed.values.length + parsed.types.length,
+    entryValueExportCount: parsed.values.length,
+    entryTypeExportCount: parsed.types.length,
+    declarationExportCount: declarationUnion.length,
+    exportsSample: {
+      mode: declarationUnion.length > parsed.values.length ? "first-10-declaration-union-alphabetical" : "first-10-entry-declaration-order",
+      names: (declarationUnion.length > parsed.values.length ? declarationUnion : parsed.values).slice(0, 10),
+    },
+    ...(pkg.name === "@untitledui/file-icons"
+      ? {
+          fileTypeTable: { name: "SUPPORTED_FILE_TYPES", count: fileTypes.count, names: fileTypes.names, variantDirectories: distDirs },
+          typeModules: { count: typeModules.length, names: typeModules, note: "one declaration module per file type; the gray/solid variant trees re-declare the same component names" },
+        }
+      : {}),
     evidence: { entryTypesSha256: installed && parsed.source ? sha256(parsed.source) : null },
   });
 }
@@ -386,7 +403,7 @@ const matchedAxisValues = (fam) => {
 
 const RULES = [
   { id: "internal-underscore-prefix", classification: "HELPER_OR_INTERNAL", description: "Figma family name starts with \"_\": the PRO file marks library-internal helper layers this way (e.g. _Background mask, _iPhone mockup status bar)." },
-  { id: "composite-not-icon", classification: "NON_ICON_ASSET", description: "Family name carries a composite-UI token (item/text/badge/row/table/chart/nav/button/input/...): it is a component or block, not an icon." },
+  { id: "composite-not-icon", classification: "NON_ICON_ASSET", description: "Family name carries a composite-UI token (item/text/badge/row/table/chart/nav/button/input/...): it is a component or block, not an icon. App-icon and flag-icon families are exempt: their names are brand marks, not UI parts." },
   { id: "qualifier-stripped-stem-package-export", classification: "DUPLICATE_OF_RESOLVED", description: "After dropping presence qualifiers (icon/outline/solid/filled/line/...), the stem equals an exact @untitledui/icons export." },
   { id: "qualifier-stripped-stem-file-icon-type", classification: "DUPLICATE_OF_RESOLVED", description: "After dropping presence qualifiers the stem equals a @untitledui/file-icons type (SUPPORTED_FILE_TYPES or a shipped type module)." },
   { id: "stem-token-source-family", classification: "DUPLICATE_OF_RESOLVED", description: "A specific family-stem token equals a local OSS icon/asset source family (payment-icons, social-icons, integration-icons, featured-icon, dot-icon, shared-assets, or an official package name): the PRO set is the styled wrapper of a source already shipped in the pinned repo." },
@@ -408,7 +425,7 @@ const classify = (fam) => {
   const axisHits = matchedAxisValues(fam);
   const axisEvidence = { axisValueMatches: axisHits.slice(0, 6), axisValueMatchCount: axisHits.length };
   if (name.startsWith("_")) return { rule: "internal-underscore-prefix", evidence: {} };
-  const compositeHit = [...tokens(name)].filter((t) => COMPOSITE_TOKENS.has(t));
+  const compositeHit = ["app-icon", "flag-icon"].includes(fam.kind) ? [] : [...tokens(name)].filter((t) => COMPOSITE_TOKENS.has(t));
   if (compositeHit.length) return { rule: "composite-not-icon", evidence: { tokens: compositeHit } };
   if (iconsIndex.has(stem)) return { rule: "qualifier-stripped-stem-package-export", evidence: { matched: iconsIndex.get(stem), strippedStem: stem } };
   if (fileIconIndex.has(stem)) return { rule: "qualifier-stripped-stem-file-icon-type", evidence: { matched: fileIconIndex.get(stem), strippedStem: stem } };
@@ -482,7 +499,7 @@ const licensing = {
     publicArtifactsMayCarry: "names, counts and license/redistribution metadata only — no glyph data, no package source, no Figma payload",
   },
   localOssSurface: {
-    source: "pinned OSS repo (/tmp/untitled-react)",
+    source: `pinned OSS repo (${REPO})`,
     license: ossLicense,
     redistribution: "MIT (see the pinned repo's LICENSE)",
     components: localOssIconComponents.map((s) => ({ id: s.id, source: s.source, iconClass: s.iconClass, license: s.license, exportCount: s.exportCount })),
@@ -522,7 +539,19 @@ const artifact = {
   },
   figmaMapping: { perPage, totals },
   unresolvedClassifications,
-  unresolvedSummary: { total: unresolvedClassifications.length, pages: FIGMA_PAGES.length, byClassification, byRule },
+  unresolvedSummary: {
+    total: unresolvedClassifications.length,
+    pages: FIGMA_PAGES.length,
+    byClassification,
+    byRule,
+    proOnlyByKind: Object.fromEntries(
+      Object.entries(
+        unresolvedClassifications
+          .filter((u) => u.classification === "PRO_ONLY_ICON_CANDIDATE")
+          .reduce((acc, u) => ((acc[u.kind ?? "unknown"] = (acc[u.kind ?? "unknown"] ?? 0) + 1), acc), {}),
+      ).sort(([a], [b]) => a.localeCompare(b)),
+    ),
+  },
   ruleTable: RULES,
   licensing,
   notes: [
@@ -542,9 +571,17 @@ md.push("# Icon inventory — official packages, local OSS icon components, Figm
 md.push(`Packages: ${packageRecords.map((p) => `\`${p.name}@${p.resolvedVersion}\` (license field: ${p.licenseField})`).join(", ")}`);
 md.push(`Local OSS icon sources: ${localOssIconComponents.length} (${artifact.localOssTotals.files} files, ${artifact.localOssTotals.exports} exports) — MIT.`);
 md.push(`Figma pages in scope: ${totals.pages} / families: ${totals.families}.`, "");
-md.push("## Package surface", "", "| package | version | license field | d.ts files | exports | sample |", "|---|---|---|---|---|---|");
+md.push("## Package surface", "", "| package | version | license field | dist files | d.ts | entry exports | declared exports | sample |", "|---|---|---|---|---|---|---|---|");
 for (const p of packageRecords)
-  md.push(`| \`${p.name}\` | ${p.resolvedVersion} | ${p.licenseField}${p.licenseFilePresent ? " (+ shipped LICENSE restrictions)" : " (no LICENSE file shipped)"} | ${p.declarationFileCount} | ${p.exportCount} | ${p.exportsSample?.names?.slice(0, 6).join(", ") ?? ""} |`);
+  md.push(
+    `| \`${p.name}\` | ${p.resolvedVersion} | ${p.licenseField}${p.licenseFilePresent ? " (+ shipped LICENSE restrictions)" : " (no LICENSE file shipped)"} | ${p.distFileCount} | ${p.declarationFileCount} | ${p.entryExportCount} | ${p.declarationExportCount} | ${p.exportsSample?.names?.slice(0, 6).join(", ") ?? ""} |`,
+  );
+const fileIconsPkg = packageRecords.find((p) => p.fileTypeTable);
+if (fileIconsPkg)
+  md.push(
+    "",
+    `\`@untitledui/file-icons\` ships one public entry component (\`FileIcon\`) plus ${fileIconsPkg.typeModules.count} per-type declaration modules (matching the ${fileIconsPkg.fileTypeTable.count} \`SUPPORTED_FILE_TYPES\` keys, with an internal \`iconImports\` module) and duplicate \`${fileIconsPkg.distSubdirectories.join("/")}\` variant trees; no LICENSE file is present in the published 0.0.9 tarball.`,
+  );
 md.push("", "## Local OSS icon components (MIT)", "", "| source | class | files | exports |", "|---|---|---|---|");
 for (const s of localOssIconComponents) md.push(`| \`${s.source}\` | ${s.iconClass} | ${s.fileCount} | ${s.exportCount} |`);
 md.push("", "## Figma icon-ish pages", "", "| page | families | icons | file-icons | local OSS | unresolved | PRO-only candidates |", "|---|---|---|---|---|---|---|");
@@ -554,9 +591,27 @@ md.push(`| **total** | **${totals.families}** | **${totals.resolvedToIcons}** | 
 md.push("", "## Unresolved families by classification", "", "| classification | count | rules |", "|---|---|---|");
 for (const cls of ["PRO_ONLY_ICON_CANDIDATE", "DUPLICATE_OF_RESOLVED", "HELPER_OR_INTERNAL", "NON_ICON_ASSET"])
   md.push(`| ${cls} | ${byClassification[cls] ?? 0} | ${Object.entries(byRule).filter(([r]) => (RULES.find((x) => x.id === r)?.classification ?? "") === cls).map(([r, n]) => `${r} (${n})`).join(", ") || "—"} |`);
+const KIND_RANK = { "icon-set": 0, icon: 1, "app-icon": 2, "flag-icon": 3 };
+const examples = (cls, n = 4) =>
+  unresolvedClassifications
+    .filter((u) => u.classification === cls)
+    .slice()
+    .sort((a, b) => (KIND_RANK[a.kind] ?? 0) - (KIND_RANK[b.kind] ?? 0) || a.name.localeCompare(b.name))
+    .slice(0, n)
+    .map((u) => u.name)
+    .join(", ");
+md.push(
+  "",
+  `Examples — PRO-only: ${examples("PRO_ONLY_ICON_CANDIDATE")} (kind mix: ${Object.entries(artifact.unresolvedSummary.proOnlyByKind).map(([k, v]) => `${k} ${v}`).join(", ")})`,
+  `Examples — duplicate of resolved: ${examples("DUPLICATE_OF_RESOLVED")}`,
+  `Examples — helper/internal: ${examples("HELPER_OR_INTERNAL")}`,
+  `Examples — non-icon asset: ${examples("NON_ICON_ASSET", 5)}`,
+);
 md.push("", "## Licensing", "");
 md.push(`- Free packages: \`${licensing.freePackageSurface.redistribution}\` — consumed as an npm dependency, never vendored.`);
+md.push(`- ${licensing.freePackageSurface.iconArtworkStatement}`);
 if (iconsLic?.licenseFiles?.[0]?.restrictions?.length) md.push(...iconsLic.licenseFiles[0].restrictions.map((r) => `  - icons LICENSE: ${r}`));
+md.push(`- ${licensing.statements.find((s) => s.id === "L4").statement} (\`${licensing.localOssSurface.license}\`, ${localOssIconComponents.length} sources)`);
 md.push(`- PRO icon surface (${totals.unresolvedProOnlyCandidates} candidates): \`${licensing.proIconSurface.redistribution}\` — separate licensed artifacts, never part of this repository.`);
 md.push(`- Local extractions of PRO-only icons: \`${licensing.localExtractions.redistribution}\` (${licensing.localExtractions.publicArtifactsMayCarry}).`);
 writeFileSync(join(outDir, "icon-inventory-summary.md"), `${md.join("\n")}\n`);
@@ -565,9 +620,9 @@ writeFileSync(join(outDir, "icon-inventory-summary.md"), `${md.join("\n")}\n`);
 const line = (s) => process.stdout.write(`${s}\n`);
 line(`icon inventory: ${packageRecords.length} packages, ${localOssIconComponents.length} local OSS sources, ${totals.families} figma families on ${totals.pages} pages`);
 for (const p of packageRecords) {
-  const extra = p.fileTypeTable ? ` fileTypes=${p.fileTypeTable.count} (${p.topLevelDeclarationFileCount} type modules top-level + ${p.declarationFileCount - p.topLevelDeclarationFileCount} in ${p.distSubdirectories.join("/")} variants)` : "";
+  const extra = p.fileTypeTable ? ` fileTypes=${p.fileTypeTable.count} (${p.fileTypeTable.count} type modules + ${p.distSubdirectories.join("/")} variants)` : "";
   const lic = p.licenseFilePresent ? `${p.licenseField}+shipped-LICENSE` : `${p.licenseField} (no LICENSE file)`;
-  line(`  ${p.name}@${p.resolvedVersion}  license=${lic}  d.ts=${p.declarationFileCount}  exports=${p.exportCount}${extra}`);
+  line(`  ${p.name}@${p.resolvedVersion}  license=${lic}  d.ts=${p.declarationFileCount}  exports=${p.entryExportCount} entry/${p.declarationExportCount} declared${extra}`);
 }
 line(`  local OSS: ${artifact.localOssTotals.files} files / ${artifact.localOssTotals.exports} exports (${localOssIconComponents.map((s) => s.id).join(", ")})`);
 for (const p of perPage)

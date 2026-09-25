@@ -1,0 +1,18 @@
+{
+  "//": "Validation config for PRO-derived compositions: `@/` maps to the adopted payload, exactly as it maps to a consumer's source root after installation.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "types": [],
+    "paths": { "@/*": ["../untitledui/*"] }
+  },
+  "include": ["./**/*.tsx", "./**/*.ts", "../untitledui/**/*.tsx", "../untitledui/**/*.ts"],
+  "exclude": ["../untitledui/**/*.demo.tsx", "../untitledui/**/*.story.tsx"]
+}

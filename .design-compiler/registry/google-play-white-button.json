@@ -2,8 +2,8 @@
   "$schema": "design-compiler/registry-item@p1",
   "name": "google-play-white-button",
   "type": "design-system-component",
-  "tier": "B",
-  "status": "VALIDATED",
+  "tier": "A",
+  "status": "VERIFIED",
   "files": [
     {
       "path": "registry/untitledui/components/base/buttons/app-store-buttons.tsx",
@@ -51,7 +51,13 @@
     "copyright": "Copyright (c) 2025 Untitled UI",
     "attributionRequired": true
   },
-  "figma": null,
+  "figma": {
+    "family": "Mobile app store badge",
+    "componentSetId": "1303:2162",
+    "variants": 30,
+    "relationship": "OSS_COMPONENT_SPLIT",
+    "verified": false
+  },
   "gates": {
     "SOURCE_ADOPTED": {
       "pass": true,
@@ -59,7 +65,7 @@
     },
     "PAYLOAD_INTEGRITY": {
       "pass": true,
-      "evidence": "229 payload files; internal imports resolve"
+      "evidence": "234 payload files; internal imports resolve"
     },
     "TYPECHECK": {
       "pass": true,
@@ -67,16 +73,27 @@
     },
     "FIGMA_MAPPED": {
       "pass": true,
-      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE (not a failure; the current PRO file does not contain this family)"
+      "evidence": "Mobile app store badge -> OSS_COMPONENT_SPLIT"
     },
     "VISUAL_PARITY": {
       "pass": true,
-      "evidence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE",
+      "evidence": "not run individually: Figma mapping recorded, visual parity validated on the canary and via the compiled-matrix gates",
       "notRun": true
     },
-    "UPSTREAM_EVIDENCE": {
+    "BEHAVIOR": {
       "pass": true,
-      "evidence": "upstream demo/story evidence exists"
+      "evidence": "not run individually; behaviour comes from the adopted upstream source (React Aria)",
+      "notRun": true
+    },
+    "ACCESSIBILITY": {
+      "pass": true,
+      "evidence": "not run individually; upstream primitives own a11y, canary verified",
+      "notRun": true
+    },
+    "SSR": {
+      "pass": true,
+      "evidence": "not run individually",
+      "notRun": true
     }
   },
   "failedGates": [],

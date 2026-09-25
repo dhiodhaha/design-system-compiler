@@ -39,7 +39,7 @@ const catalogue = [];
 for (const entry of index.entries) {
   if (entry.layer === "component" || entry.layer === "component-part") {
     for (const exp of entry.exports) {
-      if (!["component", "compound-namespace", "default-component"].includes(exp.kind)) continue;
+      if (!["component", "compound-namespace", "default-component", "component-alias", "barrel-component"].includes(exp.kind)) continue;
       if (exp.name === "(default)") continue;
       catalogue.push({
         id: kebab(exp.name),
