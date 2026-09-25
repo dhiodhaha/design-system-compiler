@@ -28,10 +28,11 @@ source-owned verified components
 4. [API design policy](API_DESIGN_POLICY.md)
 5. [Component semantics](COMPONENT_SEMANTICS.md)
 6. [Component family invariants](COMPONENT_FAMILY_INVARIANTS.md)
-7. [PRO Figma composition](PRO_FIGMA_COMPOSITION.md)
-8. [Accuracy strategy](ACCURACY_STRATEGY.md)
-9. [Roadmap](ROADMAP.md)
-10. [Master build prompt](MASTER_BUILD_PROMPT.md)
+7. [Coverage strategy](COVERAGE_STRATEGY.md)
+8. [PRO Figma composition](PRO_FIGMA_COMPOSITION.md)
+9. [Accuracy strategy](ACCURACY_STRATEGY.md)
+10. [Roadmap](ROADMAP.md)
+11. [Master build prompt](MASTER_BUILD_PROMPT.md)
 
 Supporting docs:
 
@@ -63,3 +64,20 @@ Untitled UI React / React Aria
 Figma remains the visual source of truth.
 
 Shadcn remains an ergonomics/registry reference, not a visual source.
+
+
+## Coverage model
+
+```text
+all eligible Untitled UI OSS components
++
+licensed PRO-only Figma gaps
+↓
+verified local component library
+```
+
+OSS implementation wins when available.
+
+PRO Figma is sliced only for missing components/compositions and should reuse the verified OSS-derived library aggressively.
+
+See [Coverage strategy](COVERAGE_STRATEGY.md).
