@@ -1,364 +1,231 @@
 # API Design Policy
 
-This document defines how the compiler turns Figma semantics into a production React API.
+## Purpose
 
-## Reference policy
+Define how the compiler turns a reference implementation + Figma into a clean production React API.
 
-The compiler uses different sources for different kinds of truth:
+## Truth split
 
-~~~text
+```text
+official implementation
+→ semantic/API capability evidence
+
 Figma
-→ visual truth
-→ tokens, spacing, typography, radius, effects, dimensions, visual states
+→ visual and composition truth
+
+Base UI / native
+→ target behavior primitive
 
 shadcn
-→ API ergonomics and distribution reference
-→ source-owned components, composition, registry patterns, editable source
+→ source-owned ergonomics + wrapper/registry patterns
 
-native HTML / Base UI
-→ behavior and accessibility foundations
+compiler
+→ normalization and adaptation
+```
 
-Design System Compiler
-→ semantic translation, reuse, policy enforcement, code generation, verification
-~~~
+## Primary rule
 
-No one source owns everything.
+If an official reference exists, **extract capability before inventing API**.
 
-## Hard rule: do not copy shadcn visually
+Do not translate either source literally:
 
-Shadcn is not the visual source of truth.
+```text
+React Aria prop names
+≠ canonical API automatically
 
-Do not copy:
+Figma component properties
+≠ canonical API automatically
+```
 
-- shadcn colors;
-- shadcn spacing;
-- shadcn radii;
-- shadcn shadows;
-- shadcn focus rings;
-- shadcn component appearance;
-- shadcn component-specific visual defaults;
+The canonical contract decides.
 
-unless the Figma design independently specifies the same result.
+## API goals
 
-The production component must look like the target Figma design system.
+Prefer:
 
-## Hard rule: do not translate Figma props 1:1
+- source-owned components;
+- small orthogonal variant axes;
+- composition over boolean-prop explosion;
+- explicit slots where ambiguity matters;
+- preserved native semantics where applicable;
+- Base UI primitives where they provide the selected behavior;
+- framework-agnostic component core;
+- typed unsupported combinations;
+- predictable runtime behavior;
+- no test-only controls in production.
 
-Figma properties are design-authoring evidence, not automatically public React props.
+## Reference adaptation
 
-Bad:
-
-~~~tsx
-<Button
-  leadingIcon
-  trailingIcon={false}
-  iconOnly={false}
-  state="hover"
-/>
-~~~
-
-Preferred direction:
-
-~~~tsx
-<Button variant="secondary" size="md">
-  <PlusIcon />
-  Add user
-</Button>
-~~~
-
-The compiler must pass through semantic/API synthesis before code generation.
-
-## API policy defaults
-
-Unless component-specific evidence requires otherwise, prefer:
-
-~~~text
-composition-first
-native props preserved
-small orthogonal variant axes
-CVA or equivalent variant rules
-slots over fixture props
-children for primary content
-compound components for complex composition
-framework-agnostic core
-source-owned output
-explicit unsupported combinations
-no boolean-prop explosion
-~~~
-
-## Native props
-
-If the semantic root is a native element, preserve its normal React props.
-
-For a Button:
-
-~~~tsx
-<Button type="submit">Submit</Button>
-<Button onClick={handleClick}>Continue</Button>
-<Button disabled>Delete</Button>
-<Button aria-label="Open settings" size="icon-md">
-  <SettingsIcon />
-</Button>
-~~~
-
-Do not replace native behavior with proprietary props unless necessary.
-
-## Icon slots
-
-Figma placeholder icons are evidence of slots, not production dependencies.
-
-The production API should allow real icons:
-
-~~~tsx
-<Button>
-  <PlusIcon />
-  Add user
-</Button>
-
-<Button>
-  Continue
-  <ArrowRightIcon />
-</Button>
-~~~
-
-The compiler may internally understand leading and trailing slots even when the public API uses child ordering/composition.
-
-The visual test harness may use Figma placeholder fixtures to match the source specimen exactly.
-
-## Loading
-
-Loading is usually controlled runtime state.
-
-Preferred production direction:
-
-~~~tsx
-<Button loading={isPending}>
-  Save
-</Button>
-
-<Button loading={isPending} loadingText="Saving...">
-  Save
-</Button>
-~~~
-
-The core Button should not automatically decide that every click means loading.
-
-A higher-level AsyncButton or application wrapper may own async orchestration if the project wants it.
-
-"Submitting..." found in Figma should normally be treated as specimen content unless the design system explicitly documents it as a fixed label.
-
-## State policy
-
-Typical mapping:
-
-~~~text
-Default  → base styles
-Hover    → CSS :hover
-Focused  → CSS :focus-visible
-Disabled → native disabled + CSS
-Loading  → runtime state
-~~~
-
-Do not expose hover/focus as ordinary production props merely because they exist as Figma variants.
-
-A test harness may force those states internally for visual verification.
-
-## Variant policy
-
-Prefer orthogonal variants:
-
-~~~tsx
-<Button
-  variant="secondary"
-  intent="danger"
-  size="lg"
-  loading={isPending}
->
-  Delete project
-</Button>
-~~~
-
-Avoid flattened combinations:
-
-~~~text
-primary
-primaryDanger
-primaryDangerHover
-secondaryDangerDisabled
-...
-~~~
-
-Use compound variants only when the design proves axes interact.
-
-## Component vs recipe/block
-
-Use shadcn-like distinction:
-
-~~~text
-Button
-Input
-Tooltip
-Dialog shell
-→ reusable design-system components
-
-PaymentDetailsDialog
-InviteUserDialog
-CheckoutSummary
-→ recipes/blocks/compositions unless deliberately promoted
-~~~
-
-A large Figma Type axis must not automatically become one giant string-union prop.
-
-## Source ownership
-
-Generated components should be source-owned by the consumer when distributed.
-
-Desired model:
-
-~~~bash
-npx ds-compiler add button
-~~~
-
-The consumer receives editable component source plus declared dependencies.
-
-This is inspired by shadcn's distribution model, but the generated visuals and semantics remain specific to the compiled design system.
-
-## Registry policy
-
-A registry item should declare:
-
-- source files;
-- design-token dependencies;
-- component dependencies;
-- runtime dependencies;
-- optional primitive dependencies;
-- framework adapter requirements;
-- verification status.
-
-Registry metadata must not imply that the component visually matches shadcn.
-
-## Base UI policy
-
-Base UI is preferred for complex behavioral primitives when useful.
-
-Examples:
-
-~~~text
-Dialog
-Tooltip
-Popover
-Menu
-Select
-~~~
-
-Native HTML is preferred when it is already sufficient.
+Reference capability should be preserved when relevant even if spelling changes.
 
 Example:
 
-~~~text
-Button
-→ native <button> is normally sufficient
-~~~
+```text
+reference: isDisabled
+canonical: disabled capability
+target: Base UI/native disabled mechanism
+```
 
-The public API belongs to this design system; Base UI remains an implementation foundation.
+```text
+reference: isLoading
+canonical: loading capability
+target: loading prop/state + actual spinner behavior
+```
 
-## PublicApiPlan requirements
+```text
+reference: href switches to link behavior
+canonical: navigation capability
+target: target-engine strategy that preserves semantics
+```
 
-Before codegen, the planner should resolve:
+Do not preserve React-Aria-shaped names merely for cosmetic parity.
 
-~~~text
-component name
-semantic root / primitive
-public variant props
-runtime props
-native props preserved
-content slots
-composition strategy
-state mappings
-unsupported combinations
-accessibility requirements
-fixture exclusions
-~~~
+## Icon policy
 
-Example Button plan:
+Icons must be real consumer-supplied components/elements, not Figma fixture SVGs.
 
-~~~text
-component: Button
-root: button
+A verified API may choose one of these patterns:
 
-props:
-- variant
-- size
-- intent when supported
-- loading
-- loadingText when useful
+```tsx
+<Button iconLeading={Plus}>Add user</Button>
+```
 
-native:
-- type
-- disabled
-- onClick
-- aria-*
-- data-*
+or
 
-content:
-- label/content via children
-- leading/trailing visual via composition
-- icon-only derived from content/size policy
+```tsx
+<Button>
+  <Plus data-icon="leading" />
+  Add user
+</Button>
+```
 
-states:
-- hover → CSS
-- focus → CSS
-- disabled → native
-- loading → runtime
+The choice comes from the canonical contract and target ergonomics.
 
-fixtures excluded from production:
-- placeholder circles
-- "Button CTA"
-- "Submitting..."
-~~~
+Do not use runtime heuristics such as "first arbitrary React element must be an icon" unless the contract explicitly approves that behavior.
 
-## API verification
+## Icon-only policy
 
-A component API should fail semantic verification if it:
+Icon-only behavior should be derived from an explicit contract.
 
-- exposes hover/focus as normal consumer props without a strong reason;
-- hard-codes Figma placeholder assets;
-- turns every Figma boolean into a React boolean prop;
-- duplicates native HTML props unnecessarily;
-- creates separate public components for ordinary state variants;
-- copies shadcn visual styling instead of Figma;
-- hides required behavior in framework-specific code;
-- invents unsupported combinations.
+Possible strategies:
 
-## Reference hierarchy
+- no children + icon prop;
+- dedicated icon size;
+- explicit semantic IconButton component.
 
-When designing the production API:
+Do not keep `iconOnly` merely because Figma has a boolean axis if the production API can express it more naturally.
 
-~~~text
-1. explicit design-system semantics/documentation
-2. native platform semantics
-3. existing verified local API conventions
-4. Base UI primitive contract when used
-5. shadcn-style ergonomic patterns
-6. deterministic compiler policy
-7. Jev/model decision when still ambiguous
-8. human review
-~~~
+Accessible naming is mandatory.
 
-Shadcn is a teacher for API ergonomics and source distribution, not an authority over the target design system.
+## Loading policy
+
+Loading must be functional, not a static Figma pose.
+
+Requirements may include:
+
+- actual pending runtime state;
+- actual animated loading indicator when reference behavior includes motion;
+- blocked duplicate activation;
+- accessible busy/disabled semantics as defined by contract;
+- optional text-preservation behavior;
+- reduced-motion handling.
+
+Figma's sample `Submitting...` text is specimen content unless an explicit source says otherwise.
+
+## State policy
+
+Typical Figma interaction mapping:
+
+```text
+Default  → base
+Hover    → CSS/browser interaction
+Focused  → focus-visible behavior
+Disabled → primitive/native state
+Loading  → runtime state
+```
+
+A production prop such as `state="hover"` is forbidden unless the actual component semantics require it.
+
+Forced states belong in a specimen/test wrapper.
+
+## Variants
+
+Visual variant vocabulary should come from the design system, not shadcn.
+
+Shadcn may teach the shape:
+
+```ts
+cva(base, {
+  variants: {
+    variant: {...},
+    size: {...}
+  }
+})
+```
+
+but must not inject unrelated names such as `ghost`, `outline`, or `destructive` when the target design system does not define them.
+
+## Component vs recipe
+
+```text
+Button / Input / Tooltip primitive
+→ component
+
+Invite User Modal / Payment Details Dialog
+→ recipe or block when composed from known components
+
+screen
+→ page
+```
+
+Do not turn every Figma `Type` value into one giant public union.
+
+## Productionization requirements
+
+A public API fails productionization if it contains:
+
+- Figma fixture imports;
+- test-only visual state props;
+- authoring-only Figma vocabulary;
+- duplicate slot mechanisms with no rationale;
+- runtime child guessing that misclassifies arbitrary content;
+- dead dependencies;
+- invalid/semantic-null CSS;
+- reference-engine implementation details that should have been normalized away.
+
+## PublicApiPlan
+
+Before implementation:
+
+```ts
+type PublicApiPlan = {
+  componentName: string
+  capabilities: string[]
+  props: Record<string, unknown>
+  slots: Record<string, unknown>
+  stateMappings: Record<string, unknown>
+  primitiveTarget: string
+  unsupportedCombinations: Record<string, unknown>[]
+  adaptations: Array<{
+    from: string
+    to: string
+    reason: string
+  }>
+}
+```
 
 ## Final formula
 
-~~~text
-Figma appearance
+```text
+official semantic capability
 +
-semantic compiler
+Figma visual vocabulary
 +
-shadcn-like ergonomics
+canonical contract
 +
-native/Base UI behavior
+Base UI/native behavior
 +
-deterministic verification
+shadcn-like source ergonomics
 =
-production design-system component
-~~~
+production API
+```
