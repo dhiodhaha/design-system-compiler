@@ -20,8 +20,8 @@
     "verify:adopted": "pnpm adopt:parity && pnpm adopt:validate && pnpm registry:build",
     "adopt:all": "node compiler/adopt/adopt.mjs --all",
     "state:reconcile": "node compiler/state/reconcile.mjs",
-    "verify:library": "pnpm state:reconcile && pnpm verify",
-    "report": "node compiler/report.mjs",
+    "verify:library": "pnpm state:reconcile && node compiler/state/consistency.mjs && pnpm verify",
+    "report": "node compiler/state/reconcile.mjs",
     "typecheck:app": "tsc --noEmit",
     "typecheck:payload": "node node_modules/typescript5/bin/tsc -p registry/untitledui/tsconfig.json",
     "typecheck:pro": "node node_modules/typescript5/bin/tsc -p registry/pro/tsconfig.json"

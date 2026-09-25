@@ -295,7 +295,7 @@ const report = {
     pages: figma?.pages?.length ?? null,
     componentSets: figma?.counts?.componentSets ?? null,
     standaloneComponents: figma?.counts?.standaloneComponents ?? null,
-    variantsInsideSets: figma?.counts?.variantsInsideSets ?? null,
+    variantsInsideSets: figma?.counts?.variantsAcrossAllSets ?? figma?.counts?.variantsInsideSets ?? null,
     families: figma?.families?.length ?? null,
     crosswalkRaw: crosswalk?.totals ?? null,
     crosswalkNormalized: proGaps?.byCategory ?? null,
