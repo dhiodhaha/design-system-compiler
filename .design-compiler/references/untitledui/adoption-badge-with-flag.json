@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 7,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/base/badges/badges.tsx",
       "upstreamSha256": "3ba3b3a1da36b921",
       "sha": "a8a28cc851b294af",
-      "copied": true,
+      "copied": false,
       "bytes": 15481,
       "kind": "BASE_COMPONENT"
     },
@@ -47,7 +47,7 @@
       "destination": "registry/untitledui/components/base/badges/badge-types.ts",
       "upstreamSha256": "086f2d74cddd0dec",
       "sha": "1af02a56f9fedc74",
-      "copied": true,
+      "copied": false,
       "bytes": 3844,
       "kind": "NON_COMPONENT"
     },

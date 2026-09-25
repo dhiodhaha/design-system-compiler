@@ -2,78 +2,176 @@
   "$schema": "design-compiler/Adoption@p1",
   "item": "index",
   "title": "index",
-  "export": "BackgroundPattern",
-  "layer": "asset",
-  "installable": false,
-  "distribution": "closure",
+  "export": "BoltIcon",
+  "layer": "foundation",
+  "installable": true,
+  "distribution": "public-source",
   "library": "untitledui",
   "repository": "untitleduico/react",
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
-  "closureSize": 6,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 17,
   "files": [
     {
-      "upstreamPath": "components/shared-assets/background-patterns/index.tsx",
-      "destination": "registry/untitledui/components/shared-assets/background-patterns/index.tsx",
-      "upstreamSha256": "4d13fbd538121384",
-      "sha": "4ef39d15e3e81113",
-      "copied": true,
-      "bytes": 1143,
-      "kind": "ASSET"
-    },
-    {
-      "upstreamPath": "utils/cx.ts",
-      "destination": "registry/untitledui/utils/cx.ts",
-      "upstreamSha256": "d32cbae0ef101a95",
-      "sha": "632feb90f95482d5",
+      "upstreamPath": "components/foundations/integration-icons/index.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/index.tsx",
+      "upstreamSha256": "15876b0e80da2adc",
+      "sha": "ea9803dbc431092b",
       "copied": false,
-      "bytes": 1092,
-      "kind": "HELPER"
+      "bytes": 1269,
+      "kind": "FOUNDATION"
     },
     {
-      "upstreamPath": "components/shared-assets/background-patterns/circle.tsx",
-      "destination": "registry/untitledui/components/shared-assets/background-patterns/circle.tsx",
-      "upstreamSha256": "e8663aba3df672be",
-      "sha": "33d705d26d909780",
-      "copied": true,
-      "bytes": 5549,
-      "kind": "ASSET"
+      "upstreamPath": "components/foundations/integration-icons/bolt-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/bolt-icon.tsx",
+      "upstreamSha256": "3a0c58720c695b2a",
+      "sha": "c2c96e8b2486e026",
+      "copied": false,
+      "bytes": 1360,
+      "kind": "FOUNDATION"
     },
     {
-      "upstreamPath": "components/shared-assets/background-patterns/grid.tsx",
-      "destination": "registry/untitledui/components/shared-assets/background-patterns/grid.tsx",
-      "upstreamSha256": "7e6ba096f2e9638d",
-      "sha": "078334c9d3604ee2",
-      "copied": true,
-      "bytes": 14063,
-      "kind": "ASSET"
+      "upstreamPath": "components/foundations/integration-icons/chatgpt-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/chatgpt-icon.tsx",
+      "upstreamSha256": "c28ab7a2b3ad32a8",
+      "sha": "2a9a60f29af5cc9a",
+      "copied": false,
+      "bytes": 4417,
+      "kind": "FOUNDATION"
     },
     {
-      "upstreamPath": "components/shared-assets/background-patterns/grid-check.tsx",
-      "destination": "registry/untitledui/components/shared-assets/background-patterns/grid-check.tsx",
-      "upstreamSha256": "7b9621d2d7ad43d4",
-      "sha": "200361b52aefc1d5",
-      "copied": true,
-      "bytes": 139374,
-      "kind": "ASSET"
+      "upstreamPath": "components/foundations/integration-icons/claude-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/claude-icon.tsx",
+      "upstreamSha256": "5700742109028d53",
+      "sha": "845ca147a42111e7",
+      "copied": false,
+      "bytes": 3195,
+      "kind": "FOUNDATION"
     },
     {
-      "upstreamPath": "components/shared-assets/background-patterns/square.tsx",
-      "destination": "registry/untitledui/components/shared-assets/background-patterns/square.tsx",
-      "upstreamSha256": "4477946d65dc260e",
-      "sha": "402da7b79f9b03a0",
-      "copied": true,
-      "bytes": 12253,
-      "kind": "ASSET"
+      "upstreamPath": "components/foundations/integration-icons/cursor-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/cursor-icon.tsx",
+      "upstreamSha256": "a869d7c9128f439f",
+      "sha": "e3d65c929a30bd4e",
+      "copied": false,
+      "bytes": 1476,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/figma-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/figma-icon.tsx",
+      "upstreamSha256": "41efad52a3de2c41",
+      "sha": "8c6e6cd89938e294",
+      "copied": false,
+      "bytes": 5475,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/gemini-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/gemini-icon.tsx",
+      "upstreamSha256": "10236b8fd8e165c2",
+      "sha": "5bc724dab0853a83",
+      "copied": false,
+      "bytes": 15184,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/github-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/github-icon.tsx",
+      "upstreamSha256": "c45459cba82d6123",
+      "sha": "bfd85912ff8b1a6f",
+      "copied": false,
+      "bytes": 2053,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/grok-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/grok-icon.tsx",
+      "upstreamSha256": "9dd4ce4744c56cb4",
+      "sha": "155f7a4fcf917a79",
+      "copied": false,
+      "bytes": 1714,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/lovable-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/lovable-icon.tsx",
+      "upstreamSha256": "9f818423d72379da",
+      "sha": "5e961aaacd5915c8",
+      "copied": false,
+      "bytes": 6829,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/nextjs-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/nextjs-icon.tsx",
+      "upstreamSha256": "f2e04f5043e551d3",
+      "sha": "e725cdb4290428db",
+      "copied": false,
+      "bytes": 3328,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/perplexity-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/perplexity-icon.tsx",
+      "upstreamSha256": "2a9aa70f57c23a45",
+      "sha": "1d1592899d13e769",
+      "copied": false,
+      "bytes": 4798,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/react-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/react-icon.tsx",
+      "upstreamSha256": "112e2dc7e4b92546",
+      "sha": "62af31b2df4fe36a",
+      "copied": false,
+      "bytes": 7107,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/replit-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/replit-icon.tsx",
+      "upstreamSha256": "71dae884572cfd17",
+      "sha": "7fedf072a7d578cb",
+      "copied": false,
+      "bytes": 1555,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/tailwind-css-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/tailwind-css-icon.tsx",
+      "upstreamSha256": "dfa87cd4b9354f35",
+      "sha": "240b912bf66918df",
+      "copied": false,
+      "bytes": 1579,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/v0-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/v0-icon.tsx",
+      "upstreamSha256": "c8034a4380702aa8",
+      "sha": "55f67a52fac74914",
+      "copied": false,
+      "bytes": 1469,
+      "kind": "FOUNDATION"
+    },
+    {
+      "upstreamPath": "components/foundations/integration-icons/vite-icon.tsx",
+      "destination": "registry/untitledui/components/foundations/integration-icons/vite-icon.tsx",
+      "upstreamSha256": "bebdd88cf9ecda29",
+      "sha": "08529af8eaad3de6",
+      "copied": false,
+      "bytes": 4383,
+      "kind": "FOUNDATION"
     }
   ],
   "sharedStyleDependencies": [],
   "externalDependencies": [
-    "react",
-    "tailwind-merge"
+    "react"
   ],
   "transforms": [],
   "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"

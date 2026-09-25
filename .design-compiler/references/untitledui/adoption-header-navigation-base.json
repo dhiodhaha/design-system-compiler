@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 37,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/header-navigation.tsx",
       "upstreamSha256": "490b4df40643a37f",
       "sha": "31c9329cf0341154",
-      "copied": true,
+      "copied": false,
       "bytes": 10065,
       "kind": "APPLICATION_COMPONENT"
     },
@@ -29,7 +29,7 @@
       "destination": "registry/untitledui/components/application/tabs/tabs.tsx",
       "upstreamSha256": "090aa84ea228281d",
       "sha": "ed4f2cdd77291270",
-      "copied": true,
+      "copied": false,
       "bytes": 9987,
       "kind": "APPLICATION_COMPONENT"
     },
@@ -38,7 +38,7 @@
       "destination": "registry/untitledui/components/base/badges/badges.tsx",
       "upstreamSha256": "3ba3b3a1da36b921",
       "sha": "a8a28cc851b294af",
-      "copied": true,
+      "copied": false,
       "bytes": 15481,
       "kind": "BASE_COMPONENT"
     },
@@ -47,7 +47,7 @@
       "destination": "registry/untitledui/components/base/dropdown/dropdown-account-button.tsx",
       "upstreamSha256": "1c4b8586cc8830e6",
       "sha": "ca5a53e1e59cf459",
-      "copied": true,
+      "copied": false,
       "bytes": 4062,
       "kind": "COMPOUND_COMPONENT"
     },
@@ -56,7 +56,7 @@
       "destination": "registry/untitledui/components/base/input/input.tsx",
       "upstreamSha256": "efd3961f68eecd39",
       "sha": "0a218bd4a0c52886",
-      "copied": true,
+      "copied": false,
       "bytes": 11748,
       "kind": "BASE_COMPONENT"
     },
@@ -65,7 +65,7 @@
       "destination": "registry/untitledui/components/foundations/logo/untitledui-logo.tsx",
       "upstreamSha256": "987cf75638639c0c",
       "sha": "da09ff66013a1f76",
-      "copied": true,
+      "copied": false,
       "bytes": 8348,
       "kind": "FOUNDATION"
     },
@@ -83,7 +83,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/base-components/mobile-header.tsx",
       "upstreamSha256": "6ad8dc8ecead926b",
       "sha": "baa35669f15b2ddb",
-      "copied": true,
+      "copied": false,
       "bytes": 3211,
       "kind": "COMPOUND_COMPONENT"
     },
@@ -92,7 +92,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/base-components/nav-account-card.tsx",
       "upstreamSha256": "e2bd1486aa503a3b",
       "sha": "622fe959bd51c269",
-      "copied": true,
+      "copied": false,
       "bytes": 9510,
       "kind": "COMPOUND_COMPONENT"
     },
@@ -101,7 +101,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
       "upstreamSha256": "5c45d988c7380a31",
       "sha": "4f1c5ce4eb4ceba9",
-      "copied": true,
+      "copied": false,
       "bytes": 3254,
       "kind": "COMPOUND_COMPONENT"
     },
@@ -110,7 +110,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/base-components/nav-item.tsx",
       "upstreamSha256": "92c8c3ef5522cfe9",
       "sha": "192a1d4748c4961e",
-      "copied": true,
+      "copied": false,
       "bytes": 5173,
       "kind": "COMPOUND_COMPONENT"
     },
@@ -119,7 +119,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/base-components/nav-list.tsx",
       "upstreamSha256": "142bf5ff86e8c860",
       "sha": "cdae79d2c54edee1",
-      "copied": true,
+      "copied": false,
       "bytes": 3217,
       "kind": "COMPOUND_COMPONENT"
     },
@@ -146,7 +146,7 @@
       "destination": "registry/untitledui/components/base/badges/badge-types.ts",
       "upstreamSha256": "086f2d74cddd0dec",
       "sha": "1af02a56f9fedc74",
-      "copied": true,
+      "copied": false,
       "bytes": 3844,
       "kind": "NON_COMPONENT"
     },
@@ -164,7 +164,7 @@
       "destination": "registry/untitledui/components/base/dropdown/dropdown.tsx",
       "upstreamSha256": "867271bc38e7cb3f",
       "sha": "b9f1f674455b7346",
-      "copied": true,
+      "copied": false,
       "bytes": 8478,
       "kind": "BASE_COMPONENT"
     },
@@ -182,7 +182,7 @@
       "destination": "registry/untitledui/components/base/input/label.tsx",
       "upstreamSha256": "12c33452d3f864b5",
       "sha": "bf9390e62ab8c185",
-      "copied": true,
+      "copied": false,
       "bytes": 2812,
       "kind": "BASE_COMPONENT"
     },
@@ -209,7 +209,7 @@
       "destination": "registry/untitledui/components/base/avatar/avatar-label-group.tsx",
       "upstreamSha256": "9d69a72bea31b01b",
       "sha": "e82a7b4e8a72505f",
-      "copied": true,
+      "copied": false,
       "bytes": 1526,
       "kind": "RECIPE_OR_BLOCK"
     },
@@ -227,7 +227,7 @@
       "destination": "registry/untitledui/hooks/use-breakpoint.ts",
       "upstreamSha256": "ba5c0a5d3e67b3a7",
       "sha": "e52807f59a4e0a12",
-      "copied": true,
+      "copied": false,
       "bytes": 1458,
       "kind": "HELPER"
     },
@@ -236,7 +236,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/config.ts",
       "upstreamSha256": "b83709e53830d685",
       "sha": "012b0fce7fbeca08",
-      "copied": true,
+      "copied": false,
       "bytes": 1141,
       "kind": "NON_COMPONENT"
     },
@@ -245,7 +245,7 @@
       "destination": "registry/untitledui/components/base/avatar/avatar.tsx",
       "upstreamSha256": "49bcc021bf717ab3",
       "sha": "9c4776f8f7d7feb9",
-      "copied": true,
+      "copied": false,
       "bytes": 5512,
       "kind": "BASE_COMPONENT"
     },
@@ -272,9 +272,9 @@
       "destination": "registry/untitledui/components/base/avatar/base-components/index.tsx",
       "upstreamSha256": "d630103c098195bb",
       "sha": "1483e56fcb9bb8e9",
-      "copied": true,
+      "copied": false,
       "bytes": 525,
-      "kind": "NON_COMPONENT"
+      "kind": "BARREL"
     },
     {
       "upstreamPath": "components/base/avatar/base-components/avatar-count.tsx",
@@ -290,7 +290,7 @@
       "destination": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
       "upstreamSha256": "4676000225227c5e",
       "sha": "1efcd1e10f2142e9",
-      "copied": true,
+      "copied": false,
       "bytes": 1766,
       "kind": "COMPOUND_COMPONENT"
     },

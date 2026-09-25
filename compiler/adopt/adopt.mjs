@@ -67,9 +67,38 @@ for (const entry of index.entries) {
   }
 }
 
+// Disambiguate: the same export name can exist in different files (ModalOverlay appears in both
+// modal.tsx and slideout-menu.tsx). A registry id must never silently point at the wrong file.
+const pathsById = new Map();
+for (const c of catalogue) {
+  if (!pathsById.has(c.id)) pathsById.set(c.id, new Set());
+  pathsById.get(c.id).add(c.path);
+}
+const ambiguous = new Map();
+for (const [id, paths] of pathsById) if (paths.size > 1) ambiguous.set(id, [...paths].sort());
+for (const c of catalogue) {
+  if (!ambiguous.has(c.id)) continue;
+  const dir = c.path.split("/").slice(0, -1).pop() ?? "";
+  c.id = `${c.id}--${kebab(dir)}`;
+}
+// second pass: two files in the same directory can still collide -> qualify by filename
+const afterFirst = new Map();
+for (const c of catalogue) {
+  if (!afterFirst.has(c.id)) afterFirst.set(c.id, new Set());
+  afterFirst.get(c.id).add(c.path);
+}
+for (const c of catalogue) {
+  const paths = afterFirst.get(c.id);
+  if (!paths || paths.size < 2) continue;
+  const file = c.path.split("/").pop().replace(/\.tsx?$/, "");
+  c.id = `${c.id}--${kebab(file)}`;
+}
+
 // de-duplicate by id, preferring public registry candidates
+const RESERVED_IDS = new Set(["index"]);
 const items = new Map();
 for (const c of catalogue) {
+  if (RESERVED_IDS.has(c.id)) continue; // would collide with registry/index.json
   const existing = items.get(c.id);
   if (!existing || (!existing.installable && c.installable)) items.set(c.id, c);
 }
@@ -224,6 +253,7 @@ const report = {
   filesWritten: copiedFiles.length,
   uniqueFilesInPayload: adoptedThisRun.size,
   failures,
+  ambiguousExportNames: [...ambiguous.entries()].map(([id, paths]) => ({ exportName: id, paths, disambiguatedTo: paths.map((p) => `${id}--${kebab(p.split("/").slice(0, -1).pop() ?? "")}`) })),
   items: itemRecords.map((r) => ({ item: r.item, layer: r.layer, status: r.status, closureSize: r.closureSize, installable: r.installable })),
 };
 writeFileSync(resolve(REF, LIB, "adoption-run.json"), JSON.stringify(report, null, 2));

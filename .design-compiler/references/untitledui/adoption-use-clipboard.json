@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 1,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/hooks/use-clipboard.ts",
       "upstreamSha256": "81caf04066b528bb",
       "sha": "369df3ace4df9163",
-      "copied": true,
+      "copied": false,
       "bytes": 3119,
       "kind": "HELPER"
     }

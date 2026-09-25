@@ -249,7 +249,7 @@ Canonical:
 disabled capability
 loading capability
 
-Base UI target:
+Optional primitive adapter (Base UI) — only for genuinely new PRO-only components:
 use the target primitive/API that expresses those capabilities
 ```
 
@@ -519,7 +519,7 @@ official Untitled UI React Button
 vs
 current compiled Button
 vs
-new Base UI target Button
+newly adopted canonical Button (official OSS source)
 ```
 
 and use the canonical contract/parity tests to decide the final production surface.

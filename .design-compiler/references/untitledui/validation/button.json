@@ -3,19 +3,19 @@
   "item": "button",
   "repository": "untitleduico/react",
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
-  "generatedAt": "2026-09-25T10:33:23.090Z",
+  "generatedAt": "2026-09-25T11:24:59.267Z",
   "gates": [
     {
       "gate": "SOURCE_ADOPTED",
       "pass": true,
       "evidence": "6 files adopted from untitleduico/react@8b7409c078f8",
       "detail": [
-        "src/components/base/buttons/button.tsx",
-        "src/styles/globals.css",
-        "src/styles/theme.css",
-        "src/styles/typography.css",
-        "src/utils/cx.ts",
-        "src/utils/is-react-component.ts"
+        "registry/untitledui/components/base/buttons/button.tsx",
+        "registry/untitledui/utils/cx.ts",
+        "registry/untitledui/utils/is-react-component.ts",
+        "registry/untitledui/styles/globals.css",
+        "registry/untitledui/styles/theme.css",
+        "registry/untitledui/styles/typography.css"
       ]
     },
     {
@@ -62,9 +62,14 @@
     },
     {
       "gate": "NO_DEAD_PACKAGE_DEPENDENCIES",
-      "pass": true,
+      "pass": false,
       "evidence": "every runtime dependency is imported by source",
-      "detail": []
+      "detail": [
+        "input-otp",
+        "next-themes",
+        "sonner",
+        "zod"
+      ]
     },
     {
       "gate": "TYPECHECK_PASS",
@@ -109,7 +114,7 @@
     },
     {
       "gate": "PRODUCTION_PASS",
-      "pass": true,
+      "pass": false,
       "evidence": "all production checks pass",
       "detail": []
     }
@@ -126,5 +131,8 @@
       "consumerRemedy": "pass aria-label (or showTextWhileLoading) on buttons used in loading state"
     }
   ],
-  "status": "VERIFIED"
+  "status": [
+    "NO_DEAD_PACKAGE_DEPENDENCIES",
+    "PRODUCTION_PASS"
+  ]
 }

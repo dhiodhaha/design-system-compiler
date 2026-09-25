@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 2,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/shared-assets/iphone-mockup.tsx",
       "upstreamSha256": "fd0c58b6d1c9ff6c",
       "sha": "feb2ff3c29ca799a",
-      "copied": true,
+      "copied": false,
       "bytes": 16663,
       "kind": "ASSET"
     },

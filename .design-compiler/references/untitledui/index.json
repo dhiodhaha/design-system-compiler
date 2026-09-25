@@ -5,55 +5,60 @@
   "inventory": {
     "files": 315,
     "byKind": {
-      "ASSET": 19,
-      "NON_COMPONENT": 16,
+      "ASSET": 17,
+      "NON_COMPONENT": 7,
       "COMPONENT_UNKNOWN": 1,
       "DEMO": 36,
       "STORY": 39,
-      "COMPOUND_COMPONENT": 18,
-      "APPLICATION_COMPONENT": 23,
+      "COMPOUND_COMPONENT": 19,
+      "APPLICATION_COMPONENT": 25,
       "RECIPE_OR_BLOCK": 14,
-      "BASE_COMPONENT": 39,
+      "BASE_COMPONENT": 41,
+      "BARREL": 6,
       "FOUNDATION": 101,
       "INTERNAL": 1,
       "HELPER": 8
     },
     "byAdoptionLayer": {
-      "asset": 19,
-      "none": 17,
+      "asset": 17,
+      "none": 8,
       "evidence": 75,
-      "component-part": 18,
-      "component": 62,
+      "component-part": 19,
+      "component": 66,
       "recipe": 14,
+      "barrel": 6,
       "foundation": 101,
       "internal": 1,
       "helper": 8
     },
-    "publicRegistryCandidates": 80,
+    "publicRegistryCandidates": 85,
     "recipesAndBlocks": 14,
-    "foundationsAndAssets": 120,
+    "foundationsAndAssets": 118,
     "helpers": 8,
     "evidenceOnly": 75,
     "devOnly": 0,
-    "adoptable": 204,
-    "componentExports": 902,
+    "adoptable": 206,
+    "componentExports": 1017,
+    "componentAliasExports": 8,
+    "barrelComponentExports": 103,
     "iconComponentExports": 95,
     "compoundNamespaceExports": 4,
     "defaultExports": 138,
-    "reExports": 110
+    "reExports": 7
   },
   "counts": {
     "files": 315,
     "byKind": {
-      "ASSET": 19,
-      "NON_COMPONENT": 16,
+      "ASSET": 17,
+      "NON_COMPONENT": 7,
       "COMPONENT_UNKNOWN": 1,
       "DEMO": 36,
       "STORY": 39,
-      "COMPOUND_COMPONENT": 18,
-      "APPLICATION_COMPONENT": 23,
+      "COMPOUND_COMPONENT": 19,
+      "APPLICATION_COMPONENT": 25,
       "RECIPE_OR_BLOCK": 14,
-      "BASE_COMPONENT": 39,
+      "BASE_COMPONENT": 41,
+      "BARREL": 6,
       "FOUNDATION": 101,
       "INTERNAL": 1,
       "HELPER": 8
@@ -2050,71 +2055,71 @@
     },
     {
       "path": "components/application/app-navigation/sidebar-navigation-base.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
-      "publicRegistryCandidate": false,
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "publicRegistryCandidate": true,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
-      "adoptable": false,
-      "distribution": "private",
+      "adoptable": true,
+      "distribution": "public-source",
       "requiresExternalPackage": [],
       "useClient": false,
       "exports": [
         {
           "name": "MobileNavigationHeader",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "MobileNavigationHeader",
           "from": "./base-components/mobile-header",
           "typeOnly": false
         },
         {
           "name": "NavAccountCard",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavAccountCard",
           "from": "./base-components/nav-account-card",
           "typeOnly": false
         },
         {
           "name": "NavButton",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavButton",
           "from": "./base-components/nav-button",
           "typeOnly": false
         },
         {
           "name": "NavItemBase",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavItemBase",
           "from": "./base-components/nav-item",
           "typeOnly": false
         },
         {
           "name": "NavItemBaseProps",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavItemBaseProps",
           "from": "./base-components/nav-item",
           "typeOnly": false
         },
         {
           "name": "NavItemCollapsibleProps",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavItemCollapsibleProps",
           "from": "./base-components/nav-item",
           "typeOnly": false
         },
         {
           "name": "NavItemLinkProps",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavItemLinkProps",
           "from": "./base-components/nav-item",
           "typeOnly": false
         },
         {
           "name": "NavList",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "NavList",
           "from": "./base-components/nav-list",
           "typeOnly": false
@@ -2170,6 +2175,14 @@
       "capabilities": [],
       "candidateFigmaNames": [
         "AppNavigation",
+        "MobileNavigationHeader",
+        "NavAccountCard",
+        "NavButton",
+        "NavItemBase",
+        "NavItemBaseProps",
+        "NavItemCollapsibleProps",
+        "NavItemLinkProps",
+        "NavList",
         "SidebarNavigationBase"
       ],
       "bytes": 424,
@@ -5589,16 +5602,16 @@
     },
     {
       "path": "components/application/empty-state/empty-state.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
-      "publicRegistryCandidate": false,
+      "kind": "APPLICATION_COMPONENT",
+      "layer": "component",
+      "publicRegistryCandidate": true,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
-      "adoptable": false,
-      "distribution": "private",
+      "adoptable": true,
+      "distribution": "public-source",
       "requiresExternalPackage": [
         "react",
         "react",
@@ -5609,7 +5622,7 @@
       "exports": [
         {
           "name": "EmptyState",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "EmptyState",
           "from": null,
           "typeOnly": false
@@ -5622,7 +5635,17 @@
           "local": "EmptyState"
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "name": "EmptyState",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
+        }
+      ],
       "primitiveEngine": "native",
       "dependencies": [
         "@/components/foundations/featured-icon/featured-icon",
@@ -8182,7 +8205,7 @@
         },
         {
           "name": "SlideoutMenu",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "SlideoutMenu",
           "from": null,
           "typeOnly": false
@@ -8245,6 +8268,15 @@
               "source": "heritage"
             }
           },
+          "propCount": 0
+        },
+        {
+          "name": "SlideoutMenu",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
           "propCount": 0
         }
       ],
@@ -8902,14 +8934,14 @@
         },
         {
           "name": "Table",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "Table",
           "from": null,
           "typeOnly": false
         },
         {
           "name": "TableCard",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "TableCard",
           "from": null,
           "typeOnly": false
@@ -8930,6 +8962,24 @@
       "components": [
         {
           "name": "TableRowActionsDropdown",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
+        },
+        {
+          "name": "Table",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
+        },
+        {
+          "name": "TableCard",
           "exported": true,
           "propsTypeNames": [],
           "overloads": [],
@@ -8962,6 +9012,7 @@
       ],
       "candidateFigmaNames": [
         "Table",
+        "TableCard",
         "TableRowActionsDropdown"
       ],
       "bytes": 12041,
@@ -11205,16 +11256,16 @@
     },
     {
       "path": "components/base/avatar/base-components/index.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
+      "kind": "BARREL",
+      "layer": "barrel",
       "publicRegistryCandidate": false,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
       "adoptable": false,
-      "distribution": "private",
+      "distribution": "public-source",
       "requiresExternalPackage": [],
       "useClient": false,
       "exports": [
@@ -21650,16 +21701,16 @@
     },
     {
       "path": "components/base/input/pin-input.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
-      "publicRegistryCandidate": false,
+      "kind": "COMPOUND_COMPONENT",
+      "layer": "component-part",
+      "publicRegistryCandidate": true,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
       "adoptable": false,
-      "distribution": "private",
+      "distribution": "public-source",
       "requiresExternalPackage": [
         "react",
         "react",
@@ -21673,7 +21724,7 @@
         },
         {
           "name": "PinInput",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "PinInput",
           "from": null,
           "typeOnly": false
@@ -21686,7 +21737,17 @@
           "local": "PinInput"
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "name": "PinInput",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
+        }
+      ],
       "primitiveEngine": "native",
       "dependencies": [
         "@/components/base/input/hint-text",
@@ -23189,16 +23250,16 @@
     },
     {
       "path": "components/base/select/multi-select.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
-      "publicRegistryCandidate": false,
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "publicRegistryCandidate": true,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
-      "adoptable": false,
-      "distribution": "private",
+      "adoptable": true,
+      "distribution": "public-source",
       "requiresExternalPackage": [
         "react",
         "react",
@@ -23211,7 +23272,7 @@
       "exports": [
         {
           "name": "MultiSelect",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "MultiSelect",
           "from": null,
           "typeOnly": false
@@ -23224,7 +23285,17 @@
           "local": "MultiSelect"
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "name": "MultiSelect",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
+        }
+      ],
       "primitiveEngine": "react-aria-components",
       "dependencies": [
         "./select-item",
@@ -24273,16 +24344,16 @@
     },
     {
       "path": "components/base/select/select.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
-      "publicRegistryCandidate": false,
+      "kind": "BASE_COMPONENT",
+      "layer": "component",
+      "publicRegistryCandidate": true,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
-      "adoptable": false,
-      "distribution": "private",
+      "adoptable": true,
+      "distribution": "public-source",
       "requiresExternalPackage": [
         "react",
         "react",
@@ -24294,7 +24365,7 @@
       "exports": [
         {
           "name": "SelectContext",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "SelectContext",
           "from": "./select-shared",
           "typeOnly": false
@@ -24327,7 +24398,7 @@
         },
         {
           "name": "Select",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "_Select",
           "from": null,
           "typeOnly": false
@@ -24360,7 +24431,17 @@
           "local": "_Select"
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "name": "Select",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
+        }
+      ],
       "primitiveEngine": "react-aria-components",
       "dependencies": [
         "./combobox",
@@ -24394,7 +24475,8 @@
         "icon-slots"
       ],
       "candidateFigmaNames": [
-        "Select"
+        "Select",
+        "SelectContext"
       ],
       "bytes": 5976,
       "sha256": "5c7f17225c9171c9"
@@ -24437,7 +24519,7 @@
         },
         {
           "name": "TagSelect",
-          "kind": "alias",
+          "kind": "component-alias",
           "local": "TagSelect",
           "from": null,
           "typeOnly": false
@@ -24710,6 +24792,15 @@
             }
           },
           "propCount": 9
+        },
+        {
+          "name": "TagSelect",
+          "exported": true,
+          "propsTypeNames": [],
+          "overloads": [],
+          "destructuring": {},
+          "props": {},
+          "propCount": 0
         }
       ],
       "primitiveEngine": "react-aria-components",
@@ -28098,127 +28189,127 @@
     },
     {
       "path": "components/foundations/integration-icons/index.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
+      "kind": "BARREL",
+      "layer": "barrel",
       "publicRegistryCandidate": false,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
       "adoptable": false,
-      "distribution": "private",
+      "distribution": "public-source",
       "requiresExternalPackage": [],
       "useClient": true,
       "exports": [
         {
           "name": "BoltIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./bolt-icon",
           "typeOnly": false
         },
         {
           "name": "ChatGPTIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./chatgpt-icon",
           "typeOnly": false
         },
         {
           "name": "ClaudeIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./claude-icon",
           "typeOnly": false
         },
         {
           "name": "CursorIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./cursor-icon",
           "typeOnly": false
         },
         {
           "name": "FigmaIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./figma-icon",
           "typeOnly": false
         },
         {
           "name": "GeminiIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./gemini-icon",
           "typeOnly": false
         },
         {
           "name": "GitHubIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./github-icon",
           "typeOnly": false
         },
         {
           "name": "GrokIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./grok-icon",
           "typeOnly": false
         },
         {
           "name": "LovableIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./lovable-icon",
           "typeOnly": false
         },
         {
           "name": "NextjsIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./nextjs-icon",
           "typeOnly": false
         },
         {
           "name": "PerplexityIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./perplexity-icon",
           "typeOnly": false
         },
         {
           "name": "ReactIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./react-icon",
           "typeOnly": false
         },
         {
           "name": "ReplitIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./replit-icon",
           "typeOnly": false
         },
         {
           "name": "TailwindCSSIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./tailwind-css-icon",
           "typeOnly": false
         },
         {
           "name": "V0Icon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./v0-icon",
           "typeOnly": false
         },
         {
           "name": "ViteIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./vite-icon",
           "typeOnly": false
@@ -28313,8 +28404,24 @@
       "variantVocabulary": {},
       "capabilities": [],
       "candidateFigmaNames": [
+        "BoltIcon",
+        "ChatGPTIcon",
+        "ClaudeIcon",
+        "CursorIcon",
+        "FigmaIcon",
+        "GeminiIcon",
+        "GitHubIcon",
+        "GrokIcon",
         "Index",
-        "IntegrationIcons"
+        "IntegrationIcons",
+        "LovableIcon",
+        "NextjsIcon",
+        "PerplexityIcon",
+        "ReactIcon",
+        "ReplitIcon",
+        "TailwindCSSIcon",
+        "V0Icon",
+        "ViteIcon"
       ],
       "bytes": 894,
       "sha256": "15876b0e80da2adc"
@@ -29969,407 +30076,407 @@
     },
     {
       "path": "components/foundations/payment-icons/index.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
+      "kind": "BARREL",
+      "layer": "barrel",
       "publicRegistryCandidate": false,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
       "adoptable": false,
-      "distribution": "private",
+      "distribution": "public-source",
       "requiresExternalPackage": [],
       "useClient": true,
       "exports": [
         {
           "name": "AffirmIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./affirm-icon",
           "typeOnly": false
         },
         {
           "name": "AfterpayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./afterpay-icon",
           "typeOnly": false
         },
         {
           "name": "AlipayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./alipay-icon",
           "typeOnly": false
         },
         {
           "name": "AmazonIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./amazon-icon",
           "typeOnly": false
         },
         {
           "name": "AmexIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./amex-icon",
           "typeOnly": false
         },
         {
           "name": "ApplePayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./apple-pay-icon",
           "typeOnly": false
         },
         {
           "name": "AydenIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./ayden-icon",
           "typeOnly": false
         },
         {
           "name": "BancontactIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./bancontact-icon",
           "typeOnly": false
         },
         {
           "name": "BinancePayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./binance-pay-icon",
           "typeOnly": false
         },
         {
           "name": "BitcoinCashIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./bitcoin-cash-icon",
           "typeOnly": false
         },
         {
           "name": "BitcoinIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./bitcoin-icon",
           "typeOnly": false
         },
         {
           "name": "BitpayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./bitpay-icon",
           "typeOnly": false
         },
         {
           "name": "BraintreeIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./braintree-icon",
           "typeOnly": false
         },
         {
           "name": "CashAppPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./cash-app-pay-icon",
           "typeOnly": false
         },
         {
           "name": "CitadeleIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./citadele-icon",
           "typeOnly": false
         },
         {
           "name": "CoinbaseIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./coinbase-icon",
           "typeOnly": false
         },
         {
           "name": "DinersClubIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./diners-club-icon",
           "typeOnly": false
         },
         {
           "name": "DiscoverIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./discover-icon",
           "typeOnly": false
         },
         {
           "name": "EloIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./elo-icon",
           "typeOnly": false
         },
         {
           "name": "EtheriumIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./etherium-icon",
           "typeOnly": false
         },
         {
           "name": "ForbrugsforeningenIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./forbrugsforeningen-icon",
           "typeOnly": false
         },
         {
           "name": "GiropayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./giropay-icon",
           "typeOnly": false
         },
         {
           "name": "GooglePayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./google-pay-icon",
           "typeOnly": false
         },
         {
           "name": "IdealIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./ideal-icon",
           "typeOnly": false
         },
         {
           "name": "InteracIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./interac-icon",
           "typeOnly": false
         },
         {
           "name": "JCBIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./jcb-icon",
           "typeOnly": false
         },
         {
           "name": "KlarnaIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./klarna-icon",
           "typeOnly": false
         },
         {
           "name": "LightcoinIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./lightcoin-icon",
           "typeOnly": false
         },
         {
           "name": "MaestroIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./maestro-icon",
           "typeOnly": false
         },
         {
           "name": "MastercardIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./mastercard-icon",
           "typeOnly": false
         },
         {
           "name": "PayoneerIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./payoneer-icon",
           "typeOnly": false
         },
         {
           "name": "PayPalIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./paypal-icon",
           "typeOnly": false
         },
         {
           "name": "PaysafeIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./paysafe-icon",
           "typeOnly": false
         },
         {
           "name": "QiwiIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./qiwi-icon",
           "typeOnly": false
         },
         {
           "name": "RazorpayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./razorpay-icon",
           "typeOnly": false
         },
         {
           "name": "RevolutIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./revolut-icon",
           "typeOnly": false
         },
         {
           "name": "RuPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./ru-pay-icon",
           "typeOnly": false
         },
         {
           "name": "SamsungPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./samsung-pay-icon",
           "typeOnly": false
         },
         {
           "name": "SEPAIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./sepa-icon",
           "typeOnly": false
         },
         {
           "name": "ShopeePayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./shopee-pay-icon",
           "typeOnly": false
         },
         {
           "name": "ShopPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./shop-pay-icon",
           "typeOnly": false
         },
         {
           "name": "SkrillIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./skrill-icon",
           "typeOnly": false
         },
         {
           "name": "SofortIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./sofort-icon",
           "typeOnly": false
         },
         {
           "name": "StripeIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./stripe-icon",
           "typeOnly": false
         },
         {
           "name": "UnionPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./union-pay-icon",
           "typeOnly": false
         },
         {
           "name": "UPIIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./upi-icon",
           "typeOnly": false
         },
         {
           "name": "VenmoIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./venmo-icon",
           "typeOnly": false
         },
         {
           "name": "VerifoneIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./verifone-icon",
           "typeOnly": false
         },
         {
           "name": "VisaIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./visa-icon",
           "typeOnly": false
         },
         {
           "name": "WebmoneyIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./webmoney-icon",
           "typeOnly": false
         },
         {
           "name": "WeChatIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./we-chat-icon",
           "typeOnly": false
         },
         {
           "name": "WeChatPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./we-chat-pay-icon",
           "typeOnly": false
         },
         {
           "name": "WiseIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./wise-icon",
           "typeOnly": false
         },
         {
           "name": "YandexIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./yandex-icon",
           "typeOnly": false
         },
         {
           "name": "ZelleIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./zelle-icon",
           "typeOnly": false
         },
         {
           "name": "ZipPayIcon",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./zip-pay-icon",
           "typeOnly": false
@@ -30664,8 +30771,64 @@
       "variantVocabulary": {},
       "capabilities": [],
       "candidateFigmaNames": [
+        "AffirmIcon",
+        "AfterpayIcon",
+        "AlipayIcon",
+        "AmazonIcon",
+        "AmexIcon",
+        "ApplePayIcon",
+        "AydenIcon",
+        "BancontactIcon",
+        "BinancePayIcon",
+        "BitcoinCashIcon",
+        "BitcoinIcon",
+        "BitpayIcon",
+        "BraintreeIcon",
+        "CashAppPayIcon",
+        "CitadeleIcon",
+        "CoinbaseIcon",
+        "DinersClubIcon",
+        "DiscoverIcon",
+        "EloIcon",
+        "EtheriumIcon",
+        "ForbrugsforeningenIcon",
+        "GiropayIcon",
+        "GooglePayIcon",
+        "IdealIcon",
         "Index",
-        "PaymentIcons"
+        "InteracIcon",
+        "JCBIcon",
+        "KlarnaIcon",
+        "LightcoinIcon",
+        "MaestroIcon",
+        "MastercardIcon",
+        "PayPalIcon",
+        "PaymentIcons",
+        "PayoneerIcon",
+        "PaysafeIcon",
+        "QiwiIcon",
+        "RazorpayIcon",
+        "RevolutIcon",
+        "RuPayIcon",
+        "SEPAIcon",
+        "SamsungPayIcon",
+        "ShopPayIcon",
+        "ShopeePayIcon",
+        "SkrillIcon",
+        "SofortIcon",
+        "StripeIcon",
+        "UPIIcon",
+        "UnionPayIcon",
+        "VenmoIcon",
+        "VerifoneIcon",
+        "VisaIcon",
+        "WeChatIcon",
+        "WeChatPayIcon",
+        "WebmoneyIcon",
+        "WiseIcon",
+        "YandexIcon",
+        "ZelleIcon",
+        "ZipPayIcon"
       ],
       "bytes": 3233,
       "sha256": "9dac980d7fd36708"
@@ -32955,169 +33118,169 @@
     },
     {
       "path": "components/foundations/social-icons/index.tsx",
-      "kind": "NON_COMPONENT",
-      "layer": "none",
+      "kind": "BARREL",
+      "layer": "barrel",
       "publicRegistryCandidate": false,
       "recipeOrBlock": false,
       "foundationOrAsset": false,
       "evidenceOnly": false,
-      "internalOnly": true,
+      "internalOnly": false,
       "devOnly": false,
       "adoptable": false,
-      "distribution": "private",
+      "distribution": "public-source",
       "requiresExternalPackage": [],
       "useClient": false,
       "exports": [
         {
           "name": "AngelList",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./angel-list",
           "typeOnly": false
         },
         {
           "name": "Apple",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./apple",
           "typeOnly": false
         },
         {
           "name": "Clubhouse",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./clubhouse",
           "typeOnly": false
         },
         {
           "name": "Discord",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./discord",
           "typeOnly": false
         },
         {
           "name": "Dribbble",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./dribbble",
           "typeOnly": false
         },
         {
           "name": "Facebook",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./facebook",
           "typeOnly": false
         },
         {
           "name": "Figma",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./figma",
           "typeOnly": false
         },
         {
           "name": "GitHub",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./github",
           "typeOnly": false
         },
         {
           "name": "Google",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./google",
           "typeOnly": false
         },
         {
           "name": "Instagram",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./instagram",
           "typeOnly": false
         },
         {
           "name": "Layers",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./layers",
           "typeOnly": false
         },
         {
           "name": "LinkedIn",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./linkedin",
           "typeOnly": false
         },
         {
           "name": "Pinterest",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./pinterest",
           "typeOnly": false
         },
         {
           "name": "Reddit",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./reddit",
           "typeOnly": false
         },
         {
           "name": "Signal",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./signal",
           "typeOnly": false
         },
         {
           "name": "Snapchat",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./snapchat",
           "typeOnly": false
         },
         {
           "name": "Telegram",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./telegram",
           "typeOnly": false
         },
         {
           "name": "TikTok",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./tiktok",
           "typeOnly": false
         },
         {
           "name": "Tumblr",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./tumblr",
           "typeOnly": false
         },
         {
           "name": "Twitter",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./twitter",
           "typeOnly": false
         },
         {
           "name": "X",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./x",
           "typeOnly": false
         },
         {
           "name": "YouTube",
-          "kind": "re-export",
+          "kind": "barrel-component",
           "local": "default",
           "from": "./youtube",
           "typeOnly": false
@@ -33242,8 +33405,30 @@
       "variantVocabulary": {},
       "capabilities": [],
       "candidateFigmaNames": [
+        "AngelList",
+        "Apple",
+        "Clubhouse",
+        "Discord",
+        "Dribbble",
+        "Facebook",
+        "Figma",
+        "GitHub",
+        "Google",
         "Index",
-        "SocialIcons"
+        "Instagram",
+        "Layers",
+        "LinkedIn",
+        "Pinterest",
+        "Reddit",
+        "Signal",
+        "Snapchat",
+        "SocialIcons",
+        "Telegram",
+        "TikTok",
+        "Tumblr",
+        "Twitter",
+        "X",
+        "YouTube"
       ],
       "bytes": 1049,
       "sha256": "938a584f56d3250d"
@@ -34068,15 +34253,15 @@
     },
     {
       "path": "components/shared-assets/background-patterns/index.tsx",
-      "kind": "ASSET",
-      "layer": "asset",
+      "kind": "BARREL",
+      "layer": "barrel",
       "publicRegistryCandidate": false,
       "recipeOrBlock": false,
-      "foundationOrAsset": true,
+      "foundationOrAsset": false,
       "evidenceOnly": false,
       "internalOnly": false,
       "devOnly": false,
-      "adoptable": true,
+      "adoptable": false,
       "distribution": "public-source",
       "requiresExternalPackage": [
         "react"
@@ -35281,15 +35466,15 @@
     },
     {
       "path": "components/shared-assets/illustrations/index.tsx",
-      "kind": "ASSET",
-      "layer": "asset",
+      "kind": "BARREL",
+      "layer": "barrel",
       "publicRegistryCandidate": false,
       "recipeOrBlock": false,
-      "foundationOrAsset": true,
+      "foundationOrAsset": false,
       "evidenceOnly": false,
       "internalOnly": false,
       "devOnly": false,
-      "adoptable": true,
+      "adoptable": false,
       "distribution": "public-source",
       "requiresExternalPackage": [
         "react"

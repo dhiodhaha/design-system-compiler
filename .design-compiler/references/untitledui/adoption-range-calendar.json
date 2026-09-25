@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 13,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/application/date-picker/range-calendar.tsx",
       "upstreamSha256": "f1cd37b25c43c3bf",
       "sha": "26e037edde27bfe3",
-      "copied": true,
+      "copied": false,
       "bytes": 9645,
       "kind": "APPLICATION_COMPONENT"
     },
@@ -38,7 +38,7 @@
       "destination": "registry/untitledui/components/base/input/input-date.tsx",
       "upstreamSha256": "c3f54bdb87553517",
       "sha": "16bcfeb9c29b064d",
-      "copied": true,
+      "copied": false,
       "bytes": 10088,
       "kind": "BASE_COMPONENT"
     },
@@ -47,7 +47,7 @@
       "destination": "registry/untitledui/hooks/use-breakpoint.ts",
       "upstreamSha256": "ba5c0a5d3e67b3a7",
       "sha": "e52807f59a4e0a12",
-      "copied": true,
+      "copied": false,
       "bytes": 1458,
       "kind": "HELPER"
     },
@@ -101,7 +101,7 @@
       "destination": "registry/untitledui/components/base/input/label.tsx",
       "upstreamSha256": "12c33452d3f864b5",
       "sha": "bf9390e62ab8c185",
-      "copied": true,
+      "copied": false,
       "bytes": 2812,
       "kind": "BASE_COMPONENT"
     },

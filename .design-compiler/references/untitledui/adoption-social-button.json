@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 6,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/base/buttons/social-button.tsx",
       "upstreamSha256": "61216fb671ce9028",
       "sha": "b2c2bf702f2bfdb6",
-      "copied": true,
+      "copied": false,
       "bytes": 6374,
       "kind": "COMPOUND_COMPONENT"
     },

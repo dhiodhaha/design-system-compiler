@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 12,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/application/date-picker/calendar.tsx",
       "upstreamSha256": "9bd9d085340852c9",
       "sha": "f999a6e4818c2af6",
-      "copied": true,
+      "copied": false,
       "bytes": 5419,
       "kind": "APPLICATION_COMPONENT"
     },
@@ -38,7 +38,7 @@
       "destination": "registry/untitledui/components/base/input/input-date.tsx",
       "upstreamSha256": "c3f54bdb87553517",
       "sha": "16bcfeb9c29b064d",
-      "copied": true,
+      "copied": false,
       "bytes": 10088,
       "kind": "BASE_COMPONENT"
     },
@@ -92,7 +92,7 @@
       "destination": "registry/untitledui/components/base/input/label.tsx",
       "upstreamSha256": "12c33452d3f864b5",
       "sha": "bf9390e62ab8c185",
-      "copied": true,
+      "copied": false,
       "bytes": 2812,
       "kind": "BASE_COMPONENT"
     },

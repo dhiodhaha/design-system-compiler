@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 12,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/base/select/combobox.tsx",
       "upstreamSha256": "ae8996154967a26c",
       "sha": "e8b02dabc2e8b5ce",
-      "copied": true,
+      "copied": false,
       "bytes": 7769,
       "kind": "BASE_COMPONENT"
     },
@@ -38,7 +38,7 @@
       "destination": "registry/untitledui/components/base/input/label.tsx",
       "upstreamSha256": "12c33452d3f864b5",
       "sha": "bf9390e62ab8c185",
-      "copied": true,
+      "copied": false,
       "bytes": 2812,
       "kind": "BASE_COMPONENT"
     },
@@ -56,7 +56,7 @@
       "destination": "registry/untitledui/components/base/select/select-shared.tsx",
       "upstreamSha256": "abfd514facc4e3e3",
       "sha": "a91abcaffc1799a1",
-      "copied": true,
+      "copied": false,
       "bytes": 2049,
       "kind": "NON_COMPONENT"
     },
@@ -65,7 +65,7 @@
       "destination": "registry/untitledui/hooks/use-resize-observer.ts",
       "upstreamSha256": "2249879a7bce4473",
       "sha": "a526633899aae6c6",
-      "copied": true,
+      "copied": false,
       "bytes": 2161,
       "kind": "HELPER"
     },

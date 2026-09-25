@@ -1,6 +1,6 @@
 {
   "$schema": "design-compiler/registry-index@p1",
-  "generatedAt": "2026-09-25T11:24:06.637Z",
+  "generatedAt": "2026-09-25T11:28:57.627Z",
   "library": "untitledui",
   "canonical": true,
   "reference": {
@@ -10,11 +10,11 @@
     "copyright": "Copyright (c) 2025 Untitled UI"
   },
   "counts": {
-    "items": 269,
-    "installable": 244,
+    "items": 276,
+    "installable": 251,
     "byLayer": {
       "foundation": 101,
-      "component": 110,
+      "component": 117,
       "component-part": 19,
       "recipe": 14,
       "asset": 17,
@@ -22,16 +22,16 @@
     },
     "byTier": {
       "tierC": 126,
-      "tierA": 49,
-      "tierB": 80,
+      "tierB": 84,
+      "tierA": 52,
       "tierD": 14
     },
     "byStatus": {
-      "VALIDATED": 220,
-      "VERIFIED": 49
+      "VALIDATED": 224,
+      "VERIFIED": 52
     },
-    "payloadFiles": 227,
-    "sharedFiles": 144
+    "payloadFiles": 229,
+    "sharedFiles": 145
   },
   "externalDependencies": [
     {
@@ -85,23 +85,27 @@
       },
       {
         "upstreamPath": "components/base/buttons/app-store-buttons-outline.tsx",
-        "usedByItems": 4
+        "usedByItems": 12
       },
       {
         "upstreamPath": "utils/cx.ts",
-        "usedByItems": 149
+        "usedByItems": 168
       },
       {
         "upstreamPath": "styles/globals.css",
-        "usedByItems": 144
+        "usedByItems": 162
       },
       {
         "upstreamPath": "styles/theme.css",
-        "usedByItems": 145
+        "usedByItems": 163
       },
       {
         "upstreamPath": "styles/typography.css",
-        "usedByItems": 145
+        "usedByItems": 163
+      },
+      {
+        "upstreamPath": "components/base/buttons/app-store-buttons.tsx",
+        "usedByItems": 5
       },
       {
         "upstreamPath": "components/base/buttons/social-logos.tsx",
@@ -158,10 +162,6 @@
       {
         "upstreamPath": "components/base/badges/badges.tsx",
         "usedByItems": 20
-      },
-      {
-        "upstreamPath": "components/foundations/dot-icon.tsx",
-        "usedByItems": 26
       }
     ],
     "note": "installing several items installs each shared file once"
@@ -233,7 +233,17 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "app-gallery-button",
+      "id": "app-gallery-button--buttons--app-store-buttons",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "app-gallery-button--buttons--app-store-buttons-outline",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -243,7 +253,17 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "app-store-button",
+      "id": "app-store-button--buttons--app-store-buttons",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "app-store-button--buttons--app-store-buttons-outline",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -583,7 +603,7 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "dialog",
+      "id": "dialog--modals",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -793,7 +813,17 @@
       "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
-      "id": "galaxy-store-button",
+      "id": "galaxy-store-button--buttons--app-store-buttons",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "galaxy-store-button--buttons--app-store-buttons-outline",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -873,7 +903,17 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "google-play-button",
+      "id": "google-play-button--buttons--app-store-buttons",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 5,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "google-play-button--buttons--app-store-buttons-outline",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -1043,7 +1083,7 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "modal",
+      "id": "modal--modals",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -1053,7 +1093,7 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "modal-overlay",
+      "id": "modal-overlay--modals",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -1803,7 +1843,37 @@
       "figmaPresence": "PRESENT"
     },
     {
+      "id": "dialog--slideout-menus",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
       "id": "label",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "modal--slideout-menus",
+      "layer": "component",
+      "tier": "A",
+      "status": "VERIFIED",
+      "installable": true,
+      "files": 6,
+      "mapping": "OSS_COMPONENT_SPLIT",
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "modal-overlay--slideout-menus",
       "layer": "component",
       "tier": "A",
       "status": "VERIFIED",
@@ -2393,66 +2463,6 @@
       "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
-      "id": "pagination-button-group",
-      "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
-      "installable": true,
-      "files": 28,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "id": "pagination-card-advanced",
-      "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
-      "installable": true,
-      "files": 28,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "id": "pagination-card-default",
-      "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
-      "installable": true,
-      "files": 28,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "id": "pagination-card-minimal",
-      "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
-      "installable": true,
-      "files": 28,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "id": "pagination-page-default",
-      "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
-      "installable": true,
-      "files": 28,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
-      "id": "pagination-page-minimal-center",
-      "layer": "component",
-      "tier": "B",
-      "status": "VALIDATED",
-      "installable": true,
-      "files": 28,
-      "mapping": null,
-      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
-    },
-    {
       "id": "payment-input",
       "layer": "component",
       "tier": "A",
@@ -2563,6 +2573,66 @@
       "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
     },
     {
+      "id": "pagination-button-group",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-card-advanced",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-card-default",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-card-minimal",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-page-default",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
+      "id": "pagination-page-minimal-center",
+      "layer": "component",
+      "tier": "B",
+      "status": "VALIDATED",
+      "installable": true,
+      "files": 28,
+      "mapping": null,
+      "figmaPresence": "NOT_PRESENT_IN_CURRENT_FIGMA_FILE"
+    },
+    {
       "id": "sidebar-navigation-dual-tier",
       "layer": "component",
       "tier": "B",
@@ -2663,12 +2733,22 @@
       "figmaPresence": "PRESENT"
     },
     {
-      "id": "credit-card",
+      "id": "credit-card--credit-card",
       "layer": "asset",
       "tier": "C",
       "status": "VALIDATED",
       "installable": false,
       "files": 3,
+      "mapping": null,
+      "figmaPresence": "PRESENT"
+    },
+    {
+      "id": "credit-card--illustrations",
+      "layer": "asset",
+      "tier": "C",
+      "status": "VALIDATED",
+      "installable": false,
+      "files": 2,
       "mapping": null,
       "figmaPresence": "PRESENT"
     },
@@ -2729,16 +2809,6 @@
       "status": "VALIDATED",
       "installable": false,
       "files": 1,
-      "mapping": null,
-      "figmaPresence": "PRESENT"
-    },
-    {
-      "id": "index",
-      "layer": "asset",
-      "tier": "C",
-      "status": "VALIDATED",
-      "installable": false,
-      "files": 6,
       "mapping": null,
       "figmaPresence": "PRESENT"
     },

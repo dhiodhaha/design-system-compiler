@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 8,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/base/textarea/textarea.tsx",
       "upstreamSha256": "f89cf45750697eb5",
       "sha": "3f6f1661674d8503",
-      "copied": true,
+      "copied": false,
       "bytes": 4950,
       "kind": "BASE_COMPONENT"
     },
@@ -38,7 +38,7 @@
       "destination": "registry/untitledui/components/base/input/label.tsx",
       "upstreamSha256": "12c33452d3f864b5",
       "sha": "bf9390e62ab8c185",
-      "copied": true,
+      "copied": false,
       "bytes": 2812,
       "kind": "BASE_COMPONENT"
     },

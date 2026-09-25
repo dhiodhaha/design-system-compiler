@@ -128,7 +128,7 @@ Do not dump full upstream repos or Figma trees into model context.
 1. reference manifest + indexer;
 2. canonical contract schema;
 3. Button reference extraction;
-4. Base UI target adapter;
+4. optional primitive adapter (Base UI) for genuinely new PRO-only primitives;
 5. parity harness;
 6. Figma reconciliation;
 7. productionization gate;

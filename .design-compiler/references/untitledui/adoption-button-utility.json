@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 7,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/base/buttons/button-utility.tsx",
       "upstreamSha256": "33365a02e747433d",
       "sha": "8a8a45722570475f",
-      "copied": true,
+      "copied": false,
       "bytes": 4373,
       "kind": "BASE_COMPONENT"
     },

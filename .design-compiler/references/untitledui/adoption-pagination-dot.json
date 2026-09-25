@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 6,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/application/pagination/pagination-dot.tsx",
       "upstreamSha256": "7593d3f99004a736",
       "sha": "62cc525d3b4c22dd",
-      "copied": true,
+      "copied": false,
       "bytes": 2603,
       "kind": "APPLICATION_COMPONENT"
     },

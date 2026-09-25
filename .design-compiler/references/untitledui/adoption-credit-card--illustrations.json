@@ -1,0 +1,45 @@
+{
+  "$schema": "design-compiler/Adoption@p1",
+  "item": "credit-card--illustrations",
+  "title": "credit-card",
+  "export": "CreditCardIllustration",
+  "layer": "asset",
+  "installable": false,
+  "distribution": "closure",
+  "library": "untitledui",
+  "repository": "untitleduico/react",
+  "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
+  "license": "MIT",
+  "adopted": true,
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
+  "closureSize": 2,
+  "files": [
+    {
+      "upstreamPath": "components/shared-assets/illustrations/credit-card.tsx",
+      "destination": "registry/untitledui/components/shared-assets/illustrations/credit-card.tsx",
+      "upstreamSha256": "85902d04406d1c9c",
+      "sha": "d9239df3d3282c0d",
+      "copied": false,
+      "bytes": 20036,
+      "kind": "ASSET"
+    },
+    {
+      "upstreamPath": "utils/cx.ts",
+      "destination": "registry/untitledui/utils/cx.ts",
+      "upstreamSha256": "d32cbae0ef101a95",
+      "sha": "632feb90f95482d5",
+      "copied": false,
+      "bytes": 1092,
+      "kind": "HELPER"
+    }
+  ],
+  "sharedStyleDependencies": [],
+  "externalDependencies": [
+    "@untitledui/icons",
+    "react",
+    "tailwind-merge"
+  ],
+  "transforms": [],
+  "transformPolicy": "zero rewriting by default: upstream path shape is preserved under the payload root so `@/` aliases resolve; only demonstrated portability defects may add entries here"
+}

@@ -197,8 +197,8 @@ const registryIndex = {
   items: items.map((i) => ({ id: i.id, layer: i.layer, tier: i.tier, status: i.status, installable: i.installable, files: i.files, mapping: i.mapping?.relationship ?? null, figmaPresence: i.figmaPresence })),
 };
 mkdirSync(REGISTRY, { recursive: true });
-writeFileSync(resolve(REGISTRY, "index.json"), JSON.stringify(registryIndex, null, 2));
 for (const item of items.filter((i) => i.installable)) {
+  if (item.id === "index") continue; // reserved for the canonical index
   const record = adoptionRecords.get(item.id);
   writeFileSync(
     resolve(REGISTRY, `${item.id}.json`),
@@ -224,6 +224,9 @@ for (const item of items.filter((i) => i.installable)) {
     ),
   );
 }
+
+// canonical index is written LAST so a per-item file can never shadow it
+writeFileSync(resolve(REGISTRY, "index.json"), JSON.stringify(registryIndex, null, 2));
 
 // ---------------------------------------------------------------- derived coverage + state report
 const byStatus = items.reduce((a, i) => ({ ...a, [i.status]: (a[i.status] ?? 0) + 1 }), {});

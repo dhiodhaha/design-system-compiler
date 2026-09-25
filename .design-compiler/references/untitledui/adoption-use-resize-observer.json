@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 1,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/hooks/use-resize-observer.ts",
       "upstreamSha256": "2249879a7bce4473",
       "sha": "a526633899aae6c6",
-      "copied": true,
+      "copied": false,
       "bytes": 2161,
       "kind": "HELPER"
     }

@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 1,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/shared-assets/background-patterns/grid-check.tsx",
       "upstreamSha256": "7b9621d2d7ad43d4",
       "sha": "200361b52aefc1d5",
-      "copied": true,
+      "copied": false,
       "bytes": 139374,
       "kind": "ASSET"
     }

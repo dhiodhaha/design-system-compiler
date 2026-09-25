@@ -41,7 +41,6 @@ const OSS = readJson(resolve(REF, LIB, "index.json"));
 const FIGMA = readJson(resolve(REF, "figma", "figma-surface.json"));
 const CW = readJson(resolve(REF, LIB, "crosswalk.json"));
 const GAPS = readJson(resolve(REF, LIB, "gaps.json"));
-const ALIASES = existsSync(resolve(REF, LIB, "aliases.json")) ? (readJson(resolve(REF, LIB, "aliases.json")).aliases ?? {}) : {};
 
 /* ------------------------------------------------------------------ shared vocabulary helpers --- */
 /** camelCase-aware normalization; identical to crosswalk.mjs so vocabularies stay comparable. */
@@ -75,14 +74,18 @@ const quotedLiterals = (text) => [...String(text ?? "").matchAll(LITERAL_RE)].ma
 function indexVocabulary(code, tokens) {
   const path = code.source;
   const e = ENTRY_BY_PATH.get(path);
-  if (!e) return { channel: `${path} MISSING from index.json`, tokens: 0 };
+  if (!e) return { channel: `${path} MISSING from index.json`, tokens: 0, declared: 0 };
   let n = 0;
+  let declared = 0;
   const add = (token, prov) => {
     const key = norm(token);
     if (!key || tokens.has(key)) return;
     tokens.set(key, prov);
     n++;
+    if (!prov.includes("export name")) declared++;
   };
+  // the mapped export's own name is part of the family's surface (BadgeWithDot -> dot, flag, country)
+  for (const word of camelToKebab(code.export).split("-")) add(word, `${path}#${code.export} export name`);
   for (const [outer, inner] of Object.entries(e.variantVocabulary ?? {})) {
     add(outer, `${path} variantVocabulary.${outer}`);
     for (const v of inner ?? []) add(v, `${path} variantVocabulary.${outer}`);
@@ -102,7 +105,7 @@ function indexVocabulary(code, tokens) {
     }
   }
   for (const cap of e.capabilities ?? []) add(cap, `${path} capability ${cap}`);
-  return { channel: `index.json ${path}${named.length ? `#${code.export}` : ""}`, tokens: n, exports: (e.components ?? []).length, props: named.reduce((a, c) => a + num(c.propCount), 0) };
+  return { channel: `index.json ${path}${named.length ? `#${code.export}` : ""}`, tokens: n, declared, exports: (e.components ?? []).length, props: named.reduce((a, c) => a + num(c.propCount), 0) };
 }
 
 /* ------------------------------------------------------------ C3: adopted upstream type resolver --- */
@@ -182,19 +185,35 @@ const depthOneKeys = (body) => {
     if ("{[(".includes(c)) { depth++; continue; }
     if ("}])".includes(c)) { depth--; continue; }
     if (depth === 0 && c === ":") {
-      const before = body.slice(0, i).replace(/[\s,]+$/, "");
+      const before = body.slice(0, i).replace(/[\s,]+$/, "").replace(/\?$/, "");
       const m = before.match(/(?:^|[\s,{])(\[[^\]]+\]|"[^"]+"|'[^']+'|[A-Za-z_$][\w$]*)$/);
-      if (m && !before.endsWith("?")) keys.push(m[1].replace(/^\[|\]$/g, "").replace(/^["']|["']$/g, ""));
+      // computed keys ([badgeTypes.pillColor]) carry no literal variant name — skip them
+      if (m && !m[1].includes("[") && !m[1].includes(".")) keys.push(m[1].replace(/^\[|\]$/g, "").replace(/^["']|["']$/g, ""));
     }
   }
   return keys;
 };
 const scalarStrings = (body) => [...body.matchAll(/(?:^|[\s,{[])"([^"]{1,40})"/g)].map((m) => m[1]);
+/** every balanced `{...}` region of a snippet (object type literals / destructuring patterns) */
+const braceRegions = (snippet) => {
+  const out = [];
+  for (let i = 0; i < snippet.length; i++) {
+    if (snippet[i] !== "{") continue;
+    const close = matchBrace(snippet, i);
+    if (close < 0) continue;
+    out.push(snippet.slice(i + 1, close));
+    i = close;
+  }
+  return out;
+};
 
 /**
  * C3: vocabulary declared by the mapped export's own props type in the adopted upstream source.
- * Follows referenced local type aliases / const maps (bounded depth, cycle-safe) so that a component
- * whose props come from a sibling module (e.g. Badge -> BadgeColors) is still compared fairly.
+ * Resolves the `<Export>Props` declaration (or the inline parameter type annotation, which is how the
+ * upstream types simple foundations such as Dot and the logos), then follows referenced local type
+ * aliases, object maps and their delegating style maps (bounded depth, cycle-safe) so that a component
+ * whose variant values live in a sibling module (e.g. Badge -> BadgeColors -> filledColors) is compared
+ * fairly instead of being reported as drift.
  */
 function sourceVocabulary(rel, exportName, tokens, meta) {
   const files = new Map();
@@ -209,13 +228,19 @@ function sourceVocabulary(rel, exportName, tokens, meta) {
   }
   const seen = new Set();
   let n = 0;
+  let declared = 0;
   const add = (token, prov) => {
     const key = norm(token);
     if (!key || tokens.has(key)) return;
     tokens.set(key, prov);
     n++;
+    declared++;
   };
-  const visitFile = (file, name, why, depth) => {
+  const addMap = (file, name, body) => {
+    for (const k of depthOneKeys(body)) add(k, `registry/untitledui/${file.rel} const ${name}`);
+    for (const s of scalarStrings(body)) add(s, `registry/untitledui/${file.rel} const ${name}`);
+  };
+  const visitFile = (file, name, depth) => {
     if (depth > 4 || !file) return;
     const key = `${file.rel}#${name}`;
     if (seen.has(key)) return;
@@ -224,15 +249,15 @@ function sourceVocabulary(rel, exportName, tokens, meta) {
     const body = file.types.get(name);
     const iface = file.interfaces.get(name);
     const obj = file.consts.get(name);
-    const pushRefs = (text, provText) => {
+    const pushRefs = (text) => {
       for (const ref of uniq([...String(text ?? "").matchAll(/[A-Z][A-Za-z0-9_$]*/g)].map((m) => m[0]))) {
         if (SKIP_TYPE_WORDS.has(ref) || ref === name) continue;
         const imported = file.imports.get(ref);
         if (imported) {
           const target = file.resolveModule(imported);
-          if (target) { visitFile(get(target), ref, provText, depth + 1); continue; }
+          if (target) { visitFile(get(target), ref, depth + 1); continue; }
         }
-        if (file.types.has(ref) || file.interfaces.has(ref) || file.consts.has(ref)) visitFile(file, ref, provText, depth + 1);
+        if (file.types.has(ref) || file.interfaces.has(ref) || file.consts.has(ref)) visitFile(file, ref, depth + 1);
       }
     };
     if (body !== undefined) {
@@ -241,33 +266,54 @@ function sourceVocabulary(rel, exportName, tokens, meta) {
       const typeofIndexed = body.match(/typeof\s+([A-Za-z_$][\w$]*)\s*\[/);
       for (const ref of [keyofTypeof?.[1], typeofIndexed?.[1]].filter(Boolean)) {
         const local = file.consts.has(ref) ? file : (() => { const t = file.resolveModule(file.imports.get(ref)); return t ? get(t) : null; })();
-        const objBody = local?.consts.get(ref);
-        if (objBody === undefined) continue;
-        for (const k of depthOneKeys(objBody)) add(k, `registry/untitledui/${local.rel} const ${ref}`);
-        for (const s of scalarStrings(objBody)) add(s, `registry/untitledui/${local.rel} const ${ref}`);
+        if (local?.consts.get(ref) === undefined) continue;
+        // an indexed access into a variant map names the map's own keys/values (BadgeColors -> filledColors)
+        visitFile(local, ref, depth + 1);
       }
-      pushRefs(body, prov("type"));
+      pushRefs(body);
     }
     if (iface !== undefined) {
       for (const prop of depthOneKeys(iface)) add(prop, prov("interface"));
       for (const lit of quotedLiterals(iface)) add(lit, prov("interface"));
-      pushRefs(iface, prov("interface"));
+      pushRefs(iface);
     }
     if (obj !== undefined) {
-      for (const k of depthOneKeys(obj)) add(k, `registry/untitledui/${file.rel} const ${name}`);
-      for (const s of scalarStrings(obj)) add(s, `registry/untitledui/${file.rel} const ${name}`);
+      addMap(file, name, obj);
+      // variant maps delegate to sibling style maps (styles: filledColors) — their keys are variant values
+      pushRefs(obj);
     }
   };
 
   // the export's own props declaration, then (if absent) every <Export>* type the file declares
-  const own = base.interfaces.get(`${exportName}Props`) !== undefined ? `${exportName}Props` : (base.types.has(`${exportName}Props`) ? `${exportName}Props` : null);
-  if (own) visitFile(base, own, "props", 0);
+  const own = base.interfaces.has(`${exportName}Props`) ? `${exportName}Props` : (base.types.has(`${exportName}Props`) ? `${exportName}Props` : null);
+  if (own) visitFile(base, own, 0);
   for (const name of [...base.types.keys(), ...base.interfaces.keys()]) {
     if (name === own) continue;
-    if (name === exportName || name.startsWith(`${exportName}Props`) || name.startsWith(`${exportName}Prop`)) visitFile(base, name, "props", 1);
+    if (name === exportName || name.startsWith(`${exportName}Props`) || name.startsWith(`${exportName}Prop`)) visitFile(base, name, 1);
   }
-  meta.sourceDeclarations = own ? `registry/untitledui/${rel} ${own}` : `registry/untitledui/${rel} ${exportName}*`;
+  // inline parameter type annotation: export const X = ({ size = "md", ...props }: HTMLAttributes<…> & { size?: "sm" | "md" })
+  const decl = new RegExp(`export\\s+(?:const|function)\\s+${exportName}\\b`).exec(base.text);
+  let inline = null;
+  if (decl) {
+    const rest = base.text.slice(decl.index, decl.index + 600);
+    const arrow = rest.indexOf("=>");
+    inline = (arrow > 0 ? rest.slice(0, arrow) : rest).replace(/\)\s*$/, "");
+  }
+  if (inline) {
+    const blocks = braceRegions(inline);
+    for (const block of blocks) {
+      for (const prop of depthOneKeys(block)) add(prop, `registry/untitledui/${rel} inline props type ${exportName}`);
+      for (const lit of quotedLiterals(block)) add(lit, `registry/untitledui/${rel} inline props type ${exportName}`);
+    }
+    for (const lit of quotedLiterals(inline)) add(lit, `registry/untitledui/${rel} inline props type ${exportName}`);
+    for (const ref of uniq([...inline.matchAll(/[A-Z][A-Za-z0-9_$]*/g)].map((m) => m[0]))) {
+      if (SKIP_TYPE_WORDS.has(ref) || ref === exportName) continue;
+      if (base.types.has(ref) || base.interfaces.has(ref) || base.consts.has(ref)) visitFile(base, ref, 1);
+    }
+  }
+  meta.sourceDeclarations = own ? `registry/untitledui/${rel} ${own}` : inline ? `registry/untitledui/${rel} inline props type of ${exportName}` : `registry/untitledui/${rel} ${exportName}* (no props declaration found)`;
   meta.resolvedNames = uniq([...seen].map((s) => s.split("#")[1]));
+  meta.declared = declared;
   return n;
 }
 
@@ -344,19 +390,49 @@ for (const m of CW.mappings) {
   if (REL_MAPPED.has(m.relationship)) {
     const tokens = new Map();
     const channels = [];
-    const meta = { unresolved: [] };
+    const meta = { unresolved: [], declared: 0 };
     for (const code of m.code) channels.push(indexVocabulary(code, tokens));
     for (const code of m.code.filter((c) => !c.source.startsWith("@") && ENTRY_BY_PATH.has(c.source))) sourceVocabulary(code.source, code.export, tokens, meta);
     const vocabSize = tokens.size;
+    // tokens the mapped exports actually declare (prop names, union literals, variant tables) — the
+    // comparison basis; export-name tokens alone cannot support a comparison
+    const declaredSize = num(channels.reduce((a, c) => a + (c.declared ?? 0), 0)) + num(meta.declared);
 
     const missing = [];
     const stateUnmatched = [];
     const stateCssMatched = [];
     const designToolStates = [];
     const numericSkipped = [];
+    const booleanAxes = [];
+    const recipeKeys = new Set((m.recipeCandidates ?? []).map((r) => `${norm(r.axis)}=${norm(r.value)}`));
+    const axisTokenPresent = (axisName) => tokens.has(norm(axisName));
+    const BOOLEAN_VALUES = new Set(["true", "false", "yes", "no", "on", "off"]);
+    /** a boolean Figma axis is one switch, so the axis name — not True/False — is what needs a counterpart */
+    const axisCounterpart = (axisName) => {
+      const key = norm(axisName);
+      if (tokens.has(key)) return { matched: true, via: key };
+      const parts = key.split("-").filter((p) => p.length > 1);
+      const hit = parts.find((p) => tokens.has(p));
+      return hit ? { matched: true, via: hit } : { matched: false, unmatchedParts: parts };
+    };
     let matched = 0;
     for (const [axisName, axis] of Object.entries(axes)) {
-      for (const value of axis.values ?? []) {
+      const values = axis.values ?? [];
+      const keys = values.map(norm);
+      if (keys.length && keys.every((k) => BOOLEAN_VALUES.has(k))) {
+        // boolean toggle axis: compare the axis name against the OSS surface, report one item
+        const found = axisCounterpart(axisName);
+        summaryCounts.valuesChecked += values.length;
+        if (found.matched) {
+          matched += values.length;
+          summaryCounts.valuesMatched += values.length;
+        } else {
+          booleanAxes.push({ axis: axisName, values, matchedParts: [], unmatchedParts: found.unmatchedParts, absentFromMappedSource: sourceTokenAbsent(m.code, norm(axisName)) });
+          summaryCounts.valuesMissing += values.length;
+        }
+        continue;
+      }
+      for (const value of values) {
         summaryCounts.valuesChecked++;
         const key = norm(value);
         if (!key) continue;
@@ -369,17 +445,28 @@ for (const m of CW.mappings) {
           const signals = STATE_SIGNALS[key];
           const hits = signals.filter((s) => m.code.some((c) => !c.source.startsWith("@") && (readSource(resolve(ADOPTED, c.source)) ?? "").includes(s)));
           if (signals.length && hits.length) { stateCssMatched.push({ axis: axisName, value, utilityClassSignals: hits }); summaryCounts.valuesStateMatched++; continue; }
-          stateUnmatched.push({ axis: axisName, value, signalsChecked: signals ?? [] });
+          stateUnmatched.push({ axis: axisName, value, signalsChecked: signals ?? [], recipeValue: recipeKeys.has(`${norm(axisName)}=${key}`) });
           continue;
         }
-        missing.push({ axis: axisName, value, absentFromMappedSource: sourceTokenAbsent(m.code, key) });
+        missing.push({
+          axis: axisName,
+          value,
+          recipeValue: recipeKeys.has(`${norm(axisName)}=${key}`),
+          matchedParts: parts.filter((p) => tokens.has(p)),
+          unmatchedParts: parts.filter((p) => !tokens.has(p)),
+          axisInOssVocabulary: axisTokenPresent(axisName),
+          absentFromMappedSource: sourceTokenAbsent(m.code, key),
+        });
         summaryCounts.valuesMissing++;
       }
     }
     const recipes = m.recipeCandidates?.length ?? 0;
-    const visualDelta = num(family.variantCount) >= 3 * Math.max(1, vocabSize) && recipes === 0;
-    const versionDrift = missing.length > 0 || stateUnmatched.length > 0;
-    const classification = !vocabSize && (missing.length || stateUnmatched.length) ? "UNRESOLVED" : visualDelta ? "FIGMA_VISUAL_DELTA" : versionDrift ? "VERSION_DRIFT" : null;
+    const visualDelta = num(family.variantCount) >= 3 * Math.max(1, declaredSize) && recipes === 0;
+    const vocabularyMissing = missing.filter((x) => !x.recipeValue);
+    const recipeMissing = missing.filter((x) => x.recipeValue);
+    const versionDrift = missing.length > 0 || stateUnmatched.length > 0 || booleanAxes.length > 0;
+    const classification = !declaredSize && versionDrift ? "UNRESOLVED" : visualDelta ? "FIGMA_VISUAL_DELTA" : versionDrift ? "VERSION_DRIFT" : null;
+    const driftKinds = [...(vocabularyMissing.length ? ["vocabulary"] : []), ...(recipeMissing.length ? ["recipe-value"] : []), ...(stateUnmatched.length ? ["state"] : []), ...(booleanAxes.length ? ["boolean-axis"] : [])];
 
     if (classification) {
       summaryCounts.byClassification[classification] = (summaryCounts.byClassification[classification] ?? 0) + 1;
@@ -387,12 +474,15 @@ for (const m of CW.mappings) {
         `crosswalk.json: relationship ${m.relationship} — ${m.evidence.filter((e) => !e.startsWith("candidates:")).slice(0, 2).join("; ")}`,
         family.key ? `figma-surface.json: family ${family.id} published component key ${family.key}` : `figma-surface.json: family ${family.id} has no published component key`,
         ...channels.map((c) => `C1/C2 ${c.channel}: ${c.tokens} vocabulary tokens`),
-        `C3 ${meta.sourceDeclarations ?? "no adopted-source props type resolved"}: ${meta.resolvedNames?.length ? meta.resolvedNames.join(", ") : "none"} -> vocabulary ${vocabSize} tokens`,
+        `C3 ${meta.sourceDeclarations ?? "no adopted-source props type resolved"}: ${meta.resolvedNames?.length ? meta.resolvedNames.join(", ") : "none"}`,
+        `compared vocabulary: ${vocabSize} tokens total, ${declaredSize} declared by the mapped exports (export-name tokens excluded from the comparison basis)`,
       ];
-      if (missing.length) evidence.push(`C1–C3 negative: ${missing.length}/${missing.length + matched} non-state axis values have no token counterpart (e.g. ${missing.slice(0, 3).map((x) => `${x.axis}="${x.value}"`).join(", ")})`);
+      if (missing.length) evidence.push(`C1–C3 negative: ${missing.length} of ${missing.length + matched} non-state axis values have no token counterpart (e.g. ${missing.slice(0, 3).map((x) => `${x.axis}="${x.value}"`).join(", ")})`);
+      if (vocabularyMissing.length) evidence.push(`non-recipe drift values carry only unmatched tokens (e.g. ${vocabularyMissing.slice(0, 3).map((x) => `[${x.unmatchedParts.join("+") || "—"}]`).join(", ")})`);
+      if (recipeMissing.length) evidence.push(`${recipeMissing.length} of the missing values are crosswalk.json recipe candidates, i.e. Figma composition inputs rather than OSS props`);
       if (stateUnmatched.length) evidence.push(`C4 negative: state values ${stateUnmatched.map((x) => `${x.axis}="${x.value}"`).slice(0, 4).join(", ")} have neither a vocabulary token nor a utility-class signal`);
       if (stateCssMatched.length) evidence.push(`C4 positive: ${stateCssMatched.length} state values match adopted-source utility-class signals (e.g. ${stateCssMatched.slice(0, 3).map((x) => `${x.value}->${x.utilityClassSignals[0]}`).join(", ")})`);
-      if (visualDelta) evidence.push(`variant scale: ${family.variantCount} Figma variants >= 3x the ${vocabSize}-token OSS vocabulary with no recipe candidates`);
+      if (visualDelta) evidence.push(`variant scale: ${family.variantCount} Figma variants >= 3x the ${declaredSize}-token declared OSS vocabulary with no recipe candidates`);
       if (recipes) evidence.push(`${recipes} recipe candidates recorded by crosswalk.json keep this family out of the visual-delta rule`);
       if (meta.unresolved.length) evidence.push(...meta.unresolved.slice(0, 2));
       familyRows.push({
@@ -404,8 +494,9 @@ for (const m of CW.mappings) {
         crosswalkRelationship: m.relationship,
         classification,
         flags: { versionDrift, figmaVisualDelta: visualDelta },
+        driftKinds,
         mappedOssExports: m.code.map((c) => `${c.source}#${c.export}`),
-        ossVocabulary: { size: vocabSize, channels: uniq(channels.map((c) => c.channel)) },
+        ossVocabulary: { size: vocabSize, declaredTokens: declaredSize, channels: uniq(channels.map((c) => c.channel)) },
         figmaAxes: Object.fromEntries(Object.entries(axes).map(([a, v]) => [a, v.values ?? []])),
         figmaVariants: num(family.variantCount),
         matchedAxisValues: matched,
@@ -418,44 +509,41 @@ for (const m of CW.mappings) {
       });
     }
     if (classification === "UNRESOLVED") {
-      noteUnresolved(family, "UNRESOLVED", "NO_OSS_VOCABULARY_IN_INVENTORY", [`${m.code.map((c) => `${c.source}#${c.export}`).join(", ")} carry no prop/variant metadata in index.json, no <Export>Props declaration in registry/untitledui, and the family has ${missing.length + stateUnmatched.length} unmatched axis values`]);
+      noteUnresolved(family, "UNRESOLVED", "NO_OSS_VOCABULARY_IN_INVENTORY", [
+        `mapped exports ${m.code.map((c) => `${c.source}#${c.export}`).join(", ")} expose no prop/variant metadata in index.json and no local <Export>Props declaration in ${ADOPTED} (props are inherited from external packages)`,
+        `${missing.length} non-state + ${stateUnmatched.length} state axis values therefore cannot be compared: ${[...missing, ...stateUnmatched].slice(0, 6).map((x) => `${x.axis}="${x.value}"`).join(", ")}`,
+      ]);
     }
     continue;
   }
 
   // unmapped families: record why this refinement pass still cannot classify them
   const pname = pageName(family.page);
-  if (ICON_PAGES.includes(pname)) {
+  if (m.relationship === "EXTERNAL_PACKAGE" && m.code.length) continue; // crosswalk already resolved the export
+  if (m.relationship !== "FIGMA_ONLY" && m.relationship !== "EXTERNAL_PACKAGE") continue; // OSS_COMPOSITION etc. are classified by construction
+  if (m.relationship === "EXTERNAL_PACKAGE") {
+    noteUnresolved(family, m.relationship, "EXTERNAL_ASSET_WITHOUT_INSTALLED_EXPORT", [
+      m.evidence.join("; "),
+      `${ICON_PACKAGE.name}@${ICON_PACKAGE.version} exposes ${ICON_PACKAGE.exports.size} exports; no export normalizes to "${norm(family.name)}"${ICON_SUFFIX_ONLY.has(norm(family.name)) ? ` (numeric-suffix-stripped base "${ICON_SUFFIX_ONLY.get(norm(family.name))}" matches an installed export — candidate only, not a resolution)` : ""}`,
+      `no OSS component in index.json matched by name, tokens or vocabulary; family has ${Object.keys(axes).length} variant axes`,
+    ]);
+  } else if (ICON_PAGES.includes(pname)) {
     const key = norm(family.name);
-    const code = ICON_ABSENT.has(key) ? "ICON_FAMILY_ABSENT_FROM_INSTALLED_PACKAGE" : "ICON_FAMILY_OUTSIDE_INSTALLED_PACKAGE_SCOPE";
-    noteUnresolved(family, m.relationship, code, [`page "${pname}" is an icon/asset page`, `installed ${ICON_PACKAGE.name}@${ICON_PACKAGE.version} exposes ${ICON_PACKAGE.exports.size} exports; none matches "${family.name}" (normalized "${key}")${ICON_SUFFIX_ONLY.has(key) ? `; a numeric-suffix-stripped base "${ICON_SUFFIX_ONLY.get(key)}" does match an installed export (candidate only, not a resolution)` : ""}`, `family has ${Object.keys(axes).length} variant axes and ${num(family.variantCount)} variants`]);
+    noteUnresolved(family, m.relationship, ICON_ABSENT.has(key) ? "ICON_FAMILY_ABSENT_FROM_INSTALLED_PACKAGE" : "ICON_FAMILY_OUTSIDE_INSTALLED_PACKAGE_SCOPE", [
+      `page "${pname}" is an icon/asset page`,
+      `${ICON_PACKAGE.name}@${ICON_PACKAGE.version} exposes ${ICON_PACKAGE.exports.size} exports; none matches "${family.name}" (normalized "${key}")${ICON_SUFFIX_ONLY.has(key) ? `; a numeric-suffix-stripped base "${ICON_SUFFIX_ONLY.get(key)}" does match an installed export (candidate only, not a resolution)` : ""}`,
+      `family has ${Object.keys(axes).length} variant axes and ${num(family.variantCount)} variants`,
+    ]);
   } else {
-    noteUnresolved(family, m.relationship, m.relationship === "EXTERNAL_PACKAGE" ? "EXTERNAL_ASSET_WITHOUT_INSTALLED_EXPORT" : "NO_OSS_COUNTERPART_AND_NO_VARIANT_AXES", [m.evidence.join("; "), `family has ${Object.keys(axes).length} variant axes and ${num(family.variantCount)} variants`, `no axis value names an OSS export and no OSS component shares >= 3 axis values (checked against ${OSS.entries.length} index.json entries)`]);
+    noteUnresolved(family, m.relationship, Object.keys(axes).length ? "NO_OSS_COUNTERPART_WITH_AXES" : "NO_OSS_COUNTERPART_AND_NO_VARIANT_AXES", [
+      m.evidence.join("; "),
+      `family has ${Object.keys(axes).length} variant axes and ${num(family.variantCount)} variants`,
+      `checked against ${OSS.entries.length} index.json entries: no axis value names an OSS export and no OSS component shares >= 3 axis values`,
+    ]);
   }
 }
 
 /* ------------------------------------------------------------------------- icon mapping coverage --- */
-const ICON_PACKAGE = (() => {
-  const dir = resolve("node_modules", "@untitledui", "icons", "dist");
-  const pkg = existsSync(resolve("node_modules", "@untitledui", "icons", "package.json")) ? readJson(resolve("node_modules", "@untitledui", "icons", "package.json")) : { name: "@untitledui/icons", version: "absent" };
-  const exports = new Set();
-  if (existsSync(dir)) for (const f of readdirSync(dir)) if (f.endsWith(".d.ts") && f !== "index.d.ts") exports.add(norm(f.replace(/\.d\.ts$/, "")));
-  return { name: pkg.name, version: pkg.version, exports, declarations: [...exports] };
-})();
-/** families whose name only matches an installed export after stripping a Figma numeric variant suffix */
-const ICON_SUFFIX_ONLY = new Map();
-const ICON_ABSENT = new Set();
-for (const m of CW.mappings) {
-  if (REL_MAPPED.has(m.relationship) || (m.relationship === "EXTERNAL_PACKAGE" && m.code.length)) continue;
-  const pname = pageName(m.figma.page);
-  if (!ICON_PAGES.includes(pname)) continue;
-  const key = norm(m.figma.name);
-  if (ICON_PACKAGE.exports.has(key)) continue;
-  const stripped = key.replace(/-(\d+)$/, "");
-  ICON_ABSENT.add(key);
-  if (stripped !== key && ICON_PACKAGE.exports.has(stripped)) ICON_SUFFIX_ONLY.set(key, stripped);
-}
-
 const iconMappingCoverage = (() => {
   const pages = [];
   const totals = { families: 0, installedPackageExport: 0, repoLocalOssExport: 0, unresolved: 0, absentFromInstalledPackage: 0, suffixOnlyCandidates: 0 };
@@ -495,7 +583,12 @@ const iconMappingCoverage = (() => {
       ],
     };
     pages.push(stats);
-    for (const k of Object.keys(totals)) totals[k] += k === "families" ? rows.length : stats.unresolved[k] ?? stats.resolved[k] ?? 0;
+    totals.families += rows.length;
+    totals.installedPackageExport += stats.resolved.installedPackageExport;
+    totals.repoLocalOssExport += stats.resolved.repoLocalOssExport;
+    totals.unresolved += stats.unresolved.total;
+    totals.absentFromInstalledPackage += stats.unresolved.absentFromInstalledPackage;
+    totals.suffixOnlyCandidates += stats.unresolved.suffixOnlyCandidates;
   }
   totals.resolvedRatio = pct(totals.installedPackageExport + totals.repoLocalOssExport, totals.families);
   return { pages: pages.sort((a, b) => b.families - a.families), totals, iconPackage: { name: ICON_PACKAGE.name, version: ICON_PACKAGE.version, exports: ICON_PACKAGE.exports.size }, evidence: [`page set fixed to: ${ICON_PAGES.join(", ")} (names from figma-surface.json pages, not ids)`] };
@@ -547,15 +640,22 @@ const summary = {
   byClassification: summaryCounts.byClassification,
   axisComparison: { valuesChecked: summaryCounts.valuesChecked, valuesMatched: summaryCounts.valuesMatched, valuesMissing: summaryCounts.valuesMissing, valuesNumericSkipped: summaryCounts.valuesNumeric, stateValuesMatchedInCss: summaryCounts.valuesStateMatched, designToolStateValues: summaryCounts.valuesDesignToolState },
   checkedFamilies: CW.mappings.filter((m) => REL_MAPPED.has(m.relationship)).length,
+  notRefined: (() => {
+    const byRel = {};
+    for (const m of CW.mappings) if (!REL_MAPPED.has(m.relationship) && !familyRows.some((r) => r.componentSetId === m.figma.componentSetId)) byRel[m.relationship] = (byRel[m.relationship] ?? 0) + 1;
+    return { byRelationship: byRel, note: "families not in `families` are either clean under this pass (no drift flags) or keep the crosswalk.json relationship that already explains them; OSS_COMPOSITION families are compositions by construction and are out of this pass's scope" };
+  })(),
   iconPagesResolvedRatio: iconMappingCoverage.totals.resolvedRatio,
   ossOnlyCount: ossOnly.count,
   unresolvedFamilies,
   unresolvedByReason,
   unresolvedTotal: unresolvedFamilies.length,
+  unresolvedNote: "UNRESOLVED here means: this pass found no evidence to place the family in a more specific bucket. FIGMA_ONLY families with axes and no OSS vocabulary/counterpart stay UNRESOLVED rather than being guessed; icon/asset families stay UNRESOLVED until an icon package export exists (installed package version is pinned in inputs/iconMappingCoverage).",
   evidence: [
     "componentKey = figma-surface.json families[].key (published key); all 2253 families carry one",
     "versionDrift compares Figma axis VALUES against the mapped export's vocabulary from index.json (C1/C2) plus the adopted upstream props type (C3); numeric axis values and mapped CSS state signals are excluded and reported separately",
     "figmaVisualDelta = Figma variant count >= 3x the OSS vocabulary size with no recipe candidates",
+    "nothing is classified from name similarity alone: every entry cites crosswalk.json's own signal, the index.json/source vocabulary it was compared against, and the negative check that produced the classification",
   ],
 };
 

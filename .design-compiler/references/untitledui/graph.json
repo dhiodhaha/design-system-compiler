@@ -2,11 +2,12 @@
   "$schema": "design-compiler/ReferenceGraph@p0",
   "library": "untitledui",
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
-  "componentNodes": 195,
+  "componentNodes": 200,
   "internalEdges": 496,
-  "componentEdges": 165,
+  "componentEdges": 180,
   "dependencyOrder": [
     [
+      "components/application/app-navigation/sidebar-navigation-base.tsx",
       "components/application/carousel/carousel-base.tsx",
       "components/application/charts/charts-base.tsx",
       "components/application/date-picker/cell.tsx",
@@ -142,6 +143,7 @@
     ],
     [
       "components/application/app-navigation/base-components/nav-button.tsx",
+      "components/application/empty-state/empty-state.tsx",
       "components/application/pagination/pagination-dot.tsx",
       "components/application/pagination/pagination-line.tsx",
       "components/application/slideout-menus/slideout-menu.tsx",
@@ -167,6 +169,7 @@
       "components/base/input/input-number.tsx",
       "components/base/input/input-tags.tsx",
       "components/base/input/input.tsx",
+      "components/base/input/pin-input.tsx",
       "components/base/select/combobox.tsx",
       "components/base/select/select-item.tsx",
       "components/base/select/select-native.tsx",
@@ -177,7 +180,6 @@
       "components/application/app-navigation/base-components/nav-list.tsx",
       "components/application/date-picker/calendar.tsx",
       "components/application/date-picker/range-calendar.tsx",
-      "components/application/pagination/pagination.tsx",
       "components/application/table/table.tsx",
       "components/base/dropdown/dropdown-account-breadcrumb.tsx",
       "components/base/dropdown/dropdown-account-button.tsx",
@@ -198,6 +200,8 @@
       "components/base/input/input-group.tsx",
       "components/base/input/input-payment.tsx",
       "components/base/input/input-tags-outer.tsx",
+      "components/base/select/multi-select.tsx",
+      "components/base/select/select.tsx",
       "components/base/select/tag-select.tsx"
     ],
     [
@@ -209,6 +213,7 @@
       "components/application/app-navigation/sidebar-navigation/sidebar-slim.tsx",
       "components/application/date-picker/date-picker.tsx",
       "components/application/date-picker/date-range-picker.tsx",
+      "components/application/pagination/pagination.tsx",
       "components/base/input/input-file.tsx"
     ]
   ],

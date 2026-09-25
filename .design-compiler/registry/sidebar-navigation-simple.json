@@ -141,7 +141,7 @@
       "path": "registry/untitledui/components/base/avatar/base-components/index.tsx",
       "upstream": "components/base/avatar/base-components/index.tsx",
       "sha256": "1483e56fcb9bb8e9",
-      "kind": "NON_COMPONENT"
+      "kind": "BARREL"
     },
     {
       "path": "registry/untitledui/components/base/avatar/base-components/avatar-count.tsx",
@@ -218,7 +218,7 @@
     },
     "PAYLOAD_INTEGRITY": {
       "pass": true,
-      "evidence": "227 payload files; internal imports resolve"
+      "evidence": "229 payload files; internal imports resolve"
     },
     "TYPECHECK": {
       "pass": true,

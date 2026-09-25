@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 6,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/application/app-navigation/base-components/nav-button.tsx",
       "upstreamSha256": "5c45d988c7380a31",
       "sha": "4f1c5ce4eb4ceba9",
-      "copied": true,
+      "copied": false,
       "bytes": 3254,
       "kind": "COMPOUND_COMPONENT"
     },

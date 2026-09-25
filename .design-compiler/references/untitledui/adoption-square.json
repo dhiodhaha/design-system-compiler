@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 2,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/shared-assets/background-patterns/square.tsx",
       "upstreamSha256": "4477946d65dc260e",
       "sha": "402da7b79f9b03a0",
-      "copied": true,
+      "copied": false,
       "bytes": 12253,
       "kind": "ASSET"
     },

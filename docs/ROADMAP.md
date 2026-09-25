@@ -27,7 +27,7 @@ official Untitled UI React Button
 vs
 current Figma-first Button benchmark
 vs
-new Base UI target Button
+newly adopted canonical Button (official OSS source)
 ```
 
 Required:

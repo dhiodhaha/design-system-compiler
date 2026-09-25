@@ -5,35 +5,35 @@
   "derived": true,
   "derivedBy": "compiler/state/reconcile.mjs",
   "totals": {
-    "adoptableSurface": 204,
-    "publicRegistryCandidates": 80,
+    "adoptableSurface": 206,
+    "publicRegistryCandidates": 85,
     "recipesAndBlocks": 14,
-    "foundationsAndAssets": 120,
+    "foundationsAndAssets": 118,
     "evidenceOnly": 75,
-    "adoptedItems": 269,
-    "adoptedFiles": 227,
-    "installableItems": 244,
-    "verified": 49,
-    "validated": 220,
+    "adoptedItems": 276,
+    "adoptedFiles": 229,
+    "installableItems": 251,
+    "verified": 52,
+    "validated": 224,
     "validationFailed": 0,
     "blocked": 0
   },
   "byTier": {
     "tierC": 126,
-    "tierA": 49,
-    "tierB": 80,
+    "tierB": 84,
+    "tierA": 52,
     "tierD": 14
   },
   "byStatus": {
-    "VALIDATED": 220,
-    "VERIFIED": 49
+    "VALIDATED": 224,
+    "VERIFIED": 52
   },
   "figmaCrosswalk": {
     "figmaFamilies": 2253,
     "ossComponents": 136,
     "byRelationship": {
-      "FIGMA_ONLY": 1638,
-      "EXTERNAL_PACKAGE": 520,
+      "FIGMA_ONLY": 1636,
+      "EXTERNAL_PACKAGE": 522,
       "OSS_COMPONENT_SET_MERGE": 10,
       "OSS_COMPOSITION": 10,
       "EXACT_OSS_MATCH": 69,

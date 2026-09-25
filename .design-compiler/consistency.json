@@ -1,0 +1,88 @@
+{
+  "$schema": "design-compiler/Consistency@p0",
+  "at": "2026-09-25T11:28:57.752Z",
+  "checks": [
+    {
+      "check": "docs: Option D stated in docs/README.md",
+      "pass": true,
+      "evidence": "architecture decision banner present"
+    },
+    {
+      "check": "docs: no canonical doc mandates Base UI migration",
+      "pass": true,
+      "evidence": "none found"
+    },
+    {
+      "check": "state: coverage and registry agree",
+      "pass": true,
+      "evidence": "coverage.adopted=276 registry.items=276 adoptionRun=276 installable=251"
+    },
+    {
+      "check": "state: report agrees with adoption run",
+      "pass": true,
+      "evidence": "report.items=276 report.payloadFiles=229 registry.payloadFiles=229"
+    },
+    {
+      "check": "state: derived files declare their derivation",
+      "pass": true,
+      "evidence": "coverage.json and report.json carry derived:true"
+    },
+    {
+      "check": "registry: canonical index contains no benchmark entry",
+      "pass": true,
+      "evidence": "found 0"
+    },
+    {
+      "check": "registry: benchmark retained separately",
+      "pass": true,
+      "evidence": "COMPILER_RECONSTRUCTION_BENCHMARK"
+    },
+    {
+      "check": "registry: legacy benchmark registry removed",
+      "pass": true,
+      "evidence": ".design-compiler/registry.json absent"
+    },
+    {
+      "check": "registry: button item is the adopted official source",
+      "pass": true,
+      "evidence": "status VERIFIED, tier A"
+    },
+    {
+      "check": "integration: app canary matches the registry payload byte-for-byte (modulo header)",
+      "pass": true,
+      "evidence": "src 154021797336cb6e vs payload 154021797336cb6e"
+    },
+    {
+      "check": "status: every registry item has a terminal status",
+      "pass": true,
+      "evidence": "276 items terminal"
+    },
+    {
+      "check": "coverage: public candidates accounted for",
+      "pass": true,
+      "evidence": "251 installable >= 85 public candidates (multi-export files produce several items)"
+    },
+    {
+      "check": "coverage: every adoptable layer produced items",
+      "pass": true,
+      "evidence": "index layers {\"asset\":17,\"none\":8,\"evidence\":75,\"component-part\":19,\"component\":66,\"recipe\":14,\"barrel\":6,\"foundation\":101,\"internal\":1,\"helper\":8} vs registry layers {\"foundation\":101,\"component\":117,\"component-part\":19,\"recipe\":14,\"asset\":17,\"helper\":8}"
+    },
+    {
+      "check": "figma: every family has a relationship",
+      "pass": true,
+      "evidence": "2253 families, 0 without a relationship"
+    },
+    {
+      "check": "pro: every queued gap has a status and a next action",
+      "pass": true,
+      "evidence": "6 queued, 0 without action"
+    },
+    {
+      "check": "pro: no forbidden fabrication in the queue",
+      "pass": true,
+      "evidence": "no giant union-prop plans"
+    }
+  ],
+  "failures": [],
+  "status": "CONSISTENT"
+}

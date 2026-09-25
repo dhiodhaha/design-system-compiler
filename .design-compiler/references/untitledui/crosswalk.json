@@ -7,8 +7,8 @@
     "figmaFamilies": 2253,
     "ossComponents": 136,
     "byRelationship": {
-      "FIGMA_ONLY": 1638,
-      "EXTERNAL_PACKAGE": 520,
+      "FIGMA_ONLY": 1636,
+      "EXTERNAL_PACKAGE": 522,
       "OSS_COMPONENT_SET_MERGE": 10,
       "OSS_COMPOSITION": 10,
       "EXACT_OSS_MATCH": 69,
@@ -22093,10 +22093,16 @@
         "variants": 0,
         "axes": {}
       },
-      "code": [],
-      "relationship": "FIGMA_ONLY",
+      "code": [
+        {
+          "source": "@untitledui/icons (installed package)",
+          "export": "js",
+          "layer": "external-package"
+        }
+      ],
+      "relationship": "EXTERNAL_PACKAGE",
       "evidence": [
-        "no OSS component matched by name, tokens or vocabulary"
+        "Figma family \"js\" resolves to the installed @untitledui/icons export `js` by normalized name"
       ],
       "verified": false
     },
@@ -22609,10 +22615,16 @@
         "variants": 0,
         "axes": {}
       },
-      "code": [],
-      "relationship": "FIGMA_ONLY",
+      "code": [
+        {
+          "source": "@untitledui/icons (installed package)",
+          "export": "java",
+          "layer": "external-package"
+        }
+      ],
+      "relationship": "EXTERNAL_PACKAGE",
       "evidence": [
-        "no OSS component matched by name, tokens or vocabulary"
+        "Figma family \"java\" resolves to the installed @untitledui/icons export `java` by normalized name"
       ],
       "verified": false
     },

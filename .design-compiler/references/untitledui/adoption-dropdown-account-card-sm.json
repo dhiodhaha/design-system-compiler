@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 17,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/base/dropdown/dropdown-account-card-sm.tsx",
       "upstreamSha256": "5e70cd63c3f75b14",
       "sha": "04b636810b346fe8",
-      "copied": true,
+      "copied": false,
       "bytes": 5506,
       "kind": "BASE_COMPONENT"
     },
@@ -29,7 +29,7 @@
       "destination": "registry/untitledui/components/base/avatar/avatar.tsx",
       "upstreamSha256": "49bcc021bf717ab3",
       "sha": "9c4776f8f7d7feb9",
-      "copied": true,
+      "copied": false,
       "bytes": 5512,
       "kind": "BASE_COMPONENT"
     },
@@ -38,7 +38,7 @@
       "destination": "registry/untitledui/components/base/dropdown/dropdown.tsx",
       "upstreamSha256": "867271bc38e7cb3f",
       "sha": "b9f1f674455b7346",
-      "copied": true,
+      "copied": false,
       "bytes": 8478,
       "kind": "BASE_COMPONENT"
     },
@@ -56,9 +56,9 @@
       "destination": "registry/untitledui/components/base/avatar/base-components/index.tsx",
       "upstreamSha256": "d630103c098195bb",
       "sha": "1483e56fcb9bb8e9",
-      "copied": true,
+      "copied": false,
       "bytes": 525,
-      "kind": "NON_COMPONENT"
+      "kind": "BARREL"
     },
     {
       "upstreamPath": "components/base/avatar/base-components/avatar-count.tsx",
@@ -101,7 +101,7 @@
       "destination": "registry/untitledui/components/base/avatar/base-components/avatar-add-button.tsx",
       "upstreamSha256": "4676000225227c5e",
       "sha": "1efcd1e10f2142e9",
-      "copied": true,
+      "copied": false,
       "bytes": 1766,
       "kind": "COMPOUND_COMPONENT"
     },

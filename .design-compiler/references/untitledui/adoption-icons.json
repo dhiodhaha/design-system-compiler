@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 1,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/shared-assets/credit-card/icons.tsx",
       "upstreamSha256": "967349577055e394",
       "sha": "afed757c4e613527",
-      "copied": true,
+      "copied": false,
       "bytes": 4621,
       "kind": "ASSET"
     }

@@ -18,7 +18,8 @@ const REF = ".design-compiler/references";
 const LIB = "untitledui";
 const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null);
 
-const adoption = read(resolve(REF, LIB, `adoption-${item}.json`));
+const adoptionRaw = read(resolve(REF, LIB, `adoption-${item}.json`));
+const adoption = adoptionRaw ? { ...adoptionRaw, files: adoptionRaw.files.map((f) => ({ ...f, localPath: f.localPath ?? f.destination })) } : null;
 const validation = read(resolve(REF, LIB, `validation/${item}.json`));
 const parity = read(resolve(REF, LIB, `parity/${item}.json`));
 const crosswalk = read(resolve(REF, LIB, "crosswalk.json"));

@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 2,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/shared-assets/illustrations/box.tsx",
       "upstreamSha256": "329428bc72093df2",
       "sha": "bdaa971f035e351d",
-      "copied": true,
+      "copied": false,
       "bytes": 16693,
       "kind": "ASSET"
     },

@@ -13,7 +13,7 @@
  * sources, no test-only API, real loading animation, reduced-motion handling, correct link/button
  * semantics, clean dependency closure, no dead package dependencies.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
 import * as csstree from "css-tree";
@@ -28,7 +28,12 @@ const CHROME = process.env.CHROME_BIN || "/home/dhio/.cache/puppeteer/chrome/lin
 const gates = [];
 const gate = (name, pass, evidence, detail) => gates.push({ gate: name, pass, evidence, detail });
 
-const adoption = JSON.parse(readFileSync(resolve(REF, LIB, `adoption-${item}.json`), "utf8"));
+const adoption = (() => {
+  const rec = JSON.parse(readFileSync(resolve(REF, LIB, `adoption-${item}.json`), "utf8"));
+  // adoption records carry `destination` (generic engine) or the legacy `localPath`
+  rec.files = rec.files.map((f) => ({ ...f, localPath: f.localPath ?? f.destination }));
+  return rec;
+})();
 const parity = existsSync(resolve(REF, LIB, `parity/${item}.json`)) ? JSON.parse(readFileSync(resolve(REF, LIB, `parity/${item}.json`), "utf8")) : null;
 const pkg = JSON.parse(readFileSync("package.json", "utf8"));
 
@@ -117,11 +122,21 @@ for (const file of cssFiles) {
 }
 gate("CSS_VALID", cssIssues.length === 0, `${cssFiles.length} adopted stylesheets parse with no null/undefined values`, cssIssues.slice(0, 5));
 
-// dead package dependencies: packages declared but never imported anywhere in src
-const srcFiles = execFileSync("git", ["ls-files", "src"], { encoding: "utf8" }).trim().split("\n").filter(Boolean);
+// dead package dependencies: runtime packages must be imported by the app OR by the adopted payload
+// (the payload is the distribution source, so it legitimately uses packages the app itself does not).
+const walkFiles = (dir, acc = []) => {
+  if (!existsSync(dir)) return acc;
+  for (const e of readdirSync(dir)) {
+    const full = resolve(dir, e);
+    if (statSync(full).isDirectory()) walkFiles(full, acc);
+    else acc.push(full);
+  }
+  return acc;
+};
+const srcFiles = [...walkFiles("src"), ...walkFiles("registry/untitledui")].filter((f) => /\.tsx?$/.test(f));
 const importedPackages = new Set();
 for (const f of srcFiles) {
-  if (!/\.tsx?$/.test(f) || !existsSync(f)) continue;
+  if (!existsSync(f)) continue;
   for (const m of readFileSync(f, "utf8").matchAll(/from\s+"([^".][^"]*)"/g)) importedPackages.add(m[1].startsWith("@") ? m[1].split("/").slice(0, 2).join("/") : m[1].split("/")[0]);
 }
 const deadDeps = Object.keys({ ...pkg.dependencies })

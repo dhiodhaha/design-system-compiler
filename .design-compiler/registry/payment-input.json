@@ -33,7 +33,7 @@
       "path": "registry/untitledui/components/foundations/payment-icons/index.tsx",
       "upstream": "components/foundations/payment-icons/index.tsx",
       "sha256": "8bafb88461ff595f",
-      "kind": "NON_COMPONENT"
+      "kind": "BARREL"
     },
     {
       "path": "registry/untitledui/utils/cx.ts",
@@ -434,7 +434,7 @@
     },
     "PAYLOAD_INTEGRITY": {
       "pass": true,
-      "evidence": "227 payload files; internal imports resolve"
+      "evidence": "229 payload files; internal imports resolve"
     },
     "TYPECHECK": {
       "pass": true,

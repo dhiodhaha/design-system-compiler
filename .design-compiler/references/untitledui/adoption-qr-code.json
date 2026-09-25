@@ -11,8 +11,8 @@
   "revision": "8b7409c078f81ab89dfc5943ec185ec369932804",
   "license": "MIT",
   "adopted": true,
-  "copiedThisRun": true,
-  "status": "SOURCE_ADOPTED",
+  "copiedThisRun": false,
+  "status": "SOURCE_ADOPTED_UNCHANGED",
   "closureSize": 2,
   "files": [
     {
@@ -20,7 +20,7 @@
       "destination": "registry/untitledui/components/shared-assets/qr-code.tsx",
       "upstreamSha256": "aa1b1cd551cbfaa1",
       "sha": "a93cc6a481c011fa",
-      "copied": true,
+      "copied": false,
       "bytes": 3002,
       "kind": "ASSET"
     },

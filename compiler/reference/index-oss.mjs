@@ -45,6 +45,7 @@ const ADOPTION_LAYER = {
   DEMO: "evidence",
   STORY: "evidence",
   TEST: "dev",
+  BARREL: "barrel",
   NON_COMPONENT: "none",
   UNCLASSIFIED: "none",
 };
@@ -53,17 +54,20 @@ const PART_SUFFIX = /-(item|trigger|content|header|footer|indicator|icon|tick|co
 const RECIPE_HINT = /-(simple|advanced|account|integration|search|notification|team|user|link|breadcrumb|group)$/;
 
 const ELIGIBLE_KINDS = new Set(["BASE_COMPONENT", "COMPOUND_COMPONENT", "APPLICATION_COMPONENT", "FOUNDATION", "RECIPE_OR_BLOCK"]);
+const COMPONENT_EXPORT_KINDS = new Set(["component", "compound-namespace", "default-component", "component-alias", "barrel-component"]);
 
 function classify(path, parsed) {
   const p = `/${path.toLowerCase()}`;
   const name = p.split("/").pop() ?? "";
-  const hasComponentExport = parsed.exports.some((e) => e.kind === "component" || e.kind === "compound-namespace" || e.kind === "default-component");
+  const COMPONENT_EXPORT_KINDS = new Set(["component", "compound-namespace", "default-component", "component-alias", "barrel-component"]);
+  const hasComponentExport = parsed.exports.some((e) => COMPONENT_EXPORT_KINDS.has(e.kind));
   const file = name.replace(/\.tsx?$/, "");
 
   if (/\.demo\.tsx?$/.test(name)) return "DEMO";
   if (/\.story\.tsx?$/.test(name)) return "STORY";
   if (/\.(test|spec)\.tsx?$/.test(name) || p.includes("/__tests__/")) return "TEST";
   if (/\.(sample|fixture)\./.test(name)) return "NON_COMPONENT";
+  if (/^index\.tsx?$/.test(name) && p.includes("/components/")) return "BARREL"; // re-export barrels are not install items
   if (/\.(css|scss)$/.test(name) || /\.(svg|png|jpg|jpeg|webp|gif|ico|woff2?|ttf)$/.test(name)) return "ASSET";
   if (p.includes("/components/internal/")) return "INTERNAL";
   if (p.includes("/components/shared-assets/")) return hasComponentExport ? "ASSET" : "ASSET";
@@ -132,6 +136,7 @@ function parseFile(file, source) {
   const imports = [];
   const reExports = [];
   const types = new Map(); // name -> { node, exported }
+  const locals = new Map(); // every local declaration, exported or not (alias re-exports resolve through it)
   const componentNodes = new Map(); // export name -> declaration info
   const variantTables = {};
   const text = (node) => node.getText(sf).replace(/\s+/g, " ");
@@ -156,7 +161,10 @@ function parseFile(file, source) {
       if (node.exportClause && ts.isNamedExports(node.exportClause)) {
         for (const el of node.exportClause.elements) {
           const local = el.propertyName?.text ?? el.name.text;
-          addExport({ name: el.name.text, kind: spec ? "re-export" : "alias", local, from: spec, typeOnly: el.isTypeOnly });
+          // `export { PinInput }` (no module specifier) re-states a local declaration: when the name is
+          // PascalCase that declaration is a component, so the file is a component module.
+          const componentish = !el.isTypeOnly && /^[A-Z]/.test(el.name.text);
+          addExport({ name: el.name.text, kind: spec ? (componentish ? "barrel-component" : "re-export") : componentish ? "component-alias" : "alias", local, from: spec, typeOnly: el.isTypeOnly });
           reExports.push({ name: el.name.text, from: spec ?? "local", local });
         }
       } else if (node.exportClause && ts.isNamespaceExport(node.exportClause)) {
@@ -188,6 +196,10 @@ function parseFile(file, source) {
     const hasDefault = modifiers?.some((m) => m.kind === ts.SyntaxKind.DefaultKeyword);
 
     // ---------- declarations
+    if (ts.isFunctionDeclaration(node) && node.name) locals.set(node.name.text, node);
+    if (ts.isVariableStatement(node)) {
+      for (const d of node.declarationList.declarations) if (ts.isIdentifier(d.name)) locals.set(d.name.text, d);
+    }
     if (hasExport && ts.isFunctionDeclaration(node) && node.name) {
       const n = node.name.text;
       addExport({ name: n, kind: /^[A-Z]/.test(n) ? "component" : "function", isDefault: Boolean(hasDefault) });
@@ -229,7 +241,7 @@ function parseFile(file, source) {
   };
   visit(sf);
 
-  return { exports, imports, reExports, types, componentNodes, variantTables, useClient: /^\s*["']use client["']/.test(source) };
+  return { exports, imports, reExports, types, locals, componentNodes, variantTables, useClient: /^\s*["']use client["']/.test(source) };
 }
 
 // ------------------------------------------------------------------ type-aware props
@@ -357,8 +369,12 @@ for (const abs of sourceFiles) {
   const sf = /\.tsx?$/.test(abs) ? getSf() : null;
   const components = [];
   for (const e of parsed.exports) {
-    if (e.kind === "component") {
-      const decl = parsed.componentNodes.get(e.name)?.node;
+    if (e.kind === "component" || e.kind === "component-alias") {
+      const decl = parsed.componentNodes.get(e.name)?.node ?? (e.local ? parsed.locals?.get(e.local) : undefined) ?? null;
+      if (!decl) {
+        components.push({ name: e.name, exported: true, propsTypeNames: [], overloads: [], destructuring: {}, props: {}, propCount: 0, note: "declaration not resolvable from this file (alias re-export)" });
+        continue;
+      }
       const ov = overloadsOf(decl, sf);
       const propTypeNames = new Set();
       for (const o of ov) for (const p of o.params) if (p.type && /^[A-Z]/.test(p.type)) propTypeNames.add(p.type);
@@ -468,7 +484,7 @@ function candidateFigmaNames(relPath, parsed) {
   const file = relPath.split("/").pop()?.replace(/\.tsx?$/, "") ?? "";
   const title = (s) => s.split(/[-_]/).map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join("");
   const names = new Set();
-  for (const e of parsed.exports.filter((x) => x.kind === "component" || x.kind === "compound-namespace" || x.kind === "default-component")) if (e.name !== "(default)") names.add(e.name);
+  for (const e of parsed.exports.filter((x) => COMPONENT_EXPORT_KINDS.has(x.kind))) if (e.name !== "(default)") names.add(e.name);
   if (file) names.add(title(file));
   if (dir) names.add(title(dir));
   return [...names].sort();
@@ -583,7 +599,9 @@ const inventory = {
   evidenceOnly: entries.filter((e) => e.evidenceOnly).length,
   devOnly: entries.filter((e) => e.devOnly).length,
   adoptable: entries.filter((e) => e.adoptable).length,
-  componentExports: exportRows.filter((r) => r.kind === "component" || r.kind === "default-component").length,
+  componentExports: exportRows.filter((r) => COMPONENT_EXPORT_KINDS.has(r.kind)).length,
+  componentAliasExports: exportRows.filter((r) => r.kind === "component-alias").length,
+  barrelComponentExports: exportRows.filter((r) => r.kind === "barrel-component").length,
   iconComponentExports: exportRows.filter((r) => r.kind === "default-component").length,
   compoundNamespaceExports: exportRows.filter((r) => r.kind === "compound-namespace").length,
   defaultExports: exportRows.filter((r) => r.isDefault || r.kind === "default" || r.kind === "default-component").length,
